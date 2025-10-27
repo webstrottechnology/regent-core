@@ -27,6 +27,8 @@
 
         {!! Theme::partial('scroll-top') !!}
 
+        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
         @yield('content')
 
         @if(is_plugin_active('ecommerce') && theme_option('bottom_mobile_menu_enabled', 'yes') === 'yes')
@@ -48,6 +50,9 @@
         </script>
 
         {!! Theme::footer() !!}
+
+           <!-- Custom JS -->
+        <script src="{{ asset('js/html.js') }}"></script>
 
         @if (is_plugin_active('ecommerce'))
             @include('plugins/ecommerce::themes.includes.gtm-script')
