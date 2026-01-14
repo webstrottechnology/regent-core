@@ -56,6 +56,8 @@ use ZipArchive;
 
 /**
  * DO NOT MODIFY THIS FILE.
+ *
+ * @readonly
  */
 final class Core
 {
@@ -65,9 +67,9 @@ final class Core
 
     private string $licenseFilePath;
 
-    private string $productId = '';
+    private string $productId;
 
-    private string $productSource = '';
+    private string $productSource;
 
     private string $version = '1.0.0';
 
@@ -116,7 +118,7 @@ final class Core
                 $this->skipLicenseReminderFilePath,
                 encrypt($ttl->toIso8601String())
             );
-        } catch (Throwable) {
+        } catch (UnableToWriteFile|Throwable) {
             throw UnableToWriteFile::atLocation($this->skipLicenseReminderFilePath);
         }
 
@@ -191,13 +193,11 @@ final class Core
             'verify_type' => $this->productSource,
         ]);
 
-        $data = $response->json();
-
         if ($response->failed()) {
-            $message = Arr::get($data, 'message');
-
-            throw new LicenseInvalidException($message ?: 'Could not activate your license. Please try again later.');
+            throw new LicenseInvalidException('Could not activate your license. Please try again later.');
         }
+
+        $data = $response->json();
 
         if (! Arr::get($data, 'status')) {
             $message = Arr::get($data, 'message');
@@ -221,7 +221,7 @@ final class Core
             }
 
             $this->storeLicenseMetadata($license, $client);
-        } catch (Throwable $exception) {
+        } catch (UnableToWriteFile|Throwable $exception) {
             if ($this->isLicenseStoredInDatabase()) {
                 throw new LicenseInvalidException('Could not store license in database: ' . $exception->getMessage());
             } else {
@@ -385,7 +385,7 @@ final class Core
 
             try {
                 $this->files->put($filePath, $response->body());
-            } catch (Throwable) {
+            } catch (UnableToWriteFile|Throwable) {
                 throw UnableToWriteFile::atLocation($filePath);
             }
         }
@@ -823,7 +823,7 @@ final class Core
         ];
 
         try {
-            $response = $this->createRequest('verify_license', $data, 'POST', $timeoutInSeconds);
+            $response = $this->createRequest('verify_license', $data, $timeoutInSeconds);
         } catch (CouldNotConnectToLicenseServerException) {
             return true;
         }

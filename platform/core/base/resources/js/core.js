@@ -875,7 +875,7 @@ class Botble {
     }
 
     static initGlobalResources() {
-        $(document).on('submit', '.js-base-form', (event) => {
+        $(document).on('submit', '.js-base-form1', (event) => {
             $(event.currentTarget).find('button[type=submit]').addClass('disabled')
         })
 

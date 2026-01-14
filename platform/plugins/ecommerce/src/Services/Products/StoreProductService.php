@@ -99,6 +99,30 @@ class StoreProductService
 
         $product->save();
 
+        // ===== PMD PRICING SAVE LOGIC =====
+if (! $request->input('has_pmd_pricing')) {
+    $product->pmdPrices()->delete();
+} else {
+    $product->pmdPrices()->delete();
+
+    if ($request->has('pmd_prices')) {
+        $prices = $request->input('pmd_prices');
+
+        foreach ($prices['min_qty'] as $index => $minQty) {
+            if ($minQty === null || empty($prices['price'][$index])) {
+                continue;
+            }
+
+            $product->pmdPrices()->create([
+                'min_qty' => (int) $minQty,
+                'max_qty' => (int) ($prices['max_qty'][$index] ?? 0),
+                'price'   => (float) $prices['price'][$index],
+            ]);
+        }
+    }
+}
+
+
         if (! $exists) {
             event(new CreatedContentEvent(PRODUCT_MODULE_SCREEN_NAME, $request, $product));
         } else {

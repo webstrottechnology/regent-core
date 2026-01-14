@@ -167,10 +167,6 @@ class SeoHelper implements SeoHelperContract
                     Arr::forget($seoMeta, 'seo_image');
                 }
 
-                if (Arr::get($seoMeta, 'index') === 'index') {
-                    Arr::forget($seoMeta, 'index');
-                }
-
                 if (! empty($seoMeta)) {
                     MetaBox::saveMetaBoxData($object, 'seo_meta', $seoMeta);
                 } else {

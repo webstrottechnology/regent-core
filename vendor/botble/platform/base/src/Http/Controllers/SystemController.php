@@ -41,10 +41,6 @@ class SystemController extends BaseSystemController
             $cacheKey = 'license_check_time';
 
             if (! $core->hasLicenseData()) {
-                if ($core->isSkippedLicenseReminder()) {
-                    return $this->httpResponse()->setData(['verified' => true]);
-                }
-
                 return $this->httpResponse()
                     ->setError()
                     ->setCode(401)
@@ -96,10 +92,6 @@ class SystemController extends BaseSystemController
                 return $this->httpResponse()->setData(['verified' => true]);
             }
 
-            if ($core->isSkippedLicenseReminder()) {
-                return $this->httpResponse()->setData(['verified' => true]);
-            }
-
             return $this->httpResponse()
                 ->setError()
                 ->setCode(401)
@@ -112,10 +104,6 @@ class SystemController extends BaseSystemController
             report($e);
 
             if ($core->hasLicenseData()) {
-                return $this->httpResponse()->setData(['verified' => true]);
-            }
-
-            if ($core->isSkippedLicenseReminder()) {
                 return $this->httpResponse()->setData(['verified' => true]);
             }
 
@@ -241,7 +229,7 @@ class SystemController extends BaseSystemController
 
         return $this
             ->httpResponse()
-            ->setMessage(trans('core/base::system.something_went_wrong'))
+            ->setMessage(__('Something went wrong.'))
             ->setError()
             ->setCode(422);
     }
@@ -307,7 +295,7 @@ class SystemController extends BaseSystemController
                     return $this
                         ->httpResponse()
                         ->setMessage(
-                            trans('core/base::system.could_not_download_update')
+                            __('Could not download updated file. Please check your license or your internet network.')
                         )
                         ->setError()
                         ->setCode(422);
@@ -317,7 +305,7 @@ class SystemController extends BaseSystemController
 
                     return $this
                         ->httpResponse()
-                        ->setMessage(trans('core/base::system.could_not_update_files_database'))
+                        ->setMessage(__('Could not update files & database.'))
                         ->setError()
                         ->setCode(422);
                 case 3:
@@ -325,7 +313,7 @@ class SystemController extends BaseSystemController
 
                     return $this
                         ->httpResponse()
-                        ->setMessage(trans('core/base::system.assets_published_successfully'));
+                        ->setMessage(__('Your asset files have been published successfully.'));
                 case 4:
                     $core->cleanCaches();
 
@@ -333,9 +321,9 @@ class SystemController extends BaseSystemController
 
                     return $this
                         ->httpResponse()
-                        ->setMessage(trans('core/base::system.system_cleaned_successfully'));
+                        ->setMessage(__('Your system has been cleaned up successfully.'));
                 default:
-                    throw new Exception(trans('core/base::system.invalid_step'));
+                    throw new Exception(__('Invalid step.'));
             }
         } catch (Throwable $exception) {
             $core->logError($exception);
@@ -358,7 +346,7 @@ class SystemController extends BaseSystemController
         if (! $step) {
             return $this
                 ->httpResponse()
-                ->setMessage(trans('core/base::system.invalid_step'))
+                ->setMessage(__('Invalid step.'))
                 ->setError()
                 ->setCode(422);
         }
@@ -371,7 +359,7 @@ class SystemController extends BaseSystemController
                 SystemUpdaterStepEnum::PUBLISH_CORE_ASSETS => $core->publishCoreAssets(),
                 SystemUpdaterStepEnum::PUBLISH_PACKAGES_ASSETS => $core->publishPackagesAssets(),
                 SystemUpdaterStepEnum::CLEAN_UP => $core->cleanUp(),
-                default => throw new Exception(trans('core/base::system.invalid_step')),
+                default => throw new Exception(__('Invalid step.')),
             };
 
             return $this

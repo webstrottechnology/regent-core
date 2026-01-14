@@ -2,7 +2,7 @@ class PermalinkField {
     constructor() {
         let $slugBox = $(document).find('.slug-field-wrapper')
 
-        $(document).on('blur', `.js-base-form input[name=${$slugBox.data('field-name')}]`, (e) => {
+        $(document).on('blur', `.js-base-form3 input[name=${$slugBox.data('field-name')}]`, (e) => {
             $slugBox = $(document).find('.slug-field-wrapper')
 
             if ($slugBox.find('input[name="slug"]').is('[readonly]')) {
@@ -44,7 +44,7 @@ class PermalinkField {
             e.preventDefault()
 
             const $fromField = $(e.currentTarget)
-                .closest('.js-base-form')
+                .closest('.js-base-form4')
                 .find(`input[name=${$slugBox.data('field-name')}]`)
 
             if ($fromField.val() !== null && $fromField.val() !== '') {

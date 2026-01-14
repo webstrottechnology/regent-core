@@ -104,31 +104,37 @@ class Cart
     }
 
     protected function createCartItem($id, $name, $qty, $price, array $options): CartItem
-    {
-        if (
-            EcommerceHelper::isEnabledProductOptions() &&
-            ($productOptions = Arr::get($options, 'options', [])) &&
-            is_array($productOptions)
-        ) {
-            $price = $this->getPriceByOptions($price, $productOptions);
-        }
-
-        if ($id instanceof Buyable) {
-            $cartItem = CartItem::fromBuyable($id, $qty ?: []);
-            $cartItem->setQuantity($name ?: 1);
-            $cartItem->associate($id);
-        } elseif (is_array($id)) {
-            $cartItem = CartItem::fromArray($id);
-            $cartItem->setQuantity($id['qty']);
-        } else {
-            $cartItem = CartItem::fromAttributes($id, $name, $price, $options);
-            $cartItem->setQuantity($qty);
-        }
-
-        $cartItem->setTaxRate($options['taxRate'] ?? 0);
-
-        return $cartItem;
+{
+    // Store original price to prevent override
+    $originalPrice = $price;
+    
+    if (
+        EcommerceHelper::isEnabledProductOptions() &&
+        ($productOptions = Arr::get($options, 'options', [])) &&
+        is_array($productOptions)
+    ) {
+        $price = $this->getPriceByOptions($price, $productOptions);
     }
+
+    if ($id instanceof Buyable) {
+        $cartItem = CartItem::fromBuyable($id, $qty ?: []);
+        $cartItem->setQuantity($name ?: 1);
+        $cartItem->associate($id);
+    } elseif (is_array($id)) {
+        $cartItem = CartItem::fromArray($id);
+        $cartItem->setQuantity($id['qty']);
+    } else {
+        $cartItem = CartItem::fromAttributes($id, $name, $price, $options);
+        $cartItem->setQuantity($qty);
+    }
+
+    // FORCE THE PRICE - OVERRIDE ANY PRODUCT PRICE
+   // $cartItem->price = $originalPrice;
+    
+    $cartItem->setTaxRate($options['taxRate'] ?? 0);
+
+    return $cartItem;
+}
 
     public function getPriceByOptions(float|int $price, array $options = []): float|int
     {
@@ -757,56 +763,125 @@ class Cart
         }
     }
 
+    // public function refresh(): void
+    // {
+    //     $cart = $this->instance('cart');
+
+    //     if ($cart->isEmpty()) {
+    //         return;
+    //     }
+
+    //     $ids = $cart->content()->pluck('id')->toArray();
+
+    //     $products = get_products([
+    //         'condition' => [
+    //             ['ec_products.id', 'IN', $ids],
+    //         ],
+    //     ]);
+
+    //     if ($products->isEmpty()) {
+    //         return;
+    //     }
+
+    //     foreach ($cart->content() as $rowId => $cartItem) {
+    //         $product = $products->firstWhere('id', $cartItem->id);
+    //         if (! $product || $product->original_product->status != BaseStatusEnum::PUBLISHED) {
+    //             $this->remove($cartItem->rowId);
+    //         } else {
+    //             $cart->removeQuietly($rowId);
+
+    //             $parentProduct = $product->original_product;
+
+    //             $options = $cartItem->options->toArray();
+    //             $options['image'] = $product->image ?: $parentProduct->image;
+
+    //             $options['taxRate'] = $cartItem->getTaxRate();
+
+    //             $cart->addQuietly(
+    //                 $cartItem->id,
+    //                 $cartItem->name,
+    //                 $cartItem->qty,
+    //                 $product->price()->getPrice(false),
+    //                 $options
+    //             );
+    //         }
+    //     }
+
+    //     try {
+    //         app(HandleApplyProductCrossSaleService::class)->handle();
+    //     } catch (Exception $exception) {
+    //         BaseHelper::logError($exception);
+    //     }
+    // }
+
+
+
     public function refresh(): void
-    {
-        $cart = $this->instance('cart');
+            {
+                $cart = $this->instance('cart');
 
-        if ($cart->isEmpty()) {
-            return;
-        }
+                if ($cart->isEmpty()) {
+                    return;
+                }
 
-        $ids = $cart->content()->pluck('id')->toArray();
+                $ids = $cart->content()->pluck('id')->toArray();
 
-        $products = get_products([
-            'condition' => [
-                ['ec_products.id', 'IN', $ids],
-            ],
-        ]);
+                $products = get_products([
+                    'condition' => [
+                        ['ec_products.id', 'IN', $ids],
+                    ],
+                    'with' => ['pmdPrices'], // Add PMD prices relationship
+                ]);
 
-        if ($products->isEmpty()) {
-            return;
-        }
+                if ($products->isEmpty()) {
+                    return;
+                }
 
-        foreach ($cart->content() as $rowId => $cartItem) {
-            $product = $products->firstWhere('id', $cartItem->id);
-            if (! $product || $product->original_product->status != BaseStatusEnum::PUBLISHED) {
-                $this->remove($cartItem->rowId);
-            } else {
-                $cart->removeQuietly($rowId);
+                foreach ($cart->content() as $rowId => $cartItem) {
+                    $product = $products->firstWhere('id', $cartItem->id);
+                    if (! $product || $product->original_product->status != BaseStatusEnum::PUBLISHED) {
+                        $this->remove($cartItem->rowId);
+                    } else {
+                        $cart->removeQuietly($rowId);
 
-                $parentProduct = $product->original_product;
+                        $parentProduct = $product->original_product;
 
-                $options = $cartItem->options->toArray();
-                $options['image'] = $product->image ?: $parentProduct->image;
+                        $options = $cartItem->options->toArray();
+                        $options['image'] = $product->image ?: $parentProduct->image;
 
-                $options['taxRate'] = $cartItem->getTaxRate();
+                        $options['taxRate'] = $cartItem->getTaxRate();
 
-                $cart->addQuietly(
-                    $cartItem->id,
-                    $cartItem->name,
-                    $cartItem->qty,
-                    $product->price()->getPrice(false),
-                    $options
-                );
+                        // Check if user is PMD and get appropriate price
+                        $price = $product->price()->getPrice(false);
+                        
+                        // Apply PMD pricing if user is PMD and product has PMD pricing
+                        $isPmdUser = $product->userIsPmd();
+                        if ($isPmdUser && $product->hasPmdPricing()) {
+                            $pmdPrice = $product->getPmdPriceForQuantity($cartItem->qty);
+                            if ($pmdPrice !== null) {
+                                $price = (float) $pmdPrice;
+                            }
+                        }
+
+                        $cart->addQuietly(
+                            $cartItem->id,
+                            $cartItem->name,
+                            $cartItem->qty,
+                            $price,
+                            $options
+                        );
+                    }
+                }
+
+                try {
+                    app(HandleApplyProductCrossSaleService::class)->handle();
+                } catch (Exception $exception) {
+                    BaseHelper::logError($exception);
+                }
             }
-        }
 
-        try {
-            app(HandleApplyProductCrossSaleService::class)->handle();
-        } catch (Exception $exception) {
-            BaseHelper::logError($exception);
-        }
-    }
+
+
 
     public function taxClassesName(): string
     {

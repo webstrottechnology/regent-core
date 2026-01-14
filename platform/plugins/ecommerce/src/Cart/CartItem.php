@@ -102,12 +102,16 @@ class CartItem implements Arrayable, Jsonable
     }
 
     public function updateFromBuyable(Buyable $item): void
-    {
-        $this->id = $item->getBuyableIdentifier($this->options);
-        $this->name = $item->getBuyableDescription($this->options);
-        $this->price = $item->getBuyablePrice($this->options);
-        $this->priceTax = $this->price + $this->tax;
-    }
+{
+    $this->id = $item->getBuyableIdentifier($this->options);
+    $this->name = $item->getBuyableDescription($this->options);
+    
+    // COMMENT OUT THIS LINE - DO NOT UPDATE PRICE FROM PRODUCT
+    // $this->price = $item->getBuyablePrice($this->options);
+    
+    $this->priceTax = $this->price + $this->tax;
+}
+
 
     public function updateFromArray(array $attributes): void
     {
@@ -207,9 +211,14 @@ class CartItem implements Arrayable, Jsonable
         return new self($attributes['id'], $attributes['name'], $attributes['price'], $options);
     }
 
-    public static function fromAttributes(int|string|null $id, string $name, float $price, array $options = []): self
+   public static function fromAttributes(int|string|null $id, string $name, float $price, array $options = []): self
     {
-        return new self($id, $name, $price, $options);
+        $cartItem = new self($id, $name, $price, $options);
+        
+        // DON'T let product override the price
+        // Remove any price fetching logic here
+        
+        return $cartItem;
     }
 
     protected function generateRowId(int|string|null $id, array $options): string

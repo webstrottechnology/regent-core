@@ -4,7 +4,6 @@ namespace Botble\Shortcode\Compilers;
 
 use Botble\Base\Facades\Html;
 use Botble\Media\Facades\RvMedia;
-use Illuminate\Support\Arr;
 
 class Shortcode
 {
@@ -53,21 +52,13 @@ class Shortcode
         return $this->attributes[$param] ?? null;
     }
 
-    public function htmlAttributes(array $mergeAttributes = []): string
+    public function htmlAttributes(): string
     {
         $attributes = [
             'data-block-id' => $this->name,
         ];
 
         $styles = [];
-
-        foreach (Arr::get($mergeAttributes, 'style', []) as $key => $value) {
-            if (is_string($key) && $value) {
-                $styles[] = rtrim($key, ';') . ';';
-            } elseif (is_int($key) && $value) {
-                $styles[] = rtrim($value, ';') . ';';
-            }
-        }
 
         if ($this->background_color) {
             $variable = '--block-' . $this->name . '-background-color';

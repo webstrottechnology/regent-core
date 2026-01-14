@@ -616,70 +616,164 @@ class OrderHelper
         session()->forget('tracked_start_checkout');
     }
 
-    public function handleAddCart(Product $product, Request $request, bool $relativePath = true): array
-    {
-        if ($product->status != BaseStatusEnum::PUBLISHED) {
-            throw new ProductIsNotActivatedYetException();
+public function handleAddCart(Product $product, Request $request, bool $relativePath = true): array
+{
+    if ($product->status != BaseStatusEnum::PUBLISHED) {
+        throw new ProductIsNotActivatedYetException();
+    }
+
+    $parentProduct = $product->original_product; // This line must come BEFORE using $parentProduct
+
+    $options = [];
+    if ($requestOption = $request->input('options')) {
+        $options = $this->getProductOptionData($requestOption);
+    }
+
+    $taxClasses = DB::table('ec_tax_products')
+        ->join('ec_taxes', 'ec_taxes.id', '=', 'ec_tax_products.tax_id')
+        ->where('ec_tax_products.product_id', $parentProduct->id)
+        ->select(['ec_taxes.id', 'ec_taxes.title', 'ec_taxes.percentage'])
+        ->get()
+        ->mapWithKeys(function ($tax) {
+            return [$tax->title => $tax->percentage];
+        })
+        ->all();
+
+    $taxRate = $parentProduct->total_taxes_percentage;
+
+    if (! $taxClasses && $defaultTaxRate = get_ecommerce_setting('default_tax_rate')) {
+        $tax = cache()->remember('default_tax_rate_' . $defaultTaxRate, 3600, function () use ($defaultTaxRate) {
+            return Tax::query()->where('id', $defaultTaxRate)->first();
+        });
+
+        if ($tax) {
+            $taxClasses = [$tax->title => $tax->percentage];
+            $taxRate = $tax->percentage;
         }
+    }
 
-        $parentProduct = $product->original_product;
+    $image = $product->image ?: $parentProduct->image;
 
-        $options = [];
-        if ($requestOption = $request->input('options')) {
-            $options = $this->getProductOptionData($requestOption);
+    if (! $relativePath) {
+        $image = RvMedia::getImageUrl($image);
+    }
+
+    // ==============================================
+    // PMD PRICING LOGIC - COMPLETE CORRECT VERSION
+    // ==============================================
+    $price = $product->price()->getPrice(false);
+    
+    // Check if user is PMD and product has PMD pricing
+    $quantity = $request->input('qty', 1);
+    $isPmdUser = false;
+    
+    // Get current user and check PMD status
+    $user = auth()->user();
+    if ($user) {
+        // Check if user has customer record with is_pmd = 1
+        if (isset($user->customer) && $user->customer) {
+            $isPmdUser = (bool) $user->customer->is_pmd;
         }
-
-        $taxClasses = DB::table('ec_tax_products')
-            ->join('ec_taxes', 'ec_taxes.id', '=', 'ec_tax_products.tax_id')
-            ->where('ec_tax_products.product_id', $parentProduct->id)
-            ->select(['ec_taxes.id', 'ec_taxes.title', 'ec_taxes.percentage'])
-            ->get()
-            ->mapWithKeys(function ($tax) {
-                return [$tax->title => $tax->percentage];
-            })
-            ->all();
-
-        $taxRate = $parentProduct->total_taxes_percentage;
-
-        if (! $taxClasses && $defaultTaxRate = get_ecommerce_setting('default_tax_rate')) {
-            $tax = cache()->remember('default_tax_rate_' . $defaultTaxRate, 3600, function () use ($defaultTaxRate) {
-                return Tax::query()->where('id', $defaultTaxRate)->first();
-            });
-
-            if ($tax) {
-                $taxClasses = [$tax->title => $tax->percentage];
-                $taxRate = $tax->percentage;
+    }
+    
+    // Log for debugging
+    \Log::info('PMD Check in handleAddCart', [
+        'product_id' => $product->id,
+        'quantity' => $quantity,
+        'user_id' => $user ? $user->id : 'guest',
+        'is_pmd_user' => $isPmdUser,
+        'regular_price' => $price
+    ]);
+    
+    if ($isPmdUser && isset($product->original_product)) {
+        $originalProduct = $product->original_product;
+        
+        // Check if product has PMD pricing
+        if (isset($originalProduct->has_pmd_pricing) && $originalProduct->has_pmd_pricing) {
+            
+            // Get PMD prices with EXACT column names from your database: min_qty, max_qty, price
+            $pmdPrices = DB::table('ec_product_pmd_prices')
+                ->where('product_id', $originalProduct->id)
+                ->orderBy('min_qty', 'asc')
+                ->get();
+            
+            \Log::info('PMD Prices Found', [
+                'product_id' => $originalProduct->id,
+                'count' => $pmdPrices->count(),
+                'prices' => $pmdPrices->toArray()
+            ]);
+            
+            if ($pmdPrices->count() > 0) {
+                // Find matching tier - using EXACT column names: min_qty, max_qty
+                $matchingPrice = null;
+                foreach ($pmdPrices as $pmdPrice) {
+                    // Check if quantity is within this tier range
+                    // min_qty = minimum quantity for this tier
+                    // max_qty = maximum quantity for this tier (can be NULL for unlimited)
+                    
+                    if ($quantity >= $pmdPrice->min_qty) {
+                        // Check max_qty - if null or quantity <= max_qty
+                        if ($pmdPrice->max_qty === null || $quantity <= $pmdPrice->max_qty) {
+                            // Found a matching tier
+                            // Use the tier with the highest min_qty that matches (best match)
+                            if (!$matchingPrice || $pmdPrice->min_qty > $matchingPrice->min_qty) {
+                                $matchingPrice = $pmdPrice;
+                            }
+                        }
+                    }
+                }
+                
+                if ($matchingPrice) {
+                    $price = (float) $matchingPrice->price;
+                    \Log::info('✅ PMD Price Applied', [
+                        'pmd_price' => $matchingPrice->price,
+                        'min_qty' => $matchingPrice->min_qty,
+                        'max_qty' => $matchingPrice->max_qty,
+                        'final_price' => $price,
+                        'savings_per_unit' => ($product->price()->getPrice(false) - $matchingPrice->price)
+                    ]);
+                } else {
+                    \Log::warning('❌ No matching PMD tier found for quantity', [
+                        'quantity' => $quantity,
+                        'available_tiers' => $pmdPrices->map(function($tier) {
+                            return [
+                                'min_qty' => $tier->min_qty,
+                                'max_qty' => $tier->max_qty,
+                                'price' => $tier->price
+                            ];
+                        })->toArray()
+                    ]);
+                }
+            } else {
+                \Log::warning('⚠️ Product marked has_pmd_pricing but no PMD prices in database', [
+                    'product_id' => $originalProduct->id
+                ]);
             }
         }
-
-        $image = $product->image ?: $parentProduct->image;
-
-        if (! $relativePath) {
-            $image = RvMedia::getImageUrl($image);
-        }
-
-        $price = $product->price()->getPrice(false);
-
-        Cart::instance('cart')->add(
-            $product->getKey(),
-            BaseHelper::clean($parentProduct->name ?: $product->name),
-            $request->input('qty', 1),
-            $price,
-            [
-                'image' => $image,
-                'attributes' => $product->is_variation ? $product->variation_attributes : '',
-                'taxRate' => $taxRate,
-                'taxClasses' => $taxClasses,
-                'options' => $options,
-                'extras' => $request->input('extras', []),
-                'sku' => $product->sku,
-                'weight' => $product->weight,
-                'price_includes_tax' => $parentProduct->price_includes_tax,
-            ]
-        );
-
-        return Cart::instance('cart')->content()->toArray();
     }
+    // ==============================================
+
+    Cart::instance('cart')->add(
+        $product->getKey(),
+        BaseHelper::clean($parentProduct->name ?: $product->name),
+        $request->input('qty', 1),
+        $price,
+        [
+            'image' => $image,
+            'attributes' => $product->is_variation ? $product->variation_attributes : '',
+            'taxRate' => $taxRate,
+            'taxClasses' => $taxClasses,
+            'options' => $options,
+            'extras' => $request->input('extras', []),
+            'sku' => $product->sku,
+            'weight' => $product->weight,
+            'price_includes_tax' => $parentProduct->price_includes_tax,
+            'pmd_price_applied' => $isPmdUser, // Add flag for PMD pricing
+        ]
+    );
+
+    return Cart::instance('cart')->content()->toArray();
+}
 
     public function getProductOptionData(array $data, int|string|null $productId = null): array
     {
@@ -1017,61 +1111,99 @@ class OrderHelper
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function processOrderInCheckout(
-        $sessionData,
-        $request,
-        $cartItems,
-        $order,
-        array $generalData
-    ): array {
-        $createdOrder = Arr::get($sessionData, 'created_order');
-        $createdOrderId = Arr::get($sessionData, 'created_order_id');
+   public function processOrderInCheckout(
+    $sessionData,
+    $request,
+    $cartItems,
+    $order,
+    array $generalData
+): array {
 
-        $lastUpdatedAt = Cart::instance('cart')->getLastUpdatedAt();
+    /*
+    |--------------------------------------------------------------------------
+    | FORCE PMD PRICE BEFORE TOTAL CALCULATION
+    |--------------------------------------------------------------------------
+    */
+    $cart = Cart::instance('cart');
 
-        // Get payment fee if applicable
-        $paymentFee = 0;
-        $paymentMethod = $request->input('payment_method');
-        if ($paymentMethod && is_plugin_active('payment')) {
-            $orderAmount = Cart::instance('cart')->rawTotalByItems($cartItems);
-            $paymentFee = PaymentFeeHelper::calculateFee($paymentMethod, $orderAmount);
+    foreach ($cart->content() as $rowId => $cartItem) {
+
+        $product = $cartItem->model;
+
+        if (! $product) {
+            continue;
         }
 
-        // Calculate total amount including payment fee
-        $amount = Cart::instance('cart')->rawTotalByItems($cartItems) + $paymentFee;
+        if ($product->userIsPmd() && $product->hasPmdPricing()) {
 
-        $data = array_merge([
-            'amount' => $amount,
-            'shipping_method' => $request->input('shipping_method', ShippingMethodEnum::DEFAULT),
-            'shipping_option' => $request->input('shipping_option'),
-            'payment_fee' => $paymentFee,
-            'tax_amount' => Cart::instance('cart')->rawTaxByItems($cartItems),
-            'sub_total' => Cart::instance('cart')->rawSubTotalByItems($cartItems),
-            'coupon_code' => session()->get('applied_coupon_code'),
-        ], $generalData);
+            $qty = $cartItem->qty;
+            $pmdPrice = $product->getPmdPriceForQuantity($qty);
 
-        if ($createdOrder && $createdOrderId) {
-            if ($order && (is_string($createdOrder) || ! $createdOrder->eq($lastUpdatedAt))) {
-                $order->fill($data);
+            if ($pmdPrice !== null) {
+                $cart->update($rowId, [
+                    'price' => (float) $pmdPrice,
+                ]);
             }
         }
-
-        if (! $order) {
-            $data = array_merge($data, [
-                'shipping_amount' => 0,
-                'discount_amount' => 0,
-                'status' => OrderStatusEnum::PENDING,
-                'is_finished' => false,
-            ]);
-
-            $order = Order::query()->create($data);
-        }
-
-        $sessionData['created_order'] = $lastUpdatedAt; // insert last updated at in here
-        $sessionData['created_order_id'] = $order->id;
-
-        return [$sessionData, $order];
     }
+
+    // ✅ 🔥 REFRESH CART ITEMS (THIS WAS MISSING)
+    $cartItems = $cart->content();
+
+    /*
+    |--------------------------------------------------------------------------
+    | ORIGINAL ORDER LOGIC
+    |--------------------------------------------------------------------------
+    */
+    $createdOrder = Arr::get($sessionData, 'created_order');
+    $createdOrderId = Arr::get($sessionData, 'created_order_id');
+
+    $lastUpdatedAt = $cart->getLastUpdatedAt();
+
+    $paymentFee = 0;
+    $paymentMethod = $request->input('payment_method');
+
+    if ($paymentMethod && is_plugin_active('payment')) {
+        $orderAmount = $cart->rawTotalByItems($cartItems);
+        $paymentFee = PaymentFeeHelper::calculateFee($paymentMethod, $orderAmount);
+    }
+
+    $amount = $cart->rawTotalByItems($cartItems) + $paymentFee;
+
+    $data = array_merge([
+        'amount' => $amount,
+        'shipping_method' => $request->input('shipping_method', ShippingMethodEnum::DEFAULT),
+        'shipping_option' => $request->input('shipping_option'),
+        'payment_fee' => $paymentFee,
+        'tax_amount' => $cart->rawTaxByItems($cartItems),
+        'sub_total' => $cart->rawSubTotalByItems($cartItems),
+        'coupon_code' => session()->get('applied_coupon_code'),
+    ], $generalData);
+
+    if ($createdOrder && $createdOrderId) {
+        if ($order && (is_string($createdOrder) || ! $createdOrder->eq($lastUpdatedAt))) {
+            $order->fill($data);
+        }
+    }
+
+    if (! $order) {
+        $data = array_merge($data, [
+            'shipping_amount' => 0,
+            'discount_amount' => 0,
+            'status' => OrderStatusEnum::PENDING,
+            'is_finished' => false,
+        ]);
+
+        $order = Order::query()->create($data);
+    }
+
+    $sessionData['created_order'] = $lastUpdatedAt;
+    $sessionData['created_order_id'] = $order->id;
+
+    return [$sessionData, $order];
+}
+
+
 
     public function createOrder(Request $request, int|string $currentUserId, string $token, array $cartItems)
     {

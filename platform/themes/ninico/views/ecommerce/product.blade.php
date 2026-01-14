@@ -21,10 +21,10 @@
 @endphp
 
 <div class="product-area row pb-25">
-    <div class="col-lg-6 col-md-12">
+    <div class="col-lg-5 col-md-12">
         @include(Theme::getThemeNamespace('views.ecommerce.includes.product-gallery'))
     </div>
-    <div class="col-lg-6 col-md-8">
+    <div class="col-lg-4 col-md-8">
         <div class="tpproduct-details__content">
             <div class="tpproduct-details__tag-area d-flex align-items-center mb-5">
                 @if ($product->isOnSale() && $product->sale_percent)
@@ -263,9 +263,9 @@
             </div>
         </div>
     </div>
-    <!--<div class="col-lg-3 col-md-4">-->
-    <!--    {!! dynamic_sidebar('product_detail_sidebar') !!}-->
-    <!--</div>-->
+    <div class="col-lg-3 col-md-4">
+        {!! dynamic_sidebar('product_detail_sidebar') !!}
+    </div>
 </div>
 
 @include(Theme::getThemeNamespace('views.ecommerce.includes.cross-sale-products'), ['products' => $product->crossSaleProducts])

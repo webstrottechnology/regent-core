@@ -23,7 +23,7 @@ $(function () {
                     $('#add-address-modal').modal('hide')
                     form.get(0).reset()
                     $('#address-histories').load(
-                        $('.page-wrapper form.js-base-form').prop('action') + ' #address-histories > *'
+                        $('.page-wrapper form.js-base-form7').prop('action') + ' #address-histories > *'
                     )
                 } else {
                     Botble.showNotice('error', data.message)
@@ -84,7 +84,7 @@ $(function () {
                     $('#edit-address-modal').modal('hide')
                     form.get(0).reset()
                     $('#address-histories').load(
-                        $('.page-wrapper form.js-base-form').prop('action') + ' #address-histories > *'
+                        $('.page-wrapper form.js-base-form8').prop('action') + ' #address-histories > *'
                     )
                 } else {
                     Botble.showNotice('error', data.message)

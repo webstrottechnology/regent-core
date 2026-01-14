@@ -103,6 +103,7 @@ class CustomerForm extends FormAbstract
                     ->defaultValue(0)
                     ->colspan(2)
             )
+
             ->add(
                 'avatar',
                 MediaImageField::class,
@@ -110,7 +111,6 @@ class CustomerForm extends FormAbstract
                     ->label(trans('plugins/ecommerce::customer.avatar'))
             )
             ->setBreakFieldPoint('status')
-            
             ->when($this->getModel()->getKey(), function (): void {
                 /**
                  * @var Customer $model

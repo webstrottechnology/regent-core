@@ -1,7 +1,10 @@
 <?php
 
 namespace Botble\Ecommerce\Repositories\Eloquent;
+
 use Illuminate\Support\Facades\Auth;
+
+
 use Botble\Base\Enums\BaseStatusEnum;
 use Botble\Base\Models\BaseModel;
 use Botble\Base\Models\BaseQueryBuilder;
@@ -20,6 +23,10 @@ use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+
+
+use Botble\Ecommerce\Models\ProductPmdPrice;
+
 
 class ProductRepository extends RepositoriesAbstract implements ProductInterface
 {
@@ -336,6 +343,9 @@ class ProductRepository extends RepositoriesAbstract implements ProductInterface
             'discounted_only' => false,
         ], $filters);
 
+
+        
+
         $isUsingDefaultCurrency = get_application_currency_id() == cms_currency()->getDefaultCurrency()->getKey();
 
         $priceRanges = $filters['price_ranges'];
@@ -449,12 +459,30 @@ class ProductRepository extends RepositoriesAbstract implements ProductInterface
             '), function ($join) {
                 return $join->on('products_with_final_price.id', '=', 'ec_products.id');
             });
-            
-                    // PMD PRODUCT FILTER
-        if (!Auth::guard('customer')->check() || Auth::guard('customer')->user()->is_pmd != 1) {
-            $this->model = $this->model->where('ec_products.is_pmd_product', 0);
-        }    
-                    
+
+
+
+
+
+// Line ~345 ke aas paas
+// PMD PRODUCT FILTER
+if (!Auth::guard('customer')->check() || Auth::guard('customer')->user()->is_pmd != 1) {
+    $this->model = $this->model->where('ec_products.is_pmd_product', 0);
+}
+ 
+
+
+
+
+// Add custom order for out-of-stock products
+$this->model = $this->model->orderByRaw('
+    CASE
+        WHEN ec_products.with_storehouse_management = 0 THEN
+            CASE WHEN ec_products.stock_status = ? THEN 1 ELSE 0 END
+        ELSE
+            CASE WHEN ec_products.quantity <= 0 AND ec_products.allow_checkout_when_out_of_stock = 0 THEN 1 ELSE 0 END
+    END ASC
+', [StockStatusEnum::OUT_OF_STOCK]);
 
         // Add custom order for out-of-stock products
         $this->model = $this->model->orderByRaw('
@@ -884,4 +912,41 @@ class ProductRepository extends RepositoriesAbstract implements ProductInterface
 
         return $data->limit($limit)->get();
     }
+
+
+  
+
+protected function afterCreateOrUpdate($request, Product $product): void
+    {
+        // PMD pricing OFF → sab delete
+        if (! $request->input('has_pmd_pricing')) {
+            $product->pmdPrices()->delete();
+            return;
+        }
+
+        // Old rows delete
+        $product->pmdPrices()->delete();
+
+        // New rows save
+        if ($request->has('pmd_prices')) {
+            $prices = $request->input('pmd_prices');
+
+            foreach ($prices['min_qty'] as $index => $minQty) {
+                if ($minQty === null || $prices['price'][$index] === null) {
+                    continue;
+                }
+
+                $product->pmdPrices()->create([
+                    'min_qty' => (int) $minQty,
+                    'max_qty' => (int) $prices['max_qty'][$index],
+                    'price'   => (float) $prices['price'][$index],
+                ]);
+            }
+        }
+    }
+
+
+
+
+
 }

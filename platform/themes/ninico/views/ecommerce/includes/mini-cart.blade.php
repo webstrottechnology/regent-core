@@ -1,4 +1,19 @@
 @if (is_plugin_active('ecommerce') && EcommerceHelper::isCartEnabled())
+    @php
+        // Simple test - just add PMD debug
+         $customer = auth('customer')->user(); // 🔥 IMPORTANT
+    $isPmdUser = false;
+    if ($customer) {
+        $isPmdUser = (bool) $customer->is_pmd;
+    }
+    @endphp
+    
+    <!-- Simple debug -->
+    <div style="background: yellow; padding: 5px; margin: 5px;">
+        PMD User: {{ $isPmdUser ? 'YES' : 'NO' }}
+    </div>
+    
+    <!-- Rest of your ORIGINAL mini-cart code here -->
     <div class="tpcart__product-list">
         <ul>
             @php($products = Cart::instance('cart')->products())

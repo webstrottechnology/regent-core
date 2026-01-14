@@ -21,10 +21,12 @@ class UserSeeder extends BaseSeeder
         DB::table('role_users')->truncate();
         DB::table('activations')->truncate();
 
+        $faker = $this->fake();
+
         $data = [
-            'first_name' => 'System',
-            'last_name' => 'Admin',
-            'email' => 'admin@company.com',
+            'first_name' => $faker->firstName(),
+            'last_name' => $faker->lastName(),
+            'email' => $faker->companyEmail(),
             'username' => config('core.base.general.demo.account.username'),
             'password' => config('core.base.general.demo.account.password'),
             'super_user' => 1,

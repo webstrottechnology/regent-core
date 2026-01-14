@@ -15,7 +15,7 @@ class DebugModeController extends BaseController
         if (! App::hasDebugModeEnabled()) {
             return $response
                 ->setError()
-                ->setMessage(trans('core/base::system.debug_mode_already_disabled'));
+                ->setMessage(__('The debug mode is already disabled.'));
         }
 
         $env = App::environmentFilePath();
@@ -23,7 +23,7 @@ class DebugModeController extends BaseController
         if (! File::isWritable($env)) {
             return $response
                 ->setError()
-                ->setMessage(trans('core/base::system.env_file_not_writable'));
+                ->setMessage(__('The .env file is not writable.'));
         }
 
         $replaced = preg_replace(
@@ -35,7 +35,7 @@ class DebugModeController extends BaseController
         if ($replaced === $input || $replaced === null) {
             return $response
                 ->setError()
-                ->setMessage(trans('core/base::system.unable_set_debug_mode'));
+                ->setMessage(__('Unable to set debug mode. No APP_DEBUG variable was found in the .env file.'));
         }
 
         File::put($env, $replaced);
@@ -43,6 +43,6 @@ class DebugModeController extends BaseController
         File::delete(App::getCachedConfigPath());
 
         return $response
-            ->setMessage(trans('core/base::system.debug_mode_disabled_successfully'));
+            ->setMessage(__('The debug mode has been disabled successfully.'));
     }
 }

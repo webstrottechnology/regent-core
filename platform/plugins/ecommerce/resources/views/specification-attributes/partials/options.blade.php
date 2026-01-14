@@ -34,7 +34,7 @@
 <script>
     $(function() {
         $(document)
-            .on('change', '.js-base-form select[name="type"]', (e) => {
+            .on('change', '.js-base-form9 select[name="type"]', (e) => {
                 const $currentTarget = $(e.currentTarget)
                 const $options = $currentTarget.closest('form').find('.specification-attribute-options')
 

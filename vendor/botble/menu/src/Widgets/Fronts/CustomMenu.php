@@ -6,9 +6,7 @@ use Botble\Base\Forms\FieldOptions\NameFieldOption;
 use Botble\Base\Forms\FieldOptions\SelectFieldOption;
 use Botble\Base\Forms\Fields\SelectField;
 use Botble\Base\Forms\Fields\TextField;
-use Botble\Base\Supports\RepositoryHelper;
 use Botble\Menu\Models\Menu;
-use Botble\Menu\Models\Menu as MenuModel;
 use Botble\Widget\AbstractWidget;
 use Botble\Widget\Forms\WidgetForm;
 
@@ -25,13 +23,6 @@ class CustomMenu extends AbstractWidget
 
     protected function settingForm(): WidgetForm|string|null
     {
-        $menus = MenuModel::query()
-            ->wherePublished();
-
-        $menus = RepositoryHelper::applyBeforeExecuteQuery($menus, new Menu())
-            ->pluck('name', 'slug')
-            ->all();
-
         return WidgetForm::createFromArray($this->getConfig())
             ->add('name', TextField::class, NameFieldOption::make())
             ->add(
@@ -39,7 +30,7 @@ class CustomMenu extends AbstractWidget
                 SelectField::class,
                 SelectFieldOption::make()
                     ->label(trans('packages/menu::menu.select_menu'))
-                    ->choices($menus)
+                    ->choices(Menu::query()->pluck('name', 'slug')->all())
                     ->searchable()
             );
     }

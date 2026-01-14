@@ -65,8 +65,43 @@ class Customer extends BaseModel implements
         'status' => CustomerStatusEnum::class,
         'dob' => 'date',
         'confirmed_at' => 'datetime',
-        'is_pmd' => 'bool',
+        'is_pmd' => 'boolean',
     ];
+
+
+        /**
+     * Check if customer is PMD user
+     */
+    public function isPmdUser(): bool
+    {
+        return $this->is_pmd == 1 || $this->is_pmd === true;
+    }
+    
+    /**
+     * Scope for PMD users
+     */
+    public function scopePmd($query)
+    {
+        return $query->where('is_pmd', 1);
+    }
+    
+    /**
+     * Get PMD pricing for a specific product
+     */
+    public function getPmdProductPrice($productId, $quantity = 1): ?float
+    {
+        if (!$this->isPmdUser()) {
+            return null;
+        }
+        
+        $product = Product::with(['pmdPrices'])->find($productId);
+        
+        if (!$product || !$product->hasPmdPricing()) {
+            return null;
+        }
+        
+        return $product->getPmdPriceForQuantity($quantity);
+    }
 
     public function sendPasswordResetNotification($token): void
     {

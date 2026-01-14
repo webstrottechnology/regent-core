@@ -123,6 +123,14 @@ class ProductForm extends FormAbstract
                     ->defaultValue($this->getModel()->is_pmd_product ?? 0)
             )
             ->add(
+                'has_pmd_pricing',
+                OnOffField::class,
+                OnOffFieldOption::make()
+                    ->label('Additional PMD Product Pricing')
+                    ->helperText('Enable quantity-based special pricing for PMD users only.')
+                    ->defaultValue($this->getModel()->has_pmd_pricing ?? 0)
+            )
+            ->add(
                 'categories[]',
                 TreeCategoryField::class,
                 SelectFieldOption::make()
@@ -255,6 +263,17 @@ class ProductForm extends FormAbstract
                 ],
             ])
             ->setBreakFieldPoint('status');
+
+        // PMD Pricing Matrix MetaBox
+        $this->addMetaBoxes([
+            'pmd-pricing-box' => [
+                'title' => 'PMD Pricing Matrix',
+                'content' => view('plugins/ecommerce::products.partials.pmd-pricing', [
+                    'product' => $this->getModel(),
+                ])->render(),
+                'priority' => 5,
+            ],
+        ]);
 
         if (EcommerceHelper::isProductSpecificationEnabled()) {
             $this->addMetaBox(
@@ -391,6 +410,7 @@ class ProductForm extends FormAbstract
                 'jquery-ui',
             ])
             ->addStylesDirectly('vendor/core/plugins/ecommerce/css/ecommerce.css')
-            ->addScriptsDirectly('vendor/core/plugins/ecommerce/js/edit-product.js');
+            ->addScriptsDirectly('vendor/core/plugins/ecommerce/js/edit-product.js')
+            ->addScriptsDirectly('vendor/core/plugins/ecommerce/js/pmd-pricing.js'); // ✅ YEH LINE ADD KARO
     }
 }

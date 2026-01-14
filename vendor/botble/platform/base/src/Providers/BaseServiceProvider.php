@@ -23,7 +23,6 @@ use Botble\Base\Supports\Breadcrumb;
 use Botble\Base\Supports\CustomResourceRegistrar;
 use Botble\Base\Supports\DashboardMenuItem;
 use Botble\Base\Supports\Database\Blueprint;
-use Botble\Base\Supports\EmailHandler;
 use Botble\Base\Supports\Filter;
 use Botble\Base\Supports\GoogleFonts;
 use Botble\Base\Supports\Helper;
@@ -85,8 +84,6 @@ class BaseServiceProvider extends ServiceProvider
         $this->app->singleton(AdminWidgetContract::class, AdminWidget::class);
 
         $this->app->singleton('core.google-fonts', GoogleFonts::class);
-
-        $this->app->singleton(EmailHandler::class);
 
         $this->registerRouteMacros();
 
@@ -346,14 +343,9 @@ class BaseServiceProvider extends ServiceProvider
             ];
 
             if ($extraUrl = Arr::get($baseConfig, 'allowed_iframe_urls', [])) {
-                $extraUrls = array_map(
-                    fn ($url) => preg_replace('#^https?://(www\.)?#', '', trim($url)),
-                    explode('|', $extraUrl)
-                );
-
                 $allowedIframeUrls = [
                     ...$allowedIframeUrls,
-                    ...$extraUrls,
+                    ...explode('|', $extraUrl),
                 ];
             }
 

@@ -14,8 +14,6 @@ class LoginListener
             return;
         }
 
-        $event->user->last_login = Carbon::now();
-        $event->user->sessions_invalidated_at = null;
-        $event->user->save();
+        $event->user->update(['last_login' => Carbon::now()]);
     }
 }

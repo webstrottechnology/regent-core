@@ -3,190 +3,6 @@
 }
 
 
-
-.tpproduct__thumb {
-    position: relative;
-    border: 1px solid #C7C8CC;
-}
-
-
-
-
-
-
-.training-area .contact-area .col-lg-8.col-12 {
-    width: 100% !important;
-}
-
-
-
-
-
-.training-area .tpcontact__form form{
-    display: block;
-    position: relative;
-    z-index: 999;
-    -webkit-clip-path: polygon(0 0, 75% 0, 97% 100%, 0 100%);
-    clip-path: polygon(0 0, 75% 0, 97% 100%, 0 100%);
-    padding: 40px 20px 40px 0px;
-}
-
-
-.training-area .tpcontact__form:after {
-    content: '';
-    position: absolute;
-    left: -375px;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: url(images/banner/bg-7.png) no-repeat center;
-    /*background-size: cover;*/
-    background: #030B1A;
-   clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
-    max-width: 1400px;
-    margin: 110px 0px;
-}
-
-
-
-
-
-.tpproduct__thumb {
-    margin-bottom: 0;
-    }
-    
-    
-.tpproduct__thumb img {
-    border-radius: 0;
-    height: 210px !important;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    object-fit: contain;
-}
- 
- .training-area .tpcontact__info {
-    display: none;
-}
-
-.training-area .tpcontact__form #botble-contact-forms-fronts-contact-form{
-    position:relative;
-    z-index: 999;
-}
-
-
-
-
-.tpcontact__form form.contact-form .contact-form-group input.contact-form-input{
-    border:none;
-}
-
-
-section.training-area.section.bg-img.jarallax.af.home-contact1 {
-    overflow-x: visible !important;
-}
-
-
-main>.ck-content div>section, main>.ck-content>section {
-    overflow-x: visible !important;
-}
-
-
- 
-.tpproduct__content {
-    padding: 20px 20px 40px 20px;
-    border: 1px solid #C7C8CC;
-}
- 
-.tpproduct.pb-15.mb-30.product-item {
-    padding-bottom: 0px;
-}
-
-
-
-.product-area .justify-content-md-end .d-md-none {
-    display: block !important;
-}
-
-
-.product-filter-content .justify-content-md-end {
-    align-items: center !important;
-}
-
-.training-area .contact-area .col-lg-4.col-12 {
-    display: none;
-}
-
-
-input#coupon_code {
-    width: auto;
-}
-
-
-.tp-btn{
-    border: 1px solid transparent;
-}
-
-button.tp-btn:hover ,.tpcart-btn:hover{
-    background: #fff;
-    color: #111;
-    border: 1px solid #111;
-}
-
-
-
-
-
-
-
-
-section.cart-area.pt-80.pb-80.wow.fadeInUp {
-    padding-top: 0;
-    padding-bottom: 60px;
-}
-
-
-.tpcart-btn, .tpcheck-btn {
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.2;
-    padding: 17px 33px;
-}
-
-
-
-
-
-/*footer CSS*/
-
-.useFullBox {
-  position: relative;
-}
-
-.useFullBox ul {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.useFullBox ul li a {
-  font-size: 22px;
-  color: #878787;
-  font-family: "Poppins", sans-serif;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.5s;
-}
-
-.useFullBox ul li a:hover {
-   color: #fff;
-}
-
-
-
 .sale-popup-container-wrap {
   z-index: 9999 !important;
 }
@@ -200,10 +16,10 @@ section.cart-area.pt-80.pb-80.wow.fadeInUp {
 }
 
 
-
 .tp-md-lg-header.d-md-none.pt-20.pb-20 {
     background: #030B1A;
 }
+
 
 
 .header-search-bar .header-search-icon i {
@@ -212,21 +28,10 @@ section.cart-area.pt-80.pb-80.wow.fadeInUp {
 
 
 .header-search-bar input.input-search-product {
-    padding: 6px 10px;
+    padding: 6px 3px;
     background: transparent;
     color:#fff;
 }
-
-
-section.subscribe-area .col-lg-3.col-md-4 {
-    width: auto;
-}
-
-
-section.subscribe-area .footer-widget.footer-col-5.mb-40 {
-    margin-bottom: 0;
-}
-
 
 
  
@@ -259,15 +64,6 @@ section.subscribe-area .footer-widget.footer-col-5.mb-40 {
 .tp-breadcrumb__bg {
     position: relative;
     z-index: 1;
-}
-
-section.category-area.pt-70.pb-70 {
-    display: none;
-}
-
-
-main .pt-80.pb-80 {
-    padding-bottom: 0;
 }
 
 
@@ -569,20 +365,12 @@ main .pt-80.pb-80 {
      /* padding-top: 160px; */
    }
    
-   .training-area .training-con {
-        padding-top: 0;
-    }
-    
-    .training-area .tpcontact__form #botble-contact-forms-fronts-contact-form {
-            padding: 0;
-        }
-       
   
  }
 
  @media only screen and (max-width: 768px) {
    .slider-area .item-content .item-slider .contents {
-     padding-top: 0px !important;
+     padding-top: 125px;
    }
 
    header .main-header {
@@ -967,6 +755,7 @@ main .pt-80.pb-80 {
 
  .subscribe-area .subscribe form input {
    display: inline-block;
+   width: 300px !important;
    line-height: 50px;
    height: 50px;
    background: rgba(255, 255, 255, 0.1);
@@ -977,17 +766,6 @@ main .pt-80.pb-80 {
    color: #fff;
    margin-bottom: 10px;
  }
- 
- section.subscribe-area div#newsletter-email-error {
-    position: absolute;
-        bottom: -19px;
-    color:black;
-}
-
-
-
- 
- 
 
  @media only screen and (max-width: 480px) {
    .subscribe-area .subscribe form input {
@@ -1321,7 +1099,7 @@ main .pt-80.pb-80 {
    position: absolute;
    width: 180px;
    height: 180px;
-   background-image: url('../storage/icon1.png');
+   background-image: url('../assets/images/icon1.png');
    background-position: center;
    background-repeat: no-repeat;
    background-size: contain;
@@ -1413,7 +1191,7 @@ main .pt-80.pb-80 {
 
 
 
-
+ @import url("https://fonts.googleapis.com/css?family=Audiowide|Poppins:300,400,400i,500,700,800,900");
 
  /*-------------------------------------
     Template Name: Weapon Store - Gun Shop HTML Template
@@ -1843,12 +1621,10 @@ main .pt-80.pb-80 {
 
  @media only screen and (max-width: 767px) {
    .twitter-posts .owl-controls .owl-buttons {
+
      top: 108% !important;
      left: 0px;
    }
-       section.slider-area {
-        margin-bottom: 0;
-    }
  }
 
  .section2 {
@@ -4266,20 +4042,22 @@ main .pt-80.pb-80 {
 
  .slider-area .item-content .item-slider.items1 {
    position: relative;
- 
+   background: url(images/sliders/1.jpg);
  }
 
  .slider-area .item-content .item-slider.items2 {
    position: relative;
-   
+   background: url(images/sliders/2.jpg);
  }
 
  .slider-area .item-content .item-slider.items3 {
    position: relative;
+   background: url(images/sliders/3.jpg);
  }
 
  .slider-area .item-content .item-slider.items4 {
    position: relative;
+   background: url(images/sliders/4.jpg);
  }
 
  .slider-area .item-content .item-slider .contents {
@@ -4297,7 +4075,7 @@ main .pt-80.pb-80 {
 
  @media only screen and (max-width: 768px) {
    .slider-area .item-content .item-slider .contents {
-     padding-top: 0px;
+     padding-top: 125px;
    }
 
    header .main-header {
@@ -5116,7 +4894,7 @@ main .pt-80.pb-80 {
    position: relative;
    z-index: 999;
    padding: 40px 20px 40px 0px;
-   /* background: url(../storage/banner4.png);
+   /* background: url(../assets/images/banner4.png);
   background-position: center;
   background-size: cover; */
 
@@ -7213,30 +6991,11 @@ main .pt-80.pb-80 {
      margin-bottom: 10px;
    }
  }
- 
- 
- .footer-widget__newsletter {
-    position: relative;
-}
-
-
-
 
  @media (max-width: 767px) {
    .product-details .single-product-content .buttons a.heart {
      margin-top: 10px;
    }
-   
-   section.subscribe-area div#newsletter-email-error {
-    position: relative;
-}
-   
-    .subscribe-area .subscribe form input {
-            width: 100% !important;
-    }
-    .subscribe-area .subscribe form{
-        display:block !important;
-    }
 
    .product-details .pro-details .tab-content .tab-pane .con p {
      width: 100%;
@@ -7301,7 +7060,7 @@ main .pt-80.pb-80 {
    position: absolute;
    width: 180px;
    height: 180px;
-   background-image: url('../storage/icon1.png');
+   background-image: url('../assets/images/icon1.png');
    background-position: center;
    background-repeat: no-repeat;
    background-size: contain;
@@ -9532,6 +9291,7 @@ main .pt-80.pb-80 {
  }
 
  .news_left_wrapper {
+   background: url('../assets/images/blog/1.jpg') 50% 0 repeat-y;
    width: 100%;
    height: 100%;
    background-size: cover;
@@ -10573,7 +10333,7 @@ main .pt-80.pb-80 {
 
  .contact-area-bg-wrap {
    width: 100%;
-   background-image: url(../storage/error_page_bg_img.png);
+   background-image: url(../assets/images/error_page_bg_img.png);
    background-position: center;
    background-repeat: no-repeat;
  }
@@ -11121,7 +10881,7 @@ main .pt-80.pb-80 {
  .genderSelect::after {
    content: '';
    position: absolute;
-   background: url(../storage/white-arrow-down.png);
+   background: url(../assets/images/white-arrow-down.png);
    background-position: center;
    background-repeat: no-repeat;
    width: 40px;
@@ -11140,7 +10900,7 @@ main .pt-80.pb-80 {
    width: 100%;
    height: 100%;
    position: relative;
-   background: url(../storage/bg-2.png);
+   background: url(../assets/images/banner/bg-2.png);
    padding: 70px 0px;
    background-repeat: no-repeat;
    background-size: cover;
@@ -11832,7 +11592,7 @@ main .pt-80.pb-80 {
  .Error_Main_Wrapper {
    width: 100%;
    position: relative;
-   background-image: url('../storage/error_page_bg_img.png');
+   background-image: url('../assets/images/error_page_bg_img.png');
    background-repeat: no-repeat;
    background-size: cover;
    padding: 132px 0px 132px 0px;
@@ -11904,7 +11664,7 @@ main .pt-80.pb-80 {
  .shopping_cart_main_wrapper {
    width: 100%;
    position: relative;
-   background-image: url('../storage/error_page_bg_img.png');
+   background-image: url('../assets/images/error_page_bg_img.png');
    background-repeat: no-repeat;
    background-size: cover;
    padding: 100px 0px 100px 0px;
@@ -11989,7 +11749,7 @@ main .pt-80.pb-80 {
    border-radius: 4px;
    font-size: 14px;
    appearance: none;
-   background-image: url('../storage/black-arrow-down.svg');
+   background-image: url('../assets/images/black-arrow-down.svg');
    background-repeat: no-repeat;
    background-position: right 10px center;
    outline: none;
@@ -12129,7 +11889,7 @@ main .pt-80.pb-80 {
  }
 
  .shopping_cart_main_wrapper .shopping_cart .payment select {
-   background-image: url('../storage/black-arrow-down.svg');
+   background-image: url('../assets/images/black-arrow-down.svg');
    background-repeat: no-repeat;
    background-position: right 10px center;
  }
@@ -12175,7 +11935,7 @@ main .pt-80.pb-80 {
  .Partner_Main_Wrapper {
    width: 100%;
    position: relative;
-   background-image: url('../storage/trusted-section-bg-img-2.png');
+   background-image: url('../assets/images/trusted_section_bg_img.png');
    background-repeat: no-repeat;
    background-size: cover;
    padding: 100px 0px 100px 0px;
@@ -12187,7 +11947,7 @@ main .pt-80.pb-80 {
  .Checkout_Main_Wrapper {
    width: 100%;
    position: relative;
-   background-image: url('../storage/error_page_bg_img.png');
+   background-image: url('../assets/images/error_page_bg_img.png');
    background-repeat: no-repeat;
    padding: 100px 0px 100px 0px;
  }
@@ -12270,7 +12030,7 @@ main .pt-80.pb-80 {
  }
 
  .Checkout_Main_Wrapper .checkout_inner_wrap .Checkout_wrap1 .billing-container select {
-   background-image: url('../storage/black-arrow-down.svg');
+   background-image: url('../assets/images/black-arrow-down.svg');
    background-repeat: no-repeat;
    background-position: right 10px center;
    appearance: none;
@@ -12483,7 +12243,7 @@ main .pt-80.pb-80 {
    width: 100%;
    height: 700px;
    padding: 100px 0px 100px 0px;
-   background-image: url('../storage/error_page_bg_img.png');
+   background-image: url('../assets/images/error_page_bg_img.png');
    background-position: center;
    position: relative;
  }
@@ -13285,18 +13045,11 @@ h4.bb-product-filter-title {
     color: #0198B5;
 }
 
-a.bb-product-filter-link svg {
-    margin-top: 6px;
-}
-
 a.bb-product-filter-link {
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 18px;
     color: #030B1A;
-    display: grid;
-    grid-template-columns: 24px 1fr;
-    align-items: flex-start;
 }
 
 
@@ -14536,7 +14289,7 @@ h4 {
 .events-area {
   width: 100%;
   height: 100%;
-  background-image: url(../storage/trusted-section-bg-img-2.png);
+  background-image: url(../assets/images/trusted_section_bg_img.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -14544,7 +14297,7 @@ h4 {
 .products-area {
   width: 100%;
   height: 100%;
-  background-image: url(../storage/trusted-section-bg-img-2.png);
+  background-image: url(../assets/images/trusted_section_bg_img.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -14552,7 +14305,7 @@ h4 {
 .gallery-area {
   width: 100%;
   height: 100%;
-  background-image: url(../storage/trusted-section-bg-img-2.png);
+  background-image: url(../assets/images/trusted_section_bg_img.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -14560,7 +14313,7 @@ h4 {
 .blog-area {
   width: 100%;
   height: 100%;
-  background-image: url(../storage/trusted-section-bg-img-2.png);
+  background-image: url(../assets/images/trusted_section_bg_img.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -16506,19 +16259,22 @@ header .main-header .sing-in-btn {
 
 .slider-area .item-content .item-slider.items1 {
   position: relative;
+  background: url(images/sliders/1.jpg);
 }
 
 .slider-area .item-content .item-slider.items2 {
   position: relative;
-  
+  background: url(images/sliders/2.jpg);
 }
 
 .slider-area .item-content .item-slider.items3 {
   position: relative;
+  background: url(images/sliders/3.jpg);
 }
 
 .slider-area .item-content .item-slider.items4 {
   position: relative;
+  background: url(images/sliders/4.jpg);
 }
 
 .slider-area .item-content .item-slider .contents {
@@ -16557,7 +16313,7 @@ header .main-header .sing-in-btn {
 
 @media only screen and (max-width: 768px) {
   .slider-area .item-content .item-slider .contents {
-    padding-top: 0px;
+    padding-top: 125px;
   }
 
   header .main-header {
@@ -16764,7 +16520,9 @@ header .main-header .sing-in-btn {
 /*....................................
 4. About area start here
 ....................................*/
-
+.about-area {
+  background: url(images/banner/bg-1.jpg);
+}
 
 .about-area .buttons .btn1:hover {
   color: #0198B5;
@@ -17001,7 +16759,7 @@ header .main-header .sing-in-btn {
 6. Banner area start here
 ....................................*/
 .banner-area {
-  background: url(../storage/bg-2.png);
+  background: url(../assets/images/banner/bg-2.png);
   position: relative;
   display: block;
 }
@@ -17100,7 +16858,7 @@ header .main-header .sing-in-btn {
 }
 
 .banner-area2 {
-  background: url(../storage/banner-img-2.png);
+  background: url(../assets/images/banner-img-2.png);
   position: relative;
   display: block;
   padding: 250px 0;
@@ -17351,8 +17109,7 @@ header .main-header .sing-in-btn {
 
 .training-area {
   position: relative;
-  background: url("/storage/bg-5-1.png");
-  
+  background: url(images/banner/bg-5.png);
   overflow: hidden;
   vertical-align: middle;
   display: block;
@@ -17370,7 +17127,7 @@ p.buttons {
   position: relative;
   z-index: 999;
   padding: 40px 20px 40px 0px;
-  /* background: url(../storage/banner4.png);
+  /* background: url(../assets/images/banner4.png);
   background-position: center;
   background-size: cover; */
 
@@ -17796,21 +17553,10 @@ p.buttons {
 }
 
 .subscribe-area .subscribe form button {
-      background: #fff;
-    color: #111;
-    min-width: 194px !important;
-    max-height: 50px;
-    display: inline-block;
-    position: relative;
-    padding: 0 60px;
-    line-height: 50px;
-    height: 50px;
-    text-transform: uppercase;
-    font-weight: 500;
-    cursor: pointer;
-    text-transform: capitalize;
-    border: 1px solid transparent;
-    font-family: 'Audiowide';
+  background: #fff;
+  color: #111;
+  min-width: 194px !important;
+  max-height: 50px;
 }
 
 .subscribe-area .subscribe form button:hover {
@@ -19436,7 +19182,7 @@ input[type="email"] {
 14. Client area start here
 ....................................*/
 .partner-area {
-  background: url('../storage/trusted-section-bg-img-2.png');
+  background: url('../assets/images/trusted_section_bg_img.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -19549,7 +19295,7 @@ input[type="email"] {
   position: absolute;
   width: 180px;
   height: 180px;
-  background-image: url('../storage/icon1.png');
+  background-image: url('../assets/images/icon1.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -21000,7 +20746,7 @@ input[type="email"] {
 footer {
   position: relative;
   display: block;
-  background: url('/storage/bg-6.png') no-repeat center;
+  background: url(images/banner/bg-6.png) no-repeat center;
   background-size: cover;
   padding-top: 75px;
 }
@@ -21781,6 +21527,7 @@ footer .footer-top .products-foo ul li img {
 }
 
 .news_left_wrapper {
+  background: url('../assets/images/blog/1.jpg') 50% 0 repeat-y;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -22822,7 +22569,7 @@ footer .footer-top .products-foo ul li img {
 
 .contact-area-bg-wrap {
   width: 100%;
-  background-image: url(../storage/error_page_bg_img.png);
+  background-image: url(../assets/images/error_page_bg_img.png);
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -23369,7 +23116,7 @@ footer .footer-top .products-foo ul li img {
 .genderSelect::after {
   content: '';
   position: absolute;
-  background: url(../storage/white-arrow-down.png);
+  background: url(../assets/images/white-arrow-down.png);
   background-position: center;
   background-repeat: no-repeat;
   width: 40px;
@@ -23388,7 +23135,7 @@ footer .footer-top .products-foo ul li img {
   width: 100%;
   height: 100%;
   position: relative;
-  background: url(../storage/bg-2.png);
+  background: url(../assets/images/banner/bg-2.png);
   padding: 70px 0px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24080,7 +23827,7 @@ footer .footer-top .products-foo ul li img {
 .Error_Main_Wrapper {
   width: 100%;
   position: relative;
-  background-image: url('../storage/error_page_bg_img.png');
+  background-image: url('../assets/images/error_page_bg_img.png');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 132px 0px 132px 0px;
@@ -24152,7 +23899,7 @@ footer .footer-top .products-foo ul li img {
 .shopping_cart_main_wrapper {
   width: 100%;
   position: relative;
-  background-image: url('../storage/error_page_bg_img.png');
+  background-image: url('../assets/images/error_page_bg_img.png');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px 0px 100px 0px;
@@ -24237,7 +23984,7 @@ footer .footer-top .products-foo ul li img {
   border-radius: 4px;
   font-size: 14px;
   appearance: none;
-  background-image: url(../storage/black-arrow-down.svg);
+  background-image: url(../assets/images/black-arrow-down.svg);
   background-repeat: no-repeat;
   background-position: right 10px center;
   outline: none;
@@ -24377,7 +24124,7 @@ footer .footer-top .products-foo ul li img {
 }
 
 .shopping_cart_main_wrapper .shopping_cart .payment select {
-  background-image: url(../storage/black-arrow-down.svg);
+  background-image: url(../assets/images/black-arrow-down.svg);
   background-repeat: no-repeat;
   background-position: right 10px center;
 }
@@ -24423,7 +24170,7 @@ footer .footer-top .products-foo ul li img {
 .Partner_Main_Wrapper {
   width: 100%;
   position: relative;
-  background-image: url('../storage/trusted-section-bg-img-2.png');
+  background-image: url('../assets/images/trusted_section_bg_img.png');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px 0px 100px 0px;
@@ -24435,7 +24182,7 @@ footer .footer-top .products-foo ul li img {
 .Checkout_Main_Wrapper {
   width: 100%;
   position: relative;
-  background-image: url('../storage/error_page_bg_img.png');
+  background-image: url('../assets/images/error_page_bg_img.png');
   background-repeat: no-repeat;
   padding: 100px 0px 100px 0px;
 }
@@ -24518,7 +24265,7 @@ textarea {
 }
 
 .Checkout_Main_Wrapper .checkout_inner_wrap .Checkout_wrap1 .billing-container select {
-  background-image: url(../storage/black-arrow-down.svg);
+  background-image: url(../assets/images/black-arrow-down.svg);
   background-repeat: no-repeat;
   background-position: right 10px center;
   appearance: none;
@@ -24746,7 +24493,7 @@ textarea {
   width: 100%;
   height: 700px;
   padding: 100px 0px 100px 0px;
-  background-image: url('../storage/error_page_bg_img.png');
+  background-image: url('../assets/images/error_page_bg_img.png');
   background-position: center;
   position: relative;
 }

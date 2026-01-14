@@ -7,10 +7,8 @@ use Botble\Base\Facades\BaseHelper;
 use Botble\Support\Services\ProduceServiceInterface;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use Throwable;
 
 class ChangePasswordService implements ProduceServiceInterface
@@ -34,8 +32,6 @@ class ChangePasswordService implements ProduceServiceInterface
         $password = $request->input('password');
 
         $user->password = Hash::make($password);
-        $user->sessions_invalidated_at = Carbon::now();
-        $user->setRememberToken(Str::random(60));
         $user->save();
 
         /**

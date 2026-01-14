@@ -1,3 +1,7 @@
-.tpproduct .tpproduct__priceinfo-list span {
-    display: inline;
+table.table.table-bordered td {
+    text-align: center;
+}
+
+table.table.table-bordered td .btn i {
+    margin: 0;
 }

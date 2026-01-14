@@ -65,40 +65,6 @@ class BaseHelper
         return $this->formatDate($date, $format, $translated);
     }
 
-    public function parseDate(?string $date, ?string $format = null): ?Carbon
-    {
-        if (empty($date)) {
-            return null;
-        }
-
-        if (empty($format)) {
-            $format = $this->getDateFormat();
-        }
-
-        $formats = [
-            $format,
-            str_replace(['d', 'm'], ['j', 'n'], $format),
-            'd/m/Y',
-            'j/n/Y',
-            'd-m-Y',
-            'j-n-Y',
-            'Y/m/d',
-            'Y-m-d',
-            'm/d/Y',
-            'n/j/Y',
-        ];
-
-        foreach ($formats as $tryFormat) {
-            try {
-                return Carbon::createFromFormat($tryFormat, $date);
-            } catch (Throwable) {
-                continue;
-            }
-        }
-
-        return rescue(fn () => Carbon::parse($date));
-    }
-
     public function humanFilesize(float $bytes, int $precision = 2): string
     {
         $units = ['B', 'KB', 'MB', 'GB', 'TB'];
@@ -166,7 +132,7 @@ class BaseHelper
         return $files;
     }
 
-    public function getAdminPrefix(): ?string
+    public function getAdminPrefix(): string
     {
         $prefix = config('core.base.general.admin_dir');
 
@@ -288,24 +254,6 @@ class BaseHelper
     public function getPhoneValidationRule(bool $asArray = false): string|array
     {
         $rule = config('core.base.general.phone_validation_rule');
-
-        $min = setting('phone_number_min_length', 8);
-        $max = setting('phone_number_max_length', 15);
-
-        $hasMin = preg_match('/min:\d+/', $rule);
-        $hasMax = preg_match('/max:\d+/', $rule);
-
-        if ($hasMin) {
-            $rule = preg_replace('/min:\d+/', "min:$min", $rule);
-        } else {
-            $rule = "min:$min|" . $rule;
-        }
-
-        if ($hasMax) {
-            $rule = preg_replace('/max:\d+/', "max:$max", $rule);
-        } else {
-            $rule = "max:$max|" . $rule;
-        }
 
         if ($asArray) {
             return explode('|', $rule);

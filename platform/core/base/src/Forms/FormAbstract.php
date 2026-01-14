@@ -88,7 +88,7 @@ abstract class FormAbstract extends Form implements ExtensibleContract
         $this->setMethod('POST');
         $this->template('core/base::forms.form');
         $this->setFormOption('id', strtolower(Str::slug(Str::snake(static::class))));
-        $this->setFormOption('class', 'js-base-form');
+        $this->setFormOption('class', 'js-base-form2');
     }
 
     public function setup(): void

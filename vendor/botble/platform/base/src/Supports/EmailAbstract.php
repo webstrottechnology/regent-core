@@ -22,13 +22,15 @@ class EmailAbstract extends Mailable
 
     public function __construct(?string $content, ?string $subject, array $data = [])
     {
-        $this->content = $content ?? '';
+        $this->content = $content;
         $this->subject = $subject;
         $this->data = $data;
     }
 
     public function build(): EmailAbstract
     {
+        $inlineCss = new CssToInlineStyles();
+
         $fromAddress = setting('email_from_address', config('mail.from.address'));
 
         $fromName = setting('email_from_name', config('mail.from.name'));
@@ -42,17 +44,10 @@ class EmailAbstract extends Mailable
             }
         }
 
-        $content = trim($this->content);
-
-        if ($content !== '') {
-            $inlineCss = new CssToInlineStyles();
-            $content = $inlineCss->convert($content, EmailHandler::getCssContent());
-        }
-
         $email = $this
             ->from($fromAddress, $fromName)
             ->subject($this->subject)
-            ->html($content);
+            ->html($inlineCss->convert($this->content, EmailHandler::getCssContent()));
 
         $attachments = Arr::get($this->data, 'attachments');
         if (! empty($attachments)) {
@@ -60,26 +55,7 @@ class EmailAbstract extends Mailable
                 $attachments = [$attachments];
             }
             foreach ($attachments as $file) {
-                if (is_array($file)) {
-                    if (isset($file['data'])) {
-                        $email->attachData(
-                            $file['data'],
-                            $file['name'] ?? 'attachment',
-                            ['mime' => $file['mime'] ?? 'application/octet-stream']
-                        );
-                    } elseif (isset($file['file'])) {
-                        $options = [];
-                        if (! empty($file['name'])) {
-                            $options['as'] = $file['name'];
-                        }
-                        if (! empty($file['mime'])) {
-                            $options['mime'] = $file['mime'];
-                        }
-                        $email->attach($file['file'], $options);
-                    }
-                } else {
-                    $email->attach($file);
-                }
+                $email->attach($file);
             }
         }
 

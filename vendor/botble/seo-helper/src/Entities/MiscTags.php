@@ -147,31 +147,9 @@ class MiscTags implements MiscTagsContract
     protected function addCanonical(): static
     {
         if ($this->hasUrl()) {
-            $canonicalUrl = $this->stripQueryParameters($this->currentUrl);
-            $this->add('canonical', apply_filters('core_seo_canonical', $canonicalUrl));
+            $this->add('canonical', apply_filters('core_seo_canonical', $this->currentUrl));
         }
 
         return $this;
-    }
-
-    protected function stripQueryParameters(string $url): string
-    {
-        $parsedUrl = parse_url($url);
-
-        $cleanUrl = ($parsedUrl['scheme'] ?? 'https') . '://' . ($parsedUrl['host'] ?? '');
-
-        if (isset($parsedUrl['port'])) {
-            $cleanUrl .= ':' . $parsedUrl['port'];
-        }
-
-        if (isset($parsedUrl['path'])) {
-            $cleanUrl .= $parsedUrl['path'];
-        }
-
-        if (isset($parsedUrl['fragment'])) {
-            $cleanUrl .= '#' . $parsedUrl['fragment'];
-        }
-
-        return $cleanUrl;
     }
 }

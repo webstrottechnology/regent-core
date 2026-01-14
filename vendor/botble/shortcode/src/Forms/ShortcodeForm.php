@@ -47,12 +47,12 @@ class ShortcodeForm extends FormAbstract
                     'enable_lazy_loading',
                     SelectField::class,
                     SelectFieldOption::make()
-                        ->label(trans('packages/shortcode::shortcode.form.enable_lazy_loading'))
+                        ->label(__('Enable lazy loading'))
                         ->choices([
-                            'no' => trans('packages/shortcode::shortcode.form.no'),
-                            'yes' => trans('packages/shortcode::shortcode.form.yes'),
+                            'no' => __('No'),
+                            'yes' => __('Yes'),
                         ])
-                        ->helperText(trans('packages/shortcode::shortcode.form.lazy_loading_helper'))
+                        ->helperText(__('When enabled, shortcode content will be loaded sequentially as the page loads, rather than all at once. This can help improve page load times.'))
                 );
 
             return $this;
@@ -80,12 +80,12 @@ class ShortcodeForm extends FormAbstract
                     'enable_caching',
                     SelectField::class,
                     SelectFieldOption::make()
-                        ->label(trans('packages/shortcode::shortcode.form.enable_caching'))
+                        ->label(__('Enable caching'))
                         ->choices([
-                            'yes' => trans('packages/shortcode::shortcode.form.yes'),
-                            'no' => trans('packages/shortcode::shortcode.form.no'),
+                            'yes' => __('Yes'),
+                            'no' => __('No'),
                         ])
-                        ->helperText(trans('packages/shortcode::shortcode.form.caching_helper'))
+                        ->helperText(__('When enabled, this shortcode content will be cached to improve performance. Disable for dynamic content that changes frequently.'))
                 );
 
             return $this;
@@ -113,7 +113,7 @@ class ShortcodeForm extends FormAbstract
                         AlertField::class,
                         AlertFieldOption::make()
                         ->type('warning')
-                        ->content(trans('packages/shortcode::shortcode.form.cache_disabled_notice'))
+                        ->content(__('Due to UI issues, cache for this UI block is disabled via code. This shortcode will not be cached even if caching is enabled.'))
                     );
             }
 
@@ -134,7 +134,7 @@ class ShortcodeForm extends FormAbstract
                         AlertField::class,
                         AlertFieldOption::make()
                         ->type('warning')
-                        ->content(trans('packages/shortcode::shortcode.form.lazy_loading_disabled_notice'))
+                        ->content(__('Lazy loading for this UI block is disabled via code. This shortcode will not use lazy loading even if enabled.'))
                     );
             }
 
@@ -159,8 +159,8 @@ class ShortcodeForm extends FormAbstract
             'custom_css',
             TextareaField::class,
             TextareaFieldOption::make()
-                ->label(trans('packages/shortcode::shortcode.form.custom_css'))
-                ->helperText(trans('packages/shortcode::shortcode.form.custom_css_helper'))
+                ->label(__('Custom CSS (optional)'))
+                ->helperText(__('Please enter your CSS code on a single line. It wont work if it has break line. Some special characters may be escaped.'))
         );
     }
 
@@ -171,7 +171,7 @@ class ShortcodeForm extends FormAbstract
                     'background_color',
                     ColorField::class,
                     ColorFieldOption::make()
-                        ->label(trans('packages/shortcode::shortcode.form.background_color'))
+                        ->label(__('Background color (optional)'))
                         ->when($defaultColor, fn (ColorFieldOption $option) => $option->defaultValue($defaultColor))
                 );
     }
@@ -183,9 +183,9 @@ class ShortcodeForm extends FormAbstract
                 'text_color',
                 ColorField::class,
                 ColorFieldOption::make()
-                    ->label(trans('packages/shortcode::shortcode.form.text_color'))
+                    ->label(__('Text color (optional)'))
                     ->when($defaultColor, fn (ColorFieldOption $option) => $option->defaultValue($defaultColor))
-                    ->helperText(trans('packages/shortcode::shortcode.form.text_color_helper'))
+                    ->helperText(__('This color may be overridden by the theme. If it doesnt work, please add your CSS in Appearance -> Custom CSS.'))
             );
     }
 
@@ -196,7 +196,7 @@ class ShortcodeForm extends FormAbstract
                 'background_image',
                 MediaImageField::class,
                 MediaImageFieldOption::make()
-                    ->label(trans('packages/shortcode::shortcode.form.background_image'))
+                    ->label(__('Background image (optional)'))
                     ->when($defaultImage, fn (MediaImageFieldOption $option) => $option->defaultValue($defaultImage))
             );
     }

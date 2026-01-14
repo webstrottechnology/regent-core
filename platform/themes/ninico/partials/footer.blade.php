@@ -76,77 +76,51 @@
                                 <a href="/about" class="btn3">read more <i class="fas fa-arrow-right"></i></a>
                             </div>
                             <ul class="foo-social">
-                                <!-- Facebook -->
-                                <li>
-                                    <a href="https://www.facebook.com/profile.php?id=61571614301088">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                            
-                                <!-- SVG Icon (used as custom X/Twitter style) -->
-                            
-                                <!-- Instagram -->
-                                <li>
-                                    <a href="https://www.instagram.com/regent.rogue/">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                            
-                                <!-- LinkedIn -->
-                                <li>
-                                    <a href="https://www.linkedin.com/company/regentrogue/">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#">
+                                        <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12.6011 0L8.55906 4.47295L5.06392 0H0L6.04935 7.65673L0.316343 14H2.77104L7.19579 9.10489L11.0631 14H16L9.69417 5.92973L15.0542 0H12.6011ZM11.7403 12.5785L2.8657 1.34635H4.32443L13.0995 12.5777L11.7403 12.5785Z"
+                                                fill="white" />
+                                        </svg>
+                                    </a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                             </ul>
-
                         </div>
                     </div>
-                     <div class="col-lg-4 col-md-6">
-                        <h2>UseFull Links</h2>
-                        <div class="useFullBox">
-                            <ul>
-                                <li>
-                                    <a href="/about">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5.15385 1L10 6L5.15385 11M1 1L5.84615 6L1 11" stroke="#0198B5"
-                                                stroke-width="1.5"></path>
-                                        </svg>
-                                        About
-                                    </a>
-                                </li>
-                                 <li>
-                                    <a href="/partners">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5.15385 1L10 6L5.15385 11M1 1L5.84615 6L1 11" stroke="#0198B5"
-                                                stroke-width="1.5"></path>
-                                        </svg>
-                                        Partners
-                                    </a>
-                                </li>
-                                 <li>
-                                    <a href="/products">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5.15385 1L10 6L5.15385 11M1 1L5.84615 6L1 11" stroke="#0198B5"
-                                                stroke-width="1.5"></path>
-                                        </svg>
-                                        Products
-                                    </a>
-                                </li>
-                                 <li>
-                                    <a href="/contact">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5.15385 1L10 6L5.15385 11M1 1L5.84615 6L1 11" stroke="#0198B5"
-                                                stroke-width="1.5"></path>
-                                        </svg>
-                                        Contact
-                                    </a>
-                                </li>
-                            </ul>
+                    <div class="col-lg-4 col-md-6">
+                        <h2>latest News</h2>
+                        <div class="foo-news">
+                            <div class="newslists">
+                                <div class="dbox">
+                                    <div class="dleft">
+                                        <figure><img src="/storage/sm-1.png" alt="" /></figure>
+                                    </div>
+                                    <div class="dright">
+                                        <div class="content">
+                                            <h4><a href="#">Expanding Breaching Solutions</a></h4>
+                                            <p>From shotgun mounts to advanced entry tools...</p>
+                                            <span><i class="fas fa-calendar"></i> 19-Aug-2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newslists">
+                                <div class="dbox">
+                                    <div class="dleft">
+                                        <figure><img src="/storage/sm-2.png" alt="" /></figure>
+                                    </div>
+                                    <div class="dright">
+                                        <div class="content">
+                                            <h4><a href="#">MS:5.7K Suppressor</a></h4>
+                                            <p>We're proud to introduce the MS:5.7K Suppressor...</p>
+                                            <span><i class="fas fa-calendar"></i> 20-Aug-2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -172,7 +146,7 @@
                                 </li>
                             </ul>
                             <p>For More Products and Gun Click Here!</p>
-                            <a href="/products" class="btn1">Our Shop</a>
+                            <a href="" class="btn1">Our Shop</a>
                         </div>
                     </div>
                 </div>
@@ -183,8 +157,8 @@
                 <div class="copyrightGroup">
 
                     <div class="copyright sm-t-center">
-                        <p>©2025 
-                            Regent Rogue Ltd & LLC. All rights reserved</p>
+                        <p>Copyright © 2025 <a href="javascript:void(0);"><span>REGENT ROGUE</span> </a>Store.
+                            Design by <a href="#"><span>Tiny Panda</span></a></p>
                     </div>
 
 

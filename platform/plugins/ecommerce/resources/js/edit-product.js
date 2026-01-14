@@ -21,6 +21,56 @@ class EcommerceProduct {
 
         let pageSizeSelect2 = 50
 
+        // Place this at the END of the file
+
+    
+    // Wait for document to be fully loaded
+    $(window).on('load', function() {
+        console.log('PMD Pricing JS loaded');
+        
+        // Initial check
+        if ($('input[name="has_pmd_pricing"]').is(':checked')) {
+            console.log('PMD checked on load');
+            $('.pmd-pricing-box').show();
+        }
+        
+        // Toggle event
+        $(document).on('change', 'input[name="has_pmd_pricing"]', function() {
+            console.log('PMD toggle changed:', this.checked);
+            if (this.checked) {
+                $('.pmd-pricing-box').slideDown();
+            } else {
+                $('.pmd-pricing-box').slideUp();
+            }
+        });
+        
+
+        
+        // Add row
+        $(document).on('click', '#add-pmd-row', function() {
+            console.log('Add row clicked');
+            $('#pmd-price-rows').append(`
+                <tr>
+                    <td><input type="number" name="pmd_prices[min_qty][]" class="form-control"></td>
+                    <td><input type="number" name="pmd_prices[max_qty][]" class="form-control"></td>
+                    <td><input type="number" step="0.01" name="pmd_prices[price][]" class="form-control"></td>
+                    <td><button type="button" class="btn btn-danger remove-row">X</button></td>
+                </tr>
+            `);
+        });
+        
+        // Remove row
+        $(document).on('click', '.remove-row', function() {
+            console.log('Remove row clicked');
+            $(this).closest('tr').remove();
+        });
+    });
+
+
+
+       
+
+
         $.fn.select2.amd.require(['select2/data/array', 'select2/utils'], function (ArrayData, Utils) {
             function CustomData($element, options) {
                 CustomData.__super__.constructor.call(this, $element, options)
@@ -801,6 +851,17 @@ class EcommerceProduct {
         })
     }
 }
+
+
+$(document).on('change', 'input[name="has_pmd_pricing"]', function () {
+    if ($(this).is(':checked')) {
+        $('.pmd-pricing-box').slideDown();
+    } else {
+        $('.pmd-pricing-box').slideUp();
+    }
+});
+
+
 
 $(() => {
     new EcommerceProduct()

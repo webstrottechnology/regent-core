@@ -85,7 +85,10 @@ class Product extends BaseModel
         'specification_table_id',
         'slug',
         'is_pmd_product',
+        'has_pmd_pricing',
     ];
+
+    protected $with = ['pmdPrices'];
 
     protected $appends = [
         'original_price',
@@ -125,7 +128,8 @@ class Product extends BaseModel
         'variations_count' => 'int',
         'reviews_count' => 'int',
         'reviews_avg' => 'float',
-         'is_pmd_product' => 'bool',
+        'is_pmd_product' => 'bool',
+        'has_pmd_pricing' => 'bool',
     ];
 
     protected function url(): Attribute
@@ -148,6 +152,211 @@ class Product extends BaseModel
                 url(ltrim($prefix . '/' . $this->slug, '/')) . SlugHelper::getPublicSingleEndingURL()
             );
         });
+    }
+
+    /**
+     * PMD Pricing Tiers Relationship
+     */
+    public function pmdPrices(): HasMany
+    {
+        return $this->hasMany(ProductPmdPrice::class, 'product_id')
+                    ->orderBy('min_qty');
+    }
+
+    /**
+     * Get PMD price for given quantity
+     */
+    public function getPmdPriceForQuantity(int $quantity = 1): ?float
+    {
+        if ($quantity < 1) {
+            $quantity = 1;
+        }
+
+        if (!$this->has_pmd_pricing || !$this->pmdPrices || $this->pmdPrices->isEmpty()) {
+            return null;
+        }
+
+        // Find applicable PMD price tier
+        $applicableTier = $this->pmdPrices
+            ->filter(function ($tier) use ($quantity) {
+                if ($quantity < $tier->min_qty) {
+                    return false;
+                }
+                
+                if ($tier->max_qty == 0) {
+                    return true; // No upper limit
+                }
+                
+                return $quantity <= $tier->max_qty;
+            })
+            ->sortByDesc('min_qty')
+            ->first();
+
+        return $applicableTier ? (float) $applicableTier->price : null;
+    }
+
+    /**
+     * Get best available PMD price (lowest price)
+     */
+    public function getBestPmdPrice(): ?float
+    {
+        if (!$this->hasPmdPricing()) {
+            return null;
+        }
+        
+        $lowestTier = $this->pmdPrices()->orderBy('price')->first();
+        return $lowestTier ? (float) $lowestTier->price : null;
+    }
+
+    /**
+     * Get PMD pricing tiers for display
+     */
+    public function getPmdPricingTiers(): array
+    {
+        if (!$this->hasPmdPricing()) {
+            return [];
+        }
+        
+        return $this->pmdPrices->map(function($tier) {
+            return [
+                'id' => $tier->id,
+                'min_qty' => $tier->min_qty,
+                'max_qty' => $tier->max_qty,
+                'price' => (float) $tier->price,
+                'range' => $tier->range,
+                'formatted_price' => $tier->formatted_price
+            ];
+        })->toArray();
+    }
+
+    /**
+     * Check if current logged in user is PMD
+     */
+    // public function userIsPmd(): bool
+    // {
+    //     if (!auth()->check()) {
+    //         return false;
+    //     }
+        
+    //     $user = auth()->user();
+    //     return $user->is_pmd ?? false;
+    // }
+
+
+
+    /**
+ * Check if current logged in user is PMD
+ */
+/**
+ * Check if current logged in user is PMD
+ */
+/**
+ * Check if current logged in user is PMD
+ */
+/**
+ * Check if current logged in user is PMD
+ */
+/**
+ * Check if current logged in user is PMD
+ */
+// Temporary debug in userIsPmd() method
+/**
+ * Check if current logged in user is PMD
+ */
+public function userIsPmd(): bool
+{
+    // Check customer guard (for frontend customers)
+    if (auth()->guard('customer')->check()) {
+        $customer = auth()->guard('customer')->user();
+        return (bool) ($customer->is_pmd ?? false);
+    }
+    
+    // Check web guard and look for customer by email
+    if (auth()->check()) {
+        $user = auth()->user();
+        $customer = \Botble\Ecommerce\Models\Customer::where('email', $user->email)->first();
+        if ($customer) {
+            return (bool) ($customer->is_pmd ?? false);
+        }
+    }
+    
+    return false;
+}
+
+    /**
+     * Get display price based on user type and quantity
+     */
+    public function getDisplayPrice($quantity = 1): array
+    {
+        $isPmdUser = $this->userIsPmd();
+        $pmdPrice = $this->getPmdPriceForQuantity($quantity);
+        
+        return [
+            'is_pmd_user' => $isPmdUser,
+            'quantity' => $quantity,
+            'regular_price' => (float) $this->price,
+            'sale_price' => $this->sale_price ? (float) $this->sale_price : null,
+            'pmd_price' => $pmdPrice,
+            'final_price' => $isPmdUser && $pmdPrice ? $pmdPrice : ($this->sale_price ?: $this->price),
+            'has_pmd_pricing' => $this->hasPmdPricing()
+        ];
+    }
+
+    /**
+     * PMD user ke liye product visible hai ya nahi
+     */
+    public function isVisibleToPmdUser(): bool
+    {
+        // Check if user is logged in
+        if (!auth()->check()) {
+            // If product is PMD-only and user not logged in, hide it
+            return !$this->is_pmd_product;
+        }
+        
+        $user = auth()->user();
+        $isPmdUser = $user->is_pmd ?? false;
+        
+        // If user is PMD, show everything
+        if ($isPmdUser) {
+            return true;
+        }
+        
+        // If user is NOT PMD but product is PMD-only, hide it
+        if ($this->is_pmd_product && !$isPmdUser) {
+            return false;
+        }
+        
+        // Default: visible to all
+        return true;
+    }
+
+    /**
+     * Quick check for PMD pricing availability
+     */
+    public function hasPmdPricing(): bool
+    {
+        return $this->has_pmd_pricing && $this->pmdPrices()->exists();
+    }
+
+    /**
+     * Get price for specific user type
+     */
+    public function getPriceForUser($quantity = 1, $user = null): float
+    {
+        if (!$user && auth()->check()) {
+            $user = auth()->user();
+        }
+        
+        $isPmdUser = $user && ($user->is_pmd ?? false);
+        
+        if ($isPmdUser && $this->hasPmdPricing()) {
+            $pmdPrice = $this->getPmdPriceForQuantity($quantity);
+            if ($pmdPrice !== null) {
+                return (float) $pmdPrice;
+            }
+        }
+        
+        return $this->sale_price ? (float) $this->sale_price : (float) $this->price;
     }
 
     protected static function booted(): void
@@ -180,6 +389,7 @@ class Product extends BaseModel
             $product->tags()->detach();
             $product->specificationAttributes()->detach();
             $product->licenseCodes()->delete();
+            $product->pmdPrices()->delete();
         });
 
         static::saved(function (Product $product): void {
@@ -766,6 +976,7 @@ class Product extends BaseModel
             'variations',
             'defaultVariation.product',
             'variationInfo.configurableProduct',
+            'pmdPrices',
         ]);
     }
 

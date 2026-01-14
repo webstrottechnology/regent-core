@@ -79,192 +79,112 @@ class PublicCartController extends BaseController
         )->render();
     }
 
-    public function store(CartRequest $request)
-    {
-        $response = $this->httpResponse();
-
-        /**
-         * @var Product $product
-         */
-        $product = Product::query()
-            ->find($request->input('id'));
-
-        if (! $product) {
-            return $response
-                ->setError()
-                ->setMessage(__('This product is out of stock or not exists!'));
-        }
-
-        if ($product->variations->isNotEmpty() && ! $product->is_variation && $product->defaultVariation->product->id) {
-            $product = $product->defaultVariation->product;
-        }
-
-        $originalProduct = $product->original_product;
-
-        if ($product->isOutOfStock()) {
-            return $response
-                ->setError()
-                ->setMessage(
-                    __(
-                        'Product :product is out of stock!',
-                        ['product' => $originalProduct->name ?: $product->name]
-                    )
-                );
-        }
-
-        try {
-            do_action('ecommerce_before_add_to_cart', $product);
-        } catch (Exception $e) {
-            return $response
-                ->setError()
-                ->setMessage($e->getMessage());
-        }
-
-        $maxQuantity = $product->max_cart_quantity;
-
-        $requestQuantity = $request->integer('qty', 1);
-
-        $existingAddedToCart = Cart::instance('cart')->content()->firstWhere('id', $product->id);
-
-        if ($existingAddedToCart) {
-            $requestQuantity += $existingAddedToCart->qty;
-        }
-
-        if (! $product->canAddToCart($requestQuantity)) {
-            return $response
-                ->setError()
-                ->setMessage(__('Sorry, you can only order a maximum of :quantity units of :product at a time. Please adjust the quantity and try again.', ['quantity' => $maxQuantity, 'product' => $product->name]));
-        }
-
-        $outOfQuantity = false;
-        $cartContent = Cart::instance('cart')->content();
-        $existingItem = $cartContent->firstWhere('id', $product->id);
-
-        if ($existingItem) {
-            $originalQuantity = $product->quantity;
-            $product->quantity = (int) $product->quantity - $existingItem->qty;
-
-            if ($product->quantity < 0) {
-                $product->quantity = 0;
-            }
-
-            if ($product->isOutOfStock()) {
-                $outOfQuantity = true;
-            }
-
-            $product->quantity = $originalQuantity;
-        }
-
-        $product->quantity = (int) $product->quantity - $request->integer('qty', 1);
-
-        if (
-            EcommerceHelper::isEnabledProductOptions() &&
-            DB::table('ec_options')
-                ->where('product_id', $originalProduct->id)
-                ->where('required', true)
-                ->exists()
-        ) {
-            if (! $request->input('options')) {
-                return $response
-                    ->setError()
-                    ->setData(['next_url' => $originalProduct->url])
-                    ->setMessage(__('Please select product options!'));
-            }
-
-            $requiredOptions = DB::table('ec_options')
-                ->where('product_id', $originalProduct->id)
-                ->where('required', true)
-                ->get();
-
-            $message = null;
-
-            foreach ($requiredOptions as $requiredOption) {
-                if (! $request->input('options.' . $requiredOption->id . '.values')) {
-                    $message .= trans(
-                        'plugins/ecommerce::product-option.add_to_cart_value_required',
-                        ['value' => $requiredOption->name]
-                    );
-                }
-            }
-
-            if ($message) {
-                return $response
-                    ->setError()
-                    ->setMessage(__('Please select product options!'));
-            }
-        }
-
-        if ($outOfQuantity) {
-            return $response
-                ->setError()
-                ->setMessage(__(
-                    'Product :product is out of stock!',
-                    ['product' => $originalProduct->name ?: $product->name]
-                ));
-        }
-
-        try {
-            $cartItems = OrderHelper::handleAddCart($product, $request);
-        } catch (Exception $e) {
-            return $response
-                ->setError()
-                ->setMessage($e->getMessage());
-        }
-
-        $cartItem = Arr::first(array_filter($cartItems, fn ($item) => $item['id'] == $product->id));
-
-        $response->setMessage(__(
-            'Added product :product to cart successfully!',
-            ['product' => $originalProduct->name ?: $product->name]
-        ));
-
-        $responseData = [
-            'status' => true,
-            'content' => $cartItems,
-            'extra_data' => app(GoogleTagManager::class)->formatProductTrackingData($originalProduct, $cartItem['qty']),
-        ];
-
-        app(GoogleTagManager::class)->addToCart(
-            $originalProduct,
-            $cartItem['qty'],
-            $cartItem['subtotal'],
-        );
-
-        app(FacebookPixel::class)->addToCart(
-            $originalProduct,
-            $cartItem['qty'],
-            $cartItem['subtotal'],
-        );
-
-        $token = OrderHelper::getOrderSessionToken();
-        $nextUrl = route('public.checkout.information', $token);
-
-        if (EcommerceHelper::getQuickBuyButtonTarget() == 'cart') {
-            $nextUrl = route('public.cart');
-        }
-
-        if ($request->input('checkout')) {
-            Cart::instance('cart')->refresh();
-
-            $responseData['next_url'] = $nextUrl;
-
-            $this->applyAutoCouponCode();
-
-            if ($request->ajax() && $request->wantsJson()) {
-                return $response->setData($responseData);
-            }
-
-            return $response
-                ->setData($responseData)
-                ->setNextUrl($nextUrl);
-        }
-
-        return $response
-            ->setData([
-                ...$this->getDataForResponse(),
-                ...$responseData,
-            ]);
+    protected function applyPmdPricingToCart(): void
+{
+    $customer = auth('customer')->user();
+    if (! $customer || ! $customer->is_pmd) {
+        return;
     }
+
+    $cart = Cart::instance('cart');
+
+    foreach ($cart->content() as $rowId => $cartItem) {
+
+        $product = Product::query()->find($cartItem->id);
+        if (! $product) {
+            continue;
+        }
+
+        $originalProduct = $product->original_product ?? $product;
+
+        if (! $originalProduct->has_pmd_pricing) {
+            continue;
+        }
+
+        $qty = $cartItem->qty;
+
+        $pmdPrices = DB::table('ec_product_pmd_prices')
+            ->where('product_id', $originalProduct->id)
+            ->orderBy('min_qty')
+            ->get();
+
+        foreach ($pmdPrices as $tier) {
+            if (
+                $qty >= $tier->min_qty &&
+                ($tier->max_qty === null || $qty <= $tier->max_qty)
+            ) {
+                // 🔥 FORCE PRICE UPDATE
+                $cart->update($rowId, [
+                    'price' => (float) $tier->price,
+                ]);
+
+                break;
+            }
+        }
+    }
+}
+
+
+    public function store(CartRequest $request)
+{
+    $response = $this->httpResponse();
+
+    $product = Product::query()->find($request->input('id'));
+
+    if (! $product) {
+        return $response
+            ->setError()
+            ->setMessage(__('This product is out of stock or not exists!'));
+    }
+
+    // ============================================
+    // DIRECT PMD PRICE CALCULATION - NO BUGS
+    // ============================================
+    $quantity = $request->input('qty', 1);
+    
+    // Start with regular price
+    $price = $product->price()->getPrice(false);
+    
+    // Check if user is PMD
+    $isPmdUser = $product->userIsPmd();
+    
+    if ($isPmdUser && $product->has_pmd_pricing) {
+        $pmdPrice = $product->getPmdPriceForQuantity($quantity);
+        if ($pmdPrice !== null) {
+            $price = (float) $pmdPrice;
+        }
+    }
+    
+    // DEBUG: Log the price being used
+    \Log::info('CART ADD - Direct Price Calculation', [
+        'product_id' => $product->id,
+        'quantity' => $quantity,
+        'is_pmd_user' => $isPmdUser,
+        'price_used' => $price,
+        'pmd_price' => $pmdPrice ?? null
+    ]);
+    // ============================================
+
+    // Add to cart DIRECTLY with correct price
+    Cart::instance('cart')->add(
+        $product->id,
+        $product->name,
+        $quantity,
+        $price, // <-- CORRECT PRICE
+        ['image' => $product->image]
+    );
+
+    $response->setMessage(__(
+        'Added product :product to cart successfully!',
+        ['product' => $product->name]
+    ));
+
+    return $response->setData([
+        'status' => true,
+        'count' => Cart::instance('cart')->count(),
+        'total_price' => format_price(Cart::instance('cart')->rawTotal()),
+    ]);
+}
 
     public function update(UpdateCartRequest $request)
     {
