@@ -23,6 +23,7 @@ return [
         'activated' => 'Diaktifkan',
         'locked' => 'Dikunci',
     ],
+    'email_verified' => 'E-mel disahkan?',
     'verify_email' => [
         'confirm_heading' => 'Pengesahan sahkan e-mel',
         'confirm_description' => 'Adakah anda pasti mahu mengesahkan e-mel pelanggan ini?',
@@ -30,6 +31,7 @@ return [
         'approve_here' => 'klik di sini',
         'confirm_button' => 'Sahkan',
     ],
+    'email_already_verified' => 'E-mel telah disahkan.',
     'verification_email_sent' => 'E-mel pengesahan telah dihantar dengan jayanya!',
     'resend_verification_email' => 'Hantar semula e-mel pengesahan',
     'resend_verification_email_confirmation' => 'Adakah anda pasti mahu menghantar semula e-mel pengesahan kepada pelanggan ini?',

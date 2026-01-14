@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Obszary widgetów',
     'manage_widgets' => 'Zarządzaj widgetami',
 
-    'click_to_add' => 'Kliknij, aby dodać widget',
-    'select_sidebar' => 'Dodaj widget',
-    'select_sidebar_description' => 'Wybierz, gdzie dodać ten widget',
-    'adding_to' => 'Dodawanie do',
-    'add_widget' => 'Dodaj widget',
-    'widget_not_found' => 'Nie znaleziono widgetu',
-
     'cache_suggestion' => [
         'title' => 'Sugestia dotycząca wydajności',
         'description' => 'Możesz poprawić wydajność swojej witryny, włączając buforowanie widgetów.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Tekst praw autorskich w dolnej stopce.',
     'widget_site_copyright_helper' => 'Przejdź do :link, aby zmienić tekst praw autorskich.',
     'theme_options' => 'Opcje motywu',
-
-    'form' => [
-        'enable_caching' => 'Włącz buforowanie',
-        'yes' => 'Tak',
-        'no' => 'Nie',
-        'cache_helper' => 'Po włączeniu zawartość tego widgetu będzie buforowana w celu poprawy wydajności. Wyłącz dla dynamicznej zawartości, która często się zmienia.',
-        'cache_warning' => 'Z powodu problemów z interfejsem, bufor dla tego widgetu jest wyłączony przez kod. Ten widget nie będzie buforowany, nawet jeśli buforowanie jest włączone.',
-    ],
-
-    'drag_or_click' => 'Przeciągnij na pasek boczny lub kliknij +, aby dodać',
-    'drop_widgets_here' => 'Upuść widgety w obszarach paska bocznego',
-    'search_widgets' => 'Szukaj widgetów...',
-    'no_widgets' => 'Brak dostępnych widgetów',
-    'no_search_results' => 'Nie znaleziono widgetów',
-    'or_click_add' => 'Lub kliknij przycisk + na widgecie, aby dodać',
-    'toggle_widget' => 'Przełącz ustawienia widgetu',
-    'loading_form' => 'Ładowanie formularza widgetu...',
 ];

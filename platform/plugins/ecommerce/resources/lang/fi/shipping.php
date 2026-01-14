@@ -191,9 +191,6 @@ return [
         'sender' => 'Lähettäjä',
         'order_date' => 'Tilauspäivä',
         'scan_qr_code' => 'Skannaa QR-koodi seurataksesi lähetystäsi',
-        'total_amount' => 'Kokonaissumma',
-        'cod_amount_to_collect' => 'Kerättävä postiennakkomäärä',
     ],
     'customer_confirmed_delivery_at' => 'Asiakas vahvisti toimituksen hetkellä',
-    'no_shipping_methods_available' => 'Ei toimitustapoja saatavilla!',
 ];

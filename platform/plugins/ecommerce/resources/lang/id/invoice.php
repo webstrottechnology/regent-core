@@ -47,5 +47,4 @@ return [
         'completed' => 'Selesai',
         'canceled' => 'Dibatalkan',
     ],
-    'back_to_invoices' => 'Kembali ke faktur',
 ];

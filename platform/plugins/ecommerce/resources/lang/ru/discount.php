@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Неограниченный купон?',
     'enter_number' => 'Введите число',
     'coupon_type' => 'Тип купона',
-    'discount_type' => 'Тип скидки',
     'percentage_discount' => 'Процентная скидка (%)',
     'free_shipping' => 'Бесплатная доставка',
     'same_price' => 'Одинаковая цена',
     'apply_for' => 'применить для',
-    'apply_to' => 'Применить к',
     'all_orders' => 'Все заказы',
     'order_amount_from' => 'Сумма заказа от',
     'product_collection' => 'Коллекция товаров',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Этот купон нельзя применить, потому что в вашей корзине есть товары со скидкой-молнией (:product_name). Цены скидки-молнии нельзя комбинировать со скидками по купонам.',
     'coupon_applied_successfully' => 'Отлично! Код купона ":code" был применен. Вы сэкономили деньги на этом заказе!',
     'coupon_removed_successfully' => 'Код купона был удален из вашего заказа.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Коды купонов (:count)',
-    'left_quantity' => 'Осталось :left',
-    'apply' => 'Применить',
-    'remove' => 'Удалить',
-    'select_coupon' => 'Выбрать купон',
-    'you_have_coupon_code' => 'У вас есть код купона?',
-    'close' => 'Закрыть',
-    'coupon_code_label' => 'Код купона: :code',
-    'enter_coupon_code_placeholder' => 'Введите код купона...',
 ];

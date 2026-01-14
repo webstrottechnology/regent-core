@@ -69,7 +69,4 @@ return [
             'trans' => 'Var būt tukšs vai virkne ar maksimālo garumu :max rakstzīmes, ja norādīts.',
         ],
     ],
-    'download_locale' => 'Lejupielādēt valodu',
-    'import_available_locale_confirmation' => 'Lejupielādēt valodu no GitHub',
-    'import_available_locale_confirmation_content' => 'Vai tiešām vēlaties lejupielādēt šo valodu? Tā tiks lejupielādēta uz :lang_path, varat to dzēst vēlāk, ja vēlaties.',
 ];

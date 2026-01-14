@@ -39,7 +39,4 @@ return [
         'product_listing' => 'Список продуктів',
         'cart' => 'Кошик',
     ],
-    'purchased' => 'купив',
-    'verified' => 'Перевірено',
-    'quick_view' => 'Швидкий перегляд',
 ];

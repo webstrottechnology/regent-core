@@ -47,5 +47,4 @@ return [
         'completed' => '完了',
         'canceled' => 'キャンセル済み',
     ],
-    'back_to_invoices' => '請求書一覧に戻る',
 ];

@@ -1,18 +1,16 @@
 <?php
 
 return [
-    'create' => 'Neue Kategorie erstellen',
+    'create' => 'Create new category',
     'menu' => 'Kategorien',
-    'edit_this_category' => 'Diese Kategorie bearbeiten',
+    'edit_this_category' => 'Bearbeiten Sie diese Kategorie',
     'menu_name' => 'Kategorien',
-    'none' => 'Keine',
-    'total_posts' => 'Gesamtbeiträge: :total',
-    'table_view_info' => 'Für eine einfachere Massenverwaltung von Kategorien können Sie auch',
-    'manage_as_table' => 'Kategorien als Tabelle verwalten',
-    'parent' => 'Übergeordnete Kategorie',
-    'order' => 'Reihenfolge',
-    'is_default' => 'Ist Standard',
-    'intro' => [
-        'description' => 'Organisieren Sie Ihre Blogbeiträge in Kategorien für eine bessere Inhaltsverwaltung.',
-    ],
+    'none' => 'Keiner',
+    'total_posts' => 'Total posts: :total',
+    'edit' => 'Edit category',
+    'table_view_info' => 'For easier bulk management of categories, you can also',
+    'manage_as_table' => 'manage categories as a table',
+    'parent' => 'Parent Category',
+    'order' => 'Order',
+    'is_default' => 'Is Default',
 ];

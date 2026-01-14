@@ -36,8 +36,6 @@ return [
         'customer_city' => 'A cidade do cliente',
         'customer_zipcode' => 'O CEP do cliente',
     ],
-    'custom_css' => 'CSS Personalizado',
-    'custom_css_helper' => 'Adicione estilos CSS personalizados para personalizar a aparência da fatura. Esses estilos serão adicionados aos estilos padrão da fatura.',
     'reset_success' => 'Redefinido para o padrão com sucesso',
     'confirm_reset' => 'Confirmar redefinição do modelo de fatura?',
     'confirm_message' => 'Você realmente deseja redefinir este modelo de fatura para o padrão?',

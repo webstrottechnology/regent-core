@@ -160,12 +160,11 @@
                         </div>
                     </template>
 
-                    <div class="border-top pt-3">
+                    <div class="border-top">
+                        <h4 class="mt-3 mb-2">{{ __('discount.coupon_type') }}</h4>
+
                         <div class="row">
                             <div class="col-md-4 mb-3">
-                                <label class="form-label" for="discount-type-option">
-                                    {{ __('discount.discount_type') }}
-                                </label>
                                 <select
                                     id="discount-type-option"
                                     name="type_option"
@@ -189,13 +188,10 @@
                                     'col-md-8': type_option === 'shipping',
                                 }"
                             >
-                                <label class="form-label" for="discount-value">
-                                    {{ value_label }}
-                                </label>
-                                <div class="input-group">
+                                <div class="input-group input-group-flat">
+                                    <span class="input-group-text">{{ value_label }}</span>
                                     <input
                                         type="number"
-                                        id="discount-value"
                                         class="form-control"
                                         name="value"
                                         v-model="discount_value"
@@ -209,38 +205,40 @@
                             </div>
 
                             <div class="col-md-4 mb-3" v-show="type_option !== 'shipping' && type_option">
-                                <label class="form-label" for="select-offers">
-                                    {{ __('discount.apply_to') }}
-                                </label>
-                                <select
-                                    id="select-offers"
-                                    class="form-select"
-                                    name="target"
-                                    v-model="target"
-                                    @change="handleChangeTarget()"
-                                >
-                                    <option value="all-orders" v-if="type_option !== 'same-price'">
-                                        {{ __('discount.all_orders') }}
-                                    </option>
-                                    <option value="amount-minimum-order" v-if="type_option !== 'same-price'">
-                                        {{ __('discount.order_amount_from') }}
-                                    </option>
-                                    <option value="group-products">{{ __('discount.product_collection') }}</option>
-                                    <option value="products-by-category">
-                                        {{ __('discount.product_category') }}
-                                    </option>
-                                    <option value="specific-product">{{ __('discount.product') }}</option>
-                                    <option value="customer" v-if="type_option !== 'same-price'">
-                                        {{ __('discount.customer') }}
-                                    </option>
-                                    <option value="product-variant">{{ __('discount.variant') }}</option>
-                                    <option
-                                        value="once-per-customer"
-                                        v-if="type_option !== 'same-price' && type === 'coupon'"
+                                <div class="input-group input-group-flat" @change="handleChangeTarget()">
+                                    <span class="input-group-text" v-show="type_option !== 'shipping' && type_option">
+                                        {{ __('discount.apply_for') }}
+                                    </span>
+
+                                    <select
+                                        id="select-offers"
+                                        class="form-select"
+                                        name="target"
+                                        v-model="target"
                                     >
-                                        {{ __('discount.once_per_customer') }}
-                                    </option>
-                                </select>
+                                        <option value="all-orders" v-if="type_option !== 'same-price'">
+                                            {{ __('discount.all_orders') }}
+                                        </option>
+                                        <option value="amount-minimum-order" v-if="type_option !== 'same-price'">
+                                            {{ __('discount.order_amount_from') }}
+                                        </option>
+                                        <option value="group-products">{{ __('discount.product_collection') }}</option>
+                                        <option value="products-by-category">
+                                            {{ __('discount.product_category') }}
+                                        </option>
+                                        <option value="specific-product">{{ __('discount.product') }}</option>
+                                        <option value="customer" v-if="type_option !== 'same-price'">
+                                            {{ __('discount.customer') }}
+                                        </option>
+                                        <option value="product-variant">{{ __('discount.variant') }}</option>
+                                        <option
+                                            value="once-per-customer"
+                                            v-if="type_option !== 'same-price' && type === 'coupon'"
+                                        >
+                                            {{ __('discount.once_per_customer') }}
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="col-md-4 mb-3" v-if="target === 'group-products' && type_option !== 'shipping'">
@@ -847,25 +845,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <div class="btn-list">
-                        <button type="submit" name="submitter" value="apply" class="btn btn-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
-                                <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                <path d="M14 4l0 4l-6 0l0 -4" />
-                            </svg>
-                            {{ __('core/base::forms.save_and_continue') }}
-                        </button>
-                        <button type="submit" name="submitter" value="save" class="btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                <path d="M5 13v-8a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-5.5m-9.5 -2h7m-3 -3l3 3l-3 3" />
-                            </svg>
-                            {{ __('core/base::forms.save') }}
-                        </button>
-                    </div>
+                    <button type="submit" class="btn btn-primary">{{ __('discount.save') }}</button>
                 </div>
             </div>
         </div>
@@ -1028,7 +1008,9 @@ export default {
                 this.selected_variant_ids.push(variant.id)
             })
 
-            this.handleChangeTypeOption(false)
+            if (this.type_option === 'shipping') {
+                this.handleChangeTypeOption()
+            }
         }
     },
     methods: {
@@ -1058,7 +1040,7 @@ export default {
                 context.code = null
             }
         },
-        handleChangeTypeOption: function (resetTarget = true) {
+        handleChangeTypeOption: function () {
             let context = this
 
             context.discountUnit = context.currency
@@ -1066,26 +1048,18 @@ export default {
 
             switch (context.type_option) {
                 case 'amount':
-                    if (resetTarget) {
-                        context.target = 'all-orders'
-                    }
+                    context.target = 'all-orders'
                     break
                 case 'percentage':
-                    if (resetTarget) {
-                        context.target = 'all-orders'
-                    }
+                    context.target = 'all-orders'
                     context.discountUnit = '%'
                     break
                 case 'shipping':
                     context.value_label = context.__('discount.when_shipping_fee_less_than')
-                    if (resetTarget) {
-                        context.target = 'all-orders'
-                    }
+                    context.target = 'all-orders'
                     break
                 case 'same-price':
-                    if (resetTarget) {
-                        context.target = 'group-products'
-                    }
+                    context.target = 'group-products'
                     context.value_label = context.__('discount.is')
                     context.getListProductCollections()
                     break

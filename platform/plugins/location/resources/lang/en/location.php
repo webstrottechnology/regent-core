@@ -3,7 +3,6 @@
 return [
     'name' => 'Locations',
     'all_states' => 'All states',
-    'slug' => 'Slug',
     'abbreviation' => 'Abbreviation',
     'abbreviation_placeholder' => 'E.g: CA',
     'import_type' => [

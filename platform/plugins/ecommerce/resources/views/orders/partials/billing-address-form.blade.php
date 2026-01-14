@@ -74,7 +74,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-7 col-12">
+            <div class="col-lg-8 col-12">
                 <div class="form-group  @error('billing_address.email') has-error @enderror">
                     <div class="form-input-wrapper">
                         <input
@@ -90,42 +90,18 @@
                     {!! Form::error('billing_address.email', $errors) !!}
                 </div>
             </div>
-            @php
-                $phoneCountryCodeEnabled = setting('phone_number_enable_country_code', true);
-                $billingPhoneValue = old('billing_address.phone', Arr::get($sessionCheckoutData, 'billing_address.phone')) ?: (auth('customer')->check() ? auth('customer')->user()->phone : null);
-            @endphp
-            <div class="col-lg-5 col-12">
+            <div class="col-lg-4 col-12">
                 <div class="form-group  @error('billing_address.phone') has-error @enderror">
-                    <div class="phone-input-wrapper">
-                        @if ($phoneCountryCodeEnabled)
-                            <input
-                                class="form-control js-phone-number-mask"
-                                id="billing-address-phone"
-                                name="billing_address[phone_display]"
-                                autocomplete="phone"
-                                type="tel"
-                                data-country-code-selection="true"
-                                value="{{ $billingPhoneValue }}"
-                            >
-                            <input
-                                type="hidden"
-                                name="billing_address[phone]"
-                                id="billing-address-phone-full"
-                                class="js-phone-number-full"
-                                data-phone-field="billing_address[phone_display]"
-                                value="{{ $billingPhoneValue }}"
-                            >
-                        @else
-                            <input
-                                class="form-control js-phone-number-mask"
-                                id="billing-address-phone"
-                                name="billing_address[phone]"
-                                autocomplete="phone"
-                                type="tel"
-                                value="{{ $billingPhoneValue }}"
-                            >
-                        @endif
-                        <label for="billing-address-phone">{{ __('Phone') }}</label>
+                    <div class="form-input-wrapper">
+                        {!! Form::text(
+                            'billing_address[phone]',
+                            old('billing_address.phone', Arr::get($sessionCheckoutData, 'billing_address.phone')) ?:
+                            (auth('customer')->check()
+                                ? auth('customer')->user()->phone
+                                : null),
+                            ['id' => 'billing-address-phone', 'class' => 'form-control', 'autocomplete' => 'phone'],
+                        ) !!}
+                        <label>{{ __('Phone') }}</label>
                     </div>
                     {!! Form::error('billing_address.phone', $errors) !!}
                 </div>
@@ -286,7 +262,3 @@
         @endif
     </div>
 </div>
-
-@once
-    @include('core/base::forms.fields.phone-number-script')
-@endonce

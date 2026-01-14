@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI blokovi',
     'search' => 'Pretraga...',
     'no_shortcode_found' => 'Shortcode nije pronađen.',
-    'shortcode_not_available' => 'Шорткод ":name" није доступан или је уклоњен.',
 
     'cache_suggestion' => [
         'title' => 'Predlog za performanse',

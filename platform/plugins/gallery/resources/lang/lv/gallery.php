@@ -18,8 +18,4 @@ return [
     'limit_display' => 'Ierobežot rādīšanas skaitu',
     'edit_this_gallery' => 'Rediģēt šo galeriju',
     'galleries_page' => 'Galeriju lapa',
-    'by_name' => 'Autors: :name',
-    'title' => 'Nosaukums',
-    'limit' => 'Ierobežot',
-    'limit_helper' => 'Rādāmo galeriju skaits. ',
 ];

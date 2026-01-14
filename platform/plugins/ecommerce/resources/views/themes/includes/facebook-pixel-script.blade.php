@@ -6,19 +6,6 @@
 
         var trackedEvents = window.fbTrackedEvents || {};
 
-        var noOffsetCurrencies = ['BIF', 'CLP', 'DJF', 'GNF', 'JPY', 'KMF', 'KRW', 'MGA', 'PYG', 'RWF', 'UGX', 'VND', 'VUV', 'XAF', 'XOF', 'XPF'];
-        var currentCurrency = '{{ get_application_currency()->title }}';
-
-        function formatFacebookPixelValue(value) {
-            if (!value || isNaN(value)) {
-                return 0;
-            }
-            if (noOffsetCurrencies.indexOf(currentCurrency.toUpperCase()) !== -1) {
-                return Math.round(value);
-            }
-            return Math.round(value * 100) / 100;
-        }
-
         function isEventTracked(eventName, productId) {
             var key = eventName + '_' + (productId || 'global');
             var now = Date.now();
@@ -38,7 +25,7 @@
                 content_ids: [String(productId)],
                 content_name: productName,
                 content_type: 'product',
-                value: formatFacebookPixelValue(productPrice),
+                value: productPrice,
                 currency: '{{ get_application_currency()->title }}'
             };
         }
@@ -54,7 +41,7 @@
                     content_ids: [String(productId)],
                     content_name: extraData.item_name || '',
                     content_type: 'product',
-                    value: formatFacebookPixelValue(extraData.price || 0),
+                    value: extraData.price || 0,
                     currency: '{{ get_application_currency()->title }}'
                 });
             } else if (detail && detail.element) {
@@ -73,7 +60,7 @@
                 content_ids: [String(productId)],
                 content_name: productName,
                 content_type: 'product',
-                value: formatFacebookPixelValue(productPrice),
+                value: productPrice,
                 currency: '{{ get_application_currency()->title }}'
             });
         });
@@ -117,7 +104,7 @@
                 fbq('track', 'CompleteRegistration', {
                     content_name: 'Newsletter Subscription',
                     status: true,
-                    value: formatFacebookPixelValue(0),
+                    value: 0,
                     currency: '{{ get_application_currency()->title }}'
                 });
             }
@@ -129,15 +116,6 @@
                 content_category: 'Lead Generation'
             });
         });
-
-        @if(session('ecommerce_customer_registered'))
-        fbq('track', 'CompleteRegistration', {
-            content_name: 'Customer Registration',
-            status: 'completed',
-            value: formatFacebookPixelValue(0),
-            currency: '{{ get_application_currency()->title }}'
-        });
-        @endif
 
         if (window.location.pathname.includes('/cart')) {
             if (!isEventTracked('ViewCart', 'page')) {
@@ -160,7 +138,7 @@
         $(document).on('ecommerce.payment.selected', function(e, paymentData) {
             if (paymentData && paymentData.value) {
                 fbq('track', 'AddPaymentInfo', {
-                    value: formatFacebookPixelValue(paymentData.value),
+                    value: paymentData.value,
                     currency: '{{ get_application_currency()->title }}',
                     payment_type: paymentData.method || ''
                 });
@@ -184,7 +162,7 @@
                             id: String(productId),
                             quantity: quantity
                         }],
-                        value: formatFacebookPixelValue((extraData.price || 0) * quantity),
+                        value: (extraData.price || 0) * quantity,
                         currency: '{{ get_application_currency()->title }}'
                     });
                 }
@@ -209,7 +187,7 @@
                         id: String(productId),
                         quantity: quantity
                     }],
-                    value: formatFacebookPixelValue((extraData.price || 0) * quantity),
+                    value: (extraData.price || 0) * quantity,
                     currency: '{{ get_application_currency()->title }}'
                 });
             } else if (detail && detail.data) {

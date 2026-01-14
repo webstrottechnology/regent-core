@@ -1,0 +1,16 @@
+{
+    "Botble\\ACL\\Models\\UserMeta": [
+        "65b83ad065dbeb5292d94ab9580d9273@user-meta-9"
+    ],
+    "Botble\\Ecommerce\\Models\\ProductCategory": [
+        "e2df835384821fa5036252a0581ba12b@ecommerce_categories_for_widgets_en_ece810759d6a673e457c9524416cab8d"
+    ],
+    "Botble\\Menu\\Models\\Menu": [
+        "876a095a247b966461c4079f23f9e7ae@menu_all_menus_dac5709ac98386736ebe90a34e29c5bb",
+        "876a095a247b966461c4079f23f9e7ae@menu_location_6f1ffca3de3f585147c1beb9da4ac5f5",
+        "876a095a247b966461c4079f23f9e7ae@menu_location_89568555ee042b45afa7e0f9a942fb85",
+        "876a095a247b966461c4079f23f9e7ae@menu_location_a8c0fb6a3b3557e1cafbd53a0a36bb38",
+        "876a095a247b966461c4079f23f9e7ae@menu_location_765e24826a8fc874b1dc5b41e837c3a1",
+        "876a095a247b966461c4079f23f9e7ae@menu_location_ee18c265f2036628f39ff7330bff5e41"
+    ]
+}

@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Aree widget',
     'manage_widgets' => 'Gestisci widget',
 
-    'click_to_add' => 'Clicca per aggiungere widget',
-    'select_sidebar' => 'Aggiungi Widget',
-    'select_sidebar_description' => 'Scegli dove aggiungere questo widget',
-    'adding_to' => 'Aggiungendo a',
-    'add_widget' => 'Aggiungi Widget',
-    'widget_not_found' => 'Widget non trovato',
-
     'cache_suggestion' => [
         'title' => 'Suggerimento sulle prestazioni',
         'description' => 'Puoi migliorare le prestazioni del tuo sito abilitando la cache dei widget.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Testo del copyright nel piè di pagina inferiore.',
     'widget_site_copyright_helper' => 'Vai a :link per modificare il testo del copyright.',
     'theme_options' => 'Opzioni tema',
-
-    'form' => [
-        'enable_caching' => 'Abilita cache',
-        'yes' => 'Sì',
-        'no' => 'No',
-        'cache_helper' => 'Quando abilitato, il contenuto di questo widget verrà memorizzato nella cache per migliorare le prestazioni. Disabilita per contenuti dinamici che cambiano frequentemente.',
-        'cache_warning' => 'A causa di problemi dell\'interfaccia utente, la cache per questo widget è disabilitata tramite codice. Questo widget non verrà memorizzato nella cache anche se la cache è abilitata.',
-    ],
-
-    'drag_or_click' => 'Trascina nella barra laterale o clicca + per aggiungere',
-    'drop_widgets_here' => 'Rilascia i widget nelle aree della barra laterale',
-    'search_widgets' => 'Cerca widget...',
-    'no_widgets' => 'Nessun widget disponibile',
-    'no_search_results' => 'Nessun widget trovato',
-    'or_click_add' => 'Oppure clicca sul pulsante + di un widget per aggiungerlo',
-    'toggle_widget' => 'Attiva/disattiva impostazioni widget',
-    'loading_form' => 'Caricamento modulo widget...',
 ];

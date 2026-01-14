@@ -5,7 +5,6 @@ namespace Botble\Ecommerce\Models;
 use Botble\Base\Facades\MacroableModels;
 use Botble\Base\Models\BaseModel;
 use Botble\Base\Models\BaseQueryBuilder;
-use Botble\Base\Models\Concerns\HasPhoneNumber;
 use Botble\Base\Supports\Avatar;
 use Botble\Ecommerce\Enums\CustomerStatusEnum;
 use Botble\Ecommerce\Enums\DiscountTypeEnum;
@@ -40,9 +39,8 @@ class Customer extends BaseModel implements
     use Authenticatable;
     use Authorizable;
     use CanResetPassword;
-    use HasApiTokens;
-    use HasPhoneNumber;
     use MustVerifyEmail;
+    use HasApiTokens;
     use Notifiable;
 
     protected $table = 'ec_customers';
@@ -55,6 +53,7 @@ class Customer extends BaseModel implements
         'phone',
         'status',
         'private_notes',
+         'is_pmd', 
     ];
 
     protected $hidden = [
@@ -66,6 +65,7 @@ class Customer extends BaseModel implements
         'status' => CustomerStatusEnum::class,
         'dob' => 'date',
         'confirmed_at' => 'datetime',
+        'is_pmd' => 'bool',
     ];
 
     public function sendPasswordResetNotification($token): void
@@ -88,11 +88,6 @@ class Customer extends BaseModel implements
         return $this->orders()->whereNotNull('completed_at');
     }
 
-    public function finishedOrders(): HasMany
-    {
-        return $this->orders()->where('is_finished', true);
-    }
-
     public function addresses(): HasMany
     {
         return $this
@@ -109,7 +104,7 @@ class Customer extends BaseModel implements
 
     public function discounts(): BelongsToMany
     {
-        return $this->belongsToMany(Discount::class, 'ec_discount_customers', 'customer_id', 'discount_id');
+        return $this->belongsToMany(Discount::class, 'ec_discount_customers', 'customer_id', 'id');
     }
 
     public function wishlist(): HasMany

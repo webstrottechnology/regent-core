@@ -128,15 +128,6 @@ class BlogServiceProvider extends ServiceProvider
                         ->name('plugins/blog::tags.menu_name')
                         ->icon('ti ti-tag')
                         ->route('tags.index')
-                )
-                ->registerItem(
-                    DashboardMenuItem::make()
-                        ->id('cms-plugins-blog-reports')
-                        ->priority(40)
-                        ->parentId('cms-plugins-blog')
-                        ->name('plugins/blog::reports.name')
-                        ->icon('ti ti-chart-bar')
-                        ->route('blog.reports.index')
                 );
         });
 

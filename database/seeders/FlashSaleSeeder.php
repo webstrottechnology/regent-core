@@ -16,12 +16,12 @@ class FlashSaleSeeder extends BaseSeeder
 
         $flashSale1 = FlashSale::query()->create([
             'name' => 'Winter Sale',
-            'end_date' => $this->now()->addMonths(7)->addDays($this->fake()->numberBetween(10, 30))->toDateString(),
+            'end_date' => $this->now()->addMonths(3)->addDays($this->fake()->numberBetween(10, 30))->toDateString(),
         ]);
 
         $flashSale2 = FlashSale::query()->create([
             'name' => 'Cosmetics Sale',
-            'end_date' => $this->now()->addMonths(7)->addDays($this->fake()->numberBetween(10, 30))->toDateString(),
+            'end_date' => $this->now()->addMonths(3)->addDays($this->fake()->numberBetween(10, 30))->toDateString(),
         ]);
 
         foreach (range(1, 10) as $i) {

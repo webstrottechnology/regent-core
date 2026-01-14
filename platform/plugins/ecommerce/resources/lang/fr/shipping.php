@@ -21,7 +21,7 @@ return [
     'city' => 'Ville',
     'address' => 'Adresse',
     'phone' => 'Téléphone',
-    'email' => 'E-mail',
+    'email' => 'Email',
     'zip_code' => 'Code postal',
     'methods' => [
         'default' => 'Par défaut',
@@ -59,7 +59,7 @@ return [
     'confirm' => 'Confirmer',
     'save' => 'Enregistrer',
     'greater_than' => 'Supérieur à',
-    'type' => 'Type de règle',
+    'type' => 'Type',
     'shipping_rule_name' => 'Nom de la règle d\'expédition',
     'shipping_fee' => 'Frais d\'expédition',
     'cancel' => 'Annuler',
@@ -78,7 +78,7 @@ return [
     'cod_status' => 'Statut COD',
     'shipping_status' => 'Statut d\'expédition',
     'customer_information' => 'Informations client',
-    'sku' => 'Référence SKU',
+    'sku' => 'SKU',
     'change_status_confirm_title' => 'Confirmer <span class="shipment-status-label"></span> ?',
     'change_status_confirm_description' => 'Êtes-vous sûr de vouloir confirmer <span class="shipment-status-label"></span> pour cette expédition ?',
     'accept' => 'Accepter',
@@ -90,7 +90,7 @@ return [
     'packages' => 'Colis',
     'edit' => 'Modifier',
     'fee' => 'Frais',
-    'note' => 'Remarque',
+    'note' => 'Note',
     'finish' => 'Terminer',
     'shipping_fee_cod' => 'Frais d\'expédition/COD',
     'send_confirmation_email_to_customer' => 'Envoyer un email de confirmation au client',
@@ -101,7 +101,6 @@ return [
     'update_shipping_status_success' => 'Mise à jour du statut d\'expédition réussie !',
     'update_cod_status_success' => 'Mise à jour du statut COD de l\'expédition réussie !',
     'updated_cod_status_by' => 'Statut COD mis à jour en :status. Mis à jour par : %user_name%',
-    'saved_shipping_settings_success' => 'Paramètres d\'expédition enregistrés avec succès !',
     'all' => 'Tous',
     'all_countries' => 'Tous les pays',
     'error_when_adding_new_region' => 'Une erreur s\'est produite lors de l\'ajout d\'une nouvelle région !',
@@ -127,9 +126,6 @@ return [
     'add_note' => 'Ajouter une note...',
     'view_order' => 'Voir la commande :order_id',
     'rule' => [
-        'types' => [
-            'unavailable' => 'Non disponible',
-        ],
         'enum_types' => [
             'based_on_weight' => 'Basé sur le poids total de la commande (:unit)',
             'based_on_price' => 'Basé sur le montant total de la commande',
@@ -195,9 +191,6 @@ return [
         'sender' => 'Expéditeur',
         'order_date' => 'Date de commande',
         'scan_qr_code' => 'Scanner le code QR pour suivre votre expédition',
-        'total_amount' => 'Montant total',
-        'cod_amount_to_collect' => 'Montant COD à collecter',
     ],
     'customer_confirmed_delivery_at' => 'Client a confirmé la livraison à',
-    'no_shipping_methods_available' => 'Aucune méthode d\'expédition disponible !',
 ];

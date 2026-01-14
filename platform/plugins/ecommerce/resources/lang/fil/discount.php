@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Walang limitasyong coupon?',
     'enter_number' => 'Ilagay ang numero',
     'coupon_type' => 'Uri ng coupon',
-    'discount_type' => 'Uri ng diskwento',
     'percentage_discount' => 'Diskwentong porsyento (%)',
     'free_shipping' => 'Libreng shipping',
     'same_price' => 'Pareho ang presyo',
     'apply_for' => 'ilapat para sa',
-    'apply_to' => 'Ilapat sa',
     'all_orders' => 'Lahat ng mga order',
     'order_amount_from' => 'Halaga ng order mula sa',
     'product_collection' => 'Koleksyon ng produkto',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Ang coupon na ito ay hindi maaaring ilapat dahil ang iyong cart ay naglalaman ng mga flash sale item (:product_name). Ang mga presyo ng flash sale ay hindi maaaring pagsamahin sa mga diskwento ng coupon.',
     'coupon_applied_successfully' => 'Mahusay! Ang coupon code na ":code" ay inilapat na. Nakatipid ka ng pera sa order na ito!',
     'coupon_removed_successfully' => 'Ang coupon code ay inalis mula sa iyong order.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Mga coupon code (:count)',
-    'left_quantity' => 'Natitira :left',
-    'apply' => 'Ilapat',
-    'remove' => 'Alisin',
-    'select_coupon' => 'Pumili ng Coupon',
-    'you_have_coupon_code' => 'Mayroon ka bang coupon code?',
-    'close' => 'Isara',
-    'coupon_code_label' => 'Coupon code: :code',
-    'enter_coupon_code_placeholder' => 'Ilagay ang coupon code...',
 ];

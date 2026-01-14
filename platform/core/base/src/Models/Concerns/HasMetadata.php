@@ -33,18 +33,12 @@ trait HasMetadata
             return $cached;
         }
 
-        if (! $this->relationLoaded('metadata')) {
-            $this->load('metadata');
-        }
-
-        $metadataCollection = $this->getRelation('metadata');
-
-        $field = $metadataCollection
+        $field = $this->metadata
             ->where('meta_key', apply_filters('stored_meta_box_key', $key, $this))
             ->first();
 
         if (! $field) {
-            $field = $metadataCollection->where('meta_key', $key)->first();
+            $field = $this->metadata->where('meta_key', $key)->first();
         }
 
         if (! $field) {

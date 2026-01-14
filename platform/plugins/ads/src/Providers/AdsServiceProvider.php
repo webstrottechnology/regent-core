@@ -92,7 +92,7 @@ class AdsServiceProvider extends ServiceProvider implements DeferrableProvider
 
         $this->app['events']->listen(RouteMatched::class, function (): void {
             if (class_exists(Shortcode::class)) {
-                Shortcode::register('ads', trans('plugins/ads::ads.name'), trans('plugins/ads::ads.name'), function ($shortcode) {
+                Shortcode::register('ads', __('Ads'), __('Ads'), function ($shortcode) {
                     if (! $shortcode->key) {
                         return null;
                     }

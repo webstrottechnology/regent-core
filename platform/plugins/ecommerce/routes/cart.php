@@ -18,11 +18,4 @@ Theme::registerRoutes(function (): void {
             Route::get('remove/{id}', 'destroy')->name('cart.remove');
             Route::get('destroy', 'empty')->name('cart.destroy');
         });
-
-    Route::controller(PublicCartController::class)
-        ->prefix('abandoned-cart')
-        ->name('public.abandoned-cart.')
-        ->group(function (): void {
-            Route::get('unsubscribe/{token}', 'unsubscribe')->name('unsubscribe');
-        });
 });

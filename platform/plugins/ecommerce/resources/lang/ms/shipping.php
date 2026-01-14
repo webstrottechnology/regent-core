@@ -191,9 +191,6 @@ return [
         'sender' => 'Penghantar',
         'order_date' => 'Tarikh pesanan',
         'scan_qr_code' => 'Imbas kod QR untuk jejaki penghantaran anda',
-        'total_amount' => 'Jumlah Keseluruhan',
-        'cod_amount_to_collect' => 'Jumlah COD untuk Dikutip',
     ],
     'customer_confirmed_delivery_at' => 'Pelanggan mengesahkan penghantaran pada',
-    'no_shipping_methods_available' => 'Tiada kaedah penghantaran tersedia!',
 ];

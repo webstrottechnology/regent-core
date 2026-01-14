@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI ბლოკები',
     'search' => 'ძებნა...',
     'no_shortcode_found' => 'მოკლე კოდი არ მოიძებნა.',
-    'shortcode_not_available' => 'შორტკოდი ":name" მიუწვდომელია ან წაშლილია.',
 
     'cache_suggestion' => [
         'title' => 'პროდუქტიულობის რეკომენდაცია',

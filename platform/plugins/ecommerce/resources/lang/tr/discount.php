@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Sınırsız kupon mu?',
     'enter_number' => 'Sayı girin',
     'coupon_type' => 'Kupon türü',
-    'discount_type' => 'İndirim türü',
     'percentage_discount' => 'Yüzde indirimi (%)',
     'free_shipping' => 'Ücretsiz kargo',
     'same_price' => 'Aynı fiyat',
     'apply_for' => 'uygulanacak',
-    'apply_to' => 'Uygula',
     'all_orders' => 'Tüm siparişler',
     'order_amount_from' => 'Sipariş tutarından',
     'product_collection' => 'Ürün koleksiyonu',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Bu kupon uygulanamaz çünkü sepetinizde flaş satış ürünleri (:product_name) bulunmaktadır. Flaş satış fiyatları kupon indirimleri ile birleştirilemez.',
     'coupon_applied_successfully' => 'Harika! ":code" kupon kodu uygulandı. Bu siparişte para tasarrufu yaptınız!',
     'coupon_removed_successfully' => 'Kupon kodu siparişinizden kaldırıldı.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Kupon kodları (:count)',
-    'left_quantity' => 'Kalan :left',
-    'apply' => 'Uygula',
-    'remove' => 'Kaldır',
-    'select_coupon' => 'Kupon Seç',
-    'you_have_coupon_code' => 'Kupon kodunuz var mı?',
-    'close' => 'Kapat',
-    'coupon_code_label' => 'Kupon kodu: :code',
-    'enter_coupon_code_placeholder' => 'Kupon kodunu girin...',
 ];

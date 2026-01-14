@@ -22,9 +22,6 @@
                 <td class="bb-content">
                     <p>{{ 'plugins/ecommerce::email-templates.admin_cancel_order_greeting' | trans({'customer_name': customer_name}) }}</p>
                     <p>{{ 'plugins/ecommerce::email-templates.admin_cancel_order_message' | trans({'order_id': order_id}) }}</p>
-                    {% if cancellation_reason %}
-                    <p><strong>{{ 'plugins/ecommerce::email-templates.admin_cancel_order_reason' | trans({'cancellation_reason': cancellation_reason}) }}</strong></p>
-                    {% endif %}
                 </td>
             </tr>
             <tr>

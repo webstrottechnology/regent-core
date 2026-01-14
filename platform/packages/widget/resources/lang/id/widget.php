@@ -28,24 +28,10 @@ return [
     'save_success' => 'Widget berhasil disimpan!',
     'delete_success' => 'Widget berhasil dihapus!',
     'primary_sidebar_name' => 'Sidebar utama',
-    'form' => [
-        'enable_caching' => 'Aktifkan caching',
-        'yes' => 'Ya',
-        'no' => 'Tidak',
-        'cache_helper' => 'Jika diaktifkan, konten widget ini akan di-cache untuk meningkatkan performa. Nonaktifkan untuk konten dinamis yang sering berubah.',
-        'cache_warning' => 'Karena masalah antarmuka, cache untuk widget ini dinonaktifkan melalui kode. Widget ini tidak akan di-cache meskipun caching diaktifkan.',
-    ],
     'primary_sidebar_description' => 'Bagian sidebar utama',
     'drag_widget_to_sidebar' => 'Seret dan lepas widget ke area ini.',
     'widget_areas' => 'Area Widget',
     'manage_widgets' => 'Kelola Widget',
-
-    'click_to_add' => 'Klik untuk menambahkan widget',
-    'select_sidebar' => 'Tambah Widget',
-    'select_sidebar_description' => 'Pilih tempat untuk menambahkan widget ini',
-    'adding_to' => 'Menambahkan ke',
-    'add_widget' => 'Tambah Widget',
-    'widget_not_found' => 'Widget tidak ditemukan',
 
     'cache_suggestion' => [
         'title' => 'Saran Kinerja',
@@ -59,13 +45,4 @@ return [
     'widget_site_copyright_description' => 'Teks hak cipta di footer bawah.',
     'widget_site_copyright_helper' => 'Buka :link untuk mengubah teks hak cipta.',
     'theme_options' => 'Opsi tema',
-
-    'drag_or_click' => 'Seret ke sidebar atau klik + untuk menambahkan',
-    'drop_widgets_here' => 'Lepas widget di area sidebar Anda',
-    'search_widgets' => 'Cari widget...',
-    'no_widgets' => 'Tidak ada widget tersedia',
-    'no_search_results' => 'Widget tidak ditemukan',
-    'or_click_add' => 'Atau klik tombol + pada widget untuk menambahkan',
-    'toggle_widget' => 'Alihkan pengaturan widget',
-    'loading_form' => 'Memuat formulir widget...',
 ];

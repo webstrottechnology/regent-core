@@ -47,5 +47,4 @@ return [
         'completed' => 'Užbaigta',
         'canceled' => 'Atšaukta',
     ],
-    'back_to_invoices' => 'Grįžti į sąskaitas',
 ];

@@ -14,14 +14,12 @@ use Botble\Ecommerce\Http\Requests\CartRequest;
 use Botble\Ecommerce\Http\Requests\UpdateCartRequest;
 use Botble\Ecommerce\Models\Discount;
 use Botble\Ecommerce\Models\Product;
-use Botble\Ecommerce\Services\AbandonedCartService;
 use Botble\Ecommerce\Services\HandleApplyCouponService;
 use Botble\Ecommerce\Services\HandleApplyPromotionsService;
 use Botble\SeoHelper\Facades\SeoHelper;
 use Botble\Theme\Facades\Theme;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -48,19 +46,8 @@ class PublicCartController extends BaseController
         return $this->cachedCartInstance;
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        if ($token = $request->query('token')) {
-            $abandonedCartService = app(AbandonedCartService::class);
-            $abandonedCart = $abandonedCartService->recoverCart($token);
-
-            if ($abandonedCart) {
-                session()->flash('success', __('Your cart has been restored! Complete your purchase now.'));
-            }
-
-            return redirect()->route('public.cart');
-        }
-
         $promotionDiscountAmount = 0;
         $couponDiscountAmount = 0;
 
@@ -105,7 +92,7 @@ class PublicCartController extends BaseController
         if (! $product) {
             return $response
                 ->setError()
-                ->setMessage(trans('plugins/ecommerce::products.cart.product_not_exists'));
+                ->setMessage(__('This product is out of stock or not exists!'));
         }
 
         if ($product->variations->isNotEmpty() && ! $product->is_variation && $product->defaultVariation->product->id) {
@@ -118,8 +105,8 @@ class PublicCartController extends BaseController
             return $response
                 ->setError()
                 ->setMessage(
-                    trans(
-                        'plugins/ecommerce::products.cart.out_of_stock',
+                    __(
+                        'Product :product is out of stock!',
                         ['product' => $originalProduct->name ?: $product->name]
                     )
                 );
@@ -146,7 +133,7 @@ class PublicCartController extends BaseController
         if (! $product->canAddToCart($requestQuantity)) {
             return $response
                 ->setError()
-                ->setMessage(trans('plugins/ecommerce::products.cart.max_quantity_detail', ['quantity' => $maxQuantity, 'product' => $product->name]));
+                ->setMessage(__('Sorry, you can only order a maximum of :quantity units of :product at a time. Please adjust the quantity and try again.', ['quantity' => $maxQuantity, 'product' => $product->name]));
         }
 
         $outOfQuantity = false;
@@ -181,7 +168,7 @@ class PublicCartController extends BaseController
                 return $response
                     ->setError()
                     ->setData(['next_url' => $originalProduct->url])
-                    ->setMessage(trans('plugins/ecommerce::products.cart.select_options'));
+                    ->setMessage(__('Please select product options!'));
             }
 
             $requiredOptions = DB::table('ec_options')
@@ -203,15 +190,15 @@ class PublicCartController extends BaseController
             if ($message) {
                 return $response
                     ->setError()
-                    ->setMessage(trans('plugins/ecommerce::products.cart.select_options'));
+                    ->setMessage(__('Please select product options!'));
             }
         }
 
         if ($outOfQuantity) {
             return $response
                 ->setError()
-                ->setMessage(trans(
-                    'plugins/ecommerce::products.cart.out_of_stock',
+                ->setMessage(__(
+                    'Product :product is out of stock!',
                     ['product' => $originalProduct->name ?: $product->name]
                 ));
         }
@@ -226,8 +213,8 @@ class PublicCartController extends BaseController
 
         $cartItem = Arr::first(array_filter($cartItems, fn ($item) => $item['id'] == $product->id));
 
-        $response->setMessage(trans(
-            'plugins/ecommerce::products.cart.added_to_cart_success',
+        $response->setMessage(__(
+            'Added product :product to cart successfully!',
             ['product' => $originalProduct->name ?: $product->name]
         ));
 
@@ -327,13 +314,13 @@ class PublicCartController extends BaseController
                 ->httpResponse()
                 ->setError()
                 ->setData($this->getDataForResponse())
-                ->setMessage(trans('plugins/ecommerce::products.cart.not_enough_quantity'));
+                ->setMessage(__('One or all products are not enough quantity so cannot update!'));
         }
 
         return $this
             ->httpResponse()
             ->setData($this->getDataForResponse())
-            ->setMessage(trans('plugins/ecommerce::products.cart.updated_cart_success'));
+            ->setMessage(__('Update cart successfully!'));
     }
 
     public function destroy(string $id)
@@ -363,12 +350,12 @@ class PublicCartController extends BaseController
             return $this
                 ->httpResponse()
                 ->setData($responseData)
-                ->setMessage(trans('plugins/ecommerce::products.cart.removed_from_cart_success', ['product' => $product?->name ?? '']));
+                ->setMessage(__('Removed item from cart successfully!'));
         } catch (Throwable) {
             return $this
                 ->httpResponse()
                 ->setError()
-                ->setMessage(trans('plugins/ecommerce::products.cart.item_not_found'));
+                ->setMessage(__('Cart item is not existed!'));
         }
     }
 
@@ -379,7 +366,7 @@ class PublicCartController extends BaseController
         return $this
             ->httpResponse()
             ->setData(Cart::instance('cart')->content())
-            ->setMessage(trans('plugins/ecommerce::products.cart.empty_success'));
+            ->setMessage(__('Empty cart successfully!'));
     }
 
     protected function getCartData(): array
@@ -478,27 +465,5 @@ class PublicCartController extends BaseController
         }
 
         return (float) $couponDiscountAmount;
-    }
-
-    public function unsubscribe(string $token)
-    {
-        $abandonedCartService = app(AbandonedCartService::class);
-        $result = $abandonedCartService->unsubscribe($token);
-
-        SeoHelper::setTitle(__('Unsubscribe'));
-
-        if ($result) {
-            return Theme::scope(
-                'ecommerce.abandoned-cart-unsubscribed',
-                ['success' => true],
-                'plugins/ecommerce::themes.abandoned-cart-unsubscribed'
-            )->render();
-        }
-
-        return Theme::scope(
-            'ecommerce.abandoned-cart-unsubscribed',
-            ['success' => false],
-            'plugins/ecommerce::themes.abandoned-cart-unsubscribed'
-        )->render();
     }
 }

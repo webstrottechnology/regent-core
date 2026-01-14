@@ -42,6 +42,4 @@ return [
     'search' => 'Rechercher...',
     'copied' => 'Copié',
     'copy' => 'Copie',
-    'something_went_wrong' => 'Quelque chose s\'est mal passé.',
-    'clear' => 'Clear',
 ];

@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'Niestandardowy CSS',
-    'custom_css_helper' => 'Dodaj niestandardowe style CSS, aby dostosować wygląd etykiety wysyłkowej. Te style zostaną dodane do domyślnych stylów etykiety wysyłkowej.',
     'reset_success' => 'Przywrócono do domyślnych pomyślnie',
     'confirm_reset' => 'Potwierdź reset szablonu etykiety wysyłki?',
     'confirm_message' => 'Czy naprawdę chcesz zresetować ten szablon etykiety wysyłki do domyślnego?',

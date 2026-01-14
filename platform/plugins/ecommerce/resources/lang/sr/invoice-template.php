@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Grad kupca',
         'customer_zipcode' => 'Poštanski broj kupca',
     ],
-    'custom_css' => 'Prilagođeni CSS',
-    'custom_css_helper' => 'Dodajte prilagođene CSS stilove da biste prilagodili izgled fakture. Ovi stilovi će biti dodati podrazumevanim stilovima fakture.',
     'reset_success' => 'Uspešno vraćeno na podrazumevano',
     'confirm_reset' => 'Potvrdi resetovanje šablona fakture?',
     'confirm_message' => 'Da li zaista želite da resetujete ovaj šablon fakture na podrazumevani?',

@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI-lohkot',
     'search' => 'Etsi...',
     'no_shortcode_found' => 'Shortcodea ei löytynyt.',
-    'shortcode_not_available' => 'Lyhytkoodi ":name" ei ole käytettävissä tai se on poistettu.',
 
     'cache_suggestion' => [
         'title' => 'Suorituskykyehdotus',

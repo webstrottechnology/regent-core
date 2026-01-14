@@ -47,5 +47,4 @@ return [
         'completed' => 'Fullført',
         'canceled' => 'Kansellert',
     ],
-    'back_to_invoices' => 'Tilbake til fakturaer',
 ];

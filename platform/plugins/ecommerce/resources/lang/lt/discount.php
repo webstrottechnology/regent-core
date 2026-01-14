@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Neribotas kuponas?',
     'enter_number' => 'Įveskite skaičių',
     'coupon_type' => 'Kupono tipas',
-    'discount_type' => 'Nuolaidos tipas',
     'percentage_discount' => 'Procentinė nuolaida (%)',
     'free_shipping' => 'Nemokamas pristatymas',
     'same_price' => 'Ta pati kaina',
     'apply_for' => 'taikyti',
-    'apply_to' => 'Taikyti',
     'all_orders' => 'Visi užsakymai',
     'order_amount_from' => 'Užsakymo suma nuo',
     'product_collection' => 'Produktų kolekcija',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Šis kuponas negali būti pritaikytas, nes jūsų krepšelyje yra žaibo išpardavimo prekių (:product_name). Žaibo išpardavimo kainos negali būti derinamos su kuponų nuolaidomis.',
     'coupon_applied_successfully' => 'Puiku! Kupono kodas ":code" pritaikytas. Sutaupėte pinigų šiam užsakymui!',
     'coupon_removed_successfully' => 'Kupono kodas pašalintas iš jūsų užsakymo.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Kuponų kodai (:count)',
-    'left_quantity' => 'Liko :left',
-    'apply' => 'Taikyti',
-    'remove' => 'Pašalinti',
-    'select_coupon' => 'Pasirinkti kuponą',
-    'you_have_coupon_code' => 'Turite kupono kodą?',
-    'close' => 'Uždaryti',
-    'coupon_code_label' => 'Kupono kodas: :code',
-    'enter_coupon_code_placeholder' => 'Įveskite kupono kodą...',
 ];

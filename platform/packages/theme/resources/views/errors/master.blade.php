@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html {!! Theme::htmlAttributes() !!}>
-
 <head>
     <meta charset="UTF-8">
     <meta
@@ -13,13 +12,10 @@
     >
     <title>@yield('title')</title>
 
-    {!! BaseHelper::googleFonts(
-        'https://fonts.googleapis.com/' .
-            sprintf(
-                'css2?family=%s:wght@300;400;500;600;700&display=swap',
-                urlencode(setting('admin_primary_font', 'Inter')),
-            ),
-    ) !!}
+    {!! BaseHelper::googleFonts('https://fonts.googleapis.com/' . sprintf(
+        'css2?family=%s:wght@300;400;500;600;700&display=swap',
+            urlencode(setting('admin_primary_font', 'Inter')),
+    )) !!}
 
     <style>
         :root {
@@ -42,11 +38,10 @@
 </head>
 
 <body class="border-top-wide border-primary d-flex flex-column">
-<div class="page page-center">
-    <div class="container py-4 container-tight">
-        @yield('content')
+    <div class="page page-center">
+        <div class="container py-4 container-tight">
+            @yield('content')
+        </div>
     </div>
-</div>
 </body>
-
 </html>

@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'Pielāgots CSS',
-    'custom_css_helper' => 'Pievienojiet pielāgotus CSS stilus, lai pielāgotu piegādes etiķetes izskatu. Šie stili tiks pievienoti noklusējuma piegādes etiķetes stiliem.',
     'reset_success' => 'Veiksmīgi atiestatīts uz noklusējumu',
     'confirm_reset' => 'Apstiprināt piegādes etiķetes veidnes atiestatīšanu?',
     'confirm_message' => 'Vai tiešām vēlaties atiestatīt šo piegādes etiķetes veidni uz noklusējumu?',

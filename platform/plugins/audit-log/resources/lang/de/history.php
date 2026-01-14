@@ -45,6 +45,4 @@ return [
     'admin' => 'Administrator',
     'register_an_account' => 'ein Konto',
     'activity_has_been_deleted' => 'Aktivität wurde gelöscht',
-    'no_results_found' => 'Keine Ergebnisse gefunden',
-    'no_activities_here' => 'Es sieht so aus, als gäbe es hier keine Aktivitäten.',
 ];

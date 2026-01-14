@@ -10,7 +10,7 @@ return [
     'setting_email' => 'E-mail',
     'system_information' => 'Informações do sistema',
     'theme' => 'Temas',
-    'copyright' => 'Direitos autorais :year © :company. Versão :version',
+    'copyright' => 'Copyright :year © :company. Versão: <span>:version</span>',
     'profile' => 'Perfil',
     'logout' => 'Sair',
     'no_search_result' => 'Nenhum resultado encontrado, tente algo diferente',
@@ -18,7 +18,8 @@ return [
     'search' => 'Procurar',
     'add_new' => 'Adicionar novo',
     'n_a' => 'N / D',
-    'page_loaded_in_time' => 'Página carregada em :time segundos',
+    'page_loaded_in_time' => 'Page loaded in :time seconds',
     'view_website' => 'Ir para Website',
     'tools' => 'Ferramentas',
+    'page_loaded_time' => 'Página carregada',
 ];

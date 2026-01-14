@@ -51,7 +51,7 @@
                     {{ $payment->amount }} {{ $payment->currency }}
                 </x-core::table.body.cell>
                 <x-core::table.body.cell>
-                    @if ($paymentMethod = $payment->payment_channel->displayName())
+                    @if ($paymentMethod = $payment->payment_channel->label())
                         {{ $paymentMethod }}
                     @else
                         &mdash;

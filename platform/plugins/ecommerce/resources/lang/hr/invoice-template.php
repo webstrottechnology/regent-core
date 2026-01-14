@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Grad kupca',
         'customer_zipcode' => 'Poštanski broj kupca',
     ],
-    'custom_css' => 'Prilagođeni CSS',
-    'custom_css_helper' => 'Dodajte prilagođene CSS stilove za prilagodbu izgleda računa. Ovi stilovi bit će dodani zadanim stilovima računa.',
     'reset_success' => 'Uspješno vraćeno na zadano',
     'confirm_reset' => 'Potvrdite vraćanje predloška računa?',
     'confirm_message' => 'Želite li stvarno vratiti ovaj predložak računa na zadano?',

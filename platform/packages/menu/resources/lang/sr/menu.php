@@ -34,5 +34,4 @@ return [
     'drag_drop_info' => 'Преуредите ставке менија превлачењем и испуштањем да бисте променили њихов редослед или их угнездили као подменије.',
     'widget_custom_menu' => 'Prilagođeni meni',
     'widget_custom_menu_description' => 'Dodajte prilagođeni meni u oblast vidžeta.',
-    'select_menu' => 'Изабери мени',
 ];

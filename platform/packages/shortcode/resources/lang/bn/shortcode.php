@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI ব্লক',
     'search' => 'অনুসন্ধান...',
     'no_shortcode_found' => 'কোনো শর্টকোড পাওয়া যায়নি।',
-    'shortcode_not_available' => 'শর্টকোড ":name" উপলব্ধ নেই বা সরানো হয়েছে।',
 
     'cache_suggestion' => [
         'title' => 'পারফরম্যান্স পরামর্শ',

@@ -191,9 +191,6 @@ return [
         'sender' => 'भेजने वाला',
         'order_date' => 'ऑर्डर तारीख',
         'scan_qr_code' => 'अपनी शिपमेंट को ट्रैक करने के लिए QR कोड स्कैन करें',
-        'total_amount' => 'कुल राशि',
-        'cod_amount_to_collect' => 'एकत्र करने के लिए COD राशि',
     ],
     'customer_confirmed_delivery_at' => 'ग्राहक ने डिलीवरी कन्फर्म की',
-    'no_shipping_methods_available' => 'कोई शिपिंग विधि उपलब्ध नहीं है!',
 ];

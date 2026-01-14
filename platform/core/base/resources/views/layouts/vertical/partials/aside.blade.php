@@ -1,8 +1,7 @@
 <aside
     @class([
         'navbar navbar-vertical navbar-expand-lg flex-auto',
-        'navbar-minimal' =>
-            Auth::user()->getMeta('minimal_sidebar', 'no') === 'yes',
+        'navbar-minimal' => Auth::user()->getMeta('minimal_sidebar', 'no') === 'yes',
     ])
     data-bs-theme="dark"
     id="sidebar-menu-main"
@@ -35,7 +34,7 @@
                         href="#"
                         class="nav-link d-flex lh-1 text-reset p-0"
                         data-bs-toggle="dropdown"
-                        aria-label="{{ trans('core/base::forms.open_user_menu') }}"
+                        aria-label="{{ __('Open user menu') }}"
                     >
                         <span
                             class="crop-image-original avatar avatar-sm"

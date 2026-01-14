@@ -36,8 +36,6 @@ return [
         'customer_city' => '客户城市',
         'customer_zipcode' => '客户邮政编码',
     ],
-    'custom_css' => '自定义 CSS',
-    'custom_css_helper' => '添加自定义 CSS 样式以自定义发票外观。这些样式将附加到默认发票样式。',
     'reset_success' => '重置为默认成功',
     'confirm_reset' => '确认重置发票模板？',
     'confirm_message' => '您真的想要将此发票模板重置为默认吗？',

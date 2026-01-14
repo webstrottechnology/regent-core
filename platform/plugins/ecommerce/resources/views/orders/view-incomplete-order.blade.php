@@ -192,7 +192,7 @@
                                         </x-core::table.body.cell>
                                         <x-core::table.body.cell class="text-end">
                                             <a href="{{ route('payment.show', $order->payment->id) }}" target="_blank">
-                                                {{ $order->payment->payment_channel->displayName() }}
+                                                {{ $order->payment->payment_channel->label() }}
 
                                                 <x-core::icon name="ti ti-external-link" />
                                             </a>
@@ -356,9 +356,9 @@
         :submit-button-attrs="['id' => 'confirm-send-recover-email-button']"
     >
         <x-slot:description>
-            {!! BaseHelper::clean(trans('plugins/ecommerce::order.notice_about_incomplete_order_description', [
+            {!! trans('plugins/ecommerce::order.notice_about_incomplete_order_description', [
                 'email' => $order->user->id ? $order->user->email : $order->address->email,
-            ])) !!}
+            ]) !!}
         </x-slot:description>
     </x-core::modal.action>
 

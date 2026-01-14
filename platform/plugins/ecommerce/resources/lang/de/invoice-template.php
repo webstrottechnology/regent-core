@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Die Kundenstadt',
         'customer_zipcode' => 'Die Kunden-Postleitzahl',
     ],
-    'custom_css' => 'Benutzerdefiniertes CSS',
-    'custom_css_helper' => 'Fügen Sie benutzerdefinierte CSS-Stile hinzu, um das Erscheinungsbild der Rechnung anzupassen. Diese Stile werden an die Standard-Rechnungsstile angehängt.',
     'reset_success' => 'Erfolgreich auf Standard zurückgesetzt',
     'confirm_reset' => 'Zurücksetzen der Rechnungsvorlage bestätigen?',
     'confirm_message' => 'Möchten Sie diese Rechnungsvorlage wirklich auf den Standard zurücksetzen?',

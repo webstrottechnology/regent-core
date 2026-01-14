@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'Egendefinert CSS',
-    'custom_css_helper' => 'Legg til egendefinerte CSS-stiler for å tilpasse fraktetikettens utseende. Disse stilene vil bli lagt til standardfraktetikettstilene.',
     'reset_success' => 'Tilbakestilt til standard vellykket',
     'confirm_reset' => 'Bekreft tilbakestilling av fraktetikett-mal?',
     'confirm_message' => 'Vil du virkelig tilbakestille denne fraktetikett-malen til standard?',

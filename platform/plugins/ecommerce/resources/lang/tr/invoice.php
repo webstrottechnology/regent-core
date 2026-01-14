@@ -47,5 +47,4 @@ return [
         'completed' => 'Tamamlandı',
         'canceled' => 'İptal edildi',
     ],
-    'back_to_invoices' => 'Faturalara dön',
 ];

@@ -6,7 +6,7 @@
     >
         <x-slot name="currencyNotSupportedMessage">
             <p class="mt-1 mb-0">
-                {{ trans('plugins/paystack::paystack.learn_more') }}:
+                {{ __('Learn more') }}:
                 {{ Html::link('https://support.paystack.com/hc/en-us/articles/360009973779', attributes: ['target' => '_blank', 'rel' => 'nofollow']) }}.
             </p>
         </x-slot>

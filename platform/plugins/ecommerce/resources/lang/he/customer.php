@@ -23,6 +23,7 @@ return [
         'activated' => 'פעיל',
         'locked' => 'נעול',
     ],
+    'email_verified' => 'האם האימייל אומת?',
     'verify_email' => [
         'confirm_heading' => 'אישור אימות אימייל',
         'confirm_description' => 'האם אתה בטוח שברצונך לאמת את האימייל של לקוח זה?',

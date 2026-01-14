@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI bloky',
     'search' => 'Hledat...',
     'no_shortcode_found' => 'Nebyl nalezen žádný shortcode.',
-    'shortcode_not_available' => 'Shortcode ":name" není k dispozici nebo byl odstraněn.',
 
     'cache_suggestion' => [
         'title' => 'Návrh na výkon',

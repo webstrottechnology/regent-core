@@ -23,6 +23,7 @@ return [
     'edit_this_post' => 'Rediger dette indlæg',
     'no_new_post_now' => 'Der er ingen nye indlæg nu!',
     'menu_name' => 'Indlæg',
+    'widget_posts_recent' => 'Seneste indlæg',
     'categories' => 'Kategorier',
     'category' => 'Kategori',
     'author' => 'Forfatter',
@@ -66,5 +67,4 @@ return [
     'widget_tags_description' => 'Populære tags',
     'widget_categories' => 'Blogkategorier',
     'widget_categories_description' => 'Vis blogkategorier',
-    'views' => 'Visninger',
 ];

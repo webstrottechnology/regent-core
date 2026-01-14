@@ -4,14 +4,14 @@
         name="coupon_code"
         type="text"
         value="{{ old('coupon_code') }}"
-        placeholder="{{ trans('plugins/ecommerce::discount.enter_coupon_code_placeholder') }}"
+        placeholder="{{ __('Enter coupon code...') }}"
     >
     <button
         class="apply-coupon-code d-flex align-items-center gap-2"
         data-url="{{ route('public.coupon.apply') }}"
         type="button"
     >
-        {{ trans('plugins/ecommerce::discount.apply') }}
+        {{ __('Apply') }}
     </button>
 </div>
 

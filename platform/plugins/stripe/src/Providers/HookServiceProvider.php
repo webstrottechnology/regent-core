@@ -116,18 +116,18 @@ class HookServiceProvider extends ServiceProvider
         $paymentData['payment_fee'] = $paymentFee;
 
         if (! isset($paymentData['currency'])) {
-            $paymentData['currency'] = get_application_currency()->title;
+            $paymentData['currency'] = strtoupper(get_application_currency()->title);
         }
 
         $supportedCurrencies = $stripePaymentService->supportedCurrencyCodes();
 
-        if (! in_array($paymentData['currency'], $supportedCurrencies) && $currentCurrency->title !== 'USD') {
+        if (! in_array($paymentData['currency'], $supportedCurrencies) && strtoupper($currentCurrency->title) !== 'USD') {
             $currencyModel = $currentCurrency->replicate();
 
             $supportedCurrency = $currencyModel->query()->where('title', 'USD')->first();
 
             if ($supportedCurrency) {
-                $paymentData['currency'] = $supportedCurrency->title;
+                $paymentData['currency'] = strtoupper($supportedCurrency->title);
                 if ($currentCurrency->is_default) {
                     $paymentData['amount'] = $paymentData['amount'] * $supportedCurrency->exchange_rate;
                 } else {
@@ -142,8 +142,8 @@ class HookServiceProvider extends ServiceProvider
 
         if (! in_array($paymentData['currency'], $supportedCurrencies)) {
             $data['error'] = true;
-            $data['message'] = trans(
-                'plugins/payment::payment.currency_not_supported',
+            $data['message'] = __(
+                ":name doesn't support :currency. List of currencies supported by :name: :currencies.",
                 [
                     'name' => 'Stripe',
                     'currency' => $paymentData['currency'],

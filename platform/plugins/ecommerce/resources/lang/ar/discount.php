@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'كوبون غير محدود؟',
     'enter_number' => 'أدخل الرقم',
     'coupon_type' => 'نوع الكوبون',
-    'discount_type' => 'نوع الخصم',
     'percentage_discount' => 'خصم النسبة المئوية (%)',
     'free_shipping' => 'شحن مجاني',
     'same_price' => 'نفس السعر',
     'apply_for' => 'تطبيق على',
-    'apply_to' => 'تطبيق على',
     'all_orders' => 'جميع الطلبات',
     'order_amount_from' => 'مبلغ الطلب من',
     'product_collection' => 'مجموعة المنتجات',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'لا يمكن تطبيق هذا الكوبون لأن سلتك تحتوي على عناصر خصم سريع (:product_name). لا يمكن دمج أسعار الخصم السريع مع خصومات الكوبون.',
     'coupon_applied_successfully' => 'رائع! تم تطبيق رمز الكوبون ":code". لقد وفرت المال في هذا الطلب!',
     'coupon_removed_successfully' => 'تم إزالة رمز الكوبون من طلبك.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'رموز الكوبون (:count)',
-    'left_quantity' => 'متبقي :left',
-    'apply' => 'تطبيق',
-    'remove' => 'إزالة',
-    'select_coupon' => 'اختر كوبون',
-    'you_have_coupon_code' => 'لديك رمز كوبون؟',
-    'close' => 'إغلاق',
-    'coupon_code_label' => 'رمز الكوبون: :code',
-    'enter_coupon_code_placeholder' => 'أدخل رمز الكوبون...',
 ];

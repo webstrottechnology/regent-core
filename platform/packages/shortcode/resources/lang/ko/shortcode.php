@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI 블록',
     'search' => '검색...',
     'no_shortcode_found' => '쇼트코드를 찾을 수 없습니다.',
-    'shortcode_not_available' => '":name" 숏코드를 사용할 수 없거나 삭제되었습니다.',
 
     'cache_suggestion' => [
         'title' => '성능 제안',

@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'ელექტრონული კომერცია',
     'general' => [
         'name' => 'ზოგადი',
-        'description' => 'მაღაზიის სახელი, კომპანიის ინფო, საკონტაქტო დეტალები და ადმინის შეტყობინების ელფოსტები',
+        'description' => 'იხილეთ და განაახლეთ თქვენი ზოგადი პარამეტრები',
     ],
     'currency' => [
         'name' => 'ვალუტები',
-        'description' => 'ვალუტის ფორმატები, გაცვლითი კურსები, ავტომატური ამოცნობა და ათწილადის/ათასეულის გამყოფები',
+        'description' => 'ვალუტის პარამეტრების ნახვა და განახლება',
         'currency_setting_description' => 'ვებსაიტზე გამოყენებული ვალუტების ნახვა და განახლება',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'ავტომატური აღმოჩენის ჩართვა ვიზიტორის ვალუტისთვის',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'პროდუქტები',
-        'description' => 'მარაგის ჩვენება, SKU გენერაცია, ვარიანტის სურათები, დაკავშირებული პროდუქტები და სპეციფიკაციები',
+        'description' => 'იხილეთ და განაახლეთ თქვენი პროდუქტების პარამეტრები',
         'product_settings' => 'პროდუქტის პარამეტრები',
         'product_settings_description' => 'კონფიგურაცია გაუკეთეთ პროდუქტის წესებს',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'პროდუქტის ძიება',
-        'description' => 'ძიების ქცევა, ფილტრები კატეგორიის/ბრენდის/თეგის/ატრიბუტების მიხედვით და ფასის დიაპაზონის ფილტრაცია',
+        'description' => 'პროდუქტის ძიების პარამეტრების ნახვა და განახლება',
         'product_search_settings' => 'პროდუქტის ძიება',
         'product_search_settings_description' => 'კონფიგურაცია გაუკეთეთ პროდუქტის ძიების წესებს',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'ციფრული პროდუქტები',
-        'description' => 'ჩამოსატვირთი პროდუქტები, ლიცენზიის კოდები, სტუმრის გადახდა ციფრული პროდუქტებისთვის და ავტომატური დასრულება',
+        'description' => 'ციფრული პროდუქტების პარამეტრების ნახვა და განახლება',
         'digital_products_settings' => 'ციფრული პროდუქტები',
         'digital_products_settings_description' => 'კონფიგურაცია გაუკეთეთ ციფრული პროდუქტების წესებს',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'პროდუქტის მიმოხილვები',
-        'description' => 'მომხმარებელთა მიმოხილვები, რეიტინგების ჩვენება, სურათების ატვირთვა და დამტკიცების მოთხოვნები',
+        'description' => 'იხილეთ და განაახლეთ თქვენი პროდუქტის მიმოხილვების პარამეტრები',
         'form' => [
             'enable_review' => 'პროდუქტის მიმოხილვების ჩართვა',
             'enable_review_help' => 'მომხმარებლებს შეეძლებათ დატოვონ მიმოხილვები და შეფასებები პროდუქტებზე. როდესაც გამორთულია, მიმოხილვის ყველა ფუნქცია დაიმალება მაღაზიიდან.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'შოპინგი',
-        'description' => 'კალათა, სურვილების სია, შედარება, შეკვეთის თვალყურის დევნება, სწრაფი ყიდვის ღილაკი და გადახდის დადასტურების ატვირთვა',
+        'description' => 'იხილეთ და განაახლეთ თქვენი შოპინგის პარამეტრები',
         'general_setting' => 'ზოგადი პარამეტრები',
         'return_settings' => 'დაბრუნების პარამეტრები',
         'return_settings_description' => 'კონფიგურაცია გაუკეთეთ დაბრუნების პარამეტრების წესებს',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'კალათა განადგურდება, როდესაც მომხმარებელი გამოვა.',
             'hide_product_price' => 'პროდუქტის ფასის დამალვა',
             'hide_product_price_helper' => 'ეს ვარიანტი მუშაობს მხოლოდ იმ შემთხვევაში, თუ გამორთავთ საყიდლების კალათას, რითაც თქვენი საიტი კატალოგის მხოლოდ ჩვენებად იქცევა. თუ ჩართულია, პროდუქტის ფასი დაიმალება. ეს სასარგებლოა, როდესაც გსურთ ფასის დამალვა და მომხმარებლებს ფასისთვის დაგიკავშირება მოითხოვოთ.',
-            'hide_product_price_when_zero' => 'პროდუქტის ფასის დამალვა, როცა ნულია',
-            'hide_product_price_when_zero_helper' => 'თუ ჩართულია, 0 ფასიანი პროდუქტებისთვის ფასს ვიტრინაზე ვერ დაინახავთ.',
             'enable_payment_proof' => 'გადახდის დადასტურების ატვირთვის ჩართვა',
             'enable_payment_proof_helper' => 'მომხმარებლებს ნება მიეცით ატვირთონ გადახდის დადასტურება თავიანთი შეკვეთებისთვის. ეს სასარგებლოა ხელით გადახდის მეთოდებისთვის.',
             'enable_guest_payment_proof' => 'სტუმარი მომხმარებლებს ნება მიეცით ატვირთონ გადახდის დადასტურება',
             'enable_guest_payment_proof_helper' => 'როდესაც ჩართულია, სტუმარი მომხმარებლებს შეუძლიათ გადახდის დადასტურების ატვირთვა თავიანთი შეკვეთის ტოკენის გამოყენებით ავტორიზაციის გარეშე. ისინი მიიღებენ ატვირთვის ბმულს შეკვეთის დადასტურების ელფოსტაში.',
-            'payment_proof_payment_methods' => 'გადახდის მეთოდები, რომლებიც მოითხოვენ გადახდის დამადასტურებელს',
-            'payment_proof_payment_methods_helper' => 'აირჩიეთ რომელი გადახდის მეთოდები უნდა საშუალებას აძლევდეს მომხმარებლებს ატვირთონ გადახდის დამადასტურებელი. ჩვეულებრივ გამოიყენება ხელით გადახდის მეთოდებისთვის, როგორიცაა COD და საბანკო გადარიცხვა.',
         ],
     ],
     'checkout' => [
         'name' => 'გადახდა',
-        'panel_description' => 'სტუმრის გადახდა, სავალდებულო ველები, შეკვეთის ლიმიტები, პირობების მიღება და ქვეყნის შეზღუდვები',
+        'panel_description' => 'გადახდის პარამეტრების ნახვა და განახლება',
         'description' => 'კონფიგურაცია გაუკეთეთ გადახდის პარამეტრების წესებს',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'ბანკის ინფორმაციის ჩვენება გადახდის წარმატების გვერდზე',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'დაბრუნება',
         'description' => 'კონფიგურაცია გაუკეთეთ დაბრუნების პარამეტრების წესებს',
-        'panel_description' => 'შეკვეთის დაბრუნება, ნაწილობრივი დაბრუნება და დაბრუნების ვადები',
+        'panel_description' => 'დაბრუნების პარამეტრების ნახვა და განახლება',
         'form' => [
             'is_enabled_order_return' => 'შეკვეთის დაბრუნების ჩართვა',
             'allow_partial_return' => 'ნაწილობრივი დაბრუნების დაშვება',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'ინვოისები',
-        'description' => 'კომპანიის დეტალები ინვოისებზე, ინვოისების ნუმერაცია, PDF შრიფტები და ბეჭდის პარამეტრები',
+        'description' => 'იხილეთ და განაახლეთ თქვენი ინვოისების პარამეტრები',
         'company_settings' => 'კომპანიის პარამეტრები',
         'company_settings_description' => 'კომპანიის ინფორმაციის პარამეტრები ინვოისისთვის',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'ნაგულისხმევი გადასახადის განაკვეთი',
             'default_tax_rate_description' => 'მნიშვნელოვანი: ეს გამოყენებული იქნება, თუ პროდუქტში გადასახადი არ არის არჩეული.',
             'select_tax' => '-- აირჩიეთ --',
-            'display_product_price_including_taxes' => 'გადასახადის დამატება ნაჩვენებ ფასებზე',
-            'display_product_price_including_taxes_helper' => 'ავტომატურად ამატებს გადასახადს მაღაზიაში ნაჩვენებ პროდუქტების ფასებზე. მაგ. $100 პროდუქტი 10% გადასახადით ჩანს როგორც $110. საჭირო არ არის თუ "ფასი შეიცავს გადასახადს" უკვე ჩართულია ცალკეულ პროდუქტებზე.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'პროდუქტის ფასის ჩვენება გადასახადების ჩათვლით',
         ],
     ],
     'customer' => [
         'name' => 'მომხმარებლები',
-        'description' => 'რეგისტრაცია, ელფოსტის დადასტურება, შესვლის ვარიანტები, ანგარიშის წაშლა და პროფილის ველები',
+        'description' => 'იხილეთ და განაახლეთ თქვენი მომხმარებლების პარამეტრები',
         'customer_setting' => 'მომხმარებლის პარამეტრები',
         'customer_setting_description' => 'კონფიგურაცია გაუკეთეთ მომხმარებლის პარამეტრებს',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'მიწოდება',
-        'description' => 'მიწოდების წესები, უფასო მიწოდების ქცევა და მიწოდების ვარიანტების ჩვენების თანმიმდევრობა',
+        'description' => 'მიწოდების პარამეტრების ნახვა და განახლება',
         'shipping_rule' => 'მიწოდების წესები',
         'shipping_rule_description' => 'კონფიგურაცია გაუკეთეთ წესებს მიწოდების საფასურის გამოსათვლელად',
         'shipping_setting' => 'მიწოდების პარამეტრები',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'ადგილმდებარეობის შენახვა',
             'add_new' => 'ახლის დამატება',
         ],
-            'info' => [
-            'title' => 'როგორ მუშაობს მაღაზიის მდებარეობის განმსაზღვრელი',
-            'primary_store' => 'ძირითადი მაღაზიის მისამართი გამოჩნდება ინვოისებზე და გამოიყენება როგორც ნაგულისხმევი დაბრუნების მისამართი გადაზიდვის ეტიკეტებისთვის.',
-            'shipping_location' => 'მაღაზიები, რომლებიც აღნიშნულია როგორც "გადაზიდვის ადგილი", შეიძლება არჩეულ იქნეს როგორც წარმოშობის საწყობი გადაზიდვების შექმნისას.',
-            'shipment_selection' => 'შეკვეთების დამუშავებისას, შეგიძლიათ აირჩიოთ რომელი საწყობიდან გაიგზავნოს ინვენტარისა და მომხმარებლის მდებარეობის საფუძველზე.',
-        ],
     ],
     'tracking' => [
         'name' => 'თვალთვალი',
-        'description' => 'Facebook Pixel, Google Tag Manager მოვლენები და Google Ads კონვერსიის თვალყურის დევნება',
+        'description' => 'თვალთვალის პარამეტრების ნახვა და განახლება',
         'manage_tracking' => 'თვალთვალის მართვა',
         'manage_tracking_description' => 'თვალთვალის მართვა: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'მარკეტფლეისი',
-        'description' => 'მრავალ გამყიდველის პარამეტრები, კომისიები, გამყიდველის რეგისტრაცია და გადახდის კონფიგურაცია',
+        'description' => 'მარკეტფლეისის პარამეტრების ნახვა და განახლება',
     ],
     'standard_and_format' => [
         'name' => 'სტანდარტი და ფორმატი',
-        'panel_description' => 'შეკვეთის კოდის ფორმატი, წონის ერთეულები (კგ/ფუნტი) და ზომის ერთეულები (სმ/დუიმი)',
+        'panel_description' => 'სტანდარტისა და ფორმატის პარამეტრების ნახვა და განახლება',
         'description' => 'სტანდარტები და ფორმატები გამოიყენება ისეთი რამების გამოსათვლელად, როგორიცაა პროდუქტის ფასები, მიწოდების წონა და შეკვეთის დრო.',
         'form' => [
             'change_order_format' => 'შეკვეთის კოდის ფორმატის რედაქტირება (არასავალდებულო)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'აჩვენეთ პროგრესის ზოლი "X გაიყიდა Y-დან" სასწრაფოების შესაქმნელად და სწრაფი შესყიდვების წასახალისებლად ფლეშ გაყიდვების დროს.',
     ],
     'payment_method_cod_minimum_amount' => 'მინიმალური შეკვეთის თანხა - :currency (არასავალდებულო)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'მინიმალური შეკვეთის თანხა - :currency (არასავალდებულო)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'გამოჩნდეს ბანკის ინფორმაცია გადახდის წარმატების გვერდზე?',
     'invoice_templates' => 'ინვოისის შაბლონები',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

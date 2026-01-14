@@ -47,5 +47,4 @@ return [
         'completed' => 'Pabeigts',
         'canceled' => 'Atcelts',
     ],
-    'back_to_invoices' => 'Atpakaļ uz rēķiniem',
 ];

@@ -68,7 +68,7 @@ class XLoginController extends BaseApiController
             if (! $clientId || ! $clientSecret) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.x_not_configured'))
+                    ->setMessage(__('X (Twitter) authentication is not properly configured'))
                     ->toApiResponse();
             }
 
@@ -77,7 +77,7 @@ class XLoginController extends BaseApiController
             if (! $xUserData) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.invalid_x_token'))
+                    ->setMessage(__('Invalid X (Twitter) token'))
                     ->toApiResponse();
             }
 
@@ -87,7 +87,7 @@ class XLoginController extends BaseApiController
             if (! $email || ! $xId) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.no_email_or_x_id'))
+                    ->setMessage(__('Cannot login, no email or X ID provided!'))
                     ->toApiResponse();
             }
 
@@ -96,7 +96,7 @@ class XLoginController extends BaseApiController
             if (! $providerData) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.invalid_guard_configuration'))
+                    ->setMessage(__('Invalid guard configuration'))
                     ->toApiResponse();
             }
 
@@ -150,7 +150,7 @@ class XLoginController extends BaseApiController
                         'email' => $account->email,
                     ],
                 ])
-                ->setMessage(trans('plugins/social-login::social-login.login_successful'))
+                ->setMessage(__('Login successful'))
                 ->toApiResponse();
 
         } catch (ValidationException $e) {
@@ -174,7 +174,7 @@ class XLoginController extends BaseApiController
 
             return $this->httpResponse()
                 ->setError()
-                ->setMessage(trans('plugins/social-login::social-login.x_token_invalid'))
+                ->setMessage(__('X (Twitter) token invalid'))
                 ->toApiResponse();
         }
     }

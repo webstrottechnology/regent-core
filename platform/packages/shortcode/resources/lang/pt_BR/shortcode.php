@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'Blocos de IU',
     'search' => 'Pesquisar...',
     'no_shortcode_found' => 'Nenhum shortcode encontrado.',
-    'shortcode_not_available' => 'O shortcode ":name" não está disponível ou foi removido.',
 
     'cache_suggestion' => [
         'title' => 'Sugestão de desempenho',

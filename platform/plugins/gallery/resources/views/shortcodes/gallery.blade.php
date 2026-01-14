@@ -6,10 +6,7 @@
         @foreach ($galleries as $gallery)
             <div class="gallery-item">
                 <div class="img-wrap">
-                    <a
-                        href="{{ $gallery->url }}"
-                        class="d-inline-block"
-                    >
+                    <a href="{{ $gallery->url }}" class="d-inline-block">
                         {{ RvMedia::image($gallery->image, $gallery->name, $imageSize ?? 'medium') }}
                     </a>
                 </div>
@@ -17,7 +14,7 @@
                     <div class="gallery-title"><a href="{{ $gallery->url }}">{{ $gallery->name }}</a></div>
                     @if (trim($gallery->user->name))
                         <div class="gallery-author">
-                            {{ trans('plugins/gallery::gallery.by_name', ['name' => $gallery->user->name]) }}
+                            {{ __('By :name', ['name' => $gallery->user->name]) }}
                         </div>
                     @endif
                 </div>

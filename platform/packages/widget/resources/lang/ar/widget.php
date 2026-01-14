@@ -30,6 +30,7 @@ return [
     'primary_sidebar_name' => 'الشريط الجانبي الأساسي',
     'primary_sidebar_description' => 'قسم الشريط الجانبي الأساسي',
     'drag_widget_to_sidebar' => 'قم بسحب وإسقاط الأدوات في هذه المنطقة.',
+    'instruction' => 'To activate a widget drag it to a sidebar or click on it. To deactivate a widget and delete its settings, drag it back.',
     'cache_suggestion' => [
         'title' => 'اقتراح الأداء',
         'description' => 'يمكنك تحسين أداء موقعك عن طريق تمكين التخزين المؤقت للأدوات.',
@@ -37,33 +38,9 @@ return [
         'enable_button' => 'تمكين التخزين المؤقت للأدوات',
         'dismiss_button' => 'تجاهل لمدة أسبوع',
     ],
+
     'widget_site_copyright' => 'حقوق الطبع والنشر للموقع',
     'widget_site_copyright_description' => 'نص حقوق الطبع والنشر في تذييل الصفحة.',
     'widget_site_copyright_helper' => 'انتقل إلى :link لتغيير نص حقوق الطبع والنشر.',
     'theme_options' => 'خيارات القالب',
-    'form' => [
-        'enable_caching' => 'تفعيل التخزين المؤقت',
-        'yes' => 'نعم',
-        'no' => 'لا',
-        'cache_helper' => 'عند التفعيل، سيتم تخزين محتوى الودجت مؤقتًا لتحسين الأداء. عطّل الخيار للمحتوى الديناميكي الذي يتغير باستمرار.',
-        'cache_warning' => 'نظرًا لمشكلات في الواجهة، تم تعطيل التخزين المؤقت لهذا الودجت من خلال الكود ولن يتم تخزينه حتى عند التفعيل.',
-    ],
-    'widget_areas' => 'مناطق الودجات',
-    'manage_widgets' => 'إدارة الودجات',
-
-    'click_to_add' => 'انقر لإضافة الودجت',
-    'select_sidebar' => 'إضافة ودجت',
-    'select_sidebar_description' => 'اختر مكان إضافة هذا الودجت',
-    'adding_to' => 'إضافة إلى',
-    'add_widget' => 'إضافة ودجت',
-    'widget_not_found' => 'الودجت غير موجود',
-
-    'drag_or_click' => 'اسحب إلى الشريط الجانبي أو انقر + للإضافة',
-    'drop_widgets_here' => 'أسقط الودجات في مناطق الشريط الجانبي',
-    'search_widgets' => 'البحث عن الودجات...',
-    'no_widgets' => 'لا توجد ودجات متاحة',
-    'no_search_results' => 'لم يتم العثور على ودجات',
-    'or_click_add' => 'أو انقر على زر + في الودجت للإضافة',
-    'toggle_widget' => 'تبديل إعدادات الودجت',
-    'loading_form' => 'جاري تحميل نموذج الودجت...',
 ];

@@ -191,9 +191,6 @@ return [
         'sender' => '送信者',
         'order_date' => '注文日',
         'scan_qr_code' => 'QRコードをスキャンして出荷を追跡',
-        'total_amount' => '合計金額',
-        'cod_amount_to_collect' => '代金引換回収額',
     ],
     'customer_confirmed_delivery_at' => '顧客が配送確認した日時',
-    'no_shipping_methods_available' => '利用可能な配送方法がありません！',
 ];

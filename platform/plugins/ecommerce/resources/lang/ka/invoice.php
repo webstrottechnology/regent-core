@@ -47,5 +47,4 @@ return [
         'completed' => 'დასრულებული',
         'canceled' => 'გაუქმებული',
     ],
-    'back_to_invoices' => 'ინვოისებზე დაბრუნება',
 ];

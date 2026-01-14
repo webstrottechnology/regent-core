@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Kota pelanggan',
         'customer_zipcode' => 'Kode pos pelanggan',
     ],
-    'custom_css' => 'CSS Kustom',
-    'custom_css_helper' => 'Tambahkan gaya CSS kustom untuk menyesuaikan tampilan faktur. Gaya-gaya ini akan ditambahkan ke gaya faktur default.',
     'reset_success' => 'Berhasil reset ke default',
     'confirm_reset' => 'Konfirmasi reset template invoice?',
     'confirm_message' => 'Apakah Anda benar-benar ingin mereset template invoice ini ke default?',

@@ -191,9 +191,6 @@ return [
         'sender' => 'Nagpadala',
         'order_date' => 'Petsa ng order',
         'scan_qr_code' => 'I-scan ang QR code upang subaybayan ang iyong shipment',
-        'total_amount' => 'Kabuuang Halaga',
-        'cod_amount_to_collect' => 'Halagang COD na Kokolektahin',
     ],
     'customer_confirmed_delivery_at' => 'Kinumpirma ng customer ang paghahatid noong',
-    'no_shipping_methods_available' => 'Walang available na paraan ng pagpapadala!',
 ];

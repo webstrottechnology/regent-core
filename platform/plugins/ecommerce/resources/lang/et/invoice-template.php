@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Kliendi linn',
         'customer_zipcode' => 'Kliendi postiindeks',
     ],
-    'custom_css' => 'Kohandatud CSS',
-    'custom_css_helper' => 'Lisage kohandatud CSS-stiilid arve välimuse kohandamiseks. Need stiilid lisatakse vaikimisi arve stiilidele.',
     'reset_success' => 'Vaikeväärtusele tagastamine õnnestus',
     'confirm_reset' => 'Kinnita arve malli lähtestamine?',
     'confirm_message' => 'Kas soovite tõesti selle arve malli vaikeväärtusele tagastada?',

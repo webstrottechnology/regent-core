@@ -53,7 +53,6 @@ return [
     'lazy_loading' => 'Carregamento preguiçoso',
     'lazy_loading_description' => 'Ative esta opção para melhorar a velocidade de carregamento da página',
     'hide_on_mobile' => 'Ocultar no celular',
-    'dismiss' => 'Fechar',
 
     // Placeholders and help texts
     'name_placeholder' => 'Digite o nome do anúncio',

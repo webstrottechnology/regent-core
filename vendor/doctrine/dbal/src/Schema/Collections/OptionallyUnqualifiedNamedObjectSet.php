@@ -8,7 +8,6 @@ use Doctrine\DBAL\Schema\Collections\Exception\ObjectAlreadyExists;
 use Doctrine\DBAL\Schema\Collections\Exception\ObjectDoesNotExist;
 use Doctrine\DBAL\Schema\Name\UnqualifiedName;
 use Doctrine\DBAL\Schema\OptionallyNamedObject;
-use Traversable;
 
 use function array_splice;
 use function count;
@@ -109,12 +108,6 @@ final class OptionallyUnqualifiedNamedObjectSet implements ObjectSet
     public function toList(): array
     {
         return $this->elements;
-    }
-
-    /** {@inheritDoc} */
-    public function getIterator(): Traversable
-    {
-        yield from $this->elements;
     }
 
     /**

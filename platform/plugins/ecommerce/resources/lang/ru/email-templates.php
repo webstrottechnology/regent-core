@@ -1,6 +1,7 @@
 <?php
 
 return [
+    // Customer New Order Email
     'customer_new_order_title' => 'Заказ успешно размещен!',
     'customer_new_order_greeting' => 'Уважаемый :customer_name,',
     'customer_new_order_message' => 'Спасибо за покупку наших товаров, мы свяжемся с вами по телефону <strong>:customer_phone</strong> для подтверждения заказа!',
@@ -14,6 +15,8 @@ return [
     'customer_new_order_shipping_method' => 'Способ доставки',
     'customer_new_order_order_number' => 'Номер заказа',
     'customer_new_order_payment_method' => 'Способ оплаты',
+
+    // Admin New Order Email
     'admin_new_order_title' => 'Вы получили новый заказ от :site_title',
     'admin_new_order_greeting' => 'Привет, администратор,',
     'admin_new_order_message' => 'Новый заказ был успешно размещен клиентом :customer_name',
@@ -33,6 +36,8 @@ return [
     'admin_new_order_shipping_method' => 'Способ доставки',
     'admin_new_order_payment_method' => 'Способ оплаты',
     'admin_new_order_view_order' => 'Просмотреть детали заказа',
+
+    // Order Confirmation Email
     'order_confirm_title' => 'Заказ подтвержден!',
     'order_confirm_greeting' => 'Привет :customer_name,',
     'order_confirm_message' => 'Ваш заказ был подтвержден. Спасибо за покупку наших товаров!',
@@ -47,6 +52,8 @@ return [
     'order_confirm_note' => 'Примечание',
     'order_confirm_shipping_method' => 'Способ доставки',
     'order_confirm_payment_method' => 'Способ оплаты',
+
+    // Order Cancel (Customer) Email
     'customer_cancel_order_title' => 'Ваш заказ был отменен',
     'customer_cancel_order_greeting' => 'Уважаемый :customer_name,',
     'customer_cancel_order_message' => 'Ваш заказ <strong>:order_id</strong> был отменен по вашему запросу по причине :cancellation_reason, и ваш платеж также был отменен.',
@@ -60,9 +67,11 @@ return [
     'customer_cancel_order_address' => 'Адрес',
     'customer_cancel_order_products' => 'Вот что вы заказывали:',
     'customer_cancel_order_note' => 'Примечание',
+
+    // Order Cancel (Admin) Email
     'admin_cancel_order_title' => 'Заказ отменен',
     'admin_cancel_order_greeting' => 'Привет :customer_name,',
-    'admin_cancel_order_message' => 'Ваш заказ :order_id был отменен нашими сотрудниками.',
+    'admin_cancel_order_message' => 'Ваш заказ #:order_id был отменен нашими сотрудниками.',
     'admin_cancel_order_order_cancelled' => 'Заказ был отменен!',
     'admin_cancel_order_reason' => 'Причина отмены: :cancellation_reason',
     'admin_cancel_order_customer_info' => 'Информация о клиенте',
@@ -73,9 +82,11 @@ return [
     'admin_cancel_order_products' => 'Детали заказа:',
     'admin_cancel_order_note' => 'Примечание',
     'admin_cancel_order_order_summary' => 'Сводка заказа',
-    'order_cancellation_to_admin_title' => 'Заказ :order_id отменен клиентом',
+
+    // Order Cancellation to Admin Email
+    'order_cancellation_to_admin_title' => 'Заказ #:order_id отменен клиентом',
     'order_cancellation_to_admin_greeting' => 'Привет, администратор,',
-    'order_cancellation_to_admin_message' => ':customer_name отменил заказ <strong>:order_id</strong>. Причина: <strong>:cancellation_reason</strong>',
+    'order_cancellation_to_admin_message' => ':customer_name отменил заказ <strong>#:order_id</strong>. Причина: <strong>:cancellation_reason</strong>',
     'order_cancellation_to_admin_customer_info' => 'Информация о клиенте',
     'order_cancellation_to_admin_name' => 'Имя',
     'order_cancellation_to_admin_phone' => 'Телефон',
@@ -85,6 +96,8 @@ return [
     'order_cancellation_to_admin_note' => 'Примечание',
     'order_cancellation_to_admin_view_order' => 'Просмотреть детали заказа',
     'order_cancellation_to_admin_order_summary' => 'Сводка заказа',
+
+    // Order Delivery Email
     'customer_delivery_order_title' => 'Ваш заказ в пути',
     'customer_delivery_order_greeting' => 'Привет :customer_name,',
     'customer_delivery_order_message' => 'Ваш заказ в пути. Спасибо за покупку наших товаров!',
@@ -104,6 +117,8 @@ return [
     'customer_delivery_order_tracking_id' => 'ID отслеживания',
     'customer_delivery_order_tracking_link' => 'Ссылка для отслеживания',
     'customer_delivery_order_track_shipment' => 'Отследить вашу отправку',
+
+    // Order Delivered Email
     'customer_order_delivered_title' => 'Ваш заказ был доставлен',
     'customer_order_delivered_greeting' => 'Привет :customer_name,',
     'customer_order_delivered_message' => 'Ваш заказ был доставлен. Спасибо за покупку наших товаров!',
@@ -122,7 +137,9 @@ return [
     'customer_order_delivered_tracking_id' => 'ID отслеживания',
     'customer_order_delivered_tracking_link' => 'Ссылка для отслеживания',
     'customer_order_delivered_track_shipment' => 'Просмотреть детали отслеживания',
-    'order_confirm_payment_title' => 'Платеж подтвержден для заказа :order_id',
+
+    // Payment Confirmation Email
+    'order_confirm_payment_title' => 'Платеж подтвержден для заказа #:order_id',
     'order_confirm_payment_greeting' => 'Привет :customer_name,',
     'order_confirm_payment_message' => 'Ваш платеж был подтвержден. Спасибо за покупку наших товаров!',
     'order_confirm_payment_order_number' => 'Номер заказа',
@@ -137,6 +154,8 @@ return [
     'order_confirm_payment_thanks' => 'Спасибо за ваш платеж. Ваш заказ скоро будет обработан.',
     'order_confirm_payment_order_summary' => 'Сводка заказа',
     'order_confirm_payment_shipping_method' => 'Способ доставки',
+
+    // Order Recovery Email
     'order_recover_title' => 'У вас есть незавершенный заказ',
     'order_recover_greeting' => 'Привет :customer_name,',
     'order_recover_message' => 'Мы заметили, что у вас есть незавершенный заказ. Хотели бы вы завершить покупку?',
@@ -146,17 +165,23 @@ return [
     'order_recover_button' => 'Завершить ваш заказ',
     'order_recover_order_summary' => 'Сводка заказа',
     'order_recover_note' => 'Примечание',
+
+    // Welcome Email
     'welcome_greeting' => 'Мы рады видеть вас здесь, :customer_name!',
     'welcome_message' => 'Добро пожаловать на :site_title!',
     'welcome_register_success' => 'Вы успешно зарегистрировали аккаунт на <strong>:site_title</strong>.',
     'welcome_explore' => 'Если вам нужна помощь, не стесняйтесь отвечать на это письмо!',
     'welcome_visit_shop' => 'Начать покупки!',
+
+    // Confirm Email
     'confirm_email_title' => 'Подтвердить Email',
     'confirm_email_greeting' => 'Мы рады видеть вас здесь, :customer_name!',
     'confirm_email_message' => 'Пожалуйста, подтвердите ваш email адрес, нажав на кнопку ниже.',
     'confirm_email_instruction' => 'Пожалуйста, подтвердите ваш email адрес для доступа к этому веб-сайту. Нажмите на кнопку ниже, чтобы подтвердить ваш email.',
     'confirm_email_button' => 'Подтвердить ваш email адрес',
     'confirm_email_trouble' => 'Если у вас возникли проблемы с нажатием кнопки "Подтвердить ваш email адрес", скопируйте и вставьте URL ниже в ваш веб-браузер: <a href=":verify_link">:verify_link</a> и вставьте его в ваш браузер.',
+
+    // Password Reminder Email
     'password_reminder_title' => 'Сброс пароля',
     'password_reminder_greeting' => 'Привет :customer_name,',
     'password_reminder_message' => 'Вы запросили сброс пароля.',
@@ -164,9 +189,11 @@ return [
     'password_reminder_button' => 'Сбросить пароль',
     'password_reminder_ignore' => 'Если вы не запрашивали сброс пароля, пожалуйста, проигнорируйте это письмо.',
     'password_reminder_trouble_clicking' => 'Если у вас возникли проблемы с нажатием кнопки "Сбросить пароль", скопируйте и вставьте URL ниже в ваш веб-браузер: <a href=":reset_link">:reset_link</a>',
+
+    // Order Return Request Email
     'order_return_request_title' => 'Запрос на возврат получен',
     'order_return_request_greeting' => 'Привет :customer_name,',
-    'order_return_request_message' => 'Мы получили ваш запрос на возврат для заказа :order_id.',
+    'order_return_request_message' => 'Мы получили ваш запрос на возврат для заказа #:order_id.',
     'order_return_request_reason' => 'Причина возврата',
     'order_return_request_items' => 'Товары для возврата',
     'order_return_request_process' => 'Мы обработаем ваш запрос и свяжемся с вами в ближайшее время.',
@@ -178,6 +205,8 @@ return [
     'order_return_request_return_reason' => 'Причина возврата',
     'order_return_request_order_summary' => 'Сводка заказа',
     'order_return_request_note' => 'Примечание',
+
+    // Order Return Status Updated Email
     'order_return_status_updated_title' => 'Обновление статуса возврата заказа',
     'order_return_status_updated_greeting' => 'Уважаемый :customer_name,',
     'order_return_status_updated_message' => 'Мы хотели сообщить вам, что статус вашего запроса на возврат для заказа :order_id был обновлен.',
@@ -185,13 +214,17 @@ return [
     'order_return_status_updated_description' => 'Примечание модератора: " :description ".',
     'order_return_status_updated_questions' => 'Если у вас есть вопросы или сомнения относительно этого обновления, пожалуйста, не стесняйтесь обращаться к нашей службе поддержки клиентов.',
     'order_return_status_updated_view_details' => 'Просмотреть детали возврата',
+
+    // Review Products Email
     'review_products_title' => 'Оцените вашу недавнюю покупку',
     'review_products_greeting' => 'Привет :customer_name,',
-    'review_products_message' => 'Ваш заказ :order_id был завершен. Мы бы хотели услышать ваш отзыв!',
+    'review_products_message' => 'Ваш заказ #:order_id был завершен. Мы бы хотели услышать ваш отзыв!',
     'review_products_instruction' => 'Пожалуйста, уделите время для оценки товаров, которые вы приобрели:',
     'review_products_button' => 'Оценить товары',
     'review_products_thank_you' => 'Спасибо за вашу покупку!',
     'review_products_products' => 'Товары для оценки',
+
+    // Digital Products Download Email
     'download_digital_products_title' => 'Ваши цифровые товары готовы',
     'download_digital_products_greeting' => 'Привет :customer_name,',
     'download_digital_products_message' => 'Спасибо за вашу покупку! Ваши цифровые товары готовы к скачиванию.',
@@ -203,10 +236,13 @@ return [
     'download_digital_products_all_files' => 'Скачать все файлы',
     'download_digital_products_external_link_downloads' => 'Скачать внешние файлы',
     'download_digital_products_payment_method' => 'Способ оплаты',
+
+    // Digital Product License Codes Email
     'digital_product_license_codes_title' => 'Ваши лицензионные коды',
     'digital_product_license_codes_greeting' => 'Уважаемый :customer_name,',
     'digital_product_license_codes_message' => 'Спасибо за вашу покупку! Вот ваши лицензионные коды:',
     'digital_product_license_codes_thanks' => 'Спасибо за покупку наших цифровых товаров.',
+    'digital_product_license_codes_below' => 'Ниже приведены ваши лицензионные коды для товаров, которые вы приобрели:',
     'digital_product_license_codes_product' => 'Товар',
     'digital_product_license_codes_license' => 'Лицензионный код',
     'digital_product_license_codes_order_summary' => 'Вот что вы заказали:',
@@ -219,6 +255,8 @@ return [
     'digital_product_license_codes_note_2' => 'Каждый лицензионный код уникален и может быть использован только один раз',
     'digital_product_license_codes_note_3' => 'Не делитесь вашими лицензионными кодами с другими',
     'digital_product_license_codes_note_4' => 'Если у вас есть проблемы с вашими лицензионными кодами, пожалуйста, обратитесь к нашей службе поддержки',
+
+    // Product File Updated Email
     'product_file_updated_title' => 'Файлы товара обновлены',
     'product_file_updated_greeting' => 'Привет, :customer_name!',
     'product_file_updated_message' => 'Файлы для товара <a href=":product_link"><strong>:product_name</strong></a> были обновлены.',
@@ -230,6 +268,8 @@ return [
     'product_file_updated_instruction' => 'Вы можете скачать обновленные файлы из вашего аккаунта.',
     'product_file_updated_order_number' => 'Номер заказа',
     'product_file_updated_download' => 'Скачать обновленные файлы',
+
+    // Invoice Payment Created Email
     'invoice_payment_created_title' => 'Платеж получен',
     'invoice_payment_created_greeting' => 'Привет :customer_name,',
     'invoice_payment_created_message' => 'Мы успешно получили ваш платеж для :site_title. Спасибо!',
@@ -241,15 +281,21 @@ return [
     'invoice_payment_created_invoice_link_message' => 'Вы можете просмотреть ваш счет онлайн по адресу <a href=":invoice_link">:invoice_link</a> с кодом счета #:invoice_code',
     'invoice_payment_created_invoice_message' => 'Ваш код счета #:invoice_code',
     'invoice_payment_created_view_online' => 'Просмотреть счет онлайн',
+
+    // Customer Deletion Request Confirmation Email
     'customer_deletion_request_confirmation_greeting' => 'Привет :customer_name,',
     'customer_deletion_request_confirmation_message' => 'Мы получили ваш запрос на удаление вашего аккаунта.',
     'customer_deletion_request_confirmation_warning' => 'Пожалуйста, обратите внимание, что это действие нельзя отменить. Все ваши данные будут безвозвратно удалены.',
     'customer_deletion_request_confirmation_button' => 'Подтвердить удаление',
     'customer_deletion_request_confirmation_cancel' => 'Если вы не запрашивали это, пожалуйста, проигнорируйте это письмо.',
+
+    // Customer Deletion Request Completed Email
     'customer_deletion_request_completed_greeting' => 'Привет :customer_name,',
     'customer_deletion_request_completed_message' => 'Ваш аккаунт был успешно удален по запросу.',
     'customer_deletion_request_completed_thank_you' => 'Спасибо за то, что были с нами.',
     'customer_deletion_request_completed_goodbye' => 'Мы надеемся увидеть вас снова в будущем.',
+
+    // Payment Proof Upload Notification Email
     'payment_proof_upload_notification_greeting' => 'Привет, администратор,',
     'payment_proof_upload_notification_message' => 'Клиент :customer_name (Email: <a href="mailto::customer_email">:customer_email</a>) загрузил подтверждение платежа для своего заказа с ID :order_id.',
     'payment_proof_upload_notification_view_details' => 'Вы можете просмотреть детали платежа <a href=":payment_link">здесь</a> и детали заказа <a href=":order_link">здесь</a>.',
@@ -261,27 +307,4 @@ return [
     'payment_proof_upload_notification_total' => 'Общая сумма',
     'payment_proof_upload_notification_view_order' => 'Просмотреть заказ',
     'payment_proof_upload_notification_view_proof' => 'Просмотреть подтверждение платежа',
-    'abandoned_cart_reminder_title' => 'Вы оставили товары в корзине!',
-    'abandoned_cart_greeting' => 'Привет :customer_name,',
-    'abandoned_cart_message' => 'Мы заметили, что вы оставили товары в корзине. Хотите завершить покупку? Ваша корзина ждет вас!',
-    'abandoned_cart_button' => 'Вернуться в корзину',
-    'abandoned_cart_items_title' => 'Товары в вашей корзине',
-    'abandoned_cart_total' => 'Итого',
-    'abandoned_cart_unsubscribe' => 'Не хотите получать эти письма? <a href=":unsubscribe_url">Отписаться</a>',
-    'abandoned_cart_discount_offer' => 'Специальное предложение только для вас!',
-    'abandoned_cart_discount_off' => 'СКИДКА',
-    'abandoned_cart_discount_code' => 'Используйте код',
-    'abandoned_cart_claim_discount' => 'Получите скидку',
-    'abandoned_cart_final_offer' => 'Финальное предложение - Не пропустите!',
-    'abandoned_cart_expires_soon' => 'Это предложение скоро истечет!',
-    'abandoned_cart_complete_now' => 'Завершите заказ сейчас',
-    'abandoned_cart_reminder_1_title' => 'Что-то забыли?',
-    'abandoned_cart_reminder_1_greeting' => 'Привет :customer_name,',
-    'abandoned_cart_reminder_1_message' => 'Мы заметили, что вы оставили товары в корзине. Не волнуйтесь - мы сохранили их для вас! Готовы завершить покупку?',
-    'abandoned_cart_reminder_2_title' => 'Все еще думаете?',
-    'abandoned_cart_reminder_2_greeting' => 'Привет :customer_name,',
-    'abandoned_cart_reminder_2_message' => 'Ваша корзина скучает! Мы сохранили ваши товары и хотели связаться с вами. Возможно, это специальное предложение поможет вам решиться?',
-    'abandoned_cart_reminder_3_title' => 'Последний шанс сохранить корзину!',
-    'abandoned_cart_reminder_3_greeting' => 'Привет :customer_name,',
-    'abandoned_cart_reminder_3_message' => 'Это ваше последнее напоминание - корзина скоро истечет! Мы не хотим, чтобы вы пропустили эти товары.',
 ];

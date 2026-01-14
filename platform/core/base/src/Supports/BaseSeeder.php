@@ -30,20 +30,11 @@ class BaseSeeder extends Seeder
 {
     use Conditionable;
 
-    private ?Generator $fakerInstance = null;
+    protected Generator $faker;
 
     protected Carbon $now;
 
     protected string $basePath;
-
-    public function __get(string $name)
-    {
-        if ($name === 'faker') {
-            return $this->fake();
-        }
-
-        throw new \InvalidArgumentException("Property {$name} does not exist on " . static::class);
-    }
 
     public function uploadFiles(string $folder, ?string $basePath = null): array
     {
@@ -90,12 +81,14 @@ class BaseSeeder extends Seeder
         if (File::exists($filePath)) {
             try {
                 $uploadedFile = RvMedia::uploadFromPath($filePath, 0, dirname($path));
-                if (isset($uploadedFile['data']['url'])) {
+                if (isset($uploadedFile['data']['url']) && $uploadedFile) {
                     return str_replace(RvMedia::getUploadURL() . '/', '', $uploadedFile['data']['url']);
                 }
             } catch (Throwable $exception) {
-                $this->command->warn('Error uploading file: ' . $filePath);
-                $this->command->warn($exception->getMessage());
+                if (isset($this->command)) {
+                    $this->command->warn('Error uploading file: ' . $filePath);
+                    $this->command->warn($exception->getMessage());
+                }
             }
         }
 
@@ -119,6 +112,8 @@ class BaseSeeder extends Seeder
     {
         MediaFile::query()->truncate();
         MediaFolder::query()->truncate();
+
+        $this->faker = $this->fake();
 
         Setting::newQuery()->truncate();
 
@@ -158,8 +153,8 @@ class BaseSeeder extends Seeder
 
     protected function fake(): Generator
     {
-        if (isset($this->fakerInstance)) {
-            return $this->fakerInstance;
+        if (isset($this->faker)) {
+            return $this->faker;
         }
 
         if (! class_exists(Factory::class)) {
@@ -183,9 +178,9 @@ class BaseSeeder extends Seeder
             exit(1);
         }
 
-        $this->fakerInstance = fake();
+        $this->faker = fake();
 
-        return $this->fakerInstance;
+        return $this->faker;
     }
 
     protected function now(): Carbon

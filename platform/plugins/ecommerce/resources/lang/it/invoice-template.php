@@ -36,8 +36,6 @@ return [
         'customer_city' => 'La città del cliente',
         'customer_zipcode' => 'Il codice postale del cliente',
     ],
-    'custom_css' => 'CSS personalizzato',
-    'custom_css_helper' => 'Aggiungi stili CSS personalizzati per personalizzare l\'aspetto della fattura. Questi stili verranno aggiunti agli stili predefiniti della fattura.',
     'reset_success' => 'Ripristinato al valore predefinito con successo',
     'confirm_reset' => 'Confermare il ripristino del template fattura?',
     'confirm_message' => 'Vuoi davvero ripristinare questo template fattura al valore predefinito?',

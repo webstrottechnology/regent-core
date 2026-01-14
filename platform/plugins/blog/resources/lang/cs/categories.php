@@ -12,7 +12,4 @@ return [
     'parent' => 'Nadřazená kategorie',
     'order' => 'Pořadí',
     'is_default' => 'Je výchozí',
-    'intro' => [
-        'description' => 'Uspořádejte své blogové příspěvky do kategorií pro lepší správu obsahu.',
-    ],
 ];

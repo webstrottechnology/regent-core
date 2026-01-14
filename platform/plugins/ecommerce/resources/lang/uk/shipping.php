@@ -191,9 +191,6 @@ return [
         'sender' => 'Відправник',
         'order_date' => 'Дата замовлення',
         'scan_qr_code' => 'Скануйте QR-код для відстеження вашого відправлення',
-        'total_amount' => 'Загальна сума',
-        'cod_amount_to_collect' => 'Сума COD до отримання',
     ],
     'customer_confirmed_delivery_at' => 'Клієнт підтвердив доставку о',
-    'no_shipping_methods_available' => 'Немає доступних способів доставки!',
 ];

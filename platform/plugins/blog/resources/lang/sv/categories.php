@@ -12,7 +12,4 @@ return [
     'parent' => 'Föräldrakategori',
     'order' => 'Ordning',
     'is_default' => 'Är standard',
-    'intro' => [
-        'description' => 'Organisera dina blogginlägg i kategorier för bättre innehållshantering.',
-    ],
 ];

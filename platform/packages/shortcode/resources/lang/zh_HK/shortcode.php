@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI塊',
     'search' => '搜尋...',
     'no_shortcode_found' => '未找到短代碼。',
-    'shortcode_not_available' => '短代碼「:name」不可用或已被刪除。',
 
     'cache_suggestion' => [
         'title' => '效能建議',

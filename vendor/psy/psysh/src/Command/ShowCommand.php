@@ -32,7 +32,7 @@ class ShowCommand extends ReflectingCommand
     /**
      * {@inheritdoc}
      */
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('show')

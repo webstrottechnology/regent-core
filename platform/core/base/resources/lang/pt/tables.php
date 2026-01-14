@@ -7,7 +7,7 @@ return [
     'title' => 'Título',
     'order_by' => 'Ordenar por',
     'order' => 'Ordem',
-    'status' => 'Estado',
+    'status' => 'Status',
     'created_at' => 'Criado em',
     'updated_at' => 'Atualizado em',
     'description' => 'Descrição',

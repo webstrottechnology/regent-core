@@ -2,14 +2,12 @@
 
 namespace Botble\Translation\Console;
 
-use Botble\Theme\Facades\Theme;
 use Botble\Translation\AutoTranslateManager;
 use Botble\Translation\Manager;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\PromptsForMissingInput;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
 
 #[AsCommand('cms:translation:auto-translate-theme', 'Auto translate theme from English to a new language')]
 class AutoTranslateThemeCommand extends Command implements PromptsForMissingInput
@@ -17,7 +15,6 @@ class AutoTranslateThemeCommand extends Command implements PromptsForMissingInpu
     public function handle(Manager $manager): int
     {
         $locale = $this->argument('locale');
-        $theme = $this->option('theme');
 
         if (! preg_match('/^[a-z0-9\-_]+$/i', $locale)) {
             $this->components->error('Only alphabetic characters are allowed.');
@@ -31,9 +28,7 @@ class AutoTranslateThemeCommand extends Command implements PromptsForMissingInpu
 
         $manager->downloadLocaleIfMissing($locale);
 
-        $themeName = $theme ?: Theme::getThemeName();
-
-        $this->components->info(sprintf('Translating %s for %s...', $locale, $themeName));
+        $this->components->info(sprintf('Translating %s...', $locale));
 
         $translations = $manager->getThemeTranslations($locale);
 
@@ -61,7 +56,7 @@ class AutoTranslateThemeCommand extends Command implements PromptsForMissingInpu
             }
         }
 
-        $manager->saveThemeTranslations($locale, $translations, $theme);
+        $manager->saveThemeTranslations($locale, $translations);
 
         $this->components->info(sprintf('Done! %d has been translated.', $count));
 
@@ -72,6 +67,5 @@ class AutoTranslateThemeCommand extends Command implements PromptsForMissingInpu
     {
         $this->addArgument('locale', InputArgument::REQUIRED, 'The locale name that you want to translate');
         $this->addOption('override', 'o', null, 'Force translate theme again');
-        $this->addOption('theme', null, InputOption::VALUE_OPTIONAL, 'The theme name to translate');
     }
 }

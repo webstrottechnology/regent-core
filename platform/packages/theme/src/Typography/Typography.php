@@ -101,7 +101,7 @@ class Typography
     public function renderCssVariables(): string
     {
         if (empty($this->fontFamilies)) {
-            $fontFamily = new TypographyItem('primary', trans('packages/theme::theme.typography_primary'), theme_option('primary_font', 'Inter'));
+            $fontFamily = new TypographyItem('primary', __('Primary'), theme_option('primary_font', 'Inter'));
 
             $this->fontFamilies[$fontFamily->getName()] = $fontFamily;
         }
@@ -188,16 +188,16 @@ class Typography
             foreach ($this->fontFamilies as $fontFamily) {
                 $fields[] = GoogleFontsField::make()
                     ->name("tp_{$fontFamily->getName()}_font")
-                    ->label(trans('packages/theme::theme.typography_font_family', ['name' => $fontFamily->getLabel()]))
+                    ->label(__(':name font family', ['name' => $fontFamily->getLabel()]))
                     ->defaultValue($fontFamily->getDefault());
             }
 
             foreach ($this->fontSizes as $fontSize) {
                 $fields[] = NumberField::make()
                     ->name("tp_{$fontSize->getName()}_size")
-                    ->label(trans('packages/theme::theme.typography_font_size', ['name' => $fontSize->getLabel()]))
+                    ->label(__(':name font size', ['name' => $fontSize->getLabel()]))
                     ->defaultValue($fontSize->getDefault())
-                    ->helperText(trans('packages/theme::theme.typography_font_size_helper', [
+                    ->helperText(__('The font size in pixels (px). Default is :default', [
                         'default' => "<code>{$fontSize->getDefault()}</code>",
                     ]));
             }

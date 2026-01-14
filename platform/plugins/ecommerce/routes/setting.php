@@ -247,17 +247,6 @@ AdminHelper::registerRoutes(function (): void {
                     'uses' => 'FlashSaleSettingController@update',
                     'permission' => 'ecommerce.settings.flash-sale',
                 ]);
-
-                Route::get('abandoned-carts', [
-                    'as' => 'ecommerce.settings.abandoned-carts',
-                    'uses' => 'AbandonedCartSettingController@edit',
-                ]);
-
-                Route::put('abandoned-carts', [
-                    'as' => 'ecommerce.settings.abandoned-carts.update',
-                    'uses' => 'AbandonedCartSettingController@update',
-                    'permission' => 'ecommerce.settings.abandoned-carts',
-                ]);
             });
         });
     });

@@ -84,11 +84,9 @@ class VSIM extends RedisCommand
     public function parseResponse($data)
     {
         if ($this->withScores) {
-            if ($data === array_values($data)) {
-                $data = CommandUtility::arrayToDictionary($data, function ($key, $value) {
-                    return [$key, (float) $value];
-                });
-            }
+            $data = CommandUtility::arrayToDictionary($data, function ($key, $value) {
+                return [$key, (float) $value];
+            });
         }
 
         return $data;

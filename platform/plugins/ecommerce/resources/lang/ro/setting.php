@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'Ecommerce',
     'general' => [
         'name' => 'General',
-        'description' => 'Numele magazinului, info companie, contact și emailuri notificare admin',
+        'description' => 'Vizualizați și actualizați setările generale',
     ],
     'currency' => [
         'name' => 'Valute',
-        'description' => 'Formate monedă, cursuri de schimb, detecție automată și separatori zecimali/mii',
+        'description' => 'Vizualizați și actualizați setările valutare',
         'currency_setting_description' => 'Vizualizați și actualizați valutele folosite pe site',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Activați detectarea automată a valutei vizitatorului',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produse',
-        'description' => 'Afișare stoc, generare SKU, imagini variante, produse asociate și specificații',
+        'description' => 'Vizualizați și actualizați setările produselor',
         'product_settings' => 'Setări produse',
         'product_settings_description' => 'Configurați reguli pentru produse',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Căutare Produs',
-        'description' => 'Comportament căutare, filtre după categorie/brand/tag/atribute și filtrare interval preț',
+        'description' => 'Vizualizați și actualizați setările de căutare a produselor',
         'product_search_settings' => 'Căutare produse',
         'product_search_settings_description' => 'Configurați reguli pentru căutarea produselor',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Produse Digitale',
-        'description' => 'Produse descărcabile, coduri de licență, checkout oaspeți pentru produse digitale și completare automată',
+        'description' => 'Vizualizați și actualizați setările produselor digitale',
         'digital_products_settings' => 'Produse digitale',
         'digital_products_settings_description' => 'Configurați reguli pentru produse digitale',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Recenzii Produse',
-        'description' => 'Recenzii clienți, afișare evaluări, încărcare imagini și cerințe de aprobare',
+        'description' => 'Vizualizați și actualizați setările recenziilor produselor',
         'form' => [
             'enable_review' => 'Activați recenziile produselor',
             'enable_review_help' => 'Permiteți clienților să lase recenzii și evaluări pentru produse. Când este dezactivat, toate funcțiile de recenzii vor fi ascunse din magazin.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Cumpărături',
-        'description' => 'Coș, listă de dorințe, comparare, urmărire comenzi, buton cumpărare rapidă și încărcare dovadă plată',
+        'description' => 'Vizualizați și actualizați setările de cumpărături',
         'general_setting' => 'Setări generale',
         'return_settings' => 'Setări returnare',
         'return_settings_description' => 'Configurați reguli pentru setările de returnare',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Coșul va fi distrus când clientul se deconectează.',
             'hide_product_price' => 'Ascunde prețul produsului',
             'hide_product_price_helper' => 'Această opțiune funcționează doar dacă dezactivați coșul de cumpărături, transformând site-ul într-o afișare doar catalog. Dacă este activat, prețul produsului va fi ascuns. Este util când doriți să ascundeți prețul și să cereți clienților să vă contacteze pentru preț.',
-            'hide_product_price_when_zero' => 'Ascunde prețul produsului când este zero',
-            'hide_product_price_when_zero_helper' => 'Dacă este activat, produsele cu preț 0 nu vor afișa un preț în magazin.',
             'enable_payment_proof' => 'Activați încărcarea dovezii de plată',
             'enable_payment_proof_helper' => 'Permiteți clienților să încarce dovada plății pentru comenzile lor. Aceasta este utilă pentru metodele de plată manuale.',
             'enable_guest_payment_proof' => 'Permiteți clienților vizitatori să încarce dovada plății',
             'enable_guest_payment_proof_helper' => 'Când este activat, clienții vizitatori pot încărca dovada plății folosind tokenul comenzii lor fără a se autentifica. Vor primi linkul de încărcare în emailul de confirmare a comenzii.',
-            'payment_proof_payment_methods' => 'Metode de plată care necesită dovada plății',
-            'payment_proof_payment_methods_helper' => 'Selectați ce metode de plată ar trebui să permită clienților să încarce dovada plății. De obicei folosit pentru metode de plată manuale precum plata la livrare și transferul bancar.',
         ],
     ],
     'checkout' => [
         'name' => 'Finalizare',
-        'panel_description' => 'Checkout oaspeți, câmpuri obligatorii, limite comenzi, acceptare termeni și restricții țări',
+        'panel_description' => 'Vizualizați și actualizați setările de finalizare',
         'description' => 'Configurați reguli pentru setările de finalizare',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Afișați informațiile bancare pe pagina de succes finalizare',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Returnare',
         'description' => 'Configurați reguli pentru setările de returnare',
-        'panel_description' => 'Retururi comenzi, retururi parțiale și limite de timp pentru retururi',
+        'panel_description' => 'Vizualizați și actualizați setările de returnare',
         'form' => [
             'is_enabled_order_return' => 'Este activată returnarea comenzii',
             'allow_partial_return' => 'Permiteți returnarea parțială',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Facturi',
-        'description' => 'Detalii companie pe facturi, numerotare facturi, fonturi PDF și setări ștampilă',
+        'description' => 'Vizualizați și actualizați setările facturilor',
         'company_settings' => 'Setări companie',
         'company_settings_description' => 'Setări Informații companie pentru facturare',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Rată implicită de taxe',
             'default_tax_rate_description' => 'Important: se va aplica dacă nu este selectată nicio taxă în produs.',
             'select_tax' => '-- Selectați --',
-            'display_product_price_including_taxes' => 'Adăugați taxa la prețurile afișate',
-            'display_product_price_including_taxes_helper' => 'Adaugă automat taxa la prețurile produselor din magazin. Ex.: un produs de $100 cu 10% taxă este afișat ca $110. Nu este necesar dacă "Prețul include taxa" este deja activat pe produsele individuale.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Afișați prețul produsului incluzând taxele',
         ],
     ],
     'customer' => [
         'name' => 'Clienți',
-        'description' => 'Înregistrare, verificare email, opțiuni autentificare, ștergere cont și câmpuri profil',
+        'description' => 'Vizualizați și actualizați setările clienților',
         'customer_setting' => 'Setări clienți',
         'customer_setting_description' => 'Configurați setările clienților',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Transport',
-        'description' => 'Reguli livrare, comportament livrare gratuită și ordine afișare opțiuni livrare',
+        'description' => 'Vizualizați și actualizați setările de transport',
         'shipping_rule' => 'Reguli transport',
         'shipping_rule_description' => 'Configurați reguli pentru calcularea taxei de transport',
         'shipping_setting' => 'Setări transport',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Salvați locația',
             'add_new' => 'Adaugă nou',
         ],
-            'info' => [
-            'title' => 'Cum funcționează localizatoarele de magazine',
-            'primary_store' => 'Adresa magazinului principal apare pe facturi și este utilizată ca adresă de returnare implicită pentru etichetele de expediere.',
-            'shipping_location' => 'Magazinele marcate ca "locație de expediere" pot fi selectate ca depozit de origine la crearea livrărilor.',
-            'shipment_selection' => 'La procesarea comenzilor, puteți alege din ce depozit să expediați pe baza stocului și a locației clientului.',
-        ],
     ],
     'tracking' => [
         'name' => 'Urmărire',
-        'description' => 'Facebook Pixel, evenimente Google Tag Manager și urmărire conversii Google Ads',
+        'description' => 'Vizualizați și actualizați setările de urmărire',
         'manage_tracking' => 'Gestionare urmărire',
         'manage_tracking_description' => 'Gestionare urmărire: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Marketplace',
-        'description' => 'Setări multi-vendor, comisioane, înregistrare vânzători și configurare plăți',
+        'description' => 'Vizualizați și actualizați setările marketplace',
     ],
     'standard_and_format' => [
         'name' => 'Standard & Format',
-        'panel_description' => 'Format cod comandă, unități greutate (kg/lb) și unități dimensiune (cm/inch)',
+        'panel_description' => 'Vizualizați și actualizați setările de standard & format',
         'description' => 'Standardele și formatele sunt folosite pentru a calcula lucruri precum prețurile produselor, greutățile de transport și timpii de comandă.',
         'form' => [
             'change_order_format' => 'Editați formatul codului comenzii (opțional)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Afișați o bară de progres cu "X vândute din Y" pentru a crea urgență și a încuraja achiziții rapide în timpul vânzărilor flash.',
     ],
     'payment_method_cod_minimum_amount' => 'Suma minimă a comenzii - :currency (Opțional)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Suma minimă a comenzii - :currency (Opțional)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Afișați informațiile bancare pe pagina de succes finalizare?',
     'invoice_templates' => 'Șabloane facturi',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

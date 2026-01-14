@@ -52,7 +52,7 @@
             :data-sale-percent-text="trans('plugins/ecommerce::products.form.price_sale_percent_helper')"
         >
             <x-slot:helper-text>
-                {!! BaseHelper::clean(trans('plugins/ecommerce::products.form.price_sale_percent_helper', ['percent' => '<strong>' . ($product ? $product->sale_percent : 0) . '%</strong>'])) !!}
+                {!! trans('plugins/ecommerce::products.form.price_sale_percent_helper', ['percent' => '<strong>' . ($product ? $product->sale_percent : 0) . '%</strong>']) !!}
             </x-slot:helper-text>
 
             <x-slot:prepend>

@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Bandar pelanggan',
         'customer_zipcode' => 'Kod pos pelanggan',
     ],
-    'custom_css' => 'CSS Tersuai',
-    'custom_css_helper' => 'Tambah gaya CSS tersuai untuk menyesuaikan penampilan invois. Gaya-gaya ini akan ditambahkan kepada gaya invois lalai.',
     'reset_success' => 'Berjaya set semula kepada piawai',
     'confirm_reset' => 'Sahkan set semula templat invois?',
     'confirm_message' => 'Adakah anda benar-benar mahu set semula templat invois ini kepada piawai?',

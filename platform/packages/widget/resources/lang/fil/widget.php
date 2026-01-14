@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Mga Widget Area',
     'manage_widgets' => 'Pamahalaan ang Mga Widget',
 
-    'click_to_add' => 'I-click upang magdagdag ng widget',
-    'select_sidebar' => 'Magdagdag ng Widget',
-    'select_sidebar_description' => 'Piliin kung saan idaragdag ang widget na ito',
-    'adding_to' => 'Idinaragdag sa',
-    'add_widget' => 'Magdagdag ng Widget',
-    'widget_not_found' => 'Hindi nahanap ang widget',
-
     'cache_suggestion' => [
         'title' => 'Mungkahi sa Performance',
         'description' => 'Mapapabuti mo ang performance ng iyong site sa pamamagitan ng pag-enable ng widget caching.',
@@ -52,22 +45,4 @@ return [
     'widget_site_copyright_description' => 'Teksto ng copyright sa ibabang footer.',
     'widget_site_copyright_helper' => 'Pumunta sa :link upang baguhin ang teksto ng copyright.',
     'theme_options' => 'Mga opsyon ng tema',
-
-    'form' => [
-        'enable_caching' => 'I-enable ang caching',
-        'yes' => 'Oo',
-        'no' => 'Hindi',
-        'cache_helper' => 'Kapag naka-enable, ang nilalaman ng widget na ito ay ika-cache para mapabuti ang performance.',
-        'cache_warning' => 'Dahil sa mga isyu sa UI, ang cache para sa widget na ito ay naka-disable sa pamamagitan ng code.',
-    ],
-
-    'drag_or_click' => 'I-drag sa sidebar o i-click ang + para magdagdag',
-    'drop_widgets_here' => 'I-drop ang mga widget sa iyong mga sidebar area',
-    'search_widgets' => 'Maghanap ng mga widget...',
-    'no_widgets' => 'Walang available na widget',
-    'no_search_results' => 'Walang nahanap na widget',
-    'or_click_add' => 'O i-click ang + button sa isang widget para magdagdag',
-    'toggle_widget' => 'I-toggle ang mga setting ng widget',
-    'loading_form' => 'Naglo-load ng widget form...',
-
 ];

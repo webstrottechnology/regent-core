@@ -488,7 +488,7 @@ class BusFake implements Fake, QueueingDispatcher
     /**
      * Create a new assertion about a chained batch.
      *
-     * @param  \Closure(\Illuminate\Bus\PendingBatch): bool  $callback
+     * @param  \Closure  $callback
      * @return \Illuminate\Support\Testing\Fakes\ChainedBatchTruthTest
      */
     public function chainedBatch(Closure $callback)
@@ -499,7 +499,7 @@ class BusFake implements Fake, QueueingDispatcher
     /**
      * Assert if a batch was dispatched based on a truth-test callback.
      *
-     * @param  callable(\Illuminate\Bus\PendingBatch): bool  $callback
+     * @param  callable  $callback
      * @return void
      */
     public function assertBatched(callable $callback)
@@ -606,8 +606,8 @@ class BusFake implements Fake, QueueingDispatcher
     /**
      * Get all of the pending batches matching a truth-test callback.
      *
-     * @param  callable(\Illuminate\Bus\PendingBatch): bool  $callback
-     * @return \Illuminate\Support\Collection<int, \Illuminate\Bus\PendingBatch>
+     * @param  callable  $callback
+     * @return \Illuminate\Support\Collection
      */
     public function batched(callable $callback)
     {

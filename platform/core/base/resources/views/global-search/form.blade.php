@@ -4,10 +4,7 @@
     :close-button="false"
     :centered="false"
 >
-    <x-core::form
-        :url="route('core.global-search')"
-        data-bb-toggle="gs-form"
-    >
+    <x-core::form :url="route('core.global-search')" data-bb-toggle="gs-form">
         <x-core::form.text-input
             name="keyword"
             :label="$name = trans('core/base::base.global_search.search')"

@@ -72,10 +72,6 @@ class OrderSeeder extends BaseSeeder
 
         $storeLocatorsCount = $storeLocators->count();
 
-        if ($customers->isEmpty() || $productsCount === 0) {
-            return;
-        }
-
         $total = 20;
         for ($i = 0; $i < $total; $i++) {
             $customer = $customers->random();
@@ -85,8 +81,7 @@ class OrderSeeder extends BaseSeeder
                 continue;
             }
 
-            $randomCount = min(rand(2, 4), $productsCount);
-            $orderProducts = $productsCount > 1 ? $products->random($randomCount) : $products->first();
+            $orderProducts = $productsCount > 1 ? $products->random(rand(2, 4)) : $products->first();
 
             $groupedProducts = $this->group($orderProducts);
 
@@ -249,7 +244,7 @@ class OrderSeeder extends BaseSeeder
                 /**
                  * @var StoreLocator|null $storeLocator
                  */
-                $storeLocator = $storeLocatorsCount >= 1 ? $storeLocators->random() : null;
+                $storeLocator = $storeLocatorsCount > 1 ? $storeLocators->random() : null;
 
                 if ($isAvailableShipping && ! Shipment::query()->where(['order_id' => $order->getKey()])->exists()) {
                     $shipment = Shipment::query()->create([
@@ -260,7 +255,7 @@ class OrderSeeder extends BaseSeeder
                         'cod_amount' => $codAmount,
                         'cod_status' => $codStatus,
                         'price' => $order->shipping_amount,
-                        'store_id' => $storeLocator?->id,
+                        'store_id' => $storeLocator ? $storeLocator->id : 0,
                         'tracking_id' => 'JJD00' . rand(1111111, 99999999),
                         'shipping_company_name' => Arr::random(['DHL', 'AliExpress', 'GHN', 'FastShipping']),
                         'tracking_link' => 'https://mydhl.express.dhl/us/en/tracking.html#/track-by-reference',
@@ -358,7 +353,7 @@ class OrderSeeder extends BaseSeeder
                         $currentBalance = $customer->balance;
 
                         $amountByCurrency = $amount;
-                        $time = Carbon::now()->subMinutes(rand(120, 12000));
+                        $time = Carbon::now()->subMinutes(($order->id + 1) * 120 * rand(1, 10));
 
                         $data = [
                             'sub_amount' => $order->amount,

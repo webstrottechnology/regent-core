@@ -52,7 +52,7 @@ return [
     'close' => 'Stäng',
     'panel' => [
         'others' => 'Övrigt',
-        'system' => 'Systemet',
+        'system' => 'System',
         'platform_administration' => 'Plattformsadministration',
         'manage_description' => 'Hantera :name',
     ],

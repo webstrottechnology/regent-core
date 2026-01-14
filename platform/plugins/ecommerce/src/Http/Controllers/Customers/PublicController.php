@@ -142,7 +142,7 @@ class PublicController extends BaseController
                 $model->fill($data);
 
                 if (get_ecommerce_setting('enabled_customer_dob_field', true) && ($dob = $request->input('dob'))) {
-                    $model->dob = BaseHelper::parseDate($dob);
+                    $model->dob = Carbon::createFromFormat(BaseHelper::getDateFormat(), $dob);
                 }
 
                 $model->save();
@@ -227,7 +227,7 @@ class PublicController extends BaseController
             $model = $form->getModel();
             $request = $form->getRequest();
 
-            if ($request->boolean('is_default')) {
+            if ($request->input('is_default') == 1) {
                 Address::query()
                     ->where([
                         'is_default' => 1,
@@ -238,7 +238,7 @@ class PublicController extends BaseController
 
             $request->merge([
                 'customer_id' => auth('customer')->id(),
-                'is_default' => $request->boolean('is_default', 0),
+                'is_default' => $request->input('is_default', 0),
             ]);
 
             $model->fill($request->input());
@@ -313,7 +313,7 @@ class PublicController extends BaseController
             $model = $form->getModel();
             $request = $form->getRequest();
 
-            if ($request->boolean('is_default')) {
+            if ($request->input('is_default') == 1) {
                 Address::query()
                     ->where([
                         'is_default' => 1,
@@ -325,7 +325,7 @@ class PublicController extends BaseController
             }
 
             $request->merge([
-                'is_default' => $request->boolean('is_default', 0),
+                'is_default' => $request->input('is_default', 0),
             ]);
 
             $model->fill($request->input());
@@ -490,7 +490,7 @@ class PublicController extends BaseController
 
         OrderHistory::query()->create([
             'action' => OrderHistoryActionEnum::RETURN_ORDER,
-            'description' => __(':customer has requested return product(s)', ['customer' => $order->address?->name ?? $order->user?->name ?? 'Guest']),
+            'description' => __(':customer has requested return product(s)', ['customer' => $order->address->name]),
             'order_id' => $order->getKey(),
         ]);
 

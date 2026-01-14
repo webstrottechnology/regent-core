@@ -191,9 +191,6 @@ return [
         'sender' => 'Pošiljalac',
         'order_date' => 'Datum porudžbine',
         'scan_qr_code' => 'Skenirajte QR kod da biste pratili vašu pošiljku',
-        'total_amount' => 'Укупан износ',
-        'cod_amount_to_collect' => 'COD износ за наплату',
     ],
     'customer_confirmed_delivery_at' => 'Kupac potvrdio dostavu',
-    'no_shipping_methods_available' => 'Нема доступних начина испоруке!',
 ];

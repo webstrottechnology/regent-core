@@ -12,7 +12,4 @@ return [
     'parent' => 'Ülemkategooria',
     'order' => 'Järjekord',
     'is_default' => 'On vaikimisi',
-    'intro' => [
-        'description' => 'Korraldage oma ajaveebpostitused kategooriatesse parema sisu haldamise jaoks.',
-    ],
 ];

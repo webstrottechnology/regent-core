@@ -22,13 +22,13 @@ class PayPalController extends BaseController
                 ->setError()
                 ->setNextUrl(PaymentHelper::getCancelURL())
                 ->withInput()
-                ->setMessage(trans('plugins/paypal::paypal.payment_failed'));
+                ->setMessage(__('Payment failed!'));
         }
 
         $payPalPaymentService->afterMakePayment($request->input());
 
         return $response
             ->setNextUrl(PaymentHelper::getRedirectURL())
-            ->setMessage(trans('plugins/payment::payment.checkout_success'));
+            ->setMessage(__('Checkout successfully!'));
     }
 }

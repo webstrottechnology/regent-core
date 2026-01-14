@@ -92,11 +92,13 @@ class ConnectionErrorProof extends Pipeline
         $responses = [];
         $sizeOfPipe = count($commands);
         $exceptions = [];
+        $buffer = '';
 
         foreach ($commands as $command) {
-            $nodeConnection = $connection->getConnectionByCommand($command);
-            $nodeConnection->write($command->serializeCommand());
+            $buffer .= $command->serializeCommand();
         }
+
+        $connection->write($buffer);
 
         for ($i = 0; $i < $sizeOfPipe; ++$i) {
             $command = $commands->dequeue();

@@ -66,7 +66,6 @@ return [
     'languages' => 'Jeziki',
     'reset_password' => 'Ponastavi geslo',
     'deactivated_message' => 'Vaš račun je bil deaktiviran. Obrnite se na skrbnika.',
-    'password_changed_message' => 'Vaše geslo je bilo spremenjeno. Prosimo, prijavite se ponovno z novim geslom.',
     'settings' => [
         'email' => [
             'title' => 'ACL',

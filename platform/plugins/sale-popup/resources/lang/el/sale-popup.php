@@ -39,7 +39,4 @@ return [
         'product_listing' => 'Λίστα προϊόντων',
         'cart' => 'Καλάθι',
     ],
-    'purchased' => 'αγόρασε',
-    'verified' => 'Επαληθευμένο',
-    'quick_view' => 'Γρήγορη προβολή',
 ];

@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Khu vực Widget',
     'manage_widgets' => 'Quản lý Widget',
 
-    'click_to_add' => 'Nhấn để thêm widget',
-    'select_sidebar' => 'Thêm Widget',
-    'select_sidebar_description' => 'Chọn vị trí để thêm widget này',
-    'adding_to' => 'Thêm vào',
-    'add_widget' => 'Thêm Widget',
-    'widget_not_found' => 'Không tìm thấy widget',
-
     'cache_suggestion' => [
         'title' => 'Đề xuất hiệu suất',
         'description' => 'Bạn có thể cải thiện hiệu suất trang web bằng cách bật bộ nhớ đệm cho widget.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Văn bản bản quyền ở chân trang dưới cùng.',
     'widget_site_copyright_helper' => 'Đi tới :link để thay đổi văn bản bản quyền.',
     'theme_options' => 'Tùy chọn giao diện',
-
-    'form' => [
-        'enable_caching' => 'Bật bộ nhớ cache',
-        'yes' => 'Có',
-        'no' => 'Không',
-        'cache_helper' => 'Bật bộ nhớ cache để cải thiện hiệu suất tải trang.',
-        'cache_warning' => 'Lưu ý: Nội dung widget sẽ được lưu vào bộ nhớ cache. Xóa cache nếu cần cập nhật nội dung.',
-    ],
-
-    'drag_or_click' => 'Kéo vào thanh bên hoặc nhấn + để thêm',
-    'drop_widgets_here' => 'Thả widget vào các khu vực thanh bên',
-    'search_widgets' => 'Tìm kiếm widget...',
-    'no_widgets' => 'Không có widget nào',
-    'no_search_results' => 'Không tìm thấy widget nào',
-    'or_click_add' => 'Hoặc nhấn nút + trên widget để thêm',
-    'toggle_widget' => 'Bật/tắt cài đặt widget',
-    'loading_form' => 'Đang tải biểu mẫu widget...',
 ];

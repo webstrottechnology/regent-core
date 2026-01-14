@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Područja widgeta',
     'manage_widgets' => 'Upravljaj widgetima',
 
-    'click_to_add' => 'Kliknite za dodavanje widgeta',
-    'select_sidebar' => 'Dodaj widget',
-    'select_sidebar_description' => 'Odaberite gdje dodati ovaj widget',
-    'adding_to' => 'Dodavanje u',
-    'add_widget' => 'Dodaj widget',
-    'widget_not_found' => 'Widget nije pronađen',
-
     'cache_suggestion' => [
         'title' => 'Prijedlog za performanse',
         'description' => 'Možete poboljšati performanse svoje stranice omogućavanjem predmemoriranja widgeta.',
@@ -52,22 +45,4 @@ return [
     'widget_site_copyright_description' => 'Tekst autorskih prava u donjem podnožju.',
     'widget_site_copyright_helper' => 'Idite na :link za promjenu teksta autorskih prava.',
     'theme_options' => 'Opcije teme',
-
-    'form' => [
-        'enable_caching' => 'Omogući predmemoriranje',
-        'yes' => 'Da',
-        'no' => 'Ne',
-        'cache_helper' => 'Kada je omogućeno, sadržaj ovog widgeta bit će predmemoriran radi poboljšanja performansi.',
-        'cache_warning' => 'Zbog problema s korisničkim sučeljem, predmemoriranje za ovaj widget je onemogućeno putem koda.',
-    ],
-
-    'drag_or_click' => 'Povucite na bočnu traku ili kliknite + za dodavanje',
-    'drop_widgets_here' => 'Ispustite widgete u područja bočne trake',
-    'search_widgets' => 'Traži widgete...',
-    'no_widgets' => 'Nema dostupnih widgeta',
-    'no_search_results' => 'Widgeti nisu pronađeni',
-    'or_click_add' => 'Ili kliknite gumb + na widgetu za dodavanje',
-    'toggle_widget' => 'Prebaci postavke widgeta',
-    'loading_form' => 'Učitavanje obrasca widgeta...',
-
 ];

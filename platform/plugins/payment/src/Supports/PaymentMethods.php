@@ -12,8 +12,6 @@ class PaymentMethods
 
     protected array $excludedMethods = [];
 
-    protected ?string $selectingMethod = null;
-
     public function method(string $name, array $args = []): self
     {
         $args = array_merge(['html' => null, 'priority' => count($this->methods) + 1], $args);
@@ -80,18 +78,7 @@ class PaymentMethods
 
     public function getSelectingMethod(): ?string
     {
-        return $this->selectingMethod ?: $this->getSelectedMethod() ?: $this->getDefaultMethod();
-    }
-
-    public function setSelectingMethod(?string $method): self
-    {
-        $this->selectingMethod = $method;
-
-        if ($method) {
-            session(['selected_payment_method' => $method]);
-        }
-
-        return $this;
+        return $this->getSelectedMethod() ?: $this->getDefaultMethod();
     }
 
     public function render(): string

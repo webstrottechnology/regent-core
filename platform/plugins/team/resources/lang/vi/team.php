@@ -2,6 +2,7 @@
 
 return [
     'name' => 'Đội ngũ',
+    'teams' => 'Đội ngũ',
     'create' => 'Thành viên mới',
     'forms' => [
         'name' => 'Tên',
@@ -12,14 +13,14 @@ return [
         'location' => 'Vị trí',
         'location_placeholder' => 'Nhập vị trí...',
         'socials_facebook' => 'Facebook',
-        'socials_facebook_placeholder' => 'Facebook URL',
+        'socials_facebook_placeholder' => 'Liên kết Facebook',
         'socials_twitter' => 'Twitter',
-        'socials_twitter_placeholder' => 'Twitter URL',
+        'socials_twitter_placeholder' => 'Liên kết Twitter',
         'socials_instagram' => 'Instagram',
-        'socials_instagram_placeholder' => 'Instagram URL',
+        'socials_instagram_placeholder' => 'Liên kết Instagram',
         'address' => 'Địa chỉ',
         'email' => 'Email',
         'phone_number' => 'Số điện thoại',
-        'website' => 'Website',
+        'website' => 'Trang web',
     ],
 ];

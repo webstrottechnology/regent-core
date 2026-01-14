@@ -40,7 +40,6 @@ use Google\ApiCore\Middleware\OptionsFilterMiddleware;
 use Google\ApiCore\Middleware\PagedMiddleware;
 use Google\ApiCore\Middleware\RequestAutoPopulationMiddleware;
 use Google\ApiCore\Middleware\RetryMiddleware;
-use Google\ApiCore\Middleware\TransportCallMiddleware;
 use Google\ApiCore\Options\CallOptions;
 use Google\ApiCore\Options\ClientOptions;
 use Google\ApiCore\Options\TransportOptions;
@@ -73,8 +72,6 @@ trait GapicClientTrait
     private string $serviceName = '';
     private array $agentHeader = [];
     private array $descriptors = [];
-    /** @var array<callable> $prependMiddlewareCallables */
-    private array $prependMiddlewareCallables = [];
     /** @var array<callable> $middlewareCallables */
     private array $middlewareCallables = [];
     private array $transportCallMethods = [
@@ -119,42 +116,6 @@ trait GapicClientTrait
     public function addMiddleware(callable $middlewareCallable): void
     {
         $this->middlewareCallables[] = $middlewareCallable;
-    }
-
-     /**
-     * Prepend a middleware to the call stack by providing a callable which will be
-     * invoked at the end of each call, and will return an instance of
-     * {@see MiddlewareInterface} when invoked.
-     *
-     * The callable must have the following method signature:
-     *
-     *     callable(MiddlewareInterface): MiddlewareInterface
-     *
-     * An implementation may look something like this:
-     * ```
-     * $client->prependMiddleware(function (MiddlewareInterface $handler) {
-     *     return new class ($handler) implements MiddlewareInterface {
-     *         public function __construct(private MiddlewareInterface $handler) {
-     *         }
-     *
-     *         public function __invoke(Call $call, array $options) {
-     *             // modify call and options (pre-request)
-     *             $response = ($this->handler)($call, $options);
-     *             // modify the response (post-request)
-     *             return $response;
-     *         }
-     *     };
-     * });
-     * ```
-     *
-     * @param callable $middlewareCallable A callable which returns an instance
-     *                 of {@see MiddlewareInterface} when invoked with a
-     *                 MiddlewareInterface instance as its first argument.
-     * @return void
-     */
-    public function prependMiddleware(callable $middlewareCallable): void
-    {
-        $this->prependMiddlewareCallables[] = $middlewareCallable;
     }
 
     /**
@@ -698,13 +659,10 @@ trait GapicClientTrait
             ];
         }
 
-        $callStack = new TransportCallMiddleware($this->transport, $this->transportCallMethods);
-
-        foreach ($this->prependMiddlewareCallables as $fn) {
-            /** @var MiddlewareInterface $callStack */
-            $callStack = $fn($callStack);
-        }
-
+        $callStack = function (Call $call, array $options) {
+            $startCallMethod = $this->transportCallMethods[$call->getCallType()];
+            return $this->transport->$startCallMethod($call, $options);
+        };
         $callStack = new CredentialsWrapperMiddleware($callStack, $this->credentialsWrapper);
         $callStack = new FixedHeaderMiddleware($callStack, $fixedHeaders, true);
         $callStack = new RetryMiddleware($callStack, $callConstructionOptions['retrySettings']);

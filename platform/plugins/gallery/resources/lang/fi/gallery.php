@@ -18,8 +18,4 @@ return [
     'limit_display' => 'Rajoita näytettävien määrää',
     'edit_this_gallery' => 'Muokkaa tätä galleriaa',
     'galleries_page' => 'Galleriasivu',
-    'by_name' => 'Tekijä: :name',
-    'title' => 'Otsikko',
-    'limit' => 'Rajoittaa',
-    'limit_helper' => 'Näytettävien gallerioiden määrä. ',
 ];

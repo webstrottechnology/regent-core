@@ -73,5 +73,4 @@ return [
             'nationality' => 'A nacionalidade do local, se fornecida, não deverá exceder 120 caracteres.',
         ],
     ],
-    'slug' => 'URL amigável',
 ];

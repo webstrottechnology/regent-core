@@ -5,57 +5,8 @@ class Ecommerce {
     lastFilterFormAction = null
     filterTimeout = null
 
-    showError(message) {
-        if (typeof Theme !== 'undefined') {
-            Theme.showError(message)
-        } else {
-            console.error('[Ecommerce]', message)
-        }
-    }
-
-    showSuccess(message) {
-        if (typeof Theme !== 'undefined') {
-            Theme.showSuccess(message)
-        } else {
-            console.log('[Ecommerce]', message)
-        }
-    }
-
-    handleError(error, $form = null) {
-        if (typeof Theme !== 'undefined') {
-            Theme.handleError(error, $form)
-        } else {
-            console.error('[Ecommerce]', error.responseJSON?.message || error.statusText || error)
-        }
-    }
-
-    updateLazyLoad() {
-        if (typeof Theme !== 'undefined' && Theme.lazyLoadInstance) {
-            Theme.lazyLoadInstance.update()
-        }
-    }
-
-    getCsrfToken($form = null) {
-        if ($form && $form.length) {
-            const formToken = $form.find('input[name="_token"]').val()
-            if (formToken) {
-                return formToken
-            }
-        }
-        return $('meta[name="csrf-token"]').attr('content') || ''
-    }
-
-    getAjaxData(data = {}, $form = null) {
-        const token = this.getCsrfToken($form)
-        if (token) {
-            data._token = token
-        }
-        return data
-    }
-
     constructor() {
         this.initClipboard()
-        this.initFileUpload()
 
         $(document)
             .on('click', '[data-bb-toggle="toggle-product-categories-tree"]', (e) => {
@@ -92,7 +43,7 @@ class Ecommerce {
 
                 const currentFilterState = {}
                 for (const [key, value] of currentUrlParams.entries()) {
-                    if (key !== 'page' && key !== '_' && value) {
+                    if (key !== 'page' && key !== '_') {
                         if (!currentFilterState[key]) {
                             currentFilterState[key] = []
                         }
@@ -270,7 +221,7 @@ class Ecommerce {
                             modal.find('.modal-body').html(data)
                         }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => {
                         document.dispatchEvent(
                             new CustomEvent('ecommerce.quick-shop.completed', {
@@ -355,18 +306,18 @@ class Ecommerce {
                     },
                     success: ({ error, message }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
 
                             return
                         }
 
-                        EcommerceApp.showSuccess(message)
+                        Theme.showSuccess(message)
 
                         modal.modal('hide')
 
                         setTimeout(() => window.location.reload(), 1000)
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => button.removeClass('btn-loading'),
                 })
             })
@@ -378,19 +329,22 @@ class Ecommerce {
                 const url = currentTarget.hasClass('active')
                     ? currentTarget.data('remove-url')
                     : currentTarget.data('url')
-                let data = currentTarget.hasClass('active') ? { _method: 'DELETE' } : {}
-                const $form = currentTarget.closest('form')
+                let data = {}
+
+                if (currentTarget.hasClass('active')) {
+                    data = { _method: 'DELETE' }
+                }
 
                 $.ajax({
                     url,
                     method: 'POST',
-                    data: EcommerceApp.getAjaxData(data, $form),
+                    data,
                     beforeSend: () => currentTarget.addClass('btn-loading'),
                     success: ({ error, message, data }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
                         } else {
-                            EcommerceApp.showSuccess(message)
+                            Theme.showSuccess(message)
                             currentTarget.toggleClass('active')
 
                             if (data.count !== undefined) {
@@ -420,7 +374,7 @@ class Ecommerce {
                             }
                         }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => currentTarget.removeClass('btn-loading'),
                 })
             })
@@ -429,17 +383,18 @@ class Ecommerce {
 
                 const currentTarget = $(e.currentTarget)
                 const table = currentTarget.closest('table')
-                const $form = currentTarget.closest('form')
 
                 $.ajax({
                     url: currentTarget.data('url'),
                     method: 'POST',
-                    data: EcommerceApp.getAjaxData({ _method: 'DELETE' }, $form),
+                    data: {
+                        _method: 'DELETE',
+                    },
                     success: ({ error, message, data }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
                         } else {
-                            EcommerceApp.showSuccess(message)
+                            Theme.showSuccess(message)
 
                             document.dispatchEvent(
                                 new CustomEvent('ecommerce.compare.removed', {
@@ -462,30 +417,29 @@ class Ecommerce {
                             }
                         }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                 })
             })
             .on('click', '[data-bb-toggle="add-to-wishlist"]', function (e) {
                 e.preventDefault()
 
                 const currentTarget = $(e.currentTarget)
+
                 const url = currentTarget.data('url')
-                const $form = currentTarget.closest('form')
 
                 $.ajax({
                     url,
                     method: 'POST',
-                    data: EcommerceApp.getAjaxData({}, $form),
                     beforeSend: () => currentTarget.addClass('btn-loading'),
                     success: ({ error, message, data }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
                         } else {
                             if (data.count !== undefined) {
                                 $('[data-bb-value="wishlist-count"]').text(data.count)
                             }
 
-                            EcommerceApp.showSuccess(message)
+                            Theme.showSuccess(message)
 
                             document.dispatchEvent(
                                 new CustomEvent('ecommerce.wishlist.added', {
@@ -499,7 +453,7 @@ class Ecommerce {
                             )
                         }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => currentTarget.removeClass('btn-loading'),
                 })
             })
@@ -507,18 +461,17 @@ class Ecommerce {
                 e.preventDefault()
 
                 const currentTarget = $(e.currentTarget)
-                const $form = currentTarget.closest('form')
 
                 $.ajax({
                     url: currentTarget.data('url'),
                     method: 'POST',
-                    data: EcommerceApp.getAjaxData({ _method: 'DELETE' }, $form),
+                    data: { _method: 'DELETE' },
                     beforeSend: () => currentTarget.addClass('btn-loading'),
                     success: ({ error, message, data }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
                         } else {
-                            EcommerceApp.showSuccess(message)
+                            Theme.showSuccess(message)
 
                             currentTarget.closest('tr').remove()
 
@@ -541,7 +494,7 @@ class Ecommerce {
                             )
                         }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => currentTarget.removeClass('btn-loading'),
                 })
             })
@@ -549,11 +502,11 @@ class Ecommerce {
                 e.preventDefault()
 
                 const currentTarget = $(e.currentTarget)
-                const $form = currentTarget.closest('form')
-                const quantity = currentTarget.closest('tr').find('input[name="qty"]')
                 const data = {
                     id: currentTarget.data('id'),
                 }
+
+                const quantity = currentTarget.closest('tr').find('input[name="qty"]')
 
                 if (quantity) {
                     data.qty = quantity.val()
@@ -562,18 +515,24 @@ class Ecommerce {
                 $.ajax({
                     url: currentTarget.data('url'),
                     method: 'POST',
-                    data: EcommerceApp.getAjaxData(data, $form),
+                    data: data,
                     dataType: 'json',
                     beforeSend: () => currentTarget.addClass('btn-loading'),
                     success: ({ error, message, data }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
 
                             if (data.next_url !== undefined) {
                                 setTimeout(() => {
                                     window.location.href = data.next_url
                                 }, 500);
                             }
+
+                            return false
+                        }
+
+                        if (data && data.next_url !== undefined) {
+                            window.location.href = data.next_url
 
                             return false
                         }
@@ -585,7 +544,7 @@ class Ecommerce {
                         }
 
                         if (showSuccess) {
-                            EcommerceApp.showSuccess(message)
+                            Theme.showSuccess(message)
                         }
 
                         if (data.count !== undefined) {
@@ -602,12 +561,8 @@ class Ecommerce {
                                 },
                             })
                         )
-
-                        if (data && data.next_url !== undefined) {
-                            window.location.href = data.next_url
-                        }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => currentTarget.removeClass('btn-loading'),
                 })
             })
@@ -622,9 +577,9 @@ class Ecommerce {
                     beforeSend: () => currentTarget.addClass('btn-loading'),
                     success: ({ error, message, data }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
                         } else {
-                            EcommerceApp.showSuccess(message)
+                            Theme.showSuccess(message)
 
                             currentTarget.closest('tr').remove()
 
@@ -647,7 +602,7 @@ class Ecommerce {
                             )
                         }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => currentTarget.removeClass('btn-loading'),
                 })
             })
@@ -664,9 +619,9 @@ class Ecommerce {
                     beforeSend: () => button.prop('disabled', true).addClass('btn-loading'),
                     success: ({ error, message, data }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
                         } else {
-                            EcommerceApp.showSuccess(message)
+                            Theme.showSuccess(message)
 
                             document.dispatchEvent(
                                 new CustomEvent('ecommerce.coupon.applied', {
@@ -675,7 +630,7 @@ class Ecommerce {
                             )
                         }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => button.prop('disabled', false).removeClass('btn-loading'),
                 })
             })
@@ -690,7 +645,7 @@ class Ecommerce {
                     beforeSend: () => currentTarget.prop('disabled', true).addClass('btn-loading'),
                     success: ({ error, message, data }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
                         } else {
                             const quickViewModal = $('[data-bb-toggle="quick-view-modal"]')
                             quickViewModal.modal('show')
@@ -707,7 +662,7 @@ class Ecommerce {
                             }, 100)
                         }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => currentTarget.prop('disabled', false).removeClass('btn-loading'),
                 })
             })
@@ -732,11 +687,11 @@ class Ecommerce {
                     },
                     success: ({ error, message, data }) => {
                         if (error) {
-                            EcommerceApp.showError(message)
+                            Theme.showError(message)
 
                             return
                         }
-                        EcommerceApp.showSuccess(message)
+                        Theme.showSuccess(message)
 
                         form.find('input[name="qty"]').val(1)
 
@@ -753,12 +708,8 @@ class Ecommerce {
                                 },
                             })
                         )
-
-                        if (data && data.next_url !== undefined) {
-                            window.location.href = data.next_url
-                        }
                     },
-                    error: (error) => EcommerceApp.handleError(error),
+                    error: (error) => Theme.handleError(error),
                     complete: () => currentTarget.prop('disabled', false).removeClass('btn-loading'),
                 })
             })
@@ -944,17 +895,12 @@ class Ecommerce {
 
                 videoElement.play()
 
-                $button.closest('.bb-product-video').addClass('bb-product-video-playing')
+                $button.closest('.bb-product-video').addClass('video-playing')
 
                 videoElement.addEventListener('ended', () => {
-                    $button.closest('.bb-product-video').removeClass('bb-product-video-playing')
+                    $button.closest('.bb-product-video').removeClass('video-playing')
                     videoElement.currentTime = 0;
                     videoElement.pause();
-                });
-
-                videoElement.addEventListener('pause', () => {
-                    if (videoElement.ended) return;
-                    $button.closest('.bb-product-video').removeClass('bb-product-video-playing')
                 });
             })
 
@@ -1012,7 +958,9 @@ class Ecommerce {
 
             this.initLightGallery($gallery)
 
-            EcommerceApp.updateLazyLoad()
+            if (typeof Theme.lazyLoadInstance !== 'undefined') {
+                Theme.lazyLoadInstance.update()
+            }
         }
 
         const $quickViewGallery = $(document).find('.bb-quick-view-gallery-images')
@@ -1138,6 +1086,10 @@ class Ecommerce {
         let seenParams = {}
 
         formData.forEach((item) => {
+            if (!item.value) {
+                return
+            }
+
             if (item.name.includes('attributes[')) {
                 if (item.value) {
                     data.push(item)
@@ -1147,15 +1099,11 @@ class Ecommerce {
                 if (!groupedData[baseName]) {
                     groupedData[baseName] = new Set()
                 }
-                if (item.value) {
-                    groupedData[baseName].add(item.value)
-                }
+                groupedData[baseName].add(item.value)
             } else {
                 if (!seenParams[item.name]) {
                     seenParams[item.name] = true
-                    if (item.value) {
-                        data.push(item)
-                    }
+                    data.push(item)
                 }
             }
         })
@@ -1212,7 +1160,7 @@ class Ecommerce {
             },
             success: ({ error, message, data }) => {
                 if (error) {
-                    EcommerceApp.showError(message)
+                    Theme.showError(message)
 
                     return
                 }
@@ -1237,7 +1185,9 @@ class Ecommerce {
                 })
 
 
-                EcommerceApp.updateLazyLoad()
+                if (typeof Theme.lazyLoadInstance !== 'undefined') {
+                    Theme.lazyLoadInstance.update()
+                }
             },
             complete: () => button.removeClass('btn-loading'),
         })
@@ -1309,7 +1259,7 @@ class Ecommerce {
                 const { message, error } = data
 
                 if (error) {
-                    EcommerceApp.showError(message)
+                    Theme.showError(message)
                     this.filterAjax = null
                     return
                 }
@@ -1362,13 +1312,16 @@ class Ecommerce {
             },
             error: (xhr) => {
                 if (xhr.statusText !== 'abort') {
-                    EcommerceApp.handleError(xhr)
+                    console.error('Filter request failed:', xhr)
+                    Theme.handleError(xhr)
                 }
             },
             complete: () => {
                 this.filterTimeout = null
                 this.filterAjax = null
-                EcommerceApp.updateLazyLoad()
+                if (typeof Theme.lazyLoadInstance !== 'undefined') {
+                    Theme.lazyLoadInstance.update()
+                }
 
                 document.dispatchEvent(
                     new CustomEvent('ecommerce.product-filter.completed', {
@@ -1414,7 +1367,7 @@ class Ecommerce {
                     );
                 })
                 .catch(error => {
-                    EcommerceApp.handleError(error);
+                    Theme.handleError(error);
                 });
         }
 
@@ -1437,7 +1390,9 @@ class Ecommerce {
                             currentTarget.append(data.select)
                         }
 
-                        EcommerceApp.updateLazyLoad()
+                        if (typeof Theme.lazyLoadInstance !== 'undefined') {
+                            Theme.lazyLoadInstance.update()
+                        }
                     })
                 }
             )
@@ -1664,12 +1619,12 @@ class Ecommerce {
             data: form.serialize(),
             success: ({ error, message, data }) => {
                 if (error) {
-                    EcommerceApp.showError(message)
+                    Theme.showError(message)
                 }
 
                 this.ajaxLoadCart(data)
             },
-            error: (error) => EcommerceApp.handleError(error),
+            error: (error) => Theme.handleError(error),
         })
     }
 
@@ -1692,26 +1647,10 @@ class Ecommerce {
             $cart.replaceWith(data.cart_content)
             this.productQuantityToggle()
 
-            EcommerceApp.updateLazyLoad()
-        }
-    }
-
-    initFileUpload() {
-        $(document).on('change', '.bb-file-input', (e) => {
-            const input = e.target
-            const label = $(input).siblings('.bb-file-label')
-            const fileName = label.find('.bb-file-name')
-            const placeholder = label.find('.bb-file-placeholder')
-
-            if (input.files && input.files.length > 0) {
-                const file = input.files[0]
-                fileName.text(file.name)
-                label.addClass('has-file')
-            } else {
-                fileName.text('')
-                label.removeClass('has-file')
+            if (typeof Theme.lazyLoadInstance !== 'undefined') {
+                Theme.lazyLoadInstance.update()
             }
-        })
+        }
     }
 
     initClipboard() {
@@ -1759,7 +1698,9 @@ class Ecommerce {
 
             if (copied) {
                 if (copiedMessage) {
-                    EcommerceApp.showSuccess(copiedMessage)
+                    if (typeof Theme !== 'undefined' && Theme.showSuccess) {
+                        Theme.showSuccess(copiedMessage)
+                    }
                 }
 
                 const originalHtml = target.html()
@@ -1769,7 +1710,9 @@ class Ecommerce {
                     target.html(originalHtml)
                 }, 2000)
             } else {
-                EcommerceApp.showError('Failed to copy to clipboard')
+                if (typeof Theme !== 'undefined' && Theme.showError) {
+                    Theme.showError('Failed to copy to clipboard')
+                }
             }
         })
     }
@@ -1832,7 +1775,9 @@ $(() => {
                         }
                     }));
 
-                    EcommerceApp.updateLazyLoad()
+                    if (typeof Theme.lazyLoadInstance !== 'undefined') {
+                        Theme.lazyLoadInstance.update()
+                    }
                 }
             } else {
                 $descriptionContainer.html('')
@@ -1921,6 +1866,8 @@ $(() => {
     })
 
     document.addEventListener('ecommerce.product-filter.completed', () => {
-        EcommerceApp.updateLazyLoad()
+        if (typeof Theme.lazyLoadInstance !== 'undefined') {
+            Theme.lazyLoadInstance.update()
+        }
     })
 })

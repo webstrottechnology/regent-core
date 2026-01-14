@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'Bloques de interfaz de usuario',
     'search' => 'Buscar...',
     'no_shortcode_found' => 'No se encontró ningún código corto.',
-    'shortcode_not_available' => 'El shortcode ":name" no está disponible o ha sido eliminado.',
 
     'cache_suggestion' => [
         'title' => 'Sugerencia de rendimiento',

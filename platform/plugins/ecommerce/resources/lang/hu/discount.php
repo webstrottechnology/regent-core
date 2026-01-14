@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Korlátlan kupon?',
     'enter_number' => 'Adjon meg egy számot',
     'coupon_type' => 'Kupon típusa',
-    'discount_type' => 'Kedvezmény típusa',
     'percentage_discount' => 'Százalékos kedvezmény (%)',
     'free_shipping' => 'Ingyenes szállítás',
     'same_price' => 'Azonos ár',
     'apply_for' => 'alkalmazás',
-    'apply_to' => 'Alkalmazás',
     'all_orders' => 'Összes rendelés',
     'order_amount_from' => 'Rendelési összeg ettől',
     'product_collection' => 'Termékkolekció',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Ez a kupon nem alkalmazható, mert a kosarában villámsale termékek vannak (:product_name). A villámsale árak nem kombinálhatók kupon kedvezményekkel.',
     'coupon_applied_successfully' => 'Nagyszerű! A ":code" kuponkód alkalmazva lett. Pénzt takarított meg ezen a rendelésen!',
     'coupon_removed_successfully' => 'A kuponkód eltávolításra került a rendelésből.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Kuponkódok (:count)',
-    'left_quantity' => 'Maradt :left',
-    'apply' => 'Alkalmaz',
-    'remove' => 'Eltávolít',
-    'select_coupon' => 'Kupon kiválasztása',
-    'you_have_coupon_code' => 'Van kuponkódja?',
-    'close' => 'Bezárás',
-    'coupon_code_label' => 'Kuponkód: :code',
-    'enter_coupon_code_placeholder' => 'Adja meg a kuponkódot...',
 ];

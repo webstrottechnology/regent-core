@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'Електронна комерція',
     'general' => [
         'name' => 'Загальні',
-        'description' => 'Назва магазину, інформація про компанію, контакти та email сповіщень адміна',
+        'description' => 'Перегляд і оновлення загальних налаштувань',
     ],
     'currency' => [
         'name' => 'Валюти',
-        'description' => 'Формати валют, курси обміну, автовизначення та роздільники десяткових/тисяч',
+        'description' => 'Перегляд і оновлення налаштувань валют',
         'currency_setting_description' => 'Перегляд і оновлення валют, які використовуються на веб-сайті',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Увімкнути автовизначення валюти відвідувача',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Товари',
-        'description' => 'Відображення залишків, генерація SKU, зображення варіантів, пов\'язані товари та характеристики',
+        'description' => 'Перегляд і оновлення налаштувань товарів',
         'product_settings' => 'Налаштування товарів',
         'product_settings_description' => 'Налаштування правил для товарів',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Пошук товарів',
-        'description' => 'Поведінка пошуку, фільтри за категорією/брендом/тегом/атрибутами та фільтрація за ціновим діапазоном',
+        'description' => 'Перегляд і оновлення налаштувань пошуку товарів',
         'product_search_settings' => 'Пошук товарів',
         'product_search_settings_description' => 'Налаштування правил для пошуку товарів',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Цифрові товари',
-        'description' => 'Завантажувані товари, ліцензійні коди, гостьова оплата цифрових товарів та автозавершення',
+        'description' => 'Перегляд і оновлення налаштувань цифрових товарів',
         'digital_products_settings' => 'Цифрові товари',
         'digital_products_settings_description' => 'Налаштування правил для цифрових товарів',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Відгуки про товари',
-        'description' => 'Відгуки клієнтів, відображення рейтингів, завантаження зображень та вимоги схвалення',
+        'description' => 'Перегляд і оновлення налаштувань відгуків про товари',
         'form' => [
             'enable_review' => 'Увімкнути відгуки про товари',
             'enable_review_help' => 'Дозволити клієнтам залишати відгуки та оцінки на товари. Коли вимкнено, всі функції відгуків будуть приховані з магазину.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Покупки',
-        'description' => 'Кошик, список бажань, порівняння, відстеження замовлень, кнопка швидкої покупки та завантаження підтвердження оплати',
+        'description' => 'Перегляд і оновлення налаштувань покупок',
         'general_setting' => 'Загальні налаштування',
         'return_settings' => 'Налаштування повернення',
         'return_settings_description' => 'Налаштування правил для налаштувань повернення',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Кошик буде знищено, коли клієнт виходить.',
             'hide_product_price' => 'Приховати ціну товару',
             'hide_product_price_helper' => 'Ця опція працює лише якщо ви вимкнете кошик покупок, перетворюючи ваш сайт на каталог тільки для перегляду. Якщо увімкнено, ціна товару буде прихована. Це корисно, коли ви хочете приховати ціну і вимагати від клієнтів звернення для ціни.',
-            'hide_product_price_when_zero' => 'Приховувати ціну товару, якщо вона нульова',
-            'hide_product_price_when_zero_helper' => 'Якщо ввімкнено, товари з ціною 0 не показуватимуть ціну на вітрині.',
             'enable_payment_proof' => 'Увімкнути завантаження підтвердження оплати',
             'enable_payment_proof_helper' => 'Дозволити клієнтам завантажувати підтвердження оплати для своїх замовлень. Це корисно для ручних способів оплати.',
             'enable_guest_payment_proof' => 'Дозволити гостям завантажувати підтвердження оплати',
             'enable_guest_payment_proof_helper' => 'Коли увімкнено, гості можуть завантажувати підтвердження оплати за допомогою токена замовлення без входу. Вони отримають посилання для завантаження в email підтвердження замовлення.',
-            'payment_proof_payment_methods' => 'Способи оплати, що вимагають підтвердження платежу',
-            'payment_proof_payment_methods_helper' => 'Виберіть, які способи оплати повинні дозволяти клієнтам завантажувати підтвердження платежу. Зазвичай використовується для ручних способів оплати, таких як накладений платіж і банківський переказ.',
         ],
     ],
     'checkout' => [
         'name' => 'Оформлення',
-        'panel_description' => 'Гостьова оплата, обов\'язкові поля, ліміти замовлень, прийняття умов та обмеження по країнах',
+        'panel_description' => 'Перегляд і оновлення налаштувань оформлення',
         'description' => 'Налаштування правил для налаштувань оформлення',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Відображати банківську інформацію на сторінці успіху оформлення',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Повернення',
         'description' => 'Налаштування правил для налаштувань повернення',
-        'panel_description' => 'Повернення замовлень, часткові повернення та терміни повернення',
+        'panel_description' => 'Перегляд і оновлення налаштувань повернення',
         'form' => [
             'is_enabled_order_return' => 'Увімкнено повернення замовлень',
             'allow_partial_return' => 'Дозволити часткове повернення',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Рахунки',
-        'description' => 'Дані компанії на рахунках, нумерація рахунків, шрифти PDF та налаштування печатки',
+        'description' => 'Перегляд і оновлення налаштувань рахунків',
         'company_settings' => 'Налаштування компанії',
         'company_settings_description' => 'Налаштування інформації про компанію для виставлення рахунків',
         'form' => [
@@ -305,22 +301,19 @@ return [
             'default_tax_rate' => 'Ставка податку за замовчуванням',
             'default_tax_rate_description' => 'Важливо: буде застосовано, якщо податок не вибрано в товарі.',
             'select_tax' => '-- Вибрати --',
-            'display_product_price_including_taxes' => 'Додати податок до відображуваних цін',
-            'display_product_price_including_taxes_helper' => 'Автоматично додає податок до цін товарів у магазині. Напр. товар за $100 з 10% податком відображається як $110. Не потрібно, якщо "Ціна включає податок" вже увімкнено для окремих товарів.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Відображати ціну товару включаючи податки',
         ],
     ],
     'customer' => [
         'name' => 'Клієнти',
-        'description' => 'Реєстрація, підтвердження email, варіанти входу, видалення акаунта та поля профілю',
+        'description' => 'Перегляд і оновлення налаштувань клієнтів',
         'customer_setting' => 'Налаштування клієнтів',
         'customer_setting_description' => 'Налаштувати параметри клієнтів',
         'form' => [
             'enable_customer_registration' => 'Увімкнути реєстрацію клієнтів',
             'enable_customer_registration_helper' => 'Якщо вимкнено, клієнти не зможуть реєструвати нові облікові записи. Існуючі клієнти все ще можуть входити.',
-            'verify_customer_email' => 'Підтвердження email клієнта',
-            'verify_customer_email_helper' => 'Коли увімкнено, посилання для підтвердження буде надіслано на email клієнта, клієнти повинні натиснути це посилання, щоб підтвердити свій email перед тим, як увійти. Потрібно налаштувати email в Адмін -> Налаштування -> Email для надсилання email підтвердження.',
+            'verify_customer_email' => "Підтвердження email клієнта",
+            'verify_customer_email_helper' => "Коли увімкнено, посилання для підтвердження буде надіслано на email клієнта, клієнти повинні натиснути це посилання, щоб підтвердити свій email перед тим, як увійти. Потрібно налаштувати email в Адмін -> Налаштування -> Email для надсилання email підтвердження.",
             'verification_expire_minutes' => 'Час закінчення посилання для підтвердження',
             'verification_expire_minutes_helper' => 'Час у хвилинах, протягом якого посилання для підтвердження email буде дійсним. За замовчуванням - 60 хвилин (1 година). Максимум - 10080 хвилин (7 днів).',
             'login_using_phone' => 'Вхід з номером телефону замість email',
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Доставка',
-        'description' => 'Правила доставки, поведінка безкоштовної доставки та порядок відображення варіантів доставки',
+        'description' => 'Перегляд і оновлення налаштувань доставки',
         'shipping_rule' => 'Правила доставки',
         'shipping_rule_description' => 'Налаштування правил для розрахунку вартості доставки',
         'shipping_setting' => 'Налаштування доставки',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Зберегти місцезнаходження',
             'add_new' => 'Додати нове',
         ],
-            'info' => [
-            'title' => 'Як працюють локатори магазинів',
-            'primary_store' => 'Адреса основного магазину відображається в рахунках і використовується як адреса повернення за замовчуванням для транспортних етикеток.',
-            'shipping_location' => 'Магазини, позначені як "місце відправлення", можуть бути вибрані як склад відправлення під час створення відправлень.',
-            'shipment_selection' => 'При обробці замовлень ви можете вибрати, з якого складу відправляти, залежно від запасів та місцезнаходження клієнта.',
-        ],
     ],
     'tracking' => [
         'name' => 'Відстеження',
-        'description' => 'Facebook Pixel, події Google Tag Manager та відстеження конверсій Google Ads',
+        'description' => 'Перегляд і оновлення налаштувань відстеження',
         'manage_tracking' => 'Управління відстеженням',
         'manage_tracking_description' => 'Управління відстеженням: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Маркетплейс',
-        'description' => 'Налаштування мультивендора, комісії, реєстрація продавців та налаштування виплат',
+        'description' => 'Перегляд і оновлення налаштувань маркетплейсу',
     ],
     'standard_and_format' => [
         'name' => 'Стандарт і формат',
-        'panel_description' => 'Формат коду замовлення, одиниці ваги (кг/фунт) та одиниці виміру (см/дюйм)',
+        'panel_description' => 'Перегляд і оновлення налаштувань стандарту та формату',
         'description' => 'Стандарти та формати використовуються для розрахунку таких речей, як ціни товарів, ваги доставки та час замовлень.',
         'form' => [
             'change_order_format' => 'Редагувати формат коду замовлення (необов\'язково)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Показувати прогрес-бар з "X продано з Y" для створення терміновості та заохочення швидких покупок під час блискавичних розпродажів.',
     ],
     'payment_method_cod_minimum_amount' => 'Мінімальна сума замовлення - :currency (Необов\'язково)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Мінімальна сума замовлення - :currency (Необов\'язково)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Відображати банківську інформацію на сторінці успіху оформлення?',
     'invoice_templates' => 'Шаблони рахунків',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

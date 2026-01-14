@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Neograničen kupon?',
     'enter_number' => 'Unesite broj',
     'coupon_type' => 'Tip kupona',
-    'discount_type' => 'Тип попуста',
     'percentage_discount' => 'Procentualni popust (%)',
     'free_shipping' => 'Besplatna dostava',
     'same_price' => 'Ista cena',
     'apply_for' => 'primeni za',
-    'apply_to' => 'Примени на',
     'all_orders' => 'Sve porudžbine',
     'order_amount_from' => 'Iznos porudžbine od',
     'product_collection' => 'Kolekcija proizvoda',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Ovaj kupon ne može biti primenjen jer vaša korpa sadrži artikle sa brze rasprodaje (:product_name). Cene brze rasprodaje ne mogu biti kombinovane sa popustima kupona.',
     'coupon_applied_successfully' => 'Odlično! Kod kupona ":code" je primenjen. Uštedeli ste novac na ovoj porudžbini!',
     'coupon_removed_successfully' => 'Kod kupona je uklonjen sa vaše porudžbine.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Kodovi kupona (:count)',
-    'left_quantity' => 'Preostalo :left',
-    'apply' => 'Primeni',
-    'remove' => 'Ukloni',
-    'select_coupon' => 'Izaberi kupon',
-    'you_have_coupon_code' => 'Imate li kod kupona?',
-    'close' => 'Zatvori',
-    'coupon_code_label' => 'Kod kupona: :code',
-    'enter_coupon_code_placeholder' => 'Unesite kod kupona...',
 ];

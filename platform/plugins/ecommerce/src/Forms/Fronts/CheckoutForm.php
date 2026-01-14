@@ -45,6 +45,9 @@ class CheckoutForm extends FormFront
                 '<div class="row" id="main-checkout-product-info">',
                 '</div>',
                 function (CheckoutForm $form) use ($token, $model): void {
+                    $cartItemHtml = HtmlFieldOption::make()->content(view('plugins/ecommerce::orders.partials.amount', $model));
+                    $discountFormHtml = HtmlFieldOption::make()->content(view(EcommerceHelper::viewPath('discounts.partials.form'), ['discounts' => $model['discounts']]));
+
                     try {
                         $mobileDetect = new MobileDetect();
 
@@ -52,9 +55,6 @@ class CheckoutForm extends FormFront
                     } catch (Throwable) {
                         $isMobile = false;
                     }
-
-                    $cartItemHtml = HtmlFieldOption::make()->content(view('plugins/ecommerce::orders.partials.amount', $model));
-                    $discountFormHtml = HtmlFieldOption::make()->content(view(EcommerceHelper::viewPath('discounts.partials.form'), ['discounts' => $model['discounts'], 'isMobile' => $isMobile]));
 
                     $form
                         ->when(! $isMobile, function (CheckoutForm $form) use ($model, $discountFormHtml, $cartItemHtml): void {
@@ -281,33 +281,25 @@ class CheckoutForm extends FormFront
                                         HtmlField::class,
                                         HtmlFieldOption::make()->content(apply_filters('ecommerce_checkout_form_after_tax_information_form', null, $model['products']))
                                     )
-                                    ->when(! $isMobile && Theme::termAndPrivacyPolicyUrl() && get_ecommerce_setting('show_terms_and_policy_checkbox', true), function (CheckoutForm $form): void {
-                                        $form->addWrapper(
-                                            'agree_terms_wrapper',
-                                            '<div class="form-group">',
-                                            '</div>',
-                                            fn (CheckoutForm $form) => $form->add(
-                                                'agree_terms_and_policy',
-                                                CheckboxField::class,
-                                                CheckboxFieldOption::make()
-                                                    ->label(BaseHelper::clean(__(
-                                                        'I agree to the :link',
-                                                        ['link' => Html::link(Theme::termAndPrivacyPolicyUrl(), __('Terms and Privacy Policy'), attributes: ['class' => 'text-decoration-underline', 'target' => '_blank'])]
-                                                    )))
-                                                    ->checked(get_ecommerce_setting('terms_and_policy_checkbox_checked_by_default', false))
-                                                    ->addAttribute('data-error-message', trans('plugins/ecommerce::ecommerce.agree_terms_and_policy_error'))
-                                                    ->addAttribute('inline', true)
-                                                    ->addAttribute('noMargin', true),
-                                            )
+                                    ->when(Theme::termAndPrivacyPolicyUrl() && get_ecommerce_setting('show_terms_and_policy_checkbox', true), function (CheckoutForm $form): void {
+                                        $form->add(
+                                            'agree_terms_and_policy',
+                                            CheckboxField::class,
+                                            CheckboxFieldOption::make()
+                                                ->label(BaseHelper::clean(__(
+                                                    'I agree to the :link',
+                                                    ['link' => Html::link(Theme::termAndPrivacyPolicyUrl(), __('Terms and Privacy Policy'), attributes: ['class' => 'text-decoration-underline', 'target' => '_blank'])]
+                                                )))
+                                                ->checked(get_ecommerce_setting('terms_and_policy_checkbox_checked_by_default', false)),
                                         );
                                     })
-                                    ->when(! $isMobile && get_ecommerce_setting('checkout_acceptance_message_enabled', false), function (CheckoutForm $form): void {
+                                    ->when(get_ecommerce_setting('checkout_acceptance_message_enabled', false), function (CheckoutForm $form): void {
                                         $form->add(
                                             'checkout_acceptance_message',
                                             HtmlField::class,
                                             HtmlFieldOption::make()->content(
                                                 '<div class="alert alert-info mb-3" style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 0.375rem; padding: 0.75rem 1rem; color: #6c757d; font-size: 14px; line-height: 1.5;">' .
-                                                trans('plugins/ecommerce::ecommerce.checkout_acceptance_message') .
+                                                __('By placing an order, you agree to our Terms of Service and acknowledge that you have read our Privacy Policy. Your payment will be processed securely according to our payment provider\'s privacy policy.') .
                                                 '</div>'
                                             )
                                         );
@@ -319,7 +311,7 @@ class CheckoutForm extends FormFront
                                     )
                                     ->addWrapper(
                                         'footer_actions_wrapper',
-                                        '<div class="row align-items-center mb-5 d-none d-md-flex">',
+                                        '<div class="row align-items-center mb-5">',
                                         '</div>',
                                         function (CheckoutForm $form) use ($model): void {
                                             $form
@@ -355,14 +347,7 @@ class CheckoutForm extends FormFront
                                                 )
                                                 ->setFormEndKey('filters_ecommerce_checkout_form_after');
                                         }
-                                    )
-                                    ->when($isMobile, function (CheckoutForm $form) use ($model): void {
-                                        $form->add(
-                                            'mobile_checkout_footer',
-                                            HtmlField::class,
-                                            HtmlFieldOption::make()->content(view('plugins/ecommerce::orders.partials.mobile-checkout-footer', $model))
-                                        );
-                                    });
+                                    );
                             }
                         );
                 }

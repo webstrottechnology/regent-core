@@ -71,7 +71,7 @@ class AppleLoginController extends BaseApiController
             if (! $appleUserData) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.invalid_apple_token'))
+                    ->setMessage(__('Invalid Apple token'))
                     ->toApiResponse();
             }
 
@@ -81,7 +81,7 @@ class AppleLoginController extends BaseApiController
             if (! $email || ! $appleId) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.no_email_or_apple_id'))
+                    ->setMessage(__('Cannot login, no email or Apple ID provided!'))
                     ->toApiResponse();
             }
 
@@ -90,7 +90,7 @@ class AppleLoginController extends BaseApiController
             if (! $providerData) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.invalid_guard_configuration'))
+                    ->setMessage(__('Invalid guard configuration'))
                     ->toApiResponse();
             }
 
@@ -146,7 +146,7 @@ class AppleLoginController extends BaseApiController
                         'email' => $account->email,
                     ],
                 ])
-                ->setMessage(trans('plugins/social-login::social-login.login_successful'))
+                ->setMessage(__('Login successful'))
                 ->toApiResponse();
 
         } catch (ValidationException $e) {
@@ -160,7 +160,7 @@ class AppleLoginController extends BaseApiController
 
             return $this->httpResponse()
                 ->setError()
-                ->setMessage(trans('plugins/social-login::social-login.apple_token_invalid'))
+                ->setMessage(__('Apple token invalid'))
                 ->toApiResponse();
         }
     }

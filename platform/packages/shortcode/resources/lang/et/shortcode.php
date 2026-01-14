@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI plokid',
     'search' => 'Otsi...',
     'no_shortcode_found' => 'Lühikoodi ei leitud.',
-    'shortcode_not_available' => 'Lühikood ":name" ei ole saadaval või on eemaldatud.',
 
     'cache_suggestion' => [
         'title' => 'Jõudluse soovitus',

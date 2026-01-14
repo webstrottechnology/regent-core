@@ -30,14 +30,7 @@ return [
     'primary_sidebar_name' => 'Primäre Seitenleiste',
     'primary_sidebar_description' => 'Primärer Seitenleiste',
     'drag_widget_to_sidebar' => 'Ziehen Sie Widgets in diesen Bereich.',
-    'widget_areas' => 'Widget-Bereiche',
-    'manage_widgets' => 'Widgets verwalten',
-    'click_to_add' => 'Klicken Sie, um das Widget hinzuzufügen',
-    'select_sidebar' => 'Widget hinzufügen',
-    'select_sidebar_description' => 'Wählen Sie, wo dieses Widget hinzugefügt werden soll',
-    'adding_to' => 'Hinzufügen zu',
-    'add_widget' => 'Widget hinzufügen',
-    'widget_not_found' => 'Widget nicht gefunden',
+    'instruction' => 'To activate a widget drag it to a sidebar or click on it. To deactivate a widget and delete its settings, drag it back.',
     'cache_suggestion' => [
         'title' => 'Leistungsvorschlag',
         'description' => 'Sie können die Leistung Ihrer Website verbessern, indem Sie das Widget-Caching aktivieren.',
@@ -45,25 +38,9 @@ return [
         'enable_button' => 'Widget-Caching aktivieren',
         'dismiss_button' => 'Für eine Woche verwerfen',
     ],
+
     'widget_site_copyright' => 'Website-Urheberrecht',
     'widget_site_copyright_description' => 'Urheberrechtstext in der unteren Fußzeile.',
     'widget_site_copyright_helper' => 'Gehen Sie zu :link, um den Urheberrechtstext zu ändern.',
     'theme_options' => 'Theme-Optionen',
-
-    'form' => [
-        'enable_caching' => 'Caching aktivieren',
-        'yes' => 'Ja',
-        'no' => 'Nein',
-        'cache_helper' => 'Wenn aktiviert, wird der Inhalt dieses Widgets zwischengespeichert, um die Leistung zu verbessern. Deaktivieren Sie für dynamische Inhalte, die sich häufig ändern.',
-        'cache_warning' => 'Aufgrund von UI-Problemen ist der Cache für dieses Widget per Code deaktiviert. Dieses Widget wird nicht zwischengespeichert, auch wenn das Caching aktiviert ist.',
-    ],
-
-    'drag_or_click' => 'In die Seitenleiste ziehen oder + klicken zum Hinzufügen',
-    'drop_widgets_here' => 'Widgets in Ihre Seitenleistenbereiche ablegen',
-    'search_widgets' => 'Widgets suchen...',
-    'no_widgets' => 'Keine Widgets verfügbar',
-    'no_search_results' => 'Keine Widgets gefunden',
-    'or_click_add' => 'Oder klicken Sie auf die + Schaltfläche eines Widgets zum Hinzufügen',
-    'toggle_widget' => 'Widget-Einstellungen umschalten',
-    'loading_form' => 'Widget-Formular wird geladen...',
 ];

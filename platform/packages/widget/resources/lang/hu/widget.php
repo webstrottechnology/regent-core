@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Widget területek',
     'manage_widgets' => 'Widgetek kezelése',
 
-    'click_to_add' => 'Kattintson a widget hozzáadásához',
-    'select_sidebar' => 'Widget hozzáadása',
-    'select_sidebar_description' => 'Válassza ki, hova szeretné hozzáadni ezt a widgetet',
-    'adding_to' => 'Hozzáadás ide',
-    'add_widget' => 'Widget hozzáadása',
-    'widget_not_found' => 'Widget nem található',
-
     'cache_suggestion' => [
         'title' => 'Teljesítmény javaslat',
         'description' => 'Javíthatja webhelye teljesítményét a widget gyorsítótárazás engedélyezésével.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Szerzői jogi szöveg az alsó láblécben.',
     'widget_site_copyright_helper' => 'Látogasson el a :link oldalra a szerzői jogi szöveg módosításához.',
     'theme_options' => 'Téma beállítások',
-
-    'form' => [
-        'enable_caching' => 'Gyorsítótárazás engedélyezése',
-        'yes' => 'Igen',
-        'no' => 'Nem',
-        'cache_helper' => 'Ha engedélyezve van, a widget tartalma gyorsítótárba kerül a teljesítmény javítása érdekében. Tiltsa le a gyakran változó dinamikus tartalmakhoz.',
-        'cache_warning' => 'Felhasználói felületi problémák miatt a widget gyorsítótárazása kóddal le van tiltva. Ez a widget nem kerül gyorsítótárba, még akkor sem, ha a gyorsítótárazás engedélyezve van.',
-    ],
-
-    'drag_or_click' => 'Húzza az oldalsávba vagy kattintson a + gombra a hozzáadáshoz',
-    'drop_widgets_here' => 'Ejtse a widgeteket az oldalsáv területekre',
-    'search_widgets' => 'Widgetek keresése...',
-    'no_widgets' => 'Nincsenek elérhető widgetek',
-    'no_search_results' => 'Nem található widget',
-    'or_click_add' => 'Vagy kattintson a widget + gombjára a hozzáadáshoz',
-    'toggle_widget' => 'Widget beállítások váltása',
-    'loading_form' => 'Widget űrlap betöltése...',
 ];

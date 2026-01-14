@@ -18,8 +18,4 @@ return [
     'limit_display' => 'Omeji število prikazov',
     'edit_this_gallery' => 'Uredi to galerijo',
     'galleries_page' => 'Stran galerij',
-    'by_name' => 'Avtor :name',
-    'title' => 'Naslov',
-    'limit' => 'Omejitev',
-    'limit_helper' => 'Število galerij za prikaz. ',
 ];

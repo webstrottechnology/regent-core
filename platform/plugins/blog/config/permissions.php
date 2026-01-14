@@ -54,11 +54,6 @@ return [
         'parent_flag' => 'plugins.blog',
     ],
     [
-        'name' => 'Reports',
-        'flag' => 'blog.reports',
-        'parent_flag' => 'plugins.blog',
-    ],
-    [
         'name' => 'Create',
         'flag' => 'tags.create',
         'parent_flag' => 'tags.index',

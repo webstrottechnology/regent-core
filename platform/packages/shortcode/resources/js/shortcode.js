@@ -30,12 +30,10 @@ $(() => {
             '<': '&lt;',
             '>': '&gt;',
             '"': '&quot;',
-            "'": '&#039;',
+            "'": '&#039;'
         }
 
-        return text.replace(/[&<>"']/g, function (m) {
-            return map[m]
-        })
+        return text.replace(/[&<>"']/g, function(m) { return map[m] })
     }
 
     $('[data-bb-toggle="shortcode-item-radio"]').on('change', () => {
@@ -57,10 +55,7 @@ $(() => {
                 if (value && typeof value === 'string') {
                     value = value.replace(/"([^"]*)"/g, '“$1”')
                     value = value.replace(/"/g, '“')
-                    value = value
-                        .replace(/\r\n/g, '{{NEWLINE}}')
-                        .replace(/\n/g, '{{NEWLINE}}')
-                        .replace(/\r/g, '{{NEWLINE}}')
+                    value = value.replace(/\r\n/g, '{{NEWLINE}}').replace(/\n/g, '{{NEWLINE}}').replace(/\r/g, '{{NEWLINE}}')
                 }
 
                 if (element.data('shortcode-attribute') !== 'content') {
@@ -200,13 +195,7 @@ $(() => {
     $(document).on('ckeditor-bb-shortcode-edit', (e) => {
         const { shortcode, name } = e.detail
         const $shortcodeItem = $(`[data-bb-toggle="shortcode-select"][data-key="${name}"]`)
-
-        if ($shortcodeItem.length === 0) {
-            const message = window.BB_SHORTCODE_MESSAGES?.shortcode_not_available?.replace(':name', name)
-                || `Shortcode "${name}" is not available or has been removed.`
-            Botble.showError(message)
-            return
-        }
+        const description = $shortcodeItem.length > 0 ? $shortcodeItem.data('description') : ''
 
         shortcodeCallback({
             key: name,
@@ -216,7 +205,7 @@ $(() => {
                 code: shortcode,
             },
             name: $shortcodeItem.data('name'),
-            description: $shortcodeItem.data('description') || '',
+            description: description,
             previewImage: '',
             update: true,
         })

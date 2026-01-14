@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'Prilagođeni CSS',
-    'custom_css_helper' => 'Dodajte prilagođene CSS stilove za prilagodbu izgleda naljepnice za dostavu. Ovi stilovi bit će dodani zadanim stilovima naljepnice za dostavu.',
     'reset_success' => 'Uspješno vraćeno na zadano',
     'confirm_reset' => 'Potvrdi vraćanje predloška naljepnice za dostavu?',
     'confirm_message' => 'Želite li zaista vratiti ovaj predložak naljepnice za dostavu na zadani?',

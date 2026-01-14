@@ -60,16 +60,12 @@ class DiscountController extends BaseController
             if ($productCollections = $request->input('product_collections')) {
                 if (! is_array($productCollections)) {
                     $productCollections = [$productCollections];
+                    $discount->productCollections()->attach($productCollections);
                 }
-
-                $discount->productCollections()->attach($productCollections);
             }
 
-            if ($productCategories = $request->input('product_categories')) {
-                if (! is_array($productCategories)) {
-                    $productCategories = [$productCategories];
-                }
-
+            if (($productCategories = $request->input('product_categories')) && ! is_array($productCategories)) {
+                $productCategories = [$productCategories];
                 $discount->productCategories()->attach($productCategories);
             }
 
@@ -90,8 +86,6 @@ class DiscountController extends BaseController
 
                     if (! $product || $product->is_variation) {
                         Arr::forget($products, $productId);
-
-                        continue;
                     }
 
                     $products = array_merge($products, $product->variations()->pluck('product_id')->all());
@@ -113,7 +107,7 @@ class DiscountController extends BaseController
                     $product = Product::query()->find($variantId);
 
                     if (! $product || ! $product->is_variation || ! $product->original_product->id) {
-                        continue;
+                        Arr::forget($products, $product->getKey());
                     }
 
                     $variants = array_merge($variants, [$product->original_product->id]);
@@ -139,8 +133,7 @@ class DiscountController extends BaseController
 
         return $this
             ->httpResponse()
-            ->setPreviousUrl(route('discounts.index'))
-            ->setNextUrl(route('discounts.edit', $discount))
+            ->setNextUrl(route('discounts.index'))
             ->withCreatedSuccessMessage();
     }
 
@@ -190,21 +183,13 @@ class DiscountController extends BaseController
         if ($productCollections = $request->input('product_collections')) {
             if (! is_array($productCollections)) {
                 $productCollections = [$productCollections];
+                $discount->productCollections()->sync($productCollections);
             }
-
-            $discount->productCollections()->sync($productCollections);
-        } else {
-            $discount->productCollections()->detach();
         }
 
-        if ($productCategories = $request->input('product_categories')) {
-            if (! is_array($productCategories)) {
-                $productCategories = [$productCategories];
-            }
-
+        if (($productCategories = $request->input('product_categories')) && ! is_array($productCategories)) {
+            $productCategories = [$productCategories];
             $discount->productCategories()->sync($productCategories);
-        } else {
-            $discount->productCategories()->detach();
         }
 
         if ($products = $request->input('products')) {
@@ -224,8 +209,6 @@ class DiscountController extends BaseController
 
                 if (! $product || $product->is_variation) {
                     Arr::forget($products, $productId);
-
-                    continue;
                 }
 
                 $products = array_merge($products, $product->variations()->pluck('product_id')->all());
@@ -249,7 +232,7 @@ class DiscountController extends BaseController
                 $product = Product::query()->find($variantId);
 
                 if (! $product || ! $product->is_variation || ! $product->original_product->id) {
-                    continue;
+                    Arr::forget($products, $product->id);
                 }
 
                 $variants = array_merge($variants, [$product->original_product->id]);
@@ -276,7 +259,6 @@ class DiscountController extends BaseController
 
         return $this
             ->httpResponse()
-            ->setPreviousUrl(route('discounts.index'))
             ->setNextUrl(route('discounts.edit', $discount))
             ->withUpdatedSuccessMessage();
     }

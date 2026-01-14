@@ -47,5 +47,4 @@ return [
         'completed' => 'সম্পন্ন',
         'canceled' => 'বাতিল',
     ],
-    'back_to_invoices' => 'চালানে ফিরে যান',
 ];

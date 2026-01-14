@@ -69,7 +69,4 @@ return [
             'trans' => 'Může být prázdné nebo řetězec s maximální délkou :max znaků, pokud je poskytnut.',
         ],
     ],
-    'download_locale' => 'Stáhnout jazyk',
-    'import_available_locale_confirmation' => 'Stáhnout jazyk z GitHubu',
-    'import_available_locale_confirmation_content' => 'Opravdu chcete stáhnout tento jazyk? Bude stažen do :lang_path, později ho můžete smazat, pokud budete chtít.',
 ];

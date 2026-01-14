@@ -7,10 +7,7 @@
             <li>
                 <strong>{{ trans('packages/theme::theme.settings.website_tracking.gtm.create_account') }}</strong>
                 {{ trans('packages/theme::theme.settings.website_tracking.gtm.go_to') }}
-                <a
-                    href="https://tagmanager.google.com"
-                    target="_blank"
-                >tagmanager.google.com</a>
+                <a href="https://tagmanager.google.com" target="_blank">tagmanager.google.com</a>
                 {{ trans('packages/theme::theme.settings.website_tracking.gtm.create_container') }}
             </li>
             <li>

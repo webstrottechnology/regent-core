@@ -28,34 +28,6 @@ class ShipmentManagement {
                     }
                 })
         })
-
-        this.handleShipmentInfoForm()
-    }
-
-    handleShipmentInfoForm() {
-        const form = $('#botble-ecommerce-forms-shipment-info-form')
-
-        if (!form.length) {
-            return
-        }
-
-        form.on('submit', (event) => {
-            event.preventDefault()
-
-            const submitButton = form.find('button[type="submit"]')
-
-            $httpClient
-                .make()
-                .withButtonLoading(submitButton)
-                .post(form.prop('action'), form.serialize())
-                .then(({ data }) => {
-                    if (!data.error) {
-                        Botble.showSuccess(data.message)
-                    } else {
-                        Botble.showError(data.message)
-                    }
-                })
-        })
     }
 }
 

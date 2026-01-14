@@ -808,10 +808,8 @@ class ThemeSupport
         ];
     }
 
-    public static function getSocialSharingButtons(string $url, ?string $title, ?string $thumbnail = null): array
+    public static function getSocialSharingButtons(string $url, string $title, ?string $thumbnail = null): array
     {
-        $title = $title ?: '';
-
         $socialSharing = theme_option('social_sharing') ?: self::getDefaultSocialSharingData();
 
         if (empty($socialSharing)) {
@@ -984,9 +982,9 @@ class ThemeSupport
 
         return match ($type) {
             'gtm' => (bool) setting('gtm_container_id'),
-            'id' => (setting('google_tag_manager_id') || setting('google_analytics')),
-            'custom', 'code' => (setting('custom_tracking_header_js') || setting('custom_tracking_body_html') || setting('google_tag_manager_code')),
-            default => (setting('gtm_container_id') || setting('google_tag_manager_id') || setting('google_analytics') || setting('custom_tracking_header_js') || setting('custom_tracking_body_html') || setting('google_tag_manager_code'))
+            'id' => (bool) (setting('google_tag_manager_id') || setting('google_analytics')),
+            'custom', 'code' => (bool) (setting('custom_tracking_header_js') || setting('custom_tracking_body_html') || setting('google_tag_manager_code')),
+            default => (bool) (setting('gtm_container_id') || setting('google_tag_manager_id') || setting('google_analytics') || setting('custom_tracking_header_js') || setting('custom_tracking_body_html') || setting('google_tag_manager_code'))
         };
     }
 

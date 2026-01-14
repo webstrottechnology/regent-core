@@ -26,15 +26,6 @@
             {{ $shipment->order->shipping_method_name }}
         </x-core::datagrid.item>
 
-        @if ($shipment->store_id && $shipment->store->name)
-            <x-core::datagrid.item>
-                <x-slot:title>
-                    {{ trans('plugins/ecommerce::shipping.warehouse') }}
-                </x-slot:title>
-                {{ $shipment->store->name }}
-            </x-core::datagrid.item>
-        @endif
-
         <x-core::datagrid.item>
             <x-slot:title>
                 {{ trans('plugins/ecommerce::shipping.weight_unit', ['unit' => ecommerce_weight_unit()]) }}

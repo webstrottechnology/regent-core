@@ -10,9 +10,7 @@ class AbandonedCartReminderEvent extends Event
 {
     use SerializesModels;
 
-    public function __construct(
-        public AbandonedCart $abandonedCart,
-        public int $sequence = 1
-    ) {
+    public function __construct(public AbandonedCart $abandonedCart)
+    {
     }
 }

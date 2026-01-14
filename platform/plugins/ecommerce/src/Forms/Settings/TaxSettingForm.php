@@ -54,7 +54,6 @@ class TaxSettingForm extends SettingForm
                 OnOffFieldOption::make()
                     ->label(trans('plugins/ecommerce::setting.tax.form.display_product_price_including_taxes'))
                     ->value(EcommerceHelper::isDisplayProductIncludingTaxes())
-                    ->helperText(trans('plugins/ecommerce::setting.tax.form.display_product_price_including_taxes_helper'))
             )
             ->add(
                 'display_tax_fields_at_checkout_page',
@@ -63,14 +62,6 @@ class TaxSettingForm extends SettingForm
                     ->label(trans('plugins/ecommerce::setting.tax.form.display_company_invoice_information_fields_at_checkout_page'))
                     ->value(EcommerceHelper::isDisplayTaxFieldsAtCheckoutPage())
                     ->helperText(trans('plugins/ecommerce::setting.tax.form.display_company_invoice_information_fields_at_checkout_page_helper'))
-            )
-            ->add(
-                'display_checkout_tax_information',
-                OnOffCheckboxField::class,
-                OnOffFieldOption::make()
-                    ->label(trans('plugins/ecommerce::setting.tax.form.display_checkout_tax_information'))
-                    ->value(EcommerceHelper::isDisplayCheckoutTaxInformation())
-                    ->helperText(trans('plugins/ecommerce::setting.tax.form.display_checkout_tax_information_helper'))
             )
             ->add('display_tax_description', 'onOffCheckbox', [
                 'label' => trans('plugins/ecommerce::setting.tax.display_tax_description'),

@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Miasto klienta',
         'customer_zipcode' => 'Kod pocztowy klienta',
     ],
-    'custom_css' => 'Niestandardowy CSS',
-    'custom_css_helper' => 'Dodaj niestandardowe style CSS, aby dostosować wygląd faktury. Te style zostaną dodane do domyślnych stylów faktury.',
     'reset_success' => 'Przywrócono do domyślnych pomyślnie',
     'confirm_reset' => 'Potwierdź reset szablonu faktury?',
     'confirm_message' => 'Czy naprawdę chcesz zresetować ten szablon faktury do domyślnego?',

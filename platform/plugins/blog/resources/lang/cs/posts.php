@@ -23,6 +23,7 @@ return [
     'edit_this_post' => 'Upravit tento příspěvek',
     'no_new_post_now' => 'Momentálně nejsou žádné nové příspěvky!',
     'menu_name' => 'Příspěvky',
+    'widget_posts_recent' => 'Nejnovější příspěvky',
     'categories' => 'Kategorie',
     'category' => 'Kategorie',
     'author' => 'Autor',
@@ -68,5 +69,4 @@ return [
     'widget_tags_description' => 'Populární štítky',
     'widget_categories' => 'Kategorie blogu',
     'widget_categories_description' => 'Zobrazit kategorie blogu',
-    'views' => 'Zobrazení',
 ];

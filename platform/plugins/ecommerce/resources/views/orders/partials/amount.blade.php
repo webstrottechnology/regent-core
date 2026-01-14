@@ -1,38 +1,27 @@
 {!! apply_filters(RENDER_PRODUCTS_IN_CHECKOUT_PAGE, $products) !!}
 
-@php
-    $cartSubTotal = Cart::instance('cart')->rawSubTotal();
-    $cartTax = Cart::instance('cart')->rawTax();
-    $hasShipping = ! empty($shipping) && Arr::get($sessionCheckoutData, 'is_available_shipping', true) && $shippingAmount > 0;
-    $hasDiscount = $couponDiscountAmount > 0 || $promotionDiscountAmount > 0;
-    $hasPaymentFee = isset($paymentFee) && $paymentFee > 0;
-    $showSubtotal = $cartSubTotal != $orderAmount || $cartTax > 0 || $hasShipping || $hasDiscount || $hasPaymentFee;
-@endphp
-
 <div class="mt-2 p-2">
-    @if ($showSubtotal)
-        <div class="row">
-            <div class="col-6">
-                <p>{{ __('Subtotal') }}:</p>
-            </div>
-            <div class="col-6">
-                <p class="price-text sub-total-text text-end">
-                    {{ $cartSubTotal == 0 ? trans('plugins/ecommerce::ecommerce.free') : format_price($cartSubTotal) }}
-                </p>
-            </div>
+    <div class="row">
+        <div class="col-6">
+            <p>{{ __('Subtotal') }}:</p>
         </div>
-    @endif
+        <div class="col-6">
+            <p class="price-text sub-total-text text-end">
+                {{ format_price(Cart::instance('cart')->rawSubTotal()) }}
+            </p>
+        </div>
+    </div>
     {!! apply_filters('ecommerce_checkout_after_subtotal', null, $products) !!}
-    @if (EcommerceHelper::isTaxEnabled() && $cartTax > 0)
+    @if (EcommerceHelper::isTaxEnabled())
         <div class="row">
             <div class="col-6">
-                <p>{{ __('Tax') }} @if ($cartTax && EcommerceHelper::isDisplayCheckoutTaxInformation())
+                <p>{{ __('Tax') }} @if (Cart::instance('cart')->rawTax())
                     (<small>{{ Cart::instance('cart')->taxClassesName() }}</small>)
                 @endif</p>
             </div>
             <div class="col-6 float-end">
                 <p class="price-text tax-price-text">
-                    {{ format_price($cartTax) }}
+                    {{ format_price(Cart::instance('cart')->rawTax()) }}
                 </p>
             </div>
         </div>
@@ -101,7 +90,7 @@
         </div>
         <div class="col-6 float-end">
             <p class="total-text raw-total-text" data-price="{{ format_price($rawTotal, null, true) }}">
-                {{ $orderAmount == 0 ? trans('plugins/ecommerce::ecommerce.free') : format_price($orderAmount) }}
+                {{ format_price($orderAmount) }}
             </p>
         </div>
     </div>

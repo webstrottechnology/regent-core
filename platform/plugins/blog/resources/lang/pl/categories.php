@@ -12,7 +12,4 @@ return [
     'parent' => 'Kategoria nadrzędna',
     'order' => 'Kolejność',
     'is_default' => 'Domyślna',
-    'intro' => [
-        'description' => 'Uporządkuj swoje posty na blogu w kategorie, aby lepiej zarządzać treścią.',
-    ],
 ];

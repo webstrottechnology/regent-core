@@ -13,7 +13,9 @@
                             :label="trans('plugins/translation::translation.locale')"
                             name="locale"
                             :options="['' => trans('plugins/translation::translation.select_locale')] +
-                                collect($locales)->map(fn($item, $key) => $item . ' - ' . $key)->all()"
+                                collect($locales)
+                                    ->map(fn($item, $key) => $item . ' - ' . $key)
+                                    ->all()"
                             :searchable="true"
                         />
                         <x-core::button

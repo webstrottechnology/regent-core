@@ -44,20 +44,20 @@ class Posts extends AbstractWidget
     protected function settingForm(): WidgetForm|string|null
     {
         return WidgetForm::createFromArray($this->getConfig())
-            ->add('name', TextField::class, TextFieldOption::make()->label(trans('plugins/blog::base.name')))
+            ->add('name', TextField::class, TextFieldOption::make()->label(__('Name')))
             ->add(
                 'type',
                 SelectField::class,
                 SelectFieldOption::make()
-                    ->label(trans('plugins/blog::base.type'))
+                    ->label(__('Type'))
                     ->choices([
-                        '' => trans('plugins/blog::base.latest'),
-                        'featured' => trans('plugins/blog::base.featured'),
-                        'popular' => trans('plugins/blog::base.popular'),
-                        'recent' => trans('plugins/blog::base.recent'),
+                        '' => __('Latest'),
+                        'featured' => __('Featured'),
+                        'popular' => __('Popular'),
+                        'recent' => __('Recent'),
                     ])
             )
-            ->add('number_display', NumberField::class, NumberFieldOption::make()->label(trans('plugins/blog::base.limit')));
+            ->add('number_display', NumberField::class, NumberFieldOption::make()->label(__('Limit')));
     }
 
     protected function requiredPlugins(): array

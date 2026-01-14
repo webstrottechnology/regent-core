@@ -47,5 +47,4 @@ return [
         'completed' => 'Dokončené',
         'canceled' => 'Zrušené',
     ],
-    'back_to_invoices' => 'Späť na faktúry',
 ];

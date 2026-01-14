@@ -3,6 +3,7 @@
 namespace Botble\Ecommerce\Listeners;
 
 use Botble\Base\Events\AdminNotificationEvent;
+use Botble\Base\Facades\EmailHandler;
 use Botble\Base\Supports\AdminNotificationItem;
 use Botble\Ecommerce\Enums\ShippingStatusEnum;
 use Botble\Ecommerce\Events\ShippingStatusChanged;
@@ -15,18 +16,21 @@ class SendShippingStatusChangedNotification
         $order = $event->shipment->order;
         $shipment = $event->shipment;
 
-        $shippingVariables = [
-            'shipping_company_name' => $shipment->shipping_company_name,
-            'tracking_id' => $shipment->tracking_id,
-            'tracking_link' => $shipment->tracking_link,
-        ];
+        $emailVariables = OrderHelper::getEmailVariables($order);
+
+        $emailVariables['shipping_company_name'] = $shipment->shipping_company_name;
+        $emailVariables['tracking_id'] = $shipment->tracking_id;
+        $emailVariables['tracking_link'] = $shipment->tracking_link;
+
+        $mailer = EmailHandler::setModule(ECOMMERCE_MODULE_SCREEN_NAME)
+            ->setVariableValues($emailVariables);
 
         if ($event->shipment->status == ShippingStatusEnum::DELIVERING) {
-            OrderHelper::sendOrderEmail($order, 'customer_delivery_order', null, $shippingVariables);
+            $mailer->sendUsingTemplate('customer_delivery_order', $order->user->email ?: $order->address->email);
         }
 
         if ($event->shipment->status == ShippingStatusEnum::DELIVERED) {
-            OrderHelper::sendOrderEmail($order, 'customer_order_delivered', null, $shippingVariables);
+            $mailer->sendUsingTemplate('customer_order_delivered', $order->user->email ?: $order->address->email);
 
             event(
                 new AdminNotificationEvent(

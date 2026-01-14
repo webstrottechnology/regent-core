@@ -66,7 +66,6 @@ return [
     'languages' => 'Sprog',
     'reset_password' => 'Nulstil adgangskode',
     'deactivated_message' => 'Din konto er blevet deaktiveret. Kontakt venligst administratoren.',
-    'password_changed_message' => 'Din adgangskode er blevet ændret. Log venligst ind igen med din nye adgangskode.',
     'settings' => [
         'email' => [
             'title' => 'ACL',

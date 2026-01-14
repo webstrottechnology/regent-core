@@ -63,7 +63,7 @@ class InvoiceHelper
             'payment_fee' => $order->payment_fee,
             'discount_amount' => $order->discount_amount ?: 0,
             'sub_total' => $order->sub_total,
-            'amount' => max($order->amount, 0),
+            'amount' => $order->amount,
             'shipping_method' => $order->shipping_method,
             'shipping_option' => $order->shipping_option,
             'coupon_code' => $order->coupon_code,
@@ -326,13 +326,7 @@ class InvoiceHelper
             );
         }
 
-        $extraCss = apply_filters('ecommerce_invoice_extra_css', null, $invoice);
-
-        if ($customCss = setting('invoice_template_custom_css')) {
-            $extraCss = $extraCss ? $extraCss . "\n" . $customCss : $customCss;
-        }
-
-        $data['settings']['extra_css'] = $extraCss;
+        $data['settings']['extra_css'] = apply_filters('ecommerce_invoice_extra_css', null, $invoice);
 
         $data['settings']['header_html'] = apply_filters('ecommerce_invoice_header_html', null, $invoice);
 
@@ -364,7 +358,7 @@ class InvoiceHelper
         if (is_plugin_active('payment')) {
             $invoice->loadMissing(['payment']);
 
-            $data['payment_method'] = $invoice->payment->payment_channel->displayName();
+            $data['payment_method'] = $invoice->payment->payment_channel->label();
             $data['payment_status'] = $invoice->payment->status->getValue();
             $data['payment_status_label'] = $invoice->payment->status->label();
         }

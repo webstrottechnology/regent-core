@@ -3,7 +3,6 @@
 namespace Botble\Ecommerce\Http\Resources\API;
 
 use Botble\Ecommerce\Models\OrderReturnItem;
-use Botble\Media\Facades\RvMedia;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
@@ -19,12 +18,12 @@ class OrderReturnItemResource extends JsonResource
             'order_product_id' => $this->order_product_id,
             'product_id' => $this->product_id,
             'product_name' => $this->product_name,
-            'product_image' => RvMedia::getImageUrl($this->product_image, 'thumb', false, RvMedia::getDefaultImage()),
+            'product_image' => $this->product_image,
             'price' => $this->price,
             'qty' => $this->qty,
             'refund_amount' => $this->refund_amount,
-            'created_at' => $this->created_at?->format('Y-m-d H:i:s'),
-            'updated_at' => $this->updated_at?->format('Y-m-d H:i:s'),
+            'created_at' => $this->created_at->format('Y-m-d H:i:s'),
+            'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
         ];
     }
 }

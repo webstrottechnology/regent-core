@@ -29,7 +29,7 @@ return [
                 $view->with('currencies', $currencies);
             });
 
-            $version = get_cms_version();
+            $version = get_cms_version() . '.4';
 
             if (BaseHelper::isRtlEnabled()) {
                 $theme->asset()->usePath()->add('bootstrap-css', 'plugins/bootstrap/bootstrap.rtl.min.css');

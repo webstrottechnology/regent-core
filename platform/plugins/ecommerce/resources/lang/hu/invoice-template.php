@@ -36,8 +36,6 @@ return [
         'customer_city' => 'A vásárló városa',
         'customer_zipcode' => 'A vásárló irányítószáma',
     ],
-    'custom_css' => 'Egyéni CSS',
-    'custom_css_helper' => 'Adjon hozzá egyéni CSS stílusokat a számla megjelenésének testreszabásához. Ezek a stílusok hozzáadódnak az alapértelmezett számlastílusokhoz.',
     'reset_success' => 'Visszaállítás alapértelmezettre sikeres',
     'confirm_reset' => 'Megerősíti a számla sablon visszaállítását?',
     'confirm_message' => 'Valóban vissza szeretné állítani ezt a számla sablont az alapértelmezettre?',

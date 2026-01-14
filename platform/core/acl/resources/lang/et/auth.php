@@ -66,7 +66,6 @@ return [
     'languages' => 'Keeled',
     'reset_password' => 'Lähtesta parool',
     'deactivated_message' => 'Teie konto on deaktiveeritud. Palun võtke ühendust administraatoriga.',
-    'password_changed_message' => 'Teie parool on muudetud. Palun logige uuesti sisse oma uue parooliga.',
     'settings' => [
         'email' => [
             'title' => 'ACL',

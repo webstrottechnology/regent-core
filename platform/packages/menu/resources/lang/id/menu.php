@@ -34,7 +34,4 @@ return [
     'drag_drop_info' => 'Atur ulang item menu dengan menyeret dan melepaskannya untuk mengubah urutannya atau menyarangkannya sebagai submenu.',
     'widget_custom_menu' => 'Menu Kustom',
     'widget_custom_menu_description' => 'Tambahkan menu kustom ke area widget Anda.',
-    'icon_image' => 'Gambar ikon',
-    'icon_image_helper' => 'Ini akan menggantikan Icon Font jika tersedia.',
-    'select_menu' => 'Pilih menu',
 ];

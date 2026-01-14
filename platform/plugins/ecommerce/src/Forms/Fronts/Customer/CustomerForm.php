@@ -6,10 +6,8 @@ use Botble\Base\Facades\BaseHelper;
 use Botble\Base\Forms\FieldOptions\ButtonFieldOption;
 use Botble\Base\Forms\FieldOptions\EmailFieldOption;
 use Botble\Base\Forms\FieldOptions\InputFieldOption;
-use Botble\Base\Forms\FieldOptions\PhoneNumberFieldOption;
 use Botble\Base\Forms\FieldOptions\TextFieldOption;
 use Botble\Base\Forms\Fields\EmailField;
-use Botble\Base\Forms\Fields\PhoneNumberField;
 use Botble\Base\Forms\Fields\TextField;
 use Botble\Ecommerce\Http\Requests\EditAccountRequest;
 use Botble\Ecommerce\Models\Customer;
@@ -51,10 +49,9 @@ class CustomerForm extends FormFront
             )
             ->add(
                 'phone',
-                PhoneNumberField::class,
-                PhoneNumberFieldOption::make()
+                TextField::class,
+                TextFieldOption::make()
                     ->label(__('Phone'))
-                    ->withCountryCodeSelection()
             )
             ->add(
                 'submit',

@@ -16,14 +16,8 @@
                     </p>
 
                     @if ($cacheSize > 50 * 1024 * 1024)
-                        <x-core::alert
-                            type="warning"
-                            class="mb-3"
-                        >
-                            <x-core::icon
-                                name="ti ti-alert-triangle"
-                                class="me-1"
-                            />
+                        <x-core::alert type="warning" class="mb-3">
+                            <x-core::icon name="ti ti-alert-triangle" class="me-1" />
                             {{ trans('core/base::cache.cache_size_warning') }}
                         </x-core::alert>
                     @endif
@@ -34,10 +28,7 @@
                                 <tr>
                                     <th width="50">{{ trans('core/base::cache.type') }}</th>
                                     <th>{{ trans('core/base::cache.description') }}</th>
-                                    <th
-                                        width="200"
-                                        class="text-center"
-                                    >{{ trans('core/base::cache.action') }}</th>
+                                    <th width="200" class="text-center">{{ trans('core/base::cache.action') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,8 +47,7 @@
                                             <div class="mt-2">
                                                 <span class="status status-primary">
                                                     <span class="status-dot status-dot-animated"></span>
-                                                    <strong>{{ trans('core/base::cache.current_size') }}:</strong>
-                                                    {{ $formattedCacheSize }}
+                                                    <strong>{{ trans('core/base::cache.current_size') }}:</strong> {{ $formattedCacheSize }}
                                                 </span>
                                             </div>
                                         </div>
@@ -70,10 +60,7 @@
                                             data-type="clear_cms_cache"
                                             data-url="{{ route('system.cache.clear') }}"
                                         >
-                                            <x-core::icon
-                                                name="ti ti-trash"
-                                                class="me-1"
-                                            />
+                                            <x-core::icon name="ti ti-trash" class="me-1" />
                                             {{ trans('core/base::cache.clear_button') }}
                                         </x-core::button>
                                     </td>
@@ -101,10 +88,7 @@
                                             data-type="refresh_compiled_views"
                                             data-url="{{ route('system.cache.clear') }}"
                                         >
-                                            <x-core::icon
-                                                name="ti ti-refresh"
-                                                class="me-1"
-                                            />
+                                            <x-core::icon name="ti ti-refresh" class="me-1" />
                                             {{ trans('core/base::cache.refresh_button') }}
                                         </x-core::button>
                                     </td>
@@ -132,10 +116,7 @@
                                             data-type="clear_config_cache"
                                             data-url="{{ route('system.cache.clear') }}"
                                         >
-                                            <x-core::icon
-                                                name="ti ti-refresh"
-                                                class="me-1"
-                                            />
+                                            <x-core::icon name="ti ti-refresh" class="me-1" />
                                             {{ trans('core/base::cache.clear_button') }}
                                         </x-core::button>
                                     </td>
@@ -163,10 +144,7 @@
                                             data-type="clear_route_cache"
                                             data-url="{{ route('system.cache.clear') }}"
                                         >
-                                            <x-core::icon
-                                                name="ti ti-refresh"
-                                                class="me-1"
-                                            />
+                                            <x-core::icon name="ti ti-refresh" class="me-1" />
                                             {{ trans('core/base::cache.clear_button') }}
                                         </x-core::button>
                                     </td>
@@ -194,10 +172,7 @@
                                             data-type="clear_log"
                                             data-url="{{ route('system.cache.clear') }}"
                                         >
-                                            <x-core::icon
-                                                name="ti ti-trash"
-                                                class="me-1"
-                                            />
+                                            <x-core::icon name="ti ti-trash" class="me-1" />
                                             {{ trans('core/base::cache.clear_button') }}
                                         </x-core::button>
                                     </td>
@@ -209,10 +184,7 @@
 
                 <div class="card-footer">
                     <div class="d-flex align-items-center">
-                        <x-core::icon
-                            name="ti ti-info-circle"
-                            class="me-2 text-info"
-                        />
+                        <x-core::icon name="ti ti-info-circle" class="me-2 text-info" />
                         <small class="text-secondary">{{ trans('core/base::cache.footer_note') }}</small>
                     </div>
                 </div>
@@ -237,10 +209,7 @@
                                 <tr>
                                     <th width="50">{{ trans('core/base::cache.type') }}</th>
                                     <th>{{ trans('core/base::cache.description') }}</th>
-                                    <th
-                                        width="200"
-                                        class="text-center"
-                                    >{{ trans('core/base::cache.action') }}</th>
+                                    <th width="200" class="text-center">{{ trans('core/base::cache.action') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -266,10 +235,7 @@
                                             data-type="optimize"
                                             data-url="{{ route('system.cache.clear') }}"
                                         >
-                                            <x-core::icon
-                                                name="ti ti-rocket"
-                                                class="me-1"
-                                            />
+                                            <x-core::icon name="ti ti-rocket" class="me-1" />
                                             {{ trans('core/base::cache.optimization.optimize.button') }}
                                         </x-core::button>
                                     </td>
@@ -297,10 +263,7 @@
                                             data-type="clear_optimize"
                                             data-url="{{ route('system.cache.clear') }}"
                                         >
-                                            <x-core::icon
-                                                name="ti ti-eraser"
-                                                class="me-1"
-                                            />
+                                            <x-core::icon name="ti ti-eraser" class="me-1" />
                                             {{ trans('core/base::cache.optimization.clear.button') }}
                                         </x-core::button>
                                     </td>

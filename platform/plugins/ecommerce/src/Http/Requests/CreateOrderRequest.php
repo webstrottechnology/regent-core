@@ -2,6 +2,7 @@
 
 namespace Botble\Ecommerce\Http\Requests;
 
+use Botble\Base\Facades\BaseHelper;
 use Botble\Ecommerce\Facades\EcommerceHelper;
 use Botble\Ecommerce\Models\Product;
 use Botble\Payment\Enums\PaymentMethodEnum;
@@ -24,6 +25,7 @@ class CreateOrderRequest extends Request
             ->get();
 
         if (EcommerceHelper::isAvailableShipping($products)) {
+            $rules['customer_address.phone'] = 'required|' . BaseHelper::getPhoneValidationRule();
             $rules = [...$rules, ...EcommerceHelper::getCustomerAddressValidationRules('customer_address.')];
         }
 

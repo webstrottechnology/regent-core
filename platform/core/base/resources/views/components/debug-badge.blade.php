@@ -16,10 +16,10 @@
 >
     <div class="text-start">
         <p>
-            {!! BaseHelper::clean(trans('core/base::system.debug_mode_description_1')) !!}
+            {!! trans('core/base::system.debug_mode_description_1') !!}
         </p>
         <p>
-            {!! BaseHelper::clean(trans('core/base::system.debug_mode_description_2')) !!}
+            {!! trans('core/base::system.debug_mode_description_2') !!}
         </p>
     </div>
 </x-core::modal.action>

@@ -9,7 +9,7 @@ return [
     'download' => 'Télécharger la facture',
     'heading' => 'Facture',
     'table' => [
-        'code' => 'Code de facture',
+        'code' => 'Code',
         'amount' => 'Montant',
     ],
     'detail' => [
@@ -18,7 +18,7 @@ return [
         'tax_id' => 'ID fiscal',
         'code' => 'Code de facture',
         'issue_at' => 'Émise le',
-        'description' => 'Description détaillée',
+        'description' => 'Description',
         'qty' => 'Qté',
         'quantity' => 'Quantité',
         'amount' => 'Montant',
@@ -27,7 +27,7 @@ return [
         'shipping_fee' => 'Frais d\'expédition',
         'sub_total' => 'Sous-total',
         'tax' => 'Taxe',
-        'total' => 'Total général',
+        'total' => 'Total',
         'attributes' => 'Attributs',
         'product_options' => 'Options de produit',
         'license_code' => 'Code de licence',
@@ -47,5 +47,4 @@ return [
         'completed' => 'Terminé',
         'canceled' => 'Annulé',
     ],
-    'back_to_invoices' => 'Retour aux factures',
 ];

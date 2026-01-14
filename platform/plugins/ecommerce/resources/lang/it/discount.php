@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Coupon illimitato?',
     'enter_number' => 'Inserisci numero',
     'coupon_type' => 'Tipo coupon',
-    'discount_type' => 'Tipo di sconto',
     'percentage_discount' => 'Sconto percentuale (%)',
     'free_shipping' => 'Spedizione gratuita',
     'same_price' => 'Stesso prezzo',
     'apply_for' => 'applica per',
-    'apply_to' => 'Applica a',
     'all_orders' => 'Tutti gli ordini',
     'order_amount_from' => 'Importo ordine da',
     'product_collection' => 'Collezione prodotti',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Questo coupon non può essere applicato perché il tuo carrello contiene articoli in vendita flash (:product_name). I prezzi delle vendite flash non possono essere combinati con sconti coupon.',
     'coupon_applied_successfully' => 'Perfetto! Il codice coupon ":code" è stato applicato. Hai risparmiato su questo ordine!',
     'coupon_removed_successfully' => 'Il codice coupon è stato rimosso dal tuo ordine.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Codici coupon (:count)',
-    'left_quantity' => 'Rimasti :left',
-    'apply' => 'Applica',
-    'remove' => 'Rimuovi',
-    'select_coupon' => 'Seleziona coupon',
-    'you_have_coupon_code' => 'Hai un codice coupon?',
-    'close' => 'Chiudi',
-    'coupon_code_label' => 'Codice coupon: :code',
-    'enter_coupon_code_placeholder' => 'Inserisci codice coupon...',
 ];

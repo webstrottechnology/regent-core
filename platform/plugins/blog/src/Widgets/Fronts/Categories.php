@@ -68,7 +68,7 @@ class Categories extends AbstractWidget
                 'category_ids',
                 SelectField::class,
                 SelectFieldOption::make()
-                    ->label(trans('plugins/blog::base.choose_categories'))
+                    ->label(__('Choose categories'))
                     ->choices($categories)
                     ->selected($categoryIds)
                     ->searchable()
@@ -78,10 +78,10 @@ class Categories extends AbstractWidget
                 'display_posts_count',
                 SelectField::class,
                 SelectFieldOption::make()
-                    ->label(trans('plugins/blog::base.display_posts_count'))
+                    ->label(__('Display posts count?'))
                     ->choices([
-                        'yes' => trans('plugins/blog::base.yes'),
-                        'no' => trans('plugins/blog::base.no'),
+                        'yes' => __('Yes'),
+                        'no' => __('No'),
                     ])
                     ->selected($data['display_posts_count'])
             );

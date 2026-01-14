@@ -111,7 +111,7 @@ class HandleFrontPages
                 $card->addMeta('label1', 'Price');
                 $card->addMeta(
                     'data1',
-                    $product->price()->displayAsText() . ' ' . get_application_currency()->title
+                    $product->price()->displayAsText() . ' ' . strtoupper(get_application_currency()->title)
                 );
                 $card->addMeta('label2', 'Website');
                 $card->addMeta('data2', SeoHelper::openGraph()->getProperty('site_name'));
@@ -170,10 +170,6 @@ class HandleFrontPages
 
                     if (! $product->defaultVariation->product->isOutOfStock()) {
                         $product = app(UpdateDefaultProductService::class)->updateColumns($product, $productVariation);
-                    }
-
-                    if ($productVariation->sku) {
-                        $product->sku = $productVariation->sku;
                     }
 
                     $product->image = $selectedProductVariation->configurableProduct->image ?: $product->image;
@@ -257,9 +253,6 @@ class HandleFrontPages
                 if ($request->ajax()) {
                     return $this->ajaxFilterProductsResponse($products, $response, $category);
                 }
-
-                app(GoogleTagManager::class)->viewCategory($category, $products->total());
-                app(GoogleTagManager::class)->viewItemList($products->all(), $category->name);
 
                 return [
                     'view' => 'ecommerce.product-category',

@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-commerce',
     'general' => [
         'name' => 'Ogólne',
-        'description' => 'Nazwa sklepu, dane firmy, kontakt i e-maile powiadomień admina',
+        'description' => 'Wyświetl i zaktualizuj swoje ustawienia ogólne',
     ],
     'currency' => [
         'name' => 'Waluty',
-        'description' => 'Formaty walut, kursy wymiany, automatyczne wykrywanie i separatory dziesiętne/tysięczne',
+        'description' => 'Wyświetl i zaktualizuj ustawienia walut',
         'currency_setting_description' => 'Wyświetl i zaktualizuj waluty używane na stronie internetowej',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Włącz automatyczne wykrywanie waluty odwiedzającego',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produkty',
-        'description' => 'Wyświetlanie stanów, generowanie SKU, zdjęcia wariantów, powiązane produkty i specyfikacje',
+        'description' => 'Wyświetl i zaktualizuj ustawienia swoich produktów',
         'product_settings' => 'Ustawienia produktów',
         'product_settings_description' => 'Skonfiguruj zasady dla produktów',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Wyszukiwanie produktów',
-        'description' => 'Zachowanie wyszukiwania, filtry wg kategorii/marki/tagu/atrybutów i filtrowanie zakresów cen',
+        'description' => 'Wyświetl i zaktualizuj ustawienia wyszukiwania produktów',
         'product_search_settings' => 'Wyszukiwanie produktów',
         'product_search_settings_description' => 'Skonfiguruj zasady wyszukiwania produktów',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Produkty cyfrowe',
-        'description' => 'Produkty do pobrania, kody licencji, kasa gości dla produktów cyfrowych i automatyczne zakończenie',
+        'description' => 'Wyświetl i zaktualizuj ustawienia produktów cyfrowych',
         'digital_products_settings' => 'Produkty cyfrowe',
         'digital_products_settings_description' => 'Skonfiguruj zasady dla produktów cyfrowych',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Recenzje produktów',
-        'description' => 'Opinie klientów, wyświetlanie ocen, przesyłanie zdjęć i wymagania zatwierdzania',
+        'description' => 'Wyświetl i zaktualizuj ustawienia recenzji produktów',
         'form' => [
             'enable_review' => 'Włącz recenzje produktów',
             'enable_review_help' => 'Pozwól klientom na pozostawianie recenzji i ocen produktów. Gdy wyłączone, wszystkie funkcje recenzji będą ukryte w sklepie.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Zakupy',
-        'description' => 'Koszyk, lista życzeń, porównanie, śledzenie zamówień, przycisk szybkiego zakupu i przesyłanie dowodu płatności',
+        'description' => 'Wyświetl i zaktualizuj ustawienia zakupów',
         'general_setting' => 'Ustawienia ogólne',
         'return_settings' => 'Ustawienia zwrotów',
         'return_settings_description' => 'Skonfiguruj zasady ustawień zwrotów',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Koszyk zostanie usunięty gdy klient się wyloguje.',
             'hide_product_price' => 'Ukryj cenę produktu',
             'hide_product_price_helper' => 'Ta opcja działa tylko jeśli wyłączysz koszyk zakupów, zmieniając Twoją stronę w wyświetlanie tylko katalogu. Jeśli włączone, cena produktu będzie ukryta. Przydatne gdy chcesz ukryć cenę i wymagać od klientów kontaktu w sprawie ceny.',
-            'hide_product_price_when_zero' => 'Ukryj cenę produktu, gdy wynosi zero',
-            'hide_product_price_when_zero_helper' => 'Jeśli włączone, produkty z ceną 0 nie będą wyświetlały ceny w sklepie.',
             'enable_payment_proof' => 'Włącz przesyłanie dowodu płatności',
             'enable_payment_proof_helper' => 'Pozwól klientom na przesyłanie dowodu płatności dla swoich zamówień. Przydatne dla ręcznych metod płatności.',
             'enable_guest_payment_proof' => 'Pozwól klientom-gościom na przesyłanie dowodu płatności',
             'enable_guest_payment_proof_helper' => 'Gdy włączone, klienci-goście mogą przesyłać dowód płatności używając swojego tokenu zamówienia bez logowania. Otrzymają link do przesłania w e-mail potwierdzającym zamówienie.',
-            'payment_proof_payment_methods' => 'Metody płatności wymagające dowodu płatności',
-            'payment_proof_payment_methods_helper' => 'Wybierz, które metody płatności powinny umożliwić klientom przesyłanie dowodu płatności. Zwykle używane do ręcznych metod płatności, takich jak pobranie i przelew bankowy.',
         ],
     ],
     'checkout' => [
         'name' => 'Finalizacja zakupu',
-        'panel_description' => 'Kasa gości, wymagane pola, limity zamówień, akceptacja warunków i ograniczenia krajowe',
+        'panel_description' => 'Wyświetl i zaktualizuj ustawienia finalizacji zakupu',
         'description' => 'Skonfiguruj zasady ustawień finalizacji zakupu',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Wyświetl informacje bankowe na stronie sukcesu finalizacji zakupu',
@@ -210,7 +206,7 @@ return [
     ],
     'tracking' => [
         'name' => 'Śledzenie',
-        'description' => 'Facebook Pixel, zdarzenia Google Tag Manager i śledzenie konwersji Google Ads',
+        'description' => 'Wyświetl i zaktualizuj ustawienia śledzenia',
         'manage_tracking' => 'Zarządzaj śledzeniem',
         'manage_tracking_description' => 'Zarządzaj śledzeniem: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -229,11 +225,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Marketplace',
-        'description' => 'Ustawienia multi-vendor, prowizje, rejestracja sprzedawców i konfiguracja wypłat',
+        'description' => 'Wyświetl i zaktualizuj ustawienia marketplace',
     ],
     'standard_and_format' => [
         'name' => 'Standard i format',
-        'panel_description' => 'Format kodu zamówienia, jednostki wagi (kg/lb) i jednostki wymiarów (cm/cal)',
+        'panel_description' => 'Wyświetl i zaktualizuj ustawienia standardu i formatu',
         'description' => 'Standardy i formaty są używane do obliczania rzeczy takich jak ceny produktów, wagi wysyłki i czasy zamówień.',
         'form' => [
             'change_order_format' => 'Edytuj format kodu zamówienia (opcjonalne)',
@@ -264,72 +260,8 @@ return [
         'show_sale_count_left' => 'Wyświetl tracker inwentarza',
         'show_sale_count_left_description' => 'Pokaż pasek postępu z "X sprzedane z Y", aby stworzyć poczucie pilności i zachęcić do szybkich zakupów podczas wyprzedaży błyskawicznych.',
     ],
-    'tax' => [
-        'form' => [
-            'display_product_price_including_taxes' => 'Dodaj podatek do wyświetlanych cen',
-            'display_product_price_including_taxes_helper' => 'Automatycznie dodaje podatek do cen produktów w sklepie. Np. produkt za $100 z 10% podatkiem wyświetla się jako $110. Nie jest wymagane, jeśli "Cena zawiera podatek" jest już włączone dla poszczególnych produktów.',
-            'display_checkout_tax_information' => 'Wyświetl informacje o podatku przy każdym produkcie w kasie',
-            'display_checkout_tax_information_helper' => 'Pokaż szczegóły podatku (np. \"VAT 10%\") obok każdego produktu na stronie kasy.',
-        ],
-    ],
     'payment_method_cod_minimum_amount' => 'Minimalna kwota zamówienia - :currency (Opcjonalne)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minimalna kwota zamówienia - :currency (Opcjonalne)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Wyświetl informacje bankowe na stronie sukcesu finalizacji zakupu?',
     'invoice_templates' => 'Szablony faktur',
-
-    'abandoned_cart' => [
-        'name' => 'Porzucone Koszyki',
-        'description' => 'Odzyskuj utracone sprzedaże wysyłając automatyczne przypomnienia do klientów, którzy zostawili produkty w koszyku',
-        'panel_description' => 'Skonfiguruj automatyczne przypomnienia dla klientów porzucających koszyki',
-        'how_it_works' => [
-            'title' => 'Jak To Działa',
-            'step1_title' => 'Klient dodaje produkty',
-            'step1_description' => 'Klient dodaje produkty do koszyka i podaje swój adres e-mail.',
-            'step2_title' => 'Koszyk zostaje porzucony',
-            'step2_description' => 'Jeśli w ustalonym czasie nie dokonano zakupu, koszyk jest oznaczany jako porzucony.',
-            'step3_title' => 'Wysłano e-mail z przypomnieniem',
-            'step3_description' => 'Automatyczne przypomnienia e-mail zachęcają klienta do dokończenia zakupu.',
-            'step4_title' => 'Sprzedaż odzyskana',
-            'step4_description' => 'Klient wraca, aby dokończyć zamówienie, a koszyk jest oznaczany jako odzyskany.',
-        ],
-        'form' => [
-            'enable' => 'Włącz śledzenie porzuconych koszyków',
-            'enable_helper' => 'Po włączeniu system będzie śledzić porzucone koszyki i umożliwi wysyłanie e-maili odzyskiwania do klientów.',
-            'timing_section' => 'Ustawienia Czasu',
-            'email_section' => 'Ustawienia E-mail Przypomnienia',
-            'cleanup_section' => 'Czyszczenie Danych',
-            'time_threshold' => 'Próg czasowy (godziny)',
-            'time_threshold_helper' => 'Koszyk uznawany jest za porzucony po tylu godzinach nieaktywności. Zalecane: 1-24 godziny.',
-            'send_email' => 'Wysyłaj e-maile odzyskiwania',
-            'send_email_helper' => 'Automatycznie wysyłaj e-maile odzyskiwania do klientów z porzuconymi koszykami.',
-            'max_reminders' => 'Liczba e-maili przypominających',
-            'max_reminders_helper' => 'Ile e-maili przypominających wysłać na porzucony koszyk. Każdy e-mail można dostosować w Szablonach E-mail.',
-            'email_delay' => 'Wyślij po (godzinach)',
-            'email_discount' => 'Rabat (%)',
-            'email_1_title' => 'E-mail #1 - Przyjazne Przypomnienie',
-            'email_1_description' => 'Pierwsze delikatne przypomnienie zachęcające klienta do powrotu.',
-            'email_1_delay_helper' => 'Godziny po porzuceniu koszyka do wysłania pierwszego e-maila. Zalecane: 1-2 godziny.',
-            'email_2_title' => 'E-mail #2 - Z Zachętą',
-            'email_2_description' => 'Drugie przypomnienie z ofertą rabatową motywującą do zakupu.',
-            'email_2_delay_helper' => 'Godziny po porzuceniu koszyka do wysłania drugiego e-maila. Zalecane: 24 godziny.',
-            'email_2_discount_helper' => 'Procent rabatu do zaoferowania w tym e-mailu. Ustaw 0 dla braku rabatu.',
-            'email_3_title' => 'E-mail #3 - Ostatnia Szansa',
-            'email_3_description' => 'Ostatnie przypomnienie z pilnością i najlepszą ofertą do zamknięcia sprzedaży.',
-            'email_3_delay_helper' => 'Godziny po porzuceniu koszyka do wysłania ostatniego e-maila. Zalecane: 72 godziny.',
-            'email_3_discount_helper' => 'Ostateczna oferta rabatowa. Zwykle wyższa niż e-mail #2.',
-            'cleanup_days' => 'Czyść po (dniach)',
-            'cleanup_days_helper' => 'Automatycznie usuwaj rekordy porzuconych koszyków starsze niż ta liczba dni.',
-            'cronjob_not_setup' => '<strong>Cronjob nie skonfigurowany!</strong> Przypomnienia o porzuconych koszykach wymagają poprawnie skonfigurowanego cronjob. <a href=":url">Skonfiguruj cronjob teraz</a>.',
-            'cronjob_not_running' => '<strong>Cronjob nie działa!</strong> Cronjob wydaje się być zatrzymany. Sprawdź konfigurację serwera. <a href=":url">Zobacz status cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob działa poprawnie!</strong> Ostatnia aktywność: :time. Twoje przypomnienia o porzuconych koszykach będą przetwarzane automatycznie.',
-            'email_setup_warning' => '<strong>Ważne:</strong> Upewnij się, że ustawienia e-mail są poprawnie skonfigurowane w <a href=":url">Ustawienia → E-mail</a>. Wyślij testowy e-mail, aby sprawdzić, czy wszystko działa przed włączeniem tej funkcji.',
-        ],
-    ],
 ];

@@ -322,40 +322,5 @@
                 }
             });
         }, 5000);
-
-        @if(session('ecommerce_customer_registered'))
-        pushEvent('sign_up', {
-            method: 'email'
-        });
-        @endif
-
-        $(document).on('ajaxComplete', function(event, xhr, settings) {
-            if (settings.url && settings.url.includes('ajax/search')) {
-                var searchInput = $('.bb-form-quick-search input[name="q"]');
-                var searchTerm = searchInput.val();
-
-                if (searchTerm) {
-                    setTimeout(function() {
-                        var resultCount = $('.bb-quick-search-results .bb-quick-search-item').length;
-
-                        pushEvent('search', {
-                            search_term: searchTerm,
-                            result_count: resultCount
-                        });
-                    }, 100);
-                }
-            }
-        });
-
-        @if(request()->routeIs('public.products') && request('q'))
-        (function() {
-            var productItems = document.querySelectorAll('.product-item, .product-card, [data-product-id]');
-            pushEvent('search', {
-                search_term: '{{ request('q') }}',
-                result_count: productItems.length
-            });
-        })();
-        @endif
-
     });
 </script>

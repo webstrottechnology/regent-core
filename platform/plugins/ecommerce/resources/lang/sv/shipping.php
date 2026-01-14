@@ -191,9 +191,6 @@ return [
         'sender' => 'Avsändare',
         'order_date' => 'Beställningsdatum',
         'scan_qr_code' => 'Skanna QR-kod för att spåra din försändelse',
-        'total_amount' => 'Totalt belopp',
-        'cod_amount_to_collect' => 'COD-belopp att samla in',
     ],
     'customer_confirmed_delivery_at' => 'Kunden bekräftade leverans',
-    'no_shipping_methods_available' => 'Inga leveransmetoder tillgängliga!',
 ];

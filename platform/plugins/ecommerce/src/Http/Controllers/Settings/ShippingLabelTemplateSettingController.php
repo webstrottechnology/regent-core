@@ -52,8 +52,6 @@ class ShippingLabelTemplateSettingController extends SettingController
 
         BaseHelper::saveFileData($filePath, $request->input('content'), false);
 
-        setting()->set('shipping_label_template_custom_css', $request->input('shipping_label_template_custom_css'))->save();
-
         return $this
             ->httpResponse()
             ->withUpdatedSuccessMessage();
@@ -81,12 +79,6 @@ class ShippingLabelTemplateSettingController extends SettingController
 
         $qrCode = $writer->writeString($url);
 
-        $extraCss = apply_filters('ecommerce_shipping_label_extra_css', null, null);
-
-        if ($customCss = setting('shipping_label_template_custom_css')) {
-            $extraCss = $extraCss ? $extraCss . "\n" . $customCss : $customCss;
-        }
-
         return (new Pdf())
             ->templatePath(plugin_path('ecommerce/resources/templates/shipping-label.tpl'))
             ->destinationPath(storage_path('app/templates/ecommerce/shipping-label.tpl'))
@@ -97,9 +89,6 @@ class ShippingLabelTemplateSettingController extends SettingController
             ])
             ->data(
                 [
-                    'settings' => [
-                        'extra_css' => $extraCss,
-                    ],
                     'shipment' => [
                         'order_number' => get_order_code(123),
                         'code' => get_shipment_code(345),

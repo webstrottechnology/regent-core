@@ -2,7 +2,7 @@
 
  * The Final Countdown for jQuery v2.0.4 (http://hilios.github.io/jQuery.countdown/)
 
- * Copyright (c) 2014 Edson Hilios 
+ * Copyright (c) 2014 Edson Hilios
 
  *
 

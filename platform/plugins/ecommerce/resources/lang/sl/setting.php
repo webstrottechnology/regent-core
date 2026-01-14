@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'Ecommerce',
     'general' => [
         'name' => 'Splošno',
-        'description' => 'Ime trgovine, podatki podjetja, kontakt in admin obvestilni e-maili',
+        'description' => 'Oglejte si in posodobite splošne nastavitve',
     ],
     'currency' => [
         'name' => 'Valute',
-        'description' => 'Formati valut, menjalnih tečajev, samodejno zaznavanje in decimalni/tisočni ločevalniki',
+        'description' => 'Oglejte si in posodobite nastavitve valut',
         'currency_setting_description' => 'Oglejte si in posodobite valute, ki se uporabljajo na spletni strani',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Omogoči samodejno zaznavanje valute obiskovalca',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Izdelki',
-        'description' => 'Prikaz zalog, generiranje SKU, slike variant, povezani izdelki in specifikacije',
+        'description' => 'Oglejte si in posodobite nastavitve izdelkov',
         'product_settings' => 'Nastavitve izdelkov',
         'product_settings_description' => 'Konfigurirajte pravila za izdelke',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Iskanje izdelkov',
-        'description' => 'Obnašanje iskanja, filtri po kategoriji/blagovni znamki/oznaki/atributih in filtriranje cenovnega razpona',
+        'description' => 'Oglejte si in posodobite nastavitve iskanja izdelkov',
         'product_search_settings' => 'Iskanje izdelkov',
         'product_search_settings_description' => 'Konfigurirajte pravila za iskanje izdelkov',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Digitalni izdelki',
-        'description' => 'Prenosljivi izdelki, licenčne kode, blagajna za goste za digitalne izdelke in samodejno dokončanje',
+        'description' => 'Oglejte si in posodobite nastavitve digitalnih izdelkov',
         'digital_products_settings' => 'Digitalni izdelki',
         'digital_products_settings_description' => 'Konfigurirajte pravila za digitalne izdelke',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Ocene izdelkov',
-        'description' => 'Ocene strank, prikaz ocen, nalaganje slik in zahteve za odobritev',
+        'description' => 'Oglejte si in posodobite nastavitve ocen izdelkov',
         'form' => [
             'enable_review' => 'Omogoči ocene izdelkov',
             'enable_review_help' => 'Dovoli strankam, da pustijo ocene in ocenjevanja izdelkov. Ko je onemogočeno, bodo vse funkcije ocenjevanja skrite iz trgovine.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Nakupovanje',
-        'description' => 'Košarica, seznam želja, primerjava, sledenje naročil, gumb hitrega nakupa in nalaganje dokazil o plačilu',
+        'description' => 'Oglejte si in posodobite nastavitve nakupovanja',
         'general_setting' => 'Splošne nastavitve',
         'return_settings' => 'Nastavitve vračil',
         'return_settings_description' => 'Konfigurirajte pravila za nastavitve vračil',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Košarica bo uničena, ko se stranka odjavi.',
             'hide_product_price' => 'Skrij ceno izdelka',
             'hide_product_price_helper' => 'Ta možnost deluje samo, če onemogočite nakupovalno košarico, kar spremeni vašo stran v prikaz samo kataloga. Če je omogočeno, bo cena izdelka skrita. To je koristno, ko želite skriti ceno in zahtevati, da stranke kontaktirajo vas za ceno.',
-            'hide_product_price_when_zero' => 'Skrij ceno izdelka, ko je nič',
-            'hide_product_price_when_zero_helper' => 'Če je omogočeno, izdelki s ceno 0 v trgovini ne bodo prikazovali cene.',
             'enable_payment_proof' => 'Omogoči nalaganje dokazila o plačilu',
             'enable_payment_proof_helper' => 'Dovoli strankam, da naložijo dokazilo o plačilu za svoja naročila. To je koristno za ročne načine plačila.',
             'enable_guest_payment_proof' => 'Dovoli gostujočim strankam nalaganje dokazila o plačilu',
             'enable_guest_payment_proof_helper' => 'Ko je omogočeno, lahko gostujoče stranke naložijo dokazilo o plačilu z uporabo svojega žetona naročila brez prijave. Povezavo za nalaganje bodo prejele v svoji potrditveni e-pošti naročila.',
-            'payment_proof_payment_methods' => 'Načini plačila, ki zahtevajo potrdilo o plačilu',
-            'payment_proof_payment_methods_helper' => 'Izberite, kateri načini plačila naj strankam omogočijo nalaganje potrdila o plačilu. Običajno se uporablja za ročne načine plačila, kot sta plačilo po povzetju in bančno nakazilo.',
         ],
     ],
     'checkout' => [
         'name' => 'Plačilo',
-        'panel_description' => 'Blagajna za goste, obvezna polja, omejitve naročil, sprejem pogojev in omejitve držav',
+        'panel_description' => 'Oglejte si in posodobite nastavitve plačila',
         'description' => 'Konfigurirajte pravila za nastavitve plačila',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Prikaži bančne informacije na strani uspešnega plačila',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Vračilo',
         'description' => 'Konfigurirajte pravila za nastavitve vračil',
-        'panel_description' => 'Vračila naročil, delna vračila in roki za vračilo',
+        'panel_description' => 'Oglejte si in posodobite nastavitve vračil',
         'form' => [
             'is_enabled_order_return' => 'Je omogočeno vračilo naročila',
             'allow_partial_return' => 'Dovoli delno vračilo',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Računi',
-        'description' => 'Podatki podjetja na računih, številčenje računov, PDF pisave in nastavitve žiga',
+        'description' => 'Oglejte si in posodobite nastavitve računov',
         'company_settings' => 'Nastavitve podjetja',
         'company_settings_description' => 'Nastavitve informacij o podjetju za izdajo računov',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Privzeta davčna stopnja',
             'default_tax_rate_description' => 'Pomembno: Uporabljena bo, če v izdelku ni izbran noben davek.',
             'select_tax' => '-- Izberi --',
-            'display_product_price_including_taxes' => 'Dodaj davek prikazanim cenam',
-            'display_product_price_including_taxes_helper' => 'Samodejno doda davek cenam izdelkov v trgovini. Npr. izdelek za $100 z 10% davkom se prikaže kot $110. Ni potrebno, če je "Cena vključuje davek" že omogočeno pri posameznih izdelkih.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Prikaži ceno izdelka z davki',
         ],
     ],
     'customer' => [
         'name' => 'Stranke',
-        'description' => 'Registracija, preverjanje e-pošte, možnosti prijave, brisanje računa in polja profila',
+        'description' => 'Oglejte si in posodobite nastavitve strank',
         'customer_setting' => 'Nastavitve strank',
         'customer_setting_description' => 'Konfigurirajte nastavitve strank',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Dostava',
-        'description' => 'Pravila dostave, obnašanje brezplačne dostave in vrstni red prikaza možnosti dostave',
+        'description' => 'Oglejte si in posodobite nastavitve dostave',
         'shipping_rule' => 'Pravila dostave',
         'shipping_rule_description' => 'Konfigurirajte pravila za izračun stroškov dostave',
         'shipping_setting' => 'Nastavitve dostave',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Shrani lokacijo',
             'add_new' => 'Dodaj novo',
         ],
-            'info' => [
-            'title' => 'Kako delujejo lokatorji trgovin',
-            'primary_store' => 'Naslov glavne trgovine se prikaže na računih in se uporablja kot privzeti naslov za vračilo za nalepke za pošiljanje.',
-            'shipping_location' => 'Trgovine, označene kot "lokacija pošiljanja", je mogoče izbrati kot izvorno skladišče pri ustvarjanju pošiljk.',
-            'shipment_selection' => 'Pri obdelavi naročil lahko izberete, iz katerega skladišča poslati, glede na zaloge in lokacijo stranke.',
-        ],
     ],
     'tracking' => [
         'name' => 'Sledenje',
-        'description' => 'Facebook Pixel, dogodki Google Tag Manager in sledenje konverzijam Google Ads',
+        'description' => 'Oglejte si in posodobite nastavitve sledenja',
         'manage_tracking' => 'Upravljanje sledenja',
         'manage_tracking_description' => 'Upravljanje sledenja: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Tržnica',
-        'description' => 'Nastavitve več prodajalcev, provizije, registracija prodajalcev in konfiguracija izplačil',
+        'description' => 'Oglejte si in posodobite nastavitve tržnice',
     ],
     'standard_and_format' => [
         'name' => 'Standard in format',
-        'panel_description' => 'Format kode naročila, enote teže (kg/lb) in enote dimenzij (cm/palec)',
+        'panel_description' => 'Oglejte si in posodobite nastavitve standarda in formata',
         'description' => 'Standardi in formati se uporabljajo za izračun stvari, kot so cene izdelkov, teže pošiljanja in časi naročil.',
         'form' => [
             'change_order_format' => 'Uredi format kode naročila (neobvezno)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Prikaži vrstico napredka z "X prodanih od Y" za ustvarjanje nujnosti in spodbujanje hitrih nakupov med hitrimi razprodajami.',
     ],
     'payment_method_cod_minimum_amount' => 'Minimalni znesek naročila - :currency (neobvezno)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minimalni znesek naročila - :currency (neobvezno)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Prikaži bančne informacije na strani uspešnega plačila?',
     'invoice_templates' => 'Predloge računov',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

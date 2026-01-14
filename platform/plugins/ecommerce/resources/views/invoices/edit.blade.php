@@ -81,12 +81,12 @@
                                         {{ $invoice->created_at->translatedFormat('j F, Y') }}
                                     </x-core::datagrid.item>
                                 @endif
-                                @if (is_plugin_active('payment') && $invoice->payment->payment_channel->displayName())
+                                @if (is_plugin_active('payment') && $invoice->payment->payment_channel->label())
                                     <x-core::datagrid.item>
                                         <x-slot:title>
                                             {{ trans('plugins/ecommerce::invoice.payment_method') }}
                                         </x-slot:title>
-                                        {{ $invoice->payment->payment_channel->displayName() }}
+                                        {{ $invoice->payment->payment_channel->label() }}
                                     </x-core::datagrid.item>
                                 @endif
                             </x-core::datagrid>

@@ -72,7 +72,7 @@ class CompareController extends BaseController
         if (! $duplicates->isEmpty()) {
             return $this
                 ->httpResponse()
-                ->setMessage(trans('plugins/ecommerce::products.compare.already_in_list', ['product' => $product->name]))
+                ->setMessage(__(':product is already in your compare list!', ['product' => $product->name]))
                 ->setError();
         }
 
@@ -82,7 +82,7 @@ class CompareController extends BaseController
 
         return $this
             ->httpResponse()
-            ->setMessage(trans('plugins/ecommerce::products.compare.added_success', ['product' => $product->name]))
+            ->setMessage(__('Added product :product to compare list successfully!', ['product' => $product->name]))
             ->setData([
                 'count' => Cart::instance('compare')->count(),
                 'extra_data' => app(GoogleTagManager::class)->formatProductTrackingData($product->original_product),
@@ -105,7 +105,7 @@ class CompareController extends BaseController
 
         return $this
             ->httpResponse()
-            ->setMessage(trans('plugins/ecommerce::products.compare.removed_success', ['product' => $product->name]))
+            ->setMessage(__('Removed product :product from compare list successfully!', ['product' => $product->name]))
             ->setData([
                 'count' => Cart::instance('compare')->count(),
                 'extra_data' => app(GoogleTagManager::class)->formatProductTrackingData($product->original_product),

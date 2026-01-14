@@ -47,5 +47,4 @@ return [
         'completed' => 'Voltooid',
         'canceled' => 'Geannuleerd',
     ],
-    'back_to_invoices' => 'Terug naar facturen',
 ];

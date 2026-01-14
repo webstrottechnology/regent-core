@@ -23,6 +23,7 @@ return [
     'edit_this_post' => 'Diesen Beitrag bearbeiten',
     'no_new_post_now' => 'Es gibt jetzt keinen neuen Beitrag!',
     'menu_name' => 'Beiträge',
+    'widget_posts_recent' => 'Neueste Beiträge',
     'categories' => 'Kategorien',
     'category' => 'Kategorie',
     'author' => 'Autor',
@@ -68,5 +69,4 @@ return [
     'widget_tags_description' => 'Beliebte Tags',
     'widget_categories' => 'Blog-Kategorien',
     'widget_categories_description' => 'Blog-Kategorien anzeigen',
-    'views' => 'Aufrufe',
 ];

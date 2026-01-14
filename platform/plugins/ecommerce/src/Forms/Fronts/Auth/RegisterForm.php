@@ -14,7 +14,6 @@ use Botble\Base\Forms\Fields\TextField;
 use Botble\Base\Forms\FormAbstract;
 use Botble\Ecommerce\Facades\EcommerceHelper;
 use Botble\Ecommerce\Forms\Fronts\Auth\FieldOptions\EmailFieldOption;
-use Botble\Ecommerce\Forms\Fronts\Auth\FieldOptions\PhoneNumberFieldOption;
 use Botble\Ecommerce\Forms\Fronts\Auth\FieldOptions\TextFieldOption;
 use Botble\Ecommerce\Http\Requests\RegisterRequest;
 use Botble\Ecommerce\Models\Customer;
@@ -72,19 +71,16 @@ class RegisterForm extends AuthForm
                     ->add(
                         'phone',
                         PhoneNumberField::class,
-                        PhoneNumberFieldOption::make()
+                        TextFieldOption::make()
                             ->label(__('Phone (optional)'))
-                            ->when(EcommerceHelper::isLoginUsingPhone() || get_ecommerce_setting('make_customer_phone_number_required', false), static function (PhoneNumberFieldOption $fieldOption): void {
+                            ->when(EcommerceHelper::isLoginUsingPhone() || get_ecommerce_setting('make_customer_phone_number_required', false), static function (TextFieldOption $fieldOption): void {
                                 $fieldOption
                                     ->required()
                                     ->label(__('Phone'));
                             })
-                            ->when(! setting('phone_number_enable_country_code', true), function (PhoneNumberFieldOption $fieldOption) {
-                                return $fieldOption->icon('ti ti-phone');
-                            })
                             ->placeholder(__('Phone number'))
+                            ->icon('ti ti-phone')
                             ->addAttribute('autocomplete', 'tel')
-                            ->withCountryCodeSelection()
                     );
             })
             ->add(

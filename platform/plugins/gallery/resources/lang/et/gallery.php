@@ -18,8 +18,4 @@ return [
     'limit_display' => 'Piira kuvatavate arvu',
     'edit_this_gallery' => 'Muuda seda galeriid',
     'galleries_page' => 'Galeriide leht',
-    'by_name' => 'Autor: :name',
-    'title' => 'Pealkiri',
-    'limit' => 'Piirang',
-    'limit_helper' => 'Kuvatavate galeriide arv. ',
 ];

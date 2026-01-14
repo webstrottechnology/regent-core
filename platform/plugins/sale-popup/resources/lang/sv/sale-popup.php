@@ -39,7 +39,4 @@ return [
         'product_listing' => 'Produktlista',
         'cart' => 'Varukorg',
     ],
-    'purchased' => 'köpte',
-    'verified' => 'Verifierad',
-    'quick_view' => 'Snabbvy',
 ];

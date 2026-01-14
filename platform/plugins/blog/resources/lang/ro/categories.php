@@ -12,7 +12,4 @@ return [
     'parent' => 'Categorie părinte',
     'order' => 'Ordine',
     'is_default' => 'Este implicită',
-    'intro' => [
-        'description' => 'Organizați postările dvs. de blog în categorii pentru o mai bună gestionare a conținutului.',
-    ],
 ];

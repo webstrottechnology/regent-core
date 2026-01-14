@@ -7,12 +7,10 @@ return [
     'menu_name' => 'Категории',
     'none' => 'Нет',
     'total_posts' => 'Всего постов: :total',
-    'table_view_info' => 'Для упрощения массового управления категориями вы также можете',
-    'manage_as_table' => 'управлять категориями в виде таблицы',
-    'parent' => 'Родительская категория',
-    'order' => 'Порядок',
-    'is_default' => 'По умолчанию',
-    'intro' => [
-        'description' => 'Организуйте свои записи в блоге по категориям для лучшего управления контентом.',
-    ],
+    'edit' => 'Редактировать категорию',
+    'table_view_info' => 'For easier bulk management of categories, you can also',
+    'manage_as_table' => 'manage categories as a table',
+    'parent' => 'Parent Category',
+    'order' => 'Order',
+    'is_default' => 'Is Default',
 ];

@@ -66,54 +66,6 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card">
-                <div class="card-body p-3">
-                    <div class="d-flex align-items-center">
-                        <span class="bg-yellow text-white avatar me-3">
-                            <x-core::icon name="ti ti-clock" />
-                        </span>
-                        <div>
-                            <div class="text-muted small">{{ trans('plugins/ecommerce::products.pending_orders') }}</div>
-                            <div class="h3 m-0">{{ number_format($pendingOrders) }}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card">
-                <div class="card-body p-3">
-                    <div class="d-flex align-items-center">
-                        <span class="bg-lime text-white avatar me-3">
-                            <x-core::icon name="ti ti-clock-dollar" />
-                        </span>
-                        <div>
-                            <div class="text-muted small">{{ trans('plugins/ecommerce::products.pending_revenue') }}</div>
-                            <div class="h3 m-0">{{ format_price($pendingRevenue) }}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card">
-                <div class="card-body p-3">
-                    <div class="d-flex align-items-center">
-                        <span class="bg-purple text-white avatar me-3">
-                            <x-core::icon name="ti ti-percentage" />
-                        </span>
-                        <div>
-                            <div class="text-muted small">{{ trans('plugins/ecommerce::products.conversion_rate') }}</div>
-                            <div class="h3 m-0">{{ number_format($conversionRate, 2) }}%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         @if(EcommerceHelper::isReviewEnabled())
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card">
@@ -312,7 +264,7 @@
                                 <thead>
                                     <tr>
                                         <th>{{ trans('plugins/ecommerce::order.order') }}</th>
-                                        <th>{{ trans('plugins/ecommerce::order.customer_label') }}</th>
+                                        <th>{{ trans('plugins/ecommerce::order.customer') }}</th>
                                         <th>{{ trans('core/base::tables.status') }}</th>
                                         <th class="text-end">{{ trans('plugins/ecommerce::products.quantity') }}</th>
                                         <th class="text-end">{{ trans('plugins/ecommerce::products.price') }}</th>

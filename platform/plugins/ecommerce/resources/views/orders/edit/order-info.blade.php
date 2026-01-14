@@ -20,9 +20,9 @@
                 {{ trans('plugins/ecommerce::order.discount') }}
                 @if ($order->coupon_code)
                     <p class="mb-0">
-                        {!! BaseHelper::clean(trans('plugins/ecommerce::order.coupon_code', [
+                        {!! trans('plugins/ecommerce::order.coupon_code', [
                             'code' => Html::tag('strong', $order->coupon_code)->toHtml(),
-                        ])) !!}
+                        ]) !!}
                     </p>
                 @elseif ($order->discount_description)
                     <p class="mb-0">{{ $order->discount_description }}</p>
@@ -105,12 +105,12 @@
                 <x-core::table.body.cell>
                     @if ($isInAdmin && $order->payment->id)
                         <a href="{{ route('payment.show', $order->payment->id) }}" target="_blank">
-                            {{ $order->payment->payment_channel->displayName() }}
+                            {{ $order->payment->payment_channel->label() }}
 
                             <x-core::icon name="ti ti-external-link" />
                         </a>
                     @else
-                        {{ $order->payment->payment_channel->displayName() }}
+                        {{ $order->payment->payment_channel->label() }}
                     @endif
                 </x-core::table.body.cell>
             </x-core::table.body.row>

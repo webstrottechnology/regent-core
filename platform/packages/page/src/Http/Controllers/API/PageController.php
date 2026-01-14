@@ -82,7 +82,7 @@ class PageController extends BaseApiController
                 ->httpResponse()
                 ->setError()
                 ->setCode(404)
-                ->setMessage(trans('packages/page::pages.not_found'));
+                ->setMessage(__('Not found'));
         }
 
         return $this

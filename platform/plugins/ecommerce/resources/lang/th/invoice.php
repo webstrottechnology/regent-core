@@ -47,5 +47,4 @@ return [
         'completed' => 'เสร็จสิ้น',
         'canceled' => 'ยกเลิก',
     ],
-    'back_to_invoices' => 'กลับไปยังใบแจ้งหนี้',
 ];

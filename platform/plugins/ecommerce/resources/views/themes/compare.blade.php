@@ -5,7 +5,7 @@
                 <table class="table table-bordered">
                     <tbody>
                     <tr>
-                        <th>{{ trans('plugins/ecommerce::products.product') }}</th>
+                        <th>{{ __('Product') }}</th>
                         @foreach ($products as $product)
                             <td>
                                 <div class="compare-thumb">
@@ -16,9 +16,9 @@
 
                                     <span @class(['text-danger' => $product->isOutOfStock(), 'text-success' => ! $product->isOutOfStock()])>
                                         @if ($product->isOutOfStock())
-                                            ({{ trans('plugins/ecommerce::ecommerce.out_of_stock') }})
+                                            ({{ __('Out of stock') }})
                                         @else
-                                            ({{ trans('plugins/ecommerce::ecommerce.in_stock') }})
+                                            ({{ __('In stock') }})
                                         @endif
                                     </span>
                                 </div>
@@ -26,7 +26,7 @@
                         @endforeach
                     </tr>
                     <tr>
-                        <th>{{ trans('plugins/ecommerce::products.description') }}</th>
+                        <th>{{ __('Description') }}</th>
                         @foreach ($products as $product)
                             <td>
                                 <div class="compare-desc">
@@ -36,7 +36,7 @@
                         @endforeach
                     </tr>
                     <tr>
-                        <th>{{ trans('plugins/ecommerce::products.price') }}</th>
+                        <th>{{ __('Price') }}</th>
                         @foreach ($products as $product)
                             <td>
                                 @include(EcommerceHelper::viewPath('includes.product-price'), [
@@ -49,7 +49,7 @@
                         @endforeach
                     </tr>
                     <tr>
-                        <th>{{ trans('plugins/ecommerce::products.sku') }}</th>
+                        <th>{{ __('SKU') }}</th>
                         @foreach ($products as $product)
                             <td>{{ $product->sku ? '#' . $product->sku : '' }}</td>
                         @endforeach
@@ -68,12 +68,12 @@
                         </tr>
                     @endforeach
                     <tr>
-                        <th>{{ trans('plugins/ecommerce::ecommerce.add_to_cart_2') }}</th>
+                        <th>{{ __('Add to cart') }}</th>
                         @foreach ($products as $product)
                             <td>
                                 <div class="compare-add-to-cart d-flex justify-content-center">
                                     <button
-                                        title="{{ trans('plugins/ecommerce::ecommerce.add_to_cart_1') }}"
+                                        title="{{ __('Add to Cart') }}"
                                         type="submit"
                                         class="btn btn-primary bb-btn-product-actions-icon"
                                         data-bb-toggle="add-to-cart"
@@ -82,14 +82,14 @@
                                         {!! EcommerceHelper::jsAttributes('add-to-cart', $product) !!}
                                     >
                                         <x-core::icon name="ti ti-shopping-cart"/>
-                                        {{ trans('plugins/ecommerce::ecommerce.add_to_cart_1') }}
+                                        {{ __('Add to Cart') }}
                                     </button>
                                 </div>
                             </td>
                         @endforeach
                     </tr>
                     <tr>
-                        <th>{{ trans('plugins/ecommerce::review.rating') }}</th>
+                        <th>{{ __('Rating') }}</th>
                         @foreach ($products as $product)
                             <td>
                                 @if (EcommerceHelper::isReviewEnabled() && (!EcommerceHelper::hideRatingWhenNoReviews() || $product->reviews_count > 0))
@@ -101,7 +101,7 @@
                         @endforeach
                     </tr>
                     <tr>
-                        <th>{{ trans('plugins/ecommerce::ecommerce.remove') }}</th>
+                        <th>{{ __('Remove') }}</th>
                         @foreach ($products as $product)
                             <td>
                                 <div class="compare-remove">
@@ -116,7 +116,7 @@
                 </table>
             </div>
         @else
-            @include(EcommerceHelper::viewPath('includes.empty-state'), ['title' => trans('plugins/ecommerce::ecommerce.your_compare_list_is_empty')])
+            @include(EcommerceHelper::viewPath('includes.empty-state'), ['title' => __('Your compare list is empty')])
         @endif
     </div>
 </section>

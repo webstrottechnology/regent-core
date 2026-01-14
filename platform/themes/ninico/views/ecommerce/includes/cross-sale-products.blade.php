@@ -42,10 +42,6 @@ $parentProduct = $product;
                             <h3 class="tpproduct__title text-truncate">
                                 <a href="{{ $product->url }}" title="{{ $product->name }}" data-bb-toggle="product-link">{{ $product->name }}</a>
                             </h3>
-                            @php
-                                $priceForDisplay = $product->front_sale_price_with_taxes;
-                                $shouldShowPrice = (! EcommerceHelper::hideProductPrice() || EcommerceHelper::isCartEnabled()) && (! EcommerceHelper::hideProductPriceWhenZero() || $priceForDisplay > 0);
-                            @endphp
                             <div class="small">
                                 <div class="fw-bold">
                                     @include(EcommerceHelper::viewPath('includes.product-price'), [
@@ -54,19 +50,19 @@ $parentProduct = $product;
                                         'priceOriginalClassName' => 'tpproduct__priceinfo-list-oldprice',
                                     ])
                                 </div>
-                                    @if(EcommerceHelper::isCartEnabled())
-                                        @if ($product->variations()->exists())
-                                            <a data-id="{{ $product->slug }}" href="#" data-url="{{ route('public.ajax.quick-shop', ['slug' => $product->slug, 'reference_product' => $parentProduct->slug]) }}" class="mt-2 btn button-quick-shop">
-                                                <span>{{ __('Select options') }}</span>
-                                            </a>
-                                        @else
-                                            <a data-id="{{ $product->id }}" href="#" data-url="{{ route('public.cart.add-to-cart') }}" class="mt-2 add-to-cart btn">
-                                            <span>{{ $shouldShowPrice ? __('Buy now at :price', ['price' => format_price($priceForDisplay)]) : __('Buy now') }}</span>
-                                            </a>
-                                        @endif
+                                @if(EcommerceHelper::isCartEnabled())
+                                    @if ($product->variations()->exists())
+                                        <a data-id="{{ $product->slug }}" href="#" data-url="{{ route('public.ajax.quick-shop', ['slug' => $product->slug, 'reference_product' => $parentProduct->slug]) }}" class="mt-2 btn button-quick-shop">
+                                            <span>{{ __('Select options') }}</span>
+                                        </a>
+                                    @else
+                                        <a data-id="{{ $product->id }}" href="#" data-url="{{ route('public.cart.add-to-cart') }}" class="mt-2 add-to-cart btn">
+                                            <span>{{ __('Buy now at :price', ['price' => format_price($product->front_sale_price_with_taxes)]) }}</span>
+                                        </a>
                                     @endif
-                                </div>
+                                @endif
                             </div>
+                        </div>
                     </div>
                 </div>
             @endforeach

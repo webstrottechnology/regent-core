@@ -36,9 +36,6 @@ Route::group([
     Route::get('products/{slug}/related', [ProductController::class, 'relatedProducts']);
     Route::get('products/{slug}/cross-sale', [ProductController::class, 'getCrossSaleProducts']);
     Route::get('products/{slug}/reviews', [ProductController::class, 'reviews']);
-    Route::get('products/{slug}/faqs', [ProductController::class, 'faqs']);
-    Route::get('products/{slug}/specifications', [ProductController::class, 'specifications']);
-    Route::get('products/{slug}/flash-sale', [ProductController::class, 'flashSale']);
     Route::get('product-variation/{id}', [ProductController::class, 'getProductVariation'])->wherePrimaryKey();
 
     Route::get('product-categories', [ProductCategoryController::class, 'index']);
@@ -86,10 +83,10 @@ Route::group([
 
     Route::group(['middleware' => ['api.optional.auth']], function (): void {
         Route::post('cart', [CartController::class, 'store']);
-        Route::post('cart/{id}', [CartController::class, 'store'])->whereUuid('id');
-        Route::put('cart/{id}', [CartController::class, 'update'])->whereUuid('id');
-        Route::delete('cart/{id}', [CartController::class, 'destroy'])->whereUuid('id');
-        Route::get('cart/{id}', [CartController::class, 'index'])->whereUuid('id');
+        Route::post('cart/{id}', [CartController::class, 'store']);
+        Route::put('cart/{id}', [CartController::class, 'update']);
+        Route::delete('cart/{id}', [CartController::class, 'destroy']);
+        Route::get('cart/{id}', [CartController::class, 'index']);
         Route::post('cart/refresh', [CartController::class, 'refresh']);
     });
 
@@ -112,12 +109,12 @@ Route::group([
     Route::post('orders/tracking', OrderTrackingController::class);
 
     Route::post('wishlist', [WishlistController::class, 'store']);
-    Route::post('wishlist/{id}', [WishlistController::class, 'store'])->whereUuid('id');
-    Route::delete('wishlist/{id}', [WishlistController::class, 'destroy'])->whereUuid('id');
-    Route::get('wishlist/{id}', [WishlistController::class, 'index'])->whereUuid('id');
+    Route::post('wishlist/{id}', [WishlistController::class, 'store']);
+    Route::delete('wishlist/{id}', [WishlistController::class, 'destroy']);
+    Route::get('wishlist/{id}', [WishlistController::class, 'index']);
 
     Route::post('compare', [CompareController::class, 'store']);
-    Route::post('compare/{id}', [CompareController::class, 'store'])->whereUuid('id');
-    Route::delete('compare/{id}', [CompareController::class, 'destroy'])->whereUuid('id');
-    Route::get('compare/{id}', [CompareController::class, 'index'])->whereUuid('id');
+    Route::post('compare/{id}', [CompareController::class, 'store']);
+    Route::delete('compare/{id}', [CompareController::class, 'destroy']);
+    Route::get('compare/{id}', [CompareController::class, 'index']);
 });

@@ -372,6 +372,8 @@ class EcommerceServiceProvider extends ServiceProvider
         $loader->alias('ProductCategoryHelper', ProductCategoryHelper::class);
         $loader->alias('CurrencyHelper', CurrencyFacade::class);
         $loader->alias('InvoiceHelper', InvoiceHelper::class);
+
+        $this->loadJsonTranslationsFrom($this->getPath() . '/resources/lang');
     }
 
     public function boot(): void
@@ -993,13 +995,6 @@ class EcommerceServiceProvider extends ServiceProvider
                     'name' => __('Orders'),
                     'url' => fn () => route('customer.orders'),
                     'icon' => 'ti ti-shopping-cart',
-                ])
-                ->registerItem([
-                    'id' => 'cms-customer-invoices',
-                    'priority' => 35,
-                    'name' => __('Invoices'),
-                    'url' => fn () => route('customer.invoices.index'),
-                    'icon' => 'ti ti-file-invoice',
                 ])
                 ->when(EcommerceHelper::isReviewEnabled(), function (DashboardMenuSupport $dashboardMenu): void {
                     $dashboardMenu->registerItem([

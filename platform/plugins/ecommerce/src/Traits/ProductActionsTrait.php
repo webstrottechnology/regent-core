@@ -252,7 +252,7 @@ trait ProductActionsTrait
 
         return $response
             ->setError()
-            ->setMessage(trans('plugins/ecommerce::ecommerce.notices.delete_error_message'));
+            ->setMessage(trans('core/base::notices.delete_error_message'));
     }
 
     public function deleteVersions(
@@ -830,23 +830,14 @@ trait ProductActionsTrait
             ->orderByDesc('date')
             ->get();
 
-        $completedOrderProductsQuery = OrderProduct::query()
+        $completedOrderProducts = OrderProduct::query()
             ->whereIn('ec_order_product.product_id', $productIds)
             ->join('ec_orders', 'ec_orders.id', '=', 'ec_order_product.order_id')
             ->where('ec_orders.status', OrderStatusEnum::COMPLETED);
 
-        $totalOrders = (clone $completedOrderProductsQuery)->count();
-        $totalSold = (clone $completedOrderProductsQuery)->sum('ec_order_product.qty');
-        $totalRevenue = (clone $completedOrderProductsQuery)->sum(DB::raw('ec_order_product.price * ec_order_product.qty'));
-
-        $pendingOrderProductsQuery = OrderProduct::query()
-            ->whereIn('ec_order_product.product_id', $productIds)
-            ->join('ec_orders', 'ec_orders.id', '=', 'ec_order_product.order_id')
-            ->where('ec_orders.is_finished', true)
-            ->whereIn('ec_orders.status', [OrderStatusEnum::PENDING, OrderStatusEnum::PROCESSING]);
-
-        $pendingOrders = (clone $pendingOrderProductsQuery)->count();
-        $pendingRevenue = (clone $pendingOrderProductsQuery)->sum(DB::raw('ec_order_product.price * ec_order_product.qty'));
+        $totalOrders = $completedOrderProducts->count();
+        $totalSold = $completedOrderProducts->sum('ec_order_product.qty');
+        $totalRevenue = $completedOrderProducts->sum(DB::raw('ec_order_product.price * ec_order_product.qty'));
 
         $recentOrders = OrderProduct::query()
             ->whereIn('product_id', $productIds)
@@ -854,8 +845,6 @@ trait ProductActionsTrait
             ->latest()
             ->limit(10)
             ->get();
-
-        $conversionRate = $totalViews > 0 ? ($totalOrders / $totalViews) * 100 : 0;
 
         $totalReviews = $product->reviews_count ?? 0;
         $averageRating = $product->reviews_avg ?? 0;
@@ -867,9 +856,6 @@ trait ProductActionsTrait
             'totalOrders',
             'totalSold',
             'totalRevenue',
-            'pendingOrders',
-            'pendingRevenue',
-            'conversionRate',
             'recentOrders',
             'totalReviews',
             'averageRating'

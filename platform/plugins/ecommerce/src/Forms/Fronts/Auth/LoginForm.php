@@ -12,11 +12,9 @@ use Botble\Base\Forms\Fields\PasswordField;
 use Botble\Base\Forms\Fields\PhoneNumberField;
 use Botble\Ecommerce\Facades\EcommerceHelper;
 use Botble\Ecommerce\Forms\Fronts\Auth\FieldOptions\EmailFieldOption;
-use Botble\Ecommerce\Forms\Fronts\Auth\FieldOptions\PhoneNumberFieldOption;
 use Botble\Ecommerce\Forms\Fronts\Auth\FieldOptions\TextFieldOption;
 use Botble\Ecommerce\Http\Requests\LoginRequest;
 use Botble\Ecommerce\Models\Customer;
-use Illuminate\Support\Facades\Cookie;
 
 class LoginForm extends AuthForm
 {
@@ -29,8 +27,6 @@ class LoginForm extends AuthForm
     {
         parent::setup();
 
-        $rememberedEmail = Cookie::get('customer_remember_email', old('email', ''));
-
         $this
             ->setUrl(route('customer.login.post'))
             ->setValidatorClass(LoginRequest::class)
@@ -41,22 +37,18 @@ class LoginForm extends AuthForm
                 theme_option('login_background'),
                 fn (AuthForm $form, string $background) => $form->banner($background)
             )
-            ->when(EcommerceHelper::getLoginOption() === 'phone', function (LoginForm $form) use ($rememberedEmail): void {
+            ->when(EcommerceHelper::getLoginOption() === 'phone', function (LoginForm $form): void {
                 $form->add(
                     'email',
                     PhoneNumberField::class,
-                    PhoneNumberFieldOption::make()
+                    TextFieldOption::make()
                         ->label(__('Phone'))
                         ->placeholder(__('Phone number'))
-                        ->when(! setting('phone_number_enable_country_code', true), function (PhoneNumberFieldOption $fieldOption) {
-                            return $fieldOption->icon('ti ti-phone');
-                        })
+                        ->icon('ti ti-phone')
                         ->addAttribute('autocomplete', 'tel')
-                        ->withCountryCodeSelection()
-                        ->value($rememberedEmail)
                 );
             })
-            ->when(EcommerceHelper::getLoginOption() === 'email', function (LoginForm $form) use ($rememberedEmail): void {
+            ->when(EcommerceHelper::getLoginOption() === 'email', function (LoginForm $form): void {
                 $form->add(
                     'email',
                     EmailField::class,
@@ -64,10 +56,9 @@ class LoginForm extends AuthForm
                         ->label(__('Email'))
                         ->placeholder(__('Email address'))
                         ->icon('ti ti-mail')
-                        ->value($rememberedEmail)
                 );
             })
-            ->when(EcommerceHelper::getLoginOption() === 'email_or_phone', function (LoginForm $form) use ($rememberedEmail): void {
+            ->when(EcommerceHelper::getLoginOption() === 'email_or_phone', function (LoginForm $form): void {
                 $form->add(
                     'email',
                     EmailField::class,
@@ -76,7 +67,6 @@ class LoginForm extends AuthForm
                         ->placeholder(__('Email or Phone number'))
                         ->addAttribute('autocomplete', 'email')
                         ->icon('ti ti-user')
-                        ->value($rememberedEmail)
                 );
             })
             ->add(

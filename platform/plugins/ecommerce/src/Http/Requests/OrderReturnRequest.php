@@ -11,14 +11,9 @@ class OrderReturnRequest extends Request
 {
     public function rules(): array
     {
-        $validReasons = array_values(array_filter(
-            OrderReturnReasonEnum::toArray(),
-            fn ($value) => $value !== '' && $value !== null
-        ));
-
         $rules = [
             'order_id' => ['required', 'integer', 'exists:ec_orders,id', 'unique:ec_order_returns,order_id'],
-            'return_items' => ['required', 'array', 'min:1'],
+            'return_items' => ['required', 'array'],
             'return_items.*.is_return' => ['sometimes'],
             'return_items.*.order_item_id' => [
                 'required_with:return_items.*.is_return,checked',
@@ -29,9 +24,9 @@ class OrderReturnRequest extends Request
         ];
 
         if (! EcommerceHelper::allowPartialReturn()) {
-            $rules['reason'] = ['required', 'string', Rule::in($validReasons)];
+            $rules += ['reason' => 'required|string|' . Rule::in(OrderReturnReasonEnum::values())];
         } else {
-            $rules['return_items.*.reason'] = ['required', 'string', Rule::in($validReasons)];
+            $rules += ['return_items.*.reason' => 'required|string|' . Rule::in(OrderReturnReasonEnum::values())];
         }
 
         return $rules;
@@ -53,11 +48,6 @@ class OrderReturnRequest extends Request
     {
         return [
             'unique' => trans('plugins/ecommerce::order.return_order_unique'),
-            'reason.required' => trans('plugins/ecommerce::order.return_reason_required'),
-            'reason.in' => trans('plugins/ecommerce::order.return_reason_invalid'),
-            'return_items.*.reason.required' => trans('plugins/ecommerce::order.return_reason_required'),
-            'return_items.*.reason.in' => trans('plugins/ecommerce::order.return_reason_invalid'),
-            'return_items.min' => trans('plugins/ecommerce::order.return_items_required'),
         ];
     }
 

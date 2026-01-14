@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'Botble\Blog\Http\Controllers'], function (): void {
     AdminHelper::registerRoutes(function (): void {
         Route::group(['prefix' => 'blog'], function (): void {
-            Route::get('reports', [
-                'as' => 'blog.reports.index',
-                'uses' => 'ReportController@index',
-                'permission' => 'blog.reports',
-            ]);
             Route::group(['prefix' => 'posts', 'as' => 'posts.'], function (): void {
                 Route::resource('', 'PostController')
                     ->parameters(['' => 'post']);

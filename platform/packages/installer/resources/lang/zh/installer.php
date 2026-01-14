@@ -3,6 +3,9 @@
 return [
     'title' => '安装',
     'next' => '下一步',
+    'back' => '上一个',
+    'finish' => '安装',
+    'installation' => '安装',
     'forms' => [
         'errorTitle' => '发生了以下错误：',
     ],
@@ -14,7 +17,7 @@ return [
     ],
     'requirements' => [
         'title' => '服务器要求',
-        'php_version_required' => '需要PHP版本:version',
+        'next' => '检查权限',
     ],
     'permissions' => [
         'next' => '配置环境',
@@ -26,9 +29,12 @@ return [
                 'app_url_label' => '网址',
                 'name_required' => '环境名称是必需的。',
                 'app_name_label' => '网站标题',
+                'app_name_placeholder' => '网站标题',
                 'db_connection_label' => '数据库连接',
                 'db_host_label' => '数据库主机',
+                'db_host_placeholder' => '数据库主机',
                 'db_port_label' => '数据库端口',
+                'db_port_placeholder' => '数据库端口',
                 'db_name_label' => '数据库名称',
                 'db_name_placeholder' => '数据库名称',
                 'db_username_label' => '数据库用户名',
@@ -39,7 +45,10 @@ return [
                     'install' => '安装',
                 ],
                 'db_host_helper' => '如果您使用 Laravel Sail，只需将 DB_HOST 更改为 DB_HOST=mysql。在某些托管服务中，DB_HOST 可以是 localhost 而不是 127.0.0.1。',
+                'app_url_placeholder' => '网址',
                 'db_connection_label_mysql' => 'MySQL',
+                'db_connection_label_sqlite' => 'SQLite',
+                'db_connection_label_pgsql' => 'PostgreSQL',
                 'db_connections' => [
                     'mysql' => 'MySQL',
                     'sqlite' => 'SQLite',
@@ -70,11 +79,13 @@ return [
         'title' => '激活许可证',
         'skip' => '暂时跳过',
     ],
+    'install' => '安装',
     'final' => [
         'pageTitle' => '安装完成',
         'title' => '完成',
         'message' => '应用程序已成功安装。',
         'exit' => '去管理仪表板',
     ],
+    'install_success' => '安装成功！',
     'install_step_title' => '安装 - 步骤 :step: :title',
 ];

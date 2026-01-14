@@ -21,8 +21,4 @@ return [
     'simple_slider_shortcode_description' => 'Fügen Sie einen einfachen Schieberegler hinzu',
     'select_slider' => 'Wählen Sie einen Schieberegler',
     'shortcode' => 'Shortcode',
-    'tablet_image' => 'Tablet-Bild',
-    'tablet_image_helper' => 'Bei Geräten mit einer Breite von 768 Pixel bis 1200 Pixel wird, wenn leer, das Bild vom Desktop verwendet.',
-    'mobile_image' => 'Mobiles Bild',
-    'mobile_image_helper' => 'Bei Geräten mit einer Breite von weniger als 768 Pixel wird, wenn leer, das Bild vom Tablet verwendet.',
 ];

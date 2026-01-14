@@ -7,15 +7,13 @@
     'helperText' => null,
     'inline' => false,
     'single' => false,
-    'marginZero' => false,
-    'noMargin' => false,
+    'marginZero' => false
 ])
 
 @php
     $labelClasses = Arr::toCssClasses([
         'form-check',
-        'form-check-inline mb-3' => $inline && !$noMargin,
-        'form-check-inline' => $inline && $noMargin,
+        'form-check-inline mb-3' => $inline,
         'form-check-single' => $single,
         'form-check m-0' => $marginZero,
     ]);
@@ -37,7 +35,7 @@
         @checked($name ? old($name, $checked) : $checked)
     >
 
-    @if ($label || $slot->isNotEmpty())
+    @if($label || $slot->isNotEmpty())
         <span class="form-check-label">
             {!! $label ? BaseHelper::clean($label) : $slot !!}
         </span>

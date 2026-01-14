@@ -249,52 +249,22 @@ class OrderAdminManagement {
         $(document).on('click', '.btn-trigger-cancel-order', (event) => {
             event.preventDefault()
             $('#confirm-cancel-order-button').data('target', $(event.currentTarget).data('target'))
-            $('#cancel-order-modal #cancellation_reason').val('')
-            $('#cancel-order-modal #cancellation_reason_description').val('')
-            $('#cancel-order-modal #cancellation_reason_description_wrapper').hide()
             $('#cancel-order-modal').modal('show')
-        })
-
-        $(document).on('change', '#cancel-order-modal #cancellation_reason', (event) => {
-            const value = $(event.currentTarget).val()
-            if (value === 'other') {
-                $('#cancellation_reason_description_wrapper').show()
-                $('#cancellation_reason_description').attr('required', true)
-            } else {
-                $('#cancellation_reason_description_wrapper').hide()
-                $('#cancellation_reason_description').removeAttr('required')
-            }
         })
 
         $(document).on('click', '#confirm-cancel-order-button', (event) => {
             event.preventDefault()
             const _self = $(event.currentTarget)
-            const modal = $('#cancel-order-modal')
-            const reason = modal.find('#cancellation_reason').val()
-            const reasonDescription = modal.find('#cancellation_reason_description').val()
-
-            if (!reason) {
-                Botble.showError('Please select a cancellation reason.')
-                return
-            }
-
-            if (reason === 'other' && (!reasonDescription || reasonDescription.length < 3)) {
-                Botble.showError('Please enter a description for the cancellation reason (minimum 3 characters).')
-                return
-            }
 
             $httpClient
                 .make()
                 .withButtonLoading(_self)
-                .post(_self.data('target'), {
-                    cancellation_reason: reason,
-                    cancellation_reason_description: reasonDescription,
-                })
+                .post(_self.data('target'))
                 .then(({ data }) => {
                     if (!data.error) {
                         Botble.showSuccess(data.message)
                         $('#main-order-content').load(`${window.location.href} #main-order-content > *`)
-                        modal.modal('hide')
+                        $('#cancel-order-modal').modal('hide')
                     } else {
                         Botble.showError(data.message)
                     }

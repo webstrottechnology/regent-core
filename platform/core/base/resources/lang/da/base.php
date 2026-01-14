@@ -51,7 +51,7 @@ return [
     'close' => 'Luk',
     'panel' => [
         'others' => 'Andet',
-        'system' => 'Systemet',
+        'system' => 'System',
         'platform_administration' => 'Platformadministration',
         'manage_description' => 'Administrer :name',
     ],

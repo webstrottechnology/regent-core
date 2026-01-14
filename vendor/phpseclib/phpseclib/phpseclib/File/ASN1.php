@@ -789,10 +789,7 @@ abstract class ASN1
             case self::TYPE_ENUMERATED:
                 $temp = $decoded['content'];
                 if (isset($mapping['implicit'])) {
-                    $temp = new BigInteger($temp, -256);
-                }
-                if (!$temp instanceof BigInteger) {
-                    return false;
+                    $temp = new BigInteger($decoded['content'], -256);
                 }
                 if (isset($mapping['mapping'])) {
                     $temp = $temp->toString();

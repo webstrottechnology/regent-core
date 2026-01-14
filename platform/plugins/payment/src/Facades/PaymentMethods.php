@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static string|null getDefaultMethod()
  * @method static string|null getSelectedMethod()
  * @method static string|null getSelectingMethod()
- * @method static \Botble\Payment\Supports\PaymentMethods setSelectingMethod(?string $method)
  * @method static string render()
  *
  * @see \Botble\Payment\Supports\PaymentMethods

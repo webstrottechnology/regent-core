@@ -49,7 +49,4 @@ return [
             'updates-available' => 'Mises à jour disponibles',
         ],
     ],
-    'install_plugin_from_marketplace' => 'Install plugin from Marketplace',
-    'accept_and_install' => 'Accept and install',
-    'cancel' => 'Cancel',
 ];

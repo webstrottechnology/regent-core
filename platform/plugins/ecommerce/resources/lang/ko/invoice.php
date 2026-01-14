@@ -47,5 +47,4 @@ return [
         'completed' => '완료됨',
         'canceled' => '취소됨',
     ],
-    'back_to_invoices' => '청구서 목록으로 돌아가기',
 ];

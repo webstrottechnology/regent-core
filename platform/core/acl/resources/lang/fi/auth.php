@@ -66,7 +66,6 @@ return [
     'languages' => 'Kielet',
     'reset_password' => 'Nollaa salasana',
     'deactivated_message' => 'Tilisi on poistettu käytöstä. Ota yhteyttä järjestelmänvalvojaan.',
-    'password_changed_message' => 'Salasanasi on vaihdettu. Kirjaudu sisään uudelleen uudella salasanallasi.',
     'settings' => [
         'email' => [
             'title' => 'ACL',

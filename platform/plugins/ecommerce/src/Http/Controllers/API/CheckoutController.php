@@ -81,7 +81,7 @@ class CheckoutController extends BaseApiController
             }
         }
 
-        Cart::instance('cart')->updateOrStore($id);
+        Cart::instance('cart')->store($id);
 
         return redirect()->to(route('public.checkout.information', $token));
     }

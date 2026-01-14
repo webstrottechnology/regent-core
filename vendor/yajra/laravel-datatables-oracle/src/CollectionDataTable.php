@@ -9,7 +9,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 
 class CollectionDataTable extends DataTableAbstract
@@ -185,8 +184,7 @@ class CollectionDataTable extends DataTableAbstract
     private function revertIndexColumn($mDataSupport): void
     {
         if ($this->columnDef['index']) {
-            $indexColumn = Config::get('datatables.index_column', 'DT_RowIndex');
-            /** @var int|string $index */
+            $indexColumn = config('datatables.index_column', 'DT_RowIndex');
             $index = $mDataSupport ? $indexColumn : 0;
             $start = $this->request->start();
 

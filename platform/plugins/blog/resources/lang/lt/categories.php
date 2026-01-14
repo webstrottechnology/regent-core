@@ -12,7 +12,4 @@ return [
     'parent' => 'Tėvinė kategorija',
     'order' => 'Tvarka',
     'is_default' => 'Numatytoji',
-    'intro' => [
-        'description' => 'Organizuokite savo tinklaraščio įrašus į kategorijas geresniam turinio valdymui.',
-    ],
 ];

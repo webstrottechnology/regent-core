@@ -47,5 +47,4 @@ return [
         'completed' => 'Završeno',
         'canceled' => 'Otkazano',
     ],
-    'back_to_invoices' => 'Назад на фактуре',
 ];

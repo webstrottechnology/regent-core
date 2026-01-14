@@ -143,14 +143,6 @@ class ProductSettingForm extends SettingForm
                     ->label(trans('plugins/ecommerce::setting.product.form.make_product_barcode_required'))
                     ->helperText(trans('plugins/ecommerce::setting.product.form.make_product_barcode_required_helper'))
                     ->value(get_ecommerce_setting('make_product_barcode_required', false))
-            )
-            ->add(
-                'delete_product_images_when_deleting',
-                OnOffCheckboxField::class,
-                OnOffFieldOption::make()
-                    ->label(trans('plugins/ecommerce::setting.product.form.delete_product_images_when_deleting'))
-                    ->helperText(trans('plugins/ecommerce::setting.product.form.delete_product_images_when_deleting_helper'))
-                    ->value(get_ecommerce_setting('delete_product_images_when_deleting', true))
             );
     }
 }

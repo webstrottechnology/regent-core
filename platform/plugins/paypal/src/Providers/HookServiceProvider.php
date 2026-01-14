@@ -97,7 +97,7 @@ class HookServiceProvider extends ServiceProvider
 
         $supportedCurrencies = $payPalService->supportedCurrencyCodes();
 
-        $currency = $currentCurrency->title;
+        $currency = strtoupper($currentCurrency->title);
 
         $notSupportCurrency = false;
 
@@ -106,8 +106,8 @@ class HookServiceProvider extends ServiceProvider
 
             if (! $currencyModel->query()->where('title', 'USD')->exists()) {
                 $data['error'] = true;
-                $data['message'] = trans(
-                    'plugins/payment::payment.currency_not_supported',
+                $data['message'] = __(
+                    ":name doesn't support :currency. List of currencies supported by :name: :currencies.",
                     [
                         'name' => 'PayPal',
                         'currency' => $currency,

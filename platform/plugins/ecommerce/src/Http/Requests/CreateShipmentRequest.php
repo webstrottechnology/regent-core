@@ -10,7 +10,6 @@ class CreateShipmentRequest extends Request
     {
         return [
             'method' => ['required', 'string'],
-            'store_id' => ['nullable', 'exists:ec_store_locators,id'],
         ];
     }
 }

@@ -15,7 +15,6 @@ use Botble\Ecommerce\Models\Shipment;
 use Botble\Location\Models\City;
 use Botble\Location\Models\State;
 use Botble\Media\Facades\RvMedia;
-use Botble\Payment\Enums\PaymentMethodEnum;
 use Botble\Theme\Facades\Theme;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
@@ -83,28 +82,12 @@ class PrintShippingLabelController extends BaseController
 
         $order = $shipment->order;
 
-        $isCOD = is_plugin_active('payment')
-            && $order->payment
-            && $order->payment->id
-            && $order->payment->payment_channel == PaymentMethodEnum::COD;
-        $totalCollectableAmount = $isCOD ? $order->amount : 0;
-        $codAmount = $isCOD ? $order->amount : 0;
-
-        $extraCss = apply_filters('ecommerce_shipping_label_extra_css', null, $shipment);
-
-        if ($customCss = setting('shipping_label_template_custom_css')) {
-            $extraCss = $extraCss ? $extraCss . "\n" . $customCss : $customCss;
-        }
-
         return $pdf
             ->templatePath(plugin_path('ecommerce/resources/templates/shipping-label.tpl'))
             ->destinationPath(storage_path('app/templates/ecommerce/shipping-label.tpl'))
             ->paperSizeHalfLetter()
             ->supportLanguage(InvoiceHelper::getLanguageSupport())
             ->data(apply_filters('ecommerce_shipping_label_data', [
-                'settings' => [
-                    'extra_css' => $extraCss,
-                ],
                 'shipment' => [
                     'order_number' => get_order_code($shipment->order_id),
                     'code' => get_shipment_code($shipment->getKey()),
@@ -113,9 +96,6 @@ class PrintShippingLabelController extends BaseController
                     'created_at' => BaseHelper::formatDate($shipment->created_at),
                     'shipping_method' => $order->shipping_method_name,
                     'shipping_fee' => format_price($shipment->price),
-                    'total_collectable_amount' => format_price($totalCollectableAmount),
-                    'cod_amount' => format_price($codAmount),
-                    'is_cod' => $isCOD,
                     'shipping_company_name' => $shipment->shipping_company_name,
                     'tracking_id' => $shipment->tracking_id,
                     'tracking_link' => $shipment->tracking_link,

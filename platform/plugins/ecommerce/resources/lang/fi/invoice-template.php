@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Asiakkaan kaupunki',
         'customer_zipcode' => 'Asiakkaan postinumero',
     ],
-    'custom_css' => 'Mukautettu CSS',
-    'custom_css_helper' => 'Lisää mukautettuja CSS-tyylejä laskun ulkoasun mukauttamiseksi. Nämä tyylit lisätään oletuslaskutyyleihin.',
     'reset_success' => 'Palautus oletukseen onnistui',
     'confirm_reset' => 'Vahvista laskupohjan palautus?',
     'confirm_message' => 'Haluatko todella palauttaa tämän laskupohjan oletusarvoon?',

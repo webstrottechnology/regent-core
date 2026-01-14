@@ -45,6 +45,4 @@ return [
     'admin' => 'administrator',
     'register_an_account' => 'račun',
     'activity_has_been_deleted' => 'Aktivnost je izbrisana',
-    'no_results_found' => 'No results found',
-    'no_activities_here' => 'It looks as through there are no activities here.',
 ];

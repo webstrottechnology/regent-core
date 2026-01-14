@@ -2,6 +2,7 @@
 
 return [
     'name' => 'Tim',
+    'teams' => 'Tim',
     'create' => 'Tim baru',
     'forms' => [
         'name' => 'Nama',

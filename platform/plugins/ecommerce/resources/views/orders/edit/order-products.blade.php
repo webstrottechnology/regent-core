@@ -69,7 +69,18 @@
                                 @endif
                             </li>
 
-                            {!! apply_filters('ecommerce_order_product_item_extra_info_after', '', $orderProduct, $order) !!}
+                            @if ($isInAdmin && is_plugin_active('marketplace') && $order->store?->name)
+                                <li class="ws-nm">
+                                    <span class="bull">↳</span>
+                                    <span
+                                        class="black">{{ trans('plugins/marketplace::store.store') }}</span>
+                                    <a
+                                        class="fw-semibold text-decoration-underline"
+                                        href="{{ $order->store->url }}"
+                                        target="_blank"
+                                    >{{ $order->store->name }}</a>
+                                </li>
+                            @endif
                         </ul>
                     @endif
                 </x-core::table.body.cell>

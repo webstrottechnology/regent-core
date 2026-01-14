@@ -47,5 +47,4 @@ return [
         'completed' => 'Завершено',
         'canceled' => 'Скасовано',
     ],
-    'back_to_invoices' => 'Повернутися до рахунків',
 ];

@@ -964,11 +964,8 @@ class Connection implements ServerVersionProvider
             $res = $func($this);
 
             $successful = true;
-        } catch (ConnectionLost $connectionLost) {
-            // Catching here only to be able to prevent a rollback attempt
-            throw $connectionLost;
         } finally {
-            if (! isset($connectionLost) && ! $successful) {
+            if (! $successful) {
                 $this->rollBack();
             }
         }
@@ -984,7 +981,6 @@ class Connection implements ServerVersionProvider
                 || $t instanceof UniqueConstraintViolationException
                 || $t instanceof ForeignKeyConstraintViolationException
                 || $t instanceof DeadlockException
-                || $t instanceof ConnectionLost
             );
 
             throw $t;

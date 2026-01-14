@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'Blok UI',
     'search' => 'Cari...',
     'no_shortcode_found' => 'Tiada shortcode ditemui.',
-    'shortcode_not_available' => 'Shortcode ":name" tidak tersedia atau telah dialih keluar.',
 
     'cache_suggestion' => [
         'title' => 'Cadangan Prestasi',

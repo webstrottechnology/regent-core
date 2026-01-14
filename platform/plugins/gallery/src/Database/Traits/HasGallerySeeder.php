@@ -16,11 +16,12 @@ trait HasGallerySeeder
             GalleryMeta::query()->truncate();
         }
 
+        $faker = $this->fake();
         $userId = User::query()->value('id');
 
         foreach ($galleries as $item) {
             if (! isset($item['description'])) {
-                $item['description'] = 'A beautiful collection of images showcasing memorable moments and stunning visuals.';
+                $item['description'] = $faker->text(150);
             }
 
             $item['user_id'] = $userId;

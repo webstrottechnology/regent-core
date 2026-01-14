@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'name' => 'Категории',
-    'create' => 'Нова категория',
+    'name' => 'Categories',
+    'create' => 'New category',
 ];

@@ -47,5 +47,4 @@ return [
         'completed' => 'مكتمل',
         'canceled' => 'ملغي',
     ],
-    'back_to_invoices' => 'العودة إلى الفواتير',
 ];

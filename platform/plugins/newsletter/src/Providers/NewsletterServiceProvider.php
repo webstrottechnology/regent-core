@@ -79,10 +79,6 @@ class NewsletterServiceProvider extends ServiceProvider implements DeferrablePro
         });
 
         FormFrontManager::register(NewsletterForm::class, NewsletterRequest::class);
-
-        add_filter(THEME_FRONT_FOOTER, function (?string $html): string {
-            return $html . view('plugins/newsletter::partials.gtm-script')->render();
-        }, 998);
     }
 
     public function provides(): array

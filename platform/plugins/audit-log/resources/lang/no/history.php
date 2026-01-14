@@ -45,6 +45,4 @@ return [
     'admin' => 'administrator',
     'register_an_account' => 'en konto',
     'activity_has_been_deleted' => 'Aktivitet har blitt slettet',
-    'no_results_found' => 'No results found',
-    'no_activities_here' => 'It looks as through there are no activities here.',
 ];

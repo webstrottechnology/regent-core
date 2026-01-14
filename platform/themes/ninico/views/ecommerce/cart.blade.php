@@ -30,8 +30,6 @@
 
                                         @continue(! $product)
 
-                                        @php($shouldShowPrice = (! EcommerceHelper::hideProductPrice() || EcommerceHelper::isCartEnabled()) && (! EcommerceHelper::hideProductPriceWhenZero() || $item->price > 0))
-
                                         <tr>
                                             <input
                                                 name="items[{{ $key }}][rowId]"
@@ -81,11 +79,9 @@
                                                 </div>
                                             </td>
                                             <td class="product-price" data-title="{{ __('Price') }}">
-                                                @if ($shouldShowPrice)
-                                                    <span class="amount">{{ format_price($item->price) }}</span>
-                                                    @if ($item->price < $product->price)
-                                                        &nbsp;<small><del>{{ format_price($product->price) }}</del></small>
-                                                    @endif
+                                                <span class="amount">{{ format_price($item->price) }}</span>
+                                                @if ($item->price < $product->price)
+                                                    &nbsp;<small><del>{{ format_price($product->price) }}</del></small>
                                                 @endif
                                             </td>
                                             <td class="product-quantity" data-title="{{ __('Quantity') }}">
@@ -102,10 +98,8 @@
                                                 <span class="cart-plus">+</span>
                                             </td>
                                             <td class="product-subtotal" data-title="{{ __('Total') }}">
-                                                @if ($shouldShowPrice)
-                                                    <span
-                                                        class="amount">{{ format_price($item->price * $item->qty) }}</span>
-                                                @endif
+                                                <span
+                                                    class="amount">{{ format_price($item->price * $item->qty) }}</span>
                                             </td>
                                             <td class="product-remove" data-title="{{ __('Remove') }}">
                                                 <a

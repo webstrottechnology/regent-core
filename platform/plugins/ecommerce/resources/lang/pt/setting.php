@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-commerce',
     'general' => [
         'name' => 'Geral',
-        'description' => 'Nome da loja, info da empresa, contatos e emails de notificação admin',
+        'description' => 'Visualizar e atualizar suas configurações gerais',
     ],
     'currency' => [
         'name' => 'Moedas',
-        'description' => 'Formatos de moeda, taxas de câmbio, deteção automática e separadores decimais/milhares',
+        'description' => 'Visualizar e atualizar configurações de moeda',
         'currency_setting_description' => 'Visualizar e atualizar moedas usadas no site',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Habilitar detecção automática da moeda do visitante',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produtos',
-        'description' => 'Exibição de stock, geração de SKU, imagens de variantes, produtos relacionados e especificações',
+        'description' => 'Visualizar e atualizar suas configurações de produtos',
         'product_settings' => 'Configurações de produto',
         'product_settings_description' => 'Configurar regras para produto',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Pesquisa de Produtos',
-        'description' => 'Comportamento de pesquisa, filtros por categoria/marca/tag/atributos e filtragem por faixa de preço',
+        'description' => 'Visualizar e atualizar configurações de pesquisa de produtos',
         'product_search_settings' => 'Pesquisa de produtos',
         'product_search_settings_description' => 'Configurar regras para pesquisa de produtos',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Produtos Digitais',
-        'description' => 'Produtos para download, códigos de licença, checkout de convidado para itens digitais e conclusão automática',
+        'description' => 'Visualizar e atualizar configurações de produtos digitais',
         'digital_products_settings' => 'Produtos digitais',
         'digital_products_settings_description' => 'Configurar regras para produtos digitais',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Avaliações de Produtos',
-        'description' => 'Avaliações de clientes, exibição de classificações, upload de imagens e requisitos de aprovação',
+        'description' => 'Visualizar e atualizar suas configurações de avaliações de produtos',
         'form' => [
             'enable_review' => 'Habilitar avaliações de produtos',
             'enable_review_help' => 'Permitir que clientes deixem avaliações e classificações nos produtos. Quando desabilitado, todos os recursos de avaliação serão ocultados da loja.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Compras',
-        'description' => 'Carrinho, lista de desejos, comparar, rastreamento de pedidos, botão compra rápida e upload de comprovante de pagamento',
+        'description' => 'Visualizar e atualizar suas configurações de compras',
         'general_setting' => 'Configurações gerais',
         'return_settings' => 'Configurações de devolução',
         'return_settings_description' => 'Configurar regras para configurações de devolução',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'O carrinho será destruído quando o cliente fizer logout.',
             'hide_product_price' => 'Ocultar preço do produto',
             'hide_product_price_helper' => 'Esta opção só funciona se você desabilitar o carrinho de compras, transformando seu site em uma exibição apenas de catálogo. Se habilitado, o preço do produto será ocultado. É útil quando você quer ocultar o preço e exigir que clientes entrem em contato para o preço.',
-            'hide_product_price_when_zero' => 'Ocultar preço do produto quando for zero',
-            'hide_product_price_when_zero_helper' => 'Se habilitado, produtos com preço 0 não mostrarão preço na loja.',
             'enable_payment_proof' => 'Habilitar upload de comprovante de pagamento',
             'enable_payment_proof_helper' => 'Permitir que clientes façam upload de comprovante de pagamento para seus pedidos. Isso é útil para métodos de pagamento manuais.',
             'enable_guest_payment_proof' => 'Permitir que clientes convidados façam upload de comprovante de pagamento',
             'enable_guest_payment_proof_helper' => 'Quando habilitado, clientes convidados podem fazer upload de comprovante de pagamento usando o token do pedido sem fazer login. Eles receberão o link de upload no e-mail de confirmação do pedido.',
-            'payment_proof_payment_methods' => 'Métodos de pagamento que requerem comprovativo de pagamento',
-            'payment_proof_payment_methods_helper' => 'Selecione quais métodos de pagamento devem permitir que os clientes carreguem o comprovativo de pagamento. Normalmente usado para métodos de pagamento manuais como contra reembolso e transferência bancária.',
         ],
     ],
     'checkout' => [
         'name' => 'Checkout',
-        'panel_description' => 'Checkout de convidado, campos obrigatórios, limites de pedido, aceitação de termos e restrições de país',
+        'panel_description' => 'Visualizar e atualizar configurações de checkout',
         'description' => 'Configurar regras para configurações de checkout',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Exibir informações bancárias na página de sucesso do checkout',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Devolução',
         'description' => 'Configurar regras para configurações de devolução',
-        'panel_description' => 'Devoluções de pedidos, devoluções parciais e prazos de devolução',
+        'panel_description' => 'Visualizar e atualizar configurações de devolução',
         'form' => [
             'is_enabled_order_return' => 'Está habilitada devolução de pedido',
             'allow_partial_return' => 'Permitir devolução parcial',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Faturas',
-        'description' => 'Detalhes da empresa em faturas, numeração de faturas, fontes PDF e configurações de carimbo',
+        'description' => 'Visualizar e atualizar suas configurações de faturas',
         'company_settings' => 'Configurações da empresa',
         'company_settings_description' => 'Configurações das informações da empresa para faturamento',
         'form' => [
@@ -327,15 +323,12 @@ return [
             'default_tax_rate' => 'Alíquota de imposto padrão',
             'default_tax_rate_description' => 'Importante: será aplicado se nenhum imposto selecionado no produto.',
             'select_tax' => '-- Selecionar --',
-            'display_product_price_including_taxes' => 'Adicionar imposto aos preços exibidos',
-            'display_product_price_including_taxes_helper' => 'Adiciona automaticamente imposto aos preços dos produtos na loja. Ex.: um produto de $100 com 10% de imposto é exibido como $110. Não é necessário se "Preço inclui imposto" já estiver ativado em produtos individuais.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Exibir preço do produto incluindo impostos',
         ],
     ],
     'customer' => [
         'name' => 'Clientes',
-        'description' => 'Registo, verificação de email, opções de login, exclusão de conta e campos de perfil',
+        'description' => 'Visualizar e atualizar suas configurações de clientes',
         'customer_setting' => 'Configurações de cliente',
         'customer_setting_description' => 'Configurar configurações de cliente',
         'form' => [
@@ -366,7 +359,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Envio',
-        'description' => 'Regras de envio, comportamento de frete grátis e ordem de exibição das opções de envio',
+        'description' => 'Visualizar e atualizar configurações de envio',
         'shipping_rule' => 'Regras de envio',
         'shipping_rule_description' => 'Configurar regras para calcular taxa de envio',
         'shipping_setting' => 'Configurações de envio',
@@ -434,16 +427,10 @@ return [
             'save_location' => 'Salvar localização',
             'add_new' => 'Adicionar novo',
         ],
-            'info' => [
-            'title' => 'Como funcionam os localizadores de lojas',
-            'primary_store' => 'O endereço da loja principal aparece nas faturas e é usado como endereço de devolução padrão para etiquetas de envio.',
-            'shipping_location' => 'As lojas marcadas como "local de envio" podem ser selecionadas como armazém de origem ao criar remessas.',
-            'shipment_selection' => 'Ao processar pedidos, você pode escolher de qual armazém enviar com base no inventário e localização do cliente.',
-        ],
     ],
     'tracking' => [
         'name' => 'Rastreamento',
-        'description' => 'Facebook Pixel, eventos do Google Tag Manager e rastreamento de conversões do Google Ads',
+        'description' => 'Visualizar e atualizar configurações de rastreamento',
         'manage_tracking' => 'Gerenciar rastreamento',
         'manage_tracking_description' => 'Gerenciar rastreamento: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -455,8 +442,6 @@ return [
             'facebook_pixel_debug_mode_helper' => 'Habilitar modo de debug para registrar eventos do Facebook Pixel no console do navegador e solucionar problemas de rastreamento',
             'enable_google_tag_manager_tracking_events' => 'Habilitar Eventos de Rastreamento do Google Tag Manager',
             'google_tag_manager_tracking_info' => 'Quando habilitado, eventos de e-commerce serão rastreados através do Google Tag Manager. Certifique-se de ter configurado o Google Tag Manager acima.',
-            'google_ads_conversion_id' => 'ID de Conversão do Google Ads',
-            'google_ads_conversion_id_helper' => 'Digite seu ID de conversão do Google Ads (formato: AW-123456789/AbC-D_efG-h1_ijk-lmN) para rastrear conversões de compra na página de agradecimento.',
         ],
         'validation' => [
             'facebook_pixel_id_format' => 'ID do Facebook Pixel deve ter 15-16 dígitos (ex: 1234567890123456)',
@@ -464,11 +449,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Marketplace',
-        'description' => 'Configurações de multi-vendedores, comissões, registo de vendedores e configuração de pagamentos',
+        'description' => 'Visualizar e atualizar configurações do marketplace',
     ],
     'standard_and_format' => [
         'name' => 'Padrão e Formato',
-        'panel_description' => 'Formato de código de encomenda, unidades de peso (kg/lb) e unidades de dimensão (cm/polegadas)',
+        'panel_description' => 'Visualizar e atualizar configurações de padrão e formato',
         'description' => 'Padrões e formatos são usados para calcular coisas como preços de produtos, pesos de envio e horários de pedidos.',
         'form' => [
             'change_order_format' => 'Editar formato do código do pedido (opcional)',
@@ -500,63 +485,7 @@ return [
         'show_sale_count_left_description' => 'Mostrar uma barra de progresso com "X vendidos de Y" para criar urgência e incentivar compras rápidas durante promoções relâmpago.',
     ],
     'payment_method_cod_minimum_amount' => 'Valor mínimo do pedido - :currency (Opcional)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Valor mínimo do pedido - :currency (Opcional)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Exibir informações bancárias na página de sucesso do checkout?',
     'invoice_templates' => 'Modelos de fatura',
-
-    'abandoned_cart' => [
-        'name' => 'Carrinhos Abandonados',
-        'description' => 'Recupere vendas perdidas enviando lembretes automáticos para clientes que deixaram itens no carrinho',
-        'panel_description' => 'Configure lembretes automáticos para clientes que abandonam seus carrinhos',
-        'how_it_works' => [
-            'title' => 'Como Funciona',
-            'step1_title' => 'Cliente adiciona itens',
-            'step1_description' => 'O cliente adiciona produtos ao carrinho e fornece seu e-mail.',
-            'step2_title' => 'Carrinho fica abandonado',
-            'step2_description' => 'Se nenhuma compra for feita dentro do tempo definido, o carrinho é marcado como abandonado.',
-            'step3_title' => 'E-mail de lembrete enviado',
-            'step3_description' => 'E-mails de lembrete automáticos são enviados para incentivar o cliente a concluir a compra.',
-            'step4_title' => 'Venda recuperada',
-            'step4_description' => 'O cliente retorna para concluir o pedido e o carrinho é marcado como recuperado.',
-        ],
-        'form' => [
-            'enable' => 'Ativar rastreamento de carrinhos abandonados',
-            'enable_helper' => 'Quando ativado, o sistema rastreará carrinhos abandonados e permitirá enviar e-mails de recuperação aos clientes.',
-            'timing_section' => 'Configurações de Tempo',
-            'email_section' => 'Configurações de E-mail de Lembrete',
-            'cleanup_section' => 'Limpeza de Dados',
-            'time_threshold' => 'Limite de tempo (horas)',
-            'time_threshold_helper' => 'Um carrinho é considerado abandonado após este número de horas de inatividade. Recomendado: 1-24 horas.',
-            'send_email' => 'Enviar e-mails de recuperação',
-            'send_email_helper' => 'Enviar automaticamente e-mails de recuperação para clientes com carrinhos abandonados.',
-            'max_reminders' => 'Número de e-mails de lembrete',
-            'max_reminders_helper' => 'Quantos e-mails de lembrete enviar por carrinho abandonado. Cada e-mail pode ser personalizado em Modelos de E-mail.',
-            'email_delay' => 'Enviar após (horas)',
-            'email_discount' => 'Desconto (%)',
-            'email_1_title' => 'E-mail #1 - Lembrete Amigável',
-            'email_1_description' => 'Primeiro lembrete suave para incentivar o cliente a retornar.',
-            'email_1_delay_helper' => 'Horas após abandono do carrinho para enviar o primeiro e-mail. Recomendado: 1-2 horas.',
-            'email_2_title' => 'E-mail #2 - Com Incentivo',
-            'email_2_description' => 'Segundo lembrete com oferta de desconto para motivar a compra.',
-            'email_2_delay_helper' => 'Horas após abandono do carrinho para enviar o segundo e-mail. Recomendado: 24 horas.',
-            'email_2_discount_helper' => 'Porcentagem de desconto a oferecer neste e-mail. Defina 0 para sem desconto.',
-            'email_3_title' => 'E-mail #3 - Última Chance',
-            'email_3_description' => 'Lembrete final com urgência e melhor oferta para fechar a venda.',
-            'email_3_delay_helper' => 'Horas após abandono do carrinho para enviar o e-mail final. Recomendado: 72 horas.',
-            'email_3_discount_helper' => 'Oferta de desconto final. Geralmente maior que o e-mail #2.',
-            'cleanup_days' => 'Limpar após (dias)',
-            'cleanup_days_helper' => 'Excluir automaticamente registros de carrinhos abandonados mais antigos que este número de dias.',
-            'cronjob_not_setup' => '<strong>Cronjob não configurado!</strong> Lembretes de carrinhos abandonados requerem um cronjob configurado corretamente. <a href=":url">Configurar cronjob agora</a>.',
-            'cronjob_not_running' => '<strong>Cronjob não está rodando!</strong> O cronjob parece ter parado. Verifique a configuração do seu servidor. <a href=":url">Ver status do cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob funcionando corretamente!</strong> Última atividade: :time. Seus lembretes de carrinhos abandonados serão processados automaticamente.',
-            'email_setup_warning' => '<strong>Importante:</strong> Certifique-se de que suas configurações de e-mail estão corretas em <a href=":url">Configurações → E-mail</a>. Envie um e-mail de teste para verificar se tudo funciona antes de ativar este recurso.',
-        ],
-    ],
 ];

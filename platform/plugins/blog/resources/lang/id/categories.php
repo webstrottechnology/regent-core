@@ -12,7 +12,4 @@ return [
     'parent' => 'Kategori Induk',
     'order' => 'Urutan',
     'is_default' => 'Adalah Default',
-    'intro' => [
-        'description' => 'Atur posting blog Anda ke dalam kategori untuk manajemen konten yang lebih baik.',
-    ],
 ];

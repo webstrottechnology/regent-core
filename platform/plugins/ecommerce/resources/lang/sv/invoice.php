@@ -47,5 +47,4 @@ return [
         'completed' => 'Slutförd',
         'canceled' => 'Avbruten',
     ],
-    'back_to_invoices' => 'Tillbaka till fakturor',
 ];

@@ -30,14 +30,7 @@ return [
     'primary_sidebar_name' => 'Barra lateral principal',
     'primary_sidebar_description' => 'Sección de la barra lateral principal',
     'drag_widget_to_sidebar' => 'Arrastre y suelte widgets en esta área.',
-    'widget_areas' => 'Áreas de widgets',
-    'manage_widgets' => 'Gestionar widgets',
-    'click_to_add' => 'Haga clic para agregar widget',
-    'select_sidebar' => 'Agregar Widget',
-    'select_sidebar_description' => 'Elija dónde agregar este widget',
-    'adding_to' => 'Agregando a',
-    'add_widget' => 'Agregar Widget',
-    'widget_not_found' => 'Widget no encontrado',
+    'instruction' => 'Para activar un widget, arrástrelo a una barra lateral o haga clic en él. Para desactivar un widget y eliminar su configuración, arrástrelo hacia atrás.',
     'cache_suggestion' => [
         'title' => 'Sugerencia de rendimiento',
         'description' => 'Puede mejorar el rendimiento de su sitio habilitando el almacenamiento en caché de widgets.',
@@ -45,25 +38,9 @@ return [
         'enable_button' => 'Habilitar caché de widgets',
         'dismiss_button' => 'Descartar por una semana',
     ],
+
     'widget_site_copyright' => 'Derechos de autor del sitio',
     'widget_site_copyright_description' => 'Texto de derechos de autor en el pie de página inferior.',
     'widget_site_copyright_helper' => 'Vaya a :link para cambiar el texto de derechos de autor.',
     'theme_options' => 'Opciones del tema',
-
-    'form' => [
-        'enable_caching' => 'Habilitar caché',
-        'yes' => 'Sí',
-        'no' => 'No',
-        'cache_helper' => 'Cuando está habilitado, el contenido de este widget se almacenará en caché para mejorar el rendimiento. Deshabilite para contenido dinámico que cambia frecuentemente.',
-        'cache_warning' => 'Debido a problemas de interfaz, el caché para este widget está deshabilitado por código. Este widget no se almacenará en caché incluso si el caché está habilitado.',
-    ],
-
-    'drag_or_click' => 'Arrastra a la barra lateral o haz clic en + para agregar',
-    'drop_widgets_here' => 'Suelta widgets en tus áreas de barra lateral',
-    'search_widgets' => 'Buscar widgets...',
-    'no_widgets' => 'No hay widgets disponibles',
-    'no_search_results' => 'No se encontraron widgets',
-    'or_click_add' => 'O haz clic en el botón + de un widget para agregarlo',
-    'toggle_widget' => 'Alternar configuración del widget',
-    'loading_form' => 'Cargando formulario del widget...',
 ];

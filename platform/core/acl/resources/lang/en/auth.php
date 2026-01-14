@@ -66,7 +66,6 @@ return [
     'languages' => 'Languages',
     'reset_password' => 'Reset Password',
     'deactivated_message' => 'Your account has been deactivated. Please contact the administrator.',
-    'password_changed_message' => 'Your password has been changed. Please login again with your new password.',
     'settings' => [
         'email' => [
             'title' => 'ACL',

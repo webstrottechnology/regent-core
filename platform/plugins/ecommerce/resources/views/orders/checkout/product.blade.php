@@ -61,13 +61,13 @@
             <p class="mb-0">
                 <small class="text-muted">
                     {{ __('Tax') }}: {{ format_price($cartItem->taxTotal) }}
-                    @if (EcommerceHelper::isDisplayCheckoutTaxInformation() && $cartItem->options && $cartItem->options->taxClasses)
+                    @if ($cartItem->options && $cartItem->options->taxClasses)
                         (
                         @foreach ($cartItem->options->taxClasses as $taxName => $taxRate)
                             {{ $taxName }} {{ $taxRate }}%@if (!$loop->last), @endif
                         @endforeach
                         )
-                    @elseif (EcommerceHelper::isDisplayCheckoutTaxInformation() && $cartItem->taxRate > 0)
+                    @elseif ($cartItem->taxRate > 0)
                         ({{ $cartItem->taxRate }}%)
                     @endif
                 </small>
@@ -76,21 +76,16 @@
 
         {!! apply_filters('ecommerce_cart_after_item_content', null, $cartItem) !!}
     </div>
-    @php
-        $isCheckoutItemFree = $cartItem->price == 0;
-    @endphp
     <div class="col-auto text-end">
-        <p class="mb-1">{{ $isCheckoutItemFree ? trans('plugins/ecommerce::ecommerce.free') : format_price($cartItem->price) }}</p>
-        @if (! $isCheckoutItemFree)
-            @if (EcommerceHelper::isTaxEnabled() && $cartItem->tax > 0)
-                <p class="mb-0">
-                    <small class="text-muted">{{ __('Total') }}: {{ format_price(($cartItem->price + $cartItem->tax) * $cartItem->qty) }}</small>
-                </p>
-            @else
-                <p class="mb-0">
-                    <small class="text-muted">{{ __('Total') }}: {{ format_price($cartItem->price * $cartItem->qty) }}</small>
-                </p>
-            @endif
+        <p class="mb-1">{{ format_price($cartItem->price) }}</p>
+        @if (EcommerceHelper::isTaxEnabled() && $cartItem->tax > 0)
+            <p class="mb-0">
+                <small class="text-muted">{{ __('Total') }}: {{ format_price(($cartItem->price + $cartItem->tax) * $cartItem->qty) }}</small>
+            </p>
+        @else
+            <p class="mb-0">
+                <small class="text-muted">{{ __('Total') }}: {{ format_price($cartItem->price * $cartItem->qty) }}</small>
+            </p>
         @endif
     </div>
 </div>

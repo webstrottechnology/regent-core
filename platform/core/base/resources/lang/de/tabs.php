@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'detail' => 'Details',
+    'detail' => 'Detail',
     'file' => 'Dateien',
     'record_note' => 'Aufzeichnungsnotiz',
     'revision' => 'Revisionsgeschichte',

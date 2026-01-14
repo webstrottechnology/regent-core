@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Mesto zákazníka',
         'customer_zipcode' => 'PSČ zákazníka',
     ],
-    'custom_css' => 'Vlastné CSS',
-    'custom_css_helper' => 'Pridajte vlastné CSS štýly na prispôsobenie vzhľadu faktúry. Tieto štýly budú pridané k predvoleným štýlom faktúry.',
     'reset_success' => 'Úspešne obnovené na predvolené nastavenia',
     'confirm_reset' => 'Potvrdiť obnovu šablóny faktúry?',
     'confirm_message' => 'Naozaj chcete obnoviť túto šablónu faktúry na predvolené nastavenia?',

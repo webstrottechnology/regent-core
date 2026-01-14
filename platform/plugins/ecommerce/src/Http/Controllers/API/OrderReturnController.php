@@ -166,7 +166,7 @@ class OrderReturnController extends BaseApiController
 
         OrderHistory::query()->create([
             'action' => OrderHistoryActionEnum::RETURN_ORDER,
-            'description' => __(':customer has requested return product(s)', ['customer' => $order->address?->name ?? $order->user?->name ?? 'Guest']),
+            'description' => __(':customer has requested return product(s)', ['customer' => $order->address->name]),
             'order_id' => $order->getKey(),
         ]);
 

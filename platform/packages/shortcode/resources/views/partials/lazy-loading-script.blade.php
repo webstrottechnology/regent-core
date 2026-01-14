@@ -1,10 +1,9 @@
 @once
     <script>
-        var lazyLoadShortcodeBlocks = function() {
-            document.querySelectorAll('.shortcode-lazy-loading').forEach(function(element) {
+        var lazyLoadShortcodeBlocks = function () {
+            document.querySelectorAll('.shortcode-lazy-loading').forEach(function (element) {
                 var name = element.getAttribute('data-name');
                 var attributes = JSON.parse(element.getAttribute('data-attributes'));
-                var shortcodeId = element.getAttribute('data-shortcode-id');
 
                 const url = '{{ route('public.ajax.render-ui-block') }}';
                 const csrfToken = '{{ csrf_token() }}';
@@ -12,30 +11,26 @@
                 document.body.classList.add('lazy-loading-active');
 
                 fetch(url, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json',
-                            'X-CSRF-TOKEN': csrfToken
-                        },
-                        body: JSON.stringify({
-                            name,
-                            shortcodeId,
-                            attributes: {
-                                ...attributes
-                            }
-                        })
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({
+                        name,
+                        attributes: {
+                            ...attributes
+                        }
                     })
+                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok');
                         }
                         return response.json();
                     })
-                    .then(({
-                        error,
-                        data
-                    }) => {
+                    .then(({ error, data }) => {
                         if (error) {
                             return;
                         }
@@ -45,13 +40,6 @@
                         const firstChild = tempDiv.firstElementChild;
                         if (firstChild) {
                             firstChild.classList.add('shortcode-lazy-loading-loaded');
-
-                            const shortcodeId = element.getAttribute('data-shortcode-id');
-                            if (shortcodeId && !firstChild.getAttribute('data-shortcode-id')) {
-                                firstChild.setAttribute('data-shortcode-id', shortcodeId);
-                                firstChild.setAttribute('data-shortcode-name', name);
-                            }
-
                             data = tempDiv.innerHTML;
                         }
 
@@ -85,8 +73,7 @@
                         }
 
                         setTimeout(function() {
-                            const remainingLoaders = document.querySelectorAll(
-                                '.shortcode-lazy-loading');
+                            const remainingLoaders = document.querySelectorAll('.shortcode-lazy-loading');
                             if (remainingLoaders.length === 0) {
                                 document.body.classList.remove('lazy-loading-active');
                             }
@@ -99,7 +86,7 @@
             });
         };
 
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             lazyLoadShortcodeBlocks();
         });
     </script>

@@ -14,36 +14,36 @@
 
                             <div class="tpcart__del">
                                 <a
-                                    href="#"
-                                    data-url="{{ route('public.cart.remove', $cartItem->rowId) }}"
-                                    class="remove-cart-item"
-                                    data-product-id="{{ $product->id }}"
-                                    data-product-name="{{ $product->name }}"
-                                    data-product-price="{{ $product->price }}"
-                                    data-product-sku="{{ $product->sku }}"
-                                    data-product-quantity="{{ $cartItem->qty }}"
-                                    {!! $product->brand ? 'data-product-brand="' . e($product->brand->name) . '"' : '' !!}
-                                    {!! $product->categories->isNotEmpty() ? 'data-product-categories="' . e($product->categories->pluck('name')->implode(',')) . '"' : '' !!}
-                                ><i class="far fa-times-circle"></i></a>
+                                                    href="#"
+                                                    data-url="{{ route('public.cart.remove', $cartItem->rowId) }}"
+                                                    class="remove-cart-item"
+                                                    data-product-id="{{ $product->id }}"
+                                                    data-product-name="{{ $product->name }}"
+                                                    data-product-price="{{ $product->price }}"
+                                                    data-product-sku="{{ $product->sku }}"
+                                                    data-product-quantity="{{ $cartItem->qty }}"
+                                                    @if($product->brand)
+                                                    data-product-brand="{{ $product->brand->name }}"
+                                                    @endif
+                                                    @if($product->categories->isNotEmpty())
+                                                    data-product-categories="{{ $product->categories->pluck('name')->implode(',') }}"
+                                                    @endif
+                                                ><i class="far fa-times-circle"></i></a>
                             </div>
                         </div>
                         <div class="tpcart__content">
                             <span class="tpcart__content-title">
                                <a href="{{ $product->original_product->url }}">{{ $product->original_product->name }}</a>
                             </span>
-                            @php($shouldShowPrice = (! EcommerceHelper::hideProductPrice() || EcommerceHelper::isCartEnabled()) && (! EcommerceHelper::hideProductPriceWhenZero() || $cartItem->price > 0));
                             <div class="tpcart__cart-price">
-                                @if ($shouldShowPrice)
-                                    <span class="quantity">{{ __(':qty x', ['qty' => $cartItem->qty]) }}</span>
-                                    <span class="new-price">
-                                        <bdi>
-                                            {{ format_price($cartItem->price) }}
-                                            @if ($product->front_sale_price != $product->price)
-                                                <span class="tpproduct__priceinfo-list-oldprice">{{ format_price($product->price) }}</span>
-                                            @endif
-                                        </bdi>
-                                    </span>
-                                @endif
+                                <span class="quantity">{{ __(':qty x', ['qty' => $cartItem->qty]) }}</span>
+                                <span class="new-price">
+                                    <bdi>
+                                        {{ format_price($cartItem->price) }} @if ($product->front_sale_price != $product->price)
+                                            <span class="tpproduct__priceinfo-list-oldprice">{{ format_price($product->price) }}</span>
+                                        @endif
+                                    </bdi>
+                                </span>
 
                                 <span class="d-inline-block mb-0">
                                     {{ Arr::get($cartItem->options, 'attributes', '') }}
@@ -63,7 +63,7 @@
         </ul>
     </div>
 
-    @if (Cart::instance('cart')->isNotEmpty() && Cart::instance('cart')->products()->isNotEmpty())
+    @if (Cart::instance('cart')->count() > 0 && Cart::instance('cart')->products()->count() > 0)
         <div class="tpcart__checkout">
             <div class="tpcart__total-price">
                 <div class="text-black d-flex justify-content-between align-items-center mb-2">

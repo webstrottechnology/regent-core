@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'Електронна търговия',
     'general' => [
         'name' => 'Общи',
-        'description' => 'Име на магазин, фирмена информация, контакти и имейли за известия на админ',
+        'description' => 'Преглед и актуализиране на вашите общи настройки',
     ],
     'currency' => [
         'name' => 'Валути',
-        'description' => 'Валутни формати, обменни курсове, автоматично откриване и десетични/хилядни разделители',
+        'description' => 'Преглед и актуализиране на настройките за валута',
         'currency_setting_description' => 'Преглед и актуализиране на валутите, използвани на уебсайта',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Активиране на автоматично откриване на валутата на посетителя',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Продукти',
-        'description' => 'Показване на наличност, генериране на SKU, изображения на варианти, свързани продукти и спецификации',
+        'description' => 'Преглед и актуализиране на настройките на вашите продукти',
         'product_settings' => 'Настройки на продуктите',
         'product_settings_description' => 'Конфигуриране на правила за продукт',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Търсене на продукти',
-        'description' => 'Поведение на търсене, филтри по категория/марка/таг/атрибути и филтриране по ценови диапазон',
+        'description' => 'Преглед и актуализиране на настройките за търсене на продукти',
         'product_search_settings' => 'Търсене на продукти',
         'product_search_settings_description' => 'Конфигуриране на правила за търсене на продукти',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Дигитални продукти',
-        'description' => 'Продукти за изтегляне, лицензионни кодове, плащане като гост за дигитални продукти и автоматично завършване',
+        'description' => 'Преглед и актуализиране на настройките за дигитални продукти',
         'digital_products_settings' => 'Дигитални продукти',
         'digital_products_settings_description' => 'Конфигуриране на правила за дигитални продукти',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Отзиви за продукти',
-        'description' => 'Клиентски отзиви, показване на оценки, качване на изображения и изисквания за одобрение',
+        'description' => 'Преглед и актуализиране на настройките за отзиви за продукти',
         'form' => [
             'enable_review' => 'Активиране на отзиви за продукти',
             'enable_review_help' => 'Позволете на клиентите да оставят отзиви и оценки за продуктите. Когато е деактивирано, всички функции за отзиви ще бъдат скрити от магазина.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Пазаруване',
-        'description' => 'Количка, списък с желания, сравнение, проследяване на поръчки, бутон за бърза покупка и качване на доказателство за плащане',
+        'description' => 'Преглед и актуализиране на настройките за пазаруване',
         'general_setting' => 'Общи настройки',
         'return_settings' => 'Настройки за връщане',
         'return_settings_description' => 'Конфигуриране на правила за настройки за връщане',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Количката ще бъде унищожена, когато клиентът излезе.',
             'hide_product_price' => 'Скриване на цената на продукта',
             'hide_product_price_helper' => 'Тази опция работи само ако деактивирате количката за пазаруване, превръщайки вашия сайт в каталог само за показване. Ако е активирано, цената на продукта ще бъде скрита. Това е полезно, когато искате да скриете цената и да изисквате от клиентите да се свържат с вас за цената.',
-            'hide_product_price_when_zero' => 'Скриване на цената на продукта, когато е нула',
-            'hide_product_price_when_zero_helper' => 'Ако е включено, продукти с цена 0 няма да показват цена във витрината.',
             'enable_payment_proof' => 'Активиране на качване на доказателство за плащане',
             'enable_payment_proof_helper' => 'Позволете на клиентите да качват доказателство за плащане за техните поръчки. Това е полезно за методи за ръчно плащане.',
             'enable_guest_payment_proof' => 'Позволи на клиенти гости да качват доказателство за плащане',
             'enable_guest_payment_proof_helper' => 'Когато е активирано, клиенти гости могат да качват доказателство за плащане, използвайки техния токен за поръчка без да влизат. Те ще получат връзката за качване в имейла за потвърждение на поръчката.',
-            'payment_proof_payment_methods' => 'Методи на плащане, изискващи доказателство за плащане',
-            'payment_proof_payment_methods_helper' => 'Изберете кои методи на плащане трябва да позволяват на клиентите да качват доказателство за плащане. Обикновено се използва за ръчни методи на плащане като наложен платеж и банков превод.',
         ],
     ],
     'checkout' => [
         'name' => 'Плащане',
-        'panel_description' => 'Плащане като гост, задължителни полета, лимити на поръчки, приемане на условия и ограничения по държави',
+        'panel_description' => 'Преглед и актуализиране на настройките за плащане',
         'description' => 'Конфигуриране на правила за настройки на плащане',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Показване на банкова информация на страницата за успешно плащане',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Връщане',
         'description' => 'Конфигуриране на правила за настройки за връщане',
-        'panel_description' => 'Връщане на поръчки, частични връщания и срокове за връщане',
+        'panel_description' => 'Преглед и актуализиране на настройките за връщане',
         'form' => [
             'is_enabled_order_return' => 'Активирано ли е връщане на поръчка',
             'allow_partial_return' => 'Позволи частично връщане',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Фактури',
-        'description' => 'Фирмени данни на фактури, номериране на фактури, PDF шрифтове и настройки на печат',
+        'description' => 'Преглед и актуализиране на настройките за фактури',
         'company_settings' => 'Настройки на компанията',
         'company_settings_description' => 'Настройки на информацията за компанията за фактуриране',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Данъчна ставка по подразбиране',
             'default_tax_rate_description' => 'Важно: тя ще се приложи, ако не е избран данък в продукта.',
             'select_tax' => '-- Изберете --',
-            'display_product_price_including_taxes' => 'Добавяне на данък към показваните цени',
-            'display_product_price_including_taxes_helper' => 'Автоматично добавя данък към цените на продуктите в магазина. Напр. продукт за $100 с 10% данък се показва като $110. Не е необходимо, ако "Цената включва данък" е активирано за отделните продукти.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Показване на цената на продукта с включени данъци',
         ],
     ],
     'customer' => [
         'name' => 'Клиенти',
-        'description' => 'Регистрация, имейл верификация, опции за вход, изтриване на акаунт и полета на профила',
+        'description' => 'Преглед и актуализиране на настройките за клиенти',
         'customer_setting' => 'Настройки на клиент',
         'customer_setting_description' => 'Конфигуриране на настройки на клиент',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Доставка',
-        'description' => 'Правила за доставка, поведение на безплатна доставка и ред на показване на опции за доставка',
+        'description' => 'Преглед и актуализиране на настройките за доставка',
         'shipping_rule' => 'Правила за доставка',
         'shipping_rule_description' => 'Конфигуриране на правила за изчисляване на такса за доставка',
         'shipping_setting' => 'Настройки за доставка',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Запазване на местоположение',
             'add_new' => 'Добавяне на ново',
         ],
-        'info' => [
-            'title' => 'Как работят локаторите на магазини',
-            'primary_store' => 'Адресът на основния магазин се появява във фактури и се използва като адрес за връщане по подразбиране за етикети за доставка.',
-            'shipping_location' => 'Магазините, маркирани като "място за доставка", могат да бъдат избрани като склад на произход при създаване на пратки.',
-            'shipment_selection' => 'При обработка на поръчки можете да изберете от кой склад да изпратите въз основа на наличност и местоположение на клиента.',
-        ],
     ],
     'tracking' => [
         'name' => 'Проследяване',
-        'description' => 'Facebook Pixel, събития на Google Tag Manager и проследяване на конверсии в Google Ads',
+        'description' => 'Преглед и актуализиране на настройките за проследяване',
         'manage_tracking' => 'Управление на проследяване',
         'manage_tracking_description' => 'Управление на проследяване: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Пазар',
-        'description' => 'Настройки за много продавачи, комисионни, регистрация на продавачи и конфигурация на плащания',
+        'description' => 'Преглед и актуализиране на настройките на пазара',
     ],
     'standard_and_format' => [
         'name' => 'Стандарт и формат',
-        'panel_description' => 'Формат на код на поръчка, единици за тегло (кг/фунт) и единици за размери (см/инч)',
+        'panel_description' => 'Преглед и актуализиране на настройките за стандарт и формат',
         'description' => 'Стандартите и форматите се използват за изчисляване на неща като цени на продукти, тегла на доставка и времена на поръчки.',
         'form' => [
             'change_order_format' => 'Редактиране на формата на код на поръчка (по избор)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Показване на лента за напредък с "X продадени от Y", за да създадете спешност и да насърчите бързите покупки по време на светкавични разпродажби.',
     ],
     'payment_method_cod_minimum_amount' => 'Минимална сума на поръчка - :currency (По избор)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Минимална сума на поръчка - :currency (По избор)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Показване на банкова информация на страницата за успешно плащане?',
     'invoice_templates' => 'Шаблони за фактури',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

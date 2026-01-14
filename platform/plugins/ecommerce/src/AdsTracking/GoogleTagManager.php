@@ -80,22 +80,6 @@ class GoogleTagManager
         return $this;
     }
 
-    public function viewCategory(ProductCategory $category, int $productCount, array $attributes = []): self
-    {
-        if (! $this->isEnabled()) {
-            return $this;
-        }
-
-        $this->dataLayer['category_view'] = [
-            'categoryId' => (string) $category->getKey(),
-            'categoryName' => $category->name,
-            'productCount' => $productCount,
-            ...$attributes,
-        ];
-
-        return $this;
-    }
-
     public function viewItem(Product $item, array $attributes = []): self
     {
         $this->pushEvent('view_item', [$item], [
@@ -256,20 +240,6 @@ class GoogleTagManager
         return $this;
     }
 
-    public function signUp(string $method = 'email', array $attributes = []): self
-    {
-        if (! $this->isEnabled()) {
-            return $this;
-        }
-
-        $this->dataLayer['sign_up'] = [
-            'method' => $method,
-            ...$attributes,
-        ];
-
-        return $this;
-    }
-
     public function pushEvent(string $event, array|\Illuminate\Support\Collection $items, array $attributes = []): self
     {
         if (! $this->isEnabled()) {
@@ -303,17 +273,13 @@ class GoogleTagManager
         }
 
         $gtag = '';
-        $dataLayerPush = '';
 
         foreach ($this->dataLayer as $event => $data) {
             $gtag .= "gtag('event', '$event', " . json_encode($data) . ');';
-            $dataLayerPush .= 'window.dataLayer.push(' . json_encode(['event' => $event, ...$data]) . ');';
         }
 
         return <<<HTML
             <script>
-                window.dataLayer = window.dataLayer || [];
-                $dataLayerPush
                 if (typeof gtag !== "undefined") {
                     $gtag
                 }

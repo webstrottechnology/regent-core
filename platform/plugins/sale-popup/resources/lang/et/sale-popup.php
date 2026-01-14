@@ -39,7 +39,4 @@ return [
         'product_listing' => 'Toodete nimekiri',
         'cart' => 'Ostukorv',
     ],
-    'purchased' => 'ostis',
-    'verified' => 'Kinnitatud',
-    'quick_view' => 'Kiirvaade',
 ];

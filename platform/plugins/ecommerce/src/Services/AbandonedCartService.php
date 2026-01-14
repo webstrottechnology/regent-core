@@ -5,7 +5,6 @@ namespace Botble\Ecommerce\Services;
 use Botble\Ecommerce\Facades\Cart;
 use Botble\Ecommerce\Models\AbandonedCart;
 use Botble\Ecommerce\Models\Order;
-use Botble\Ecommerce\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -32,19 +31,22 @@ class AbandonedCartService
             ];
         }
 
-        $abandonedCart = AbandonedCart::query()->updateOrCreate([
-            'customer_id' => $customer?->id,
-            'session_id' => $customer ? null : $sessionId,
-            'is_recovered' => false,
-        ], [
-            'cart_data' => $cartData,
-            'total_amount' => Cart::rawTotal(),
-            'items_count' => Cart::count(),
-            'email' => $customer?->email ?? session('abandoned_cart_email'),
-            'phone' => $customer?->phone ?? session('abandoned_cart_phone'),
-            'customer_name' => $customer?->name ?? session('abandoned_cart_name'),
-            'updated_at' => now(),
-        ]);
+        $abandonedCart = AbandonedCart::updateOrCreate(
+            [
+                'customer_id' => $customer?->id,
+                'session_id' => $customer ? null : $sessionId,
+                'is_recovered' => false,
+            ],
+            [
+                'cart_data' => $cartData,
+                'total_amount' => Cart::rawTotal(),
+                'items_count' => Cart::count(),
+                'email' => $customer?->email ?? session('abandoned_cart_email'),
+                'phone' => $customer?->phone ?? session('abandoned_cart_phone'),
+                'customer_name' => $customer?->name ?? session('abandoned_cart_name'),
+                'updated_at' => now(),
+            ]
+        );
 
         if (! $abandonedCart->abandoned_at) {
             $abandonedCart->update(['abandoned_at' => now()]);
@@ -73,44 +75,16 @@ class AbandonedCartService
         }
     }
 
-    public function getCartsForSequence(int $sequence): Collection
-    {
-        $maxReminders = (int) get_ecommerce_setting('abandoned_cart_max_reminders', 3);
-
-        if ($sequence > $maxReminders) {
-            return new Collection();
-        }
-
-        $hoursDelay = $this->getSequenceDelay($sequence);
-
-        return AbandonedCart::query()
-            ->needsSequenceEmail($sequence, $hoursDelay)
-            ->get();
-    }
-
-    public function getSequenceDelay(int $sequence): int
-    {
-        return match ($sequence) {
-            1 => (int) get_ecommerce_setting('abandoned_cart_email_1_delay', 1),
-            2 => (int) get_ecommerce_setting('abandoned_cart_email_2_delay', 24),
-            3 => (int) get_ecommerce_setting('abandoned_cart_email_3_delay', 72),
-            default => 1,
-        };
-    }
-
     public function identifyAbandonedCarts(int $hoursThreshold = 1): Collection
     {
-        $reminderInterval = get_ecommerce_setting('abandoned_cart_reminder_interval', 24);
-        $maxReminders = get_ecommerce_setting('abandoned_cart_max_reminders', 3);
-
         return AbandonedCart::query()
             ->abandoned()
             ->where('abandoned_at', '<=', now()->subHours($hoursThreshold))
-            ->where(function ($query) use ($reminderInterval): void {
+            ->where(function ($query): void {
                 $query->whereNull('reminder_sent_at')
-                    ->orWhere('reminder_sent_at', '<=', now()->subHours($reminderInterval));
+                    ->orWhere('reminder_sent_at', '<=', now()->subHours(24));
             })
-            ->where('reminders_sent', '<', $maxReminders)
+            ->where('reminders_sent', '<', 3)
             ->get();
     }
 
@@ -124,124 +98,26 @@ class AbandonedCartService
 
     public function getAbandonmentRate(): float
     {
-        $total = AbandonedCart::query()->count();
+        $total = AbandonedCart::count();
         if ($total === 0) {
             return 0;
         }
 
-        $recovered = AbandonedCart::query()->where('is_recovered', true)->count();
+        $recovered = AbandonedCart::where('is_recovered', true)->count();
 
         return round((($total - $recovered) / $total) * 100, 2);
     }
 
     public function getRecoveryRate(): float
     {
-        $total = AbandonedCart::query()->count();
+        $total = AbandonedCart::count();
         if ($total === 0) {
             return 0;
         }
 
-        $recovered = AbandonedCart::query()->where('is_recovered', true)->count();
+        $recovered = AbandonedCart::where('is_recovered', true)->count();
 
         return round(($recovered / $total) * 100, 2);
-    }
-
-    public function getRevenueRecovered(): float
-    {
-        return (float) AbandonedCart::query()
-            ->where('is_recovered', true)
-            ->sum('total_amount');
-    }
-
-    public function getClickRate(): float
-    {
-        $sent = AbandonedCart::query()->where('reminders_sent', '>', 0)->count();
-        if ($sent === 0) {
-            return 0;
-        }
-
-        $clicked = AbandonedCart::query()
-            ->where('reminders_sent', '>', 0)
-            ->whereNotNull('clicked_at')
-            ->count();
-
-        return round(($clicked / $sent) * 100, 2);
-    }
-
-    public function recoverCart(string $token): ?AbandonedCart
-    {
-        $abandonedCart = AbandonedCart::query()
-            ->where('recovery_token', $token)
-            ->where('is_recovered', false)
-            ->notExpired(30)
-            ->first();
-
-        if (! $abandonedCart) {
-            return null;
-        }
-
-        $abandonedCart->markAsClicked();
-
-        Cart::instance('cart')->destroy();
-
-        foreach ($abandonedCart->cart_data as $item) {
-            $product = Product::query()->find($item['id']);
-            if ($product && ! $product->isOutOfStock()) {
-                Cart::instance('cart')->add([
-                    'id' => $product->id,
-                    'name' => $product->name,
-                    'qty' => $item['qty'],
-                    'price' => $product->front_sale_price,
-                    'options' => $item['options'] ?? [],
-                ]);
-            }
-        }
-
-        if ($abandonedCart->coupon_code) {
-            session(['applied_coupon_code' => $abandonedCart->coupon_code]);
-        }
-
-        return $abandonedCart;
-    }
-
-    public function isOptedOut(AbandonedCart $cart): bool
-    {
-        if ($cart->customer_id && $cart->customer?->getMeta('abandoned_cart_emails_opt_out')) {
-            return true;
-        }
-
-        $abandonedCart = AbandonedCart::query()
-            ->where('email', $cart->email)
-            ->where('id', '!=', $cart->id)
-            ->whereNotNull('unsubscribed_at')
-            ->exists();
-
-        return $abandonedCart;
-    }
-
-    public function unsubscribe(string $token): bool
-    {
-        $abandonedCart = AbandonedCart::query()
-            ->where('unsubscribe_token', $token)
-            ->first();
-
-        if (! $abandonedCart) {
-            return false;
-        }
-
-        $abandonedCart->update(['unsubscribed_at' => now()]);
-
-        if ($abandonedCart->customer_id && $abandonedCart->customer) {
-            $abandonedCart->customer->setMeta('abandoned_cart_emails_opt_out', true);
-            $abandonedCart->customer->save();
-        }
-
-        AbandonedCart::query()
-            ->where('email', $abandonedCart->email)
-            ->whereNull('unsubscribed_at')
-            ->update(['unsubscribed_at' => now()]);
-
-        return true;
     }
 
     public function updateCustomerInfo(array $data): void

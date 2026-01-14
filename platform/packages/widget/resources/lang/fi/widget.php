@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Widget-alueet',
     'manage_widgets' => 'Hallitse widgettejä',
 
-    'click_to_add' => 'Napsauta lisätäksesi widget',
-    'select_sidebar' => 'Lisää widget',
-    'select_sidebar_description' => 'Valitse mihin tämä widget lisätään',
-    'adding_to' => 'Lisätään kohteeseen',
-    'add_widget' => 'Lisää widget',
-    'widget_not_found' => 'Widgetiä ei löytynyt',
-
     'cache_suggestion' => [
         'title' => 'Suorituskyvyn suositus',
         'description' => 'Voit parantaa sivustosi suorituskykyä ottamalla käyttöön widgettien välimuistiin tallentamisen.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Tekijänoikeusteksti alareunan alatunnisteessa.',
     'widget_site_copyright_helper' => 'Siirry :link muuttaaksesi tekijänoikeustekstiä.',
     'theme_options' => 'Teeman asetukset',
-
-    'form' => [
-        'enable_caching' => 'Ota välimuisti käyttöön',
-        'yes' => 'Kyllä',
-        'no' => 'Ei',
-        'cache_helper' => 'Kun käytössä, tämän widgetin sisältö tallennetaan välimuistiin suorituskyvyn parantamiseksi. Poista käytöstä dynaamiselle sisällölle, joka muuttuu usein.',
-        'cache_warning' => 'UI-ongelmien vuoksi tämän widgetin välimuisti on poistettu käytöstä koodin kautta. Tätä widgetiä ei tallenneta välimuistiin, vaikka välimuisti olisi käytössä.',
-    ],
-
-    'drag_or_click' => 'Vedä sivupalkkiin tai napsauta + lisätäksesi',
-    'drop_widgets_here' => 'Pudota widgetit sivupalkkialueillesi',
-    'search_widgets' => 'Hae widgettejä...',
-    'no_widgets' => 'Ei saatavilla olevia widgettejä',
-    'no_search_results' => 'Widgettejä ei löytynyt',
-    'or_click_add' => 'Tai napsauta widgetin + -painiketta lisätäksesi',
-    'toggle_widget' => 'Vaihda widgetin asetuksia',
-    'loading_form' => 'Ladataan widgetlomaketta...',
 ];

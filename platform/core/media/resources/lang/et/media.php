@@ -44,8 +44,6 @@ return [
     'alt_text' => 'Alternatiivtekst',
 
     'folder_created' => 'Kaust edukalt loodud!',
-    'folder_exists' => 'Kaust :folder on juba olemas!',
-    'directory_must_empty' => 'Kataloog peab olema tühi, et seda kustutada!',
     'gallery' => 'Meediagalerii',
 
     'trash_error' => 'Viga valitud üksuste kustutamisel',

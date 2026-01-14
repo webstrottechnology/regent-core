@@ -8,14 +8,12 @@ use Botble\Base\Forms\FieldOptions\EmailFieldOption;
 use Botble\Base\Forms\FieldOptions\MediaImageFieldOption;
 use Botble\Base\Forms\FieldOptions\NameFieldOption;
 use Botble\Base\Forms\FieldOptions\OnOffFieldOption;
-use Botble\Base\Forms\FieldOptions\PhoneNumberFieldOption;
 use Botble\Base\Forms\FieldOptions\StatusFieldOption;
 use Botble\Base\Forms\FieldOptions\TextareaFieldOption;
 use Botble\Base\Forms\FieldOptions\TextFieldOption;
 use Botble\Base\Forms\Fields\DatePickerField;
 use Botble\Base\Forms\Fields\MediaImageField;
 use Botble\Base\Forms\Fields\OnOffField;
-use Botble\Base\Forms\Fields\PhoneNumberField;
 use Botble\Base\Forms\Fields\SelectField;
 use Botble\Base\Forms\Fields\TextareaField;
 use Botble\Base\Forms\Fields\TextField;
@@ -40,13 +38,12 @@ class CustomerForm extends FormAbstract
             ->add('email', TextField::class, EmailFieldOption::make()->required()->colspan(1))
             ->add(
                 'phone',
-                PhoneNumberField::class,
-                PhoneNumberFieldOption::make()
+                TextField::class,
+                TextFieldOption::make()
                     ->label(trans('plugins/ecommerce::customer.phone'))
                     ->placeholder(trans('plugins/ecommerce::customer.phone_placeholder'))
                     ->maxLength(15)
                     ->colspan(1)
-                    ->withCountryCodeSelection()
             )
             ->add(
                 'dob',
@@ -99,12 +96,21 @@ class CustomerForm extends FormAbstract
             )
             ->add('status', SelectField::class, StatusFieldOption::make()->choices(CustomerStatusEnum::labels()))
             ->add(
+                'is_pmd',
+                OnOffField::class,
+                OnOffFieldOption::make()
+                    ->label('PMD User')
+                    ->defaultValue(0)
+                    ->colspan(2)
+            )
+            ->add(
                 'avatar',
                 MediaImageField::class,
                 MediaImageFieldOption::make()
                     ->label(trans('plugins/ecommerce::customer.avatar'))
             )
             ->setBreakFieldPoint('status')
+            
             ->when($this->getModel()->getKey(), function (): void {
                 /**
                  * @var Customer $model

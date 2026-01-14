@@ -12,7 +12,4 @@ return [
     'parent' => 'Categoria Genitore',
     'order' => 'Ordine',
     'is_default' => 'Predefinita',
-    'intro' => [
-        'description' => 'Organizza i tuoi post del blog in categorie per una migliore gestione dei contenuti.',
-    ],
 ];

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'detail' => 'Podrobnosti',
+    'detail' => 'Detail',
     'file' => 'Soubory',
     'record_note' => 'Poznámka záznamu',
     'revision' => 'Historie revizí',

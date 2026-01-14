@@ -11,6 +11,11 @@ return [
     'short_code_description' => 'Lisa blogi postitusi',
     'number_posts_per_page_in_category' => 'Postituste arv lehe kohta kategoorias',
     'number_posts_per_page_in_tag' => 'Postituste arv lehe kohta sildis',
+    'title' => 'Blogi',
+    'description' => 'Vaata ja uuenda blogi seadeid',
+    'enable_blog_post_schema' => 'Luba blogi postituste skeem',
+    'enable_blog_post_schema_description' => 'Loe lähemalt: https://schema.org/Article',
+    'schema_type' => 'Skeemi tüüp',
     'blog_posts' => 'Blogi postitused',
     'blog_categories' => 'Blogi kategooriad',
     'blog_tags' => 'Blogi sildid',
@@ -20,5 +25,6 @@ return [
         'enable_blog_post_schema' => 'Luba blogi postituste skeem',
         'enable_blog_post_schema_description' => 'Loe lähemalt: https://schema.org/Article',
         'schema_type' => 'Skeemi tüüp',
+
     ],
 ];

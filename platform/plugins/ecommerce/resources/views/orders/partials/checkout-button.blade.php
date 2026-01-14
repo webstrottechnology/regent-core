@@ -1,11 +1,3 @@
-@php
-    $checkoutOrderAmount = $orderAmount ?? Cart::instance('cart')->rawTotal();
-    $isOrderFree = $checkoutOrderAmount == 0;
-    $checkoutButtonText = $isOrderFree
-        ? trans('plugins/ecommerce::ecommerce.complete_order')
-        : trans('plugins/ecommerce::ecommerce.checkout');
-@endphp
-
 @if (EcommerceHelper::isValidToProcessCheckout())
     <button
         class="btn payment-checkout-btn payment-checkout-btn-step checkout-btn-responsive"
@@ -19,7 +11,7 @@
             width: 100%;
         "
     >
-        {{ $checkoutButtonText }}
+        {{ __('Checkout') }}
     </button>
 @else
     <span
@@ -31,7 +23,7 @@
             width: 100%;
         "
     >
-        {{ $checkoutButtonText }}
+        {{ __('Checkout') }}
     </span>
 @endif
 
@@ -42,9 +34,19 @@
         float: right;
         min-width: 150px;
     }
+}
 
-    [dir="rtl"] .checkout-btn-responsive {
-        float: left;
+@media (max-width: 767.98px) {
+    .checkout-btn-responsive {
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+
+    /* Ensure the button container takes full width on mobile */
+    .checkout-btn-responsive:not(.disabled):active,
+    .checkout-btn-responsive:not(.disabled):focus {
+        transform: translateY(1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 }
 </style>

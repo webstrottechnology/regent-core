@@ -43,7 +43,7 @@ class RecentOrdersTable extends TableAbstract
                     return '&mdash;';
                 }
 
-                return BaseHelper::clean($item->payment->payment_channel->displayName() ?: '&mdash;');
+                return BaseHelper::clean($item->payment->payment_channel->label() ?: '&mdash;');
             })
             ->formatColumn('amount', PriceFormatter::class)
             ->editColumn('user_id', function (Order $item) {

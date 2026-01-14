@@ -35,15 +35,9 @@ class CustomerRetentionChart extends Chart
                 ->where('ec_orders.is_finished', true);
 
             if (is_plugin_active('payment')) {
-                $query->leftJoin('payments', 'payments.order_id', '=', 'ec_orders.id')
-                    ->where(function ($q): void {
-                        $q->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
-                            ->orWhereNull('ec_orders.payment_id');
-                    })
-                    ->where(function ($q) use ($dateString): void {
-                        $q->whereDate('payments.created_at', $dateString)
-                            ->orWhereNull('ec_orders.payment_id');
-                    });
+                $query->join('payments', 'payments.order_id', '=', 'ec_orders.id')
+                    ->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
+                    ->whereDate('payments.created_at', $dateString);
             }
 
             // Get unique customer IDs for this date
@@ -60,15 +54,9 @@ class CustomerRetentionChart extends Chart
                     ->whereDate('ec_orders.created_at', '<', $dateString);
 
                 if (is_plugin_active('payment')) {
-                    $previousOrders = $previousOrders->leftJoin('payments', 'payments.order_id', '=', 'ec_orders.id')
-                        ->where(function ($q): void {
-                            $q->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
-                                ->orWhereNull('ec_orders.payment_id');
-                        })
-                        ->where(function ($q) use ($dateString): void {
-                            $q->whereDate('payments.created_at', '<', $dateString)
-                                ->orWhereNull('ec_orders.payment_id');
-                        });
+                    $previousOrders = $previousOrders->join('payments', 'payments.order_id', '=', 'ec_orders.id')
+                        ->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
+                        ->whereDate('payments.created_at', '<', $dateString);
                 }
 
                 if ($previousOrders->exists()) {

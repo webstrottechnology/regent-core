@@ -50,7 +50,7 @@ class CartController extends BaseApiController
 
         Cart::instance('cart')->restore($identifier);
 
-        Cart::instance('cart')->updateOrStore($identifier);
+        Cart::instance('cart')->storeOrIgnore($identifier);
 
         return response()->json([
             'id' => $identifier,
@@ -87,8 +87,8 @@ class CartController extends BaseApiController
             return $response
                 ->setError()
                 ->setMessage(
-                    trans(
-                        'plugins/ecommerce::products.cart.out_of_stock',
+                    __(
+                        'Product :product is out of stock!',
                         ['product' => $originalProduct->name ?: $product->name]
                     )
                 )
@@ -100,7 +100,7 @@ class CartController extends BaseApiController
         if (! $product->canAddToCart($request->input('qty', 1))) {
             return $response
                 ->setError()
-                ->setMessage(trans('plugins/ecommerce::products.cart.max_quantity', ['max' => $maxQuantity]))
+                ->setMessage(__('Maximum quantity is :max!', ['max' => $maxQuantity]))
                 ->toApiResponse();
         }
 
@@ -137,12 +137,12 @@ class CartController extends BaseApiController
             $originalProduct->options()->where('required', true)->exists()
         ) {
             if (! $request->input('options')) {
-                Cart::instance('cart')->updateOrStore($identifier);
+                Cart::instance('cart')->store($identifier);
 
                 return $response
                     ->setError()
                     ->setData(['next_url' => $originalProduct->url])
-                    ->setMessage(trans('plugins/ecommerce::products.cart.select_options'))
+                    ->setMessage(__('Please select product options!'))
                     ->toApiResponse();
             }
 
@@ -160,22 +160,22 @@ class CartController extends BaseApiController
             }
 
             if ($message) {
-                Cart::instance('cart')->updateOrStore($identifier);
+                Cart::instance('cart')->store($identifier);
 
                 return $response
                     ->setError()
-                    ->setMessage(trans('plugins/ecommerce::products.cart.select_options'))
+                    ->setMessage(__('Please select product options!'))
                     ->toApiResponse();
             }
         }
 
         if ($outOfQuantity) {
-            Cart::instance('cart')->updateOrStore($identifier);
+            Cart::instance('cart')->store($identifier);
 
             return $response
                 ->setError()
-                ->setMessage(trans(
-                    'plugins/ecommerce::products.cart.out_of_stock',
+                ->setMessage(__(
+                    'Product :product is out of stock!',
                     ['product' => $originalProduct->name ?: $product->name]
                 ))
                 ->toApiResponse();
@@ -202,11 +202,10 @@ class CartController extends BaseApiController
             $cartItem['subtotal'],
         );
 
-        Cart::instance('cart')->updateOrStore($identifier);
+        Cart::instance('cart')->store($identifier);
 
         return response()->json([
             'id' => $identifier,
-            'message' => trans('plugins/ecommerce::products.cart.added_to_cart_success', ['product' => $originalProduct->name]),
             ...$this->getDataForResponse(),
             ...$responseData,
         ]);
@@ -273,11 +272,10 @@ class CartController extends BaseApiController
                 $cartItem['subtotal'],
             );
 
-            Cart::instance('cart')->updateOrStore($identifier);
+            Cart::instance('cart')->store($identifier);
 
             return response()->json([
                 'id' => $identifier,
-                'message' => trans('plugins/ecommerce::products.cart.added_to_cart_success', ['product' => $originalProduct->name]),
                 ...$this->getDataForResponse(),
                 ...$responseData,
             ]);
@@ -286,9 +284,9 @@ class CartController extends BaseApiController
         $cartItem = Cart::instance('cart')->get($rowId);
 
         if (! $cartItem) {
-            Cart::instance('cart')->updateOrStore($identifier);
+            Cart::instance('cart')->store($identifier);
 
-            return response()->json(['error' => trans('plugins/ecommerce::products.cart.item_not_found')], 404);
+            return response()->json(['error' => __('Cart item not found')], 404);
         }
 
         /**
@@ -305,9 +303,9 @@ class CartController extends BaseApiController
             }
 
             if ($product->isOutOfStock()) {
-                Cart::instance('cart')->updateOrStore($identifier);
+                Cart::instance('cart')->store($identifier);
 
-                return response()->json(['error' => trans('plugins/ecommerce::products.cart.product_out_of_stock')], 400);
+                return response()->json(['error' => __('Product is out of stock')], 400);
             }
 
             Cart::instance('cart')->update($rowId, ['qty' => $newQty]);
@@ -315,11 +313,10 @@ class CartController extends BaseApiController
             $product->quantity = $originalQuantity;
         }
 
-        Cart::instance('cart')->updateOrStore($identifier);
+        Cart::instance('cart')->store($identifier);
 
         return response()->json([
             'id' => $identifier,
-            'message' => trans('plugins/ecommerce::products.cart.updated_cart_success'),
             ...$this->getDataForResponse(),
         ]);
     }
@@ -353,30 +350,25 @@ class CartController extends BaseApiController
         }
 
         if (! $rowId) {
-            Cart::instance('cart')->updateOrStore($identifier);
+            Cart::instance('cart')->store($identifier);
 
-            return response()->json(['error' => trans('plugins/ecommerce::products.cart.item_not_found')], 404);
+            return response()->json(['error' => __('Cart item not found')], 404);
         }
 
         try {
             $cartItem = Cart::instance('cart')->get($rowId);
-            $productName = $cartItem->name;
-
             app(GoogleTagManager::class)->removeFromCart($cartItem);
 
             Cart::instance('cart')->remove($rowId);
 
-            Cart::instance('cart')->updateOrStore($identifier);
+            Cart::instance('cart')->store($identifier);
 
-            return response()->json([
-                'id' => $identifier,
-                'message' => trans('plugins/ecommerce::products.cart.removed_from_cart_success', ['product' => $productName]),
-                ...$this->getDataForResponse(),
-            ]);
+            return response()->json(__('Cart item removed successfully'));
+
         } catch (Throwable) {
-            Cart::instance('cart')->updateOrStore($identifier);
+            Cart::instance('cart')->store($identifier);
 
-            return response()->json(['error' => trans('plugins/ecommerce::products.cart.item_not_found')], 404);
+            return response()->json(['error' => __('Cart item not found')], 404);
         }
     }
 
@@ -517,8 +509,7 @@ class CartController extends BaseApiController
         $content = $cart->content();
         $rawSubTotal = $cart->rawSubTotal();
         $rawTotal = $cart->rawTotal();
-        $totalDiscountAmount = $promotionDiscountAmount + $couponDiscountAmount;
-        $rawTaxTotal = $cart->rawTax($totalDiscountAmount);
+        $rawTaxTotal = $cart->rawTax();
         $countCart = $cart->count();
 
         if (is_plugin_active('marketplace')) {
@@ -541,7 +532,10 @@ class CartController extends BaseApiController
             }
         }
 
-        $orderTotal = max($rawTotal - $totalDiscountAmount, 0);
+        $orderTotal = $rawTotal - $promotionDiscountAmount - $couponDiscountAmount;
+        if ($orderTotal < 0) {
+            $orderTotal = 0;
+        }
 
         $cartData = [
             'cart_items' => CartItemResource::collection($content),

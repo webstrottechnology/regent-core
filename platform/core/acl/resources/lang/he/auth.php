@@ -66,7 +66,6 @@ return [
     'languages' => 'שפות',
     'reset_password' => 'אפס סיסמה',
     'deactivated_message' => 'החשבון שלך הושבת. אנא צור קשר עם המנהל.',
-    'password_changed_message' => 'הסיסמה שלך שונתה. אנא התחבר שוב עם הסיסמה החדשה שלך.',
     'settings' => [
         'email' => [
             'title' => 'ACL',

@@ -51,7 +51,7 @@ return [
     'close' => 'Zamknij',
     'panel' => [
         'others' => 'Inne',
-        'system' => 'Systemowe',
+        'system' => 'System',
         'platform_administration' => 'Administracja platformą',
         'manage_description' => 'Zarządzaj :name',
     ],

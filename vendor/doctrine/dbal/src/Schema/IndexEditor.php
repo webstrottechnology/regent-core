@@ -69,13 +69,6 @@ final class IndexEditor
         return $this;
     }
 
-    public function addColumn(IndexedColumn $column): self
-    {
-        $this->columns[] = $column;
-
-        return $this;
-    }
-
     public function setColumnNames(UnqualifiedName $firstColumnName, UnqualifiedName ...$otherColumnNames): self
     {
         $this->columns = array_map(

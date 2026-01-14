@@ -1,10 +1,7 @@
-@use 'file-upload';
-
-$checkoutPrimaryColor: var(--checkout-primary-color, #197bbd);
-
 :root {
     --bs-font-sans-serif: var(--primary-font), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --bs-link-color-rgb: var(--checkout-primary-color-rgb, 25, 123, 189);
+    --bs-primary: var(--primary-color);
+    --bs-link-color-rgb: var(--primary-color-rgb);
 }
 
 html,
@@ -42,81 +39,57 @@ body,
     width: 100%;
 }
 
-// Smooth inline button spinner
-.btn-spinner {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    border-right-color: transparent;
-    animation: btn-spinner-rotate 0.6s linear infinite;
-    vertical-align: middle;
-    margin-right: 6px;
-    flex-shrink: 0;
-}
+input[type='checkbox'] {
+    position: relative;
+    top: 2px;
+    margin: 0 0.5rem 0 0;
+    cursor: pointer;
 
-@keyframes btn-spinner-rotate {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-// Applied coupon alert - uses primary color
-.applied-coupon-alert {
-    background-color: rgba(var(--bs-primary-rgb), 0.1);
-    border: 1px solid var(--checkout-primary-color);
-    border-radius: 6px;
-    color: var(--checkout-primary-color);
-    padding: 12px 16px;
-
-    strong {
-        color: var(--checkout-primary-color);
+    &:before {
+        -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+        -moz-transition: -moz-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+        transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+        -ms-transform: rotate(-45deg) scale(0, 0);
+        transform: rotate(-45deg) scale(0, 0);
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0.2em;
+        margin: auto;
+        z-index: 1;
+        width: 10px;
+        height: 5px;
+        border: 2px solid var(--bs-primary);
+        border-top-style: none;
+        border-right-style: none;
     }
 
-    .remove-coupon-code {
-        background: transparent;
-        border: 1px solid var(--checkout-primary-color);
-        border-radius: 4px;
-        color: var(--checkout-primary-color);
+    &:after {
+        content: '';
+        position: absolute;
+        left: -2px;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        width: 16px;
+        height: 16px;
+        background: #ffffff;
+        border: 1px solid #c4cdd5;
         cursor: pointer;
-        font-size: 13px;
-        padding: 4px 12px;
-        transition: all 0.2s ease;
-
-        &:hover {
-            background: var(--checkout-primary-color);
-            color: #fff;
-        }
+        border-radius: 3px;
     }
-}
 
-// Bootstrap form-check checkbox - matches radio button styling
-.form-check {
-    .form-check-input[type="checkbox"] {
-        border: 1px solid #8a8e93;
-        border-radius: 4px;
-        cursor: pointer;
-        flex-shrink: 0;
-        height: 18px;
-        margin-left: -1.25em;
-        margin-right: 5px;
-        margin-top: 0.075em;
-        width: 18px;
-
-        &:focus {
-            border-color: $checkoutPrimaryColor;
-            box-shadow: 0 0 0 3px rgba(25, 123, 189, 0.12);
+    &:checked {
+        &:before {
+            -ms-transform: rotate(-45deg) scale(1, 1);
+            transform: rotate(-45deg) scale(1, 1);
         }
 
-        &:checked {
-            background-color: $checkoutPrimaryColor;
-            border-color: $checkoutPrimaryColor;
+        &:after {
+            border-color: var(--bs-primary);
         }
-    }
-
-    .form-check-label {
-        cursor: pointer;
     }
 }
 
@@ -143,7 +116,7 @@ body,
     border: 1px dashed #bfbfbf;
 
     &.is-default {
-        border: 1px dashed var(--checkout-primary-color);
+        border: 1px dashed var(--bs-primary);
 
         .default {
             position: absolute;
@@ -151,7 +124,7 @@ body,
             right: 15px;
             display: block;
             font-size: 11px;
-            color: var(--checkout-primary-color);
+            color: var(--bs-primary);
         }
     }
 
@@ -187,7 +160,7 @@ label {
     border: 1px solid #dcdcdc;
 
     &:focus {
-        border: 2px solid var(--checkout-primary-color);
+        border: 2px solid var(--bs-primary);
     }
 }
 
@@ -221,7 +194,7 @@ input[type="file"].form-control {
 
 .payment-checkout-btn,
 .payment-checkout-btn-step {
-    background-color: var(--checkout-primary-color);
+    background-color: var(--bs-primary);
     color: #ffffff;
     padding: 15px 15px;
     transition: all ease-in-out 300ms;
@@ -229,7 +202,7 @@ input[type="file"].form-control {
     &:hover {
         filter: brightness(85%);
         color: #ffffff;
-        background-color: var(--checkout-primary-color);
+        background-color: var(--bs-primary);
     }
 }
 
@@ -328,7 +301,7 @@ input[type="file"].form-control {
     svg {
         width: 80px;
         height: 80px;
-        color: var(--checkout-primary-color);
+        color: var(--bs-primary);
         padding-inline-end: 10px;
     }
 
@@ -375,7 +348,7 @@ input[type="file"].form-control {
 
     .order-customer-info-meta {
         padding-left: 20px;
-        color: var(--checkout-primary-color);
+        color: var(--bs-primary);
     }
 }
 
@@ -405,7 +378,7 @@ body,
 
     &:after {
         animation: loading-spinner-rotation 0.5s linear infinite;
-        border-color: var(--checkout-primary-color) transparent var(--checkout-primary-color) transparent;
+        border-color: var(--bs-primary) transparent var(--bs-primary) transparent;
         border-radius: 50%;
         border-style: solid;
         border-width: 1px;
@@ -503,6 +476,10 @@ body,
         }
     }
 
+    .payment-checkout-btn {
+        margin-top: 30px;
+    }
+
     .checkout-discount-section {
         margin-bottom: 10px;
     }
@@ -578,25 +555,6 @@ body,
             background-image: none;
         }
     }
-
-    .phone-input-wrapper {
-        position: relative;
-
-        label {
-            font-size: 12px;
-            top: -7px;
-            inset-inline-start: 10px;
-            background: #ffffff;
-            padding: 0 5px;
-            color: #6b7078;
-            position: absolute;
-            transition: 0.2s ease all;
-            -moz-transition: 0.2s ease all;
-            -webkit-transition: 0.2s ease all;
-            pointer-events: none;
-            z-index: 1;
-        }
-    }
 }
 
 .checkout {
@@ -608,8 +566,8 @@ body,
     &__coupon-heading {
         font-weight: 600;
         border-radius: 5px;
-        border: 1px solid var(--checkout-primary-color);
-        color: var(--checkout-primary-color);
+        border: 1px solid var(--bs-primary);
+        color: var(--bs-primary);
         font-size: 14px;
         margin-bottom: 0px;
         padding: 0.25rem 0.5rem;
@@ -634,7 +592,7 @@ body,
         gap: 0.75rem;
         margin-bottom: 1rem;
         overflow-y: auto;
-        border: 1px dashed var(--checkout-primary-color);
+        border: 1px dashed var(--bs-primary);
         border-radius: 8px;
         padding: 0.75rem;
         max-height: 600px;
@@ -650,12 +608,12 @@ body,
         box-shadow: 0 0 4px 0 rgba(205, 205, 205, 0.75);
 
         &.active {
-            background-color: var(--checkout-primary-color);
+            background-color: var(--bs-primary);
             color: #ffffff;
         }
 
         &:hover {
-            border-color: var(--checkout-primary-color);
+            border-color: var(--bs-primary);
         }
 
         &-content {
@@ -669,7 +627,7 @@ body,
                 font-size: 16px;
                 font-weight: bold;
                 display: inline-block;
-                color: var(--checkout-primary-color);
+                color: var(--bs-primary);
 
                 .checkout__coupon-item.active & {
                     color: #ffffff;
@@ -710,12 +668,12 @@ body,
             }
 
             .checkout__coupon-item.active & {
-                background: var(--checkout-primary-color);
+                background: var(--bs-primary);
                 filter: brightness(85%);
             }
 
             button {
-                background: var(--checkout-primary-color);
+                background: var(--bs-primary);
                 color: #ffffff;
                 border: none;
                 padding: 0.25rem 0.75rem;
@@ -727,13 +685,172 @@ body,
 
                 .checkout__coupon-item.active & {
                     background: #ffffff;
-                    color: var(--checkout-primary-color);
-                    border: 1px solid var(--checkout-primary-color);
+                    color: var(--bs-primary);
+                    border: 1px solid var(--bs-primary);
                 }
             }
         }
     }
 
+    &-form {
+
+        .magic-radio,
+        .magic-checkbox {
+            position: absolute;
+            display: none;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+
+        .magic-radio + label,
+        .magic-checkbox + label {
+            position: relative;
+            display: block;
+            padding-left: 30px;
+            cursor: pointer;
+            vertical-align: middle;
+
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                content: '';
+                border: 1px solid #c0c0c0;
+            }
+
+            &:after {
+                position: absolute;
+                display: none;
+                content: '';
+            }
+
+            &:hover {
+                &:before {
+                    animation-duration: 0.4s;
+                    animation-fill-mode: both;
+                    animation-name: hover-color;
+                }
+            }
+        }
+
+        .magic-radio[disabled] + label,
+        .magic-checkbox[disabled] + label {
+            cursor: not-allowed;
+            color: #e4e4e4;
+        }
+
+        .magic-radio[disabled] + label:hover,
+        .magic-radio[disabled] + label:before,
+        .magic-radio[disabled] + label:after,
+        .magic-checkbox[disabled] + label:hover,
+        .magic-checkbox[disabled] + label:before,
+        .magic-checkbox[disabled] + label:after {
+            cursor: not-allowed;
+        }
+
+        .magic-radio[disabled] + label:hover:before,
+        .magic-checkbox[disabled] + label:hover:before {
+            border: 1px solid #e4e4e4;
+            animation-name: none;
+        }
+
+        .magic-radio[disabled] + label:before,
+        .magic-checkbox[disabled] + label:before {
+            border-color: #e4e4e4;
+        }
+
+        .magic-radio:checked + label:before,
+        .magic-checkbox:checked + label:before {
+            animation-name: none;
+        }
+
+        .magic-radio:checked + label:after,
+        .magic-checkbox:checked + label:after {
+            display: block;
+        }
+
+        .magic-radio {
+            & + label {
+                &:before {
+                    border-radius: 50%;
+                }
+
+                &:after {
+                    top: 6px;
+                    left: 6px;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: var(--bs-primary);
+                }
+            }
+
+            &:checked {
+                & + label {
+                    &:before {
+                        border: 1px solid var(--bs-primary);
+                    }
+                }
+            }
+
+            &:checked[disabled] {
+                & + label {
+                    &:before {
+                        border: 1px solid #c9e2f9;
+                    }
+
+                    &:after {
+                        background: #c9e2f9;
+                    }
+                }
+            }
+        }
+
+        .magic-checkbox {
+            & + label {
+                &:before {
+                    border-radius: 3px;
+                }
+
+                &:after {
+                    top: 2px;
+                    left: 7px;
+                    box-sizing: border-box;
+                    width: 6px;
+                    height: 12px;
+                    transform: rotate(45deg);
+                    border-width: 2px;
+                    border-style: solid;
+                    border-color: #ffffff;
+                    border-top: 0;
+                    border-left: 0;
+                }
+            }
+
+            &:checked {
+                & + label {
+                    &:before {
+                        border: var(--bs-primary);
+                        background: var(--bs-primary);
+                    }
+                }
+            }
+
+            &:checked[disabled] {
+                & + label {
+                    &:before {
+                        border: #c9e2f9;
+                        background: #c9e2f9;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .coupon-wrapper {
@@ -756,15 +873,15 @@ body,
     .remove-coupon-code {
         border-radius: 4px;
         background: #ffffff;
-        color: var(--checkout-primary-color);
-        border: 1px solid var(--checkout-primary-color);
+        color: var(--bs-primary);
+        border: 1px solid var(--bs-primary);
         font-size: 0.8em;
     }
 
     .apply-coupon-code {
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
-        background: var(--checkout-primary-color);
+        background: var(--bs-primary);
         color: #ffffff;
 
         &:hover {
@@ -899,7 +1016,7 @@ body,
         margin-right: 0.75rem;
         width: 24px;
         height: 24px;
-        color: var(--checkout-primary-color);
+        color: var(--bs-primary);
     }
 
     &__details {
@@ -944,7 +1061,7 @@ body,
         margin-right: 0.75rem;
         width: 30px;
         height: 30px;
-        color: var(--checkout-primary-color);
+        color: var(--bs-primary);
     }
 
     &__content {
@@ -977,7 +1094,7 @@ body,
 
         &-link {
             margin-left: 0.5rem;
-            color: var(--checkout-primary-color);
+            color: var(--bs-primary);
             text-decoration: none;
 
             &:hover {
@@ -1055,7 +1172,7 @@ body,
         }
         
         &:focus {
-            border-color: $checkoutPrimaryColor;
+            border-color: #197bbd;
             border-width: 2px;
             box-shadow: none;
             outline: none;
@@ -1091,18 +1208,18 @@ body,
     }
     
     // Labels
-    label:not(.form-check-inline) {
+    label {
         color: #545454;
         display: block;
         font-size: 14px;
         font-weight: 500;
         margin-bottom: 6px;
-
+        
         .required {
             color: #d73502;
         }
     }
-
+    
     // Error states
     .form-control.is-invalid,
     .field-has-error {
@@ -1160,7 +1277,7 @@ body,
             &:not(:placeholder-shown) + label,
             &.has-value + label {
                 background: #fff;
-                color: $checkoutPrimaryColor;
+                color: #197bbd;
                 font-size: 12px;
                 font-weight: 500;
                 left: 12px;
@@ -1171,7 +1288,7 @@ body,
             // Handle autofilled inputs
             &:-webkit-autofill + label {
                 background: #fff;
-                color: $checkoutPrimaryColor;
+                color: #197bbd;
                 font-size: 12px;
                 font-weight: 500;
                 left: 12px;
@@ -1187,7 +1304,7 @@ body,
         // For select elements, always float the label
         select.form-control + label {
             background: #fff;
-            color: $checkoutPrimaryColor;
+            color: #197bbd;
             font-size: 12px;
             font-weight: 500;
             left: 12px;
@@ -1229,8 +1346,8 @@ body,
         }
         
         &:checked + label:before {
-            background-color: $checkoutPrimaryColor;
-            border-color: $checkoutPrimaryColor;
+            background-color: #197bbd;
+            border-color: #197bbd;
         }
         
         &:checked + label:after {
@@ -1300,14 +1417,14 @@ body,
         }
         
         &:hover {
-            border-color: $checkoutPrimaryColor !important;
+            border-color: #197bbd !important;
         }
         
         &.active,
         &.selected {
             background-color: #f0f8ff;
-            border-color: $checkoutPrimaryColor !important;
-            box-shadow: 0 0 0 1px $checkoutPrimaryColor;
+            border-color: #197bbd !important;
+            box-shadow: 0 0 0 1px #197bbd;
         }
         
         label {
@@ -1343,7 +1460,7 @@ body,
             }
             
             &:focus {
-                border-color: $checkoutPrimaryColor;
+                border-color: #197bbd;
                 box-shadow: 0 0 0 3px rgba(25, 123, 189, 0.12);
                 outline: none;
             }
@@ -1390,7 +1507,7 @@ body,
         
         &.selected {
             background-color: #f7fafe;
-            border-color: $checkoutPrimaryColor;
+            border-color: #197bbd;
         }
         
         .payment-method-name {
@@ -1432,109 +1549,4 @@ body,
     select.form-control {
         height: 48px;
     }
-}
-
-// Select2 styling for checkout location dropdowns
-.customer-address-payment-form,
-.billing-address-form-wrapper {
-    .select2-container {
-        width: 100% !important;
-    }
-
-    .select2-container--default .select2-selection--single {
-        height: 45px;
-        padding: 10px 16px;
-        border: 1px solid #d9d9d9;
-        border-radius: 5px;
-        background-color: #fff;
-        font-size: 14px;
-
-        .select2-selection__rendered {
-            line-height: 23px;
-            padding-left: 0;
-            color: #333;
-        }
-
-        // Hide default Select2 arrow (using Tabler icon instead)
-        .select2-selection__arrow {
-            display: none;
-        }
-    }
-
-    .select2-container--default.select2-container--open .select2-selection--single,
-    .select2-container--default.select2-container--focus .select2-selection--single {
-        border-color: $checkoutPrimaryColor;
-        border-width: 2px;
-        outline: none;
-    }
-
-    // Floating label adjustment for Select2
-    .form-input-wrapper.select--arrow {
-        .select2-container + label {
-            background: #fff;
-            color: $checkoutPrimaryColor;
-            font-size: 12px;
-            top: -7px;
-            inset-inline-start: 10px;
-            padding: 0 5px;
-            position: absolute;
-            pointer-events: none;
-            z-index: 2;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .select2-container--default .select2-selection--single {
-            height: 48px;
-            font-size: 16px;
-
-            .select2-selection__rendered {
-                line-height: 26px;
-            }
-
-            .select2-selection__arrow {
-                height: 46px;
-            }
-        }
-    }
-}
-
-// Select2 dropdown styling
-.select2-dropdown {
-    border: 2px solid $checkoutPrimaryColor;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.select2-container--default .select2-search--dropdown {
-    padding: 8px;
-
-    .select2-search__field {
-        border: 1px solid #d9d9d9;
-        border-radius: 4px;
-        padding: 8px 12px;
-        font-size: 14px;
-        height: 40px;
-
-        &:focus {
-            border-color: $checkoutPrimaryColor;
-            border-width: 2px;
-            outline: none;
-        }
-    }
-}
-
-.select2-container--default .select2-results__option {
-    padding: 8px 12px;
-    font-size: 14px;
-}
-
-.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: $checkoutPrimaryColor;
-    color: #fff;
-}
-
-.select2-container--default .select2-results__option--selected {
-    background-color: #f0f7fc;
-    color: #333;
 }

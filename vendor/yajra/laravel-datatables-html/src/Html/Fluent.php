@@ -3,14 +3,9 @@
 namespace Yajra\DataTables\Html;
 
 use ArrayAccess;
-use ArrayIterator;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Support\Traits\Conditionable;
-use Illuminate\Support\Traits\Macroable;
-use IteratorAggregate;
 use JsonSerializable;
-use Traversable;
 
 /**
  * @template TKey of array-key
@@ -19,12 +14,8 @@ use Traversable;
  * @implements \Illuminate\Contracts\Support\Arrayable<TKey, TValue>
  * @implements \ArrayAccess<TKey, TValue>
  */
-class Fluent implements Arrayable, ArrayAccess, IteratorAggregate, Jsonable, JsonSerializable
+class Fluent implements Arrayable, ArrayAccess, Jsonable, JsonSerializable
 {
-    use Conditionable, Macroable {
-        __call as macroCall;
-    }
-
     /**
      * All of the attributes set on the fluent instance.
      *
@@ -40,7 +31,9 @@ class Fluent implements Arrayable, ArrayAccess, IteratorAggregate, Jsonable, Jso
      */
     public function __construct($attributes = [])
     {
-        $this->fill($attributes);
+        foreach ($attributes as $key => $value) {
+            $this->attributes[$key] = $value;
+        }
     }
 
     /**
@@ -55,35 +48,6 @@ class Fluent implements Arrayable, ArrayAccess, IteratorAggregate, Jsonable, Jso
     public function get($key, $default = null)
     {
         return data_get($this->attributes, $key, $default);
-    }
-
-    /**
-     * Set an attribute on the fluent instance using "dot" notation.
-     *
-     * @param  TKey  $key
-     * @param  TValue  $value
-     * @return $this
-     */
-    public function set($key, $value)
-    {
-        data_set($this->attributes, $key, $value);
-
-        return $this;
-    }
-
-    /**
-     * Fill the fluent instance with an array of attributes.
-     *
-     * @param  iterable<TKey, TValue>  $attributes
-     * @return $this
-     */
-    public function fill($attributes)
-    {
-        foreach ($attributes as $key => $value) {
-            $this->attributes[$key] = $value;
-        }
-
-        return $this;
     }
 
     /**
@@ -169,34 +133,6 @@ class Fluent implements Arrayable, ArrayAccess, IteratorAggregate, Jsonable, Jso
     }
 
     /**
-     * Convert the fluent instance to pretty print formatted JSON.
-     *
-     * @params int $options
-     *
-     * @return string
-     */
-    public function toPrettyJson(int $options = 0)
-    {
-        return $this->toJson(JSON_PRETTY_PRINT | $options);
-    }
-
-    /**
-     * Determine if the fluent instance is empty.
-     */
-    public function isEmpty(): bool
-    {
-        return empty($this->attributes);
-    }
-
-    /**
-     * Determine if the fluent instance is not empty.
-     */
-    public function isNotEmpty(): bool
-    {
-        return ! $this->isEmpty();
-    }
-
-    /**
      * Determine if the given offset exists.
      *
      * @param  TKey  $offset
@@ -239,16 +175,6 @@ class Fluent implements Arrayable, ArrayAccess, IteratorAggregate, Jsonable, Jso
     }
 
     /**
-     * Get an iterator for the attributes.
-     *
-     * @return ArrayIterator<TKey, TValue>
-     */
-    public function getIterator(): Traversable
-    {
-        return new ArrayIterator($this->attributes);
-    }
-
-    /**
      * Handle dynamic calls to the fluent instance to set attributes.
      *
      * @param  TKey  $method
@@ -257,11 +183,7 @@ class Fluent implements Arrayable, ArrayAccess, IteratorAggregate, Jsonable, Jso
      */
     public function __call($method, $parameters)
     {
-        if (static::hasMacro($method)) {
-            return $this->macroCall($method, $parameters);
-        }
-
-        $this->attributes[$method] = count($parameters) > 0 ? array_first($parameters) : true;
+        $this->attributes[$method] = count($parameters) > 0 ? reset($parameters) : true;
 
         return $this;
     }

@@ -47,5 +47,4 @@ return [
         'completed' => 'Lõpetatud',
         'canceled' => 'Tühistatud',
     ],
-    'back_to_invoices' => 'Tagasi arvetesse',
 ];

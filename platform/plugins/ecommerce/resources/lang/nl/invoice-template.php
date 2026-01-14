@@ -36,8 +36,6 @@ return [
         'customer_city' => 'De klant stad',
         'customer_zipcode' => 'De klant postcode',
     ],
-    'custom_css' => 'Aangepaste CSS',
-    'custom_css_helper' => 'Voeg aangepaste CSS-stijlen toe om het uiterlijk van de factuur aan te passen. Deze stijlen worden toegevoegd aan de standaard factuurstijlen.',
     'reset_success' => 'Succesvol teruggezet naar standaard',
     'confirm_reset' => 'Bevestig reset factuur sjabloon?',
     'confirm_message' => 'Wilt u echt deze factuur sjabloon terugzetten naar standaard?',

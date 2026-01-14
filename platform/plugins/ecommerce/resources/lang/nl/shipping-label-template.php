@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'Aangepaste CSS',
-    'custom_css_helper' => 'Voeg aangepaste CSS-stijlen toe om het uiterlijk van het verzendlabel aan te passen. Deze stijlen worden toegevoegd aan de standaard verzendlabelstijlen.',
     'reset_success' => 'Succesvol teruggezet naar standaard',
     'confirm_reset' => 'Bevestig reset verzendlabel sjabloon?',
     'confirm_message' => 'Wilt u echt deze verzendlabel sjabloon terugzetten naar standaard?',

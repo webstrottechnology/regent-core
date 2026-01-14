@@ -26,7 +26,7 @@
             button-id="confirm-verify-customer-email-button"
             :button-label="trans('plugins/ecommerce::customer.verify_email.confirm_button')"
         >
-            {!! BaseHelper::clean(trans('plugins/ecommerce::customer.verify_email.confirm_description')) !!}
+            {!! trans('plugins/ecommerce::customer.verify_email.confirm_description') !!}
         </x-core::modal>
 
         <x-core::modal.action

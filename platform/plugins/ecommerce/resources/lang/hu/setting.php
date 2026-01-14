@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-kereskedelem',
     'general' => [
         'name' => 'Általános',
-        'description' => 'Bolt neve, cégadatok, kapcsolat és admin értesítési e-mailek',
+        'description' => 'Általános beállítások megtekintése és frissítése',
     ],
     'currency' => [
         'name' => 'Pénznemek',
-        'description' => 'Pénznem formátumok, árfolyamok, automatikus felismerés és tizedes/ezres elválasztók',
+        'description' => 'Pénznem beállítások megtekintése és frissítése',
         'currency_setting_description' => 'A weboldalon használt pénznemek megtekintése és frissítése',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Látogató pénznemének automatikus észlelésének engedélyezése',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Termékek',
-        'description' => 'Készlet megjelenítés, SKU generálás, variáns képek, kapcsolódó termékek és specifikációk',
+        'description' => 'Termékbeállítások megtekintése és frissítése',
         'product_settings' => 'Termék beállítások',
         'product_settings_description' => 'Termékszabályok konfigurálása',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Termék keresés',
-        'description' => 'Keresési viselkedés, szűrők kategória/márka/címke/attribútumok szerint és árkategória szűrés',
+        'description' => 'Termék keresési beállítások megtekintése és frissítése',
         'product_search_settings' => 'Termék keresés',
         'product_search_settings_description' => 'Termék keresési szabályok konfigurálása',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Digitális termékek',
-        'description' => 'Letölthető termékek, licenckódok, vendég fizetés digitális termékeknél és automatikus befejezés',
+        'description' => 'Digitális termék beállítások megtekintése és frissítése',
         'digital_products_settings' => 'Digitális termékek',
         'digital_products_settings_description' => 'Digitális termékek szabályainak konfigurálása',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Termék értékelések',
-        'description' => 'Ügyfélértékelések, értékelések megjelenítése, képfeltöltés és jóváhagyási követelmények',
+        'description' => 'Termék értékelés beállítások megtekintése és frissítése',
         'form' => [
             'enable_review' => 'Termék értékelések engedélyezése',
             'enable_review_help' => 'Lehetővé teszi az ügyfelek számára értékelések és vélemények hagyását a termékekről. Ha letiltva, minden értékelési funkció el lesz rejtve az üzletből.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Vásárlás',
-        'description' => 'Kosár, kívánságlista, összehasonlítás, rendeléskövetés, gyors vásárlás gomb és fizetési igazolás feltöltés',
+        'description' => 'Vásárlási beállítások megtekintése és frissítése',
         'general_setting' => 'Általános beállítások',
         'return_settings' => 'Visszaküldési beállítások',
         'return_settings_description' => 'Visszaküldési beállítások szabályainak konfigurálása',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'A kosár megsemmisül, amikor az ügyfél kijelentkezik.',
             'hide_product_price' => 'Termék ár elrejtése',
             'hide_product_price_helper' => 'Ez az opció csak akkor működik, ha letiltja a bevásárlókosarat, így a weboldalát katalógussá alakítja. Ha engedélyezve van, a termék ára el lesz rejtve. Hasznos, ha el szeretné rejteni az árat és szeretné, hogy az ügyfelek kapcsolatba lépjenek Önnel az árért.',
-            'hide_product_price_when_zero' => 'Termék ár elrejtése, ha nulla',
-            'hide_product_price_when_zero_helper' => 'Ha engedélyezve van, a 0 árú termékeknél nem jelenik meg ár a kirakaton.',
             'enable_payment_proof' => 'Fizetési igazolás feltöltésének engedélyezése',
             'enable_payment_proof_helper' => 'Lehetővé teszi az ügyfeleknek, hogy feltöltsenek fizetési igazolást a rendeléseikhez. Ez hasznos manuális fizetési módokhoz.',
             'enable_guest_payment_proof' => 'Vendég ügyfelek számára a fizetési igazolás feltöltésének engedélyezése',
             'enable_guest_payment_proof_helper' => 'Ha engedélyezve van, a vendég ügyfelek feltölthetnek fizetési igazolást a rendelési tokenük használatával bejelentkezés nélkül. A feltöltési linket megkapják a rendelés megerősítő e-mailben.',
-            'payment_proof_payment_methods' => 'Fizetési módok, amelyek fizetési igazolást igényelnek',
-            'payment_proof_payment_methods_helper' => 'Válassza ki, mely fizetési módok esetén tölthetnek fel az ügyfelek fizetési igazolást. Általában kézi fizetési módokhoz használják, mint például utánvét és banki átutalás.',
         ],
     ],
     'checkout' => [
         'name' => 'Fizetés',
-        'panel_description' => 'Vendég fizetés, kötelező mezők, rendelési korlátok, feltételek elfogadása és országkorlátozások',
+        'panel_description' => 'Fizetési beállítások megtekintése és frissítése',
         'description' => 'Fizetési beállítások szabályainak konfigurálása',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Banki információk megjelenítése a sikeres fizetési oldalon',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Visszaküldés',
         'description' => 'Visszaküldési beállítások szabályainak konfigurálása',
-        'panel_description' => 'Rendelés visszaküldés, részleges visszaküldés és visszaküldési határidők',
+        'panel_description' => 'Visszaküldési beállítások megtekintése és frissítése',
         'form' => [
             'is_enabled_order_return' => 'Rendelés visszaküldés engedélyezése',
             'allow_partial_return' => 'Részleges visszaküldés engedélyezése',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Számlák',
-        'description' => 'Céges adatok a számlákon, számlaszámozás, PDF betűtípusok és bélyegző beállítások',
+        'description' => 'Számlázási beállítások megtekintése és frissítése',
         'company_settings' => 'Vállalati beállítások',
         'company_settings_description' => 'Vállalati információk beállítása a számlázáshoz',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Alapértelmezett adókulcs',
             'default_tax_rate_description' => 'Fontos: akkor lesz alkalmazva, ha nincs adó kiválasztva a termékben.',
             'select_tax' => '-- Válasszon --',
-            'display_product_price_including_taxes' => 'Adó hozzáadása a megjelenített árakhoz',
-            'display_product_price_including_taxes_helper' => 'Automatikusan hozzáadja az adót a boltban megjelenített termékárakhoz. Pl. egy $100-os termék 10% adóval $110-ként jelenik meg. Nem szükséges, ha az "Ár tartalmazza az adót" már engedélyezve van az egyes termékeknél.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Termékár megjelenítése adóval együtt',
         ],
     ],
     'customer' => [
         'name' => 'Ügyfelek',
-        'description' => 'Regisztráció, email ellenőrzés, bejelentkezési lehetőségek, fiók törlés és profil mezők',
+        'description' => 'Ügyfél beállítások megtekintése és frissítése',
         'customer_setting' => 'Ügyfél beállítások',
         'customer_setting_description' => 'Ügyfél beállítások konfigurálása',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Szállítás',
-        'description' => 'Szállítási szabályok, ingyenes szállítás viselkedés és szállítási opciók megjelenítési sorrendje',
+        'description' => 'Szállítási beállítások megtekintése és frissítése',
         'shipping_rule' => 'Szállítási szabályok',
         'shipping_rule_description' => 'Szabályok konfigurálása a szállítási díj kiszámításához',
         'shipping_setting' => 'Szállítási beállítások',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Helyszín mentése',
             'add_new' => 'Új hozzáadása',
         ],
-            'info' => [
-            'title' => 'Hogyan működnek az üzletkereső',
-            'primary_store' => 'Az elsődleges üzlet címe megjelenik a számlákon, és alapértelmezett visszaküldési címként használják a szállítási címkékhez.',
-            'shipping_location' => 'A "szállítási helyként" megjelölt üzletek kiválaszthatók forráskén raktárként szállítmányok létrehozásakor.',
-            'shipment_selection' => 'Rendelések feldolgozásakor kiválaszthatja, melyik raktárból szállít a készlet és az ügyfél helye alapján.',
-        ],
     ],
     'tracking' => [
         'name' => 'Követés',
-        'description' => 'Facebook Pixel, Google Tag Manager események és Google Ads konverziókövetés',
+        'description' => 'Követési beállítások megtekintése és frissítése',
         'manage_tracking' => 'Követés kezelése',
         'manage_tracking_description' => 'Követés kezelése: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Piactér',
-        'description' => 'Több eladós beállítások, jutalékok, eladó regisztráció és kifizetés konfiguráció',
+        'description' => 'Piactér beállítások megtekintése és frissítése',
     ],
     'standard_and_format' => [
         'name' => 'Szabvány és formátum',
-        'panel_description' => 'Rendelési kód formátum, súlyegységek (kg/lb) és méretegységek (cm/hüvelyk)',
+        'panel_description' => 'Szabvány és formátum beállítások megtekintése és frissítése',
         'description' => 'A szabványok és formátumok a termékárak, szállítási súlyok és rendelési idők kiszámítására szolgálnak.',
         'form' => [
             'change_order_format' => 'Rendeléskód formátum szerkesztése (opcionális)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Folyamatjelző megjelenítése "X eladva Y-ból" szöveggel a sürgősség érzésének felkeltéséhez és a gyors vásárlások ösztönzéséhez a villámakciók során.',
     ],
     'payment_method_cod_minimum_amount' => 'Minimális rendelési összeg - :currency (opcionális)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minimális rendelési összeg - :currency (opcionális)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Banki információk megjelenítése a sikeres fizetési oldalon?',
     'invoice_templates' => 'Számla sablonok',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

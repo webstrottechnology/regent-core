@@ -1,6 +1,7 @@
 <?php
 
 return [
+    // Customer New Order Email
     'customer_new_order_title' => '訂購成功!',
     'customer_new_order_greeting' => '親愛的 :customer_name,',
     'customer_new_order_message' => '感謝您購買我們的產品,我們將透過電話 <strong>:customer_phone</strong> 與您聯絡以確認訂單!',
@@ -14,6 +15,8 @@ return [
     'customer_new_order_shipping_method' => '運送方式',
     'customer_new_order_order_number' => '訂單編號',
     'customer_new_order_payment_method' => '付款方式',
+
+    // Admin New Order Email
     'admin_new_order_title' => '您從 :site_title 收到新訂單',
     'admin_new_order_greeting' => '您好管理員,',
     'admin_new_order_message' => ':customer_name 成功下了新訂單',
@@ -33,6 +36,8 @@ return [
     'admin_new_order_shipping_method' => '運送方式',
     'admin_new_order_payment_method' => '付款方式',
     'admin_new_order_view_order' => '查看訂單詳情',
+
+    // Order Confirmation Email
     'order_confirm_title' => '訂單已確認!',
     'order_confirm_greeting' => '您好 :customer_name,',
     'order_confirm_message' => '您的訂單已確認。感謝您購買我們的產品!',
@@ -47,6 +52,8 @@ return [
     'order_confirm_note' => '備註',
     'order_confirm_shipping_method' => '運送方式',
     'order_confirm_payment_method' => '付款方式',
+
+    // Order Cancel (Customer) Email
     'customer_cancel_order_title' => '您的訂單已取消',
     'customer_cancel_order_greeting' => '親愛的 :customer_name,',
     'customer_cancel_order_message' => '您的訂單 <strong>:order_id</strong> 已按您的要求取消,原因為 :cancellation_reason,您的付款也已取消。',
@@ -60,9 +67,11 @@ return [
     'customer_cancel_order_address' => '地址',
     'customer_cancel_order_products' => '您訂購的商品:',
     'customer_cancel_order_note' => '備註',
+
+    // Order Cancel (Admin) Email
     'admin_cancel_order_title' => '訂單已取消',
     'admin_cancel_order_greeting' => '您好 :customer_name,',
-    'admin_cancel_order_message' => '您的訂單 :order_id 已被我們的工作人員取消。',
+    'admin_cancel_order_message' => '您的訂單 #:order_id 已被我們的工作人員取消。',
     'admin_cancel_order_order_cancelled' => '訂單已取消!',
     'admin_cancel_order_reason' => '取消原因::cancellation_reason',
     'admin_cancel_order_customer_info' => '顧客資訊',
@@ -73,9 +82,11 @@ return [
     'admin_cancel_order_products' => '訂單詳情:',
     'admin_cancel_order_note' => '備註',
     'admin_cancel_order_order_summary' => '訂單摘要',
-    'order_cancellation_to_admin_title' => '訂單 :order_id 已被顧客取消',
+
+    // Order Cancellation to Admin Email
+    'order_cancellation_to_admin_title' => '訂單 #:order_id 已被顧客取消',
     'order_cancellation_to_admin_greeting' => '您好管理員,',
-    'order_cancellation_to_admin_message' => ':customer_name 已取消訂單 <strong>:order_id</strong>。原因:<strong>:cancellation_reason</strong>',
+    'order_cancellation_to_admin_message' => ':customer_name 已取消訂單 <strong>#:order_id</strong>。原因:<strong>:cancellation_reason</strong>',
     'order_cancellation_to_admin_customer_info' => '顧客資訊',
     'order_cancellation_to_admin_name' => '姓名',
     'order_cancellation_to_admin_phone' => '電話',
@@ -85,6 +96,8 @@ return [
     'order_cancellation_to_admin_note' => '備註',
     'order_cancellation_to_admin_view_order' => '查看訂單詳情',
     'order_cancellation_to_admin_order_summary' => '訂單摘要',
+
+    // Order Delivery Email
     'customer_delivery_order_title' => '您的訂單正在路上',
     'customer_delivery_order_greeting' => '您好 :customer_name,',
     'customer_delivery_order_message' => '您的訂單正在配送中。感謝您購買我們的產品!',
@@ -104,6 +117,8 @@ return [
     'customer_delivery_order_tracking_id' => '追蹤編號',
     'customer_delivery_order_tracking_link' => '追蹤連結',
     'customer_delivery_order_track_shipment' => '追蹤您的出貨',
+
+    // Order Delivered Email
     'customer_order_delivered_title' => '您的訂單已送達',
     'customer_order_delivered_greeting' => '您好 :customer_name,',
     'customer_order_delivered_message' => '您的訂單已送達。感謝您購買我們的產品!',
@@ -122,7 +137,9 @@ return [
     'customer_order_delivered_tracking_id' => '追蹤編號',
     'customer_order_delivered_tracking_link' => '追蹤連結',
     'customer_order_delivered_track_shipment' => '查看追蹤詳情',
-    'order_confirm_payment_title' => '訂單 :order_id 的付款已確認',
+
+    // Payment Confirmation Email
+    'order_confirm_payment_title' => '訂單 #:order_id 的付款已確認',
     'order_confirm_payment_greeting' => '您好 :customer_name,',
     'order_confirm_payment_message' => '您的付款已確認。感謝您購買我們的產品!',
     'order_confirm_payment_order_number' => '訂單編號',
@@ -137,6 +154,8 @@ return [
     'order_confirm_payment_thanks' => '感謝您的付款。您的訂單將很快處理。',
     'order_confirm_payment_order_summary' => '訂單摘要',
     'order_confirm_payment_shipping_method' => '運送方式',
+
+    // Order Recovery Email
     'order_recover_title' => '您有未完成的訂單',
     'order_recover_greeting' => '您好 :customer_name,',
     'order_recover_message' => '我們注意到您有未完成的訂單。您想完成購買嗎?',
@@ -146,17 +165,23 @@ return [
     'order_recover_button' => '完成您的訂單',
     'order_recover_order_summary' => '訂單摘要',
     'order_recover_note' => '備註',
+
+    // Welcome Email
     'welcome_greeting' => '我們很高興您來到這裡,:customer_name!',
     'welcome_message' => '歡迎來到 :site_title!',
     'welcome_register_success' => '您已成功在 <strong>:site_title</strong> 註冊帳戶。',
     'welcome_explore' => '如需任何幫助,請隨時回覆此電子郵件!',
     'welcome_visit_shop' => '開始購物!',
+
+    // Confirm Email
     'confirm_email_title' => '驗證電子郵件',
     'confirm_email_greeting' => '我們很高興您來到這裡,:customer_name!',
     'confirm_email_message' => '請點擊下面的按鈕確認您的電子郵件地址。',
     'confirm_email_instruction' => '請驗證您的電子郵件地址以訪問此網站。點擊下面的按鈕以驗證您的電子郵件。',
     'confirm_email_button' => '確認您的電子郵件地址',
     'confirm_email_trouble' => '如果您在點擊「確認您的電子郵件地址」按鈕時遇到問題,請將以下網址複製並貼上到您的瀏覽器中:<a href=":verify_link">:verify_link</a> 並貼上到您的瀏覽器。',
+
+    // Password Reminder Email
     'password_reminder_title' => '重設您的密碼',
     'password_reminder_greeting' => '您好 :customer_name,',
     'password_reminder_message' => '您已請求重設密碼。',
@@ -164,9 +189,11 @@ return [
     'password_reminder_button' => '重設密碼',
     'password_reminder_ignore' => '如果您沒有請求重設密碼,請忽略此電子郵件。',
     'password_reminder_trouble_clicking' => '如果您在點擊「重設密碼」按鈕時遇到問題,請將以下網址複製並貼上到您的瀏覽器中:<a href=":reset_link">:reset_link</a>',
+
+    // Order Return Request Email
     'order_return_request_title' => '已收到退貨請求',
     'order_return_request_greeting' => '您好 :customer_name,',
-    'order_return_request_message' => '我們已收到您對訂單 :order_id 的退貨請求。',
+    'order_return_request_message' => '我們已收到您對訂單 #:order_id 的退貨請求。',
     'order_return_request_reason' => '退貨原因',
     'order_return_request_items' => '要退回的商品',
     'order_return_request_process' => '我們將處理您的請求並盡快與您聯絡。',
@@ -178,6 +205,8 @@ return [
     'order_return_request_return_reason' => '退貨原因',
     'order_return_request_order_summary' => '訂單摘要',
     'order_return_request_note' => '備註',
+
+    // Order Return Status Updated Email
     'order_return_status_updated_title' => '訂單退貨狀態更新',
     'order_return_status_updated_greeting' => '親愛的 :customer_name,',
     'order_return_status_updated_message' => '我們想通知您,您對訂單 :order_id 的退貨請求狀態已更新。',
@@ -185,13 +214,17 @@ return [
     'order_return_status_updated_description' => '版主備註:「:description」。',
     'order_return_status_updated_questions' => '如果您對此更新有任何問題或疑慮,請隨時聯絡我們的客戶支援團隊。',
     'order_return_status_updated_view_details' => '查看退貨詳情',
+
+    // Review Products Email
     'review_products_title' => '評論您最近的購買',
     'review_products_greeting' => '您好 :customer_name,',
-    'review_products_message' => '您的訂單 :order_id 已完成。我們很想聽到您的反饋!',
+    'review_products_message' => '您的訂單 #:order_id 已完成。我們很想聽到您的反饋!',
     'review_products_instruction' => '請花點時間評論您購買的產品:',
     'review_products_button' => '評論產品',
     'review_products_thank_you' => '感謝您的購買!',
     'review_products_products' => '要評論的產品',
+
+    // Digital Products Download Email
     'download_digital_products_title' => '您的數碼產品已準備好',
     'download_digital_products_greeting' => '您好 :customer_name,',
     'download_digital_products_message' => '感謝您的購買!您的數碼產品已準備好下載。',
@@ -203,10 +236,13 @@ return [
     'download_digital_products_all_files' => '下載所有文件',
     'download_digital_products_external_link_downloads' => '下載外部文件',
     'download_digital_products_payment_method' => '付款方式',
+
+    // Digital Product License Codes Email
     'digital_product_license_codes_title' => '您的授權碼',
     'digital_product_license_codes_greeting' => '親愛的 :customer_name,',
     'digital_product_license_codes_message' => '感謝您的購買!這是您的授權碼:',
     'digital_product_license_codes_thanks' => '感謝您購買我們的數碼產品。',
+    'digital_product_license_codes_below' => '以下是您購買的產品的授權碼:',
     'digital_product_license_codes_product' => '產品',
     'digital_product_license_codes_license' => '授權碼',
     'digital_product_license_codes_order_summary' => '您訂購的商品:',
@@ -219,6 +255,8 @@ return [
     'digital_product_license_codes_note_2' => '每個授權碼都是唯一的,只能使用一次',
     'digital_product_license_codes_note_3' => '請勿與他人分享您的授權碼',
     'digital_product_license_codes_note_4' => '如果您的授權碼有任何問題,請聯絡我們的支援團隊',
+
+    // Product File Updated Email
     'product_file_updated_title' => '產品文件已更新',
     'product_file_updated_greeting' => '您好,:customer_name!',
     'product_file_updated_message' => '產品 <a href=":product_link"><strong>:product_name</strong></a> 的文件已更新。',
@@ -230,6 +268,8 @@ return [
     'product_file_updated_instruction' => '您可以從您的帳戶下載更新的文件。',
     'product_file_updated_order_number' => '訂單編號',
     'product_file_updated_download' => '下載更新的文件',
+
+    // Invoice Payment Created Email
     'invoice_payment_created_title' => '已收到付款',
     'invoice_payment_created_greeting' => '您好 :customer_name,',
     'invoice_payment_created_message' => '我們已成功收到您為 :site_title 支付的款項。謝謝!',
@@ -241,15 +281,21 @@ return [
     'invoice_payment_created_invoice_link_message' => '您可以在 <a href=":invoice_link">:invoice_link</a> 上在線查看您的發票,發票代碼為 #:invoice_code',
     'invoice_payment_created_invoice_message' => '您的發票代碼為 #:invoice_code',
     'invoice_payment_created_view_online' => '在線查看發票',
+
+    // Customer Deletion Request Confirmation Email
     'customer_deletion_request_confirmation_greeting' => '您好 :customer_name,',
     'customer_deletion_request_confirmation_message' => '我們已收到您刪除帳戶的請求。',
     'customer_deletion_request_confirmation_warning' => '請注意,此操作無法撤銷。您的所有資料將被永久刪除。',
     'customer_deletion_request_confirmation_button' => '確認刪除',
     'customer_deletion_request_confirmation_cancel' => '如果您沒有請求此操作,請忽略此電子郵件。',
+
+    // Customer Deletion Request Completed Email
     'customer_deletion_request_completed_greeting' => '您好 :customer_name,',
     'customer_deletion_request_completed_message' => '您的帳戶已按要求成功刪除。',
     'customer_deletion_request_completed_thank_you' => '感謝您與我們同在。',
     'customer_deletion_request_completed_goodbye' => '我們希望將來再次見到您。',
+
+    // Payment Proof Upload Notification Email
     'payment_proof_upload_notification_greeting' => '您好管理員,',
     'payment_proof_upload_notification_message' => '顧客 :customer_name(電子郵件:<a href="mailto::customer_email">:customer_email</a>)已為其訂單 ID :order_id 上傳付款證明。',
     'payment_proof_upload_notification_view_details' => '您可以在<a href=":payment_link">此處</a>查看付款詳情,在<a href=":order_link">此處</a>查看訂單詳情。',
@@ -261,27 +307,4 @@ return [
     'payment_proof_upload_notification_total' => '總金額',
     'payment_proof_upload_notification_view_order' => '查看訂單',
     'payment_proof_upload_notification_view_proof' => '查看付款證明',
-    'abandoned_cart_reminder_title' => 'abandoned_cart_reminder_title',
-    'abandoned_cart_greeting' => 'abandoned_cart_greeting',
-    'abandoned_cart_message' => 'abandoned_cart_message',
-    'abandoned_cart_button' => 'abandoned_cart_button',
-    'abandoned_cart_items_title' => 'abandoned_cart_items_title',
-    'abandoned_cart_total' => 'abandoned_cart_total',
-    'abandoned_cart_unsubscribe' => 'abandoned_cart_unsubscribe',
-    'abandoned_cart_discount_offer' => 'abandoned_cart_discount_offer',
-    'abandoned_cart_discount_off' => 'abandoned_cart_discount_off',
-    'abandoned_cart_discount_code' => 'abandoned_cart_discount_code',
-    'abandoned_cart_claim_discount' => 'abandoned_cart_claim_discount',
-    'abandoned_cart_final_offer' => 'abandoned_cart_final_offer',
-    'abandoned_cart_expires_soon' => 'abandoned_cart_expires_soon',
-    'abandoned_cart_complete_now' => 'abandoned_cart_complete_now',
-    'abandoned_cart_reminder_1_title' => 'abandoned_cart_reminder_1_title',
-    'abandoned_cart_reminder_1_greeting' => 'abandoned_cart_reminder_1_greeting',
-    'abandoned_cart_reminder_1_message' => 'abandoned_cart_reminder_1_message',
-    'abandoned_cart_reminder_2_title' => 'abandoned_cart_reminder_2_title',
-    'abandoned_cart_reminder_2_greeting' => 'abandoned_cart_reminder_2_greeting',
-    'abandoned_cart_reminder_2_message' => 'abandoned_cart_reminder_2_message',
-    'abandoned_cart_reminder_3_title' => 'abandoned_cart_reminder_3_title',
-    'abandoned_cart_reminder_3_greeting' => 'abandoned_cart_reminder_3_greeting',
-    'abandoned_cart_reminder_3_message' => 'abandoned_cart_reminder_3_message',
 ];

@@ -47,5 +47,4 @@ return [
         'completed' => 'Teljesítve',
         'canceled' => 'Megszakítva',
     ],
-    'back_to_invoices' => 'Vissza a számlákhoz',
 ];

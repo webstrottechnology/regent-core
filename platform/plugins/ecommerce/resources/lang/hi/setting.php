@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'ईकॉमर्स',
     'general' => [
         'name' => 'सामान्य',
-        'description' => 'स्टोर का नाम, कंपनी जानकारी, संपर्क विवरण और एडमिन नोटिफिकेशन ईमेल',
+        'description' => 'अपनी सामान्य सेटिंग्स देखें और अपडेट करें',
     ],
     'currency' => [
         'name' => 'मुद्राएं',
-        'description' => 'मुद्रा प्रारूप, विनिमय दरें, स्वतः पहचान और दशमलव/हजार विभाजक',
+        'description' => 'मुद्रा सेटिंग्स देखें और अपडेट करें',
         'currency_setting_description' => 'वेबसाइट पर उपयोग की जाने वाली मुद्राओं को देखें और अपडेट करें',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'विज़िटर मुद्रा का ऑटो-डिटेक्शन सक्षम करें',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'उत्पाद',
-        'description' => 'स्टॉक प्रदर्शन, SKU जनरेशन, वेरिएंट इमेज, संबंधित उत्पाद और विशिष्टताएं',
+        'description' => 'अपनी उत्पाद सेटिंग्स देखें और अपडेट करें',
         'product_settings' => 'उत्पाद सेटिंग्स',
         'product_settings_description' => 'उत्पाद के लिए नियम कॉन्फ़िगर करें',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'उत्पाद खोज',
-        'description' => 'खोज व्यवहार, श्रेणी/ब्रांड/टैग/विशेषताओं द्वारा फ़िल्टर और मूल्य सीमा फ़िल्टरिंग',
+        'description' => 'उत्पाद खोज सेटिंग्स देखें और अपडेट करें',
         'product_search_settings' => 'उत्पाद खोज',
         'product_search_settings_description' => 'उत्पाद खोज के लिए नियम कॉन्फ़िगर करें',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'डिजिटल उत्पाद',
-        'description' => 'डाउनलोड करने योग्य उत्पाद, लाइसेंस कोड, डिजिटल आइटम के लिए गेस्ट चेकआउट और ऑटो-कंप्लीशन',
+        'description' => 'डिजिटल उत्पाद सेटिंग्स देखें और अपडेट करें',
         'digital_products_settings' => 'डिजिटल उत्पाद',
         'digital_products_settings_description' => 'डिजिटल उत्पादों के लिए नियम कॉन्फ़िगर करें',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'उत्पाद समीक्षाएं',
-        'description' => 'ग्राहक समीक्षाएं, रेटिंग प्रदर्शन, छवि अपलोड और अनुमोदन आवश्यकताएं',
+        'description' => 'अपनी उत्पाद समीक्षा सेटिंग्स देखें और अपडेट करें',
         'form' => [
             'enable_review' => 'उत्पाद समीक्षा सक्षम करें',
             'enable_review_help' => 'ग्राहकों को उत्पादों पर समीक्षा और रेटिंग छोड़ने की अनुमति दें। जब निष्क्रिय किया जाता है, सभी समीक्षा सुविधाएं स्टोर से छुपा दी जाएंगी।',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'शॉपिंग',
-        'description' => 'कार्ट, विशलिस्ट, तुलना, ऑर्डर ट्रैकिंग, क्विक बाय बटन और भुगतान प्रमाण अपलोड',
+        'description' => 'अपनी शॉपिंग सेटिंग्स देखें और अपडेट करें',
         'general_setting' => 'सामान्य सेटिंग्स',
         'return_settings' => 'रिटर्न सेटिंग्स',
         'return_settings_description' => 'रिटर्न सेटिंग्स के लिए नियम कॉन्फ़िगर करें',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'ग्राहक के लॉगआउट करने पर कार्ट नष्ट हो जाएगा।',
             'hide_product_price' => 'उत्पाद मूल्य छुपाएं',
             'hide_product_price_helper' => 'यह विकल्प तभी काम करता है जब आप शॉपिंग कार्ट निष्क्रिय करते हैं, आपकी साइट को केवल कैटलॉग डिस्प्ले में बदल देते हैं। यदि सक्षम है, उत्पाद मूल्य छुपाया जाएगा। यह तब उपयोगी है जब आप मूल्य छुपाना चाहते हैं और ग्राहकों से मूल्य के लिए संपर्क करने की आवश्यकता है।',
-            'hide_product_price_when_zero' => 'जब कीमत शून्य हो तो उत्पाद की कीमत छुपाएं',
-            'hide_product_price_when_zero_helper' => 'सक्रिय होने पर, जिन उत्पादों की कीमत 0 है, उनका मूल्य स्टोरफ्रंट पर नहीं दिखेगा।',
             'enable_payment_proof' => 'भुगतान प्रूफ अपलोड सक्षम करें',
             'enable_payment_proof_helper' => 'ग्राहकों को अपने ऑर्डर के लिए भुगतान प्रूफ अपलोड करने की अनुमति दें। यह मैन्युअल भुगतान विधियों के लिए उपयोगी है।',
             'enable_guest_payment_proof' => 'गेस्ट ग्राहकों को भुगतान प्रूफ अपलोड करने की अनुमति दें',
             'enable_guest_payment_proof_helper' => 'जब सक्षम किया जाता है, गेस्ट ग्राहक लॉगिन किए बिना अपने ऑर्डर टोकन का उपयोग करके भुगतान प्रूफ अपलोड कर सकते हैं। उन्हें अपनी ऑर्डर कन्फर्मेशन ईमेल में अपलोड लिंक मिलेगा।',
-            'payment_proof_payment_methods' => 'भुगतान प्रमाण की आवश्यकता वाले भुगतान विधियाँ',
-            'payment_proof_payment_methods_helper' => 'चुनें कि कौन सी भुगतान विधियों को ग्राहकों को भुगतान प्रमाण अपलोड करने की अनुमति देनी चाहिए। आमतौर पर मैनुअल भुगतान विधियों जैसे COD और बैंक ट्रांसफर के लिए उपयोग किया जाता है।',
         ],
     ],
     'checkout' => [
         'name' => 'चेकआउट',
-        'panel_description' => 'गेस्ट चेकआउट, आवश्यक फ़ील्ड, ऑर्डर सीमाएं, शर्तों की स्वीकृति और देश प्रतिबंध',
+        'panel_description' => 'चेकआउट सेटिंग्स देखें और अपडेट करें',
         'description' => 'चेकआउट सेटिंग्स के लिए नियम कॉन्फ़िगर करें',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'चेकआउट सफलता पेज पर बैंक जानकारी प्रदर्शित करें',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'रिटर्न',
         'description' => 'रिटर्न सेटिंग्स के लिए नियम कॉन्फ़िगर करें',
-        'panel_description' => 'ऑर्डर रिटर्न, आंशिक रिटर्न और रिटर्न समय सीमा',
+        'panel_description' => 'रिटर्न सेटिंग्स देखें और अपडेट करें',
         'form' => [
             'is_enabled_order_return' => 'ऑर्डर रिटर्न सक्षम है',
             'allow_partial_return' => 'आंशिक रिटर्न की अनुमति दें',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'इनवॉइस',
-        'description' => 'इनवॉइस पर कंपनी विवरण, इनवॉइस नंबरिंग, PDF फ़ॉन्ट और स्टैम्प सेटिंग्स',
+        'description' => 'अपनी इनवॉइस सेटिंग्स देखें और अपडेट करें',
         'company_settings' => 'कंपनी सेटिंग्स',
         'company_settings_description' => 'इनवॉइसिंग के लिए कंपनी जानकारी सेटिंग्स',
         'form' => [
@@ -305,22 +301,19 @@ return [
             'default_tax_rate' => 'डिफॉल्ट कर दर',
             'default_tax_rate_description' => 'महत्वपूर्ण: यह तब लागू होगा जब उत्पाद में कोई कर चयनित नहीं है।',
             'select_tax' => '-- चुनें --',
-            'display_product_price_including_taxes' => 'प्रदर्शित मूल्यों में कर जोड़ें',
-            'display_product_price_including_taxes_helper' => 'स्टोर में प्रदर्शित उत्पाद मूल्यों में स्वचालित रूप से कर जोड़ें। उदा. $100 उत्पाद 10% कर के साथ $110 के रूप में प्रदर्शित होगा। व्यक्तिगत उत्पादों पर "मूल्य में कर शामिल है" पहले से सक्षम होने पर आवश्यक नहीं।',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'कर सहित उत्पाद मूल्य प्रदर्शित करें',
         ],
     ],
     'customer' => [
         'name' => 'ग्राहक',
-        'description' => 'पंजीकरण, ईमेल सत्यापन, लॉगिन विकल्प, खाता हटाना और प्रोफ़ाइल फ़ील्ड',
+        'description' => 'अपनी ग्राहक सेटिंग्स देखें और अपडेट करें',
         'customer_setting' => 'ग्राहक सेटिंग्स',
         'customer_setting_description' => 'ग्राहक सेटिंग्स कॉन्फ़िगर करें',
         'form' => [
             'enable_customer_registration' => 'ग्राहक पंजीकरण सक्षम करें',
             'enable_customer_registration_helper' => 'यदि निष्क्रिय किया जाता है, ग्राहक नए खाते पंजीकृत नहीं कर पाएंगे। मौजूदा ग्राहक अभी भी लॉगिन कर सकते हैं।',
-            'verify_customer_email' => 'ग्राहक का ईमेल वेरिफाई करें',
-            'verify_customer_email_helper' => 'जब यह सक्षम होता है, ग्राहक के ईमेल पर एक वेरिफिकेशन लिंक भेजा जाएगा, ग्राहकों को लॉगिन करने से पहले अपना ईमेल वेरिफाई करने के लिए इस लिंक पर क्लिक करना होगा। ईमेल वेरिफिकेशन भेजने के लिए Admin -> Settings -> Email में ईमेल कॉन्फ़िगर करने की आवश्यकता है।',
+            'verify_customer_email' => "ग्राहक का ईमेल वेरिफाई करें",
+            'verify_customer_email_helper' => "जब यह सक्षम होता है, ग्राहक के ईमेल पर एक वेरिफिकेशन लिंक भेजा जाएगा, ग्राहकों को लॉगिन करने से पहले अपना ईमेल वेरिफाई करने के लिए इस लिंक पर क्लिक करना होगा। ईमेल वेरिफिकेशन भेजने के लिए Admin -> Settings -> Email में ईमेल कॉन्फ़िगर करने की आवश्यकता है।",
             'verification_expire_minutes' => 'वेरिफिकेशन लिंक समाप्ति समय',
             'verification_expire_minutes_helper' => 'मिनटों में समय जिसके लिए ईमेल वेरिफिकेशन लिंक वैध होगा। डिफॉल्ट 60 मिनट (1 घंटा) है। अधिकतम 10080 मिनट (7 दिन) है।',
             'login_using_phone' => 'ईमेल के बजाय फोन नंबर से साइन इन करें',
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'शिपिंग',
-        'description' => 'शिपिंग नियम, मुफ्त शिपिंग व्यवहार और शिपिंग विकल्प प्रदर्शन क्रम',
+        'description' => 'शिपिंग सेटिंग्स देखें और अपडेट करें',
         'shipping_rule' => 'शिपिंग नियम',
         'shipping_rule_description' => 'शिपिंग फीस की गणना के लिए नियम कॉन्फ़िगर करें',
         'shipping_setting' => 'शिपिंग सेटिंग्स',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'लोकेशन सेव करें',
             'add_new' => 'नया जोड़ें',
         ],
-            'info' => [
-            'title' => 'स्टोर लोकेटर कैसे काम करते हैं',
-            'primary_store' => 'प्राथमिक स्टोर का पता चालान पर दिखाई देता है और शिपिंग लेबल के लिए डिफ़ॉल्ट रिटर्न पते के रूप में उपयोग किया जाता है।',
-            'shipping_location' => '"शिपिंग स्थान" के रूप में चिह्नित स्टोर को शिपमेंट बनाते समय मूल गोदाम के रूप में चुना जा सकता है।',
-            'shipment_selection' => 'ऑर्डर की प्रक्रिया करते समय, आप इन्वेंटरी और ग्राहक स्थान के आधार पर चुन सकते हैं कि किस गोदाम से भेजना है।',
-        ],
     ],
     'tracking' => [
         'name' => 'ट्रैकिंग',
-        'description' => 'Facebook Pixel, Google Tag Manager इवेंट और Google Ads रूपांतरण ट्रैकिंग',
+        'description' => 'ट्रैकिंग सेटिंग्स देखें और अपडेट करें',
         'manage_tracking' => 'ट्रैकिंग प्रबंधित करें',
         'manage_tracking_description' => 'ट्रैकिंग प्रबंधित करें: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -440,11 +427,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'मार्केटप्लेस',
-        'description' => 'मल्टी-वेंडर सेटिंग्स, कमीशन, वेंडर पंजीकरण और पेआउट कॉन्फ़िगरेशन',
+        'description' => 'मार्केटप्लेस सेटिंग्स देखें और अपडेट करें',
     ],
     'standard_and_format' => [
         'name' => 'स्टैंडर्ड और फॉर्मेट',
-        'panel_description' => 'ऑर्डर कोड फॉर्मेट, वजन इकाइयां (kg/lb) और आयाम इकाइयां (cm/inch)',
+        'panel_description' => 'स्टैंडर्ड और फॉर्मेट सेटिंग्स देखें और अपडेट करें',
         'description' => 'स्टैंडर्ड और फॉर्मेट का उपयोग उत्पाद मूल्य, शिपिंग वजन और ऑर्डर टाइम जैसी चीजों की गणना के लिए किया जाता है।',
         'form' => [
             'change_order_format' => 'ऑर्डर कोड फॉर्मेट संपादित करें (वैकल्पिक)',
@@ -476,63 +463,7 @@ return [
         'show_sale_count_left_description' => 'फ्लैश सेल के दौरान तुरंत खरीदारी को प्रोत्साहित करने के लिए "Y में से X बिक गया" के साथ प्रोग्रेस बार दिखाएं।',
     ],
     'payment_method_cod_minimum_amount' => 'न्यूनतम ऑर्डर राशि - :currency (वैकल्पिक)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'न्यूनतम ऑर्डर राशि - :currency (वैकल्पिक)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'चेकआउट सफलता पेज पर बैंक जानकारी प्रदर्शित करें?',
     'invoice_templates' => 'इनवॉइस टेम्प्लेट',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

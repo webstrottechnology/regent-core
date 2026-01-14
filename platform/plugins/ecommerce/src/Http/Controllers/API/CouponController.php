@@ -56,7 +56,7 @@ class CouponController extends BaseApiController
 
         if ($result['error']) {
             if ($cartId) {
-                Cart::instance('cart')->updateOrStore($cartId);
+                Cart::instance('cart')->store($cartId);
             }
 
             $response = $this
@@ -90,7 +90,7 @@ class CouponController extends BaseApiController
 
         // Store the cart to save changes
         if ($cartId) {
-            Cart::instance('cart')->updateOrStore($cartId);
+            Cart::instance('cart')->store($cartId);
         }
 
         // Get updated cart data
@@ -150,7 +150,7 @@ class CouponController extends BaseApiController
 
         if (! $couponCode) {
             if ($cartId) {
-                Cart::instance('cart')->updateOrStore($cartId);
+                Cart::instance('cart')->store($cartId);
             }
 
             return $this
@@ -185,7 +185,7 @@ class CouponController extends BaseApiController
 
         // Step 6: Store the updated cart
         if ($cartId) {
-            Cart::instance('cart')->updateOrStore($cartId);
+            Cart::instance('cart')->store($cartId);
         }
 
         // Get updated cart data

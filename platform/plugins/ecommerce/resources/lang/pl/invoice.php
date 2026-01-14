@@ -47,5 +47,4 @@ return [
         'completed' => 'Zakończone',
         'canceled' => 'Anulowane',
     ],
-    'back_to_invoices' => 'Powrót do faktur',
 ];

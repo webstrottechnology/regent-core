@@ -1,17 +1,15 @@
 @extends('packages/theme::errors.master')
 
-@section('title', trans('packages/theme::theme.errors.404_page_not_found'))
+@section('title', __('404 Page Not Found'))
 
 @section('content')
     <div class="empty">
         <div class="empty-header">404</div>
-        <p class="empty-title">{{ trans('packages/theme::theme.errors.page_not_found') }}</p>
+        <p class="empty-title">{{ __('Page could not be found') }}</p>
         <p class="empty-subtitle text-secondary">
-            {{ trans('packages/theme::theme.errors.page_not_found_description') }}
+            {{ __('The page you are looking for could not be found.') }}
         </p>
-        <p class="empty-subtitle text-secondary">{!! BaseHelper::clean(
-            trans('packages/theme::theme.errors.page_not_found_back_home', ['link' => BaseHelper::getHomepageUrl()]),
-        ) !!}</p>
+        <p class="empty-subtitle text-secondary">{!! BaseHelper::clean(__('Please try again in a few minutes, or alternatively return to the homepage by <a href=":link">clicking here</a>.', ['link' => BaseHelper::getHomepageUrl()])) !!}</p>
         <div class="empty-action">
             <x-core::button
                 tag="a"
@@ -19,7 +17,7 @@
                 color="primary"
                 icon="ti ti-arrow-left"
             >
-                {{ trans('packages/theme::theme.common.take_me_home') }}
+                {{ __('Take me home') }}
             </x-core::button>
         </div>
     </div>

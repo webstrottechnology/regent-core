@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Oblasti widgetov',
     'manage_widgets' => 'Spravovať widgety',
 
-    'click_to_add' => 'Kliknite pre pridanie widgetu',
-    'select_sidebar' => 'Pridať widget',
-    'select_sidebar_description' => 'Vyberte, kam chcete tento widget pridať',
-    'adding_to' => 'Pridávanie do',
-    'add_widget' => 'Pridať widget',
-    'widget_not_found' => 'Widget nebol nájdený',
-
     'cache_suggestion' => [
         'title' => 'Odporúčanie pre výkon',
         'description' => 'Výkon svojho webu môžete zlepšiť povolením ukladania widgetov do vyrovnávacej pamäte.',
@@ -52,22 +45,4 @@ return [
     'widget_site_copyright_description' => 'Text autorských práv v spodnej päte.',
     'widget_site_copyright_helper' => 'Prejdite na :link na zmenu textu autorských práv.',
     'theme_options' => 'Možnosti témy',
-
-    'form' => [
-        'enable_caching' => 'Povoliť vyrovnávaciu pamäť',
-        'yes' => 'Áno',
-        'no' => 'Nie',
-        'cache_helper' => 'Keď je povolené, obsah tohto widgetu bude uložený vo vyrovnávacej pamäti pre zlepšenie výkonu.',
-        'cache_warning' => 'Kvôli problémom s UI je vyrovnávacia pamäť pre tento widget zakázaná cez kód.',
-    ],
-
-    'drag_or_click' => 'Pretiahnite do bočného panela alebo kliknite na + pre pridanie',
-    'drop_widgets_here' => 'Pustite widgety do oblastí bočného panela',
-    'search_widgets' => 'Hľadať widgety...',
-    'no_widgets' => 'Žiadne dostupné widgety',
-    'no_search_results' => 'Widgety neboli nájdené',
-    'or_click_add' => 'Alebo kliknite na tlačidlo + na widgete pre pridanie',
-    'toggle_widget' => 'Prepnúť nastavenia widgetu',
-    'loading_form' => 'Načítavam formulár widgetu...',
-
 ];

@@ -33,12 +33,6 @@ return [
     'widget_areas' => 'Zones de widgets',
     'manage_widgets' => 'Gérer les widgets',
 
-    'click_to_add' => 'Cliquez pour ajouter un widget',
-    'select_sidebar' => 'Ajouter un widget',
-    'select_sidebar_description' => 'Choisissez où ajouter ce widget',
-    'adding_to' => 'Ajout à',
-    'add_widget' => 'Ajouter un widget',
-    'widget_not_found' => 'Widget non trouvé',
     'cache_suggestion' => [
         'title' => 'Suggestion de performance',
         'description' => 'Vous pouvez améliorer les performances de votre site en activant la mise en cache des widgets.',
@@ -46,24 +40,9 @@ return [
         'enable_button' => 'Activer la mise en cache des widgets',
         'dismiss_button' => 'Ignorer pendant une semaine',
     ],
+
     'widget_site_copyright' => 'Copyright du site',
     'widget_site_copyright_description' => 'Texte de copyright dans le pied de page inférieur.',
     'widget_site_copyright_helper' => 'Allez à :link pour modifier le texte de copyright.',
     'theme_options' => 'Options du thème',
-    'form' => [
-        'enable_caching' => 'Activer la mise en cache',
-        'yes' => 'Oui',
-        'no' => 'Non',
-        'cache_helper' => 'Lorsqu\'elle est activée, le contenu de ce widget sera mis en cache pour améliorer les performances. Désactivez pour le contenu dynamique qui change fréquemment.',
-        'cache_warning' => 'En raison de problèmes d\'interface utilisateur, le cache pour ce widget est désactivé via le code. Ce widget ne sera pas mis en cache même si la mise en cache est activée.',
-    ],
-
-    'drag_or_click' => 'Glissez vers la barre latérale ou cliquez + pour ajouter',
-    'drop_widgets_here' => 'Déposez les widgets dans vos zones de barre latérale',
-    'search_widgets' => 'Rechercher des widgets...',
-    'no_widgets' => 'Aucun widget disponible',
-    'no_search_results' => 'Aucun widget trouvé',
-    'or_click_add' => 'Ou cliquez sur le bouton + sur un widget pour l\'ajouter',
-    'toggle_widget' => 'Basculer les paramètres du widget',
-    'loading_form' => 'Chargement du formulaire du widget...',
 ];

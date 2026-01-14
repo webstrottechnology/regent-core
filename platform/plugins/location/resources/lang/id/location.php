@@ -3,7 +3,6 @@
 return [
     'name' => 'Lokasi',
     'all_states' => 'Semua negara bagian',
-    'slug' => 'Slug',
     'abbreviation' => 'Singkatan',
     'abbreviation_placeholder' => 'Contoh: CA',
     'import_type' => [

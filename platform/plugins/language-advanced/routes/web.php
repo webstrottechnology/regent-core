@@ -18,6 +18,7 @@ AdminHelper::registerRoutes(function (): void {
         ])->wherePrimaryKey();
     });
 
+    // Base route for translation imports and exports
     Route::prefix('tools/data-synchronize')->name('tools.data-synchronize.')->group(function (): void {
         Route::prefix('import')->name('import.')->group(function (): void {
             Route::group(['prefix' => 'translations/{type}', 'as' => 'translations.', 'permission' => 'translations.import'], function (): void {

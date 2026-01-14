@@ -191,9 +191,6 @@ return [
         'sender' => 'Mittente',
         'order_date' => 'Data ordine',
         'scan_qr_code' => 'Scansiona il codice QR per tracciare la tua spedizione',
-        'total_amount' => 'Importo totale',
-        'cod_amount_to_collect' => 'Importo contrassegno da riscuotere',
     ],
     'customer_confirmed_delivery_at' => 'Cliente ha confermato la consegna alle',
-    'no_shipping_methods_available' => 'Nessun metodo di spedizione disponibile!',
 ];

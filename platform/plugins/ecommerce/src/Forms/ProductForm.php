@@ -5,7 +5,6 @@ namespace Botble\Ecommerce\Forms;
 use Botble\Base\Facades\Assets;
 use Botble\Base\Facades\Html;
 use Botble\Base\Forms\FieldOptions\ContentFieldOption;
-use Botble\Base\Forms\FieldOptions\DatePickerFieldOption;
 use Botble\Base\Forms\FieldOptions\EditorFieldOption;
 use Botble\Base\Forms\FieldOptions\MediaImageFieldOption;
 use Botble\Base\Forms\FieldOptions\NameFieldOption;
@@ -13,7 +12,6 @@ use Botble\Base\Forms\FieldOptions\NumberFieldOption;
 use Botble\Base\Forms\FieldOptions\OnOffFieldOption;
 use Botble\Base\Forms\FieldOptions\SelectFieldOption;
 use Botble\Base\Forms\FieldOptions\StatusFieldOption;
-use Botble\Base\Forms\Fields\DatePickerField;
 use Botble\Base\Forms\Fields\EditorField;
 use Botble\Base\Forms\Fields\MediaImageField;
 use Botble\Base\Forms\Fields\MediaImagesField;
@@ -53,7 +51,7 @@ class ProductForm extends FormAbstract
 
         $productCollections = ProductCollection::query()->pluck('name', 'id')->all();
 
-        $productLabels = ProductLabel::query()->wherePublished()->pluck('name', 'id')->all();
+        $productLabels = ProductLabel::query()->pluck('name', 'id')->all();
 
         $productId = null;
         $selectedCategories = [];
@@ -118,12 +116,11 @@ class ProductForm extends FormAbstract
                     ->defaultValue(false)
             )
             ->add(
-                'is_new_until',
-                DatePickerField::class,
-                DatePickerFieldOption::make()
-                    ->label(trans('plugins/ecommerce::products.form.is_new_until'))
-                    ->helperText(trans('plugins/ecommerce::products.form.is_new_until_helper'))
-                    ->defaultValue(null)
+                'is_pmd_product',
+                OnOffField::class,
+                OnOffFieldOption::make()
+                    ->label('Visible only to PMD Users')
+                    ->defaultValue($this->getModel()->is_pmd_product ?? 0)
             )
             ->add(
                 'categories[]',

@@ -4,9 +4,7 @@ namespace Botble\Ecommerce\Models;
 
 use Botble\Base\Casts\SafeContent;
 use Botble\Base\Models\BaseModel;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Str;
 
 class AbandonedCart extends BaseModel
 {
@@ -24,12 +22,6 @@ class AbandonedCart extends BaseModel
         'abandoned_at',
         'reminder_sent_at',
         'reminders_sent',
-        'last_email_sequence',
-        'recovery_token',
-        'coupon_code',
-        'clicked_at',
-        'unsubscribe_token',
-        'unsubscribed_at',
         'is_recovered',
         'recovered_at',
         'recovered_order_id',
@@ -42,9 +34,6 @@ class AbandonedCart extends BaseModel
         'abandoned_at' => 'datetime',
         'reminder_sent_at' => 'datetime',
         'reminders_sent' => 'integer',
-        'last_email_sequence' => 'integer',
-        'clicked_at' => 'datetime',
-        'unsubscribed_at' => 'datetime',
         'is_recovered' => 'boolean',
         'recovered_at' => 'datetime',
         'customer_name' => SafeContent::class,
@@ -52,21 +41,11 @@ class AbandonedCart extends BaseModel
         'phone' => SafeContent::class,
     ];
 
-    protected static function boot(): void
+    protected static function boot()
     {
         parent::boot();
 
-        static::creating(function (self $model): void {
-            if (! $model->recovery_token) {
-                $model->recovery_token = Str::random(64);
-            }
-
-            if (! $model->unsubscribe_token) {
-                $model->unsubscribe_token = Str::random(64);
-            }
-        });
-
-        static::saving(function (self $model): void {
+        static::saving(function ($model): void {
             if ($model->customer_id && ! Customer::query()->where('id', $model->customer_id)->exists()) {
                 $model->customer_id = null;
             }
@@ -87,36 +66,21 @@ class AbandonedCart extends BaseModel
         return $this->belongsTo(Order::class, 'recovered_order_id');
     }
 
-    public function scopeAbandoned(Builder $query): Builder
+    public function scopeAbandoned($query)
     {
         return $query->where('is_recovered', false)
             ->whereNotNull('abandoned_at');
     }
 
-    public function scopeNotReminded(Builder $query): Builder
+    public function scopeNotReminded($query)
     {
         return $query->whereNull('reminder_sent_at');
     }
 
-    public function scopeCanSendReminder(Builder $query, int $hoursAfterAbandonment = 1): Builder
+    public function scopeCanSendReminder($query, int $hoursAfterAbandonment = 1)
     {
         return $query->abandoned()
             ->where('abandoned_at', '<=', now()->subHours($hoursAfterAbandonment));
-    }
-
-    public function scopeNeedsSequenceEmail(Builder $query, int $sequence, int $hoursDelay): Builder
-    {
-        return $query
-            ->abandoned()
-            ->whereNotNull('email')
-            ->where('last_email_sequence', '<', $sequence)
-            ->where('abandoned_at', '<=', now()->subHours($hoursDelay))
-            ->where('abandoned_at', '>=', now()->subDays(30));
-    }
-
-    public function scopeNotExpired(Builder $query, int $days = 30): Builder
-    {
-        return $query->where('abandoned_at', '>=', now()->subDays($days));
     }
 
     public function markAsRecovered(Order $order): void
@@ -136,34 +100,13 @@ class AbandonedCart extends BaseModel
         ]);
     }
 
-    public function updateEmailSequence(int $sequence): void
-    {
-        $this->update([
-            'last_email_sequence' => $sequence,
-            'reminder_sent_at' => now(),
-            'reminders_sent' => $this->reminders_sent + 1,
-        ]);
-    }
-
-    public function markAsClicked(): void
-    {
-        if (! $this->clicked_at) {
-            $this->update(['clicked_at' => now()]);
-        }
-    }
-
-    public function isExpired(int $days = 30): bool
-    {
-        return $this->abandoned_at && $this->abandoned_at->lt(now()->subDays($days));
-    }
-
     public function getCartItems(): array
     {
         $items = [];
         $cartData = $this->cart_data ?? [];
 
         foreach ($cartData as $item) {
-            $product = Product::query()->find($item['id'] ?? null);
+            $product = Product::find($item['id'] ?? null);
             if ($product) {
                 $items[] = [
                     'product' => $product,

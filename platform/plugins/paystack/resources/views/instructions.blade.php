@@ -5,18 +5,18 @@
                 href="https://paystack.com"
                 target="_blank"
             >
-                {{ trans('plugins/paystack::paystack.register_account', ['name' => 'Paystack']) }}
+                {{ __('Register an account on :name', ['name' => 'Paystack']) }}
             </a>
         </p>
     </li>
     <li>
         <p>
-            {{ trans('plugins/paystack::paystack.after_registration', ['name' => 'Paystack']) }}
+            {{ __('After registration at :name, you will have Public & Secret keys', ['name' => 'Paystack']) }}
         </p>
     </li>
     <li>
         <p>
-            {{ trans('plugins/paystack::paystack.enter_keys') }}
+            {{ __('Enter Public, Secret into the box in right hand') }}
         </p>
     </li>
 </ol>

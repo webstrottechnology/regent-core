@@ -203,20 +203,6 @@ Route::group(['namespace' => 'Botble\Setting\Http\Controllers'], function (): vo
                     'permission' => 'settings.email.rules',
                 ]);
             });
-
-            Route::prefix('phone-number')->name('phone-number.')->group(function (): void {
-                Route::get('/', [
-                    'as' => 'index',
-                    'uses' => 'PhoneNumberSettingController@edit',
-                    'permission' => 'settings.phone-number',
-                ]);
-
-                Route::put('/', [
-                    'as' => 'update',
-                    'uses' => 'PhoneNumberSettingController@update',
-                    'permission' => 'settings.phone-number',
-                ]);
-            });
         });
     });
 });

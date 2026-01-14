@@ -69,7 +69,7 @@ class FacebookLoginController extends BaseApiController
 
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.facebook_not_configured'))
+                    ->setMessage(__('Facebook authentication is not properly configured'))
                     ->toApiResponse();
             }
 
@@ -78,7 +78,7 @@ class FacebookLoginController extends BaseApiController
             if (! $facebookUserData) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.invalid_facebook_token'))
+                    ->setMessage(__('Invalid Facebook token'))
                     ->toApiResponse();
             }
 
@@ -88,7 +88,7 @@ class FacebookLoginController extends BaseApiController
             if (! $email || ! $facebookId) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.no_email_or_facebook_id'))
+                    ->setMessage(__('Cannot login, no email or Facebook ID provided!'))
                     ->toApiResponse();
             }
 
@@ -97,7 +97,7 @@ class FacebookLoginController extends BaseApiController
             if (! $providerData) {
                 return $this->httpResponse()
                     ->setError()
-                    ->setMessage(trans('plugins/social-login::social-login.invalid_guard_configuration'))
+                    ->setMessage(__('Invalid guard configuration'))
                     ->toApiResponse();
             }
 
@@ -151,7 +151,7 @@ class FacebookLoginController extends BaseApiController
                         'email' => $account->email,
                     ],
                 ])
-                ->setMessage(trans('plugins/social-login::social-login.login_successful'))
+                ->setMessage(__('Login successful'))
                 ->toApiResponse();
 
         } catch (ValidationException $e) {
@@ -175,7 +175,7 @@ class FacebookLoginController extends BaseApiController
 
             return $this->httpResponse()
                 ->setError()
-                ->setMessage(trans('plugins/social-login::social-login.facebook_token_invalid'))
+                ->setMessage(__('Facebook token invalid'))
                 ->toApiResponse();
         }
     }

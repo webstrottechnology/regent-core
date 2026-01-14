@@ -44,8 +44,6 @@ return [
     'alt_text' => 'Alternatyvus tekstas',
 
     'folder_created' => 'Aplankas sėkmingai sukurtas!',
-    'folder_exists' => 'Aplankas :folder jau egzistuoja!',
-    'directory_must_empty' => 'Katalogas turi būti tuščias, kad būtų ištrintas!',
     'gallery' => 'Medijos galerija',
 
     'trash_error' => 'Klaida trinant pasirinktus elementus',

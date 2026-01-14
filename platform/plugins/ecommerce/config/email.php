@@ -183,59 +183,6 @@ return [
                 'order_note' => 'plugins/ecommerce::ecommerce.order_note',
                 'order_id' => 'plugins/ecommerce::ecommerce.order_id',
                 'order_token' => 'plugins/ecommerce::ecommerce.order_token',
-                'order_recover_url' => 'plugins/ecommerce::ecommerce.order_recover_url',
-            ],
-        ],
-        'abandoned_cart_reminder' => [
-            'title' => 'plugins/ecommerce::email.abandoned_cart_reminder_title',
-            'description' => 'plugins/ecommerce::email.abandoned_cart_reminder_description',
-            'subject' => 'plugins/ecommerce::email.abandoned_cart_reminder_subject',
-            'can_off' => true,
-            'variables' => [
-                'customer_name' => 'plugins/ecommerce::ecommerce.customer_name',
-                'product_list' => 'plugins/ecommerce::ecommerce.product_list',
-                'cart_total' => 'plugins/ecommerce::ecommerce.cart_total',
-                'cart_recover_url' => 'plugins/ecommerce::ecommerce.cart_recover_url',
-                'unsubscribe_url' => 'plugins/ecommerce::ecommerce.unsubscribe_url',
-            ],
-        ],
-        'abandoned_cart_reminder_1' => [
-            'title' => 'plugins/ecommerce::email.abandoned_cart_reminder_1_title',
-            'description' => 'plugins/ecommerce::email.abandoned_cart_reminder_1_description',
-            'subject' => 'plugins/ecommerce::email.abandoned_cart_reminder_1_subject',
-            'can_off' => true,
-            'variables' => [
-                'customer_name' => 'plugins/ecommerce::ecommerce.customer_name',
-                'product_list' => 'plugins/ecommerce::ecommerce.product_list',
-                'cart_total' => 'plugins/ecommerce::ecommerce.cart_total',
-                'cart_recover_url' => 'plugins/ecommerce::ecommerce.cart_recover_url',
-                'unsubscribe_url' => 'plugins/ecommerce::ecommerce.unsubscribe_url',
-            ],
-        ],
-        'abandoned_cart_reminder_2' => [
-            'title' => 'plugins/ecommerce::email.abandoned_cart_reminder_2_title',
-            'description' => 'plugins/ecommerce::email.abandoned_cart_reminder_2_description',
-            'subject' => 'plugins/ecommerce::email.abandoned_cart_reminder_2_subject',
-            'can_off' => true,
-            'variables' => [
-                'customer_name' => 'plugins/ecommerce::ecommerce.customer_name',
-                'product_list' => 'plugins/ecommerce::ecommerce.product_list',
-                'cart_total' => 'plugins/ecommerce::ecommerce.cart_total',
-                'cart_recover_url' => 'plugins/ecommerce::ecommerce.cart_recover_url',
-                'unsubscribe_url' => 'plugins/ecommerce::ecommerce.unsubscribe_url',
-            ],
-        ],
-        'abandoned_cart_reminder_3' => [
-            'title' => 'plugins/ecommerce::email.abandoned_cart_reminder_3_title',
-            'description' => 'plugins/ecommerce::email.abandoned_cart_reminder_3_description',
-            'subject' => 'plugins/ecommerce::email.abandoned_cart_reminder_3_subject',
-            'can_off' => true,
-            'variables' => [
-                'customer_name' => 'plugins/ecommerce::ecommerce.customer_name',
-                'product_list' => 'plugins/ecommerce::ecommerce.product_list',
-                'cart_total' => 'plugins/ecommerce::ecommerce.cart_total',
-                'cart_recover_url' => 'plugins/ecommerce::ecommerce.cart_recover_url',
-                'unsubscribe_url' => 'plugins/ecommerce::ecommerce.unsubscribe_url',
             ],
         ],
         'order-return-request' => [
@@ -275,7 +222,6 @@ return [
             'variables' => [
                 'customer_name' => 'plugins/ecommerce::ecommerce.customer_name',
                 'product_review_list' => 'plugins/ecommerce::ecommerce.product_review_list',
-                'order_id' => 'plugins/ecommerce::ecommerce.order_id',
             ],
         ],
         'download_digital_products' => [

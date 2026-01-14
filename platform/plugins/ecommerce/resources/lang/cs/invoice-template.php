@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Město zákazníka',
         'customer_zipcode' => 'PSČ zákazníka',
     ],
-    'custom_css' => 'Vlastní CSS',
-    'custom_css_helper' => 'Přidejte vlastní CSS styly pro přizpůsobení vzhledu faktury. Tyto styly budou připojeny k výchozím stylům faktury.',
     'reset_success' => 'Úspěšně obnoveno na výchozí hodnoty',
     'confirm_reset' => 'Potvrdit obnovení šablony faktury?',
     'confirm_message' => 'Opravdu chcete obnovit tuto šablonu faktury na výchozí?',

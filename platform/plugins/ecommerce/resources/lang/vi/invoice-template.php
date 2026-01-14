@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Thành phố khách hàng',
         'customer_zipcode' => 'Mã bưu điện khách hàng',
     ],
-    'custom_css' => 'CSS tùy chỉnh',
-    'custom_css_helper' => 'Thêm các kiểu CSS tùy chỉnh để tùy chỉnh giao diện hóa đơn. Các kiểu này sẽ được thêm vào các kiểu hóa đơn mặc định.',
     'reset_success' => 'Khôi phục về mặc định thành công',
     'confirm_reset' => 'Xác nhận khôi phục mẫu hóa đơn?',
     'confirm_message' => 'Bạn có thật sự muốn khôi phục mẫu hóa đơn này về mặc định?',

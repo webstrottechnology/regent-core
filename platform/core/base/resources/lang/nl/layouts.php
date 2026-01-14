@@ -10,7 +10,7 @@ return [
     'setting_email' => 'Email',
     'system_information' => 'Systeem informatie',
     'theme' => 'Thema',
-    'copyright' => 'Auteursrecht :year © :company. Versie :version',
+    'copyright' => 'Copyright :year © :company. Versie: <span>:version</span>',
     'profile' => 'Profile',
     'logout' => 'Uitloggen',
     'no_search_result' => 'Geen resultaat gevonden, probeer met ander zoektermen.',

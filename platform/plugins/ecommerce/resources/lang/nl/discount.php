@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Onbeperkte coupon?',
     'enter_number' => 'Voer nummer in',
     'coupon_type' => 'Coupon type',
-    'discount_type' => 'Kortingstype',
     'percentage_discount' => 'Percentage korting (%)',
     'free_shipping' => 'Gratis verzending',
     'same_price' => 'Zelfde prijs',
     'apply_for' => 'toepassen voor',
-    'apply_to' => 'Toepassen op',
     'all_orders' => 'Alle bestellingen',
     'order_amount_from' => 'Bestelbedrag vanaf',
     'product_collection' => 'Product collectie',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Deze coupon kan niet toegepast worden omdat uw winkelwagen flash sale items bevat (:product_name). Flash sale prijzen kunnen niet gecombineerd worden met couponkortingen.',
     'coupon_applied_successfully' => 'Geweldig! Couponcode ":code" is toegepast. U heeft geld bespaard op deze bestelling!',
     'coupon_removed_successfully' => 'De couponcode is verwijderd van uw bestelling.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Couponcodes (:count)',
-    'left_quantity' => 'Nog :left',
-    'apply' => 'Toepassen',
-    'remove' => 'Verwijderen',
-    'select_coupon' => 'Selecteer coupon',
-    'you_have_coupon_code' => 'Heeft u een couponcode?',
-    'close' => 'Sluiten',
-    'coupon_code_label' => 'Couponcode: :code',
-    'enter_coupon_code_placeholder' => 'Voer couponcode in...',
 ];

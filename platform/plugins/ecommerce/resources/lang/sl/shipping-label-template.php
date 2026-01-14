@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'CSS po meri',
-    'custom_css_helper' => 'Dodajte sloge CSS po meri za prilagoditev videza nalepke za pošiljanje. Ti slogi bodo dodani privzetim slogom nalepke za pošiljanje.',
     'reset_success' => 'Uspešno ponastavljeno na privzeto',
     'confirm_reset' => 'Potrdite ponastavitev predloge nalepke za pošiljanje?',
     'confirm_message' => 'Ali res želite ponastaviti to predlogo nalepke za pošiljanje na privzeto?',

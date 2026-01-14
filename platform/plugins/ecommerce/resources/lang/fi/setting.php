@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'Verkkokauppa',
     'general' => [
         'name' => 'Yleinen',
-        'description' => 'Kaupan nimi, yritystiedot, yhteystiedot ja ylläpitäjän ilmoitussähköpostit',
+        'description' => 'Näytä ja päivitä yleiset asetukset',
     ],
     'currency' => [
         'name' => 'Valuutat',
-        'description' => 'Valuuttamuodot, valuuttakurssit, automaattinen tunnistus ja desimaali-/tuhaterotin',
+        'description' => 'Näytä ja päivitä valuutta-asetukset',
         'currency_setting_description' => 'Näytä ja päivitä verkkosivustolla käytettävät valuutat',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Ota käyttöön kävijän valuutan automaattinen tunnistus',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Tuotteet',
-        'description' => 'Varastonäyttö, SKU-generointi, varianttikuvat, liittyvät tuotteet ja tekniset tiedot',
+        'description' => 'Näytä ja päivitä tuoteasetukset',
         'product_settings' => 'Tuoteasetukset',
         'product_settings_description' => 'Määritä säännöt tuotteille',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Tuotehaku',
-        'description' => 'Hakukäyttäytyminen, suodattimet kategorian/brändin/tunnisteen/ominaisuuksien mukaan ja hintahaarukkasuodatus',
+        'description' => 'Näytä ja päivitä tuotehakuasetukset',
         'product_search_settings' => 'Tuotehaku',
         'product_search_settings_description' => 'Määritä säännöt tuotehaulle',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Digitaaliset tuotteet',
-        'description' => 'Ladattavat tuotteet, lisenssikoodit, vieraskassa digitaalisille tuotteille ja automaattinen viimeistely',
+        'description' => 'Näytä ja päivitä digitaalisten tuotteiden asetukset',
         'digital_products_settings' => 'Digitaaliset tuotteet',
         'digital_products_settings_description' => 'Määritä säännöt digitaalisille tuotteille',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Tuotearvostelut',
-        'description' => 'Asiakasarvostelut, arvostelujen näyttö, kuvien lataus ja hyväksyntävaatimukset',
+        'description' => 'Näytä ja päivitä tuotearvosteluasetukset',
         'form' => [
             'enable_review' => 'Ota käyttöön tuotearvostelut',
             'enable_review_help' => 'Salli asiakkaiden jättää arvosteluja ja arvioita tuotteista. Kun tämä on pois käytöstä, kaikki arvosteluominaisuudet piilotetaan kaupasta.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Ostokset',
-        'description' => 'Ostoskori, toivelista, vertailu, tilausseuranta, pikaoston painike ja maksutodistuksen lataus',
+        'description' => 'Näytä ja päivitä ostoskorin asetukset',
         'general_setting' => 'Yleiset asetukset',
         'return_settings' => 'Palautusasetukset',
         'return_settings_description' => 'Määritä säännöt palautusasetuksille',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Ostoskori tuhotaan, kun asiakas kirjautuu ulos.',
             'hide_product_price' => 'Piilota tuotteen hinta',
             'hide_product_price_helper' => 'Tämä vaihtoehto toimii vain, jos poistat ostoskorin käytöstä, muuttaen sivustosi vain luettelonäytöksi. Jos tämä on käytössä, tuotteen hinta piilotetaan. Se on hyödyllinen, kun haluat piilottaa hinnan ja vaatia asiakkaita ottamaan yhteyttä hintaa varten.',
-            'hide_product_price_when_zero' => 'Piilota tuotteen hinta, kun se on nolla',
-            'hide_product_price_when_zero_helper' => 'Jos käytössä, hinnaltaan 0 oleville tuotteille ei näytetä hintaa kaupassa.',
             'enable_payment_proof' => 'Ota käyttöön maksutodistuksen lataus',
             'enable_payment_proof_helper' => 'Salli asiakkaiden ladata maksutodistus tilauksistaan. Tämä on hyödyllinen manuaalisille maksutavoille.',
             'enable_guest_payment_proof' => 'Salli vierasasiakkaiden ladata maksutodistus',
             'enable_guest_payment_proof_helper' => 'Kun tämä on käytössä, vierasasiakkaat voivat ladata maksutodistuksen käyttäen tilaustunnustaan kirjautumatta sisään. He saavat lataamislinkin tilausvahvistussähköpostissaan.',
-            'payment_proof_payment_methods' => 'Maksutavat, jotka edellyttävät maksutodistusta',
-            'payment_proof_payment_methods_helper' => 'Valitse, mitkä maksutavat sallivat asiakkaiden ladata maksutodistuksen. Tyypillisesti käytetään manuaalisiin maksutapoihin, kuten postiennakko ja pankkisiirto.',
         ],
     ],
     'checkout' => [
         'name' => 'Kassa',
-        'panel_description' => 'Vieraskassa, pakolliset kentät, tilausrajat, ehtojen hyväksyntä ja maarajoitukset',
+        'panel_description' => 'Näytä ja päivitä kassaasetukset',
         'description' => 'Määritä säännöt kassaasetuksille',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Näytä pankkitiedot tilauksen onnistunut-sivulla',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Palautus',
         'description' => 'Määritä säännöt palautusasetuksille',
-        'panel_description' => 'Tilauspalautukset, osittaiset palautukset ja palautusajat',
+        'panel_description' => 'Näytä ja päivitä palautusasetukset',
         'form' => [
             'is_enabled_order_return' => 'Ota käyttöön tilauksen palautus',
             'allow_partial_return' => 'Salli osittainen palautus',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Laskut',
-        'description' => 'Yritystiedot laskuilla, laskujen numerointi, PDF-fontit ja leimasinaasetukset',
+        'description' => 'Näytä ja päivitä laskuasetukset',
         'company_settings' => 'Yrityksen asetukset',
         'company_settings_description' => 'Asetukset Yrityksen tiedot laskutusta varten',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Oletusveroaste',
             'default_tax_rate_description' => 'Tärkeää: sitä sovelletaan, jos tuotteessa ei ole valittua veroa.',
             'select_tax' => '-- Valitse --',
-            'display_product_price_including_taxes' => 'Lisää vero näytettäviin hintoihin',
-            'display_product_price_including_taxes_helper' => 'Lisää automaattisesti vero kaupassa näytettäviin tuotehintoihin. Esim. $100 tuote 10% verolla näytetään $110. Ei tarvita, jos "Hinta sisältää veron" on jo käytössä yksittäisissä tuotteissa.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Näytä tuotteen hinta sisältäen verot',
         ],
     ],
     'customer' => [
         'name' => 'Asiakkaat',
-        'description' => 'Rekisteröityminen, sähköpostivarmistus, kirjautumisvaihtoehdot, tilin poisto ja profiilikendet',
+        'description' => 'Näytä ja päivitä asiakasasetukset',
         'customer_setting' => 'Asiakasasetukset',
         'customer_setting_description' => 'Määritä asiakasasetukset',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Toimitus',
-        'description' => 'Toimitussäännöt, ilmaisen toimituksen käyttäytyminen ja toimitusvaihtoehdojen näyttöjärjestys',
+        'description' => 'Näytä ja päivitä toimitusasetukset',
         'shipping_rule' => 'Toimitussäännöt',
         'shipping_rule_description' => 'Määritä säännöt toimitusmaksun laskemiseen',
         'shipping_setting' => 'Toimitusasetukset',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Tallenna sijainti',
             'add_new' => 'Lisää uusi',
         ],
-            'info' => [
-            'title' => 'Kuinka myymäläetsintä toimii',
-            'primary_store' => 'Pääliikkeen osoite näkyy laskuissa ja sitä käytetään lähetysetikettien oletuspalautusosoitteena.',
-            'shipping_location' => 'Myymälät, jotka on merkitty "lähetyssijainniksi", voidaan valita lähtövarastoksi lähetyksiä luotaessa.',
-            'shipment_selection' => 'Tilauksia käsiteltäessä voit valita, mistä varastosta lähetetään varaston ja asiakkaan sijainnin perusteella.',
-        ],
     ],
     'tracking' => [
         'name' => 'Seuranta',
-        'description' => 'Facebook Pixel, Google Tag Manager tapahtumat ja Google Ads konversioseuranta',
+        'description' => 'Näytä ja päivitä seuranta-asetukset',
         'manage_tracking' => 'Hallinnoi seurantaa',
         'manage_tracking_description' => 'Hallinnoi seurantaa: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Kauppapaikka',
-        'description' => 'Monen myyjän asetukset, palkkiot, myyjärekisteröinti ja maksukonfiguraatio',
+        'description' => 'Näytä ja päivitä kauppapaikan asetukset',
     ],
     'standard_and_format' => [
         'name' => 'Standardit ja muodot',
-        'panel_description' => 'Tilauskoodin muoto, painoyksiköt (kg/lb) ja mittayksiköt (cm/tuuma)',
+        'panel_description' => 'Näytä ja päivitä standardien ja muotojen asetukset',
         'description' => 'Standardeja ja muotoja käytetään asioiden kuten tuotteiden hintojen, toimituksen painojen ja tilausaikojen laskemiseen.',
         'form' => [
             'change_order_format' => 'Muokkaa tilauskoodimuotoa (valinnainen)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Näytä edistymispalkki "X myyty Y:stä" luodaksesi kiireellisyyden tunteen ja kannustaaksesi nopeisiin ostoihin salamakauppojen aikana.',
     ],
     'payment_method_cod_minimum_amount' => 'Tilauksen vähimmäissumma - :currency (Valinnainen)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Tilauksen vähimmäissumma - :currency (Valinnainen)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Näytä pankkitiedot tilauksen onnistunut-sivulla?',
     'invoice_templates' => 'Laskupohjat',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

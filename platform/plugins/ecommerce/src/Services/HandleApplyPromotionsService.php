@@ -131,9 +131,7 @@ class HandleApplyPromotionsService
 
                                 break;
                             case DiscountTargetEnum::ALL_ORDERS:
-                                if ($countCart >= $promotion->product_quantity) {
-                                    $promotionDiscountAmount += $promotion->value;
-                                }
+                                $promotionDiscountAmount += $promotion->value;
 
                                 break;
                             case DiscountTargetEnum::SPECIFIC_PRODUCT:
@@ -226,9 +224,7 @@ class HandleApplyPromotionsService
 
                                 break;
                             case DiscountTargetEnum::ALL_ORDERS:
-                                if ($countCart >= $promotion->product_quantity) {
-                                    $promotionDiscountAmount += $rawTotal * $promotion->value / 100;
-                                }
+                                $promotionDiscountAmount += $rawTotal * $promotion->value / 100;
 
                                 break;
                             case DiscountTargetEnum::SPECIFIC_PRODUCT:

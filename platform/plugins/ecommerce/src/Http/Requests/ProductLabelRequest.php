@@ -12,8 +12,7 @@ class ProductLabelRequest extends Request
     {
         return [
             'name' => ['required', 'string', 'max:250'],
-            'color' => ['required', 'string', 'min:4', 'max:20'],
-            'text_color' => ['nullable', 'string', 'min:4', 'max:20'],
+            'color' => ['required', 'string'],
             'status' => Rule::in(BaseStatusEnum::values()),
         ];
     }

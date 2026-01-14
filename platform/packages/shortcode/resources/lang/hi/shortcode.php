@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI ब्लॉक',
     'search' => 'खोजें...',
     'no_shortcode_found' => 'कोई शॉर्टकोड नहीं मिला।',
-    'shortcode_not_available' => 'शॉर्टकोड ":name" उपलब्ध नहीं है या हटा दिया गया है।',
 
     'cache_suggestion' => [
         'title' => 'प्रदर्शन सुझाव',

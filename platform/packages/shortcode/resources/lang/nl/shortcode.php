@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI-blokken',
     'search' => 'Zoeken...',
     'no_shortcode_found' => 'Geen shortcode gevonden.',
-    'shortcode_not_available' => 'Shortcode ":name" is niet beschikbaar of is verwijderd.',
 
     'cache_suggestion' => [
         'title' => 'Prestatievoorstel',

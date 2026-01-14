@@ -23,6 +23,7 @@ return [
         'activated' => 'Aktivovaný',
         'locked' => 'Zablokovaný',
     ],
+    'email_verified' => 'Email overený?',
     'verify_email' => [
         'confirm_heading' => 'Potvrdenie overenia emailu',
         'confirm_description' => 'Naozaj chcete overiť email tohto zákazníka?',
@@ -30,6 +31,7 @@ return [
         'approve_here' => 'kliknite tu',
         'confirm_button' => 'Overiť',
     ],
+    'email_already_verified' => 'Email je už overený.',
     'verification_email_sent' => 'Overovací email bol úspešne odoslaný!',
     'resend_verification_email' => 'Znovu odoslať overovací email',
     'resend_verification_email_confirmation' => 'Naozaj chcete znovu odoslať overovací email tomuto zákazníkovi?',

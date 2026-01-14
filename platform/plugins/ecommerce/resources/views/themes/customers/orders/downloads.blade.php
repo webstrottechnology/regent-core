@@ -3,9 +3,8 @@
 @section('title', SeoHelper::getTitle())
 
 @section('content')
-    <div class="bb-customer-content-wrapper">
-        @if($orderProducts->isNotEmpty())
-            <div class="bb-customer-card-list">
+    @if($orderProducts->isNotEmpty())
+        <div class="bb-customer-card-list">
             @foreach ($orderProducts as $orderProduct)
                 @php
                     $product = get_products([
@@ -35,11 +34,11 @@
                 <div class="bb-customer-card">
                     <div class="bb-customer-card-header">
                         <div class="bb-customer-card-title">
-                            <span class="value">{{ trans('plugins/ecommerce::customer-dashboard.digital_product') }}</span>
+                            <span class="value">{{ __('Digital Product') }}</span>
                         </div>
                         @if ($hasDigitalFiles)
                             <div class="bb-customer-card-status">
-                                <span>{{ trans('plugins/ecommerce::customer-dashboard.downloaded') }}: {{ $orderProduct->times_downloaded }} {{ trans('plugins/ecommerce::customer-dashboard.times') }}</span>
+                                <span>{{ __('Downloaded') }}: {{ $orderProduct->times_downloaded }} {{ __('times') }}</span>
                             </div>
                         @endif
                     </div>
@@ -79,10 +78,10 @@
                                     @endif
 
                                     @if (is_plugin_active('marketplace') && ($product = $orderProduct->product) && $product->original_product->store?->id)
-                                        <span class="d-block">{{ trans('plugins/ecommerce::customer-dashboard.sold_by') }}: <a href="{{ $product->original_product->store->url }}" class="text-primary">{{ $product->original_product->store->name }}</a></span>
+                                        <span class="d-block">{{ __('Sold by') }}: <a href="{{ $product->original_product->store->url }}" class="text-primary">{{ $product->original_product->store->name }}</a></span>
                                     @endif
 
-                                    <span class="d-block">{{ trans('plugins/ecommerce::customer-dashboard.ordered_at') }}: {{ $orderProduct->created_at->translatedFormat('M d, Y h:m') }}</span>
+                                    <span class="d-block">{{ __('Ordered at') }}: {{ $orderProduct->created_at->translatedFormat('M d, Y h:m') }}</span>
                                 </div>
 
                                 @include(
@@ -119,9 +118,9 @@
                                                                     class="btn btn-sm btn-outline-secondary ms-2"
                                                                     data-ecommerce-clipboard
                                                                     data-clipboard-text="{{ $code }}"
-                                                                    data-clipboard-message="{{ trans('plugins/ecommerce::customer-dashboard.license_code_copied') }}">
+                                                                    data-clipboard-message="{{ __('License code copied!') }}">
                                                                 <x-core::icon name="ti ti-copy" />
-                                                                {{ trans('plugins/ecommerce::customer-dashboard.copy') }}
+                                                                {{ __('Copy') }}
                                                             </button>
                                                         </div>
                                                     @endforeach
@@ -132,9 +131,9 @@
                                                         class="btn btn-sm btn-outline-secondary ms-2"
                                                         data-ecommerce-clipboard
                                                         data-clipboard-text="{{ $licenseCodes[0] ?? $orderProduct->license_code }}"
-                                                        data-clipboard-message="{{ trans('plugins/ecommerce::customer-dashboard.license_code_copied') }}">
+                                                        data-clipboard-message="{{ __('License code copied!') }}">
                                                     <x-core::icon name="ti ti-copy" />
-                                                    {{ trans('plugins/ecommerce::customer-dashboard.copy') }}
+                                                    {{ __('Copy') }}
                                                 </button>
                                             @endif
                                         </div>
@@ -151,7 +150,7 @@
                                     href="{{ route('customer.downloads.product', $orderProduct->id) }}"
                                 >
                                     <x-core::icon name="ti ti-download" class="me-1" />
-                                    <span>{{ trans('plugins/ecommerce::customer-dashboard.download_all_files') }}</span>
+                                    <span>{{ __('Download all files') }}</span>
                                 </a>
                             @endif
                             @if ($orderProduct->product_file_external_count)
@@ -160,23 +159,22 @@
                                     href="{{ route('customer.downloads.product', [$orderProduct->id, 'external' => true]) }}"
                                 >
                                     <x-core::icon name="ti ti-link" class="me-1" />
-                                    <span>{{ trans('plugins/ecommerce::customer-dashboard.external_link_downloads') }}</span>
+                                    <span>{{ __('External link downloads') }}</span>
                                 </a>
                             @endif
                         </div>
                     @endif
                 </div>
             @endforeach
-            </div>
+        </div>
 
-            <div class="tp-pagination">
-                {!! $orderProducts->links() !!}
-            </div>
-        @else
-            @include(EcommerceHelper::viewPath('customers.partials.empty-state'), [
-                'title' => trans('plugins/ecommerce::customer-dashboard.no_digital_products'),
-                'subtitle' => trans('plugins/ecommerce::customer-dashboard.no_digital_products_description'),
-            ])
-        @endif
-    </div>
+        <div class="tp-pagination">
+            {!! $orderProducts->links() !!}
+        </div>
+    @else
+        @include(EcommerceHelper::viewPath('customers.partials.empty-state'), [
+            'title' => __('No digital products!'),
+            'subtitle' => __('You have not purchased any digital products yet.'),
+        ])
+    @endif
 @stop

@@ -32,11 +32,7 @@ class VINFO extends RedisCommand
     public function parseResponse($data): ?array
     {
         if (!is_null($data)) {
-            if ($data === array_values($data)) {
-                return CommandUtility::arrayToDictionary($data);
-            } else {
-                return $data; // Relay
-            }
+            return CommandUtility::arrayToDictionary($data);
         }
 
         return $data;

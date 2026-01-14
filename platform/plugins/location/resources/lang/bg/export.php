@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'name' => 'Експортер на местоположения',
+    'name' => 'Location Exporter',
 ];

@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => '無制限クーポン？',
     'enter_number' => '数字を入力',
     'coupon_type' => 'クーポンタイプ',
-    'discount_type' => '割引タイプ',
     'percentage_discount' => 'パーセント割引（%）',
     'free_shipping' => '送料無料',
     'same_price' => '同一価格',
     'apply_for' => '適用対象',
-    'apply_to' => '適用先',
     'all_orders' => 'すべての注文',
     'order_amount_from' => '注文金額の下限',
     'product_collection' => '商品コレクション',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'カートにフラッシュセール商品（:product_name）が含まれているため、このクーポンは適用できません。フラッシュセール価格はクーポン割引と組み合わせることはできません。',
     'coupon_applied_successfully' => '素晴らしい！クーポンコード":code"が適用されました。この注文でお金を節約できました！',
     'coupon_removed_successfully' => 'クーポンコードが注文から削除されました。',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'クーポンコード (:count)',
-    'left_quantity' => '残り :left',
-    'apply' => '適用',
-    'remove' => '削除',
-    'select_coupon' => 'クーポンを選択',
-    'you_have_coupon_code' => 'クーポンコードをお持ちですか？',
-    'close' => '閉じる',
-    'coupon_code_label' => 'クーポンコード: :code',
-    'enter_coupon_code_placeholder' => 'クーポンコードを入力...',
 ];

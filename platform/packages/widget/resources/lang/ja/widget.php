@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'ウィジェット領域',
     'manage_widgets' => 'ウィジェットの管理',
 
-    'click_to_add' => 'クリックしてウィジェットを追加',
-    'select_sidebar' => 'ウィジェットを追加',
-    'select_sidebar_description' => 'このウィジェットを追加する場所を選択',
-    'adding_to' => '追加先',
-    'add_widget' => 'ウィジェットを追加',
-    'widget_not_found' => 'ウィジェットが見つかりません',
-
     'cache_suggestion' => [
         'title' => 'パフォーマンスの提案',
         'description' => 'ウィジェットのキャッシュを有効にすることで、サイトのパフォーマンスを向上させることができます。',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'フッター下部の著作権テキスト。',
     'widget_site_copyright_helper' => '著作権テキストを変更するには :link にアクセスしてください。',
     'theme_options' => 'テーマオプション',
-
-    'form' => [
-        'enable_caching' => 'キャッシュを有効にする',
-        'yes' => 'はい',
-        'no' => 'いいえ',
-        'cache_helper' => '有効にすると、このウィジェットのコンテンツがキャッシュされ、パフォーマンスが向上します。頻繁に変更される動的コンテンツの場合は無効にしてください。',
-        'cache_warning' => 'UIの問題により、このウィジェットのキャッシュはコードで無効化されています。キャッシュが有効になっていても、このウィジェットはキャッシュされません。',
-    ],
-
-    'drag_or_click' => 'サイドバーにドラッグするか、+ をクリックして追加',
-    'drop_widgets_here' => 'サイドバー領域にウィジェットをドロップ',
-    'search_widgets' => 'ウィジェットを検索...',
-    'no_widgets' => '利用可能なウィジェットがありません',
-    'no_search_results' => 'ウィジェットが見つかりません',
-    'or_click_add' => 'または、ウィジェットの + ボタンをクリックして追加',
-    'toggle_widget' => 'ウィジェット設定を切り替え',
-    'loading_form' => 'ウィジェットフォームを読み込み中...',
 ];

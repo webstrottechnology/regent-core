@@ -12,7 +12,7 @@
 
 namespace Predis\Command\Redis;
 
-use Predis\Command\PrefixableCommand as RedisCommand;
+use Predis\Command\Command as RedisCommand;
 
 /**
  * @see https://redis.io/commands/?name=xgroup
@@ -77,12 +77,5 @@ class XGROUP extends RedisCommand
         }
 
         parent::setArguments($processedArguments);
-    }
-
-    public function prefixKeys($prefix)
-    {
-        $arguments = $this->getArguments();
-        $arguments[1] = $prefix . $arguments[1];
-        $this->setRawArguments($arguments);
     }
 }

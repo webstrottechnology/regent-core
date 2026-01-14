@@ -27,7 +27,7 @@ return [
         'default_value' => 'Valeur par défaut',
         'default_value_placeholder' => 'Saisir la valeur par défaut (optionnel)',
         'options' => [
-            'heading' => 'Options disponibles',
+            'heading' => 'Options',
 
             'add' => [
                 'label' => 'Ajouter une nouvelle option',
@@ -65,7 +65,7 @@ return [
 
     'product' => [
         'specification_table' => [
-            'options' => 'Options affichées',
+            'options' => 'Options',
             'title' => 'Tableau de spécifications',
             'select_none' => 'Aucun',
             'description' => 'Sélectionner le tableau de spécifications à afficher dans ce produit',

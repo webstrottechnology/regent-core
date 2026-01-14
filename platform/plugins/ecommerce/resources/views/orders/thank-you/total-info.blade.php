@@ -10,7 +10,7 @@
 @if ($order->sub_total != $order->amount)
     @include('plugins/ecommerce::orders.thank-you.total-row', [
         'label' => __('Subtotal'),
-        'value' => $order->sub_total == 0 ? trans('plugins/ecommerce::ecommerce.free') : format_price($order->sub_total),
+        'value' => format_price($order->sub_total),
     ])
 @endif
 
@@ -26,35 +26,28 @@
 @endif
 
 @if (EcommerceHelper::isTaxEnabled() && (float) $order->tax_amount)
-    @if (EcommerceHelper::isDisplayCheckoutTaxInformation())
-        @php
-            $taxGroups = [];
-            foreach ($order->products as $orderProduct) {
-                if ($orderProduct->tax_amount > 0 && !empty($orderProduct->options['taxClasses'])) {
-                    foreach ($orderProduct->options['taxClasses'] as $taxName => $taxRate) {
-                        $taxKey = $taxName . ' (' . $taxRate . '%)';
-                        if (!isset($taxGroups[$taxKey])) {
-                            $taxGroups[$taxKey] = 0;
-                        }
-                        $taxGroups[$taxKey] += $orderProduct->tax_amount;
+    @php
+        $taxGroups = [];
+        foreach ($order->products as $orderProduct) {
+            if ($orderProduct->tax_amount > 0 && !empty($orderProduct->options['taxClasses'])) {
+                foreach ($orderProduct->options['taxClasses'] as $taxName => $taxRate) {
+                    $taxKey = $taxName . ' (' . $taxRate . '%)';
+                    if (!isset($taxGroups[$taxKey])) {
+                        $taxGroups[$taxKey] = 0;
                     }
+                    $taxGroups[$taxKey] += $orderProduct->tax_amount;
                 }
             }
-        @endphp
+        }
+    @endphp
 
-        @if (!empty($taxGroups))
-            @foreach ($taxGroups as $taxName => $taxAmount)
-                @include('plugins/ecommerce::orders.thank-you.total-row', [
-                    'label' => __('Tax') . ' <small>(' . $taxName . ')</small>',
-                    'value' => format_price($taxAmount),
-                ])
-            @endforeach
-        @else
+    @if (!empty($taxGroups))
+        @foreach ($taxGroups as $taxName => $taxAmount)
             @include('plugins/ecommerce::orders.thank-you.total-row', [
-                'label' => __('Tax'),
-                'value' => format_price($order->tax_amount),
+                'label' => __('Tax') . ' <small>(' . $taxName . ')</small>',
+                'value' => format_price($taxAmount),
             ])
-        @endif
+        @endforeach
     @else
         @include('plugins/ecommerce::orders.thank-you.total-row', [
             'label' => __('Tax'),
@@ -85,12 +78,11 @@
 
 <hr class="border-dark-subtle" />
 
-@php($isOrderTotalFree = $order->amount == 0)
 <div class="row">
     <div class="col-6">
         <p>{{ __('Total') }}:</p>
     </div>
     <div class="col-6 float-end">
-        <p class="total-text raw-total-text"> {{ $isOrderTotalFree ? trans('plugins/ecommerce::ecommerce.free') : format_price($order->amount) }} </p>
+        <p class="total-text raw-total-text"> {{ format_price($order->amount) }} </p>
     </div>
 </div>

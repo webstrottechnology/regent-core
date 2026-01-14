@@ -1,24 +1,24 @@
 .handle-tool-drag {
-    background: var(--bb-bg-surface-secondary);
+    background: #f7f7f7;
     height: 20px;
     user-select: none;
     cursor: row-resize;
-    border: 1px solid var(--bb-border-color);
+    border: 1px solid #dddddd;
     line-height: 14px;
 
     &:before {
         content: '\2261';
-        color: var(--bb-secondary);
+        color: #999999;
         position: absolute;
         left: 50%;
         font-size: 20px;
     }
 
     &:hover {
-        background: var(--bb-bg-surface-tertiary, var(--bb-bg-surface));
+        background: #f0f0f0;
 
         &:before {
-            color: var(--bb-body-color);
+            color: #000000;
         }
     }
 }

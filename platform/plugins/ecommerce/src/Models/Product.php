@@ -18,7 +18,6 @@ use Botble\Ecommerce\Services\ProductCacheService;
 use Botble\Ecommerce\Services\Products\UpdateDefaultProductService;
 use Botble\Faq\Models\Faq;
 use Botble\Media\Facades\RvMedia;
-use Botble\Media\Models\MediaFile;
 use Botble\Slug\Facades\SlugHelper;
 use Botble\Theme\Supports\Vimeo;
 use Botble\Theme\Supports\Youtube;
@@ -85,7 +84,7 @@ class Product extends BaseModel
         'notify_attachment_updated',
         'specification_table_id',
         'slug',
-        'is_new_until',
+        'is_pmd_product',
     ];
 
     protected $appends = [
@@ -108,7 +107,6 @@ class Product extends BaseModel
         'minimum_order_quantity' => 'int',
         'maximum_order_quantity' => 'int',
         'is_featured' => 'bool',
-        'is_new_until' => 'date',
         'allow_checkout_when_out_of_stock' => 'bool',
         'with_storehouse_management' => 'bool',
         'price_includes_tax' => 'bool',
@@ -127,23 +125,17 @@ class Product extends BaseModel
         'variations_count' => 'int',
         'reviews_count' => 'int',
         'reviews_avg' => 'float',
+         'is_pmd_product' => 'bool',
     ];
 
     protected function url(): Attribute
     {
         return Attribute::get(function (): string {
-            if ($this->is_variation) {
-                return '';
+            if (! $this->slug && $this->slugable) {
+                $this->slug = $this->slugable->key;
             }
 
-            $slug = $this->slug;
-
-            if (! $slug && $this->slugable) {
-                $slug = $this->slugable->key;
-                $this->slug = $slug;
-            }
-
-            if (! $slug) {
+            if (! $this->slug) {
                 return BaseHelper::getHomepageUrl();
             }
 
@@ -153,7 +145,7 @@ class Product extends BaseModel
 
             return apply_filters(
                 'slug_filter_url',
-                url(ltrim($prefix . '/' . $slug, '/')) . SlugHelper::getPublicSingleEndingURL()
+                url(ltrim($prefix . '/' . $this->slug, '/')) . SlugHelper::getPublicSingleEndingURL()
             );
         });
     }
@@ -170,13 +162,6 @@ class Product extends BaseModel
         });
 
         static::deleted(function (Product $product): void {
-            if (get_ecommerce_setting('delete_product_images_when_deleting', true)) {
-                try {
-                    $product->deleteProductImages();
-                } catch (Exception) {
-                }
-            }
-
             $product->variations()->each(fn (ProductVariation $item) => $item->delete());
             $product->variationInfo()->delete();
             $product->categories()->detach();
@@ -206,6 +191,7 @@ class Product extends BaseModel
                 app(UpdateDefaultProductService::class)->execute($product);
             }
 
+            // Trigger quantity updated event if quantity, stock status, or storehouse management changed
             $quantityRelatedFields = ['quantity', 'stock_status', 'with_storehouse_management', 'allow_checkout_when_out_of_stock'];
             if ($product->wasChanged($quantityRelatedFields)) {
                 ProductQuantityUpdatedEvent::dispatch($product);
@@ -295,10 +281,6 @@ class Product extends BaseModel
 
     public function taxes(): BelongsToMany
     {
-        if (! $this->is_variation) {
-            return $this->belongsToMany(Tax::class, 'ec_tax_products')->with(['rules']);
-        }
-
         return $this->original_product->belongsToMany(Tax::class, 'ec_tax_products')->with(['rules']);
     }
 
@@ -537,19 +519,6 @@ class Product extends BaseModel
         return $this->quantity <= 0 && ! $this->allow_checkout_when_out_of_stock;
     }
 
-    public function isNew(?int $recentDays = null): bool
-    {
-        if ($this->is_new_until) {
-            return $this->is_new_until->isFuture() || $this->is_new_until->isToday();
-        }
-
-        if ($recentDays !== null && $recentDays > 0) {
-            return $this->created_at->diffInDays(Carbon::now()) <= $recentDays;
-        }
-
-        return false;
-    }
-
     public function canAddToCart(int $quantity): bool
     {
         if ($this->with_storehouse_management && $this->allow_checkout_when_out_of_stock) {
@@ -627,11 +596,7 @@ class Product extends BaseModel
                 ->where('status', BaseStatusEnum::PUBLISHED);
 
             if ($taxes->isEmpty() && $defaultTaxRate = get_ecommerce_setting('default_tax_rate')) {
-                return cache()->remember(
-                    'default_tax_percentage_' . $defaultTaxRate,
-                    6 * 60 * 60,
-                    fn () => Tax::query()->where('id', $defaultTaxRate)->value('percentage') ?: 0
-                );
+                return Tax::query()->where('id', $defaultTaxRate)->value('percentage') ?: 0;
             }
 
             return $taxes->sum('percentage');
@@ -831,46 +796,6 @@ class Product extends BaseModel
             });
     }
 
-    public function scopeSearchByKeyword(Builder $query, ?string $keyword, bool $includeVariations = true): Builder
-    {
-        if (! $keyword) {
-            return $query;
-        }
-
-        $keyword = '%' . $keyword . '%';
-
-        return $query
-            ->where(function ($query) use ($keyword, $includeVariations): void {
-                $query
-                    ->where(function ($query) use ($keyword): void {
-                        $query
-                            ->where('ec_products.name', 'LIKE', $keyword)
-                            ->where('is_variation', 0);
-                    })
-                    ->orWhere(function ($query) use ($keyword, $includeVariations): void {
-                        $query
-                            ->where('is_variation', 0)
-                            ->where(function ($query) use ($keyword, $includeVariations): void {
-                                $query
-                                    ->orWhere('ec_products.sku', 'LIKE', $keyword)
-                                    ->orWhere('ec_products.created_at', 'LIKE', $keyword)
-                                    ->when(
-                                        $includeVariations && in_array('sku', EcommerceHelper::getProductsSearchBy()),
-                                        function ($query) use ($keyword): void {
-                                            $query
-                                                ->orWhereHas(
-                                                    'variations.product',
-                                                    function ($query) use ($keyword): void {
-                                                        $query->where('sku', 'LIKE', $keyword);
-                                                    }
-                                                );
-                                        }
-                                    );
-                            });
-                    });
-            });
-    }
-
     public function options(): HasMany
     {
         return $this->hasMany(Option::class)->oldest('order');
@@ -997,8 +922,7 @@ class Product extends BaseModel
 
                     if (Youtube::isYoutubeURL($url)) {
                         $data['provider'] = 'youtube';
-                        $data['url'] = Youtube::getYoutubeVideoEmbedURL($url);
-
+                        $data['url'] = Youtube::getYoutubeVideoEmbedURL($url) . '?enablejsapi=1&iv_load_policy=3&fs=0&rel=0&loop=1&start=1';
                         if (! $data['thumbnail']) {
                             $data['thumbnail'] = Youtube::getThumbnail($url);
                         }
@@ -1060,22 +984,12 @@ class Product extends BaseModel
                 return null;
             }
 
-            $taxes = $this->taxes;
-
-            if ($taxes->isEmpty() && $defaultTaxRate = get_ecommerce_setting('default_tax_rate')) {
-                $defaultTax = cache()->remember(
-                    'default_tax_' . $defaultTaxRate,
-                    6 * 60 * 60,
-                    fn () => Tax::query()->find($defaultTaxRate)
-                );
-
-                if ($defaultTax) {
-                    $taxes = collect([(object) [
-                        'title' => $defaultTax->title,
-                        'percentage' => $defaultTax->percentage,
-                    ]]);
-                }
-            }
+            $taxes = $this->taxes->isNotEmpty()
+                ? $this->taxes
+                : collect([(object) [
+                    'title' => get_ecommerce_setting('default_tax_rate') ? Tax::query()->find(get_ecommerce_setting('default_tax_rate'))->title : '',
+                    'percentage' => get_ecommerce_setting('default_tax_rate') ? Tax::query()->find(get_ecommerce_setting('default_tax_rate'))->percentage : 0,
+                ]]);
 
             $taxes = $taxes->filter(fn ($tax) => $tax->percentage > 0);
 
@@ -1086,9 +1000,9 @@ class Product extends BaseModel
             $taxNames = $taxes->map(fn ($tax) => $tax->title . ' ' . $tax->percentage . '%')->implode(' + ');
 
             if ($this->price_includes_tax || EcommerceHelper::isDisplayProductIncludingTaxes()) {
-                $description = __('Including :tax', ['tax' => $taxNames]);
+                $description =  __('Including :tax', ['tax' => $taxNames]);
             } else {
-                $description = __('Excluding :tax', ['tax' => $taxNames]);
+                $description =__('Excluding :tax', ['tax' => $taxNames]);
             }
 
             $description = str_replace('{{ tax_percentage }}', $this->total_taxes_percentage, $description);
@@ -1115,54 +1029,5 @@ class Product extends BaseModel
 
         $this->setAttribute('reviews_count', $count);
         $this->setAttribute('reviews_avg', $avg);
-    }
-
-    public function deleteProductImages(): void
-    {
-        $imageUrls = collect();
-
-        if ($this->getRawOriginal('image')) {
-            $imageUrls->push($this->getRawOriginal('image'));
-        }
-
-        $galleryImages = $this->getRawOriginal('images');
-        if ($galleryImages) {
-            $decoded = is_array($galleryImages) ? $galleryImages : json_decode($galleryImages, true);
-            if (is_array($decoded)) {
-                $imageUrls = $imageUrls->merge(array_filter($decoded));
-            }
-        }
-
-        if (! $this->is_variation) {
-            $variationProducts = self::query()
-                ->whereIn('id', $this->variations()->pluck('product_id'))
-                ->get(['image', 'images']);
-
-            foreach ($variationProducts as $variation) {
-                if ($variation->getRawOriginal('image')) {
-                    $imageUrls->push($variation->getRawOriginal('image'));
-                }
-
-                $variationGalleryImages = $variation->getRawOriginal('images');
-                if ($variationGalleryImages) {
-                    $decoded = is_array($variationGalleryImages) ? $variationGalleryImages : json_decode($variationGalleryImages, true);
-                    if (is_array($decoded)) {
-                        $imageUrls = $imageUrls->merge(array_filter($decoded));
-                    }
-                }
-            }
-        }
-
-        $imageUrls = $imageUrls->unique()->filter()->values();
-
-        if ($imageUrls->isEmpty()) {
-            return;
-        }
-
-        MediaFile::query()
-            ->withoutGlobalScopes()
-            ->whereIn('url', $imageUrls->all())
-            ->get()
-            ->each(fn (MediaFile $file) => $file->forceDelete());
     }
 }

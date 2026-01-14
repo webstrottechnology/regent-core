@@ -2,7 +2,7 @@
 
 return [
     'name' => 'Payments',
-    'description' => 'View payment transactions with status, amount, and refund history',
+    'description' => 'View and update your payments settings',
     'payment_method' => 'Payment methods',
     'view_payment' => 'View payment #',
     'charge_id' => 'Charge ID',

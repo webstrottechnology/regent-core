@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-commerce',
     'general' => [
         'name' => 'Geral',
-        'description' => 'Store name, company info, contact details, and admin notification emails',
+        'description' => 'Visualizar e atualizar suas configurações gerais',
     ],
     'currency' => [
         'name' => 'Moedas',
-        'description' => 'Currency formats, exchange rates, auto-detection, and decimal/thousands separators',
+        'description' => 'Visualizar e atualizar configurações de moeda',
         'currency_setting_description' => 'Visualizar e atualizar moedas usadas no site',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Habilitar detecção automática de moeda do visitante',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produtos',
-        'description' => 'Stock display, SKU generation, variation images, related products, and specifications',
+        'description' => 'Visualizar e atualizar as configurações dos seus produtos',
         'product_settings' => 'Configurações de produtos',
         'product_settings_description' => 'Configurar regras para produtos',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Pesquisa de Produtos',
-        'description' => 'Search behavior, filters by category/brand/tag/attributes, and price range filtering',
+        'description' => 'Visualizar e atualizar configurações de pesquisa de produtos',
         'product_search_settings' => 'Pesquisa de produtos',
         'product_search_settings_description' => 'Configurar regras para pesquisa de produtos',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Produtos Digitais',
-        'description' => 'Downloadable products, license codes, guest checkout for digital items, and auto-completion',
+        'description' => 'Visualizar e atualizar configurações de produtos digitais',
         'digital_products_settings' => 'Produtos digitais',
         'digital_products_settings_description' => 'Configurar regras para produtos digitais',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Avaliações de Produtos',
-        'description' => 'Customer reviews, ratings display, image uploads, and approval requirements',
+        'description' => 'Visualizar e atualizar suas configurações de avaliações de produtos',
         'form' => [
             'enable_review' => 'Habilitar avaliações de produtos',
             'enable_review_help' => 'Permitir que os clientes deixem avaliações e classificações nos produtos. Quando desabilitado, todos os recursos de avaliação serão ocultados da loja.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Compras',
-        'description' => 'Cart, wishlist, compare, order tracking, quick buy button, and payment proof uploads',
+        'description' => 'Visualizar e atualizar suas configurações de compras',
         'general_setting' => 'Configurações gerais',
         'return_settings' => 'Configurações de devolução',
         'return_settings_description' => 'Configurar regras para configurações de devolução',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'O carrinho será destruído quando o cliente sair.',
             'hide_product_price' => 'Ocultar preço do produto',
             'hide_product_price_helper' => 'Esta opção só funciona se você desabilitar o carrinho de compras, transformando seu site em uma exibição somente de catálogo. Se habilitado, o preço do produto será ocultado. É útil quando você deseja ocultar o preço e exigir que os clientes entrem em contato com você para obter o preço.',
-            'hide_product_price_when_zero' => 'Ocultar preço do produto quando for zero',
-            'hide_product_price_when_zero_helper' => 'Se habilitado, produtos com preço 0 não exibirão preço na loja.',
             'enable_payment_proof' => 'Habilitar upload de comprovante de pagamento',
             'enable_payment_proof_helper' => 'Permitir que os clientes façam upload do comprovante de pagamento de seus pedidos. Isso é útil para métodos de pagamento manual.',
             'enable_guest_payment_proof' => 'Permitir que clientes convidados façam upload de comprovante de pagamento',
             'enable_guest_payment_proof_helper' => 'Quando habilitado, clientes convidados podem fazer upload de comprovante de pagamento usando seu token de pedido sem fazer login. Eles receberão o link de upload em seu e-mail de confirmação de pedido.',
-            'payment_proof_payment_methods' => 'Métodos de pagamento que requerem comprovante de pagamento',
-            'payment_proof_payment_methods_helper' => 'Selecione quais métodos de pagamento devem permitir que os clientes enviem o comprovante de pagamento. Normalmente usado para métodos de pagamento manuais como pagamento na entrega e transferência bancária.',
         ],
     ],
     'checkout' => [
         'name' => 'Checkout',
-        'panel_description' => 'Guest checkout, required fields, order limits, terms acceptance, and country restrictions',
+        'panel_description' => 'Visualizar e atualizar configurações de checkout',
         'description' => 'Configurar regras para configurações de checkout',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Exibir informações bancárias na página de sucesso do checkout',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Devolução',
         'description' => 'Configurar regras para configurações de devolução',
-        'panel_description' => 'Order returns, partial returns, and return time limits',
+        'panel_description' => 'Visualizar e atualizar configurações de devolução',
         'form' => [
             'is_enabled_order_return' => 'Está habilitada a devolução de pedidos',
             'allow_partial_return' => 'Permitir devolução parcial',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Faturas',
-        'description' => 'Company details on invoices, invoice numbering, PDF fonts, and stamp settings',
+        'description' => 'Visualizar e atualizar suas configurações de faturas',
         'company_settings' => 'Configurações da empresa',
         'company_settings_description' => 'Configurar informações da empresa para faturamento',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Alíquota de imposto padrão',
             'default_tax_rate_description' => 'Importante: será aplicado se nenhum imposto for selecionado no produto.',
             'select_tax' => '-- Selecionar --',
-            'display_product_price_including_taxes' => 'Adicionar imposto aos preços exibidos',
-            'display_product_price_including_taxes_helper' => 'Adiciona automaticamente imposto aos preços dos produtos na loja. Ex.: um produto de $100 com 10% de imposto é exibido como $110. Não é necessário se "Preço inclui imposto" já estiver ativado em produtos individuais.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Exibir preço do produto incluindo impostos',
         ],
     ],
     'customer' => [
         'name' => 'Clientes',
-        'description' => 'Registration, email verification, login options, account deletion, and profile fields',
+        'description' => 'Visualizar e atualizar suas configurações de clientes',
         'customer_setting' => 'Configurações de clientes',
         'customer_setting_description' => 'Configurar configurações de clientes',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Envio',
-        'description' => 'Shipping rules, free shipping behavior, and shipping option display order',
+        'description' => 'Visualizar e atualizar configurações de envio',
         'shipping_rule' => 'Regras de envio',
         'shipping_rule_description' => 'Configurar regras para calcular taxa de envio',
         'shipping_setting' => 'Configurações de envio',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Salvar localização',
             'add_new' => 'Adicionar novo',
         ],
-            'info' => [
-            'title' => 'Como funcionam os localizadores de lojas',
-            'primary_store' => 'O endereço da loja principal aparece nas faturas e é usado como endereço de devolução padrão para etiquetas de envio.',
-            'shipping_location' => 'As lojas marcadas como "local de envio" podem ser selecionadas como armazém de origem ao criar remessas.',
-            'shipment_selection' => 'Ao processar pedidos, você pode escolher de qual armazém enviar com base no estoque e localização do cliente.',
-        ],
     ],
     'tracking' => [
         'name' => 'Rastreamento',
-        'description' => 'Facebook Pixel, Google Tag Manager events, and Google Ads conversion tracking',
+        'description' => 'Visualizar e atualizar configurações de rastreamento',
         'manage_tracking' => 'Gerenciar rastreamento',
         'manage_tracking_description' => 'Gerenciar rastreamento: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Marketplace',
-        'description' => 'Multi-vendor settings, commissions, vendor registration, and payout configuration',
+        'description' => 'Visualizar e atualizar configurações do marketplace',
     ],
     'standard_and_format' => [
         'name' => 'Padrão e Formato',
-        'panel_description' => 'Order code format, weight units (kg/lb), and dimension units (cm/inch)',
+        'panel_description' => 'Visualizar e atualizar configurações de padrão e formato',
         'description' => 'Padrões e formatos são usados para calcular coisas como preços de produtos, pesos de envio e horários de pedidos.',
         'form' => [
             'change_order_format' => 'Editar formato do código do pedido (opcional)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Mostrar uma barra de progresso com "X vendidos de Y" para criar urgência e incentivar compras rápidas durante ofertas relâmpago.',
     ],
     'payment_method_cod_minimum_amount' => 'Valor mínimo do pedido - :currency (Opcional)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Valor mínimo do pedido - :currency (Opcional)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Exibir informações bancárias na página de sucesso do checkout?',
     'invoice_templates' => 'Modelos de fatura',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

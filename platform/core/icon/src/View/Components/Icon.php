@@ -14,8 +14,7 @@ class Icon extends Component
 {
     public function __construct(
         public string $name,
-        public ?string $size = null,
-        public bool $noMargin = false
+        public ?string $size = null
     ) {
     }
 
@@ -24,7 +23,7 @@ class Icon extends Component
         return function (array $data): Htmlable {
             $attributes = $data['attributes']->getIterator()->getArrayCopy();
 
-            $class = trim(($this->size ? "icon-{$this->size}" : '') . ' ' . ($this->noMargin ? 'icon-no-margin' : '') . ' ' . ($attributes['class'] ?? ''));
+            $class = trim(($this->size ? "icon-{$this->size}" : '') . ' ' . ($attributes['class'] ?? ''));
             unset($attributes['class']);
 
             if (str_starts_with($this->name, 'ti ti-')) {

@@ -47,5 +47,4 @@ return [
         'completed' => 'הושלם',
         'canceled' => 'בוטל',
     ],
-    'back_to_invoices' => 'חזרה לחשבוניות',
 ];

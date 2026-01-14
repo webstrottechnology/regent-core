@@ -5,11 +5,11 @@ return [
     'ecommerce' => '电子商务',
     'general' => [
         'name' => '常规',
-        'description' => '店铺名称、公司信息、联系方式和管理员通知邮箱',
+        'description' => '查看和更新您的常规设置',
     ],
     'currency' => [
         'name' => '货币',
-        'description' => '货币格式、汇率、自动检测和小数/千位分隔符',
+        'description' => '查看和更新货币设置',
         'currency_setting_description' => '查看和更新网站使用的货币',
         'form' => [
             'enable_auto_detect_visitor_currency' => '启用自动检测访客货币',
@@ -34,7 +34,7 @@ return [
     ],
     'product' => [
         'name' => '产品',
-        'description' => '库存显示、SKU生成、变体图片、相关产品和规格',
+        'description' => '查看和更新您的产品设置',
         'product_settings' => '产品设置',
         'product_settings_description' => '配置产品规则',
         'form' => [
@@ -52,7 +52,7 @@ return [
     ],
     'shopping' => [
         'name' => '购物',
-        'description' => '购物车、心愿单、比较、订单跟踪、快速购买按钮和支付凭证上传',
+        'description' => '查看和更新您的购物设置',
         'form' => [
             'enable_cart' => '启用购物车',
             'enable_wishlist' => '启用愿望清单',
@@ -60,14 +60,11 @@ return [
             'enable_order_tracking' => '启用订单跟踪',
             'enable_quick_buy_button' => '启用快速购买按钮',
             'enable_order_auto_confirmed' => '自动确认订单',
-
-            'payment_proof_payment_methods' => '需要付款证明的付款方式',
-            'payment_proof_payment_methods_helper' => '选择哪些付款方式应允许客户上传付款证明。通常用于货到付款和银行转账等手动付款方式。',
         ],
     ],
     'checkout' => [
         'name' => '结账',
-        'panel_description' => '访客结账、必填字段、订单限制、条款接受和国家限制',
+        'panel_description' => '查看和更新结账设置',
         'description' => '配置结账设置规则',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => '在结账成功页面显示银行信息',
@@ -81,7 +78,7 @@ return [
     ],
     'customer' => [
         'name' => '客户',
-        'description' => '注册、邮箱验证、登录选项、账户删除和个人资料字段',
+        'description' => '查看和更新您的客户设置',
         'customer_setting' => '客户设置',
         'customer_setting_description' => '配置客户设置',
         'form' => [
@@ -93,7 +90,7 @@ return [
     ],
     'shipping' => [
         'name' => '配送',
-        'description' => '运费规则、免运费行为和运输选项显示顺序',
+        'description' => '查看和更新配送设置',
         'shipping_rule' => '配送规则',
         'shipping_rule_description' => '配置计算配送费的规则',
         'shipping_setting' => '配送设置',
@@ -106,16 +103,10 @@ return [
         'display_product_price_including_taxes' => '显示含税产品价格？',
         'tax_setting' => '税费设置',
         'tax_setting_description' => '配置税费设置',
-        'form' => [
-            'display_product_price_including_taxes' => '在显示价格中添加税费',
-            'display_product_price_including_taxes_helper' => '自动将税费添加到商店显示的产品价格中。例如：$100产品加10%税费显示为$110。如果单个产品已启用"价格包含税费"则不需要。',
-            'display_checkout_tax_information' => '在结账时在每个商品下显示税费信息',
-            'display_checkout_tax_information_helper' => '在结账页每个商品旁显示税费详情（例如："VAT 10%"）。',
-        ],
     ],
     'invoice' => [
         'name' => '发票',
-        'description' => '发票上的公司详情、发票编号、PDF字体和印章设置',
+        'description' => '查看和更新您的发票设置',
         'company_settings' => '公司设置',
         'company_settings_description' => '设置用于开票的公司信息',
         'form' => [
@@ -146,7 +137,7 @@ return [
     ],
     'standard_and_format' => [
         'name' => '标准和格式',
-        'panel_description' => '订单编码格式、重量单位（kg/lb）和尺寸单位（cm/inch）',
+        'panel_description' => '查看和更新标准和格式设置',
         'description' => '标准和格式用于计算产品价格、运输重量和订单时间等。',
         'form' => [
             'change_order_format' => '编辑订单代码格式（可选）',
@@ -157,63 +148,7 @@ return [
         ],
     ],
     'payment_method_cod_minimum_amount' => '最小订单金额 - :currency（可选）',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => '最小订单金额 - :currency（可选）',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => '在结账成功页面显示银行信息？',
     'invoice_templates' => '发票模板',
-
-    'abandoned_cart' => [
-        'name' => '购物车放弃',
-        'description' => '通过向购物车中留有商品的客户发送自动提醒来恢复丢失的销售',
-        'panel_description' => '为放弃购物车的客户设置自动提醒',
-        'how_it_works' => [
-            'title' => '工作原理',
-            'step1_title' => '客户添加商品',
-            'step1_description' => '客户将产品添加到购物车并提供电子邮件地址。',
-            'step2_title' => '购物车被放弃',
-            'step2_description' => '如果在设定时间内没有购买，购物车将被标记为已放弃。',
-            'step3_title' => '发送提醒邮件',
-            'step3_description' => '发送自动提醒邮件，鼓励客户完成购买。',
-            'step4_title' => '销售恢复',
-            'step4_description' => '客户返回完成订单，购物车被标记为已恢复。',
-        ],
-        'form' => [
-            'enable' => '启用购物车放弃跟踪',
-            'enable_helper' => '启用后，系统将跟踪放弃的购物车，并允许您向客户发送恢复邮件。',
-            'timing_section' => '时间设置',
-            'email_section' => '提醒邮件设置',
-            'cleanup_section' => '数据清理',
-            'time_threshold' => '时间阈值（小时）',
-            'time_threshold_helper' => '购物车在此小时数不活动后被视为已放弃。推荐：1-24小时。',
-            'send_email' => '发送恢复邮件',
-            'send_email_helper' => '自动向有放弃购物车的客户发送恢复邮件。',
-            'max_reminders' => '提醒邮件数量',
-            'max_reminders_helper' => '每个放弃购物车发送多少封提醒邮件。每封邮件可以在邮件模板中自定义。',
-            'email_delay' => '发送后（小时）',
-            'email_discount' => '折扣（%）',
-            'email_1_title' => '邮件 #1 - 友好提醒',
-            'email_1_description' => '第一封温和提醒，鼓励客户返回。',
-            'email_1_delay_helper' => '放弃购物车后发送第一封邮件的小时数。推荐：1-2小时。',
-            'email_2_title' => '邮件 #2 - 带激励',
-            'email_2_description' => '带有折扣优惠的第二封提醒，激励购买。',
-            'email_2_delay_helper' => '放弃购物车后发送第二封邮件的小时数。推荐：24小时。',
-            'email_2_discount_helper' => '此邮件提供的折扣百分比。设为0表示无折扣。',
-            'email_3_title' => '邮件 #3 - 最后机会',
-            'email_3_description' => '带有紧迫感和最佳优惠的最终提醒以促成销售。',
-            'email_3_delay_helper' => '放弃购物车后发送最后一封邮件的小时数。推荐：72小时。',
-            'email_3_discount_helper' => '最终折扣优惠。通常高于邮件#2。',
-            'cleanup_days' => '清理后（天）',
-            'cleanup_days_helper' => '自动删除超过此天数的放弃购物车记录。',
-            'cronjob_not_setup' => '<strong>Cronjob未配置！</strong>购物车放弃提醒需要正确配置的cronjob才能工作。<a href=":url">立即设置cronjob</a>。',
-            'cronjob_not_running' => '<strong>Cronjob未运行！</strong>cronjob似乎已停止。请检查您的服务器配置。<a href=":url">查看cronjob状态</a>。',
-            'cronjob_working' => '<strong>Cronjob正常运行！</strong>最后活动：:time。您的购物车放弃提醒将自动处理。',
-            'email_setup_warning' => '<strong>重要：</strong>确保您的邮件设置在<a href=":url">设置 → 邮件</a>中正确配置。在启用此功能之前发送测试邮件以验证一切正常。',
-        ],
-    ],
 ];

@@ -39,7 +39,4 @@ return [
         'product_listing' => 'პროდუქტების სია',
         'cart' => 'კალათა',
     ],
-    'purchased' => 'შეიძინა',
-    'verified' => 'დადასტურებული',
-    'quick_view' => 'სწრაფი ხედვა',
 ];

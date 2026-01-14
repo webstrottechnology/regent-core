@@ -4,7 +4,6 @@ namespace Botble\Razorpay\Services\Gateways;
 
 use Botble\Razorpay\Services\Abstracts\RazorpayPaymentAbstract;
 use Illuminate\Http\Request;
-use JetBrains\PhpStorm\NoReturn;
 
 class RazorpayPaymentService extends RazorpayPaymentAbstract
 {
@@ -26,7 +25,6 @@ class RazorpayPaymentService extends RazorpayPaymentAbstract
         return apply_filters('razorpay_order_notes', []);
     }
 
-    #[NoReturn]
     public function redirectToCheckoutPage(array $data): void
     {
         echo view('plugins/razorpay::form', [

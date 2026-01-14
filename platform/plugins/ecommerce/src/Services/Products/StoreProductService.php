@@ -185,7 +185,7 @@ class StoreProductService
 
             $product->specificationAttributes()->sync($specificationAttributes);
         } else {
-            $langCode = ProductSpecificationAttributeTranslation::getCurrentLanguageCode($refLang);
+            $langCode = $refLang;
             $specificationAttributes = $request->input('specification_attributes', []);
 
             foreach ($specificationAttributes as $attributeId => $attributeData) {
@@ -235,8 +235,8 @@ class StoreProductService
                     $productFiles->push(
                         $product->productFiles()->create($data)
                     );
-                } catch (Exception $exception) {
-                    info($exception->getMessage());
+                } catch (Exception $ex) {
+                    info($ex);
                 }
             }
         }

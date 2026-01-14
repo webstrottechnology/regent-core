@@ -4,7 +4,7 @@
         <div class="bb-customer-card-header">
             <h3 class="bb-customer-card-title h5 mb-0">
                 <x-core::icon name="ti ti-info-circle" class="me-2" />
-                {{ trans('plugins/ecommerce::order.order_information') }}
+                {{ __('Order Information') }}
             </h3>
         </div>
 
@@ -15,7 +15,7 @@
                         <div class="info-item mb-3">
                             <span class="label">
                                 <x-core::icon name="ti ti-hash" class="me-1" />
-                                {{ trans('plugins/ecommerce::order.order_number') }}
+                                {{ __('Order Number') }}
                             </span>
                             <span class="value fw-semibold">{{ $order->code }}</span>
                         </div>
@@ -23,7 +23,7 @@
                         <div class="info-item mb-3">
                             <span class="label">
                                 <x-core::icon name="ti ti-calendar" class="me-1" />
-                                {{ trans('plugins/ecommerce::order.order_date') }}
+                                {{ __('Order Date') }}
                             </span>
                             <span class="value">{{ $order->created_at->translatedFormat('M d, Y \a\t g:i A') }}</span>
                         </div>
@@ -35,7 +35,7 @@
                         <div class="info-item mb-3">
                             <span class="label">
                                 <x-core::icon name="ti ti-circle-check" class="me-1" />
-                                {{ trans('plugins/ecommerce::ecommerce.completed_at') }}
+                                {{ __('Completed At') }}
                             </span>
                             <span class="value">{{ $order->completed_at->translatedFormat('M d, Y \a\t g:i A') }}</span>
                         </div>
@@ -44,7 +44,7 @@
                             <div class="info-item mb-3">
                                 <span class="label">
                                     <x-core::icon name="ti ti-truck" class="me-1" />
-                                    {{ trans('plugins/ecommerce::order.shipment_status') }}
+                                    {{ __('Shipment Status') }}
                                 </span>
                                 <span class="value">
                                     {!! BaseHelper::clean($order->shipment->status->toHtml()) !!}
@@ -56,7 +56,7 @@
                             <div class="info-item mb-3">
                                 <span class="label">
                                     <x-core::icon name="ti ti-credit-card" class="me-1" />
-                                    {{ trans('plugins/ecommerce::order.payment_status') }}
+                                    {{ __('Payment Status') }}
                                 </span>
                                 <span class="value">
                                     {!! BaseHelper::clean($order->payment->status->toHtml()) !!}
@@ -74,7 +74,7 @@
         <div class="bb-customer-card-header">
             <h3 class="bb-customer-card-title h5 mb-0">
                 <x-core::icon name="ti ti-package-export" class="me-2" />
-                {{ trans('plugins/ecommerce::ecommerce.return_request_form') }}
+                {{ __('Return Request Form') }}
             </h3>
         </div>
 
@@ -89,12 +89,12 @@
                             <div class="form-group">
                                 <label class="form-label fw-semibold" for="reason">
                                     <x-core::icon name="ti ti-info-circle" class="me-1" />
-                                    {{ trans('plugins/ecommerce::order.return_reason') }}
+                                    {{ __('Return Reason') }}
                                     <span class="text-danger">*</span>
                                 </label>
                                 {!! Form::select('reason', array_filter(Botble\Ecommerce\Enums\OrderReturnReasonEnum::labels()), old('reason'), [
                                     'class' => 'order-return-reason-select form-select',
-                                    'placeholder' => trans('plugins/ecommerce::ecommerce.choose_reason'),
+                                    'placeholder' => __('Choose Reason'),
                                 ]) !!}
                             </div>
                         </div>
@@ -106,7 +106,7 @@
             <div class="products-selection-section">
                 <h6 class="section-title mb-3">
                     <x-core::icon name="ti ti-package" class="me-2" />
-                    {{ trans('plugins/ecommerce::products.select_products_to_return') }}
+                    {{ __('Select Products to Return') }}
                 </h6>
 
                 @php
@@ -166,7 +166,7 @@
                                                         <div class="return-product-sku mb-1">
                                                             <small class="text-muted">
                                                                 <x-core::icon name="ti ti-barcode" class="me-1" />
-                                                                {{ trans('plugins/ecommerce::products.sku') }}: {{ $sku }}
+                                                                {{ __('SKU') }}: {{ $sku }}
                                                             </small>
                                                         </div>
                                                     @endif
@@ -179,7 +179,7 @@
 
                                                     <div class="return-product-price">
                                                         <span class="fw-semibold text-primary">{{ format_price($orderProduct->price_with_tax) }}</span>
-                                                        <small class="text-muted">{{ trans('plugins/ecommerce::ecommerce.per_item') }}</small>
+                                                        <small class="text-muted">{{ __('per item') }}</small>
                                                     </div>
                                                 </div>
                                             </div>
@@ -191,7 +191,7 @@
                                                             <div class="col-6">
                                                                 <label class="form-label small fw-semibold">
                                                                     <x-core::icon name="ti ti-package" class="me-1" />
-                                                                    {{ trans('plugins/ecommerce::products.quantity') }}
+                                                                    {{ __('Quantity') }}
                                                                 </label>
                                                                 @php
                                                                     $qtyChooses = [];
@@ -215,7 +215,7 @@
                                                             <div class="col-6">
                                                                 <label class="form-label small fw-semibold">
                                                                     <x-core::icon name="ti ti-currency-dollar" class="me-1" />
-                                                                    {{ trans('plugins/ecommerce::order.refund_amount') }}
+                                                                    {{ __('Refund Amount') }}
                                                                 </label>
                                                                 <div class="form-control form-control-sm bg-light">
                                                                     <span class="return-amount fw-semibold text-success">
@@ -228,7 +228,7 @@
                                                         <div class="mb-2">
                                                             <label class="form-label small fw-semibold">
                                                                 <x-core::icon name="ti ti-info-circle" class="me-1" />
-                                                                {{ trans('plugins/ecommerce::order.return_reason') }}
+                                                                {{ __('Return Reason') }}
                                                                 <span class="text-danger">*</span>
                                                             </label>
                                                             {!! Form::select(
@@ -237,7 +237,7 @@
                                                                 old('return_items.' . $key . '.reason'),
                                                                 [
                                                                     'class' => 'form-select form-select-sm',
-                                                                    'placeholder' => trans('plugins/ecommerce::ecommerce.choose_reason'),
+                                                                    'placeholder' => __('Choose Reason'),
                                                                 ],
                                                             ) !!}
                                                         </div>
@@ -247,7 +247,7 @@
                                                                 <div class="info-item text-center">
                                                                     <span class="label">
                                                                         <x-core::icon name="ti ti-package" class="me-1" />
-                                                                        {{ trans('plugins/ecommerce::products.quantity') }}
+                                                                        {{ __('Quantity') }}
                                                                     </span>
                                                                     <span class="value fw-semibold">{{ $orderProduct->qty }}</span>
                                                                 </div>
@@ -256,7 +256,7 @@
                                                                 <div class="info-item text-center">
                                                                     <span class="label">
                                                                         <x-core::icon name="ti ti-currency-dollar" class="me-1" />
-                                                                        {{ trans('plugins/ecommerce::order.refund_amount') }}
+                                                                        {{ __('Refund Amount') }}
                                                                     </span>
                                                                     <span class="value fw-semibold text-success">
                                                                         {{ format_price($ratio == 0 ? 0 : $orderProduct->total_price_with_tax / $ratio) }}
@@ -282,17 +282,17 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="text-muted small">
                             <x-core::icon name="ti ti-info-circle" class="me-1" />
-                            {{ trans('plugins/ecommerce::review.please_review_your_selection_before_submitting_the') }}
+                            {{ __('Please review your selection before submitting the return request.') }}
                         </div>
                         <button type="submit" class="btn btn-danger">
                             <x-core::icon name="ti ti-send" class="me-1" />
-                            {{ trans('plugins/ecommerce::ecommerce.submit_return_request') }}
+                            {{ __('Submit Return Request') }}
                         </button>
                     </div>
                 @else
                     <div class="alert alert-warning mb-0">
                         <x-core::icon name="ti ti-alert-triangle" class="me-1" />
-                        {{ trans('plugins/ecommerce::order.this_order_cannot_be_returned_at_this_time') }}
+                        {{ __('This order cannot be returned at this time.') }}
                     </div>
                 @endif
             </div>

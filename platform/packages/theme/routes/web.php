@@ -108,7 +108,6 @@ Route::group(['namespace' => 'Botble\Theme\Http\Controllers'], function (): void
                     'as' => 'website-tracking.update',
                     'uses' => 'WebsiteTrackingSettingController@update',
                     'permission' => 'settings.website-tracking',
-                    'middleware' => 'preventDemo',
                 ]);
             });
         });

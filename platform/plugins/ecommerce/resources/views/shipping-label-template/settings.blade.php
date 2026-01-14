@@ -23,20 +23,6 @@
                 >
                 </x-core::twig-editor>
             </x-core::form-group>
-
-            <x-core::form-group>
-                <x-core::form.label for="shipping_label_template_custom_css">
-                    {{ trans('plugins/ecommerce::shipping-label-template.custom_css') }}
-                </x-core::form.label>
-                <x-core::form.code-editor
-                    name="shipping_label_template_custom_css"
-                    mode="css"
-                    :value="setting('shipping_label_template_custom_css')"
-                />
-                <x-core::form.helper-text>
-                    {{ trans('plugins/ecommerce::shipping-label-template.custom_css_helper') }}
-                </x-core::form.helper-text>
-            </x-core::form-group>
         </x-core-setting::section>
 
         <x-core-setting::section.action>
@@ -76,6 +62,6 @@
         :submit-button-label="trans('plugins/ecommerce::shipping-label-template.continue')"
         :submit-button-attrs="['id' => 'reset-template-to-default-button', 'data-target' => route('ecommerce.settings.shipping-label-template.reset')]"
     >
-        {!! BaseHelper::clean(trans('plugins/ecommerce::shipping-label-template.confirm_message')) !!}
+        {!! trans('plugins/ecommerce::shipping-label-template.confirm_message') !!}
     </x-core::modal.action>
 @endsection

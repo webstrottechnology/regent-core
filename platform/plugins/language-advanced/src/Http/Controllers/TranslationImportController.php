@@ -18,6 +18,7 @@ class TranslationImportController extends ImportController
 
     protected function getImporter(): Importer
     {
+        // If the type is 'model', we need to get the actual model class from the request
         if ($this->type === 'model') {
             $modelClass = request()->input('class');
             if ($modelClass) {

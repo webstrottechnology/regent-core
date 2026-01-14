@@ -121,36 +121,6 @@ class MainCheckout {
         const customerBillingAddressForm = '.customer-billing-address-form'
         const customerTaxInformationForm = '.customer-tax-information-form'
 
-        document.addEventListener('click', (event) => {
-            const button = event.target.closest('.payment-checkout-btn')
-            if (!button) return
-
-            const $agreeTerms = $checkoutForm.find('input[name="agree_terms_and_policy"]')
-
-            if ($agreeTerms.length && !$agreeTerms.is(':checked')) {
-                event.preventDefault()
-                event.stopImmediatePropagation()
-
-                const errorMessage = $agreeTerms.data('error-message') || 'You must agree to the terms and conditions.'
-                const $formCheck = $agreeTerms.closest('.form-check')
-                const $container = $agreeTerms.closest('.form-group, .mobile-checkout-footer__terms')
-
-                // Remove existing invalid-feedback to prevent duplicates
-                $container.find('.invalid-feedback').remove()
-                $agreeTerms.addClass('is-invalid')
-                $formCheck.after(`<div class="invalid-feedback">${errorMessage}</div>`)
-
-                $agreeTerms.one('change', function () {
-                    $(this).removeClass('is-invalid')
-                    $container.find('.invalid-feedback').remove()
-                })
-
-                document.dispatchEvent(new CustomEvent('checkout:validation-failed', {
-                    detail: { field: 'agree_terms_and_policy', message: errorMessage }
-                }))
-            }
-        }, true)
-
         const disablePaymentMethodsForm = () => {
             $('.payment-info-loading').show()
             $('.payment-checkout-btn').prop('disabled', true)
@@ -202,8 +172,6 @@ class MainCheckout {
                 formData.set(key, methods[key])
             }
 
-            document.dispatchEvent(new CustomEvent('checkout:shipping-calculating', { detail: { methods } }))
-
             $.ajax({
                 url: $checkoutForm.data('update-url'),
                 method: 'POST',
@@ -219,10 +187,12 @@ class MainCheckout {
                     $('[data-bb-toggle="checkout-payment-methods-area"]').html(data.payment_methods)
                     $('[data-bb-toggle="checkout-shipping-methods-area"]').html(data.shipping_methods)
 
+                    // Update checkout button status
                     if (data.checkout_button) {
                         $('.payment-checkout-btn, .payment-checkout-btn-step').replaceWith(data.checkout_button)
                     }
 
+                    // Update checkout warnings
                     if (data.checkout_warnings !== undefined) {
                         const $warningsContainer = $('.checkout-warnings')
                         if (data.checkout_warnings.trim() === '') {
@@ -231,12 +201,11 @@ class MainCheckout {
                             if ($warningsContainer.length) {
                                 $warningsContainer.replaceWith(data.checkout_warnings)
                             } else {
+                                // Insert warnings at the beginning of the form
                                 $checkoutForm.prepend(data.checkout_warnings)
                             }
                         }
                     }
-
-                    document.dispatchEvent(new CustomEvent('checkout:shipping-calculated', { detail: { data } }))
                 },
                 complete: () => {
                     enablePaymentMethodsForm()
@@ -247,9 +216,8 @@ class MainCheckout {
 
         $(document).on('change', 'input.shipping_method_input', (event) => {
             const data = {}
-            const $this = $(event.currentTarget)
 
-            if ($this.closest('.checkout-products-marketplace').length) {
+            if ($(event.currentTarget).closest('.checkout-products-marketplace').length) {
                 const shippingMethods = $(shippingForm).find('input.shipping_method_input')
 
                 if (shippingMethods.length) {
@@ -264,6 +232,7 @@ class MainCheckout {
                     })
                 }
             } else {
+                const $this = $(event.currentTarget)
                 $('input[name=shipping_option]').val($this.data('option'))
 
                 $('.mobile-total').text('...')
@@ -283,19 +252,13 @@ class MainCheckout {
                 }
             }
 
-            document.dispatchEvent(new CustomEvent('checkout:shipping-method-changed', {
-                detail: { method: $this.val(), option: $this.data('option') }
-            }))
-
             calculateShippingFee(data)
         })
 
         $(document).on('change', 'input[name=payment_method]', (event) => {
-            const method = $(event.target).val()
-
-            document.dispatchEvent(new CustomEvent('checkout:payment-method-changed', { detail: { method } }))
-
-            calculateShippingFee({ payment_method: method })
+            calculateShippingFee({
+                payment_method: $(event.target).val()
+            })
         })
 
         document.addEventListener('coupon:applied', function() {
@@ -342,23 +305,6 @@ class MainCheckout {
 
         const onChangeShippingForm = (event) => {
             const _self = $(event.currentTarget)
-            const changedId = _self.attr('id')
-
-            const locationFields = ['address_country', 'address_state', 'address_city']
-            if (locationFields.includes(changedId)) {
-                if (changedId === 'address_country') {
-                    return
-                }
-                const $state = $('#address_state')
-                const $city = $('#address_city')
-                if ($state.length && !$state.val()) {
-                    return
-                }
-                if ($city.length && !$city.val() && changedId !== 'address_state') {
-                    return
-                }
-            }
-
             _self.closest('.form-group').find('.text-danger').remove()
             const $form = _self.closest('form')
 
@@ -371,14 +317,8 @@ class MainCheckout {
                     contentType: false,
                     processData: false,
                     success: ({ error }) => {
-                        if (!error) {
-                            document.dispatchEvent(new CustomEvent('checkout:address-saved', {
-                                detail: { field: $(event.target).prop('name') }
-                            }))
-
-                            if (/country|state|city|address/.test($(event.target).prop('name'))) {
-                                calculateShippingFee()
-                            }
+                        if (!error && (/country|state|city|address/.test($(event.target).prop('name')))) {
+                            calculateShippingFee()
                         }
                     },
                     error: (response) => {
@@ -391,20 +331,6 @@ class MainCheckout {
         $(document).on('change', '#address_country, #address_state, #address_city, #address_zip_code', (event) => {
             const _self = $(event.currentTarget)
             const $form = _self.closest('form')
-            const changedId = _self.attr('id')
-
-            if (changedId === 'address_country') {
-                return
-            }
-
-            const $state = $form.find('#address_state')
-            const $city = $form.find('#address_city')
-            if ($state.length && !$state.val()) {
-                return
-            }
-            if ($city.length && !$city.val() && changedId !== 'address_state') {
-                return
-            }
 
             $.ajax({
                 type: 'POST',
@@ -415,8 +341,6 @@ class MainCheckout {
                 processData: false,
                 success: ({ data }) => {
                     $('.cart-item-wrapper').html(data.amount)
-
-                    document.dispatchEvent(new CustomEvent('checkout:tax-updated', { detail: { data } }))
                 },
                 error: (response) => {
                     MainCheckout.handleError(response, $form)
@@ -502,10 +426,6 @@ class MainCheckout {
                             return
                         }
 
-                        document.dispatchEvent(new CustomEvent('checkout:cart-updated', {
-                            detail: { rowId, quantity: qtyValue }
-                        }))
-
                         calculateShippingFee()
                     },
                     error: (error) => {
@@ -513,8 +433,6 @@ class MainCheckout {
                     }
                 })
             })
-
-        document.dispatchEvent(new CustomEvent('checkout:init'))
     }
 }
 

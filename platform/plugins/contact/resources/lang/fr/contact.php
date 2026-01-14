@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'name' => 'Gestion des contacts',
+    'name' => 'Contacts',
     'contact_form' => 'Formulaire de contact',
-    'menu' => 'Demandes de contact',
+    'menu' => 'Contact',
     'edit' => 'Voir le contact',
     'tables' => [
         'phone' => 'Téléphone',
@@ -56,12 +56,10 @@ return [
     ],
     'phone' => 'Téléphone',
     'address' => 'Adresse',
-    'message' => 'Message reçu',
+    'message' => 'Message',
     'settings' => [
-        'title' => 'Paramètres de contact',
-        'description' => 'Paramètres du plugin de contact',
         'email' => [
-            'title' => 'Notifications e-mail',
+            'title' => 'Contact',
             'description' => 'Configuration de l\'e-mail de contact',
             'templates' => [
                 'notice_title' => 'Envoyer un avis à l\'administrateur',
@@ -84,6 +82,8 @@ return [
                 'site_title' => 'Titre du site',
             ],
         ],
+        'title' => 'Contact',
+        'description' => 'Paramètres du plugin de contact',
         'blacklist_keywords' => 'Mots-clés sur liste noire',
         'blacklist_keywords_placeholder' => 'mots-clés...',
         'blacklist_keywords_helper' => 'Ajouter les demandes de contact à la liste noire si ces mots-clés sont trouvés dans le champ de contenu (séparés par des virgules).',
@@ -97,7 +97,6 @@ return [
     'no_reply' => 'Pas encore de réponse!',
     'reply' => 'Répondre',
     'send' => 'Envoyer',
-    'email_invalid_for_reply' => 'Ce contact n\'a pas d\'adresse e-mail valide. Impossible d\'envoyer une réponse.',
     'shortcode_name' => 'Formulaire de contact',
     'shortcode_description' => 'Ajouter un formulaire de contact',
     'shortcode_content_description' => 'Ajouter le shortcode [contact-form][/contact-form] à l\'éditeur',
@@ -109,11 +108,11 @@ return [
     'custom_field' => [
         'name' => 'Champs personnalisés',
         'create' => 'Créer un champ personnalisé',
-        'type' => 'Type de champ',
+        'type' => 'Type',
         'required' => 'Requis',
         'placeholder' => 'Espace réservé',
         'order' => 'Ordre',
-        'options' => 'Options disponibles',
+        'options' => 'Options',
         'option' => [
             'label' => 'Étiquette',
             'value' => 'Valeur',
@@ -161,20 +160,4 @@ return [
         'field_content' => 'Contenu:',
         'field_message' => 'Message:',
     ],
-    'email_blacklisted' => 'Votre email est en liste noire. ',
-    'message_contains_blacklist_words' => 'Votre message contient des mots sur liste noire : ":words".',
-    'yes' => 'Oui',
-    'no' => 'Non',
-    'send_message_success' => 'Envoyez le message avec succès !',
-    'cant_send_message' => "Impossible d'envoyer un message pour le moment, veuillez réessayer plus tard !",
-    'agree_terms_and_policy' => 'Accepter les conditions et la politique',
-    'custom_fields' => 'Champs personnalisés',
-    'must_agree_terms' => 'Vous devez accepter les termes et la politique.',
-    'your_name' => 'Votre nom',
-    'your_email' => 'Votre e-mail',
-    'your_address' => 'Votre adresse',
-    'your_phone' => 'Votre téléphone',
-    'subject_placeholder' => 'Sujet',
-    'your_message' => 'Votre message',
-    'agree_terms_privacy' => 'J\'accepte les conditions et la politique de confidentialité',
 ];

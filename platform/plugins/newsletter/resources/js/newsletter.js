@@ -16,38 +16,38 @@ $(() => {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    Accept: 'application/json',
-                },
+                    'Accept': 'application/json'
+                }
             })
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok')
-                    }
-                    return response.json()
-                })
-                .then(({ data }) => {
-                    $newsletterPopup.html(data.html)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(({ data }) => {
+                $newsletterPopup.html(data.html);
 
-                    if (typeof Theme !== 'undefined' && typeof Theme.lazyLoadInstance !== 'undefined') {
-                        Theme.lazyLoadInstance.update()
-                    }
+                if (typeof Theme !== 'undefined' && typeof Theme.lazyLoadInstance !== 'undefined') {
+                    Theme.lazyLoadInstance.update()
+                }
 
-                    setTimeout(() => {
-                        if ($newsletterPopup.find('.newsletter-popup-content').length) {
-                            $newsletterPopup.modal('show')
-                        }
-                    }, newsletterDelayTime)
-                })
-                .catch((error) => {
-                    console.error('Fetch error:', error)
-                })
+                setTimeout(() => {
+                    if ($newsletterPopup.find('.newsletter-popup-content').length) {
+                        $newsletterPopup.modal('show')
+                    }
+                }, newsletterDelayTime)
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
         }
 
         $newsletterPopup
             .on('show.bs.modal', () => {
                 const dialog = $newsletterPopup.find('.modal-dialog')
 
-                dialog.css('margin-top', Math.max(0, ($(window).height() - dialog.height()) / 2) / 2)
+                dialog.css('margin-top', (Math.max(0, ($(window).height() - dialog.height()) / 2) / 2))
             })
             .on('hide.bs.modal', () => {
                 const checkbox = $newsletterPopup.find('form').find('input[name="dont_show_again"]')
@@ -128,15 +128,11 @@ $(() => {
                         return
                     }
 
-                    const email = $form.find('input[name="email"]').val()
-
                     $form.find('input[name="email"]').val('')
 
                     showSuccess(message)
 
-                    document.dispatchEvent(new CustomEvent('newsletter.subscribed', {
-                        detail: { email: email }
-                    }))
+                    document.dispatchEvent(new CustomEvent('newsletter.subscribed'))
 
                     setTimeout(() => {
                         $newsletterPopup.modal('hide')

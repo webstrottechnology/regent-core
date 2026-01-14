@@ -1,8 +1,10 @@
 @php
-    $manageLicense = auth()->user()->hasPermission('core.manage.license');
+    $manageLicense = auth()
+        ->user()
+        ->hasPermission('core.manage.license');
 
-    $licenseTitle = trans('core/setting::setting.license_title');
-    $licenseDescription = trans('core/setting::setting.setup_license');
+    $licenseTitle = __('License');
+    $licenseDescription = __('Setup license code');
 @endphp
 
 <v-license-form
@@ -26,7 +28,7 @@
     </template>
 
     <template v-if="initialized && verified && license">
-        @if (!config('core.base.general.hide_activated_license_info', false))
+        @if(! config('core.base.general.hide_activated_license_info', false))
             <x-core-setting::section
                 :title="$licenseTitle"
                 :description="$licenseDescription"
@@ -34,7 +36,7 @@
                 <p class="text-info">
                     <span v-if="license.licensed_to">Licensed to <span v-text="license.licensed_to"></span>.
                     </span>Activated
-                    since <span v-text="license.activated_at"></span>.
+                        since <span v-text="license.activated_at"></span>.
                 </p>
 
                 <div>

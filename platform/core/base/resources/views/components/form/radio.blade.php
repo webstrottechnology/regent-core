@@ -1,7 +1,11 @@
 @props(['name', 'value', 'key', 'checked' => false, 'inline' => true, 'single' => false])
 
 @php
-    $labelClasses = Arr::toCssClasses(['form-check', 'form-check-inline' => $inline, 'form-check-single' => $single]);
+    $labelClasses = Arr::toCssClasses([
+        'form-check',
+        'form-check-inline' => $inline,
+        'form-check-single' => $single,
+    ]);
 @endphp
 
 <label class="{{ $labelClasses }}">

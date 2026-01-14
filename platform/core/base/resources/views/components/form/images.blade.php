@@ -1,10 +1,4 @@
-@props([
-    'name',
-    'allowThumb' => true,
-    'images' => [],
-    'addImagesLabel' => trans('core/base::forms.add_images'),
-    'resetLabel' => trans('core/base::forms.reset'),
-])
+@props(['name', 'allowThumb' => true, 'images' => [], 'addImagesLabel' => trans('core/base::forms.add_images'), 'resetLabel' => trans('core/base::forms.reset')])
 
 <div {{ $attributes->merge(['class' => 'gallery-images-wrapper list-images form-fieldset']) }}>
     <div class="images-wrapper mb-2">
@@ -73,7 +67,7 @@
                                                 icon="ti ti-x"
                                                 :icon-only="true"
                                             >
-                                                {{ trans('core/base::forms.remove_image') }}
+                                                {{ __('Remove image') }}
                                             </x-core::button>
                                         </span>
                                         <div

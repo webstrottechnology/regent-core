@@ -23,7 +23,6 @@ class OrderStatusDistributionChart extends Chart
         $orders = Order::query()
             ->whereDate('created_at', '>=', $this->startDate)
             ->whereDate('created_at', '<=', $this->endDate)
-            ->where('is_finished', true)
             ->select([
                 'status',
                 DB::raw('count(*) as total'),

@@ -74,7 +74,7 @@ class WishlistController extends BaseApiController
         $product = Product::query()->find($request->input('product_id'));
 
         if (! $product) {
-            return response()->json(['error' => trans('plugins/ecommerce::products.wishlist.product_not_found')], 404);
+            return response()->json(['error' => __('Product not found')], 404);
         }
 
         // Check if the product is already in the wishlist
@@ -117,15 +117,15 @@ class WishlistController extends BaseApiController
             $isAdded = true;
         }
 
-        Cart::instance('wishlist')->updateOrStore($identifier);
+        Cart::instance('wishlist')->store($identifier);
 
         $wishlistItems = $this->getSimplifiedWishlistItems();
 
         return response()->json([
             'id' => $identifier,
             'message' => $isAdded
-                ? trans('plugins/ecommerce::products.wishlist.added_success', ['product' => $product->name])
-                : trans('plugins/ecommerce::products.wishlist.removed_success', ['product' => $product->name]),
+                ? __('Added product :product successfully!', ['product' => $product->name])
+                : __('Removed product :product from wishlist successfully!', ['product' => $product->name]),
             'data' => [
                 'count' => Cart::instance('wishlist')->count(),
                 'added' => $isAdded,
@@ -158,7 +158,7 @@ class WishlistController extends BaseApiController
         $product = Product::query()->find($productId);
 
         if (! $product) {
-            return response()->json(['error' => trans('plugins/ecommerce::products.wishlist.product_not_found')], 404);
+            return response()->json(['error' => __('Product not found')], 404);
         }
 
         // Find the cart item with the matching product ID
@@ -177,16 +177,16 @@ class WishlistController extends BaseApiController
             // Remove the item from the cart
             Cart::instance('wishlist')->remove($rowId);
         } else {
-            return response()->json(['error' => trans('plugins/ecommerce::products.wishlist.product_not_in_wishlist')], 404);
+            return response()->json(['error' => __('Product not found in wishlist')], 404);
         }
 
-        Cart::instance('wishlist')->updateOrStore($identifier);
+        Cart::instance('wishlist')->store($identifier);
 
         $wishlistItems = $this->getSimplifiedWishlistItems();
 
         return response()->json([
             'id' => $identifier,
-            'message' => trans('plugins/ecommerce::products.wishlist.removed_success', ['product' => $product->name]),
+            'message' => __('Removed product :product from wishlist successfully!', ['product' => $product->name]),
             'data' => [
                 'count' => Cart::instance('wishlist')->count(),
                 'items' => $wishlistItems,

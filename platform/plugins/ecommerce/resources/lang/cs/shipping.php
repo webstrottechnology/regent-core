@@ -191,9 +191,6 @@ return [
         'sender' => 'Odesílatel',
         'order_date' => 'Datum objednávky',
         'scan_qr_code' => 'Naskenujte QR kód pro sledování vaší zásilky',
-        'total_amount' => 'Celková částka',
-        'cod_amount_to_collect' => 'Částka COD k vybírání',
     ],
     'customer_confirmed_delivery_at' => 'Zákazník potvrdil doručení v',
-    'no_shipping_methods_available' => 'Žádné metody doručení nejsou k dispozici!',
 ];

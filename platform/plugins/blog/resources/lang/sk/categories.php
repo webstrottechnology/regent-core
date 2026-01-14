@@ -12,7 +12,4 @@ return [
     'parent' => 'Nadradená kategória',
     'order' => 'Poradie',
     'is_default' => 'Je predvolená',
-    'intro' => [
-        'description' => 'Usporiadajte svoje blogové príspevky do kategórií pre lepšiu správu obsahu.',
-    ],
 ];

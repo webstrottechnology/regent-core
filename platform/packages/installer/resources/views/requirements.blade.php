@@ -1,7 +1,12 @@
 @extends('packages/installer::layouts.master')
 
-@section('pageTitle', trans('packages/installer::installer.install_step_title', ['step' => 2, 'title' =>
-    trans('packages/installer::installer.requirements.title')]))
+@section(
+    'pageTitle',
+     trans(
+         'packages/installer::installer.install_step_title',
+         ['step' => 2, 'title' => trans('packages/installer::installer.requirements.title')]
+     )
+)
 
 @section('header')
     <x-core::card.title>
@@ -14,7 +19,7 @@
         <div class="list-group list-group-hoverable mb-4">
             <div class="list-group-item d-flex align-items-center justify-content-between">
                 @if ($type === 'php')
-                    <strong>{{ trans('packages/installer::installer.requirements.php_version_required', ['version' => $phpSupportInfo['minimum']]) }}</strong>
+                    <strong>{{ __('PHP version :version required', ['version' => $phpSupportInfo['minimum']]) }}</strong>
 
                     <div @class([
                         'text-success' => $phpSupportInfo['supported'],
@@ -22,16 +27,14 @@
                     ])>
                         <span>{{ $phpSupportInfo['current'] }}</span>
 
-                        <x-core::icon
-                            name="{{ 'ti ' . ($phpSupportInfo['supported'] ? 'ti-circle-check' : 'ti-alert-circle') }}"
-                        />
+                        <x-core::icon name="{{ 'ti ' . ($phpSupportInfo['supported'] ? 'ti-circle-check' : 'ti-alert-circle') }}" />
                     </div>
                 @else
                     <strong>{{ ucwords($type) }}</strong>
                 @endif
             </div>
 
-            @foreach ($requirements['requirements'][$type] as $extension => $enabled)
+            @foreach($requirements['requirements'][$type] as $extension => $enabled)
                 <div class="list-group-item d-flex align-items-center justify-content-between">
                     <span>
                         {{ $type !== 'permissions' ? ucwords($extension) : $extension }}

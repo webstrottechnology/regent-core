@@ -10,4 +10,6 @@ return [
     'view' => 'Görüntüleme',
     'next' => 'Sonraki',
     'previous' => 'Öncesi',
+    'show_more' => 'Daha fazla göster',
+    'show_less' => 'Daha az göster',
 ];

@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Neierobežots kupons?',
     'enter_number' => 'Ievadiet skaitli',
     'coupon_type' => 'Kupona veids',
-    'discount_type' => 'Atlaides veids',
     'percentage_discount' => 'Procentuālā atlaide (%)',
     'free_shipping' => 'Bezmaksas piegāde',
     'same_price' => 'Vienāda cena',
     'apply_for' => 'piemērot',
-    'apply_to' => 'Piemērot',
     'all_orders' => 'Visiem pasūtījumiem',
     'order_amount_from' => 'Pasūtījuma summa no',
     'product_collection' => 'Produktu kolekcija',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Šo kuponu nevar lietot, jo jūsu grozā ir zibens izpārdošanas preces (:product_name). Zibens izpārdošanas cenas nevar kombinēt ar kuponu atlaidēm.',
     'coupon_applied_successfully' => 'Lielisks! Kupona kods ":code" ir lietots. Jūs ietaupījāt šajā pasūtījumā!',
     'coupon_removed_successfully' => 'Kupona kods ir noņemts no jūsu pasūtījuma.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Kuponu kodi (:count)',
-    'left_quantity' => 'Atlicis :left',
-    'apply' => 'Lietot',
-    'remove' => 'Noņemt',
-    'select_coupon' => 'Izvēlēties kuponu',
-    'you_have_coupon_code' => 'Vai jums ir kupona kods?',
-    'close' => 'Aizvērt',
-    'coupon_code_label' => 'Kupona kods: :code',
-    'enter_coupon_code_placeholder' => 'Ievadiet kupona kodu...',
 ];

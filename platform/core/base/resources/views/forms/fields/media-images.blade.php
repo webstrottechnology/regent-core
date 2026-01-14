@@ -14,8 +14,5 @@
         @endif
     </x-slot:label>
 
-    @include('core/base::forms.partials.images', [
-        'name' => $name,
-        'values' => Arr::get($options, 'values'),
-    ])
+    @include('core/base::forms.partials.images', ['name' => $name, 'values' => Arr::get($options, 'values')])
 </x-core::form.field>

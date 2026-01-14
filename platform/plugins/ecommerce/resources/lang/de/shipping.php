@@ -191,9 +191,6 @@ return [
         'sender' => 'Absender',
         'order_date' => 'Bestelldatum',
         'scan_qr_code' => 'QR-Code scannen, um Ihre Sendung zu verfolgen',
-        'total_amount' => 'Gesamtbetrag',
-        'cod_amount_to_collect' => 'Einzuziehender Nachnahmebetrag',
     ],
     'customer_confirmed_delivery_at' => 'Kunde bestätigte Zustellung am',
-    'no_shipping_methods_available' => 'Keine Versandmethoden verfügbar!',
 ];

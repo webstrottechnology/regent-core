@@ -36,8 +36,6 @@ return [
         'customer_city' => '顧客の市区町村',
         'customer_zipcode' => '顧客の郵便番号',
     ],
-    'custom_css' => 'カスタムCSS',
-    'custom_css_helper' => '請求書の外観をカスタマイズするためのカスタムCSSスタイルを追加します。これらのスタイルはデフォルトの請求書スタイルに追加されます。',
     'reset_success' => 'デフォルトへのリセットが正常に完了しました',
     'confirm_reset' => '請求書テンプレートのリセットを確認しますか？',
     'confirm_message' => 'この請求書テンプレートを本当にデフォルトにリセットしますか？',

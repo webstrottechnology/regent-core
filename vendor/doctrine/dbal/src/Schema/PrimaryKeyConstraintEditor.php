@@ -90,13 +90,6 @@ final class PrimaryKeyConstraintEditor
         return $this;
     }
 
-    public function addColumnName(UnqualifiedName $columName): self
-    {
-        $this->columnNames[] = $columName;
-
-        return $this;
-    }
-
     public function setIsClustered(bool $isClustered): self
     {
         $this->isClustered = $isClustered;

@@ -53,7 +53,6 @@ return [
     'lazy_loading' => 'การโหลดแบบขี้เกียจ',
     'lazy_loading_description' => 'เปิดใช้งานตัวเลือกนี้เพื่อปรับปรุงความเร็วในการโหลดหน้าเว็บ',
     'hide_on_mobile' => 'ซ่อนบนมือถือ',
-    'dismiss' => 'ปิด',
 
     // Placeholders and help texts
     'name_placeholder' => 'กรอกชื่อประกาศ',

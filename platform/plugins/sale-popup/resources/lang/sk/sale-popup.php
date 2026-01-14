@@ -39,7 +39,4 @@ return [
         'product_listing' => 'Zoznam produktov',
         'cart' => 'Košík',
     ],
-    'purchased' => 'zakúpil',
-    'verified' => 'Overené',
-    'quick_view' => 'Rýchly náhľad',
 ];

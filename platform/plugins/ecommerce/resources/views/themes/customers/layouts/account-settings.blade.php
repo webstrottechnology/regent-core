@@ -3,11 +3,11 @@
 @php
     $tabs = [
         'profile' => [
-            'title' => trans('plugins/ecommerce::customer-dashboard.profile'),
+            'title' => __('Profile'),
             'route' => 'customer.edit-account',
         ],
         'change-password' => [
-            'title' => trans('plugins/ecommerce::customer-dashboard.change_password'),
+            'title' => __('Change Password'),
             'route' => 'customer.change-password',
         ],
     ];

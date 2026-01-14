@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Območja pripomočkov',
     'manage_widgets' => 'Upravljaj pripomočke',
 
-    'click_to_add' => 'Kliknite za dodajanje pripomočka',
-    'select_sidebar' => 'Dodaj pripomoček',
-    'select_sidebar_description' => 'Izberite, kam dodati ta pripomoček',
-    'adding_to' => 'Dodajanje v',
-    'add_widget' => 'Dodaj pripomoček',
-    'widget_not_found' => 'Pripomoček ni najden',
-
     'cache_suggestion' => [
         'title' => 'Predlog za zmogljivost',
         'description' => 'Izboljšate lahko zmogljivost svoje strani z omogočanjem predpomnjenja pripomočkov.',
@@ -52,22 +45,4 @@ return [
     'widget_site_copyright_description' => 'Besedilo avtorskih pravic v spodnji nogi.',
     'widget_site_copyright_helper' => 'Pojdite na :link za spremembo besedila avtorskih pravic.',
     'theme_options' => 'Možnosti teme',
-
-    'form' => [
-        'enable_caching' => 'Omogoči predpomnjenje',
-        'yes' => 'Da',
-        'no' => 'Ne',
-        'cache_helper' => 'Ko je omogočeno, bo vsebina tega pripomočka predpomnjena za izboljšanje zmogljivosti.',
-        'cache_warning' => 'Zaradi težav z uporabniškim vmesnikom je predpomnjenje za ta pripomoček onemogočeno s kodo.',
-    ],
-
-    'drag_or_click' => 'Povlecite v stransko vrstico ali kliknite + za dodajanje',
-    'drop_widgets_here' => 'Spustite pripomočke v območja stranske vrstice',
-    'search_widgets' => 'Išči pripomočke...',
-    'no_widgets' => 'Ni razpoložljivih pripomočkov',
-    'no_search_results' => 'Pripomočki niso najdeni',
-    'or_click_add' => 'Ali kliknite gumb + na pripomočku za dodajanje',
-    'toggle_widget' => 'Preklopi nastavitve pripomočka',
-    'loading_form' => 'Nalaganje obrazca pripomočka...',
-
 ];

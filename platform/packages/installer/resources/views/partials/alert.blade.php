@@ -1,5 +1,7 @@
 @if (session('message'))
-    <x-core::alert type="success">
+    <x-core::alert
+        type="success"
+    >
         @if (is_array(session('message')))
             {{ session('message')['message'] }}
         @else

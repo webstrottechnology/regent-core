@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Widgetområder',
     'manage_widgets' => 'Administrer widgets',
 
-    'click_to_add' => 'Klik for at tilføje widget',
-    'select_sidebar' => 'Tilføj widget',
-    'select_sidebar_description' => 'Vælg hvor du vil tilføje denne widget',
-    'adding_to' => 'Tilføjer til',
-    'add_widget' => 'Tilføj widget',
-    'widget_not_found' => 'Widget ikke fundet',
-
     'cache_suggestion' => [
         'title' => 'Ydeevneforslag',
         'description' => 'Du kan forbedre din sides ydeevne ved at aktivere widget-caching.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Ophavsretstekst i bundsidefod.',
     'widget_site_copyright_helper' => 'Gå til :link for at ændre ophavsretsteksten.',
     'theme_options' => 'Temaindstillinger',
-
-    'form' => [
-        'enable_caching' => 'Aktiver caching',
-        'yes' => 'Ja',
-        'no' => 'Nej',
-        'cache_helper' => 'Når aktiveret, vil denne widgets indhold blive cachet for at forbedre ydeevnen. Deaktiver for dynamisk indhold, der ændres ofte.',
-        'cache_warning' => 'På grund af UI-problemer er caching for denne widget deaktiveret via kode. Denne widget vil ikke blive cachet, selvom caching er aktiveret.',
-    ],
-
-    'drag_or_click' => 'Træk til sidebar eller klik + for at tilføje',
-    'drop_widgets_here' => 'Slip widgets i dine sidebarområder',
-    'search_widgets' => 'Søg widgets...',
-    'no_widgets' => 'Ingen tilgængelige widgets',
-    'no_search_results' => 'Ingen widgets fundet',
-    'or_click_add' => 'Eller klik på + knappen på en widget for at tilføje',
-    'toggle_widget' => 'Skift widgetindstillinger',
-    'loading_form' => 'Indlæser widgetformular...',
 ];

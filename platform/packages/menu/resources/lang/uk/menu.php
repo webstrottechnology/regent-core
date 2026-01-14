@@ -30,5 +30,4 @@ return [
     'badge_color' => 'Колір бейджа',
     'widget_custom_menu' => 'Користувацьке меню',
     'widget_custom_menu_description' => 'Додайте користувацьке меню до області віджетів.',
-    'select_menu' => 'Вибрати меню',
 ];

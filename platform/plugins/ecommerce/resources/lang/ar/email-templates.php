@@ -1,6 +1,7 @@
 <?php
 
 return [
+    // Customer New Order Email
     'customer_new_order_title' => 'تم الطلب بنجاح!',
     'customer_new_order_greeting' => 'عزيزي :customer_name،',
     'customer_new_order_message' => 'شكراً لك على شراء منتجاتنا، سوف نتواصل معك عبر الهاتف <strong>:customer_phone</strong> لتأكيد الطلب!',
@@ -14,6 +15,8 @@ return [
     'customer_new_order_shipping_method' => 'طريقة الشحن',
     'customer_new_order_order_number' => 'رقم الطلب',
     'customer_new_order_payment_method' => 'طريقة الدفع',
+
+    // Admin New Order Email
     'admin_new_order_title' => 'تلقيت طلباً جديداً من :site_title',
     'admin_new_order_greeting' => 'مرحباً أيها المدير،',
     'admin_new_order_message' => 'تم تقديم طلب جديد بنجاح من قبل :customer_name',
@@ -33,6 +36,8 @@ return [
     'admin_new_order_shipping_method' => 'طريقة الشحن',
     'admin_new_order_payment_method' => 'طريقة الدفع',
     'admin_new_order_view_order' => 'عرض تفاصيل الطلب',
+
+    // Order Confirmation Email
     'order_confirm_title' => 'تم تأكيد الطلب!',
     'order_confirm_greeting' => 'مرحباً :customer_name،',
     'order_confirm_message' => 'تم تأكيد طلبك. شكراً لك على شراء منتجاتنا!',
@@ -47,6 +52,8 @@ return [
     'order_confirm_note' => 'ملاحظة',
     'order_confirm_shipping_method' => 'طريقة الشحن',
     'order_confirm_payment_method' => 'طريقة الدفع',
+
+    // Order Cancel (Customer) Email
     'customer_cancel_order_title' => 'تم إلغاء طلبك',
     'customer_cancel_order_greeting' => 'عزيزي :customer_name،',
     'customer_cancel_order_message' => 'تم إلغاء طلبك <strong>:order_id</strong> كما طلبت بسبب :cancellation_reason وتم إلغاء دفعتك أيضاً.',
@@ -60,9 +67,11 @@ return [
     'customer_cancel_order_address' => 'العنوان',
     'customer_cancel_order_products' => 'إليك ما طلبته:',
     'customer_cancel_order_note' => 'ملاحظة',
+
+    // Order Cancel (Admin) Email
     'admin_cancel_order_title' => 'تم إلغاء الطلب',
     'admin_cancel_order_greeting' => 'مرحباً :customer_name،',
-    'admin_cancel_order_message' => 'تم إلغاء طلبك :order_id من قبل موظفينا.',
+    'admin_cancel_order_message' => 'تم إلغاء طلبك #:order_id من قبل موظفينا.',
     'admin_cancel_order_order_cancelled' => 'تم إلغاء الطلب!',
     'admin_cancel_order_reason' => 'سبب الإلغاء: :cancellation_reason',
     'admin_cancel_order_customer_info' => 'معلومات العميل',
@@ -73,9 +82,11 @@ return [
     'admin_cancel_order_products' => 'تفاصيل الطلب:',
     'admin_cancel_order_note' => 'ملاحظة',
     'admin_cancel_order_order_summary' => 'ملخص الطلب',
-    'order_cancellation_to_admin_title' => 'تم إلغاء الطلب :order_id من قبل العميل',
+
+    // Order Cancellation to Admin Email
+    'order_cancellation_to_admin_title' => 'تم إلغاء الطلب #:order_id من قبل العميل',
     'order_cancellation_to_admin_greeting' => 'مرحباً أيها المدير،',
-    'order_cancellation_to_admin_message' => 'قام :customer_name بإلغاء الطلب <strong>:order_id</strong>. السبب: <strong>:cancellation_reason</strong>',
+    'order_cancellation_to_admin_message' => 'قام :customer_name بإلغاء الطلب <strong>#:order_id</strong>. السبب: <strong>:cancellation_reason</strong>',
     'order_cancellation_to_admin_customer_info' => 'معلومات العميل',
     'order_cancellation_to_admin_name' => 'الاسم',
     'order_cancellation_to_admin_phone' => 'الهاتف',
@@ -85,6 +96,8 @@ return [
     'order_cancellation_to_admin_note' => 'ملاحظة',
     'order_cancellation_to_admin_view_order' => 'عرض تفاصيل الطلب',
     'order_cancellation_to_admin_order_summary' => 'ملخص الطلب',
+
+    // Order Delivery Email
     'customer_delivery_order_title' => 'طلبك في الطريق',
     'customer_delivery_order_greeting' => 'مرحباً :customer_name،',
     'customer_delivery_order_message' => 'طلبك في الطريق. شكراً لك على شراء منتجاتنا!',
@@ -104,6 +117,8 @@ return [
     'customer_delivery_order_tracking_id' => 'رقم التتبع',
     'customer_delivery_order_tracking_link' => 'رابط التتبع',
     'customer_delivery_order_track_shipment' => 'تتبع شحنتك',
+
+    // Order Delivered Email
     'customer_order_delivered_title' => 'تم توصيل طلبك',
     'customer_order_delivered_greeting' => 'مرحباً :customer_name،',
     'customer_order_delivered_message' => 'تم توصيل طلبك. شكراً لك على شراء منتجاتنا!',
@@ -122,7 +137,9 @@ return [
     'customer_order_delivered_tracking_id' => 'رقم التتبع',
     'customer_order_delivered_tracking_link' => 'رابط التتبع',
     'customer_order_delivered_track_shipment' => 'عرض تفاصيل التتبع',
-    'order_confirm_payment_title' => 'تم تأكيد الدفع للطلب :order_id',
+
+    // Payment Confirmation Email
+    'order_confirm_payment_title' => 'تم تأكيد الدفع للطلب #:order_id',
     'order_confirm_payment_greeting' => 'مرحباً :customer_name،',
     'order_confirm_payment_message' => 'تم تأكيد دفعتك. شكراً لك على شراء منتجاتنا!',
     'order_confirm_payment_order_number' => 'رقم الطلب',
@@ -137,6 +154,8 @@ return [
     'order_confirm_payment_thanks' => 'شكراً لك على دفعتك. سيتم معالجة طلبك قريباً.',
     'order_confirm_payment_order_summary' => 'ملخص الطلب',
     'order_confirm_payment_shipping_method' => 'طريقة الشحن',
+
+    // Order Recovery Email
     'order_recover_title' => 'لديك طلب غير مكتمل',
     'order_recover_greeting' => 'مرحباً :customer_name،',
     'order_recover_message' => 'لاحظنا أن لديك طلب غير مكتمل. هل تود إكمال عملية الشراء؟',
@@ -146,17 +165,23 @@ return [
     'order_recover_button' => 'أكمل طلبك',
     'order_recover_order_summary' => 'ملخص الطلب',
     'order_recover_note' => 'ملاحظة',
+
+    // Welcome Email
     'welcome_greeting' => 'نحن سعداء بوجودك هنا، :customer_name!',
     'welcome_message' => 'مرحباً بك في :site_title!',
     'welcome_register_success' => 'لقد قمت بتسجيل حساب بنجاح في <strong>:site_title</strong>.',
     'welcome_explore' => 'إذا كنت بحاجة إلى أي مساعدة، لا تتردد في الرد على هذا البريد الإلكتروني!',
     'welcome_visit_shop' => 'ابدأ التسوق!',
+
+    // Confirm Email
     'confirm_email_title' => 'تأكيد البريد الإلكتروني',
     'confirm_email_greeting' => 'نحن سعداء بوجودك هنا، :customer_name!',
     'confirm_email_message' => 'يرجى تأكيد عنوان بريدك الإلكتروني بالضغط على الزر أدناه.',
     'confirm_email_instruction' => 'يرجى تأكيد عنوان بريدك الإلكتروني للوصول إلى هذا الموقع. انقر على الزر أدناه لتأكيد بريدك الإلكتروني.',
     'confirm_email_button' => 'أكد عنوان بريدك الإلكتروني',
     'confirm_email_trouble' => 'إذا كنت تواجه مشكلة في النقر على زر "أكد عنوان بريدك الإلكتروني"، انسخ والصق الرابط أدناه في متصفح الويب الخاص بك: <a href=":verify_link">:verify_link</a> والصقه في متصفحك.',
+
+    // Password Reminder Email
     'password_reminder_title' => 'إعادة تعيين كلمة المرور',
     'password_reminder_greeting' => 'مرحباً :customer_name،',
     'password_reminder_message' => 'لقد طلبت إعادة تعيين كلمة المرور الخاصة بك.',
@@ -164,9 +189,11 @@ return [
     'password_reminder_button' => 'إعادة تعيين كلمة المرور',
     'password_reminder_ignore' => 'إذا لم تطلب إعادة تعيين كلمة المرور، يرجى تجاهل هذا البريد الإلكتروني.',
     'password_reminder_trouble_clicking' => 'إذا كنت تواجه مشكلة في النقر على زر "إعادة تعيين كلمة المرور"، انسخ والصق الرابط أدناه في متصفح الويب الخاص بك: <a href=":reset_link">:reset_link</a>',
+
+    // Order Return Request Email
     'order_return_request_title' => 'تم استلام طلب الإرجاع',
     'order_return_request_greeting' => 'مرحباً :customer_name،',
-    'order_return_request_message' => 'لقد استلمنا طلب الإرجاع الخاص بك للطلب :order_id.',
+    'order_return_request_message' => 'لقد استلمنا طلب الإرجاع الخاص بك للطلب #:order_id.',
     'order_return_request_reason' => 'سبب الإرجاع',
     'order_return_request_items' => 'العناصر المراد إرجاعها',
     'order_return_request_process' => 'سنقوم بمعالجة طلبك والتواصل معك قريباً.',
@@ -178,6 +205,8 @@ return [
     'order_return_request_return_reason' => 'سبب الإرجاع',
     'order_return_request_order_summary' => 'ملخص الطلب',
     'order_return_request_note' => 'ملاحظة',
+
+    // Order Return Status Updated Email
     'order_return_status_updated_title' => 'تحديث حالة إرجاع الطلب',
     'order_return_status_updated_greeting' => 'عزيزي :customer_name،',
     'order_return_status_updated_message' => 'نود إعلامك أنه تم تحديث حالة طلب الإرجاع الخاص بك للطلب :order_id.',
@@ -185,13 +214,17 @@ return [
     'order_return_status_updated_description' => 'ملاحظة المشرف: ":description".',
     'order_return_status_updated_questions' => 'إذا كان لديك أي أسئلة أو استفسارات بخصوص هذا التحديث، لا تتردد في التواصل مع فريق دعم العملاء لدينا.',
     'order_return_status_updated_view_details' => 'عرض تفاصيل الإرجاع',
+
+    // Review Products Email
     'review_products_title' => 'قيم مشترياتك الأخيرة',
     'review_products_greeting' => 'مرحباً :customer_name،',
-    'review_products_message' => 'تم إكمال طلبك :order_id. نود سماع رأيك!',
+    'review_products_message' => 'تم إكمال طلبك #:order_id. نود سماع رأيك!',
     'review_products_instruction' => 'يرجى أخذ لحظة لتقييم المنتجات التي اشتريتها:',
     'review_products_button' => 'تقييم المنتجات',
     'review_products_thank_you' => 'شكراً لك على الشراء!',
     'review_products_products' => 'المنتجات للتقييم',
+
+    // Digital Products Download Email
     'download_digital_products_title' => 'منتجاتك الرقمية جاهزة',
     'download_digital_products_greeting' => 'مرحباً :customer_name،',
     'download_digital_products_message' => 'شكراً لك على الشراء! منتجاتك الرقمية جاهزة للتحميل.',
@@ -203,10 +236,13 @@ return [
     'download_digital_products_all_files' => 'تحميل جميع الملفات',
     'download_digital_products_external_link_downloads' => 'تحميل الملفات الخارجية',
     'download_digital_products_payment_method' => 'طريقة الدفع',
+
+    // Digital Product License Codes Email
     'digital_product_license_codes_title' => 'رموز الترخيص الخاصة بك',
     'digital_product_license_codes_greeting' => 'عزيزي :customer_name،',
     'digital_product_license_codes_message' => 'شكراً لك على الشراء! إليك رموز الترخيص الخاصة بك:',
     'digital_product_license_codes_thanks' => 'شكراً لك على شراء منتجاتنا الرقمية.',
+    'digital_product_license_codes_below' => 'أدناه رموز الترخيص للمنتجات التي اشتريتها:',
     'digital_product_license_codes_product' => 'المنتج',
     'digital_product_license_codes_license' => 'رمز الترخيص',
     'digital_product_license_codes_order_summary' => 'إليك ما طلبته:',
@@ -219,6 +255,8 @@ return [
     'digital_product_license_codes_note_2' => 'كل رمز ترخيص فريد ويمكن استخدامه مرة واحدة فقط',
     'digital_product_license_codes_note_3' => 'لا تشارك رموز الترخيص الخاصة بك مع الآخرين',
     'digital_product_license_codes_note_4' => 'إذا كان لديك أي مشاكل مع رموز الترخيص الخاصة بك، يرجى التواصل مع فريق الدعم لدينا',
+
+    // Product File Updated Email
     'product_file_updated_title' => 'تم تحديث ملفات المنتج',
     'product_file_updated_greeting' => 'مرحباً، :customer_name!',
     'product_file_updated_message' => 'تم تحديث ملفات المنتج <a href=":product_link"><strong>:product_name</strong></a>.',
@@ -230,6 +268,8 @@ return [
     'product_file_updated_instruction' => 'يمكنك تحميل الملفات المحدثة من حسابك.',
     'product_file_updated_order_number' => 'رقم الطلب',
     'product_file_updated_download' => 'تحميل الملفات المحدثة',
+
+    // Invoice Payment Created Email
     'invoice_payment_created_title' => 'تم استلام الدفع',
     'invoice_payment_created_greeting' => 'مرحباً :customer_name،',
     'invoice_payment_created_message' => 'لقد استلمنا دفعتك بنجاح لـ :site_title. شكراً لك!',
@@ -241,15 +281,21 @@ return [
     'invoice_payment_created_invoice_link_message' => 'يمكنك عرض فاتورتك عبر الإنترنت على <a href=":invoice_link">:invoice_link</a> برمز الفاتورة #:invoice_code',
     'invoice_payment_created_invoice_message' => 'رمز فاتورتك هو #:invoice_code',
     'invoice_payment_created_view_online' => 'عرض الفاتورة عبر الإنترنت',
+
+    // Customer Deletion Request Confirmation Email
     'customer_deletion_request_confirmation_greeting' => 'مرحباً :customer_name،',
     'customer_deletion_request_confirmation_message' => 'لقد استلمنا طلبك لحذف حسابك.',
     'customer_deletion_request_confirmation_warning' => 'يرجى ملاحظة أن هذا الإجراء لا يمكن التراجع عنه. سيتم حذف جميع بياناتك نهائياً.',
     'customer_deletion_request_confirmation_button' => 'تأكيد الحذف',
     'customer_deletion_request_confirmation_cancel' => 'إذا لم تطلب هذا، يرجى تجاهل هذا البريد الإلكتروني.',
+
+    // Customer Deletion Request Completed Email
     'customer_deletion_request_completed_greeting' => 'مرحباً :customer_name،',
     'customer_deletion_request_completed_message' => 'تم حذف حسابك بنجاح كما طلبت.',
     'customer_deletion_request_completed_thank_you' => 'شكراً لك لكونك معنا.',
     'customer_deletion_request_completed_goodbye' => 'نأمل أن نراك مرة أخرى في المستقبل.',
+
+    // Payment Proof Upload Notification Email
     'payment_proof_upload_notification_greeting' => 'مرحباً أيها المدير،',
     'payment_proof_upload_notification_message' => 'قام العميل :customer_name (البريد الإلكتروني: <a href="mailto::customer_email">:customer_email</a>) برفع إثبات دفع لطلبه برقم :order_id.',
     'payment_proof_upload_notification_view_details' => 'يمكنك عرض تفاصيل الدفع <a href=":payment_link">هنا</a> وتفاصيل الطلب <a href=":order_link">هنا</a>.',
@@ -261,27 +307,4 @@ return [
     'payment_proof_upload_notification_total' => 'المبلغ الإجمالي',
     'payment_proof_upload_notification_view_order' => 'عرض الطلب',
     'payment_proof_upload_notification_view_proof' => 'عرض إثبات الدفع',
-    'abandoned_cart_reminder_title' => 'لقد تركت منتجات في سلة التسوق!',
-    'abandoned_cart_greeting' => 'مرحبًا :customer_name،',
-    'abandoned_cart_message' => 'لاحظنا أنك تركت بعض المنتجات في سلة التسوق. هل ترغب في إتمام عملية الشراء؟ سلة التسوق في انتظارك!',
-    'abandoned_cart_button' => 'العودة إلى السلة',
-    'abandoned_cart_items_title' => 'المنتجات في سلة التسوق',
-    'abandoned_cart_total' => 'المجموع',
-    'abandoned_cart_unsubscribe' => 'لا تريد هذه الرسائل؟ <a href=":unsubscribe_url">إلغاء الاشتراك</a>',
-    'abandoned_cart_discount_offer' => 'عرض خاص لك فقط!',
-    'abandoned_cart_discount_off' => 'خصم',
-    'abandoned_cart_discount_code' => 'استخدم الكود',
-    'abandoned_cart_claim_discount' => 'احصل على خصمك',
-    'abandoned_cart_final_offer' => 'العرض الأخير - لا تفوته!',
-    'abandoned_cart_expires_soon' => 'هذا العرض سينتهي قريباً!',
-    'abandoned_cart_complete_now' => 'أكمل طلبك الآن',
-    'abandoned_cart_reminder_1_title' => 'هل نسيت شيئًا؟',
-    'abandoned_cart_reminder_1_greeting' => 'مرحبًا :customer_name،',
-    'abandoned_cart_reminder_1_message' => 'لاحظنا أنك تركت بعض المنتجات في سلة التسوق. لا تقلق - قمنا بحفظها لك! هل أنت مستعد لإتمام عملية الشراء؟',
-    'abandoned_cart_reminder_2_title' => 'هل لا تزال تفكر؟',
-    'abandoned_cart_reminder_2_greeting' => 'مرحبًا :customer_name،',
-    'abandoned_cart_reminder_2_message' => 'سلة التسوق تفتقدك! لقد حفظنا منتجاتك وأردنا التواصل معك. ربما هذا العرض الخاص سيساعدك على اتخاذ القرار؟',
-    'abandoned_cart_reminder_3_title' => 'فرصة أخيرة لحفظ سلة التسوق!',
-    'abandoned_cart_reminder_3_greeting' => 'مرحبًا :customer_name،',
-    'abandoned_cart_reminder_3_message' => 'هذا هو تذكيرك الأخير - سلة التسوق على وشك الانتهاء! لا نريدك أن تفوت هذه المنتجات.',
 ];

@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Oblasti widgetů',
     'manage_widgets' => 'Spravovat widgety',
 
-    'click_to_add' => 'Klikněte pro přidání widgetu',
-    'select_sidebar' => 'Přidat widget',
-    'select_sidebar_description' => 'Vyberte, kam chcete tento widget přidat',
-    'adding_to' => 'Přidávání do',
-    'add_widget' => 'Přidat widget',
-    'widget_not_found' => 'Widget nenalezen',
-
     'cache_suggestion' => [
         'title' => 'Doporučení k výkonu',
         'description' => 'Výkon svého webu můžete zlepšit povolením ukládání widgetů do mezipaměti.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Text autorských práv v dolní zápatí.',
     'widget_site_copyright_helper' => 'Přejděte na :link pro změnu textu autorských práv.',
     'theme_options' => 'Možnosti motivu',
-
-    'form' => [
-        'enable_caching' => 'Povolit ukládání do mezipaměti',
-        'yes' => 'Ano',
-        'no' => 'Ne',
-        'cache_helper' => 'Při povolení bude obsah tohoto widgetu uložen do mezipaměti pro zlepšení výkonu. Zakažte pro dynamický obsah, který se často mění.',
-        'cache_warning' => 'Kvůli problémům s rozhraním je mezipaměť pro tento widget zakázána kódem. Tento widget nebude ukládán do mezipaměti, i když je ukládání do mezipaměti povoleno.',
-    ],
-
-    'drag_or_click' => 'Přetáhněte do postranního panelu nebo klikněte + pro přidání',
-    'drop_widgets_here' => 'Přetáhněte widgety do oblastí postranního panelu',
-    'search_widgets' => 'Hledat widgety...',
-    'no_widgets' => 'Žádné dostupné widgety',
-    'no_search_results' => 'Žádné widgety nenalezeny',
-    'or_click_add' => 'Nebo klikněte na tlačítko + na widgetu pro přidání',
-    'toggle_widget' => 'Přepnout nastavení widgetu',
-    'loading_form' => 'Načítání formuláře widgetu...',
 ];

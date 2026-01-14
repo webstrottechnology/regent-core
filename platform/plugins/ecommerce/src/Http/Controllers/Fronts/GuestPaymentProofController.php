@@ -92,7 +92,7 @@ class GuestPaymentProofController extends BaseController
 
         EmailHandler::setModule(ECOMMERCE_MODULE_SCREEN_NAME)
             ->setVariableValues($emailVariables)
-            ->sendUsingTemplate('payment-proof-upload-notification', EcommerceHelper::getAdminNotificationEmails(), [
+            ->sendUsingTemplate('payment-proof-upload-notification', args: [
                 'attachments' => [$storage->path($proofFilePath)],
             ]);
 

@@ -46,7 +46,7 @@ class ThrowUpCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('throw-up')
@@ -95,7 +95,7 @@ HELP
      *
      * @throws \InvalidArgumentException if there is no exception to throw
      *
-     * @param string|null $code
+     * @param string $code
      *
      * @return Arg[]
      */

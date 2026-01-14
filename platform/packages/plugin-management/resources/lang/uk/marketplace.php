@@ -17,7 +17,6 @@ return [
     'compatible_version' => 'Сумісний з вашою версією',
     'incompatible_version' => 'Несумісний з вашою версією',
     'install_now' => 'Встановити зараз',
-    'buy_now' => 'Купити зараз',
     'remove' => 'Видалити',
     'detail' => 'Деталі',
     'activate' => 'Активувати',

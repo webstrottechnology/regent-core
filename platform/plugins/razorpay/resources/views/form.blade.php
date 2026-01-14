@@ -8,10 +8,10 @@
             <input type="hidden" name="{{ $key }}" value="{{ $value }}"/>
         @endif
     @endforeach
-    <button type="submit" style="display: none">{{ trans('plugins/razorpay::razorpay.submit') }}</button>
+    <button type="submit" style="display: none">{{ __('Submit') }}</button>
 </form>
 
-<p>{{ trans('plugins/razorpay::razorpay.redirecting') }}</p>
+<p>{{ __('Redirecting to Razorpay...') }}</p>
 
 <script>
     'use strict';

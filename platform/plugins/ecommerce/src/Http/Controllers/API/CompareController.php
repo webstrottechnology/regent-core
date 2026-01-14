@@ -74,7 +74,7 @@ class CompareController extends BaseApiController
         $product = Product::query()->find($request->input('product_id'));
 
         if (! $product) {
-            return response()->json(['error' => trans('plugins/ecommerce::products.compare.product_not_found')], 404);
+            return response()->json(['error' => __('Product not found')], 404);
         }
 
         // Check if the product is already in the compare list
@@ -117,15 +117,15 @@ class CompareController extends BaseApiController
             $isAdded = true;
         }
 
-        Cart::instance('compare')->updateOrStore($identifier);
+        Cart::instance('compare')->store($identifier);
 
         $compareItems = $this->getCompareItems();
 
         return response()->json([
             'id' => $identifier,
             'message' => $isAdded
-                ? trans('plugins/ecommerce::products.compare.added_success', ['product' => $product->name])
-                : trans('plugins/ecommerce::products.compare.removed_success', ['product' => $product->name]),
+                ? __('Added product :product to compare list successfully!', ['product' => $product->name])
+                : __('Removed product :product from compare list successfully!', ['product' => $product->name]),
             'data' => [
                 'count' => Cart::instance('compare')->count(),
                 'added' => $isAdded,
@@ -158,7 +158,7 @@ class CompareController extends BaseApiController
         $product = Product::query()->find($productId);
 
         if (! $product) {
-            return response()->json(['error' => trans('plugins/ecommerce::products.compare.product_not_found')], 404);
+            return response()->json(['error' => __('Product not found')], 404);
         }
 
         // Find the cart item with the matching product ID
@@ -177,16 +177,16 @@ class CompareController extends BaseApiController
             // Remove the item from the cart
             Cart::instance('compare')->remove($rowId);
         } else {
-            return response()->json(['error' => trans('plugins/ecommerce::products.compare.product_not_in_compare')], 404);
+            return response()->json(['error' => __('Product not found in compare list')], 404);
         }
 
-        Cart::instance('compare')->updateOrStore($identifier);
+        Cart::instance('compare')->store($identifier);
 
         $compareItems = $this->getCompareItems();
 
         return response()->json([
             'id' => $identifier,
-            'message' => trans('plugins/ecommerce::products.compare.removed_success', ['product' => $product->name]),
+            'message' => __('Removed product :product from compare list successfully!', ['product' => $product->name]),
             'data' => [
                 'count' => Cart::instance('compare')->count(),
                 'items' => $compareItems,

@@ -19,7 +19,6 @@ class SslCommerzServiceProvider extends ServiceProvider implements DeferrablePro
         $this->setNamespace('plugins/sslcommerz')
             ->loadHelpers()
             ->loadAndPublishConfigurations(['sslcommerz'])
-            ->loadAndPublishTranslations()
             ->loadRoutes()
             ->loadAndPublishViews()
             ->publishAssets();

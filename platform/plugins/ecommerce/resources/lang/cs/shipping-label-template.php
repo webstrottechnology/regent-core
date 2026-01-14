@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'Vlastní CSS',
-    'custom_css_helper' => 'Přidejte vlastní CSS styly pro přizpůsobení vzhledu přepravního štítku. Tyto styly budou připojeny k výchozím stylům přepravního štítku.',
     'reset_success' => 'Úspěšně obnoveno na výchozí hodnoty',
     'confirm_reset' => 'Potvrdit obnovení šablony štítku zásilky?',
     'confirm_message' => 'Opravdu chcete obnovit tuto šablonu štítku zásilky na výchozí?',

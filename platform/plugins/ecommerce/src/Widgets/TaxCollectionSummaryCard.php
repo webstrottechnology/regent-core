@@ -20,19 +20,12 @@ class TaxCollectionSummaryCard extends Card
 
         if (is_plugin_active('payment')) {
             $data = Order::query()
-                ->leftJoin('payments', 'payments.order_id', '=', 'ec_orders.id')
+                ->join('payments', 'payments.order_id', '=', 'ec_orders.id')
                 ->whereDate('ec_orders.created_at', '>=', $this->startDate)
                 ->whereDate('ec_orders.created_at', '<=', $this->endDate)
-                ->where(function ($q): void {
-                    $q->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
-                        ->orWhereNull('ec_orders.payment_id');
-                })
-                ->where(function ($q): void {
-                    $q->where(function ($subQ): void {
-                        $subQ->whereDate('payments.created_at', '>=', $this->startDate)
-                            ->whereDate('payments.created_at', '<=', $this->endDate);
-                    })->orWhereNull('ec_orders.payment_id');
-                })
+                ->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
+                ->whereDate('payments.created_at', '>=', $this->startDate)
+                ->whereDate('payments.created_at', '<=', $this->endDate)
                 ->where('ec_orders.is_finished', true)
                 ->selectRaw('DATE(ec_orders.created_at) as date, SUM(ec_orders.tax_amount) as tax')
                 ->groupBy('date')
@@ -72,19 +65,12 @@ class TaxCollectionSummaryCard extends Card
         // Current period tax
         if (is_plugin_active('payment')) {
             $currentTax = Order::query()
-                ->leftJoin('payments', 'payments.order_id', '=', 'ec_orders.id')
+                ->join('payments', 'payments.order_id', '=', 'ec_orders.id')
                 ->whereDate('ec_orders.created_at', '>=', $currentPeriod->getStartDate())
                 ->whereDate('ec_orders.created_at', '<=', $currentPeriod->getEndDate())
-                ->where(function ($q): void {
-                    $q->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
-                        ->orWhereNull('ec_orders.payment_id');
-                })
-                ->where(function ($q) use ($currentPeriod): void {
-                    $q->where(function ($subQ) use ($currentPeriod): void {
-                        $subQ->whereDate('payments.created_at', '>=', $currentPeriod->getStartDate())
-                            ->whereDate('payments.created_at', '<=', $currentPeriod->getEndDate());
-                    })->orWhereNull('ec_orders.payment_id');
-                })
+                ->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
+                ->whereDate('payments.created_at', '>=', $currentPeriod->getStartDate())
+                ->whereDate('payments.created_at', '<=', $currentPeriod->getEndDate())
                 ->where('ec_orders.is_finished', true)
                 ->sum('ec_orders.tax_amount');
         } else {
@@ -98,19 +84,12 @@ class TaxCollectionSummaryCard extends Card
         // Previous period tax
         if (is_plugin_active('payment')) {
             $previousTax = Order::query()
-                ->leftJoin('payments', 'payments.order_id', '=', 'ec_orders.id')
+                ->join('payments', 'payments.order_id', '=', 'ec_orders.id')
                 ->whereDate('ec_orders.created_at', '>=', $previousPeriod->getStartDate())
                 ->whereDate('ec_orders.created_at', '<=', $previousPeriod->getEndDate())
-                ->where(function ($q): void {
-                    $q->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
-                        ->orWhereNull('ec_orders.payment_id');
-                })
-                ->where(function ($q) use ($previousPeriod): void {
-                    $q->where(function ($subQ) use ($previousPeriod): void {
-                        $subQ->whereDate('payments.created_at', '>=', $previousPeriod->getStartDate())
-                            ->whereDate('payments.created_at', '<=', $previousPeriod->getEndDate());
-                    })->orWhereNull('ec_orders.payment_id');
-                })
+                ->whereIn('payments.status', [PaymentStatusEnum::COMPLETED, PaymentStatusEnum::PENDING])
+                ->whereDate('payments.created_at', '>=', $previousPeriod->getStartDate())
+                ->whereDate('payments.created_at', '<=', $previousPeriod->getEndDate())
                 ->where('ec_orders.is_finished', true)
                 ->sum('ec_orders.tax_amount');
         } else {

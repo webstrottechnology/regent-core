@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static string getOrderTrackingMethod()
  * @method static bool isOrderTrackingUsingPhone()
  * @method static bool isOrderAutoConfirmedEnabled()
- * @method static bool isOrderDeletionEnabled()
  * @method static float reviewMaxFileSize(bool $isConvertToKB = false)
  * @method static int reviewMaxFileNumber()
  * @method static \Illuminate\Support\Collection getReviewsGroupedByProductId(string|int $productId, int $reviewsCount = 0)
@@ -85,7 +84,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getHiddenFieldsAtCheckout()
  * @method static array withProductEagerLoadingRelations()
  * @method static bool isDisplayTaxFieldsAtCheckoutPage()
- * @method static bool isDisplayCheckoutTaxInformation()
  * @method static int getProductMaxPrice(array $categoryIds = [])
  * @method static void clearProductMaxPriceCache()
  * @method static bool isEnabledFilterProductsByBrands()
@@ -124,14 +122,11 @@ use Illuminate\Support\Facades\Facade;
  * @method static bool isPaymentProofEnabled()
  * @method static bool isEnabledFilterProductsByCategories()
  * @method static bool isEnabledFilterProductsByPrice()
- * @method static bool isHideCustomerInfoAtCheckout()
  * @method static bool hideProductPrice()
- * @method static bool hideProductPriceWhenZero()
  * @method static array parseFilterParams(Request $request, string $paramName)
  * @method static string getAssetVersion()
  * @method static array parseJsonParam($param)
  * @method static float roundPrice(float $price, $currency = null)
- * @method static array getAdminNotificationEmails()
  *
  * @see \Botble\Ecommerce\Supports\EcommerceHelper
  */

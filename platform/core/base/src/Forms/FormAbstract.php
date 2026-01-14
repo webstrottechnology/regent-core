@@ -506,6 +506,8 @@ abstract class FormAbstract extends Form implements ExtensibleContract
             $this->dispatchAfterSaving();
         }
 
+        $this->dispatchAfterSaving();
+
         $model = $this->getModel();
 
         if ($model instanceof Model && $model->exists && ! $withoutEvents) {

@@ -12,14 +12,4 @@ class VerifyAccountDeletionRequest extends Request
             'verification_code' => ['required', 'string', 'size:6'],
         ];
     }
-
-    public function bodyParameters(): array
-    {
-        return [
-            'verification_code' => [
-                'description' => 'The 6-character code sent to confirm account deletion.',
-                'example' => '123456',
-            ],
-        ];
-    }
 }

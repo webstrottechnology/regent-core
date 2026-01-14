@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name' => 'États',
+    'name' => 'States',
     'description' => 'Gérer les états de localisation',
-    'create' => 'Nouvel état',
-    'country' => 'Pays',
-    'select_country' => 'Sélectionnez un pays...',
-    'state' => 'État',
+    'create' => 'New state',
+    'country' => 'Country',
+    'select_country' => 'Select a country...',
+    'state' => 'State',
 ];

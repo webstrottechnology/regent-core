@@ -23,6 +23,7 @@ return [
         'activated' => 'Aktiviran',
         'locked' => 'Zaklenjen',
     ],
+    'email_verified' => 'E-pošta potrjena?',
     'verify_email' => [
         'confirm_heading' => 'Potrdi preverjanje e-pošte',
         'confirm_description' => 'Ali ste prepričani, da želite potrditi e-pošto te stranke?',

@@ -1,24 +1,24 @@
 <div class="number-items-available">
     @if ($product->isOutOfStock())
-        <span class="text-danger">{{ trans('plugins/ecommerce::ecommerce.out_of_stock') }}</span>
+        <span class="text-danger">{{ __('Out of stock') }}</span>
     @else
         @if (! $productVariation)
-            <span class="text-danger">{{ trans('plugins/ecommerce::ecommerce.not_available') }}
+            <span class="text-danger">{{ __('Not available') }}
         @else
             @if ($productVariation->isOutOfStock())
-                <span class="text-danger">{{ trans('plugins/ecommerce::ecommerce.out_of_stock') }}</span>
+                <span class="text-danger">{{ __('Out of stock') }}</span>
             @elseif (! $productVariation->with_storehouse_management || $productVariation->quantity < 1)
-                <span class="text-success">{{ trans('plugins/ecommerce::ecommerce.available') }}</span>
+                <span class="text-success">{{ __('Available') }}</span>
             @elseif ($productVariation->quantity)
                 <span class="text-success">
                     @if (EcommerceHelper::showNumberOfProductsInProductSingle())
                         @if ($productVariation->quantity !== 1)
-                            {{ trans('plugins/ecommerce::products.number_products_available_plural', ['number' => $productVariation->quantity]) }}
+                            {{ __(':number products available', ['number' => $productVariation->quantity]) }}
                         @else
-                            {{ trans('plugins/ecommerce::products.number_product_available_singular', ['number' => $productVariation->quantity]) }}
+                            {{ __(':number product available', ['number' => $productVariation->quantity]) }}
                         @endif
                     @else
-                        {{ trans('plugins/ecommerce::ecommerce.in_stock') }}
+                        {{ __('In stock') }}
                     @endif
                 </span>
            @endif

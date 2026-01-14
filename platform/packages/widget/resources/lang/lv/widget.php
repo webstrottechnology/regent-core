@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Logrīku zonas',
     'manage_widgets' => 'Pārvaldīt logrīkus',
 
-    'click_to_add' => 'Noklikšķiniet, lai pievienotu logrīku',
-    'select_sidebar' => 'Pievienot logrīku',
-    'select_sidebar_description' => 'Izvēlieties, kur pievienot šo logrīku',
-    'adding_to' => 'Pievieno',
-    'add_widget' => 'Pievienot logrīku',
-    'widget_not_found' => 'Logrīks nav atrasts',
-
     'cache_suggestion' => [
         'title' => 'Veiktspējas ieteikums',
         'description' => 'Varat uzlabot savas vietnes veiktspēju, iespējojot logrīku kešatmiņu.',
@@ -52,22 +45,4 @@ return [
     'widget_site_copyright_description' => 'Autortiesību teksts apakšējā kājenē.',
     'widget_site_copyright_helper' => 'Dodieties uz :link, lai mainītu autortiesību tekstu.',
     'theme_options' => 'Tēmas opcijas',
-
-    'form' => [
-        'enable_caching' => 'Iespējot kešatmiņu',
-        'yes' => 'Jā',
-        'no' => 'Nē',
-        'cache_helper' => 'Iespējojot, šī logrīka saturs tiks saglabāts kešatmiņā veiktspējas uzlabošanai.',
-        'cache_warning' => 'UI problēmu dēļ kešatmiņa šim logrīkam ir atspējota ar kodu.',
-    ],
-
-    'drag_or_click' => 'Velciet uz sānjoslu vai noklikšķiniet uz + lai pievienotu',
-    'drop_widgets_here' => 'Nometiet logrīkus sānjoslas zonās',
-    'search_widgets' => 'Meklēt logrīkus...',
-    'no_widgets' => 'Nav pieejamu logrīku',
-    'no_search_results' => 'Logrīki nav atrasti',
-    'or_click_add' => 'Vai noklikšķiniet uz logrīka + pogas lai pievienotu',
-    'toggle_widget' => 'Pārslēgt logrīka iestatījumus',
-    'loading_form' => 'Ielādē logrīka formu...',
-
 ];

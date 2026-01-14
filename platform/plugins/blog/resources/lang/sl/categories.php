@@ -12,7 +12,4 @@ return [
     'parent' => 'Nadrejena kategorija',
     'order' => 'Vrstni red',
     'is_default' => 'Je privzeto',
-    'intro' => [
-        'description' => 'Uredite svoje objave na blogu v kategorije za boljše upravljanje vsebin.',
-    ],
 ];

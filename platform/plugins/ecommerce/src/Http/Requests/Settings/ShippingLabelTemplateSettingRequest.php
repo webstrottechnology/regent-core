@@ -10,7 +10,6 @@ class ShippingLabelTemplateSettingRequest extends Request
     {
         return [
             'content' => ['required', 'string', 'max:1000000'],
-            'shipping_label_template_custom_css' => ['nullable', 'string', 'max:100000'],
         ];
     }
 }

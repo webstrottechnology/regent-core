@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Zone widget',
     'manage_widgets' => 'Gestionează widget-uri',
 
-    'click_to_add' => 'Faceți clic pentru a adăuga widget',
-    'select_sidebar' => 'Adăugați Widget',
-    'select_sidebar_description' => 'Alegeți unde să adăugați acest widget',
-    'adding_to' => 'Se adaugă la',
-    'add_widget' => 'Adăugați Widget',
-    'widget_not_found' => 'Widget-ul nu a fost găsit',
-
     'cache_suggestion' => [
         'title' => 'Sugestie de performanță',
         'description' => 'Puteți îmbunătăți performanța site-ului activând cache-ul pentru widget-uri.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Text drepturi de autor în subsolul de jos.',
     'widget_site_copyright_helper' => 'Accesați :link pentru a modifica textul drepturilor de autor.',
     'theme_options' => 'Opțiuni temă',
-
-    'form' => [
-        'enable_caching' => 'Activează cache-ul',
-        'yes' => 'Da',
-        'no' => 'Nu',
-        'cache_helper' => 'Când este activat, conținutul acestui widget va fi memorat în cache pentru a îmbunătăți performanța. Dezactivați pentru conținut dinamic care se schimbă frecvent.',
-        'cache_warning' => 'Din cauza problemelor de interfață, cache-ul pentru acest widget este dezactivat prin cod. Acest widget nu va fi memorat în cache chiar dacă cache-ul este activat.',
-    ],
-
-    'drag_or_click' => 'Trageți în bara laterală sau faceți clic pe + pentru a adăuga',
-    'drop_widgets_here' => 'Plasați widget-uri în zonele barei laterale',
-    'search_widgets' => 'Căutați widget-uri...',
-    'no_widgets' => 'Niciun widget disponibil',
-    'no_search_results' => 'Niciun widget găsit',
-    'or_click_add' => 'Sau faceți clic pe butonul + de pe un widget pentru a adăuga',
-    'toggle_widget' => 'Comutați setările widget-ului',
-    'loading_form' => 'Se încarcă formularul widget-ului...',
 ];

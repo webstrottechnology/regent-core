@@ -191,9 +191,6 @@ return [
         'sender' => 'Afzender',
         'order_date' => 'Besteldatum',
         'scan_qr_code' => 'Scan QR code om uw zending te volgen',
-        'total_amount' => 'Totaalbedrag',
-        'cod_amount_to_collect' => 'Te innen remboursbedrag',
     ],
     'customer_confirmed_delivery_at' => 'Klant bevestigde bezorging op',
-    'no_shipping_methods_available' => 'Geen verzendmethoden beschikbaar!',
 ];

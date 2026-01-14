@@ -211,7 +211,7 @@ class ProductLicenseCodeController extends BaseController
             $code = $this->generateLicenseCode($format, $pattern);
 
             // Check for duplicates in database
-            if (ProductLicenseCode::query()->where('license_code', $code)->exists()) {
+            if (ProductLicenseCode::where('license_code', $code)->exists()) {
                 $duplicateCount++;
 
                 continue;
@@ -237,7 +237,7 @@ class ProductLicenseCodeController extends BaseController
         }
 
         if (! empty($generatedCodes)) {
-            ProductLicenseCode::query()->insert($generatedCodes);
+            ProductLicenseCode::insert($generatedCodes);
         }
 
         $actualGenerated = count($generatedCodes);

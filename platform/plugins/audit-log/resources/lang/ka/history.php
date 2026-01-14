@@ -45,6 +45,4 @@ return [
     'admin' => 'ადმინისტრატორი',
     'register_an_account' => 'ანგარიში',
     'activity_has_been_deleted' => 'აქტივობა წაშლილია',
-    'no_results_found' => 'No results found',
-    'no_activities_here' => 'It looks as through there are no activities here.',
 ];

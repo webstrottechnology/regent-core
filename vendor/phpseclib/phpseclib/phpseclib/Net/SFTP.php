@@ -3462,6 +3462,7 @@ class SFTP extends SSH2
                 return $this->packet_type_log;
         }
     }
+
     /**
      * Returns all errors on the SFTP layer
      *

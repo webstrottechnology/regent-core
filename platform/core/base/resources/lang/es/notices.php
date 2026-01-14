@@ -11,9 +11,7 @@ return [
     'error' => '¡Error!',
     'success' => '¡Éxito!',
     'info' => 'Información',
-    'enum' =>
-        [
-            'validate_message' => 'El valor de :attribute que has ingresado es inválido.',
-        ],
-    'delete_failed_message' => 'Error al eliminar, elemento no encontrado.',
+    'enum' => [
+        'validate_message' => 'El valor de :attribute que has ingresado es inválido.',
+    ],
 ];

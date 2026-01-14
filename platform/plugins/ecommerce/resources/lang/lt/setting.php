@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'El. prekyba',
     'general' => [
         'name' => 'Bendri',
-        'description' => 'Parduotuvės pavadinimas, įmonės info, kontaktai ir admin pranešimų el. laiškai',
+        'description' => 'Peržiūrėti ir atnaujinti bendrus nustatymus',
     ],
     'currency' => [
         'name' => 'Valiutos',
-        'description' => 'Valiutų formatai, valiutų kursai, automatinis aptikimas ir dešimtainiai/tūkstančių skyrikliai',
+        'description' => 'Peržiūrėti ir atnaujinti valiutos nustatymus',
         'currency_setting_description' => 'Peržiūrėti ir atnaujinti svetainėje naudojamas valiutas',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Įjungti automatinį lankytojo valiutos nustatymą',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produktai',
-        'description' => 'Atsargų rodymas, SKU generavimas, variantų nuotraukos, susiję produktai ir specifikacijos',
+        'description' => 'Peržiūrėti ir atnaujinti produktų nustatymus',
         'product_settings' => 'Produktų nustatymai',
         'product_settings_description' => 'Konfigūruoti produktų taisykles',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Produktų paieška',
-        'description' => 'Paieškos elgsena, filtrai pagal kategoriją/prekės ženklą/žymą/atributus ir kainų intervalo filtravimas',
+        'description' => 'Peržiūrėti ir atnaujinti produktų paieškos nustatymus',
         'product_search_settings' => 'Produktų paieška',
         'product_search_settings_description' => 'Konfigūruoti produktų paieškos taisykles',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Skaitmeniniai produktai',
-        'description' => 'Atsisiunčiami produktai, licencijų kodai, svečio kasa skaitmeniniams produktams ir automatinis užbaigimas',
+        'description' => 'Peržiūrėti ir atnaujinti skaitmeninių produktų nustatymus',
         'digital_products_settings' => 'Skaitmeniniai produktai',
         'digital_products_settings_description' => 'Konfigūruoti skaitmeninių produktų taisykles',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Produktų atsiliepimai',
-        'description' => 'Klientų atsiliepimai, įvertinimų rodymas, nuotraukų įkėlimas ir patvirtinimo reikalavimai',
+        'description' => 'Peržiūrėti ir atnaujinti produktų atsiliepimų nustatymus',
         'form' => [
             'enable_review' => 'Įjungti produktų atsiliepimus',
             'enable_review_help' => 'Leisti klientams palikti atsiliepimus ir įvertinimus produktams. Kai išjungta, visos atsiliepimų funkcijos bus paslėptos parduotuvėje.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Apsipirkimas',
-        'description' => 'Krepšelis, pageidavimų sąrašas, palyginimas, užsakymo sekimas, greito pirkimo mygtukas ir mokėjimo įrodymo įkėlimas',
+        'description' => 'Peržiūrėti ir atnaujinti apsipirkimo nustatymus',
         'general_setting' => 'Bendri nustatymai',
         'return_settings' => 'Grąžinimo nustatymai',
         'return_settings_description' => 'Konfigūruoti grąžinimo nustatymų taisykles',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Krepšelis bus sunaikintas, kai klientas atsijungs.',
             'hide_product_price' => 'Slėpti produkto kainą',
             'hide_product_price_helper' => 'Ši parinktis veikia tik jei išjungsite prekių krepšelį, paverčiant jūsų svetainę tik katalogo rodymu. Jei įjungta, produkto kaina bus paslėpta. Tai naudinga, kai norite paslėpti kainą ir reikalauti, kad klientai susisiektų dėl kainos.',
-            'hide_product_price_when_zero' => 'Slėpti produkto kainą, kai ji lygi nuliui',
-            'hide_product_price_when_zero_helper' => 'Jei įjungta, produktams kurių kaina 0 kaina parduotuvėje nerodoma.',
             'enable_payment_proof' => 'Įjungti mokėjimo įrodymo įkėlimą',
             'enable_payment_proof_helper' => 'Leisti klientams įkelti mokėjimo įrodymą savo užsakymams. Tai naudinga rankiniams mokėjimo metodams.',
             'enable_guest_payment_proof' => 'Leisti svečiams klientams įkelti mokėjimo įrodymą',
             'enable_guest_payment_proof_helper' => 'Kai įjungta, svečiai klientai gali įkelti mokėjimo įrodymą naudodami savo užsakymo žetoną be prisijungimo. Jie gaus įkėlimo nuorodą užsakymo patvirtinimo el. laiške.',
-            'payment_proof_payment_methods' => 'Mokėjimo būdai, reikalaujantys mokėjimo įrodymo',
-            'payment_proof_payment_methods_helper' => 'Pasirinkite, kurie mokėjimo būdai turėtų leisti klientams įkelti mokėjimo įrodymą. Paprastai naudojama rankiniu mokėjimo būdu, pvz., atsiskaitymas pristatymo metu ir banko pervedimu.',
         ],
     ],
     'checkout' => [
         'name' => 'Atsiskaitymas',
-        'panel_description' => 'Svečio kasa, privalomi laukai, užsakymo limitai, sąlygų priėmimas ir šalių apribojimai',
+        'panel_description' => 'Peržiūrėti ir atnaujinti atsiskaitymo nustatymus',
         'description' => 'Konfigūruoti atsiskaitymo nustatymų taisykles',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Rodyti banko informaciją sėkmingo atsiskaitymo puslapyje',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Grąžinimas',
         'description' => 'Konfigūruoti grąžinimo nustatymų taisykles',
-        'panel_description' => 'Užsakymų grąžinimai, daliniai grąžinimai ir grąžinimo terminai',
+        'panel_description' => 'Peržiūrėti ir atnaujinti grąžinimo nustatymus',
         'form' => [
             'is_enabled_order_return' => 'Ar įjungtas užsakymų grąžinimas',
             'allow_partial_return' => 'Leisti dalinį grąžinimą',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Sąskaitos faktūros',
-        'description' => 'Įmonės duomenys ant sąskaitų, sąskaitų numeracija, PDF šriftai ir antspaudo nustatymai',
+        'description' => 'Peržiūrėti ir atnaujinti sąskaitų faktūrų nustatymus',
         'company_settings' => 'Įmonės nustatymai',
         'company_settings_description' => 'Nustatyti įmonės informaciją sąskaitoms faktūroms',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Numatytasis mokesčio tarifas',
             'default_tax_rate_description' => 'Svarbu: jis bus taikomas, jei produktui nepasirinktas joks mokestis.',
             'select_tax' => '-- Pasirinkti --',
-            'display_product_price_including_taxes' => 'Pridėti mokestį prie rodomų kainų',
-            'display_product_price_including_taxes_helper' => 'Automatiškai prideda mokestį prie parduotuvėje rodomų produktų kainų. Pvz. $100 produktas su 10% mokesčiu rodomas kaip $110. Nereikalinga, jei "Kaina apima mokestį" jau įjungta atskiriems produktams.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Rodyti produkto kainą įskaitant mokesčius',
         ],
     ],
     'customer' => [
         'name' => 'Klientai',
-        'description' => 'Registracija, el. pašto patvirtinimas, prisijungimo parinktys, paskyros ištrynimas ir profilio laukai',
+        'description' => 'Peržiūrėti ir atnaujinti klientų nustatymus',
         'customer_setting' => 'Klientų nustatymai',
         'customer_setting_description' => 'Konfigūruoti klientų nustatymus',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Pristatymas',
-        'description' => 'Pristatymo taisyklės, nemokamo pristatymo elgsena ir pristatymo parinkčių rodymo tvarka',
+        'description' => 'Peržiūrėti ir atnaujinti pristatymo nustatymus',
         'shipping_rule' => 'Pristatymo taisyklės',
         'shipping_rule_description' => 'Konfigūruoti taisykles pristatymo mokesčiui apskaičiuoti',
         'shipping_setting' => 'Pristatymo nustatymai',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Išsaugoti vietą',
             'add_new' => 'Pridėti naują',
         ],
-            'info' => [
-            'title' => 'Kaip veikia parduotuvių lokatoriai',
-            'primary_store' => 'Pagrindinės parduotuvės adresas rodomas sąskaitose faktūrose ir naudojamas kaip numatytasis grąžinimo adresas siuntų etiketėms.',
-            'shipping_location' => 'Parduotuvės, pažymėtos kaip "siuntimo vieta", gali būti pasirinktos kaip kilmės sandėlis kuriant siuntas.',
-            'shipment_selection' => 'Apdorojant užsakymus, galite pasirinkti, iš kurio sandėlio siųsti, remiantis atsargomis ir kliento vieta.',
-        ],
     ],
     'tracking' => [
         'name' => 'Sekimas',
-        'description' => 'Facebook Pixel, Google Tag Manager įvykiai ir Google Ads konversijų sekimas',
+        'description' => 'Peržiūrėti ir atnaujinti sekimo nustatymus',
         'manage_tracking' => 'Valdyti sekimą',
         'manage_tracking_description' => 'Valdyti sekimą: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Prekyvietė',
-        'description' => 'Kelių pardavėjų nustatymai, komisiniai, pardavėjų registracija ir išmokėjimų konfigūracija',
+        'description' => 'Peržiūrėti ir atnaujinti prekyvietės nustatymus',
     ],
     'standard_and_format' => [
         'name' => 'Standartai ir formatai',
-        'panel_description' => 'Užsakymo kodo formatas, svorio vienetai (kg/lb) ir matmenų vienetai (cm/coliai)',
+        'panel_description' => 'Peržiūrėti ir atnaujinti standartų ir formatų nustatymus',
         'description' => 'Standartai ir formatai naudojami apskaičiuoti tokius dalykus kaip produktų kainos, pristatymo svoris ir užsakymų laikas.',
         'form' => [
             'change_order_format' => 'Redaguoti užsakymo kodo formatą (neprivaloma)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Rodyti pažangos juostą su "X parduota iš Y", kad sukurtumėte skubą ir paskatintumėte greitus pirkimus žaibiškai išpardavimų metu.',
     ],
     'payment_method_cod_minimum_amount' => 'Minimali užsakymo suma - :currency (Neprivaloma)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minimali užsakymo suma - :currency (Neprivaloma)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Rodyti banko informaciją sėkmingo atsiskaitymo puslapyje?',
     'invoice_templates' => 'Sąskaitų faktūrų šablonai',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

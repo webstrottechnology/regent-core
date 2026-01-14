@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Kupon tanpa batas?',
     'enter_number' => 'Masukkan angka',
     'coupon_type' => 'Jenis kupon',
-    'discount_type' => 'Jenis diskon',
     'percentage_discount' => 'Diskon persentase (%)',
     'free_shipping' => 'Gratis ongkir',
     'same_price' => 'Harga sama',
     'apply_for' => 'berlaku untuk',
-    'apply_to' => 'Terapkan untuk',
     'all_orders' => 'Semua pesanan',
     'order_amount_from' => 'Jumlah pesanan dari',
     'product_collection' => 'Koleksi produk',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Kupon ini tidak dapat diterapkan karena keranjang Anda berisi item flash sale (:product_name). Harga flash sale tidak dapat digabungkan dengan diskon kupon.',
     'coupon_applied_successfully' => 'Bagus! Kode kupon ":code" telah diterapkan. Anda menghemat uang pada pesanan ini!',
     'coupon_removed_successfully' => 'Kode kupon telah dihapus dari pesanan Anda.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Kode kupon (:count)',
-    'left_quantity' => 'Tersisa :left',
-    'apply' => 'Terapkan',
-    'remove' => 'Hapus',
-    'select_coupon' => 'Pilih Kupon',
-    'you_have_coupon_code' => 'Punya kode kupon?',
-    'close' => 'Tutup',
-    'coupon_code_label' => 'Kode kupon: :code',
-    'enter_coupon_code_placeholder' => 'Masukkan kode kupon...',
 ];

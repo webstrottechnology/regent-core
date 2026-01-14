@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI Blokları',
     'search' => 'Ara...',
     'no_shortcode_found' => 'Kısa kod bulunamadı.',
-    'shortcode_not_available' => '":name" kısa kodu mevcut değil veya kaldırılmış.',
 
     'cache_suggestion' => [
         'title' => 'Performans Önerisi',

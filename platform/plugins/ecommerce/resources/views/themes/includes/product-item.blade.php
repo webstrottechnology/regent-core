@@ -37,9 +37,9 @@
                         <x-core::icon name="ti ti-shopping-cart"/>
                         <span class="tp-product-tooltip tp-product-tooltip-right">
                             @if ($isConfigurable)
-                                {{ trans('plugins/ecommerce::ecommerce.select_options') }}
+                                {{ __('Select Options') }}
                             @else
-                                {{ trans('plugins/ecommerce::ecommerce.add_to_cart') }}
+                                {{ __('Add To Cart') }}
                             @endif
                 </span>
                     </button>

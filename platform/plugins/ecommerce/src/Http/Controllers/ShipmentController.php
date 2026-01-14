@@ -141,7 +141,6 @@ class ShipmentController extends BaseController
                 'tracking_link',
                 'estimate_date_shipped',
                 'note',
-                'store_id',
             ])
         );
 

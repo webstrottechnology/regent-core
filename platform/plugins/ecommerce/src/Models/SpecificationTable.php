@@ -71,7 +71,7 @@ class SpecificationTable extends BaseModel
             $specificationAttribute = $product->getSpecificationAttributePivot($attribute);
             if ($specificationAttribute) {
                 $defaultValue = $specificationAttribute->pivot->value ?: $attribute->default_value;
-                $isHidden = (bool) $specificationAttribute->pivot->getAttribute('hidden');
+                $isHidden = $specificationAttribute->pivot->hidden;
                 $order = $specificationAttribute->pivot->order;
             }
         }

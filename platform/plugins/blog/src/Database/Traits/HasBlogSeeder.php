@@ -32,8 +32,10 @@ trait HasBlogSeeder
             Category::query()->truncate();
         }
 
+        $faker = $this->fake();
+
         foreach ($categories as $index => $item) {
-            $item['description'] ??= 'Explore our collection of articles and insights in this category.';
+            $item['description'] ??= $faker->text();
             $item['is_featured'] ??= ! isset($item['parent_id']) && $index != 0;
             $item['parent_id'] ??= 0;
 
@@ -82,21 +84,23 @@ trait HasBlogSeeder
             DB::table('post_tags')->truncate();
         }
 
+        $faker = $this->fake();
+
         $categoryIds = Category::query()->pluck('id');
         $tagIds = Tag::query()->pluck('id');
         $userIds = $this->getUserIds();
 
         $posts = [];
 
-        foreach ($data as $index => $item) {
-            $item['views'] ??= rand(100, 2500);
-            $item['description'] ??= 'Discover the latest insights, trends, and expert analysis in this comprehensive article that covers key aspects of the topic.';
-            $item['is_featured'] ??= $index < 5;
+        foreach ($data as $item) {
+            $item['views'] ??= $faker->numberBetween(100, 2500);
+            $item['description'] ??= $faker->realText();
+            $item['is_featured'] ??= $faker->boolean();
 
             if (! empty($item['content'])) {
                 $item['content'] = $this->removeBaseUrlFromString((string) $item['content']);
             } else {
-                $item['content'] = 'This article provides an in-depth exploration of the topic, offering valuable insights and practical information for readers seeking to expand their knowledge.';
+                $item['content'] = $faker->realText();
             }
 
             $item['author_id'] ??= $userIds->random();

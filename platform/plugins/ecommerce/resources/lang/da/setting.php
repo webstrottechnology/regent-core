@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-handel',
     'general' => [
         'name' => 'Generelt',
-        'description' => 'Butiksnavn, firmainfo, kontaktoplysninger og admin-notifikations-e-mails',
+        'description' => 'Vis og opdater dine generelle indstillinger',
     ],
     'currency' => [
         'name' => 'Valutaer',
-        'description' => 'Valutaformater, vekselkurser, auto-detektering og decimal-/tusindtalsseparatorer',
+        'description' => 'Vis og opdater valutaindstillinger',
         'currency_setting_description' => 'Vis og opdater valutaer der bruges på hjemmesiden',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Aktiver automatisk registrering af besøgendes valuta',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produkter',
-        'description' => 'Lagervisning, SKU-generering, variantbilleder, relaterede produkter og specifikationer',
+        'description' => 'Vis og opdater dine produktindstillinger',
         'product_settings' => 'Produktindstillinger',
         'product_settings_description' => 'Konfigurer regler for produkt',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Produktsøgning',
-        'description' => 'Søgeadfærd, filtre efter kategori/mærke/tag/attributter og prisintervalfiltrering',
+        'description' => 'Vis og opdater produktsøgningsindstillinger',
         'product_search_settings' => 'Produktsøgning',
         'product_search_settings_description' => 'Konfigurer regler for produktsøgning',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Digitale produkter',
-        'description' => 'Downloadbare produkter, licenskoder, gæstekasse for digitale varer og automatisk fuldførelse',
+        'description' => 'Vis og opdater digitale produktindstillinger',
         'digital_products_settings' => 'Digitale produkter',
         'digital_products_settings_description' => 'Konfigurer regler for digitale produkter',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Produktanmeldelser',
-        'description' => 'Kundeanmeldelser, vurderingsvisning, billedupload og godkendelseskrav',
+        'description' => 'Vis og opdater dine produktanmeldelsesindstillinger',
         'form' => [
             'enable_review' => 'Aktiver produktanmeldelser',
             'enable_review_help' => 'Tillad kunder at afgive anmeldelser og bedømmelser på produkter. Når deaktiveret, vil alle anmeldelsesfunktioner være skjult fra butikken.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Shopping',
-        'description' => 'Kurv, ønskeliste, sammenlign, ordresporing, hurtigkøb-knap og upload af betalingsbevis',
+        'description' => 'Vis og opdater dine shoppingindstillinger',
         'general_setting' => 'Generelle indstillinger',
         'return_settings' => 'Returindstillinger',
         'return_settings_description' => 'Konfigurer regler for returindstillinger',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Kurven ødelægges når kunden logger ud.',
             'hide_product_price' => 'Skjul produktpris',
             'hide_product_price_helper' => 'Denne mulighed virker kun hvis du deaktiverer indkøbskurv, hvilket gør din side til en katalogvisning. Hvis aktiveret, skjules produktprisen. Det er nyttigt når du vil skjule prisen og kræve at kunder kontakter dig for prisen.',
-            'hide_product_price_when_zero' => 'Skjul produktpris når den er nul',
-            'hide_product_price_when_zero_helper' => 'Hvis aktiveret, vises prisen ikke for produkter med pris 0 i butikken.',
             'enable_payment_proof' => 'Aktiver betalingsbevis upload',
             'enable_payment_proof_helper' => 'Tillad kunder at uploade betalingsbevis for deres ordrer. Dette er nyttigt for manuelle betalingsmetoder.',
             'enable_guest_payment_proof' => 'Tillad gæstekunder at uploade betalingsbevis',
             'enable_guest_payment_proof_helper' => 'Når aktiveret, kan gæstekunder uploade betalingsbevis ved hjælp af deres ordretoken uden at logge ind. De modtager uploadlinket i deres ordrebekræftelses-e-mail.',
-            'payment_proof_payment_methods' => 'Betalingsmetoder, der kræver betalingsbevis',
-            'payment_proof_payment_methods_helper' => 'Vælg hvilke betalingsmetoder, der skal give kunderne mulighed for at uploade betalingsbevis. Bruges typisk til manuelle betalingsmetoder som efterkrav og bankoverførsel.',
         ],
     ],
     'checkout' => [
         'name' => 'Betaling',
-        'panel_description' => 'Gæstekasse, påkrævede felter, ordrebegrænsninger, accept af vilkår og landebegrænsninger',
+        'panel_description' => 'Vis og opdater betalingsindstillinger',
         'description' => 'Konfigurer regler for betalingsindstillinger',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Vis bankinfo på betalingssuccessiden',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Retur',
         'description' => 'Konfigurer regler for returindstillinger',
-        'panel_description' => 'Returneringer, delvise returneringer og returfrister',
+        'panel_description' => 'Vis og opdater returindstillinger',
         'form' => [
             'is_enabled_order_return' => 'Er ordreretur aktiveret',
             'allow_partial_return' => 'Tillad delvis retur',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Fakturaer',
-        'description' => 'Firmadetaljer på fakturaer, fakturanummerering, PDF-skrifttyper og stempelindstillinger',
+        'description' => 'Vis og opdater dine fakturaindstillinger',
         'company_settings' => 'Virksomhedsindstillinger',
         'company_settings_description' => 'Indstillinger for virksomhedsinformation til fakturering',
         'form' => [
@@ -305,22 +301,19 @@ return [
             'default_tax_rate' => 'Standard momssats',
             'default_tax_rate_description' => 'Vigtigt: den anvendes hvis ingen moms er valgt i produktet.',
             'select_tax' => '-- Vælg --',
-            'display_product_price_including_taxes' => 'Tilføj moms til viste priser',
-            'display_product_price_including_taxes_helper' => 'Tilføjer automatisk moms til produktpriser vist i butikken. F.eks. vises et $100 produkt med 10% moms som $110. Ikke nødvendigt hvis "Pris inkluderer moms" allerede er aktiveret på individuelle produkter.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Vis produktpris inklusiv moms',
         ],
     ],
     'customer' => [
         'name' => 'Kunder',
-        'description' => 'Registrering, e-mailbekræftelse, login-muligheder, kontosletning og profilfelter',
+        'description' => 'Vis og opdater dine kundeindstillinger',
         'customer_setting' => 'Kundeindstillinger',
         'customer_setting_description' => 'Konfigurer kundeindstillinger',
         'form' => [
             'enable_customer_registration' => 'Aktiver kunderegistrering',
             'enable_customer_registration_helper' => 'Hvis deaktiveret, vil kunder ikke kunne registrere nye konti. Eksisterende kunder kan stadig logge ind.',
-            'verify_customer_email' => 'Verificer kundens e-mail',
-            'verify_customer_email_helper' => 'Når det er aktiveret, sendes et verificeringslink til kundens e-mail, kunder skal klikke på dette link for at verificere deres e-mail før de kan logge ind. Skal konfigurere e-mail i Admin -> Indstillinger -> E-mail for at sende e-mailverificering.',
+            'verify_customer_email' => "Verificer kundens e-mail",
+            'verify_customer_email_helper' => "Når det er aktiveret, sendes et verificeringslink til kundens e-mail, kunder skal klikke på dette link for at verificere deres e-mail før de kan logge ind. Skal konfigurere e-mail i Admin -> Indstillinger -> E-mail for at sende e-mailverificering.",
             'verification_expire_minutes' => 'Verificeringslinkudløbstid',
             'verification_expire_minutes_helper' => 'Tiden i minutter som e-mailverificeringslinket vil være gyldigt. Standard er 60 minutter (1 time). Maksimum er 10080 minutter (7 dage).',
             'login_using_phone' => 'Log ind med telefonnummer i stedet for e-mail',
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Fragt',
-        'description' => 'Forsendelsesregler, gratis forsendelsesadfærd og visningsrækkefølge for forsendelsesmuligheder',
+        'description' => 'Vis og opdater fragtindstillinger',
         'shipping_rule' => 'Fragtregler',
         'shipping_rule_description' => 'Konfigurer regler til beregning af fragtomkostning',
         'shipping_setting' => 'Fragtindstillinger',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Gem lokation',
             'add_new' => 'Tilføj ny',
         ],
-        'info' => [
-            'title' => 'Hvordan butikslokationer fungerer',
-            'primary_store' => 'Den primære butiksadresse vises på fakturaer og bruges som standardreturadresse for fragtetiketter.',
-            'shipping_location' => 'Butikker markeret som "forsendelseslokation" kan vælges som oprindelseslager ved oprettelse af forsendelser.',
-            'shipment_selection' => 'Ved behandling af ordrer kan du vælge hvilket lager der skal sendes fra baseret på lager og kundelokation.',
-        ],
     ],
     'tracking' => [
         'name' => 'Sporing',
-        'description' => 'Facebook Pixel, Google Tag Manager events og Google Ads konverteringssporing',
+        'description' => 'Vis og opdater sporingsindstillinger',
         'manage_tracking' => 'Administrer sporing',
         'manage_tracking_description' => 'Administrer sporing: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Markedsplads',
-        'description' => 'Multi-vendor indstillinger, kommissioner, sælgerregistrering og udbetalingskonfiguration',
+        'description' => 'Vis og opdater markedspladsindstillinger',
     ],
     'standard_and_format' => [
         'name' => 'Standard & Format',
-        'panel_description' => 'Ordrekodeformat, vægteenheder (kg/lb) og dimensionsenheder (cm/tommer)',
+        'panel_description' => 'Vis og opdater standard & format indstillinger',
         'description' => 'Standarder og formater bruges til at beregne ting som produktpriser, fragtvægte og ordretider.',
         'form' => [
             'change_order_format' => 'Rediger ordrekodeformat (valgfri)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Vis en fremskridtsbjælke med "X solgt ud af Y" for at skabe presserende behov og tilskynde til hurtige køb under flash sales.',
     ],
     'payment_method_cod_minimum_amount' => 'Minimum ordrebeløb - :currency (Valgfri)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minimum ordrebeløb - :currency (Valgfri)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Vis bankinfo på betalingssuccessiden?',
     'invoice_templates' => 'Fakturaskabeloner',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

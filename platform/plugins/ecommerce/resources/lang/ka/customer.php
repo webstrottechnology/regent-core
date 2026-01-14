@@ -23,6 +23,7 @@ return [
         'activated' => 'აქტივირებული',
         'locked' => 'დაბლოკილი',
     ],
+    'email_verified' => 'ელ-ფოსტა დადასტურებული?',
     'verify_email' => [
         'confirm_heading' => 'ელ-ფოსტის დადასტურება',
         'confirm_description' => 'დარწმუნებული ხართ, რომ გსურთ ამ მომხმარებლის ელ-ფოსტის დადასტურება?',
@@ -30,6 +31,7 @@ return [
         'approve_here' => 'დააწკაპუნეთ აქ',
         'confirm_button' => 'დადასტურება',
     ],
+    'email_already_verified' => 'ელ-ფოსტა უკვე დადასტურებულია.',
     'verification_email_sent' => 'დადასტურების ელ-ფოსტა წარმატებით გაიგზავნა!',
     'resend_verification_email' => 'დადასტურების ელ-ფოსტის ხელახლა გაგზავნა',
     'resend_verification_email_confirmation' => 'დარწმუნებული ხართ, რომ გსურთ დადასტურების ელ-ფოსტის ხელახლა გაგზავნა ამ მომხმარებლისთვის?',

@@ -24,7 +24,6 @@ use Botble\Ecommerce\Listeners\AddLanguageForVariantsListener;
 use Botble\Ecommerce\Listeners\ClearShippingRuleCache;
 use Botble\Ecommerce\Listeners\GenerateInvoiceListener;
 use Botble\Ecommerce\Listeners\GenerateLicenseCodeAfterOrderCompleted;
-use Botble\Ecommerce\Listeners\HandleDiscountUsageOnOrderCompletion;
 use Botble\Ecommerce\Listeners\MarkCartAsRecovered;
 use Botble\Ecommerce\Listeners\OrderCancelledNotification;
 use Botble\Ecommerce\Listeners\OrderCreatedNotification;
@@ -33,7 +32,6 @@ use Botble\Ecommerce\Listeners\OrderReturnedNotification;
 use Botble\Ecommerce\Listeners\RegisterEcommerceWidget;
 use Botble\Ecommerce\Listeners\RenderingSiteMapListener;
 use Botble\Ecommerce\Listeners\SaveProductFaqListener;
-use Botble\Ecommerce\Listeners\SendAbandonedCartReminderEmail;
 use Botble\Ecommerce\Listeners\SendDigitalProductEmailAfterOrderCompleted;
 use Botble\Ecommerce\Listeners\SendMailsAfterCustomerEmailVerified;
 use Botble\Ecommerce\Listeners\SendMailsAfterCustomerRegistered;
@@ -99,7 +97,6 @@ class EventServiceProvider extends ServiceProvider
             GenerateInvoiceListener::class,
             OrderCreatedNotification::class,
             MarkCartAsRecovered::class,
-            HandleDiscountUsageOnOrderCompletion::class,
         ],
         OrderCreated::class => [
             GenerateInvoiceListener::class,
@@ -144,7 +141,6 @@ class EventServiceProvider extends ServiceProvider
             SendProductFileUpdatedNotification::class,
         ],
         AbandonedCartReminderEvent::class => [
-            SendAbandonedCartReminderEmail::class,
             SendWebhookWhenCartAbandoned::class,
         ],
     ];

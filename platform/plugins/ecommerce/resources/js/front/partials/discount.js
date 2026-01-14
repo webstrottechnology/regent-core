@@ -1,16 +1,5 @@
 import sanitizeHTML from 'sanitize-html'
 
-const showNotice = (type, message) => {
-    if (typeof toastr !== 'undefined') {
-        toastr.options = {
-            closeButton: true,
-            positionClass: 'toast-bottom-right',
-            timeOut: 5000,
-        };
-        toastr[type](message);
-    }
-};
-
 export class DiscountManagement {
     init() {
         $(document).on('click', '.btn-open-coupon-form', (event) => {
@@ -33,8 +22,6 @@ export class DiscountManagement {
         let couponWrapperTarget = '.coupon-wrapper.mt-2'
         let couponItemTarget = '.checkout__coupon-item'
         let couponSectionTarget = '.checkout__coupon-section'
-        let mobileCouponSheetTarget = '#mobile-coupon-sheet .offcanvas-body'
-        let mobileCouponButtonTarget = '.mobile-checkout-footer__coupon-btn'
 
         $(document).on('click', '.apply-coupon-code', (event) => {
             event.preventDefault()
@@ -52,12 +39,11 @@ export class DiscountManagement {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
                 },
                 beforeSend: () => {
-                    currentTarget.find('.btn-spinner').remove()
-                    currentTarget.html(`<span class="btn-spinner"></span>${currentTarget.html()}`)
+                    currentTarget.find('i').remove()
+                    currentTarget.html(`<i class="fa fa-spin fa-spinner"></i> ${currentTarget.html()}`)
                 },
                 success: ({ error, message }) => {
                     if (!error) {
-                        const successMessage = message;
                         // Use a more reliable approach for both desktop and mobile
                         $.ajax({
                             url: window.location.href + '?applied_coupon=1',
@@ -105,18 +91,6 @@ export class DiscountManagement {
                                     }
                                 }
 
-                                // Update mobile coupon sheet list
-                                const mobileCouponSheetContent = $(tempDiv).find(mobileCouponSheetTarget);
-                                if (mobileCouponSheetContent.length && $(mobileCouponSheetTarget).length) {
-                                    $(mobileCouponSheetTarget).html(mobileCouponSheetContent.html());
-                                }
-
-                                // Update mobile coupon button (shows applied state)
-                                const mobileCouponButtonContent = $(tempDiv).find(mobileCouponButtonTarget);
-                                if (mobileCouponButtonContent.length && $(mobileCouponButtonTarget).length) {
-                                    $(mobileCouponButtonTarget).replaceWith(mobileCouponButtonContent.clone());
-                                }
-
                                 // If nothing was updated, reload the page
                                 if ((!desktopContent.length && !mobileContent.length && !couponWrapperContent.length) ||
                                     ($(target).length === 0 && $(mobileTarget).length === 0)) {
@@ -126,12 +100,7 @@ export class DiscountManagement {
                                 // Dispatch event for coupon applied
                                 document.dispatchEvent(new CustomEvent('coupon:applied'));
 
-                                // Show success notification
-                                if (successMessage) {
-                                    showNotice('success', successMessage);
-                                }
-
-                                currentTarget.find('.btn-spinner').remove();
+                                currentTarget.find('i').remove();
                             },
                             error: () => {
                                 // Fallback to page reload if AJAX extraction fails
@@ -140,8 +109,7 @@ export class DiscountManagement {
                         });
                     } else {
                         $('.coupon-error-msg .text-danger').html(sanitizeHTML(message))
-                        showNotice('error', message);
-                        currentTarget.find('.btn-spinner').remove()
+                        currentTarget.find('i').remove()
                     }
 
                     $('html, body').animate({
@@ -170,8 +138,8 @@ export class DiscountManagement {
         $(document).on('click', '.remove-coupon-code', (event) => {
             event.preventDefault()
             let _self = $(event.currentTarget)
-            _self.find('.btn-spinner').remove()
-            _self.html('<span class="btn-spinner"></span>' + _self.html())
+            _self.find('i').remove()
+            _self.html('<i class="fa fa-spin fa-spinner"></i> ' + _self.html())
 
             $.ajax({
                 url: _self.data('url'),
@@ -184,82 +152,95 @@ export class DiscountManagement {
                 },
                 success: (res) => {
                     if (!res.error) {
-                        const successMessage = res.message;
-                        // Fetch updated page content and update specific parts
+                        // Use a more reliable approach for both desktop and mobile
                         $.ajax({
                             url: window.location.href,
                             type: 'GET',
                             success: (response) => {
+                                // Extract the target content from the response
                                 const tempDiv = document.createElement('div');
                                 tempDiv.innerHTML = response;
 
-                                // Update desktop order info
+                                // Update desktop layout if it exists
                                 const desktopContent = $(tempDiv).find(target);
                                 if (desktopContent.length && $(target).length) {
                                     $(target).html(desktopContent.html());
                                 }
 
-                                // Update mobile cart wrapper
+                                // Update mobile layout
                                 const mobileContent = $(tempDiv).find(mobileTarget);
                                 if (mobileContent.length && $(mobileTarget).length) {
                                     $(mobileTarget).html(mobileContent.html());
                                 }
 
-                                // Update coupon wrapper section
+                                // Update or remove coupon wrapper section for mobile
                                 const couponWrapperContent = $(tempDiv).find(couponWrapperTarget);
                                 if (couponWrapperContent.length && $(couponWrapperTarget).length) {
                                     $(couponWrapperTarget).html(couponWrapperContent.html());
+                                } else {
+                                    // If coupon was removed, remove the wrapper
+                                    $(couponWrapperTarget).remove();
                                 }
 
-                                // Update coupon section (desktop)
-                                const couponSection = $(tempDiv).find(couponSectionTarget);
-                                if (couponSection.length && $(couponSectionTarget).length) {
-                                    $(couponSectionTarget).replaceWith(couponSection.clone());
+                                // Update coupon items
+                                const couponItemsContent = $(tempDiv).find(couponItemTarget);
+                                if (couponItemsContent.length) {
+                                    // Update each coupon item or the entire section
+                                    const couponSection = $(tempDiv).find(couponSectionTarget);
+                                    if (couponSection.length && $(couponSectionTarget).length) {
+                                        $(couponSectionTarget).html(couponSection.html());
+                                    } else {
+                                        // Update individual coupon items
+                                        $(couponItemTarget).each(function(index) {
+                                            if (couponItemsContent[index]) {
+                                                $(this).replaceWith(couponItemsContent[index]);
+                                            }
+                                        });
+                                    }
                                 }
 
-                                // Update mobile coupon sheet content
-                                const mobileCouponSheetContent = $(tempDiv).find(mobileCouponSheetTarget);
-                                if (mobileCouponSheetContent.length && $(mobileCouponSheetTarget).length) {
-                                    $(mobileCouponSheetTarget).html(mobileCouponSheetContent.html());
-                                }
-
-                                // Update mobile coupon button in footer
-                                const mobileCouponButtonContent = $(tempDiv).find(mobileCouponButtonTarget);
-                                if (mobileCouponButtonContent.length && $(mobileCouponButtonTarget).length) {
-                                    $(mobileCouponButtonTarget).replaceWith(mobileCouponButtonContent.clone());
+                                // If nothing was updated, reload the page
+                                if ((!desktopContent.length && !mobileContent.length) ||
+                                    ($(target).length === 0 && $(mobileTarget).length === 0)) {
+                                    window.location.reload();
                                 }
 
                                 // Dispatch event for coupon removed
                                 document.dispatchEvent(new CustomEvent('coupon:removed'));
 
-                                // Show success notification
-                                if (successMessage) {
-                                    showNotice('success', successMessage);
-                                }
-
-                                _self.find('.btn-spinner').remove();
+                                _self.find('i').remove();
                             },
                             error: () => {
+                                // Fallback to page reload if AJAX extraction fails
                                 window.location.reload();
                             }
                         });
                     } else {
                         $('.coupon-error-msg .text-danger').text(res.message)
-                        showNotice('error', res.message);
-                        _self.find('.btn-spinner').remove()
+                        _self.find('i').remove()
                     }
                 },
                 error: (data) => {
-                    if (data.responseJSON?.message) {
-                        showNotice('error', data.responseJSON.message);
+                    if (typeof data.responseJSON !== 'undefined') {
+                        if (data.responseJSON.errors !== 'undefined') {
+                            $.each(data.responseJSON.errors, (index, el) => {
+                                $.each(el, (key, item) => {
+                                    $('.coupon-error-msg .text-danger').text(item)
+                                })
+                            })
+                        } else if (typeof data.responseJSON.message !== 'undefined') {
+                            $('.coupon-error-msg .text-danger').text(data.responseJSON.message)
+                        }
+                    } else {
+                        $('.coupon-error-msg .text-danger').text(data.status.text)
                     }
-                    _self.find('.btn-spinner').remove()
+                    _self.find('i').remove()
                 },
             })
         })
 
 
-        $(document).on('click', '[data-bb-toggle="apply-coupon-code"]', function (e) {
+        $(document).on('click', '[data-bb-toggle="apply-coupon-code"]', async function (e) {
             e.preventDefault();
 
             const button = $(this);
@@ -267,358 +248,128 @@ export class DiscountManagement {
             const originalText = button.text();
 
             // Show loading state
-            button.find('.btn-spinner').remove();
-            button.html(`<span class="btn-spinner"></span>${originalText}`);
+            button.find('i').remove();
+            button.html(`<i class="fa fa-spin fa-spinner"></i> ${originalText}`);
 
-            // Check if desktop coupon wrapper exists
-            const couponWrapper = $(document).find('.coupon-wrapper');
-            const hasDesktopCoupon = couponWrapper.length && couponWrapper.find('.coupon-code').length;
+            try {
+                // If there's an existing coupon, remove it first and wait for completion
+                if ($(document).find('.remove-coupon-code').length) {
+                    await new Promise((resolve, reject) => {
+                        // Listen for the AJAX completion of coupon removal
+                        const removeButton = $(document).find('.remove-coupon-code');
 
-            if (hasDesktopCoupon) {
-                // Desktop: use existing coupon wrapper
-                const applyNewCoupon = () => {
-                    couponWrapper.show();
-                    couponWrapper.find('.coupon-code').val(discountCode);
-                    couponWrapper.find('.apply-coupon-code').trigger('click');
-                };
-
-                const hasAppliedCoupon = couponWrapper.find('.remove-coupon-code').length > 0;
-
-                if (hasAppliedCoupon) {
-                    $(document).one('coupon:removed', () => {
-                        setTimeout(applyNewCoupon, 200);
-                    });
-                    couponWrapper.find('.remove-coupon-code').trigger('click');
-                } else {
-                    applyNewCoupon();
-                }
-            } else {
-                // Mobile: make direct AJAX call and update specific parts
-                $.ajax({
-                    url: $('[data-coupon-apply-url]').data('coupon-apply-url') || '/coupon/apply',
-                    type: 'POST',
-                    data: {
-                        coupon_code: discountCode,
-                        token: $('#checkout-token').val(),
-                    },
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-                    },
-                    success: ({ error, message }) => {
-                        if (!error) {
-                            const successMessage = message;
-                            // Fetch updated page content and update specific parts
-                            $.ajax({
-                                url: window.location.href + '?applied_coupon=1',
-                                type: 'GET',
-                                success: (response) => {
-                                    const tempDiv = document.createElement('div');
-                                    tempDiv.innerHTML = response;
-
-                                    // Update desktop order info
-                                    const desktopContent = $(tempDiv).find(target);
-                                    if (desktopContent.length && $(target).length) {
-                                        $(target).html(desktopContent.html());
-                                    }
-
-                                    // Update mobile cart wrapper
-                                    const mobileContent = $(tempDiv).find(mobileTarget);
-                                    if (mobileContent.length && $(mobileTarget).length) {
-                                        $(mobileTarget).html(mobileContent.html());
-                                    }
-
-                                    // Update coupon section (desktop)
-                                    const couponSection = $(tempDiv).find(couponSectionTarget);
-                                    if (couponSection.length && $(couponSectionTarget).length) {
-                                        $(couponSectionTarget).replaceWith(couponSection.clone());
-                                    }
-
-                                    // Update mobile coupon sheet content
-                                    const mobileCouponSheetContent = $(tempDiv).find(mobileCouponSheetTarget);
-                                    if (mobileCouponSheetContent.length && $(mobileCouponSheetTarget).length) {
-                                        $(mobileCouponSheetTarget).html(mobileCouponSheetContent.html());
-                                    }
-
-                                    // Update mobile coupon button in footer
-                                    const mobileCouponButtonContent = $(tempDiv).find(mobileCouponButtonTarget);
-                                    if (mobileCouponButtonContent.length && $(mobileCouponButtonTarget).length) {
-                                        $(mobileCouponButtonTarget).replaceWith(mobileCouponButtonContent.clone());
-                                    }
-
-                                    // Dispatch event for coupon applied
-                                    document.dispatchEvent(new CustomEvent('coupon:applied'));
-
-                                    // Show success notification
-                                    if (successMessage) {
-                                        showNotice('success', successMessage);
-                                    }
-
-                                    button.find('.btn-spinner').remove();
-                                },
-                                error: () => {
-                                    window.location.reload();
+                        // Set up one-time event listeners for AJAX completion
+                        $(document).one('ajaxComplete.couponRemoval', function(_, xhr, settings) {
+                            if (settings.url && settings.url.includes('coupon') && settings.url.includes('remove')) {
+                                if (xhr.status === 200) {
+                                    // Wait a bit more for DOM updates
+                                    setTimeout(resolve, 300);
+                                } else {
+                                    reject(new Error('Failed to remove existing coupon'));
                                 }
-                            });
-                        } else {
-                            showNotice('error', message);
-                            button.find('.btn-spinner').remove();
-                            button.html(originalText);
-                        }
-                    },
-                    error: (data) => {
-                        if (data.responseJSON?.message) {
-                            showNotice('error', data.responseJSON.message);
-                        }
-                        button.find('.btn-spinner').remove();
-                        button.html(originalText);
-                    },
-                });
-            }
-        });
-
-        // Mobile coupon bottom sheet functionality
-        this.initMobileCouponSheet();
-        this.initBottomSheetGestures();
-        this.initTapToSelect();
-    }
-
-    initMobileCouponSheet() {
-        const sheet = document.getElementById('mobile-coupon-sheet');
-        if (!sheet) return;
-
-        // Handle manual coupon entry from mobile sheet
-        $(document).on('click', '.mobile-apply-coupon-btn', (event) => {
-            event.preventDefault();
-            const btn = $(event.currentTarget);
-            const input = btn.closest('.mobile-coupon-entry__card').find('.mobile-coupon-input');
-            const couponCode = input.val().trim();
-            const originalText = btn.text();
-
-            if (!couponCode) {
-                input.focus();
-                return;
-            }
-
-            btn.find('.btn-spinner').remove();
-            btn.html(`<span class="btn-spinner"></span>${originalText}`);
-
-            $.ajax({
-                url: btn.data('url'),
-                type: 'POST',
-                data: {
-                    coupon_code: couponCode,
-                    token: $('#checkout-token').val(),
-                },
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-                },
-                success: ({ error, message }) => {
-                    if (!error) {
-                        const successMessage = message;
-                        // Fetch updated page content and update specific parts
-                        $.ajax({
-                            url: window.location.href + '?applied_coupon=1',
-                            type: 'GET',
-                            success: (response) => {
-                                const tempDiv = document.createElement('div');
-                                tempDiv.innerHTML = response;
-
-                                // Update order info
-                                const orderInfo = $(tempDiv).find('.checkout-order-info');
-                                if (orderInfo.length && $('.checkout-order-info').length) {
-                                    $('.checkout-order-info').html(orderInfo.html());
-                                }
-
-                                // Update mobile cart wrapper
-                                const cartWrapper = $(tempDiv).find('.cart-item-wrapper');
-                                if (cartWrapper.length && $('.cart-item-wrapper').length) {
-                                    $('.cart-item-wrapper').html(cartWrapper.html());
-                                }
-
-                                // Update mobile coupon sheet content
-                                const sheetContent = $(tempDiv).find('#mobile-coupon-sheet .offcanvas-body');
-                                if (sheetContent.length && $('#mobile-coupon-sheet .offcanvas-body').length) {
-                                    $('#mobile-coupon-sheet .offcanvas-body').html(sheetContent.html());
-                                }
-
-                                // Update mobile coupon button in footer
-                                const couponBtn = $(tempDiv).find('.mobile-checkout-footer__coupon-btn');
-                                if (couponBtn.length && $('.mobile-checkout-footer__coupon-btn').length) {
-                                    $('.mobile-checkout-footer__coupon-btn').replaceWith(couponBtn.clone());
-                                }
-
-                                // Dispatch event
-                                document.dispatchEvent(new CustomEvent('coupon:applied'));
-
-                                if (successMessage) {
-                                    showNotice('success', successMessage);
-                                }
-
-                                btn.find('.btn-spinner').remove();
-                            },
-                            error: () => {
-                                window.location.reload();
                             }
                         });
-                    } else {
-                        showNotice('error', message);
-                        btn.find('.btn-spinner').remove();
-                        btn.html(originalText);
-                    }
-                },
-                error: (data) => {
-                    if (data.responseJSON?.message) {
-                        showNotice('error', data.responseJSON.message);
-                    }
-                    btn.find('.btn-spinner').remove();
-                    btn.html(originalText);
-                },
-            });
-        });
 
-        // Handle enter key in mobile coupon input
-        $(document).on('keypress', '.mobile-coupon-input', (event) => {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                $(event.currentTarget).closest('.input-group').find('.mobile-apply-coupon-btn').trigger('click');
+                        // Set up timeout fallback
+                        const timeout = setTimeout(() => {
+                            $(document).off('ajaxComplete.couponRemoval');
+                            reject(new Error('Timeout waiting for coupon removal'));
+                        }, 10000);
+
+                        // Trigger the removal
+                        removeButton.trigger('click');
+
+                        // Clear timeout when resolved
+                        $(document).one('ajaxComplete.couponRemoval', () => {
+                            clearTimeout(timeout);
+                        });
+                    });
+                }
+
+                // Now apply the new coupon
+                await new Promise((resolve, reject) => {
+                    // Prepare the coupon input
+                    $(document).find('.coupon-wrapper').show();
+                    $('.coupon-wrapper .coupon-code').val(discountCode);
+
+                    // Listen for the AJAX completion of coupon application
+                    $(document).one('ajaxComplete.couponApplication', function(_, xhr, settings) {
+                        if (settings.url && (settings.url.includes('coupon') || settings.url.includes('apply'))) {
+                            if (xhr.status === 200) {
+                                resolve();
+                            } else {
+                                reject(new Error('Failed to apply new coupon'));
+                            }
+                        }
+                    });
+
+                    // Set up timeout fallback
+                    const timeout = setTimeout(() => {
+                        $(document).off('ajaxComplete.couponApplication');
+                        reject(new Error('Timeout waiting for coupon application'));
+                    }, 10000);
+
+                    // Trigger the application
+                    $('.apply-coupon-code').trigger('click');
+
+                    // Clear timeout when resolved
+                    $(document).one('ajaxComplete.couponApplication', () => {
+                        clearTimeout(timeout);
+                    });
+                });
+
+            } catch (error) {
+                console.error('Error during coupon switching:', error);
+                // Restore button state on error
+                button.html(originalText);
+
+                // Show error message if possible
+                if ($('.coupon-error-msg .text-danger').length) {
+                    $('.coupon-error-msg .text-danger').text('Failed to switch coupon. Please try again.');
+                }
+            } finally {
+                // Clean up event listeners
+                $(document).off('ajaxComplete.couponRemoval');
+                $(document).off('ajaxComplete.couponApplication');
             }
         });
 
-        // Handle coupon application from mobile sheet
+        // Mobile coupon modal functionality
+        this.initMobileCouponModal();
+    }
+
+    initMobileCouponModal() {
+        // Handle coupon application from mobile modal
         $(document).on('click', '.mobile-coupon-item [data-bb-toggle="apply-coupon-code"]', function() {
-            // Close sheet after delay for coupon switching
+            const modal = $('#mobile-coupon-modal');
+
+            // Close modal after a delay to allow the coupon switching to complete
             setTimeout(() => {
-                if (window.bootstrap?.Offcanvas) {
-                    const offcanvas = window.bootstrap.Offcanvas.getInstance(sheet);
-                    if (offcanvas) offcanvas.hide();
-                }
-            }, 1000);
+                modal.modal('hide');
+            }, 1000); // Longer delay to ensure coupon switching completes
         });
 
-        // Handle coupon removal from mobile sheet
+        // Handle coupon removal from mobile modal
         $(document).on('click', '.mobile-coupon-item .remove-coupon-code', function() {
+            const modal = $('#mobile-coupon-modal');
+
+            // Close modal after a delay to allow the removal to complete
             setTimeout(() => {
-                if (window.bootstrap?.Offcanvas) {
-                    const offcanvas = window.bootstrap.Offcanvas.getInstance(sheet);
-                    if (offcanvas) offcanvas.hide();
-                }
-            }, 800);
+                modal.modal('hide');
+            }, 800); // Delay to ensure removal completes
         });
 
-        // Close sheet after coupon operations complete
+        // Update modal content after coupon operations
         $(document).on('coupon:applied coupon:removed', () => {
-            if (sheet.classList.contains('show')) {
+            // Refresh modal content if it's open
+            const modal = $('#mobile-coupon-modal');
+            if (modal.hasClass('show')) {
                 setTimeout(() => {
-                    if (window.bootstrap?.Offcanvas) {
-                        const offcanvas = window.bootstrap.Offcanvas.getInstance(sheet);
-                        if (offcanvas) offcanvas.hide();
-                    }
-                }, 300);
+                    // Reload the page to get updated coupon states
+                    // This ensures the modal shows the correct applied/remove buttons
+                    window.location.reload();
+                }, 500);
             }
-        });
-
-        // Prevent body scroll when sheet is open
-        sheet.addEventListener('shown.bs.offcanvas', () => {
-            document.body.style.overflow = 'hidden';
-        });
-
-        sheet.addEventListener('hidden.bs.offcanvas', () => {
-            document.body.style.overflow = '';
-        });
-    }
-
-    initBottomSheetGestures() {
-        const sheet = document.getElementById('mobile-coupon-sheet');
-        if (!sheet) return;
-
-        const dragHandle = sheet.querySelector('.mobile-coupon-sheet__drag-handle');
-        const content = sheet.querySelector('.offcanvas-body');
-
-        let startY = 0;
-        let currentY = 0;
-        let startTime = 0;
-        let isDragging = false;
-
-        const DISMISS_THRESHOLD = 150; // px
-        const VELOCITY_THRESHOLD = 500; // px/s
-
-        const onStart = (e) => {
-            const isHandle = dragHandle && dragHandle.contains(e.target);
-            const isAtTop = content && content.scrollTop === 0;
-
-            if (!isHandle && !isAtTop) return;
-
-            isDragging = true;
-            startY = e.touches ? e.touches[0].clientY : e.clientY;
-            startTime = Date.now();
-            sheet.classList.add('dragging');
-            sheet.style.transition = 'none';
-        };
-
-        const onMove = (e) => {
-            if (!isDragging) return;
-
-            currentY = e.touches ? e.touches[0].clientY : e.clientY;
-            const deltaY = currentY - startY;
-
-            if (deltaY > 0) {
-                sheet.style.transform = `translateY(${deltaY}px)`;
-                e.preventDefault();
-            }
-        };
-
-        const onEnd = () => {
-            if (!isDragging) return;
-
-            isDragging = false;
-            sheet.classList.remove('dragging');
-            sheet.style.transition = '';
-
-            const deltaY = currentY - startY;
-            const deltaTime = Date.now() - startTime;
-            const velocity = Math.abs(deltaY / deltaTime) * 1000;
-
-            if (deltaY > DISMISS_THRESHOLD || velocity > VELOCITY_THRESHOLD) {
-                if (window.bootstrap?.Offcanvas) {
-                    const offcanvas = window.bootstrap.Offcanvas.getInstance(sheet);
-                    if (offcanvas) offcanvas.hide();
-                }
-            } else {
-                sheet.style.transform = '';
-            }
-        };
-
-        sheet.addEventListener('touchstart', onStart, { passive: true });
-        sheet.addEventListener('touchmove', onMove, { passive: false });
-        sheet.addEventListener('touchend', onEnd);
-        sheet.addEventListener('touchcancel', onEnd);
-
-        sheet.addEventListener('hidden.bs.offcanvas', () => {
-            sheet.style.transform = '';
-        });
-    }
-
-    initTapToSelect() {
-        $(document).on('click', '.mobile-coupon-item', function(e) {
-            if ($(e.target).closest('button').length) return;
-
-            const item = $(this);
-            const applyBtn = item.find('[data-bb-toggle="apply-coupon-code"]');
-            const removeBtn = item.find('.remove-coupon-code');
-
-            if (item.hasClass('active') && removeBtn.length) {
-                removeBtn.trigger('click');
-            } else if (applyBtn.length) {
-                applyBtn.trigger('click');
-            }
-        });
-
-        $(document).on('touchstart', '.mobile-coupon-item', function() {
-            $(this).addClass('touch-active');
-        });
-
-        $(document).on('touchend touchcancel', '.mobile-coupon-item', function() {
-            $(this).removeClass('touch-active');
         });
     }
 }

@@ -39,7 +39,4 @@ return [
         'product_listing' => 'Produktliste',
         'cart' => 'Kurv',
     ],
-    'purchased' => 'købte',
-    'verified' => 'Verificeret',
-    'quick_view' => 'Hurtig visning',
 ];

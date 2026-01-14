@@ -23,6 +23,7 @@ return [
     'edit_this_post' => 'Muuda seda postitust',
     'no_new_post_now' => 'Praegu pole uusi postitusi!',
     'menu_name' => 'Postitused',
+    'widget_posts_recent' => 'Viimased postitused',
     'categories' => 'Kategooriad',
     'category' => 'Kategooria',
     'author' => 'Autor',
@@ -68,5 +69,4 @@ return [
     'widget_tags_description' => 'Populaarsed sildid',
     'widget_categories' => 'Blogi kategooriad',
     'widget_categories_description' => 'Kuva blogi kategooriaid',
-    'views' => 'Vaatamised',
 ];

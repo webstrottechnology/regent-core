@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'ই-কমার্স',
     'general' => [
         'name' => 'সাধারণ',
-        'description' => 'স্টোরের নাম, কোম্পানির তথ্য, যোগাযোগের বিবরণ এবং অ্যাডমিন নোটিফিকেশন ইমেল',
+        'description' => 'আপনার সাধারণ সেটিং দেখুন এবং আপডেট করুন',
     ],
     'currency' => [
         'name' => 'মুদ্রা',
-        'description' => 'মুদ্রা ফরম্যাট, বিনিময় হার, স্বয়ংক্রিয় সনাক্তকরণ এবং দশমিক/হাজার বিভাজক',
+        'description' => 'মুদ্রা সেটিং দেখুন এবং আপডেট করুন',
         'currency_setting_description' => 'ওয়েবসাইটে ব্যবহৃত মুদ্রা দেখুন এবং আপডেট করুন',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'ভিজিটর মুদ্রা স্বয়ংক্রিয় সনাক্ত করুন',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'পণ্য',
-        'description' => 'স্টক প্রদর্শন, SKU জেনারেশন, ভ্যারিয়েশন ছবি, সম্পর্কিত পণ্য এবং স্পেসিফিকেশন',
+        'description' => 'আপনার পণ্য সেটিং দেখুন এবং আপডেট করুন',
         'product_settings' => 'পণ্য সেটিং',
         'product_settings_description' => 'পণ্যের জন্য নিয়ম কনফিগার করুন',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'পণ্য অনুসন্ধান',
-        'description' => 'অনুসন্ধান আচরণ, ক্যাটাগরি/ব্র্যান্ড/ট্যাগ/অ্যাট্রিবিউট অনুযায়ী ফিল্টার এবং মূল্য পরিসীমা ফিল্টারিং',
+        'description' => 'পণ্য অনুসন্ধান সেটিং দেখুন এবং আপডেট করুন',
         'product_search_settings' => 'পণ্য অনুসন্ধান',
         'product_search_settings_description' => 'পণ্য অনুসন্ধানের জন্য নিয়ম কনফিগার করুন',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'ডিজিটাল পণ্য',
-        'description' => 'ডাউনলোডযোগ্য পণ্য, লাইসেন্স কোড, ডিজিটাল আইটেমের জন্য গেস্ট চেকআউট এবং অটো-কমপ্লিশন',
+        'description' => 'ডিজিটাল পণ্য সেটিং দেখুন এবং আপডেট করুন',
         'digital_products_settings' => 'ডিজিটাল পণ্য',
         'digital_products_settings_description' => 'ডিজিটাল পণ্যের জন্য নিয়ম কনফিগার করুন',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'পণ্য পর্যালোচনা',
-        'description' => 'গ্রাহক রিভিউ, রেটিং প্রদর্শন, ছবি আপলোড এবং অনুমোদনের প্রয়োজনীয়তা',
+        'description' => 'আপনার পণ্য পর্যালোচনা সেটিং দেখুন এবং আপডেট করুন',
         'form' => [
             'enable_review' => 'পণ্য পর্যালোচনা সক্ষম করুন',
             'enable_review_help' => 'পণ্যে পর্যালোচনা এবং রেটিং দিতে গ্রাহকদের অনুমতি দিন। নিষ্ক্রিয় হলে, সমস্ত পর্যালোচনা বৈশিষ্ট্য দোকান থেকে লুকানো হবে।',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'শপিং',
-        'description' => 'কার্ট, উইশলিস্ট, তুলনা, অর্ডার ট্র্যাকিং, কুইক বাই বাটন এবং পেমেন্ট প্রুফ আপলোড',
+        'description' => 'আপনার শপিং সেটিং দেখুন এবং আপডেট করুন',
         'general_setting' => 'সাধারণ সেটিং',
         'return_settings' => 'রিটার্ন সেটিং',
         'return_settings_description' => 'রিটার্ন সেটিংয়ের জন্য নিয়ম কনফিগার করুন',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'গ্রাহক লগআউট করলে কার্ট ধ্বংস হবে।',
             'hide_product_price' => 'পণ্যের মূল্য লুকান',
             'hide_product_price_helper' => 'এই অপশনটি শুধুমাত্র তখনই কাজ করে যখন আপনি শপিং কার্ট নিষ্ক্রিয় করেন, আপনার সাইটকে শুধুমাত্র ক্যাটালগ প্রদর্শনে পরিণত করেন। সক্রিয় হলে, পণ্যের মূল্য লুকানো হবে। মূল্য লুকাতে এবং গ্রাহকদের মূল্যের জন্য আপনার সাথে যোগাযোগ করতে বলার জন্য এটি উপকারী।',
-            'hide_product_price_when_zero' => 'মূল্য শূন্য হলে পণ্যের মূল্য লুকান',
-            'hide_product_price_when_zero_helper' => 'সক্রিয় করলে, যার মূল্য 0 এমন পণ্যে স্টোরফ্রন্টে মূল্য দেখাবে না।',
             'enable_payment_proof' => 'পেমেন্ট প্রুফ আপলোড সক্ষম করুন',
             'enable_payment_proof_helper' => 'গ্রাহকদের তাদের অর্ডারের জন্য পেমেন্ট প্রুফ আপলোড করতে দিন। এটি ম্যানুয়াল পেমেন্ট পদ্ধতির জন্য উপযোগী।',
             'enable_guest_payment_proof' => 'অতিথি গ্রাহকদের পেমেন্ট প্রুফ আপলোড করতে দিন',
             'enable_guest_payment_proof_helper' => 'সক্রিয় হলে, অতিথি গ্রাহকরা লগইন না করে তাদের অর্ডার টোকেন ব্যবহার করে পেমেন্ট প্রুফ আপলোড করতে পারবে। তারা তাদের অর্ডার নিশ্চিতকরণ ইমেলে আপলোড লিংক পাবে।',
-            'payment_proof_payment_methods' => 'পেমেন্ট প্রমাণ প্রয়োজন এমন পেমেন্ট পদ্ধতি',
-            'payment_proof_payment_methods_helper' => 'কোন পেমেন্ট পদ্ধতিগুলি গ্রাহকদের পেমেন্ট প্রমাণ আপলোড করতে দেবে তা নির্বাচন করুন। সাধারণত ম্যানুয়াল পেমেন্ট পদ্ধতি যেমন COD এবং ব্যাংক ট্রান্সফারের জন্য ব্যবহৃত হয়।',
         ],
     ],
     'checkout' => [
         'name' => 'চেকআউট',
-        'panel_description' => 'গেস্ট চেকআউট, প্রয়োজনীয় ফিল্ড, অর্ডার সীমা, শর্তাবলী গ্রহণ এবং দেশ সীমাবদ্ধতা',
+        'panel_description' => 'চেকআউট সেটিং দেখুন এবং আপডেট করুন',
         'description' => 'চেকআউট সেটিংয়ের জন্য নিয়ম কনফিগার করুন',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'চেকআউট সফল পৃষ্ঠায় ব্যাংক তথ্য প্রদর্শন করুন',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'রিটার্ন',
         'description' => 'রিটার্ন সেটিংয়ের জন্য নিয়ম কনফিগার করুন',
-        'panel_description' => 'অর্ডার রিটার্ন, আংশিক রিটার্ন এবং রিটার্ন সময়সীমা',
+        'panel_description' => 'রিটার্ন সেটিং দেখুন এবং আপডেট করুন',
         'form' => [
             'is_enabled_order_return' => 'অর্ডার রিটার্ন সক্ষম করা হয়েছে কিনা',
             'allow_partial_return' => 'আংশিক রিটার্ন অনুমতি দিন',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'ইনভয়েস',
-        'description' => 'ইনভয়েসে কোম্পানির বিবরণ, ইনভয়েস নম্বরিং, PDF ফন্ট এবং স্ট্যাম্প সেটিংস',
+        'description' => 'আপনার ইনভয়েস সেটিং দেখুন এবং আপডেট করুন',
         'company_settings' => 'কোম্পানি সেটিং',
         'company_settings_description' => 'ইনভয়েসিংয়ের জন্য কোম্পানি তথ্য সেটিং',
         'form' => [
@@ -305,22 +301,19 @@ return [
             'default_tax_rate' => 'ডিফল্ট ট্যাক্স রেট',
             'default_tax_rate_description' => 'গুরুত্বপূর্ণ: পণ্যে কোন ট্যাক্স নির্বাচিত না থাকলে এটি প্রয়োগ করা হবে।',
             'select_tax' => '-- নির্বাচন করুন --',
-            'display_product_price_including_taxes' => 'প্রদর্শিত মূল্যে ট্যাক্স যোগ করুন',
-            'display_product_price_including_taxes_helper' => 'স্টোরফ্রন্টে প্রদর্শিত পণ্যের মূল্যে স্বয়ংক্রিয়ভাবে ট্যাক্স যোগ করুন। যেমন: $100 পণ্যে 10% ট্যাক্সে $110 প্রদর্শিত হবে। পৃথক পণ্যে "মূল্যে ট্যাক্স অন্তর্ভুক্ত" সক্রিয় থাকলে প্রয়োজন নেই।',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'ট্যাক্স সহ পণ্যের মূল্য প্রদর্শন করুন',
         ],
     ],
     'customer' => [
         'name' => 'গ্রাহক',
-        'description' => 'নিবন্ধন, ইমেল যাচাইকরণ, লগইন অপশন, অ্যাকাউন্ট মুছে ফেলা এবং প্রোফাইল ফিল্ড',
+        'description' => 'আপনার গ্রাহক সেটিং দেখুন এবং আপডেট করুন',
         'customer_setting' => 'গ্রাহক সেটিং',
         'customer_setting_description' => 'গ্রাহক সেটিং কনফিগার করুন',
         'form' => [
             'enable_customer_registration' => 'গ্রাহক নিবন্ধন সক্ষম করুন',
             'enable_customer_registration_helper' => 'নিষ্ক্রিয় হলে, গ্রাহকরা নতুন অ্যাকাউন্ট নিবন্ধন করতে পারবে না। বিদ্যমান গ্রাহকরা এখনও লগইন করতে পারবে।',
-            'verify_customer_email' => 'গ্রাহকের ইমেল যাচাই করুন',
-            'verify_customer_email_helper' => 'এটি সক্রিয় থাকলে, গ্রাহকের ইমেলে একটি যাচাইকরণ লিংক পাঠানো হবে, গ্রাহকদের লগইন করার আগে তাদের ইমেল যাচাই করতে এই লিংকে ক্লিক করতে হবে। ইমেল যাচাইকরণ পাঠাতে Admin -> Settings -> Email-এ ইমেল কনফিগার করতে হবে।',
+            'verify_customer_email' => "গ্রাহকের ইমেল যাচাই করুন",
+            'verify_customer_email_helper' => "এটি সক্রিয় থাকলে, গ্রাহকের ইমেলে একটি যাচাইকরণ লিংক পাঠানো হবে, গ্রাহকদের লগইন করার আগে তাদের ইমেল যাচাই করতে এই লিংকে ক্লিক করতে হবে। ইমেল যাচাইকরণ পাঠাতে Admin -> Settings -> Email-এ ইমেল কনফিগার করতে হবে।",
             'verification_expire_minutes' => 'যাচাইকরণ লিংক মেয়াদ শেষের সময়',
             'verification_expire_minutes_helper' => 'ইমেল যাচাইকরণ লিংক বৈধ থাকবে এমন মিনিটে সময়। ডিফল্ট হল 60 মিনিট (1 ঘন্টা)। সর্বাধিক হল 10080 মিনিট (7 দিন)।',
             'login_using_phone' => 'ইমেলের পরিবর্তে ফোন নম্বর দিয়ে সাইন ইন করুন',
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'শিপিং',
-        'description' => 'শিপিং নিয়ম, বিনামূল্যে শিপিং আচরণ এবং শিপিং অপশন প্রদর্শনের ক্রম',
+        'description' => 'শিপিং সেটিং দেখুন এবং আপডেট করুন',
         'shipping_rule' => 'শিপিং নিয়ম',
         'shipping_rule_description' => 'শিপিং ফি গণনার জন্য নিয়ম কনফিগার করুন',
         'shipping_setting' => 'শিপিং সেটিং',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'লোকেশন সংরক্ষণ করুন',
             'add_new' => 'নতুন যোগ করুন',
         ],
-        'info' => [
-            'title' => 'স্টোর লোকেটর কীভাবে কাজ করে',
-            'primary_store' => 'প্রাথমিক স্টোর ঠিকানা ইনভয়েসে প্রদর্শিত হয় এবং শিপিং লেবেলের জন্য ডিফল্ট রিটার্ন ঠিকানা হিসাবে ব্যবহৃত হয়।',
-            'shipping_location' => '"শিপিং লোকেশন" হিসাবে চিহ্নিত স্টোরগুলি শিপমেন্ট তৈরি করার সময় উৎস গুদাম হিসাবে নির্বাচন করা যেতে পারে।',
-            'shipment_selection' => 'অর্ডার প্রক্রিয়া করার সময়, আপনি ইনভেন্টরি এবং গ্রাহক লোকেশনের উপর ভিত্তি করে কোন গুদাম থেকে পাঠাতে হবে তা বেছে নিতে পারেন।',
-        ],
     ],
     'tracking' => [
         'name' => 'ট্র্যাকিং',
-        'description' => 'Facebook Pixel, Google Tag Manager ইভেন্ট এবং Google Ads কনভার্সন ট্র্যাকিং',
+        'description' => 'ট্র্যাকিং সেটিং দেখুন এবং আপডেট করুন',
         'manage_tracking' => 'ট্র্যাকিং পরিচালনা করুন',
         'manage_tracking_description' => 'ট্র্যাকিং পরিচালনা করুন: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'মার্কেটপ্লেস',
-        'description' => 'মাল্টি-ভেন্ডর সেটিংস, কমিশন, ভেন্ডর রেজিস্ট্রেশন এবং পেআউট কনফিগারেশন',
+        'description' => 'মার্কেটপ্লেস সেটিং দেখুন এবং আপডেট করুন',
     ],
     'standard_and_format' => [
         'name' => 'স্ট্যান্ডার্ড ও ফর্ম্যাট',
-        'panel_description' => 'অর্ডার কোড ফরম্যাট, ওজন ইউনিট (kg/lb) এবং ডাইমেনশন ইউনিট (cm/inch)',
+        'panel_description' => 'স্ট্যান্ডার্ড ও ফর্ম্যাট সেটিং দেখুন এবং আপডেট করুন',
         'description' => 'পণ্যের মূল্য, শিপিং ওজন এবং অর্ডার সময়ের মতো বিষয় গণনা করতে স্ট্যান্ডার্ড এবং ফর্ম্যাট ব্যবহার করা হয়।',
         'form' => [
             'change_order_format' => 'অর্ডার কোড ফর্ম্যাট সম্পাদনা করুন (ঐচ্ছিক)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'ফ্ল্যাশ সেলের সময় জরুরীতা তৈরি এবং দ্রুত ক্রয় উৎসাহিত করতে "Y থেকে X বিক্রি হয়েছে" সহ একটি প্রগতি বার দেখান।',
     ],
     'payment_method_cod_minimum_amount' => 'ন্যূনতম অর্ডার পরিমাণ - :currency (ঐচ্ছিক)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'ন্যূনতম অর্ডার পরিমাণ - :currency (ঐচ্ছিক)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'চেকআউট সফল পৃষ্ঠায় ব্যাংক তথ্য প্রদর্শন করবেন?',
     'invoice_templates' => 'ইনভয়েস টেমপ্লেট',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

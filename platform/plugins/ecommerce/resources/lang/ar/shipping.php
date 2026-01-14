@@ -101,7 +101,6 @@ return [
     'update_shipping_status_success' => 'تم تحديث حالة الشحن بنجاح!',
     'update_cod_status_success' => 'تم تحديث حالة الدفع عند التسليم بنجاح!',
     'updated_cod_status_by' => 'تم تحديث حالة الدفع عند التسليم إلى :status . تم التحديث بواسطة: %user_name%',
-    'saved_shipping_settings_success' => 'تم حفظ إعدادات الشحن بنجاح!',
     'all' => 'الكل',
     'all_countries' => 'جميع البلدان',
     'error_when_adding_new_region' => 'هناك خطأ عند إضافة منطقة جديدة!',
@@ -127,9 +126,6 @@ return [
     'add_note' => 'إضافة ملاحظة...',
     'view_order' => 'عرض الطلب :order_id',
     'rule' => [
-        'types' => [
-            'unavailable' => 'غير متاح',
-        ],
         'enum_types' => [
             'based_on_weight' => 'بناءً على الوزن الإجمالي للطلب (:unit)',
             'based_on_price' => 'بناءً على المبلغ الإجمالي للطلب',
@@ -195,9 +191,6 @@ return [
         'sender' => 'المرسل',
         'order_date' => 'تاريخ الطلب',
         'scan_qr_code' => 'امسح رمز QR لتتبع شحنتك',
-        'total_amount' => 'المبلغ الإجمالي',
-        'cod_amount_to_collect' => 'مبلغ الدفع عند الاستلام المطلوب تحصيله',
     ],
     'customer_confirmed_delivery_at' => 'أكد العميل التسليم في',
-    'no_shipping_methods_available' => 'لا توجد طرق شحن متاحة!',
 ];

@@ -39,7 +39,4 @@ return [
         'product_listing' => 'รายการสินค้า',
         'cart' => 'ตะกร้า',
     ],
-    'purchased' => 'ซื้อ',
-    'verified' => 'ยืนยันแล้ว',
-    'quick_view' => 'ดูด่วน',
 ];

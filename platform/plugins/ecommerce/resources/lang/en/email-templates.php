@@ -71,7 +71,7 @@ return [
     // Order Cancel (Admin) Email
     'admin_cancel_order_title' => 'Order cancelled',
     'admin_cancel_order_greeting' => 'Hi :customer_name,',
-    'admin_cancel_order_message' => 'Your order :order_id has been cancelled by our staff.',
+    'admin_cancel_order_message' => 'Your order #:order_id has been cancelled by our staff.',
     'admin_cancel_order_order_cancelled' => 'Order has been cancelled!',
     'admin_cancel_order_reason' => 'Reason for cancellation: :cancellation_reason',
     'admin_cancel_order_customer_info' => 'Customer information',
@@ -84,9 +84,9 @@ return [
     'admin_cancel_order_order_summary' => 'Order Summary',
 
     // Order Cancellation to Admin Email
-    'order_cancellation_to_admin_title' => 'Order :order_id cancelled by customer',
+    'order_cancellation_to_admin_title' => 'Order #:order_id cancelled by customer',
     'order_cancellation_to_admin_greeting' => 'Hi Admin,',
-    'order_cancellation_to_admin_message' => ':customer_name has cancelled order <strong>:order_id</strong>. Reason: <strong>:cancellation_reason</strong>',
+    'order_cancellation_to_admin_message' => ':customer_name has cancelled order <strong>#:order_id</strong>. Reason: <strong>:cancellation_reason</strong>',
     'order_cancellation_to_admin_customer_info' => 'Customer information',
     'order_cancellation_to_admin_name' => 'Name',
     'order_cancellation_to_admin_phone' => 'Phone',
@@ -139,7 +139,7 @@ return [
     'customer_order_delivered_track_shipment' => 'View Tracking Details',
 
     // Payment Confirmation Email
-    'order_confirm_payment_title' => 'Payment confirmed for order :order_id',
+    'order_confirm_payment_title' => 'Payment confirmed for order #:order_id',
     'order_confirm_payment_greeting' => 'Hi :customer_name,',
     'order_confirm_payment_message' => 'Your payment has been confirmed. Thank you for purchasing our products!',
     'order_confirm_payment_order_number' => 'Order number',
@@ -165,37 +165,6 @@ return [
     'order_recover_button' => 'Complete Your Order',
     'order_recover_order_summary' => 'Order Summary',
     'order_recover_note' => 'Note',
-
-    // Abandoned Cart Reminder Email
-    'abandoned_cart_reminder_title' => 'You left items in your cart!',
-    'abandoned_cart_greeting' => 'Hi :customer_name,',
-    'abandoned_cart_message' => 'We noticed you left some items in your cart. Would you like to complete your purchase? Your cart is waiting for you!',
-    'abandoned_cart_button' => 'Return to Cart',
-    'abandoned_cart_items_title' => 'Items in Your Cart',
-    'abandoned_cart_total' => 'Total',
-    'abandoned_cart_unsubscribe' => 'Don\'t want these emails? <a href=":unsubscribe_url">Unsubscribe</a>',
-    'abandoned_cart_discount_offer' => 'Special offer just for you!',
-    'abandoned_cart_discount_off' => 'OFF',
-    'abandoned_cart_discount_code' => 'Use code',
-    'abandoned_cart_claim_discount' => 'Claim Your Discount',
-    'abandoned_cart_final_offer' => 'Final Offer - Don\'t Miss Out!',
-    'abandoned_cart_expires_soon' => 'This offer expires soon!',
-    'abandoned_cart_complete_now' => 'Complete Your Order Now',
-
-    // Abandoned Cart Reminder Email #1 (Friendly)
-    'abandoned_cart_reminder_1_title' => 'Did you forget something?',
-    'abandoned_cart_reminder_1_greeting' => 'Hi :customer_name,',
-    'abandoned_cart_reminder_1_message' => 'We noticed you left some items in your cart. No worries - we saved them for you! Ready to complete your purchase?',
-
-    // Abandoned Cart Reminder Email #2 (With Discount)
-    'abandoned_cart_reminder_2_title' => 'Still thinking about it?',
-    'abandoned_cart_reminder_2_greeting' => 'Hi :customer_name,',
-    'abandoned_cart_reminder_2_message' => 'Your cart misses you! We\'ve saved your items and wanted to reach out. Maybe this special offer will help you decide?',
-
-    // Abandoned Cart Reminder Email #3 (Last Chance)
-    'abandoned_cart_reminder_3_title' => 'Last chance to save your cart!',
-    'abandoned_cart_reminder_3_greeting' => 'Hi :customer_name,',
-    'abandoned_cart_reminder_3_message' => 'This is your final reminder - your cart is about to expire! We don\'t want you to miss out on these items.',
 
     // Welcome Email
     'welcome_greeting' => 'We\'re glad to have you here, :customer_name!',
@@ -224,7 +193,7 @@ return [
     // Order Return Request Email
     'order_return_request_title' => 'Return request received',
     'order_return_request_greeting' => 'Hi :customer_name,',
-    'order_return_request_message' => 'We have received your return request for order :order_id.',
+    'order_return_request_message' => 'We have received your return request for order #:order_id.',
     'order_return_request_reason' => 'Reason for return',
     'order_return_request_items' => 'Items to be returned',
     'order_return_request_process' => 'We will process your request and contact you soon.',
@@ -249,7 +218,7 @@ return [
     // Review Products Email
     'review_products_title' => 'Review your recent purchase',
     'review_products_greeting' => 'Hi :customer_name,',
-    'review_products_message' => 'Your order :order_id has been completed. We would love to hear your feedback!',
+    'review_products_message' => 'Your order #:order_id has been completed. We would love to hear your feedback!',
     'review_products_instruction' => 'Please take a moment to review the products you purchased:',
     'review_products_button' => 'Review Products',
     'review_products_thank_you' => 'Thank you for your purchase!',
@@ -258,7 +227,7 @@ return [
     // Digital Products Download Email
     'download_digital_products_title' => 'Your digital products are ready',
     'download_digital_products_greeting' => 'Hi :customer_name,',
-    'download_digital_products_message' => 'Your digital products are ready for download.',
+    'download_digital_products_message' => 'Thank you for your purchase! Your digital products are ready for download.',
     'download_digital_products_thanks' => 'Thank you for your purchase!',
     'download_digital_products_instruction' => 'Click the links below to download your products:',
     'download_digital_products_order_number' => 'Order number',
@@ -271,8 +240,9 @@ return [
     // Digital Product License Codes Email
     'digital_product_license_codes_title' => 'Your License Codes',
     'digital_product_license_codes_greeting' => 'Dear :customer_name,',
-    'digital_product_license_codes_thanks' => 'Thank you for your purchase!',
-    'digital_product_license_codes_message' => 'Below are your license codes for the products you purchased.',
+    'digital_product_license_codes_message' => 'Thank you for your purchase! Here are your license codes:',
+    'digital_product_license_codes_thanks' => 'Thank you for purchasing our digital products.',
+    'digital_product_license_codes_below' => 'Below are your license codes for the products you have purchased:',
     'digital_product_license_codes_product' => 'Product',
     'digital_product_license_codes_license' => 'License Code',
     'digital_product_license_codes_order_summary' => 'Here\'s what you ordered:',
@@ -281,10 +251,10 @@ return [
     'digital_product_license_codes_na' => 'N/A',
     'digital_product_license_codes_payment_method' => 'Payment Method',
     'digital_product_license_codes_important_notes' => 'Important Notes:',
-    'digital_product_license_codes_note_1' => 'Please keep your license codes safe and secure.',
-    'digital_product_license_codes_note_2' => 'Each license code is unique and can only be used once.',
-    'digital_product_license_codes_note_3' => 'Do not share your license codes with others.',
-    'digital_product_license_codes_note_4' => 'If you have any issues with your license codes, please contact our support team.',
+    'digital_product_license_codes_note_1' => 'Please keep your license codes safe and secure',
+    'digital_product_license_codes_note_2' => 'Each license code is unique and can only be used once',
+    'digital_product_license_codes_note_3' => 'Do not share your license codes with others',
+    'digital_product_license_codes_note_4' => 'If you have any issues with your license codes, please contact our support team',
 
     // Product File Updated Email
     'product_file_updated_title' => 'Product Files Updated',

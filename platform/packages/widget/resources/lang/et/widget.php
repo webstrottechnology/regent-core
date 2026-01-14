@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Vidina alad',
     'manage_widgets' => 'Halda vidinaid',
 
-    'click_to_add' => 'Klõpsake vidina lisamiseks',
-    'select_sidebar' => 'Lisa vidin',
-    'select_sidebar_description' => 'Valige, kuhu see vidin lisada',
-    'adding_to' => 'Lisamine',
-    'add_widget' => 'Lisa vidin',
-    'widget_not_found' => 'Vidinat ei leitud',
-
     'cache_suggestion' => [
         'title' => 'Jõudluse soovitus',
         'description' => 'Saate oma saidi jõudlust parandada, lubades vidinate vahemällu salvestamise.',
@@ -52,22 +45,4 @@ return [
     'widget_site_copyright_description' => 'Autoriõiguse tekst alumises jaluses.',
     'widget_site_copyright_helper' => 'Autoriõiguse teksti muutmiseks minge :link.',
     'theme_options' => 'Teema valikud',
-
-    'form' => [
-        'enable_caching' => 'Luba vahemälu',
-        'yes' => 'Jah',
-        'no' => 'Ei',
-        'cache_helper' => 'Kui lubatud, salvestatakse selle vidina sisu vahemällu jõudluse parandamiseks.',
-        'cache_warning' => 'UI probleemide tõttu on selle vidina vahemälu koodiga keelatud.',
-    ],
-
-    'drag_or_click' => 'Lohistage külgribale või klõpsake + lisamiseks',
-    'drop_widgets_here' => 'Kukutage vidinaid oma külgriba aladele',
-    'search_widgets' => 'Otsi vidinaid...',
-    'no_widgets' => 'Vidinaid pole saadaval',
-    'no_search_results' => 'Vidinaid ei leitud',
-    'or_click_add' => 'Või klõpsake vidina + nuppu lisamiseks',
-    'toggle_widget' => 'Lülita vidina seaded',
-    'loading_form' => 'Vidina vormi laadimine...',
-
 ];

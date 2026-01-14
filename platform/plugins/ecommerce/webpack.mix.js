@@ -47,7 +47,6 @@ const scripts = [
     'dashboard-widgets.js',
     'avatar.js',
     'flash-sale.js',
-    'product-label.js',
     'bulk-import.js',
     'export.js',
     'address.js',

@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'التجارة الإلكترونية',
     'general' => [
         'name' => 'عام',
-        'description' => 'اسم المتجر، معلومات الشركة، تفاصيل الاتصال، وبريد إشعارات المسؤول',
+        'description' => 'عرض وتحديث إعداداتك العامة',
     ],
     'currency' => [
         'name' => 'العملات',
-        'description' => 'تنسيقات العملة، أسعار الصرف، الاكتشاف التلقائي، وفواصل الأعداد العشرية/الآلاف',
+        'description' => 'عرض وتحديث إعدادات العملة',
         'currency_setting_description' => 'عرض وتحديث العملات المستخدمة في الموقع',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'تمكين الكشف التلقائي عن عملة الزائر',
@@ -35,8 +35,8 @@ return [
                 'select' => '-- اختر --',
                 'none' => 'لا شيء',
                 'provider' => [
-                    'api_layer' => 'طبقة API (API Layer)',
-                    'open_exchange_rate' => 'أسعار الصرف المفتوحة (Open Exchange Rates)',
+                    'api_layer' => 'API Layer',
+                    'open_exchange_rate' => 'Open Exchange Rates',
                 ],
                 'open_exchange_app_id' => 'معرف تطبيق Open Exchange Rates',
             ],
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'المنتجات',
-        'description' => 'عرض المخزون، توليد SKU، صور المتغيرات، المنتجات ذات الصلة، والمواصفات',
+        'description' => 'عرض وتحديث إعدادات منتجاتك',
         'product_settings' => 'إعدادات المنتج',
         'product_settings_description' => 'تكوين قواعد المنتج',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'البحث عن المنتجات',
-        'description' => 'سلوك البحث، الفلاتر حسب الفئة/العلامة التجارية/الوسم/السمات، وتصفية نطاق السعر',
+        'description' => 'عرض وتحديث إعدادات البحث عن المنتجات',
         'product_search_settings' => 'البحث عن المنتجات',
         'product_search_settings_description' => 'تكوين قواعد البحث عن المنتجات',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'المنتجات الرقمية',
-        'description' => 'المنتجات القابلة للتنزيل، رموز الترخيص، الدفع كضيف للمنتجات الرقمية، والإكمال التلقائي',
+        'description' => 'عرض وتحديث إعدادات المنتجات الرقمية',
         'digital_products_settings' => 'المنتجات الرقمية',
         'digital_products_settings_description' => 'تكوين قواعد المنتجات الرقمية',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'مراجعات المنتجات',
-        'description' => 'مراجعات العملاء، عرض التقييمات، تحميل الصور، ومتطلبات الموافقة',
+        'description' => 'عرض وتحديث إعدادات مراجعات منتجاتك',
         'form' => [
             'enable_review' => 'تمكين مراجعات المنتجات',
             'enable_review_help' => 'السماح للعملاء بترك مراجعات وتقييمات على المنتجات. عند التعطيل، ستختفي جميع ميزات المراجعة من المتجر.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'التسوق',
-        'description' => 'السلة، قائمة الرغبات، المقارنة، تتبع الطلب، زر الشراء السريع، وتحميل إثبات الدفع',
+        'description' => 'عرض وتحديث إعدادات التسوق الخاصة بك',
         'general_setting' => 'الإعدادات العامة',
         'return_settings' => 'إعدادات الإرجاع',
         'return_settings_description' => 'تكوين قواعد إعدادات الإرجاع',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'ستُدمر السلة عندما يسجل العميل الخروج.',
             'hide_product_price' => 'إخفاء سعر المنتج',
             'hide_product_price_helper' => 'هذا الخيار يعمل فقط إذا عطلت سلة التسوق، مما يحول موقعك إلى عرض كتالوج فقط. إذا تم تمكينه، سيختفي سعر المنتج. مفيد عندما تريد إخفاء السعر وتتطلب من العملاء التواصل معك للسعر.',
-            'hide_product_price_when_zero' => 'إخفاء سعر المنتج عندما يكون صفراً',
-            'hide_product_price_when_zero_helper' => 'إذا تم تمكينه، لن يتم عرض سعر المنتجات التي سعرها 0 في الواجهة.',
             'enable_payment_proof' => 'تمكين رفع إثبات الدفع',
             'enable_payment_proof_helper' => 'السماح للعملاء برفع إثبات الدفع لطلباتهم. مفيد لطرق الدفع اليدوية.',
             'enable_guest_payment_proof' => 'السماح للعملاء الضيوف برفع إثبات الدفع',
             'enable_guest_payment_proof_helper' => 'عند التمكين، يمكن للعملاء الضيوف رفع إثبات الدفع باستخدام رمز طلبهم دون تسجيل الدخول. سيتلقون رابط الرفع في بريد تأكيد الطلب الإلكتروني.',
-            'payment_proof_payment_methods' => 'طرق الدفع التي تتطلب إثبات الدفع',
-            'payment_proof_payment_methods_helper' => 'حدد طرق الدفع التي يجب أن تسمح للعملاء بتحميل إثبات الدفع. يستخدم عادةً لطرق الدفع اليدوية مثل الدفع عند الاستلام والتحويل البنكي.',
         ],
     ],
     'checkout' => [
         'name' => 'الدفع',
-        'panel_description' => 'الدفع كضيف، الحقول المطلوبة، حدود الطلب، قبول الشروط، وقيود الدول',
+        'panel_description' => 'عرض وتحديث إعدادات الدفع',
         'description' => 'تكوين قواعد إعدادات الدفع',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'عرض معلومات البنك في صفحة نجاح الدفع',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'الإرجاع',
         'description' => 'تكوين قواعد إعدادات الإرجاع',
-        'panel_description' => 'إرجاع الطلبات، الإرجاع الجزئي، وحدود وقت الإرجاع',
+        'panel_description' => 'عرض وتحديث إعدادات الإرجاع',
         'form' => [
             'is_enabled_order_return' => 'هل تم تمكين إرجاع الطلب',
             'allow_partial_return' => 'السماح بالإرجاع الجزئي',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'الفواتير',
-        'description' => 'تفاصيل الشركة على الفواتير، ترقيم الفواتير، خطوط PDF، وإعدادات الختم',
+        'description' => 'عرض وتحديث إعدادات الفواتير الخاصة بك',
         'company_settings' => 'إعدادات الشركة',
         'company_settings_description' => 'إعدادات معلومات الشركة للفواتير',
         'form' => [
@@ -327,15 +323,12 @@ return [
             'default_tax_rate' => 'معدل الضريبة الافتراضي',
             'default_tax_rate_description' => 'مهم: سيُطبق إذا لم يتم اختيار ضريبة في المنتج.',
             'select_tax' => '-- اختر --',
-            'display_product_price_including_taxes' => 'إضافة الضريبة للأسعار المعروضة',
-            'display_product_price_including_taxes_helper' => 'إضافة الضريبة تلقائياً لأسعار المنتجات المعروضة في المتجر. مثال: منتج بـ 100$ مع ضريبة 10% يُعرض بـ 110$. غير مطلوب إذا كان "السعر يشمل الضريبة" مفعّلاً على المنتجات الفردية.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'عرض سعر المنتج شامل الضرائب',
         ],
     ],
     'customer' => [
         'name' => 'العملاء',
-        'description' => 'التسجيل، التحقق من البريد الإلكتروني، خيارات تسجيل الدخول، حذف الحساب، وحقول الملف الشخصي',
+        'description' => 'عرض وتحديث إعدادات عملائك',
         'customer_setting' => 'إعدادات العميل',
         'customer_setting_description' => 'تكوين إعدادات العميل',
         'form' => [
@@ -366,7 +359,7 @@ return [
     ],
     'shipping' => [
         'name' => 'الشحن',
-        'description' => 'قواعد الشحن، سلوك الشحن المجاني، وترتيب عرض خيارات الشحن',
+        'description' => 'عرض وتحديث إعدادات الشحن',
         'shipping_rule' => 'قواعد الشحن',
         'shipping_rule_description' => 'تكوين قواعد حساب رسوم الشحن',
         'shipping_setting' => 'إعدادات الشحن',
@@ -434,16 +427,10 @@ return [
             'save_location' => 'حفظ الموقع',
             'add_new' => 'إضافة جديد',
         ],
-        'info' => [
-            'title' => 'كيف تعمل محددات المتاجر',
-            'primary_store' => 'يظهر عنوان المتجر الأساسي في الفواتير ويستخدم كعنوان إرجاع افتراضي لملصقات الشحن.',
-            'shipping_location' => 'يمكن تحديد المتاجر المميزة كـ "موقع شحن" كمستودع منشأ عند إنشاء الشحنات.',
-            'shipment_selection' => 'عند معالجة الطلبات، يمكنك اختيار المستودع الذي سيتم الشحن منه بناءً على المخزون وموقع العميل.',
-        ],
     ],
     'tracking' => [
         'name' => 'التتبع',
-        'description' => 'Facebook Pixel، أحداث Google Tag Manager، وتتبع تحويلات إعلانات Google',
+        'description' => 'عرض وتحديث إعدادات التتبع',
         'manage_tracking' => 'إدارة التتبع',
         'manage_tracking_description' => 'إدارة التتبع: UTM، Facebook، Google Tag Manager...',
         'form' => [
@@ -455,8 +442,6 @@ return [
             'facebook_pixel_debug_mode_helper' => 'تمكين وضع التصحيح لتسجيل أحداث Facebook Pixel في وحدة تحكم المتصفح واستكشاف مشاكل التتبع',
             'enable_google_tag_manager_tracking_events' => 'تمكين أحداث تتبع Google Tag Manager',
             'google_tag_manager_tracking_info' => 'عند التمكين، ستُتتبع أحداث التجارة الإلكترونية من خلال Google Tag Manager. تأكد من تكوين Google Tag Manager أعلاه.',
-            'google_ads_conversion_id' => 'معرف تحويل إعلانات Google',
-            'google_ads_conversion_id_helper' => 'أدخل معرف تحويل إعلانات Google (التنسيق: AW-123456789/AbC-D_efG-h1_ijk-lmN) لتتبع تحويلات الشراء في صفحة الشكر.',
         ],
         'validation' => [
             'facebook_pixel_id_format' => 'يجب أن يكون معرف Facebook Pixel 15-16 رقم (مثل 1234567890123456)',
@@ -464,11 +449,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'السوق',
-        'description' => 'إعدادات متعددة البائعين، العمولات، تسجيل البائعين، وتهيئة المدفوعات',
+        'description' => 'عرض وتحديث إعدادات السوق',
     ],
     'standard_and_format' => [
         'name' => 'المعيار والتنسيق',
-        'panel_description' => 'تنسيق رمز الطلب، وحدات الوزن (كجم/رطل)، ووحدات الأبعاد (سم/بوصة)',
+        'panel_description' => 'عرض وتحديث إعدادات المعيار والتنسيق',
         'description' => 'المعايير والتنسيقات تُستخدم لحساب أشياء مثل أسعار المنتجات وأوزان الشحن وأوقات الطلبات.',
         'form' => [
             'change_order_format' => 'تحرير تنسيق رمز الطلب (اختياري)',
@@ -500,63 +485,7 @@ return [
         'show_sale_count_left_description' => 'عرض شريط تقدم مع "X بيع من Y" لخلق إلحاح وتشجيع الشراء السريع أثناء التخفيضات السريعة.',
     ],
     'payment_method_cod_minimum_amount' => 'الحد الأدنى لمبلغ الطلب - :currency (اختياري)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'الحد الأدنى لمبلغ الطلب - :currency (اختياري)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'عرض معلومات البنك في صفحة نجاح الدفع؟',
     'invoice_templates' => 'قوالب الفواتير',
-
-    'abandoned_cart' => [
-        'name' => 'السلات المهجورة',
-        'description' => 'استعادة المبيعات المفقودة بإرسال تذكيرات تلقائية للعملاء الذين تركوا سلة التسوق',
-        'panel_description' => 'إعداد تذكيرات تلقائية للعملاء الذين يتخلون عن سلاتهم',
-        'how_it_works' => [
-            'title' => 'كيف يعمل',
-            'step1_title' => 'العميل يضيف منتجات',
-            'step1_description' => 'العميل يضيف منتجات إلى سلة التسوق ويقدم بريده الإلكتروني.',
-            'step2_title' => 'السلة تصبح مهجورة',
-            'step2_description' => 'إذا لم يتم الشراء خلال الوقت المحدد، تُعلَّم السلة كمهجورة.',
-            'step3_title' => 'إرسال بريد التذكير',
-            'step3_description' => 'إرسال تذكيرات تلقائية بالبريد لتشجيع العميل على إتمام الشراء.',
-            'step4_title' => 'استعادة البيع',
-            'step4_description' => 'العميل يعود لإتمام الطلب وتُعلَّم السلة كمستردة.',
-        ],
-        'form' => [
-            'enable' => 'تفعيل تتبع السلات المهجورة',
-            'enable_helper' => 'عند التفعيل، سيتتبع النظام السلات المهجورة ويسمح لك بإرسال رسائل استرداد للعملاء.',
-            'timing_section' => 'إعدادات التوقيت',
-            'email_section' => 'إعدادات بريد التذكير',
-            'cleanup_section' => 'تنظيف البيانات',
-            'time_threshold' => 'عتبة الوقت (ساعات)',
-            'time_threshold_helper' => 'تعتبر السلة مهجورة بعد هذا العدد من ساعات عدم النشاط. موصى به: 1-24 ساعة.',
-            'send_email' => 'إرسال رسائل الاسترداد',
-            'send_email_helper' => 'إرسال رسائل استرداد تلقائية للعملاء ذوي السلات المهجورة.',
-            'max_reminders' => 'عدد رسائل التذكير',
-            'max_reminders_helper' => 'عدد رسائل التذكير المرسلة لكل سلة مهجورة. يمكن تخصيص كل رسالة في قوالب البريد.',
-            'email_delay' => 'إرسال بعد (ساعات)',
-            'email_discount' => 'الخصم (%)',
-            'email_1_title' => 'البريد #1 - تذكير ودي',
-            'email_1_description' => 'تذكير لطيف أول لتشجيع العميل على العودة.',
-            'email_1_delay_helper' => 'ساعات بعد هجر السلة لإرسال البريد الأول. موصى به: 1-2 ساعة.',
-            'email_2_title' => 'البريد #2 - مع حافز',
-            'email_2_description' => 'تذكير ثانٍ مع عرض خصم لتحفيز الشراء.',
-            'email_2_delay_helper' => 'ساعات بعد هجر السلة لإرسال البريد الثاني. موصى به: 24 ساعة.',
-            'email_2_discount_helper' => 'نسبة الخصم للعرض في هذا البريد. اضبط 0 بدون خصم.',
-            'email_3_title' => 'البريد #3 - الفرصة الأخيرة',
-            'email_3_description' => 'تذكير أخير بإلحاح وأفضل عرض لإتمام البيع.',
-            'email_3_delay_helper' => 'ساعات بعد هجر السلة لإرسال البريد الأخير. موصى به: 72 ساعة.',
-            'email_3_discount_helper' => 'عرض الخصم النهائي. عادة أعلى من البريد #2.',
-            'cleanup_days' => 'التنظيف بعد (أيام)',
-            'cleanup_days_helper' => 'حذف سجلات السلات المهجورة الأقدم من هذا العدد من الأيام تلقائياً.',
-            'cronjob_not_setup' => '<strong>لم يتم إعداد Cronjob!</strong> تذكيرات السلة المهجورة تتطلب cronjob مُعد بشكل صحيح. <a href=":url">إعداد cronjob الآن</a>.',
-            'cronjob_not_running' => '<strong>Cronjob لا يعمل!</strong> يبدو أن cronjob قد توقف. يرجى فحص إعدادات الخادم. <a href=":url">عرض حالة cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob يعمل بشكل صحيح!</strong> آخر نشاط: :time. ستتم معالجة تذكيرات السلة المهجورة تلقائياً.',
-            'email_setup_warning' => '<strong>مهم:</strong> تأكد من تكوين إعدادات البريد بشكل صحيح في <a href=":url">الإعدادات → البريد</a>. أرسل بريداً تجريبياً للتحقق قبل تفعيل هذه الميزة.',
-        ],
-    ],
 ];

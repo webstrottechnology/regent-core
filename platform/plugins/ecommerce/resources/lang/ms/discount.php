@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Kupon tanpa had?',
     'enter_number' => 'Masukkan nombor',
     'coupon_type' => 'Jenis kupon',
-    'discount_type' => 'Jenis diskaun',
     'percentage_discount' => 'Diskaun peratusan (%)',
     'free_shipping' => 'Penghantaran percuma',
     'same_price' => 'Harga sama',
     'apply_for' => 'gunakan untuk',
-    'apply_to' => 'Gunakan untuk',
     'all_orders' => 'Semua pesanan',
     'order_amount_from' => 'Jumlah pesanan dari',
     'product_collection' => 'Koleksi produk',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Kupon ini tidak boleh digunakan kerana troli anda mengandungi item jualan kilat (:product_name). Harga jualan kilat tidak boleh digabungkan dengan diskaun kupon.',
     'coupon_applied_successfully' => 'Bagus! Kod kupon ":code" telah digunakan. Anda jimat wang dalam pesanan ini!',
     'coupon_removed_successfully' => 'Kod kupon telah dibuang dari pesanan anda.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Kod kupon (:count)',
-    'left_quantity' => 'Baki :left',
-    'apply' => 'Guna',
-    'remove' => 'Buang',
-    'select_coupon' => 'Pilih Kupon',
-    'you_have_coupon_code' => 'Ada kod kupon?',
-    'close' => 'Tutup',
-    'coupon_code_label' => 'Kod kupon: :code',
-    'enter_coupon_code_placeholder' => 'Masukkan kod kupon...',
 ];

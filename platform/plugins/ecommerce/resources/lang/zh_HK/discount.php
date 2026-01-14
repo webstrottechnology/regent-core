@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => '無限制優惠券?',
     'enter_number' => '輸入數字',
     'coupon_type' => '優惠券類型',
-    'discount_type' => '折扣類型',
     'percentage_discount' => '百分比折扣(%)',
     'free_shipping' => '免運費',
     'same_price' => '同價',
     'apply_for' => '適用於',
-    'apply_to' => '適用於',
     'all_orders' => '所有訂單',
     'order_amount_from' => '訂單金額從',
     'product_collection' => '產品系列',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => '此優惠券無法套用,因為您的購物車包含限時搶購商品(:product_name)。限時搶購價格不能與優惠券折扣合併使用。',
     'coupon_applied_successfully' => '太好了!優惠券代碼「:code」已套用。您在此訂單上節省了錢!',
     'coupon_removed_successfully' => '優惠券代碼已從您的訂單中移除。',
-
-    // Frontend coupon display
-    'coupon_codes_count' => '優惠券代碼 (:count)',
-    'left_quantity' => '剩餘 :left',
-    'apply' => '套用',
-    'remove' => '移除',
-    'select_coupon' => '選擇優惠券',
-    'you_have_coupon_code' => '您有優惠券代碼嗎？',
-    'close' => '關閉',
-    'coupon_code_label' => '優惠券代碼：:code',
-    'enter_coupon_code_placeholder' => '輸入優惠券代碼...',
 ];

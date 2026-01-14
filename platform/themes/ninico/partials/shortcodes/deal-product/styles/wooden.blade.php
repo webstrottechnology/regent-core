@@ -1,22 +1,16 @@
 <section class="dealproduct-area pt-30 pb-30">
     <div class="container">
-        @php
-            $priceForDisplay = $product->front_sale_price_with_taxes;
-            $shouldShowPrice = (! EcommerceHelper::hideProductPrice() || EcommerceHelper::isCartEnabled()) && (! EcommerceHelper::hideProductPriceWhenZero() || $priceForDisplay > 0);
-        @endphp
         <div class="theme-bg pt-40 pb-40" @if ($shortcode->background_color) style="background-color: {{ $shortcode->background_color }} !important;" @endif>
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="tpdealproduct">
                         <div class="tpdealproduct__thumb p-relative text-center">
                             <img src="{{ RvMedia::getImageUrl($product->image, 'small', false, RvMedia::getDefaultImage()) }}" alt="{{ $product->name }}">
-                            @if ($shouldShowPrice)
-                                <div class="tpdealproductd__offer">
-                                    <p class="tpdealproduct__offer-price">
-                                        <span>{{ __('From') }}</span>{{ format_price($priceForDisplay) }}
-                                    </p>
-                                </div>
-                            @endif
+                            <div class="tpdealproductd__offer">
+                                <p class="tpdealproduct__offer-price">
+                                    <span>{{ __('From') }}</span>{{ format_price($product->front_sale_price_with_taxes) }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -47,5 +47,4 @@ return [
         'completed' => 'Nakumpleto',
         'canceled' => 'Kinansela',
     ],
-    'back_to_invoices' => 'Bumalik sa mga invoice',
 ];

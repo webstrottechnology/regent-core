@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-komercija',
     'general' => [
         'name' => 'Vispārīgi',
-        'description' => 'Veikala nosaukums, uzņēmuma info, kontakti un admin paziņojumu e-pasti',
+        'description' => 'Skatīt un atjaunināt vispārīgos iestatījumus',
     ],
     'currency' => [
         'name' => 'Valūtas',
-        'description' => 'Valūtu formāti, maiņas kursi, automātiska noteikšana un decimāldaļu/tūkstošu atdalītāji',
+        'description' => 'Skatīt un atjaunināt valūtas iestatījumus',
         'currency_setting_description' => 'Skatīt un atjaunināt vietnē izmantotās valūtas',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Iespējot automātisku apmeklētāja valūtas noteikšanu',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produkti',
-        'description' => 'Krājumu attēlošana, SKU ģenerēšana, variantu attēli, saistītie produkti un specifikācijas',
+        'description' => 'Skatīt un atjaunināt produktu iestatījumus',
         'product_settings' => 'Produktu iestatījumi',
         'product_settings_description' => 'Konfigurēt produktu noteikumus',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Produktu meklēšana',
-        'description' => 'Meklēšanas uzvedība, filtri pēc kategorijas/zīmola/birkas/atribūtiem un cenu diapazona filtrēšana',
+        'description' => 'Skatīt un atjaunināt produktu meklēšanas iestatījumus',
         'product_search_settings' => 'Produktu meklēšana',
         'product_search_settings_description' => 'Konfigurēt produktu meklēšanas noteikumus',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Digitālie produkti',
-        'description' => 'Lejupielādējami produkti, licences kodi, viesa kase digitāliem produktiem un automātiska pabeigšana',
+        'description' => 'Skatīt un atjaunināt digitālo produktu iestatījumus',
         'digital_products_settings' => 'Digitālie produkti',
         'digital_products_settings_description' => 'Konfigurēt digitālo produktu noteikumus',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Produktu atsauksmes',
-        'description' => 'Klientu atsauksmes, vērtējumu attēlošana, attēlu augšupielāde un apstiprināšanas prasības',
+        'description' => 'Skatīt un atjaunināt produktu atsauksmju iestatījumus',
         'form' => [
             'enable_review' => 'Iespējot produktu atsauksmes',
             'enable_review_help' => 'Atļaut klientiem atstāt atsauksmes un vērtējumus produktiem. Kad atspējots, visas atsauksmju funkcijas tiks paslēptas no veikala.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Iepirkšanās',
-        'description' => 'Grozs, vēlmju saraksts, salīdzināšana, pasūtījuma izsekošana, ātrā pirkuma poga un maksājuma apliecinājuma augšupielāde',
+        'description' => 'Skatīt un atjaunināt iepirkšanās iestatījumus',
         'general_setting' => 'Vispārīgie iestatījumi',
         'return_settings' => 'Atgriešanas iestatījumi',
         'return_settings_description' => 'Konfigurēt atgriešanas iestatījumu noteikumus',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Grozs tiks iznīcināts, kad klients izies.',
             'hide_product_price' => 'Paslēpt produkta cenu',
             'hide_product_price_helper' => 'Šī opcija darbojas tikai tad, ja atspējojat iepirkumu grozu, pārvēršot jūsu vietni par tikai kataloga displeju. Ja iespējots, produkta cena tiks paslēpta. Tas ir noderīgi, ja vēlaties paslēpt cenu un pieprasīt klientiem sazināties ar jums par cenu.',
-            'hide_product_price_when_zero' => 'Paslēpt produkta cenu, ja tā ir nulle',
-            'hide_product_price_when_zero_helper' => 'Ja iespējots, produktiem ar cenu 0 veikalā cena netiks rādīta.',
             'enable_payment_proof' => 'Iespējot maksājuma apstiprinājuma augšupielādi',
             'enable_payment_proof_helper' => 'Atļaut klientiem augšupielādēt maksājuma apstiprinājumu saviem pasūtījumiem. Tas ir noderīgi manuālām maksājuma metodēm.',
             'enable_guest_payment_proof' => 'Atļaut viesa klientiem augšupielādēt maksājuma apstiprinājumu',
             'enable_guest_payment_proof_helper' => 'Kad iespējots, viesa klienti var augšupielādēt maksājuma apstiprinājumu, izmantojot savu pasūtījuma marķieri bez pieteikšanās. Viņi saņems augšupielādes saiti savā pasūtījuma apstiprinājuma e-pastā.',
-            'payment_proof_payment_methods' => 'Maksājuma metodes, kas prasa maksājuma pierādījumu',
-            'payment_proof_payment_methods_helper' => 'Izvēlieties, kurām maksājuma metodēm jāļauj klientiem augšupielādēt maksājuma pierādījumu. Parasti izmanto manuālām maksājumu metodēm, piemēram, piegādes maksājumam un bankas pārskaitījumam.',
         ],
     ],
     'checkout' => [
         'name' => 'Norēķini',
-        'panel_description' => 'Viesa kase, obligātie lauki, pasūtījumu limiti, noteikumu pieņemšana un valstu ierobežojumi',
+        'panel_description' => 'Skatīt un atjaunināt norēķinu iestatījumus',
         'description' => 'Konfigurēt norēķinu iestatījumu noteikumus',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Parādīt bankas informāciju norēķinu veiksmīgajā lapā',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Atgriešana',
         'description' => 'Konfigurēt atgriešanas iestatījumu noteikumus',
-        'panel_description' => 'Pasūtījumu atgriešana, daļēja atgriešana un atgriešanas termiņi',
+        'panel_description' => 'Skatīt un atjaunināt atgriešanas iestatījumus',
         'form' => [
             'is_enabled_order_return' => 'Vai ir iespējota pasūtījuma atgriešana',
             'allow_partial_return' => 'Atļaut daļēju atgriešanu',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Rēķini',
-        'description' => 'Uzņēmuma dati uz rēķiniem, rēķinu numerācija, PDF fonti un zīmoga iestatījumi',
+        'description' => 'Skatīt un atjaunināt rēķinu iestatījumus',
         'company_settings' => 'Uzņēmuma iestatījumi',
         'company_settings_description' => 'Iestatījumi Uzņēmuma informācija rēķinu izrakstīšanai',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Noklusējuma nodokļa likme',
             'default_tax_rate_description' => 'Svarīgi: tā tiks piemērota, ja produktā nav izvēlēts nodoklis.',
             'select_tax' => '-- Izvēlēties --',
-            'display_product_price_including_taxes' => 'Pievienot nodokli parādītajām cenām',
-            'display_product_price_including_taxes_helper' => 'Automātiski pievieno nodokli veikalā parādītajām produktu cenām. Piemēram, $100 produkts ar 10% nodokli tiek parādīts kā $110. Nav nepieciešams, ja "Cena ietver nodokli" jau ir iespējots atsevišķiem produktiem.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Parādīt produkta cenu ieskaitot nodokļus',
         ],
     ],
     'customer' => [
         'name' => 'Klienti',
-        'description' => 'Reģistrācija, e-pasta verifikācija, pieteikšanās iespējas, konta dzēšana un profila lauki',
+        'description' => 'Skatīt un atjaunināt klientu iestatījumus',
         'customer_setting' => 'Klientu iestatījumi',
         'customer_setting_description' => 'Konfigurēt klientu iestatījumus',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Piegāde',
-        'description' => 'Piegādes noteikumi, bezmaksas piegādes uzvedība un piegādes opciju attēlošanas secība',
+        'description' => 'Skatīt un atjaunināt piegādes iestatījumus',
         'shipping_rule' => 'Piegādes noteikumi',
         'shipping_rule_description' => 'Konfigurēt noteikumus piegādes maksas aprēķināšanai',
         'shipping_setting' => 'Piegādes iestatījumi',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Saglabāt atrašanās vietu',
             'add_new' => 'Pievienot jaunu',
         ],
-            'info' => [
-            'title' => 'Kā darbojas veikalu atrašanās vietu meklētāji',
-            'primary_store' => 'Galvenā veikala adrese tiek parādīta rēķinos un tiek izmantota kā noklusējuma atgriešanas adrese piegādes etiķetēm.',
-            'shipping_location' => 'Veikalus, kas atzīmēti kā "piegādes vieta", var atlasīt kā izcelsmes noliktavu, veidojot sūtījumus.',
-            'shipment_selection' => 'Apstrādājot pasūtījumus, varat izvēlēties, no kuras noliktavas sūtīt, pamatojoties uz krājumiem un klienta atrašanās vietu.',
-        ],
     ],
     'tracking' => [
         'name' => 'Izsekošana',
-        'description' => 'Facebook Pixel, Google Tag Manager notikumi un Google Ads konversiju izsekošana',
+        'description' => 'Skatīt un atjaunināt izsekošanas iestatījumus',
         'manage_tracking' => 'Pārvaldīt izsekošanu',
         'manage_tracking_description' => 'Pārvaldīt izsekošanu: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Tirgus',
-        'description' => 'Vairāku pārdevēju iestatījumi, komisijas maksas, pārdevēju reģistrācija un izmaksu konfigurācija',
+        'description' => 'Skatīt un atjaunināt tirgus iestatījumus',
     ],
     'standard_and_format' => [
         'name' => 'Standarts un formāts',
-        'panel_description' => 'Pasūtījuma koda formāts, svara vienības (kg/lb) un izmēru vienības (cm/collas)',
+        'panel_description' => 'Skatīt un atjaunināt standarta un formāta iestatījumus',
         'description' => 'Standarti un formāti tiek izmantoti, lai aprēķinātu tādas lietas kā produktu cenas, piegādes svari un pasūtījumu laiki.',
         'form' => [
             'change_order_format' => 'Rediģēt pasūtījuma koda formātu (neobligāti)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Rādīt progresa joslu ar "X pārdots no Y", lai radītu steidzamību un veicinātu ātrus pirkumus zibens akciju laikā.',
     ],
     'payment_method_cod_minimum_amount' => 'Minimālā pasūtījuma summa - :currency (Neobligāti)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minimālā pasūtījuma summa - :currency (Neobligāti)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Parādīt bankas informāciju norēķinu veiksmīgajā lapā?',
     'invoice_templates' => 'Rēķinu veidnes',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

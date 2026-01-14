@@ -7,4 +7,5 @@ return [
     'country' => 'Ülke',
     'select_country' => 'Bir ülke seçin...',
     'state' => 'Durum',
+    'edit' => 'İli düzenle',
 ];

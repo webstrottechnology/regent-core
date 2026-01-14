@@ -36,8 +36,6 @@ return [
         'customer_city' => 'La ville du client',
         'customer_zipcode' => 'Le code postal du client',
     ],
-    'custom_css' => 'CSS personnalisé',
-    'custom_css_helper' => 'Ajoutez des styles CSS personnalisés pour personnaliser l\'apparence de la facture. Ces styles seront ajoutés aux styles de facture par défaut.',
     'reset_success' => 'Réinitialisation par défaut réussie',
     'confirm_reset' => 'Confirmer la réinitialisation du modèle de facture ?',
     'confirm_message' => 'Voulez-vous vraiment réinitialiser ce modèle de facture par défaut ?',

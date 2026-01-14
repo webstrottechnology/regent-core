@@ -66,7 +66,6 @@ return [
     'languages' => 'Diller',
     'reset_password' => 'Şifreyi Sıfırla',
     'deactivated_message' => 'Your account has been deactivated. Please contact the administrator.',
-    'password_changed_message' => 'Şifreniz değiştirildi. Lütfen yeni şifrenizle tekrar giriş yapın.',
     'settings' => [
         'email' => [
             'title' => 'Ön çapraz bağ',

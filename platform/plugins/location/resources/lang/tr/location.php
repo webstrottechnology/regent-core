@@ -12,6 +12,7 @@ return [
             'city' => 'Şehir',
         ],
     ],
+    'import_type' => 'İçe Aktarma Türü',
     'export' => [
         'total' => 'Toplam Lokasyonlar',
         'total_countries' => 'Toplam Ülkeler',
@@ -68,4 +69,12 @@ return [
             'nationality' => 'Eğer belirtilecekse lokasyonun milliyeti 120 karakteri geçmemelidir.',
         ],
     ],
+    'create' => 'Yeni Konum',
+    'edit' => 'Konumu Düzenle',
+    'export_location' => 'İhracat Konumu',
+    'exporting' => 'İhracat',
+    'start_export' => 'Dışa Aktarmaya Başla',
+    'total_city' => 'Toplam Şehirler',
+    'total_country' => 'Toplam Ülke',
+    'total_state' => 'Toplam Durum',
 ];

@@ -170,11 +170,9 @@ export class ContextMenuService {
             items.alt_text = undefined
         }
 
-        if (
-            !Helpers.arrayFilter(selectedFiles, function (value) {
-                return value.full_url
-            }).length
-        ) {
+        if (! Helpers.arrayFilter(selectedFiles, function (value) {
+            return value.full_url
+        }).length) {
             items.copy_link = undefined
         }
 

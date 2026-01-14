@@ -1,7 +1,12 @@
 @extends('packages/installer::layouts.master')
 
-@section('pageTitle', trans('packages/installer::installer.install_step_title', ['step' => 6, 'title' =>
-    trans('packages/installer::installer.license.title')]))
+@section(
+    'pageTitle',
+     trans(
+         'packages/installer::installer.install_step_title',
+         ['step' => 6, 'title' => trans('packages/installer::installer.license.title')]
+     )
+)
 
 @section('header')
     <x-core::card.title>
@@ -24,17 +29,10 @@
 
 @section('footer')
     <div class="text-end mt-10">
-        <form
-            action="{{ route('installers.licenses.skip') }}"
-            method="POST"
-        >
+        <form action="{{ route('installers.licenses.skip') }}" method="POST">
             @csrf
 
-            <x-core::button
-                type="submit"
-                color="link"
-                size="sm"
-            >
+            <x-core::button type="submit" color="link" size="sm">
                 {{ trans('packages/installer::installer.license.skip') }}
             </x-core::button>
         </form>

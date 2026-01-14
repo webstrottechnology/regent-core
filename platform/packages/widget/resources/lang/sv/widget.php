@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Widgetområden',
     'manage_widgets' => 'Hantera widgets',
 
-    'click_to_add' => 'Klicka för att lägga till widget',
-    'select_sidebar' => 'Lägg till widget',
-    'select_sidebar_description' => 'Välj var du vill lägga till denna widget',
-    'adding_to' => 'Lägger till i',
-    'add_widget' => 'Lägg till widget',
-    'widget_not_found' => 'Widget hittades inte',
-
     'cache_suggestion' => [
         'title' => 'Prestandaförslag',
         'description' => 'Du kan förbättra din webbplats prestanda genom att aktivera widget-caching.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Upphovsrättstext i den nedre sidfoten.',
     'widget_site_copyright_helper' => 'Gå till :link för att ändra upphovsrättstexten.',
     'theme_options' => 'Temaalternativ',
-
-    'form' => [
-        'enable_caching' => 'Aktivera caching',
-        'yes' => 'Ja',
-        'no' => 'Nej',
-        'cache_helper' => 'När aktiverat kommer denna widgets innehåll att cachas för att förbättra prestandan. Inaktivera för dynamiskt innehåll som ändras ofta.',
-        'cache_warning' => 'På grund av UI-problem är cachen för denna widget inaktiverad via kod. Denna widget kommer inte att cachas även om caching är aktiverat.',
-    ],
-
-    'drag_or_click' => 'Dra till sidofältet eller klicka + för att lägga till',
-    'drop_widgets_here' => 'Släpp widgets i dina sidofältsområden',
-    'search_widgets' => 'Sök widgets...',
-    'no_widgets' => 'Inga widgets tillgängliga',
-    'no_search_results' => 'Inga widgets hittades',
-    'or_click_add' => 'Eller klicka på + knappen på en widget för att lägga till',
-    'toggle_widget' => 'Växla widgetinställningar',
-    'loading_form' => 'Laddar widgetformulär...',
 ];

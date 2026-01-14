@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-kaubandus',
     'general' => [
         'name' => 'Üldine',
-        'description' => 'Poe nimi, ettevõtte info, kontaktandmed ja admin teavitusmeilid',
+        'description' => 'Vaadake ja värskendage oma üldisi seadeid',
     ],
     'currency' => [
         'name' => 'Valuutad',
-        'description' => 'Valuutaformaadid, vahetuskursid, automaattuvastus ja kümnend-/tuhandelised eraldajad',
+        'description' => 'Vaadake ja värskendage valuuta seadeid',
         'currency_setting_description' => 'Vaadake ja värskendage veebilehel kasutatavaid valuutasid',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Luba külastaja valuuta automaatne tuvastamine',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Tooted',
-        'description' => 'Laoseisu kuvamine, SKU genereerimine, variandipildid, seotud tooted ja spetsifikatsioonid',
+        'description' => 'Vaadake ja värskendage oma toodete seadeid',
         'product_settings' => 'Toote seaded',
         'product_settings_description' => 'Seadistage toodete reeglid',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Toote otsing',
-        'description' => 'Otsingu käitumine, filtrid kategooria/brändi/sildi/atribuutide järgi ja hinnavahemiku filtreerimine',
+        'description' => 'Vaadake ja värskendage toote otsingu seadeid',
         'product_search_settings' => 'Toote otsing',
         'product_search_settings_description' => 'Seadistage toote otsingu reeglid',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Digitaalsed tooted',
-        'description' => 'Allalaaditavad tooted, litsentsikoodid, külaliskassa digitaalsete toodete jaoks ja automaatne lõpetamine',
+        'description' => 'Vaadake ja värskendage digitaalsete toodete seadeid',
         'digital_products_settings' => 'Digitaalsed tooted',
         'digital_products_settings_description' => 'Seadistage digitaalsete toodete reeglid',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Tootearvustused',
-        'description' => 'Kliendiarvustused, hinnangute kuvamine, piltide üleslaadimine ja kinnitamise nõuded',
+        'description' => 'Vaadake ja värskendage oma tootearvustuste seadeid',
         'form' => [
             'enable_review' => 'Luba tootearvustused',
             'enable_review_help' => 'Lubage klientidel jätta toodete kohta arvustusi ja hinnanguid. Kui see on keelatud, peidetakse kõik arvustuste funktsioonid poest.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Ostlemine',
-        'description' => 'Ostukorv, soovinimekiri, võrdlus, tellimuse jälgimine, kiirostu nupp ja maksekinnitus üleslaadimine',
+        'description' => 'Vaadake ja värskendage oma ostlemise seadeid',
         'general_setting' => 'Üldised seaded',
         'return_settings' => 'Tagastamise seaded',
         'return_settings_description' => 'Seadistage tagastamise reeglid',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Ostukorv hävitatakse, kui klient logib välja.',
             'hide_product_price' => 'Peida toote hind',
             'hide_product_price_helper' => 'See valik töötab ainult siis, kui keelate ostukorvi, muutes teie veebilehe ainult kataloogiks. Kui see on lubatud, peidetakse toote hind. See on kasulik, kui soovite hinda peita ja nõuda klientidelt hinna kohta kontakti võtmist.',
-            'hide_product_price_when_zero' => 'Peida toote hind, kui see on null',
-            'hide_product_price_when_zero_helper' => 'Kui on lubatud, ei kuvata poes hinda toodetel, mille hind on 0.',
             'enable_payment_proof' => 'Luba makse tõendi üleslaadimine',
             'enable_payment_proof_helper' => 'Lubage klientidel laadida üles oma tellimuste makse tõend. See on kasulik käsitsi makseviiside puhul.',
             'enable_guest_payment_proof' => 'Luba külalisklientidel laadida üles makse tõend',
             'enable_guest_payment_proof_helper' => 'Kui see on lubatud, saavad külaliskliendid laadida üles makse tõendi oma tellimuse tokeni abil ilma sisselogimiseta. Nad saavad üleslaadimislingi oma tellimuse kinnituskirjas.',
-            'payment_proof_payment_methods' => 'Makseviisid, mis nõuavad maksetõendit',
-            'payment_proof_payment_methods_helper' => 'Valige, millised makseviisid peaksid võimaldama klientidel laadida üles maksetõendit. Tavaliselt kasutatakse käsitsi makseviisidega nagu postimaks ja pangaülekanne.',
         ],
     ],
     'checkout' => [
         'name' => 'Maksmine',
-        'panel_description' => 'Külaliskassa, kohustuslikud väljad, tellimispiirangud, tingimuste nõustumine ja riigipiirangud',
+        'panel_description' => 'Vaadake ja värskendage maksmisstseeni seadeid',
         'description' => 'Seadistage maksmisstseeni reeglid',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Kuva panga info maksmisstseeni edukuse lehel',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Tagastamine',
         'description' => 'Seadistage tagastamise reeglid',
-        'panel_description' => 'Tellimuste tagastused, osalised tagastused ja tagastustähtajad',
+        'panel_description' => 'Vaadake ja värskendage tagastamise seadeid',
         'form' => [
             'is_enabled_order_return' => 'Kas tellimuse tagastamine on lubatud',
             'allow_partial_return' => 'Luba osaline tagastamine',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Arved',
-        'description' => 'Ettevõtte andmed arvetel, arvete nummerdamine, PDF-fondid ja templiseaded',
+        'description' => 'Vaadake ja värskendage oma arvete seadeid',
         'company_settings' => 'Ettevõtte seaded',
         'company_settings_description' => 'Seaded Ettevõtte info arveldamiseks',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Vaikimisi maksumäär',
             'default_tax_rate_description' => 'Oluline: seda rakendatakse, kui tootele pole maksu valitud.',
             'select_tax' => '-- Vali --',
-            'display_product_price_including_taxes' => 'Lisa maks kuvatavatele hindadele',
-            'display_product_price_including_taxes_helper' => 'Lisab automaatselt maksu poes kuvatavatele tootehindadele. Nt $100 toode 10% maksuga kuvatakse kui $110. Pole vajalik, kui "Hind sisaldab maksu" on üksikutel toodetel juba aktiveeritud.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Kuva toote hind koos maksudega',
         ],
     ],
     'customer' => [
         'name' => 'Kliendid',
-        'description' => 'Registreerimine, e-posti kinnitamine, sisselogimisvalikud, konto kustutamine ja profiiliväljad',
+        'description' => 'Vaadake ja värskendage oma klientide seadeid',
         'customer_setting' => 'Kliendi seaded',
         'customer_setting_description' => 'Seadistage kliendi seaded',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Transport',
-        'description' => 'Saatmisreeglid, tasuta saatmise käitumine ja saatmisvalikute kuvamise järjekord',
+        'description' => 'Vaadake ja värskendage transpordi seadeid',
         'shipping_rule' => 'Transpordi reeglid',
         'shipping_rule_description' => 'Seadistage reeglid transporditasu arvutamiseks',
         'shipping_setting' => 'Transpordi seaded',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Salvesta asukoht',
             'add_new' => 'Lisa uus',
         ],
-            'info' => [
-            'title' => 'Kuidas kaupluseotsingud töötavad',
-            'primary_store' => 'Peapoe aadress kuvatakse arvetelisel ja seda kasutatakse lähetussilkite vaikimisi tagastusaadressina.',
-            'shipping_location' => 'Kauplused, mis on märgitud kui "lähetuskoht", saab valida lähtekohaks laoks saadetiste loomisel.',
-            'shipment_selection' => 'Tellimusi töödeldades saate valida, millisest laost saata, lähtudes varudest ja kliendi asukohast.',
-        ],
     ],
     'tracking' => [
         'name' => 'Jälgimine',
-        'description' => 'Facebook Pixel, Google Tag Manager sündmused ja Google Ads konversioonide jälgimine',
+        'description' => 'Vaadake ja värskendage jälgimise seadeid',
         'manage_tracking' => 'Halda jälgimist',
         'manage_tracking_description' => 'Halda jälgimist: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Turg',
-        'description' => 'Mitme müüja seaded, vahendustasud, müüja registreerimine ja väljamaksete konfigureerimine',
+        'description' => 'Vaadake ja värskendage turu seadeid',
     ],
     'standard_and_format' => [
         'name' => 'Standard ja formaat',
-        'panel_description' => 'Tellimuskoodi vorming, kaaluühikud (kg/lb) ja mõõtühikud (cm/toll)',
+        'panel_description' => 'Vaadake ja värskendage standardi ja formaadi seadeid',
         'description' => 'Standardeid ja formaate kasutatakse asjade nagu toodete hindade, transpordi kaalude ja tellimuste aegade arvutamiseks.',
         'form' => [
             'change_order_format' => 'Muuda tellimuse koodi formaati (valikuline)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Näita edenemisjoonel "X müüdud Y-st", et luua kiireloomulisust ja julgustada kiireid oste välkmüügi ajal.',
     ],
     'payment_method_cod_minimum_amount' => 'Minimaalne tellimuse summa - :currency (Valikuline)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minimaalne tellimuse summa - :currency (Valikuline)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Kuva panga info maksmisstseeni edukuse lehel?',
     'invoice_templates' => 'Arve mallid',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-commerce',
     'general' => [
         'name' => 'Algemeen',
-        'description' => 'Winkelnaam, bedrijfsinfo, contactgegevens en admin-notificatie-e-mails',
+        'description' => 'Bekijk en update uw algemene instellingen',
     ],
     'currency' => [
         'name' => 'Valuta\'s',
-        'description' => 'Valutaformaten, wisselkoersen, auto-detectie en decimaal-/duizendtallen-scheidingstekens',
+        'description' => 'Bekijk en update valuta instellingen',
         'currency_setting_description' => 'Bekijk en update valuta\'s die gebruikt worden op website',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Automatische detectie bezoeker valuta inschakelen',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Producten',
-        'description' => 'Voorraadweergave, SKU-generatie, variantafbeeldingen, gerelateerde producten en specificaties',
+        'description' => 'Bekijk en update uw product instellingen',
         'product_settings' => 'Product instellingen',
         'product_settings_description' => 'Configureer regels voor product',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Product Zoeken',
-        'description' => 'Zoekgedrag, filters op categorie/merk/tag/attributen en prijsbereikfiltering',
+        'description' => 'Bekijk en update product zoek instellingen',
         'product_search_settings' => 'Product zoeken',
         'product_search_settings_description' => 'Configureer regels voor product zoeken',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Digitale Producten',
-        'description' => 'Downloadbare producten, licentiecodes, gastkassa voor digitale items en automatische afronding',
+        'description' => 'Bekijk en update digitale producten instellingen',
         'digital_products_settings' => 'Digitale producten',
         'digital_products_settings_description' => 'Configureer regels voor digitale producten',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Product Beoordelingen',
-        'description' => 'Klantbeoordelingen, beoordelingsweergave, afbeelding-uploads en goedkeuringsvereisten',
+        'description' => 'Bekijk en update uw product beoordelingen instellingen',
         'form' => [
             'enable_review' => 'Product beoordelingen inschakelen',
             'enable_review_help' => 'Sta klanten toe om beoordelingen en ratings achter te laten op producten. Wanneer uitgeschakeld, worden alle beoordeling functies verborgen in de winkel.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Winkelen',
-        'description' => 'Winkelwagen, verlanglijst, vergelijken, ordertracering, snelkoop-knop en betalingsbewijs-uploads',
+        'description' => 'Bekijk en update uw winkel instellingen',
         'general_setting' => 'Algemene instellingen',
         'return_settings' => 'Retour instellingen',
         'return_settings_description' => 'Configureer regels voor retour instellingen',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'De winkelwagen wordt vernietigd wanneer de klant uitlogt.',
             'hide_product_price' => 'Product prijs verbergen',
             'hide_product_price_helper' => 'Deze optie werkt alleen als u winkelwagen uitschakelt, waardoor uw site een alleen-catalogus weergave wordt. Indien ingeschakeld, wordt de product prijs verborgen. Het is nuttig wanneer u de prijs wilt verbergen en klanten wilt vereisen contact op te nemen voor de prijs.',
-            'hide_product_price_when_zero' => 'Productprijs verbergen wanneer deze nul is',
-            'hide_product_price_when_zero_helper' => 'Als ingeschakeld, wordt er bij producten met prijs 0 geen prijs getoond in de winkel.',
             'enable_payment_proof' => 'Betaalbewijs upload inschakelen',
             'enable_payment_proof_helper' => 'Sta klanten toe om betaalbewijs te uploaden voor hun bestellingen. Dit is nuttig voor handmatige betaalmethoden.',
             'enable_guest_payment_proof' => 'Gast klanten toestaan betaalbewijs te uploaden',
             'enable_guest_payment_proof_helper' => 'Wanneer ingeschakeld, kunnen gast klanten betaalbewijs uploaden met hun bestelling token zonder in te loggen. Ze ontvangen de upload link in hun bestellingsbevestiging e-mail.',
-            'payment_proof_payment_methods' => 'Betaalmethoden waarvoor betalingsbewijs vereist is',
-            'payment_proof_payment_methods_helper' => 'Selecteer welke betaalmethoden klanten moeten toestaan om betalingsbewijs te uploaden. Wordt meestal gebruikt voor handmatige betaalmethoden zoals rembours en bankoverschrijving.',
         ],
     ],
     'checkout' => [
         'name' => 'Afrekenen',
-        'panel_description' => 'Gastkassa, verplichte velden, bestelgrenzen, voorwaarden accepteren en landbeperkingen',
+        'panel_description' => 'Bekijk en update afreken instellingen',
         'description' => 'Configureer regels voor afreken instellingen',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Bank info weergeven op de afreken succes pagina',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Retour',
         'description' => 'Configureer regels voor retour instellingen',
-        'panel_description' => 'Retourzendingen, gedeeltelijke retourzendingen en retourtermijnen',
+        'panel_description' => 'Bekijk en update retour instellingen',
         'form' => [
             'is_enabled_order_return' => 'Is bestelling retour ingeschakeld',
             'allow_partial_return' => 'Gedeeltelijke retour toestaan',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Facturen',
-        'description' => 'Bedrijfsgegevens op facturen, factuurnummering, PDF-lettertypen en stempelinstellingen',
+        'description' => 'Bekijk en update uw factuur instellingen',
         'company_settings' => 'Bedrijf instellingen',
         'company_settings_description' => 'Instellingen Bedrijf informatie voor facturering',
         'form' => [
@@ -305,22 +301,19 @@ return [
             'default_tax_rate' => 'Standaard belastingtarief',
             'default_tax_rate_description' => 'Belangrijk: het wordt toegepast als geen belasting geselecteerd in product.',
             'select_tax' => '-- Selecteren --',
-            'display_product_price_including_taxes' => 'Belasting toevoegen aan weergegeven prijzen',
-            'display_product_price_including_taxes_helper' => 'Voegt automatisch belasting toe aan productprijzen in de winkel. Bijv. een $100 product met 10% belasting wordt weergegeven als $110. Niet nodig als "Prijs inclusief belasting" al is ingeschakeld op individuele producten.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Product prijs inclusief belastingen weergeven',
         ],
     ],
     'customer' => [
         'name' => 'Klanten',
-        'description' => 'Registratie, e-mailverificatie, login-opties, accountverwijdering en profielvelden',
+        'description' => 'Bekijk en update uw klanten instellingen',
         'customer_setting' => 'Klant instellingen',
         'customer_setting_description' => 'Configureer klant instellingen',
         'form' => [
             'enable_customer_registration' => 'Klant registratie inschakelen',
             'enable_customer_registration_helper' => 'Indien uitgeschakeld, kunnen klanten geen nieuwe accounts registreren. Bestaande klanten kunnen nog steeds inloggen.',
-            'verify_customer_email' => 'Klant e-mail verifiëren',
-            'verify_customer_email_helper' => 'Wanneer ingeschakeld, wordt een verificatie link verzonden naar het klant e-mailadres, klanten moeten op deze link klikken om hun e-mail te verifiëren voordat ze kunnen inloggen. E-mail configuratie nodig in Admin -> Instellingen -> E-mail om e-mail verificatie te verzenden.',
+            'verify_customer_email' => "Klant e-mail verifiëren",
+            'verify_customer_email_helper' => "Wanneer ingeschakeld, wordt een verificatie link verzonden naar het klant e-mailadres, klanten moeten op deze link klikken om hun e-mail te verifiëren voordat ze kunnen inloggen. E-mail configuratie nodig in Admin -> Instellingen -> E-mail om e-mail verificatie te verzenden.",
             'verification_expire_minutes' => 'Verificatie link verlooptijd',
             'verification_expire_minutes_helper' => 'De tijd in minuten dat de e-mail verificatie link geldig is. Standaard is 60 minuten (1 uur). Maximum is 10080 minuten (7 dagen).',
             'login_using_phone' => 'Inloggen met telefoonnummer in plaats van e-mail',
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Verzending',
-        'description' => 'Verzendregels, gratis verzending gedrag en weergavevolgorde verzendopties',
+        'description' => 'Bekijk en update verzend instellingen',
         'shipping_rule' => 'Verzend regels',
         'shipping_rule_description' => 'Configureer regels om verzendkosten te berekenen',
         'shipping_setting' => 'Verzend instellingen',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Locatie opslaan',
             'add_new' => 'Nieuwe toevoegen',
         ],
-            'info' => [
-            'title' => 'Hoe winkellocators werken',
-            'primary_store' => 'Het adres van de hoofdwinkel verschijnt op facturen en wordt gebruikt als standaard retouradres voor verzendlabels.',
-            'shipping_location' => 'Winkels die zijn gemarkeerd als "verzendlocatie" kunnen worden geselecteerd als oorsprongmagazijn bij het aanmaken van zendingen.',
-            'shipment_selection' => 'Bij het verwerken van bestellingen kunt u kiezen vanuit welk magazijn u verzendt op basis van voorraad en klantlocatie.',
-        ],
     ],
     'tracking' => [
         'name' => 'Tracking',
-        'description' => 'Facebook Pixel, Google Tag Manager events en Google Ads conversietracking',
+        'description' => 'Bekijk en update tracking instellingen',
         'manage_tracking' => 'Tracking beheren',
         'manage_tracking_description' => 'Tracking beheren: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -440,11 +427,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Marktplaats',
-        'description' => 'Multi-vendor instellingen, commissies, verkopersregistratie en uitbetalingsconfiguratie',
+        'description' => 'Bekijk en update marktplaats instellingen',
     ],
     'standard_and_format' => [
         'name' => 'Standaard & Formaat',
-        'panel_description' => 'Bestelcode-formaat, gewichtseenheden (kg/lb) en afmetingseenheden (cm/inch)',
+        'panel_description' => 'Bekijk en update standaard & formaat instellingen',
         'description' => 'Standaarden en formaten worden gebruikt om dingen te berekenen zoals product prijzen, verzend gewichten en bestelling tijden.',
         'form' => [
             'change_order_format' => 'Bestelling code formaat bewerken (optioneel)',
@@ -476,63 +463,7 @@ return [
         'show_sale_count_left_description' => 'Toon een voortgangsbalk met "X verkocht van Y" om urgentie te creëren en snelle aankopen aan te moedigen tijdens flash sales.',
     ],
     'payment_method_cod_minimum_amount' => 'Minimum bestelbedrag - :currency (Optioneel)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minimum bestelbedrag - :currency (Optioneel)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Bank info weergeven op de afreken succes pagina?',
     'invoice_templates' => 'Factuur sjablonen',
-
-    'abandoned_cart' => [
-        'name' => 'Verlaten Winkelwagens',
-        'description' => 'Herstel verloren verkopen door automatische herinneringen te sturen naar klanten die artikelen in hun winkelwagen hebben achtergelaten',
-        'panel_description' => 'Stel automatische herinneringen in voor klanten die hun winkelwagen verlaten',
-        'how_it_works' => [
-            'title' => 'Hoe Het Werkt',
-            'step1_title' => 'Klant voegt artikelen toe',
-            'step1_description' => 'De klant voegt producten toe aan de winkelwagen en geeft een e-mailadres op.',
-            'step2_title' => 'Winkelwagen wordt verlaten',
-            'step2_description' => 'Als er geen aankoop wordt gedaan binnen de ingestelde tijd, wordt de winkelwagen als verlaten gemarkeerd.',
-            'step3_title' => 'Herinneringsmail verzonden',
-            'step3_description' => 'Er worden automatische herinneringsmails gestuurd om de klant aan te moedigen de aankoop te voltooien.',
-            'step4_title' => 'Verkoop hersteld',
-            'step4_description' => 'De klant keert terug om de bestelling te voltooien en de winkelwagen wordt als hersteld gemarkeerd.',
-        ],
-        'form' => [
-            'enable' => 'Verlaten winkelwagen tracking inschakelen',
-            'enable_helper' => 'Indien ingeschakeld, volgt het systeem verlaten winkelwagens en kunt u herstel-e-mails naar klanten sturen.',
-            'timing_section' => 'Tijdsinstellingen',
-            'email_section' => 'Herinneringsmail Instellingen',
-            'cleanup_section' => 'Gegevens Opschonen',
-            'time_threshold' => 'Tijdsdrempel (uren)',
-            'time_threshold_helper' => 'Een winkelwagen wordt als verlaten beschouwd na dit aantal uren inactiviteit. Aanbevolen: 1-24 uur.',
-            'send_email' => 'Herstel-e-mails versturen',
-            'send_email_helper' => 'Automatisch herstel-e-mails versturen naar klanten met verlaten winkelwagens.',
-            'max_reminders' => 'Aantal herinneringsmails',
-            'max_reminders_helper' => 'Hoeveel herinneringsmails per verlaten winkelwagen te verzenden. Elke e-mail kan worden aangepast in E-mailsjablonen.',
-            'email_delay' => 'Verzenden na (uren)',
-            'email_discount' => 'Korting (%)',
-            'email_1_title' => 'E-mail #1 - Vriendelijke Herinnering',
-            'email_1_description' => 'Eerste zachte herinnering om de klant aan te moedigen terug te komen.',
-            'email_1_delay_helper' => 'Uren na winkelwagen verlaten voor de eerste e-mail. Aanbevolen: 1-2 uur.',
-            'email_2_title' => 'E-mail #2 - Met Stimulans',
-            'email_2_description' => 'Tweede herinnering met kortingsaanbod om aankoop te motiveren.',
-            'email_2_delay_helper' => 'Uren na winkelwagen verlaten voor de tweede e-mail. Aanbevolen: 24 uur.',
-            'email_2_discount_helper' => 'Kortingspercentage aan te bieden in deze e-mail. Stel 0 in voor geen korting.',
-            'email_3_title' => 'E-mail #3 - Laatste Kans',
-            'email_3_description' => 'Laatste herinnering met urgentie en beste aanbieding om de verkoop te sluiten.',
-            'email_3_delay_helper' => 'Uren na winkelwagen verlaten voor de laatste e-mail. Aanbevolen: 72 uur.',
-            'email_3_discount_helper' => 'Definitieve kortingsaanbieding. Meestal hoger dan e-mail #2.',
-            'cleanup_days' => 'Opschonen na (dagen)',
-            'cleanup_days_helper' => 'Automatisch verlaten winkelwagen records verwijderen die ouder zijn dan dit aantal dagen.',
-            'cronjob_not_setup' => '<strong>Cronjob niet geconfigureerd!</strong> Verlaten winkelwagen herinneringen vereisen een correct geconfigureerde cronjob. <a href=":url">Cronjob nu instellen</a>.',
-            'cronjob_not_running' => '<strong>Cronjob draait niet!</strong> De cronjob lijkt te zijn gestopt. Controleer uw serverconfiguratie. <a href=":url">Cronjob status bekijken</a>.',
-            'cronjob_working' => '<strong>Cronjob werkt correct!</strong> Laatste activiteit: :time. Uw verlaten winkelwagen herinneringen worden automatisch verwerkt.',
-            'email_setup_warning' => '<strong>Belangrijk:</strong> Zorg ervoor dat uw e-mailinstellingen correct zijn geconfigureerd in <a href=":url">Instellingen → E-mail</a>. Stuur een test-e-mail om te controleren of alles werkt voordat u deze functie inschakelt.',
-        ],
-    ],
 ];

@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI Blocks',
     'search' => 'Maghanap...',
     'no_shortcode_found' => 'Walang nahanap na shortcode.',
-    'shortcode_not_available' => 'Ang shortcode na ":name" ay hindi available o inalis na.',
 
     'cache_suggestion' => [
         'title' => 'Mungkahi para sa Pagganap',

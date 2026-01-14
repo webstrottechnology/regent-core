@@ -12,7 +12,4 @@ return [
     'parent' => 'Parent Category',
     'order' => 'Order',
     'is_default' => 'Is Default',
-    'intro' => [
-        'description' => 'ארגן את פוסטי הבלוג שלך לקטגוריות לניהול תוכן טוב יותר.',
-    ],
 ];

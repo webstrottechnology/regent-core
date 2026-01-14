@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'Mukautettu CSS',
-    'custom_css_helper' => 'Lisää mukautettuja CSS-tyylejä toimitustarran ulkoasun mukauttamiseksi. Nämä tyylit lisätään oletustoimitustyyleihin.',
     'reset_success' => 'Palautus oletukseen onnistui',
     'confirm_reset' => 'Vahvista toimitustarra-pohjan palautus?',
     'confirm_message' => 'Haluatko todella palauttaa tämän toimitustarra-pohjan oletusarvoon?',

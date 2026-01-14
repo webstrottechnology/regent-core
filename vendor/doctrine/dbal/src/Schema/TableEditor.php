@@ -156,7 +156,7 @@ final class TableEditor
 
     private function renameColumnInIndexes(UnqualifiedName $oldColumnName, UnqualifiedName $newColumnName): void
     {
-        foreach ($this->indexes as $index) {
+        foreach ($this->indexes->toList() as $index) {
             $modified = false;
             $columns  = [];
 
@@ -264,7 +264,7 @@ final class TableEditor
         $constraints = [];
         $anyModified = false;
 
-        foreach ($collection as $constraint) {
+        foreach ($collection->toList() as $constraint) {
             $newColumnNames = [];
             $modified       = false;
 

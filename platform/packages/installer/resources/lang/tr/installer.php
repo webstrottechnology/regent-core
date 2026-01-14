@@ -3,6 +3,9 @@
 return [
     'title' => 'Kurulum',
     'next' => 'Sonraki Adım',
+    'back' => 'Öncesi',
+    'finish' => 'Kur',
+    'installation' => 'Kurulum',
     'forms' => [
         'errorTitle' => 'Aşağıdaki hatalar oluştu:',
     ],
@@ -14,6 +17,7 @@ return [
     ],
     'requirements' => [
         'title' => 'Sunucu Gereksinimleri',
+        'next' => 'İzinleri Kontrol Et',
     ],
     'permissions' => [
         'next' => 'Ortamı Yapılandır',
@@ -24,11 +28,17 @@ return [
             'form' => [
                 'name_required' => 'Bir ortam adı gerekli.',
                 'app_name_label' => 'Site başlığı',
+                'app_name_placeholder' => 'Site başlığı',
                 'app_url_label' => 'URL',
+                'app_url_placeholder' => 'URL',
                 'db_connection_label' => 'Veritabanı Bağlantısı',
                 'db_connection_label_mysql' => 'MySQL',
+                'db_connection_label_sqlite' => 'SQLite',
+                'db_connection_label_pgsql' => 'PostgreSQL',
                 'db_host_label' => 'Veritabanı ana bilgisayarı',
+                'db_host_placeholder' => 'Veritabanı ana bilgisayarı',
                 'db_port_label' => 'Veritabanı portu',
+                'db_port_placeholder' => 'Veritabanı portu',
                 'db_name_label' => 'Veritabanı adı',
                 'db_name_placeholder' => 'Veritabanı adı',
                 'db_username_label' => 'Veritabanı kullanıcı adı',
@@ -73,11 +83,13 @@ return [
         'title' => 'Lisansı Etkinleştir',
         'skip' => 'Şimdilik atla',
     ],
+    'install' => 'Düzenle',
     'final' => [
         'message' => 'Uygulama başarıyla kuruldu.',
         'pageTitle' => 'Kurulum Tamamlandı',
         'title' => 'Tamamlamak',
         'exit' => 'Yönetici panosuna git',
     ],
+    'install_success' => 'Başarıyla kuruldu!',
     'install_step_title' => 'Kurulum - Adım :step: :title',
 ];

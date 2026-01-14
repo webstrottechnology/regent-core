@@ -32,13 +32,6 @@ return [
     'drag_widget_to_sidebar' => 'Sleep widgets naar dit gebied.',
     'widget_areas' => 'Widgetgebieden',
     'manage_widgets' => 'Widgets beheren',
-
-    'click_to_add' => 'Klik om widget toe te voegen',
-    'select_sidebar' => 'Widget toevoegen',
-    'select_sidebar_description' => 'Kies waar u deze widget wilt toevoegen',
-    'adding_to' => 'Toevoegen aan',
-    'add_widget' => 'Widget toevoegen',
-    'widget_not_found' => 'Widget niet gevonden',
     'cache_suggestion' => [
         'title' => 'Prestatiesuggestie',
         'description' => 'U kunt de prestaties van uw site verbeteren door widget-caching in te schakelen.',
@@ -51,21 +44,4 @@ return [
     'widget_site_copyright_description' => 'Auteursrechttekst in de onderste voettekst.',
     'widget_site_copyright_helper' => 'Ga naar :link om de auteursrechttekst te wijzigen.',
     'theme_options' => 'Thema-opties',
-
-    'form' => [
-        'enable_caching' => 'Caching inschakelen',
-        'yes' => 'Ja',
-        'no' => 'Nee',
-        'cache_helper' => 'Wanneer ingeschakeld, wordt de inhoud van deze widget in de cache opgeslagen om de prestaties te verbeteren. Schakel uit voor dynamische inhoud die vaak verandert.',
-        'cache_warning' => 'Vanwege UI-problemen is de cache voor deze widget via code uitgeschakeld. Deze widget wordt niet in de cache opgeslagen, zelfs niet als caching is ingeschakeld.',
-    ],
-
-    'drag_or_click' => 'Sleep naar zijbalk of klik + om toe te voegen',
-    'drop_widgets_here' => 'Laat widgets vallen in uw zijbalkgebieden',
-    'search_widgets' => 'Widgets zoeken...',
-    'no_widgets' => 'Geen widgets beschikbaar',
-    'no_search_results' => 'Geen widgets gevonden',
-    'or_click_add' => 'Of klik op de + knop van een widget om toe te voegen',
-    'toggle_widget' => 'Widgetinstellingen schakelen',
-    'loading_form' => 'Widgetformulier laden...',
 ];

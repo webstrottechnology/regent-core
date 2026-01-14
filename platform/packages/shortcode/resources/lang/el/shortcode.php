@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'Μπλοκ UI',
     'search' => 'Αναζήτηση...',
     'no_shortcode_found' => 'Δεν βρέθηκε shortcode.',
-    'shortcode_not_available' => 'Το shortcode ":name" δεν είναι διαθέσιμο ή έχει αφαιρεθεί.',
 
     'cache_suggestion' => [
         'title' => 'Πρόταση απόδοσης',

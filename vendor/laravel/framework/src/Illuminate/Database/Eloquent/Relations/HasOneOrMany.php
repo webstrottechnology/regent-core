@@ -153,11 +153,8 @@ abstract class HasOneOrMany extends Relation
         // link them up with their children using the keyed dictionary to make the
         // matching very convenient and easy work. Then we'll just return them.
         foreach ($models as $model) {
-            $key = $this->getDictionaryKey($model->getAttribute($this->localKey));
-
-            if ($key !== null && isset($dictionary[$key])) {
+            if (isset($dictionary[$key = $this->getDictionaryKey($model->getAttribute($this->localKey))])) {
                 $related = $this->getRelationValue($dictionary, $key, $type);
-
                 $model->setRelation($relation, $related);
 
                 // Apply the inverse relation if we have one...

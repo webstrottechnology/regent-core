@@ -47,5 +47,4 @@ return [
         'completed' => 'Dovršeno',
         'canceled' => 'Otkazano',
     ],
-    'back_to_invoices' => 'Natrag na račune',
 ];

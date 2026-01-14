@@ -49,7 +49,4 @@ return [
             'updates-available' => 'Pembaruan Tersedia',
         ],
     ],
-    'install_plugin_from_marketplace' => 'Instal plugin dari Marketplace',
-    'accept_and_install' => 'Setujui dan instal',
-    'cancel' => 'Batal',
 ];

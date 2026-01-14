@@ -34,23 +34,22 @@
                             <p class="mb-0">
                                 <small class="text-muted">
                                     {{ __('Tax') }}: {{ format_price($orderProduct->tax_amount) }}
-                                    @if (EcommerceHelper::isDisplayCheckoutTaxInformation() && !empty($orderProduct->options['taxClasses']))
+                                    @if (!empty($orderProduct->options['taxClasses']))
                                         (
                                         @foreach ($orderProduct->options['taxClasses'] as $taxName => $taxRate)
                                             {{ $taxName }} {{ $taxRate }}%@if (!$loop->last), @endif
                                         @endforeach
                                         )
-                                    @elseif (EcommerceHelper::isDisplayCheckoutTaxInformation() && !empty($orderProduct->options['taxRate']) && $orderProduct->options['taxRate'] > 0)
+                                    @elseif (!empty($orderProduct->options['taxRate']) && $orderProduct->options['taxRate'] > 0)
                                         ({{ $orderProduct->options['taxRate'] }}%)
                                     @endif
                                 </small>
                             </p>
                         @endif
                     </div>
-                    @php($isOrderProductFree = $orderProduct->price == 0)
                     <div class="col-lg-4 col-md-4 col-4 float-md-end text-md-end">
-                        <p class="mb-1">{{ $isOrderProductFree ? trans('plugins/ecommerce::ecommerce.free') : format_price($orderProduct->price) }}</p>
-                        @if (count($order->products) > 1 && ! $isOrderProductFree)
+                        <p class="mb-1">{{ format_price($orderProduct->price) }}</p>
+                        @if (count($order->products) > 1)
                             @if (EcommerceHelper::isTaxEnabled() && $orderProduct->tax_amount > 0)
                                 <p class="mb-0">
                                     <small class="text-muted">{{ __('Total') }}: {{ format_price(($orderProduct->price + ($orderProduct->tax_amount / $orderProduct->qty)) * $orderProduct->qty) }}</small>
@@ -64,13 +63,6 @@
                     </div>
                 </div>
             @endforeach
-
-            @if ($order->description)
-                <div class="mt-3">
-                    <h6 class="mb-1">{{ __('Order note') }}</h6>
-                    <p class="mb-0">{{ $order->description }}</p>
-                </div>
-            @endif
 
             @if (!empty($isShowTotalInfo))
                 @include('plugins/ecommerce::orders.thank-you.total-info', compact('order'))

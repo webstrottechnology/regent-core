@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Kliento miestas',
         'customer_zipcode' => 'Kliento pašto kodas',
     ],
-    'custom_css' => 'Pasirinktinis CSS',
-    'custom_css_helper' => 'Pridėkite pasirinktinius CSS stilius, kad pritaikytumėte sąskaitos faktūros išvaizdą. Šie stiliai bus pridėti prie numatytųjų sąskaitos faktūros stilių.',
     'reset_success' => 'Atkurta į numatytąją sėkmingai',
     'confirm_reset' => 'Patvirtinti sąskaitos šablono atkūrimą?',
     'confirm_message' => 'Ar tikrai norite atkurti šį sąskaitos šabloną į numatytąjį?',

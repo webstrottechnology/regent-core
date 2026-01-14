@@ -1,41 +1,3 @@
-const Review = {
-    showError(message) {
-        if (typeof Theme !== 'undefined') {
-            Theme.showError(message)
-        } else {
-            console.error('[Review]', message)
-        }
-    },
-    showSuccess(message) {
-        if (typeof Theme !== 'undefined') {
-            Theme.showSuccess(message)
-        } else {
-            console.log('[Review]', message)
-        }
-    },
-    handleError(error, $form = null) {
-        if (typeof Theme !== 'undefined') {
-            Theme.handleError(error, $form)
-        } else {
-            console.error('[Review]', error.responseJSON?.message || error.statusText || error)
-        }
-    },
-    updateLazyLoad() {
-        if (typeof Theme !== 'undefined' && Theme.lazyLoadInstance) {
-            Theme.lazyLoadInstance.update()
-        }
-    },
-    getCsrfToken($form = null) {
-        if ($form && $form.length) {
-            const formToken = $form.find('input[name="_token"]').val()
-            if (formToken) {
-                return formToken
-            }
-        }
-        return $('meta[name="csrf-token"]').attr('content') || ''
-    },
-}
-
 $(() => {
     const $reviewListContainer = $('.review-list-container')
     let imagesReviewBuffer = []
@@ -69,7 +31,9 @@ $(() => {
                 $reviewListContainer.find('h4').text(message)
                 $reviewListContainer.find('.review-list').html(data)
 
-                Review.updateLazyLoad()
+                if (typeof Theme.lazyLoadInstance !== 'undefined') {
+                    Theme.lazyLoadInstance.update()
+                }
 
                 initLightGallery($reviewListContainer.find('.review-images'))
 
@@ -194,7 +158,7 @@ $(() => {
                     $form.find('input.custom-field').val('')
                     imagesReviewBuffer = []
 
-                    Review.showSuccess(message)
+                    Theme.showSuccess(message)
 
                     getReviewList($reviewListContainer.data('ajax-url'), () => {
                         if (!$('.review-list').length) {
@@ -202,11 +166,11 @@ $(() => {
                         }
                     }, getCurrentSearchParams())
                 } else {
-                    Review.showError(message)
+                    Theme.showError(message)
                 }
             },
             error: (error) => {
-                Review.handleError(error, $form)
+                Theme.handleError(error, $form)
             },
             complete: () => {
                 $button.prop('disabled', false).removeClass('loading')
@@ -227,7 +191,7 @@ $(() => {
                     .data('max-size-message')
                     .replace('__attribute__', input.files[i].name)
                     .replace('__max__', maxSize)
-                Review.showError(message)
+                Theme.showError(message)
             } else {
                 imagesReviewBuffer.push(input.files[i])
             }
@@ -269,13 +233,13 @@ $(() => {
             url: deleteUrl,
             type: 'DELETE',
             headers: {
-                'X-CSRF-TOKEN': Review.getCsrfToken()
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             beforeSend: () => {
                 $button.prop('disabled', true).addClass('loading')
             },
             success: ({ message }) => {
-                Review.showSuccess(message)
+                Theme.showSuccess(message)
 
                 // Reload the review list
                 getReviewList($reviewListContainer.data('ajax-url'), () => {
@@ -289,7 +253,7 @@ $(() => {
                 if (xhr.responseJSON && xhr.responseJSON.message) {
                     message = xhr.responseJSON.message
                 }
-                Review.showError(message)
+                Theme.showError(message)
             },
             complete: () => {
                 $button.prop('disabled', false).removeClass('loading')

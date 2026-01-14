@@ -1,6 +1,7 @@
 <?php
 
 return [
+    // Customer New Order Email
     'customer_new_order_title' => 'สั่งซื้อสำเร็จ!',
     'customer_new_order_greeting' => 'เรียน คุณ :customer_name',
     'customer_new_order_message' => 'ขอบคุณที่ซื้อสินค้าของเรา เราจะติดต่อคุณทางโทรศัพท์ <strong>:customer_phone</strong> เพื่อยืนยันคำสั่งซื้อ!',
@@ -14,6 +15,8 @@ return [
     'customer_new_order_shipping_method' => 'วิธีการจัดส่ง',
     'customer_new_order_order_number' => 'หมายเลขคำสั่งซื้อ',
     'customer_new_order_payment_method' => 'วิธีการชำระเงิน',
+
+    // Admin New Order Email
     'admin_new_order_title' => 'คุณได้รับคำสั่งซื้อใหม่จาก :site_title',
     'admin_new_order_greeting' => 'สวัสดีผู้ดูแลระบบ',
     'admin_new_order_message' => 'คำสั่งซื้อใหม่ถูกสั่งซื้อสำเร็จโดย :customer_name',
@@ -33,6 +36,8 @@ return [
     'admin_new_order_shipping_method' => 'วิธีการจัดส่ง',
     'admin_new_order_payment_method' => 'วิธีการชำระเงิน',
     'admin_new_order_view_order' => 'ดูรายละเอียดคำสั่งซื้อ',
+
+    // Order Confirmation Email
     'order_confirm_title' => 'ยืนยันคำสั่งซื้อแล้ว!',
     'order_confirm_greeting' => 'สวัสดี :customer_name',
     'order_confirm_message' => 'คำสั่งซื้อของคุณได้รับการยืนยันแล้ว ขอบคุณที่ซื้อสินค้าของเรา!',
@@ -47,6 +52,8 @@ return [
     'order_confirm_note' => 'หมายเหตุ',
     'order_confirm_shipping_method' => 'วิธีการจัดส่ง',
     'order_confirm_payment_method' => 'วิธีการชำระเงิน',
+
+    // Order Cancel (Customer) Email
     'customer_cancel_order_title' => 'คำสั่งซื้อของคุณถูกยกเลิกแล้ว',
     'customer_cancel_order_greeting' => 'เรียน :customer_name',
     'customer_cancel_order_message' => 'คำสั่งซื้อ <strong>:order_id</strong> ของคุณถูกยกเลิกตามที่คุณร้องขอเนื่องจาก :cancellation_reason และการชำระเงินของคุณก็ถูกยกเลิกด้วย',
@@ -60,9 +67,11 @@ return [
     'customer_cancel_order_address' => 'ที่อยู่',
     'customer_cancel_order_products' => 'นี่คือสิ่งที่คุณสั่งซื้อ:',
     'customer_cancel_order_note' => 'หมายเหตุ',
+
+    // Order Cancel (Admin) Email
     'admin_cancel_order_title' => 'คำสั่งซื้อถูกยกเลิก',
     'admin_cancel_order_greeting' => 'สวัสดี :customer_name',
-    'admin_cancel_order_message' => 'คำสั่งซื้อ :order_id ของคุณถูกยกเลิกโดยเจ้าหน้าที่ของเรา',
+    'admin_cancel_order_message' => 'คำสั่งซื้อ #:order_id ของคุณถูกยกเลิกโดยเจ้าหน้าที่ของเรา',
     'admin_cancel_order_order_cancelled' => 'คำสั่งซื้อถูกยกเลิกแล้ว!',
     'admin_cancel_order_reason' => 'เหตุผลในการยกเลิก: :cancellation_reason',
     'admin_cancel_order_customer_info' => 'ข้อมูลลูกค้า',
@@ -73,9 +82,11 @@ return [
     'admin_cancel_order_products' => 'รายละเอียดคำสั่งซื้อ:',
     'admin_cancel_order_note' => 'หมายเหตุ',
     'admin_cancel_order_order_summary' => 'สรุปคำสั่งซื้อ',
-    'order_cancellation_to_admin_title' => 'คำสั่งซื้อ :order_id ถูกยกเลิกโดยลูกค้า',
+
+    // Order Cancellation to Admin Email
+    'order_cancellation_to_admin_title' => 'คำสั่งซื้อ #:order_id ถูกยกเลิกโดยลูกค้า',
     'order_cancellation_to_admin_greeting' => 'สวัสดีผู้ดูแลระบบ',
-    'order_cancellation_to_admin_message' => ':customer_name ได้ยกเลิกคำสั่งซื้อ <strong>:order_id</strong> เหตุผล: <strong>:cancellation_reason</strong>',
+    'order_cancellation_to_admin_message' => ':customer_name ได้ยกเลิกคำสั่งซื้อ <strong>#:order_id</strong> เหตุผล: <strong>:cancellation_reason</strong>',
     'order_cancellation_to_admin_customer_info' => 'ข้อมูลลูกค้า',
     'order_cancellation_to_admin_name' => 'ชื่อ',
     'order_cancellation_to_admin_phone' => 'โทรศัพท์',
@@ -85,6 +96,8 @@ return [
     'order_cancellation_to_admin_note' => 'หมายเหตุ',
     'order_cancellation_to_admin_view_order' => 'ดูรายละเอียดคำสั่งซื้อ',
     'order_cancellation_to_admin_order_summary' => 'สรุปคำสั่งซื้อ',
+
+    // Order Delivery Email
     'customer_delivery_order_title' => 'คำสั่งซื้อของคุณกำลังจัดส่ง',
     'customer_delivery_order_greeting' => 'สวัสดี :customer_name',
     'customer_delivery_order_message' => 'คำสั่งซื้อของคุณกำลังจัดส่ง ขอบคุณที่ซื้อสินค้าของเรา!',
@@ -104,6 +117,8 @@ return [
     'customer_delivery_order_tracking_id' => 'รหัสติดตาม',
     'customer_delivery_order_tracking_link' => 'ลิงก์ติดตาม',
     'customer_delivery_order_track_shipment' => 'ติดตามพัสดุของคุณ',
+
+    // Order Delivered Email
     'customer_order_delivered_title' => 'คำสั่งซื้อของคุณได้รับการจัดส่งแล้ว',
     'customer_order_delivered_greeting' => 'สวัสดี :customer_name',
     'customer_order_delivered_message' => 'คำสั่งซื้อของคุณได้รับการจัดส่งแล้ว ขอบคุณที่ซื้อสินค้าของเรา!',
@@ -122,7 +137,9 @@ return [
     'customer_order_delivered_tracking_id' => 'รหัสติดตาม',
     'customer_order_delivered_tracking_link' => 'ลิงก์ติดตาม',
     'customer_order_delivered_track_shipment' => 'ดูรายละเอียดการติดตาม',
-    'order_confirm_payment_title' => 'ยืนยันการชำระเงินสำหรับคำสั่งซื้อ :order_id',
+
+    // Payment Confirmation Email
+    'order_confirm_payment_title' => 'ยืนยันการชำระเงินสำหรับคำสั่งซื้อ #:order_id',
     'order_confirm_payment_greeting' => 'สวัสดี :customer_name',
     'order_confirm_payment_message' => 'การชำระเงินของคุณได้รับการยืนยันแล้ว ขอบคุณที่ซื้อสินค้าของเรา!',
     'order_confirm_payment_order_number' => 'หมายเลขคำสั่งซื้อ',
@@ -137,6 +154,8 @@ return [
     'order_confirm_payment_thanks' => 'ขอบคุณสำหรับการชำระเงิน คำสั่งซื้อของคุณจะได้รับการดำเนินการเร็วๆ นี้',
     'order_confirm_payment_order_summary' => 'สรุปคำสั่งซื้อ',
     'order_confirm_payment_shipping_method' => 'วิธีการจัดส่ง',
+
+    // Order Recovery Email
     'order_recover_title' => 'คุณมีคำสั่งซื้อที่ไม่สมบูรณ์',
     'order_recover_greeting' => 'สวัสดี :customer_name',
     'order_recover_message' => 'เราสังเกตเห็นว่าคุณมีคำสั่งซื้อที่ไม่สมบูรณ์ คุณต้องการที่จะทำการซื้อให้เสร็จสิ้นหรือไม่?',
@@ -146,17 +165,23 @@ return [
     'order_recover_button' => 'ทำการสั่งซื้อให้เสร็จสิ้น',
     'order_recover_order_summary' => 'สรุปคำสั่งซื้อ',
     'order_recover_note' => 'หมายเหตุ',
+
+    // Welcome Email
     'welcome_greeting' => 'เรายินดีที่มีคุณที่นี่ :customer_name!',
     'welcome_message' => 'ยินดีต้อนรับสู่ :site_title!',
     'welcome_register_success' => 'คุณได้สมัครบัญชีสำเร็จที่ <strong>:site_title</strong>',
     'welcome_explore' => 'หากคุณต้องการความช่วยเหลือ สามารถตอบกลับอีเมลนี้ได้!',
     'welcome_visit_shop' => 'เริ่มซื้อของ!',
+
+    // Confirm Email
     'confirm_email_title' => 'ยืนยันอีเมล',
     'confirm_email_greeting' => 'เรายินดีที่มีคุณที่นี่ :customer_name!',
     'confirm_email_message' => 'กรุณายืนยันที่อยู่อีเมลของคุณโดยคลิกปุ่มด้านล่าง',
     'confirm_email_instruction' => 'กรุณายืนยันที่อยู่อีเมลของคุณเพื่อเข้าถึงเว็บไซต์นี้ คลิกปุ่มด้านล่างเพื่อยืนยันอีเมลของคุณ',
     'confirm_email_button' => 'ยืนยันที่อยู่อีเมลของคุณ',
     'confirm_email_trouble' => 'หากคุณมีปัญหาในการคลิกปุ่ม "ยืนยันที่อยู่อีเมลของคุณ" ให้คัดลอกและวาง URL ด้านล่างลงในเว็บเบราว์เซอร์ของคุณ: <a href=":verify_link">:verify_link</a> และวางลงในเบราว์เซอร์ของคุณ',
+
+    // Password Reminder Email
     'password_reminder_title' => 'รีเซ็ตรหัสผ่านของคุณ',
     'password_reminder_greeting' => 'สวัสดี :customer_name',
     'password_reminder_message' => 'คุณได้ขอรีเซ็ตรหัสผ่านของคุณ',
@@ -164,9 +189,11 @@ return [
     'password_reminder_button' => 'รีเซ็ตรหัสผ่าน',
     'password_reminder_ignore' => 'หากคุณไม่ได้ขอรีเซ็ตรหัสผ่าน กรุณาเพิกเฉยต่ออีเมลนี้',
     'password_reminder_trouble_clicking' => 'หากคุณมีปัญหาในการคลิกปุ่ม "รีเซ็ตรหัสผ่าน" ให้คัดลอกและวาง URL ด้านล่างลงในเว็บเบราว์เซอร์ของคุณ: <a href=":reset_link">:reset_link</a>',
+
+    // Order Return Request Email
     'order_return_request_title' => 'ได้รับคำขอคืนสินค้า',
     'order_return_request_greeting' => 'สวัสดี :customer_name',
-    'order_return_request_message' => 'เราได้รับคำขอคืนสินค้าของคุณสำหรับคำสั่งซื้อ :order_id',
+    'order_return_request_message' => 'เราได้รับคำขอคืนสินค้าของคุณสำหรับคำสั่งซื้อ #:order_id',
     'order_return_request_reason' => 'เหตุผลในการคืนสินค้า',
     'order_return_request_items' => 'สินค้าที่ต้องการคืน',
     'order_return_request_process' => 'เราจะดำเนินการตามคำขอของคุณและติดต่อคุณเร็วๆ นี้',
@@ -178,6 +205,8 @@ return [
     'order_return_request_return_reason' => 'เหตุผลในการคืนสินค้า',
     'order_return_request_order_summary' => 'สรุปคำสั่งซื้อ',
     'order_return_request_note' => 'หมายเหตุ',
+
+    // Order Return Status Updated Email
     'order_return_status_updated_title' => 'อัปเดตสถานะการคืนสินค้า',
     'order_return_status_updated_greeting' => 'เรียน :customer_name',
     'order_return_status_updated_message' => 'เราต้องการแจ้งให้คุณทราบว่าสถานะของคำขอคืนสินค้าสำหรับคำสั่งซื้อ :order_id ได้รับการอัปเดตแล้ว',
@@ -185,13 +214,17 @@ return [
     'order_return_status_updated_description' => 'หมายเหตุจากผู้ดูแล: " :description "',
     'order_return_status_updated_questions' => 'หากคุณมีคำถามหรือข้อกังวลเกี่ยวกับการอัปเดตนี้ กรุณาติดต่อทีมสนับสนุนลูกค้าของเรา',
     'order_return_status_updated_view_details' => 'ดูรายละเอียดการคืนสินค้า',
+
+    // Review Products Email
     'review_products_title' => 'รีวิวการซื้อล่าสุดของคุณ',
     'review_products_greeting' => 'สวัสดี :customer_name',
-    'review_products_message' => 'คำสั่งซื้อ :order_id ของคุณเสร็จสิ้นแล้ว เราอยากฟังความคิดเห็นของคุณ!',
+    'review_products_message' => 'คำสั่งซื้อ #:order_id ของคุณเสร็จสิ้นแล้ว เราอยากฟังความคิดเห็นของคุณ!',
     'review_products_instruction' => 'กรุณาใช้เวลาสักครู่เพื่อรีวิวสินค้าที่คุณซื้อ:',
     'review_products_button' => 'รีวิวสินค้า',
     'review_products_thank_you' => 'ขอบคุณสำหรับการซื้อของคุณ!',
     'review_products_products' => 'สินค้าที่ต้องรีวิว',
+
+    // Digital Products Download Email
     'download_digital_products_title' => 'สินค้าดิจิทัลของคุณพร้อมแล้ว',
     'download_digital_products_greeting' => 'สวัสดี :customer_name',
     'download_digital_products_message' => 'ขอบคุณสำหรับการซื้อ! สินค้าดิจิทัลของคุณพร้อมสำหรับดาวน์โหลดแล้ว',
@@ -203,10 +236,13 @@ return [
     'download_digital_products_all_files' => 'ดาวน์โหลดไฟล์ทั้งหมด',
     'download_digital_products_external_link_downloads' => 'ดาวน์โหลดไฟล์ภายนอก',
     'download_digital_products_payment_method' => 'วิธีการชำระเงิน',
+
+    // Digital Product License Codes Email
     'digital_product_license_codes_title' => 'รหัสลิขสิทธิ์ของคุณ',
     'digital_product_license_codes_greeting' => 'เรียน :customer_name',
     'digital_product_license_codes_message' => 'ขอบคุณสำหรับการซื้อ! นี่คือรหัสลิขสิทธิ์ของคุณ:',
     'digital_product_license_codes_thanks' => 'ขอบคุณสำหรับการซื้อสินค้าดิจิทัลของเรา',
+    'digital_product_license_codes_below' => 'ด้านล่างนี้เป็นรหัสลิขสิทธิ์ของคุณสำหรับสินค้าที่คุณซื้อ:',
     'digital_product_license_codes_product' => 'สินค้า',
     'digital_product_license_codes_license' => 'รหัสลิขสิทธิ์',
     'digital_product_license_codes_order_summary' => 'นี่คือสิ่งที่คุณสั่งซื้อ:',
@@ -219,6 +255,8 @@ return [
     'digital_product_license_codes_note_2' => 'รหัสลิขสิทธิ์แต่ละรหัสมีเอกลักษณ์เฉพาะและสามารถใช้ได้เพียงครั้งเดียว',
     'digital_product_license_codes_note_3' => 'อย่าแชร์รหัสลิขสิทธิ์ของคุณกับผู้อื่น',
     'digital_product_license_codes_note_4' => 'หากคุณมีปัญหากับรหัสลิขสิทธิ์ กรุณาติดต่อทีมสนับสนุนของเรา',
+
+    // Product File Updated Email
     'product_file_updated_title' => 'อัปเดตไฟล์สินค้าแล้ว',
     'product_file_updated_greeting' => 'สวัสดี :customer_name!',
     'product_file_updated_message' => 'ไฟล์สำหรับสินค้า <a href=":product_link"><strong>:product_name</strong></a> ได้รับการอัปเดตแล้ว',
@@ -230,6 +268,8 @@ return [
     'product_file_updated_instruction' => 'คุณสามารถดาวน์โหลดไฟล์ที่อัปเดตจากบัญชีของคุณ',
     'product_file_updated_order_number' => 'หมายเลขคำสั่งซื้อ',
     'product_file_updated_download' => 'ดาวน์โหลดไฟล์ที่อัปเดต',
+
+    // Invoice Payment Created Email
     'invoice_payment_created_title' => 'ได้รับการชำระเงิน',
     'invoice_payment_created_greeting' => 'สวัสดี :customer_name',
     'invoice_payment_created_message' => 'เราได้รับการชำระเงินของคุณสำหรับ :site_title สำเร็จแล้ว ขอบคุณ!',
@@ -241,15 +281,21 @@ return [
     'invoice_payment_created_invoice_link_message' => 'คุณสามารถดูใบแจ้งหนี้ออนไลน์ได้ที่ <a href=":invoice_link">:invoice_link</a> ด้วยรหัสใบแจ้งหนี้ #:invoice_code',
     'invoice_payment_created_invoice_message' => 'รหัสใบแจ้งหนี้ของคุณคือ #:invoice_code',
     'invoice_payment_created_view_online' => 'ดูใบแจ้งหนี้ออนไลน์',
+
+    // Customer Deletion Request Confirmation Email
     'customer_deletion_request_confirmation_greeting' => 'สวัสดี :customer_name',
     'customer_deletion_request_confirmation_message' => 'เราได้รับคำขอลบบัญชีของคุณ',
     'customer_deletion_request_confirmation_warning' => 'กรุณาทราบว่าการกระทำนี้ไม่สามารถย้อนกลับได้ ข้อมูลทั้งหมดของคุณจะถูกลบอย่างถาวร',
     'customer_deletion_request_confirmation_button' => 'ยืนยันการลบ',
     'customer_deletion_request_confirmation_cancel' => 'หากคุณไม่ได้ขอสิ่งนี้ กรุณาเพิกเฉยต่ออีเมลนี้',
+
+    // Customer Deletion Request Completed Email
     'customer_deletion_request_completed_greeting' => 'สวัสดี :customer_name',
     'customer_deletion_request_completed_message' => 'บัญชีของคุณได้รับการลบสำเร็จตามที่ร้องขอ',
     'customer_deletion_request_completed_thank_you' => 'ขอบคุณที่ร่วมเดินทางกับเรา',
     'customer_deletion_request_completed_goodbye' => 'เราหวังว่าจะได้เจอคุณอีกครั้งในอนาคต',
+
+    // Payment Proof Upload Notification Email
     'payment_proof_upload_notification_greeting' => 'สวัสดีผู้ดูแลระบบ',
     'payment_proof_upload_notification_message' => 'ลูกค้า :customer_name (อีเมล: <a href="mailto::customer_email">:customer_email</a>) ได้อัปโหลดหลักฐานการชำระเงินสำหรับคำสั่งซื้อรหัส :order_id',
     'payment_proof_upload_notification_view_details' => 'คุณสามารถดูรายละเอียดการชำระเงิน <a href=":payment_link">ที่นี่</a> และรายละเอียดคำสั่งซื้อ <a href=":order_link">ที่นี่</a>',
@@ -261,27 +307,4 @@ return [
     'payment_proof_upload_notification_total' => 'ยอดรวมทั้งหมด',
     'payment_proof_upload_notification_view_order' => 'ดูคำสั่งซื้อ',
     'payment_proof_upload_notification_view_proof' => 'ดูหลักฐานการชำระเงิน',
-    'abandoned_cart_reminder_title' => 'คุณทิ้งสินค้าไว้ในตะกร้า!',
-    'abandoned_cart_greeting' => 'สวัสดี :customer_name,',
-    'abandoned_cart_message' => 'เราสังเกตเห็นว่าคุณทิ้งสินค้าบางรายการไว้ในตะกร้า คุณต้องการดำเนินการสั่งซื้อให้เสร็จสิ้นหรือไม่? ตะกร้าของคุณกำลังรอ!',
-    'abandoned_cart_button' => 'กลับไปที่ตะกร้า',
-    'abandoned_cart_items_title' => 'สินค้าในตะกร้าของคุณ',
-    'abandoned_cart_total' => 'รวม',
-    'abandoned_cart_unsubscribe' => 'ไม่ต้องการอีเมลเหล่านี้? <a href=":unsubscribe_url">ยกเลิกการสมัคร</a>',
-    'abandoned_cart_discount_offer' => 'ข้อเสนอพิเศษสำหรับคุณเท่านั้น!',
-    'abandoned_cart_discount_off' => 'ลด',
-    'abandoned_cart_discount_code' => 'ใช้รหัส',
-    'abandoned_cart_claim_discount' => 'รับส่วนลดของคุณ',
-    'abandoned_cart_final_offer' => 'ข้อเสนอสุดท้าย - อย่าพลาด!',
-    'abandoned_cart_expires_soon' => 'ข้อเสนอนี้จะหมดอายุเร็วๆ นี้!',
-    'abandoned_cart_complete_now' => 'เสร็จสิ้นคำสั่งซื้อตอนนี้',
-    'abandoned_cart_reminder_1_title' => 'คุณลืมอะไรไหม?',
-    'abandoned_cart_reminder_1_greeting' => 'สวัสดี :customer_name,',
-    'abandoned_cart_reminder_1_message' => 'เราสังเกตเห็นว่าคุณทิ้งสินค้าบางรายการไว้ในตะกร้า ไม่ต้องกังวล - เราเก็บไว้ให้คุณแล้ว! พร้อมที่จะดำเนินการสั่งซื้อให้เสร็จสิ้นหรือยัง?',
-    'abandoned_cart_reminder_2_title' => 'ยังคิดอยู่หรือ?',
-    'abandoned_cart_reminder_2_greeting' => 'สวัสดี :customer_name,',
-    'abandoned_cart_reminder_2_message' => 'ตะกร้าของคุณคิดถึงคุณ! เราได้บันทึกสินค้าของคุณไว้และต้องการติดต่อคุณ บางทีข้อเสนอพิเศษนี้อาจช่วยให้คุณตัดสินใจได้?',
-    'abandoned_cart_reminder_3_title' => 'โอกาสสุดท้ายในการบันทึกตะกร้าของคุณ!',
-    'abandoned_cart_reminder_3_greeting' => 'สวัสดี :customer_name,',
-    'abandoned_cart_reminder_3_message' => 'นี่คือการแจ้งเตือนครั้งสุดท้ายของคุณ - ตะกร้าของคุณกำลังจะหมดอายุ! เราไม่อยากให้คุณพลาดสินค้าเหล่านี้',
 ];

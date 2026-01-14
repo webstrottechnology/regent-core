@@ -1,6 +1,6 @@
 <div class="customer-tax-information-form">
-    <div class="form-group mb-3">
-        <label class="form-check form-check-inline">
+    <div class="mb-3">
+        <label class="form-check">
             <input
                 id="with_tax_information"
                 name="with_tax_information"

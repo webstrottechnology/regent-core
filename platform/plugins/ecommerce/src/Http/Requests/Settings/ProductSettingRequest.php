@@ -22,7 +22,6 @@ class ProductSettingRequest extends Request
             'enable_product_specification' => $onOffRule,
             'product_sku_format' => ['nullable', 'string', 'max:120'],
             'make_product_barcode_required' => $onOffRule,
-            'delete_product_images_when_deleting' => $onOffRule,
         ];
     }
 }

@@ -138,8 +138,8 @@ class OrderTrackingController extends BaseApiController
             ->when(EcommerceHelper::isOrderTrackingUsingPhone(), function (BaseQueryBuilder $query) use ($request): void {
                 $query->where(function (BaseQueryBuilder $query) use ($request): void {
                     $query
-                        ->whereHas('address', fn ($subQuery) => $subQuery->wherePhone($request->input('phone')))
-                        ->orWhereHas('user', fn ($subQuery) => $subQuery->wherePhone($request->input('phone')));
+                        ->whereHas('address', fn ($subQuery) => $subQuery->where('phone', $request->input('phone')))
+                        ->orWhereHas('user', fn ($subQuery) => $subQuery->where('phone', $request->input('phone')));
                 });
             }, function (BaseQueryBuilder $query) use ($request): void {
                 $query->where(function (Builder $query) use ($request): void {

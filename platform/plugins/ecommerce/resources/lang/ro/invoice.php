@@ -47,5 +47,4 @@ return [
         'completed' => 'Finalizat',
         'canceled' => 'Anulat',
     ],
-    'back_to_invoices' => 'Înapoi la facturi',
 ];

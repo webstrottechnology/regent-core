@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name' => 'Taux de taxes',
+    'name' => 'Taxes',
     'description' => 'Afficher et mettre à jour les paramètres de vos produits',
     'create' => 'Créer une taxe',
     'edit' => 'Modifier la taxe :title',

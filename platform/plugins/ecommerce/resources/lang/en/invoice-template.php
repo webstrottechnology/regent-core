@@ -36,8 +36,6 @@ return [
         'customer_city' => 'The customer city',
         'customer_zipcode' => 'The customer zipcode',
     ],
-    'custom_css' => 'Custom CSS',
-    'custom_css_helper' => 'Add custom CSS styles to customize the invoice appearance. These styles will be appended to the default invoice styles.',
     'reset_success' => 'Reset back to default successfully',
     'confirm_reset' => 'Confirm reset invoice template?',
     'confirm_message' => 'Do you really want to reset this invoice template to default?',

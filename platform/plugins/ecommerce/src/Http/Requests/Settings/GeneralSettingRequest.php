@@ -21,7 +21,6 @@ class GeneralSettingRequest extends Request
             'store_city' => ['nullable', 'string', 'max:120'],
             'store_vat_number' => ['nullable', 'string', 'max:120'],
             'store_zip_code' => ['nullable', ...BaseHelper::getZipcodeValidationRule(true)],
-            'admin_notification_email' => ['nullable', 'array'],
         ];
     }
 }

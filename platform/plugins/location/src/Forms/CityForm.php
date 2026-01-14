@@ -37,9 +37,9 @@ class CityForm extends FormAbstract
             ->setValidatorClass(CityRequest::class)
             ->add('name', TextField::class, NameFieldOption::make()->required())
             ->add('slug', TextField::class, [
-                'label' => trans('plugins/location::location.slug'),
+                'label' => __('Slug'),
                 'attr' => [
-                    'placeholder' => trans('plugins/location::location.slug'),
+                    'placeholder' => __('Slug'),
                     'data-counter' => 120,
                 ],
             ])

@@ -30,14 +30,6 @@ return [
     'primary_sidebar_name' => 'Birincil kenar çubuğu',
     'primary_sidebar_description' => 'Birincil kenar çubuğu bölümü',
     'drag_widget_to_sidebar' => 'Widget\'ları bu alana sürükleyip bırakın.',
-    'widget_areas' => 'Widget Alanları',
-    'manage_widgets' => 'Widget\'ları Yönet',
-    'click_to_add' => 'Widget eklemek için tıklayın',
-    'select_sidebar' => 'Widget Ekle',
-    'select_sidebar_description' => 'Bu widget\'ı nereye ekleyeceğinizi seçin',
-    'adding_to' => 'Ekleniyor',
-    'add_widget' => 'Widget Ekle',
-    'widget_not_found' => 'Widget bulunamadı',
     'cache_suggestion' => [
         'title' => 'Performans Önerisi',
         'description' => 'Widget önbelleğini etkinleştirerek sitenizin performansını artırabilirsiniz.',
@@ -45,25 +37,10 @@ return [
         'enable_button' => 'Widget önbelleğini etkinleştir',
         'dismiss_button' => 'Bir hafta boyunca yoksay',
     ],
+    'instruction' => 'Bir widget\'ı etkinleştirmek için onu bir kenar çubuğuna sürükleyin veya üzerine tıklayın. Bir widget\'ı devre dışı bırakmak ve ayarlarını silmek için geri sürükleyin.',
+
     'widget_site_copyright' => 'Site Telif Hakkı',
     'widget_site_copyright_description' => 'Alt bilgide telif hakkı metni.',
     'widget_site_copyright_helper' => 'Telif hakkı metnini değiştirmek için :link adresine gidin.',
     'theme_options' => 'Tema seçenekleri',
-
-    'form' => [
-        'enable_caching' => 'Önbelleği etkinleştir',
-        'yes' => 'Evet',
-        'no' => 'Hayır',
-        'cache_helper' => 'Etkinleştirildiğinde, bu widget\'ın içeriği performansı artırmak için önbelleğe alınır. Sık değişen dinamik içerik için devre dışı bırakın.',
-        'cache_warning' => 'UI sorunları nedeniyle, bu widget için önbellek kod aracılığıyla devre dışı bırakılmıştır. Önbellek etkinleştirilmiş olsa bile bu widget önbelleğe alınmaz.',
-    ],
-
-    'drag_or_click' => 'Kenar çubuğuna sürükleyin veya + tıklayarak ekleyin',
-    'drop_widgets_here' => 'Widget\'ları kenar çubuğu alanlarınıza bırakın',
-    'search_widgets' => 'Widget ara...',
-    'no_widgets' => 'Mevcut widget yok',
-    'no_search_results' => 'Widget bulunamadı',
-    'or_click_add' => 'Veya widget üzerindeki + düğmesine tıklayarak ekleyin',
-    'toggle_widget' => 'Widget ayarlarını değiştir',
-    'loading_form' => 'Widget formu yükleniyor...',
 ];

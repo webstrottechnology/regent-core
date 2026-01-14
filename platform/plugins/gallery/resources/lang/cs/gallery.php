@@ -18,8 +18,4 @@ return [
     'limit_display' => 'Omezit počet zobrazených',
     'edit_this_gallery' => 'Upravit tuto galerii',
     'galleries_page' => 'Stránka galerií',
-    'by_name' => 'Autor: :name',
-    'title' => 'Titul',
-    'limit' => 'Omezit',
-    'limit_helper' => 'Počet galerií k zobrazení. ',
 ];

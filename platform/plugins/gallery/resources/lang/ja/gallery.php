@@ -18,8 +18,4 @@ return [
     'limit_display' => '制限数表示',
     'edit_this_gallery' => 'このギャラリーを編集する',
     'galleries_page' => 'ギャラリーページ',
-    'by_name' => ':name により',
-    'title' => 'タイトル',
-    'limit' => '限界',
-    'limit_helper' => '表示するギャラリーの数。 ',
 ];

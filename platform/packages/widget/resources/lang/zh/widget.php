@@ -33,13 +33,6 @@ return [
     'widget_areas' => '小部件区域',
     'manage_widgets' => '管理小部件',
 
-    'click_to_add' => '点击添加小部件',
-    'select_sidebar' => '添加小部件',
-    'select_sidebar_description' => '选择要添加此小部件的位置',
-    'adding_to' => '添加到',
-    'add_widget' => '添加小部件',
-    'widget_not_found' => '未找到小部件',
-
     'cache_suggestion' => [
         'title' => '性能建议',
         'description' => '您可以通过启用小部件缓存来提高网站性能。',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => '页脚底部的版权文本。',
     'widget_site_copyright_helper' => '前往 :link 修改版权文本。',
     'theme_options' => '主题选项',
-
-    'form' => [
-        'enable_caching' => '启用缓存',
-        'yes' => '是',
-        'no' => '否',
-        'cache_helper' => '启用后，此小部件的内容将被缓存以提高性能。对于经常变化的动态内容，请禁用此选项。',
-        'cache_warning' => '由于界面问题，此小部件的缓存已通过代码禁用。即使启用缓存，此小部件也不会被缓存。',
-    ],
-
-    'drag_or_click' => '拖动到侧边栏或点击 + 添加',
-    'drop_widgets_here' => '将小部件拖放到侧边栏区域',
-    'search_widgets' => '搜索小部件...',
-    'no_widgets' => '没有可用的小部件',
-    'no_search_results' => '未找到小部件',
-    'or_click_add' => '或点击小部件上的 + 按钮添加',
-    'toggle_widget' => '切换小部件设置',
-    'loading_form' => '正在加载小部件表单...',
 ];

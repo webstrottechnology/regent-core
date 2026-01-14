@@ -3,10 +3,13 @@
 namespace Botble\SimpleSlider\Providers;
 
 use Botble\Base\Facades\DashboardMenu;
+use Botble\Base\Facades\PanelSectionManager;
+use Botble\Base\PanelSections\PanelSectionItem;
 use Botble\Base\Supports\DashboardMenuItem;
 use Botble\Base\Supports\ServiceProvider;
 use Botble\Base\Traits\LoadAndPublishDataTrait;
 use Botble\Language\Facades\Language;
+use Botble\Setting\PanelSections\SettingOthersPanelSection;
 use Botble\SimpleSlider\Models\SimpleSlider;
 use Botble\SimpleSlider\Models\SimpleSliderItem;
 use Botble\SimpleSlider\Repositories\Eloquent\SimpleSliderItemRepository;
@@ -52,6 +55,18 @@ class SimpleSliderServiceProvider extends ServiceProvider implements DeferrableP
                         ->icon('ti ti-slideshow')
                         ->route('simple-slider.index')
                 );
+        });
+
+        PanelSectionManager::default()->beforeRendering(function (): void {
+            PanelSectionManager::registerItem(
+                SettingOthersPanelSection::class,
+                fn () => PanelSectionItem::make('simple_sliders')
+                    ->setTitle(trans('plugins/simple-slider::simple-slider.settings.title'))
+                    ->withIcon('ti ti-slideshow')
+                    ->withPriority(430)
+                    ->withDescription(trans('plugins/simple-slider::simple-slider.settings.description'))
+                    ->withRoute('simple-slider.settings')
+            );
         });
 
         if (defined('LANGUAGE_MODULE_SCREEN_NAME') && defined('LANGUAGE_ADVANCED_MODULE_SCREEN_NAME')) {

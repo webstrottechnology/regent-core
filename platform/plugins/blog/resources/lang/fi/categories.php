@@ -12,7 +12,4 @@ return [
     'parent' => 'Yläkategoria',
     'order' => 'Järjestys',
     'is_default' => 'On oletuskategoria',
-    'intro' => [
-        'description' => 'Järjestä blogikirjoituksesi luokkiin parempaa sisällönhallintaa varten.',
-    ],
 ];

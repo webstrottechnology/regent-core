@@ -18,8 +18,4 @@ return [
     'limit_display' => 'Begræns antal vist',
     'edit_this_gallery' => 'Rediger dette galleri',
     'galleries_page' => 'Galleriside',
-    'by_name' => 'Af :name',
-    'title' => 'Titel',
-    'limit' => 'Begrænse',
-    'limit_helper' => 'Antal gallerier at vise. ',
 ];

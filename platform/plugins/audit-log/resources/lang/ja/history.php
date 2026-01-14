@@ -45,6 +45,4 @@ return [
     'admin' => '管理者',
     'register_an_account' => 'アカウント',
     'activity_has_been_deleted' => 'アクティビティが削除されました',
-    'no_results_found' => '結果が見つかりません',
-    'no_activities_here' => 'ここにはアクティビティがないようです。',
 ];

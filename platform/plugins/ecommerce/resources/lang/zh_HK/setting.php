@@ -5,11 +5,11 @@ return [
     'ecommerce' => '電子商務',
     'general' => [
         'name' => '一般',
-        'description' => 'Store name, company info, contact details, and admin notification emails',
+        'description' => '查看和更新您的一般設定',
     ],
     'currency' => [
         'name' => '貨幣',
-        'description' => 'Currency formats, exchange rates, auto-detection, and decimal/thousands separators',
+        'description' => '查看和更新貨幣設定',
         'currency_setting_description' => '查看和更新網站使用的貨幣',
         'form' => [
             'enable_auto_detect_visitor_currency' => '啟用自動檢測訪客貨幣',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => '產品',
-        'description' => 'Stock display, SKU generation, variation images, related products, and specifications',
+        'description' => '查看和更新您的產品設定',
         'product_settings' => '產品設定',
         'product_settings_description' => '配置產品規則',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => '產品搜尋',
-        'description' => 'Search behavior, filters by category/brand/tag/attributes, and price range filtering',
+        'description' => '查看和更新產品搜尋設定',
         'product_search_settings' => '產品搜尋',
         'product_search_settings_description' => '配置產品搜尋規則',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => '數碼產品',
-        'description' => 'Downloadable products, license codes, guest checkout for digital items, and auto-completion',
+        'description' => '查看和更新數碼產品設定',
         'digital_products_settings' => '數碼產品',
         'digital_products_settings_description' => '配置數碼產品規則',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => '產品評論',
-        'description' => 'Customer reviews, ratings display, image uploads, and approval requirements',
+        'description' => '查看和更新您的產品評論設定',
         'form' => [
             'enable_review' => '啟用產品評論',
             'enable_review_help' => '允許顧客對產品留下評論和評分。停用後,所有評論功能將從商店中隱藏。',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => '購物',
-        'description' => 'Cart, wishlist, compare, order tracking, quick buy button, and payment proof uploads',
+        'description' => '查看和更新您的購物設定',
         'general_setting' => '一般設定',
         'return_settings' => '退貨設定',
         'return_settings_description' => '配置退貨設定規則',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => '當顧客登出時,購物車將被銷毀。',
             'hide_product_price' => '隱藏產品價格',
             'hide_product_price_helper' => '此選項僅在您停用購物車時有效,將您的網站變成僅目錄顯示。如果啟用,產品價格將被隱藏。當您想隱藏價格並要求顧客聯絡您詢問價格時,這很有用。',
-            'hide_product_price_when_zero' => '隱藏價格為零的產品價格',
-            'hide_product_price_when_zero_helper' => '若啟用,價格為 0 的產品將不會在店面顯示價格。',
             'enable_payment_proof' => '啟用付款證明上傳',
             'enable_payment_proof_helper' => '允許顧客為其訂單上傳付款證明。這對手動付款方式很有用。',
             'enable_guest_payment_proof' => '允許訪客顧客上傳付款證明',
             'enable_guest_payment_proof_helper' => '啟用後,訪客顧客可以使用其訂單令牌上傳付款證明,而無需登入。他們將在訂單確認電子郵件中收到上傳連結。',
-            'payment_proof_payment_methods' => '需要付款證明的付款方式',
-            'payment_proof_payment_methods_helper' => '選擇哪些付款方式應允許客戶上傳付款證明。通常用於貨到付款和銀行轉賬等手動付款方式。',
         ],
     ],
     'checkout' => [
         'name' => '結帳',
-        'panel_description' => 'Guest checkout, required fields, order limits, terms acceptance, and country restrictions',
+        'panel_description' => '查看和更新結帳設定',
         'description' => '配置結帳設定規則',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => '在結帳成功頁面顯示銀行資訊',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => '退貨',
         'description' => '配置退貨設定規則',
-        'panel_description' => 'Order returns, partial returns, and return time limits',
+        'panel_description' => '查看和更新退貨設定',
         'form' => [
             'is_enabled_order_return' => '是否啟用訂單退貨',
             'allow_partial_return' => '允許部分退貨',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => '發票',
-        'description' => 'Company details on invoices, invoice numbering, PDF fonts, and stamp settings',
+        'description' => '查看和更新您的發票設定',
         'company_settings' => '公司設定',
         'company_settings_description' => '發票的公司資訊設定',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => '預設稅率',
             'default_tax_rate_description' => '重要:如果產品中未選擇稅金,將套用此稅率。',
             'select_tax' => '-- 選擇 --',
-            'display_product_price_including_taxes' => '在顯示價格中加入稅金',
-            'display_product_price_including_taxes_helper' => '自動將稅金加入店鋪顯示的產品價格。例如:$100產品加10%稅金顯示為$110。如果個別產品已啟用「價格包含稅金」則不需要。',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => '顯示含稅產品價格',
         ],
     ],
     'customer' => [
         'name' => '顧客',
-        'description' => 'Registration, email verification, login options, account deletion, and profile fields',
+        'description' => '查看和更新您的顧客設定',
         'customer_setting' => '顧客設定',
         'customer_setting_description' => '配置顧客設定',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => '運送',
-        'description' => 'Shipping rules, free shipping behavior, and shipping option display order',
+        'description' => '查看和更新運送設定',
         'shipping_rule' => '運送規則',
         'shipping_rule_description' => '配置計算運費的規則',
         'shipping_setting' => '運送設定',
@@ -412,16 +405,10 @@ return [
             'save_location' => '儲存位置',
             'add_new' => '新增',
         ],
-            'info' => [
-            'title' => '商店定位器的運作方式',
-            'primary_store' => '主要商店地址顯示在發票上，並用作運輸標籤的預設退貨地址。',
-            'shipping_location' => '標記為「發貨地點」的商店可以在創建發貨時被選為原產地倉庫。',
-            'shipment_selection' => '在處理訂單時，您可以根據庫存和客戶位置選擇從哪個倉庫發貨。',
-        ],
     ],
     'tracking' => [
         'name' => '追蹤',
-        'description' => 'Facebook Pixel, Google Tag Manager events, and Google Ads conversion tracking',
+        'description' => '查看和更新追蹤設定',
         'manage_tracking' => '管理追蹤',
         'manage_tracking_description' => '管理追蹤:UTM、Facebook、Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => '市場',
-        'description' => 'Multi-vendor settings, commissions, vendor registration, and payout configuration',
+        'description' => '查看和更新市場設定',
     ],
     'standard_and_format' => [
         'name' => '標準和格式',
-        'panel_description' => 'Order code format, weight units (kg/lb), and dimension units (cm/inch)',
+        'panel_description' => '查看和更新標準和格式設定',
         'description' => '標準和格式用於計算產品價格、運送重量和訂單時間等內容。',
         'form' => [
             'change_order_format' => '編輯訂單代碼格式(選填)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => '顯示帶有「已售出 X 個,共 Y 個」的進度條,以在限時搶購期間營造緊迫感並鼓勵快速購買。',
     ],
     'payment_method_cod_minimum_amount' => '最低訂單金額 - :currency(選填)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => '最低訂單金額 - :currency(選填)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => '在結帳成功頁面顯示銀行資訊?',
     'invoice_templates' => '發票範本',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

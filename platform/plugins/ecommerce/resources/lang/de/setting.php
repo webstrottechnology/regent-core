@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-Commerce',
     'general' => [
         'name' => 'Allgemein',
-        'description' => 'Shopname, Firmeninfo, Kontaktdaten und Admin-Benachrichtigungs-E-Mails',
+        'description' => 'Ihre allgemeinen Einstellungen anzeigen und aktualisieren',
     ],
     'currency' => [
         'name' => 'Währungen',
-        'description' => 'Währungsformate, Wechselkurse, Auto-Erkennung und Dezimal-/Tausendertrennzeichen',
+        'description' => 'Währungseinstellungen anzeigen und aktualisieren',
         'currency_setting_description' => 'Währungen anzeigen und aktualisieren, die auf der Website verwendet werden',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Automatische Erkennung der Besucherwährung aktivieren',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produkte',
-        'description' => 'Lageranzeige, SKU-Generierung, Variantenbilder, verwandte Produkte und Spezifikationen',
+        'description' => 'Ihre Produkteinstellungen anzeigen und aktualisieren',
         'product_settings' => 'Produkteinstellungen',
         'product_settings_description' => 'Regeln für Produkte konfigurieren',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Produktsuche',
-        'description' => 'Suchverhalten, Filter nach Kategorie/Marke/Tag/Attributen und Preisbereichsfilterung',
+        'description' => 'Produktsucheinstellungen anzeigen und aktualisieren',
         'product_search_settings' => 'Produktsuche',
         'product_search_settings_description' => 'Regeln für Produktsuche konfigurieren',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Digitale Produkte',
-        'description' => 'Herunterladbare Produkte, Lizenzcodes, Gastkauf für digitale Artikel und automatische Vervollständigung',
+        'description' => 'Einstellungen für digitale Produkte anzeigen und aktualisieren',
         'digital_products_settings' => 'Digitale Produkte',
         'digital_products_settings_description' => 'Regeln für digitale Produkte konfigurieren',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Produktbewertungen',
-        'description' => 'Kundenbewertungen, Bewertungsanzeige, Bild-Uploads und Genehmigungsanforderungen',
+        'description' => 'Ihre Produktbewertungseinstellungen anzeigen und aktualisieren',
         'form' => [
             'enable_review' => 'Produktbewertungen aktivieren',
             'enable_review_help' => 'Kunden erlauben, Bewertungen und Ratings für Produkte zu hinterlassen. Wenn deaktiviert, werden alle Bewertungsfunktionen im Shop ausgeblendet.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Einkaufen',
-        'description' => 'Warenkorb, Wunschliste, Vergleich, Bestellverfolgung, Schnellkauf-Button und Zahlungsnachweis-Uploads',
+        'description' => 'Ihre Einkaufseinstellungen anzeigen und aktualisieren',
         'general_setting' => 'Allgemeine Einstellungen',
         'return_settings' => 'Rückgabeeinstellungen',
         'return_settings_description' => 'Regeln für Rückgabeeinstellungen konfigurieren',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Der Warenkorb wird geleert, wenn sich der Kunde abmeldet.',
             'hide_product_price' => 'Produktpreis ausblenden',
             'hide_product_price_helper' => 'Diese Option funktioniert nur, wenn Sie den Einkaufswagen deaktivieren und Ihre Site zu einer reinen Katalogansicht machen. Wenn aktiviert, wird der Produktpreis ausgeblendet. Nützlich, wenn Sie den Preis ausblenden und Kunden auffordern möchten, Sie für den Preis zu kontaktieren.',
-            'hide_product_price_when_zero' => 'Produktpreis ausblenden, wenn er null ist',
-            'hide_product_price_when_zero_helper' => 'Wenn aktiviert, wird bei Produkten mit Preis 0 kein Preis im Shop angezeigt.',
             'enable_payment_proof' => 'Zahlungsnachweis-Upload aktivieren',
             'enable_payment_proof_helper' => 'Kunden erlauben, Zahlungsnachweise für ihre Bestellungen hochzuladen. Nützlich für manuelle Zahlungsmethoden.',
             'enable_guest_payment_proof' => 'Gästen erlauben, Zahlungsnachweise hochzuladen',
             'enable_guest_payment_proof_helper' => 'Wenn aktiviert, können Gastkunden Zahlungsnachweise mit ihrem Bestelltoken hochladen, ohne sich anzumelden. Sie erhalten den Upload-Link in ihrer Bestellbestätigungs-E-Mail.',
-            'payment_proof_payment_methods' => 'Zahlungsmethoden, die einen Zahlungsnachweis erfordern',
-            'payment_proof_payment_methods_helper' => 'Wählen Sie aus, welche Zahlungsmethoden Kunden das Hochladen eines Zahlungsnachweises ermöglichen sollen. Wird normalerweise für manuelle Zahlungsmethoden wie Nachnahme und Banküberweisung verwendet.',
         ],
     ],
     'checkout' => [
         'name' => 'Checkout',
-        'panel_description' => 'Gastkauf, Pflichtfelder, Bestelllimits, AGB-Akzeptanz und Länderbeschränkungen',
+        'panel_description' => 'Checkout-Einstellungen anzeigen und aktualisieren',
         'description' => 'Regeln für Checkout-Einstellungen konfigurieren',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Bankdaten auf der Checkout-Erfolgsseite anzeigen',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Rückgabe',
         'description' => 'Regeln für Rückgabeeinstellungen konfigurieren',
-        'panel_description' => 'Bestellrückgaben, Teilrückgaben und Rückgabefristen',
+        'panel_description' => 'Rückgabeeinstellungen anzeigen und aktualisieren',
         'form' => [
             'is_enabled_order_return' => 'Bestellrückgabe aktiviert',
             'allow_partial_return' => 'Teilrückgabe erlauben',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Rechnungen',
-        'description' => 'Firmendetails auf Rechnungen, Rechnungsnummerierung, PDF-Schriften und Stempeleinstellungen',
+        'description' => 'Ihre Rechnungseinstellungen anzeigen und aktualisieren',
         'company_settings' => 'Firmeneinstellungen',
         'company_settings_description' => 'Firmeninformationen für die Rechnungsstellung einstellen',
         'form' => [
@@ -327,15 +323,12 @@ return [
             'default_tax_rate' => 'Standard-Steuersatz',
             'default_tax_rate_description' => 'Wichtig: wird angewendet, wenn keine Steuer im Produkt ausgewählt ist.',
             'select_tax' => '-- Auswählen --',
-            'display_product_price_including_taxes' => 'Steuer zu angezeigten Preisen hinzufügen',
-            'display_product_price_including_taxes_helper' => 'Fügt automatisch Steuer zu den im Shop angezeigten Produktpreisen hinzu. Z.B. wird ein 100 $-Produkt mit 10 % Steuer als 110 $ angezeigt. Nicht erforderlich, wenn „Preis enthält Steuer" bereits bei einzelnen Produkten aktiviert ist.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Produktpreis inklusive Steuern anzeigen',
         ],
     ],
     'customer' => [
         'name' => 'Kunden',
-        'description' => 'Registrierung, E-Mail-Verifizierung, Login-Optionen, Kontolöschung und Profilfelder',
+        'description' => 'Ihre Kundeneinstellungen anzeigen und aktualisieren',
         'customer_setting' => 'Kundeneinstellungen',
         'customer_setting_description' => 'Kundeneinstellungen konfigurieren',
         'form' => [
@@ -366,7 +359,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Versand',
-        'description' => 'Versandregeln, Gratisversand-Verhalten und Anzeigereihenfolge der Versandoptionen',
+        'description' => 'Versandeinstellungen anzeigen und aktualisieren',
         'shipping_rule' => 'Versandregeln',
         'shipping_rule_description' => 'Regeln zur Berechnung von Versandkosten konfigurieren',
         'shipping_setting' => 'Versandeinstellungen',
@@ -434,16 +427,10 @@ return [
             'save_location' => 'Standort speichern',
             'add_new' => 'Neu hinzufügen',
         ],
-        'info' => [
-            'title' => 'Wie Shop-Standorte funktionieren',
-            'primary_store' => 'Die Adresse des Hauptgeschäfts erscheint auf Rechnungen und wird als Standardrücksendeadresse für Versandetiketten verwendet.',
-            'shipping_location' => 'Geschäfte, die als "Versandstandort" markiert sind, können als Ursprungslager beim Erstellen von Sendungen ausgewählt werden.',
-            'shipment_selection' => 'Bei der Bearbeitung von Bestellungen können Sie auswählen, von welchem Lager aus versendet werden soll, basierend auf Bestand und Kundenstandort.',
-        ],
     ],
     'tracking' => [
         'name' => 'Tracking',
-        'description' => 'Facebook Pixel, Google Tag Manager Events und Google Ads Conversion-Tracking',
+        'description' => 'Tracking-Einstellungen anzeigen und aktualisieren',
         'manage_tracking' => 'Tracking verwalten',
         'manage_tracking_description' => 'Tracking verwalten: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -462,11 +449,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Marktplatz',
-        'description' => 'Multi-Vendor-Einstellungen, Provisionen, Verkäuferregistrierung und Auszahlungskonfiguration',
+        'description' => 'Marktplatz-Einstellungen anzeigen und aktualisieren',
     ],
     'standard_and_format' => [
         'name' => 'Standard & Format',
-        'panel_description' => 'Bestellcode-Format, Gewichtseinheiten (kg/lb) und Maßeinheiten (cm/Zoll)',
+        'panel_description' => 'Standard & Format-Einstellungen anzeigen und aktualisieren',
         'description' => 'Standards und Formate werden verwendet, um Dinge wie Produktpreise, Versandgewichte und Bestellzeiten zu berechnen.',
         'form' => [
             'change_order_format' => 'Bestellcode-Format bearbeiten (optional)',
@@ -498,64 +485,7 @@ return [
         'show_sale_count_left_description' => 'Einen Fortschrittsbalken mit "X verkauft von Y" anzeigen, um Dringlichkeit zu schaffen und schnelle Käufe während Flash Sales zu fördern.',
     ],
     'payment_method_cod_minimum_amount' => 'Mindestbestellwert - :currency (Optional)',
-    'payment_method_cod_minimum_amount_helper' => 'Legen Sie den Mindestbestellbetrag fest, um die Zahlungsmethode COD zu verwenden. Lassen Sie es bei 0 oder leer, wenn Sie kein Minimum festlegen möchten.',
-    'payment_method_cod_maximum_amount' => 'Maximaler Bestellbetrag - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Legen Sie den maximalen Bestellbetrag für die Zahlungsmethode COD fest. Lassen Sie es bei 0 oder leer, wenn Sie kein Maximum festlegen möchten.',
     'payment_method_minimum_amount' => 'Mindestbestellwert - :currency (Optional)',
-    'payment_method_minimum_amount_helper' => 'Legen Sie den Mindestbestellbetrag fest, um diese Zahlungsmethode zu verwenden. Lassen Sie es bei 0 oder leer, wenn Sie kein Minimum festlegen möchten.',
-    'payment_method_maximum_amount' => 'Maximaler Bestellbetrag - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Legen Sie den maximalen Bestellbetrag für diese Zahlungsmethode fest. Lassen Sie es bei 0 oder leer, wenn Sie kein Maximum festlegen möchten.',
-    'payment_method_maximum_amount_error' => 'Der maximale Bestellbetrag für die Zahlungsmethode :payment_method beträgt :amount. Sie müssen :more entfernen, um zu bestellen!',
     'display_bank_info_at_the_checkout_success_page' => 'Bankdaten auf der Checkout-Erfolgsseite anzeigen?',
-    'display_bank_info_at_the_checkout_success_page_helper' => 'Wenn aktiviert, sehen Kunden Ihre Bankverbindung auf der Bestellbestätigungsseite nach der Bestellung. Dies hilft ihnen zu wissen, wohin sie die Zahlung überweisen sollen.',
     'invoice_templates' => 'Rechnungsvorlagen',
-
-    'abandoned_cart' => [
-        'name' => 'Verlassene Warenkörbe',
-        'description' => 'Verlorene Verkäufe durch automatische Erinnerungen an Kunden zurückgewinnen, die Artikel im Warenkorb gelassen haben',
-        'panel_description' => 'Automatische Erinnerungen für Kunden einrichten, die ihren Warenkorb verlassen',
-        'how_it_works' => [
-            'title' => 'So funktioniert es',
-            'step1_title' => 'Kunde fügt Artikel hinzu',
-            'step1_description' => 'Der Kunde fügt Produkte in den Warenkorb und gibt seine E-Mail-Adresse an.',
-            'step2_title' => 'Warenkorb wird verlassen',
-            'step2_description' => 'Wenn innerhalb der festgelegten Zeit kein Kauf erfolgt, wird der Warenkorb als verlassen markiert.',
-            'step3_title' => 'Erinnerungs-E-Mail gesendet',
-            'step3_description' => 'Automatische E-Mail-Erinnerungen werden gesendet, um den Kunden zum Kaufabschluss zu ermutigen.',
-            'step4_title' => 'Verkauf zurückgewonnen',
-            'step4_description' => 'Der Kunde kehrt zurück, schließt die Bestellung ab und der Warenkorb wird als wiederhergestellt markiert.',
-        ],
-        'form' => [
-            'enable' => 'Verfolgung verlassener Warenkörbe aktivieren',
-            'enable_helper' => 'Bei Aktivierung verfolgt das System verlassene Warenkörbe und ermöglicht das Senden von Wiederherstellungs-E-Mails.',
-            'timing_section' => 'Zeiteinstellungen',
-            'email_section' => 'E-Mail-Erinnerungseinstellungen',
-            'cleanup_section' => 'Datenbereinigung',
-            'time_threshold' => 'Zeitschwelle (Stunden)',
-            'time_threshold_helper' => 'Ein Warenkorb gilt nach dieser Anzahl von Stunden Inaktivität als verlassen. Empfohlen: 1-24 Stunden.',
-            'send_email' => 'Wiederherstellungs-E-Mails senden',
-            'send_email_helper' => 'Automatisch Wiederherstellungs-E-Mails an Kunden mit verlassenen Warenkörben senden.',
-            'max_reminders' => 'Anzahl der Erinnerungs-E-Mails',
-            'max_reminders_helper' => 'Wie viele Erinnerungs-E-Mails pro verlassenem Warenkorb gesendet werden. Jede E-Mail kann in den E-Mail-Vorlagen angepasst werden.',
-            'email_delay' => 'Senden nach (Stunden)',
-            'email_discount' => 'Rabatt (%)',
-            'email_1_title' => 'E-Mail #1 - Freundliche Erinnerung',
-            'email_1_description' => 'Erste sanfte Erinnerung, um den Kunden zur Rückkehr zu ermutigen.',
-            'email_1_delay_helper' => 'Stunden nach Warenkorbabbruch für die erste E-Mail. Empfohlen: 1-2 Stunden.',
-            'email_2_title' => 'E-Mail #2 - Mit Anreiz',
-            'email_2_description' => 'Zweite Erinnerung mit Rabattangebot zur Kaufmotivation.',
-            'email_2_delay_helper' => 'Stunden nach Warenkorbabbruch für die zweite E-Mail. Empfohlen: 24 Stunden.',
-            'email_2_discount_helper' => 'Rabattprozentsatz für diese E-Mail. Auf 0 setzen für keinen Rabatt.',
-            'email_3_title' => 'E-Mail #3 - Letzte Chance',
-            'email_3_description' => 'Letzte Erinnerung mit Dringlichkeit und bestem Angebot zum Verkaufsabschluss.',
-            'email_3_delay_helper' => 'Stunden nach Warenkorbabbruch für die letzte E-Mail. Empfohlen: 72 Stunden.',
-            'email_3_discount_helper' => 'Finales Rabattangebot. Normalerweise höher als E-Mail #2.',
-            'cleanup_days' => 'Bereinigung nach (Tagen)',
-            'cleanup_days_helper' => 'Automatisch Datensätze verlassener Warenkörbe löschen, die älter als diese Anzahl von Tagen sind.',
-            'cronjob_not_setup' => '<strong>Cronjob nicht konfiguriert!</strong> Erinnerungen für verlassene Warenkörbe erfordern einen richtig konfigurierten Cronjob. <a href=":url">Cronjob jetzt einrichten</a>.',
-            'cronjob_not_running' => '<strong>Cronjob läuft nicht!</strong> Der Cronjob scheint gestoppt zu sein. Bitte überprüfen Sie Ihre Server-Konfiguration. <a href=":url">Cronjob-Status anzeigen</a>.',
-            'cronjob_working' => '<strong>Cronjob läuft ordnungsgemäß!</strong> Letzte Aktivität: :time. Ihre Erinnerungen für verlassene Warenkörbe werden automatisch verarbeitet.',
-            'email_setup_warning' => '<strong>Wichtig:</strong> Stellen Sie sicher, dass Ihre E-Mail-Einstellungen in <a href=":url">Einstellungen → E-Mail</a> richtig konfiguriert sind. Senden Sie eine Test-E-Mail, um alles zu überprüfen, bevor Sie diese Funktion aktivieren.',
-        ],
-    ],
 ];

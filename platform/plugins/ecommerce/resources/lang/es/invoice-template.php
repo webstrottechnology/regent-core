@@ -36,8 +36,6 @@ return [
         'customer_city' => 'La ciudad del cliente',
         'customer_zipcode' => 'El código postal del cliente',
     ],
-    'custom_css' => 'CSS personalizado',
-    'custom_css_helper' => 'Agregue estilos CSS personalizados para personalizar la apariencia de la factura. Estos estilos se agregarán a los estilos predeterminados de la factura.',
     'reset_success' => 'Restablecido a la configuración predeterminada exitosamente',
     'confirm_reset' => '¿Confirmar restablecer plantilla de factura?',
     'confirm_message' => '¿Realmente desea restablecer esta plantilla de factura a la configuración predeterminada?',

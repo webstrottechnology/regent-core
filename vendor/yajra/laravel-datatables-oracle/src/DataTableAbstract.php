@@ -433,9 +433,7 @@ abstract class DataTableAbstract implements DataTable
         if (is_array($key)) {
             $this->appends = $key;
         } else {
-            /** @var int|string $arrayKey */
-            $arrayKey = is_int($key) || is_string($key) ? $key : (string) $key;
-            $this->appends[$arrayKey] = value($value);
+            $this->appends[$key] = value($value);
         }
 
         return $this;

@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'อีคอมเมิร์ซ',
     'general' => [
         'name' => 'ทั่วไป',
-        'description' => 'ชื่อร้าน ข้อมูลบริษัท รายละเอียดติดต่อ และอีเมลแจ้งเตือนผู้ดูแล',
+        'description' => 'ดูและอัปเดตการตั้งค่าทั่วไปของคุณ',
     ],
     'currency' => [
         'name' => 'สกุลเงิน',
-        'description' => 'รูปแบบสกุลเงิน อัตราแลกเปลี่ยน ตรวจจับอัตโนมัติ และตัวคั่นทศนิยม/พัน',
+        'description' => 'ดูและอัปเดตการตั้งค่าสกุลเงิน',
         'currency_setting_description' => 'ดูและอัปเดตสกุลเงินที่ใช้ในเว็บไซต์',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'เปิดใช้งานการตรวจสอบสกุลเงินผู้เยี่ยมชมอัตโนมัติ',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'สินค้า',
-        'description' => 'แสดงสต็อก สร้าง SKU รูปภาพตัวเลือก สินค้าที่เกี่ยวข้อง และข้อมูลจำเพาะ',
+        'description' => 'ดูและอัปเดตการตั้งค่าสินค้าของคุณ',
         'product_settings' => 'การตั้งค่าสินค้า',
         'product_settings_description' => 'กำหนดค่ากฎสำหรับสินค้า',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'การค้นหาสินค้า',
-        'description' => 'พฤติกรรมการค้นหา ตัวกรองตามหมวดหมู่/แบรนด์/แท็ก/คุณสมบัติ และการกรองช่วงราคา',
+        'description' => 'ดูและอัปเดตการตั้งค่าการค้นหาสินค้า',
         'product_search_settings' => 'การค้นหาสินค้า',
         'product_search_settings_description' => 'กำหนดค่ากฎสำหรับการค้นหาสินค้า',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'สินค้าดิจิทัล',
-        'description' => 'สินค้าดาวน์โหลด รหัสลิขสิทธิ์ ชำระเงินแบบผู้เยี่ยมชมสำหรับสินค้าดิจิทัล และเติมให้อัตโนมัติ',
+        'description' => 'ดูและอัปเดตการตั้งค่าสินค้าดิจิทัล',
         'digital_products_settings' => 'สินค้าดิจิทัล',
         'digital_products_settings_description' => 'กำหนดค่ากฎสำหรับสินค้าดิจิทัล',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'รีวิวสินค้า',
-        'description' => 'รีวิวลูกค้า แสดงคะแนน อัพโหลดรูปภาพ และข้อกำหนดการอนุมัติ',
+        'description' => 'ดูและอัปเดตการตั้งค่ารีวิวสินค้าของคุณ',
         'form' => [
             'enable_review' => 'เปิดใช้งานรีวิวสินค้า',
             'enable_review_help' => 'อนุญาตให้ลูกค้าเขียนรีวิวและให้คะแนนสินค้า เมื่อปิดใช้งาน ฟีเจอร์รีวิวทั้งหมดจะถูกซ่อนจากร้านค้า',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'การช้อปปิ้ง',
-        'description' => 'ตะกร้า รายการโปรด เปรียบเทียบ ติดตามคำสั่งซื้อ ปุ่มซื้อด่วน และอัพโหลดหลักฐานการชำระ',
+        'description' => 'ดูและอัปเดตการตั้งค่าการช้อปปิ้งของคุณ',
         'general_setting' => 'การตั้งค่าทั่วไป',
         'return_settings' => 'การตั้งค่าการคืนสินค้า',
         'return_settings_description' => 'กำหนดค่ากฎสำหรับการตั้งค่าการคืนสินค้า',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'ตะกร้าจะถูกทำลายเมื่อลูกค้าออกจากระบบ',
             'hide_product_price' => 'ซ่อนราคาสินค้า',
             'hide_product_price_helper' => 'ตัวเลือกนี้ทำงานเฉพาะเมื่อคุณปิดใช้งานตะกร้าสินค้า ทำให้เว็บไซต์ของคุณกลายเป็นการแสดงแค็ตตาล็อกเท่านั้น หากเปิดใช้งาน ราคาสินค้าจะถูกซ่อน มีประโยชน์เมื่อคุณต้องการซ่อนราคาและต้องการให้ลูกค้าติดต่อขอราคา',
-            'hide_product_price_when_zero' => 'ซ่อนราคาสินค้าเมื่อเป็นศูนย์',
-            'hide_product_price_when_zero_helper' => 'หากเปิดใช้งาน สินค้าที่มีราคา 0 จะไม่แสดงราคาในหน้าร้าน.',
             'enable_payment_proof' => 'เปิดใช้งานการอัปโหลดหลักฐานการชำระเงิน',
             'enable_payment_proof_helper' => 'อนุญาตให้ลูกค้าอัปโหลดหลักฐานการชำระเงินสำหรับคำสั่งซื้อของพวกเขา มีประโยชน์สำหรับวิธีการชำระเงินแบบกำหนดเอง',
             'enable_guest_payment_proof' => 'อนุญาตให้ลูกค้าแขกอัปโหลดหลักฐานการชำระเงิน',
             'enable_guest_payment_proof_helper' => 'เมื่อเปิดใช้งาน ลูกค้าแขกสามารถอัปโหลดหลักฐานการชำระเงินโดยใช้โทเค็นคำสั่งซื้อของพวกเขาโดยไม่ต้องเข้าสู่ระบบ พวกเขาจะได้รับลิงก์อัปโหลดในอีเมลยืนยันคำสั่งซื้อ',
-            'payment_proof_payment_methods' => 'วิธีการชำระเงินที่ต้องการหลักฐานการชำระเงิน',
-            'payment_proof_payment_methods_helper' => 'เลือกวิธีการชำระเงินที่ควรอนุญาตให้ลูกค้าอัปโหลดหลักฐานการชำระเงิน โดยทั่วไปใช้สำหรับวิธีการชำระเงินด้วยตนเอง เช่น เก็บเงินปลายทาง และการโอนเงินผ่านธนาคาร',
         ],
     ],
     'checkout' => [
         'name' => 'การชำระเงิน',
-        'panel_description' => 'ชำระเงินแบบผู้เยี่ยมชม ฟิลด์ที่จำเป็น ขีดจำกัดคำสั่งซื้อ ยอมรับเงื่อนไข และข้อจำกัดประเทศ',
+        'panel_description' => 'ดูและอัปเดตการตั้งค่าการชำระเงิน',
         'description' => 'กำหนดค่ากฎสำหรับการตั้งค่าการชำระเงิน',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'แสดงข้อมูลธนาคารในหน้าชำระเงินสำเร็จ',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'การคืนสินค้า',
         'description' => 'กำหนดค่ากฎสำหรับการตั้งค่าการคืนสินค้า',
-        'panel_description' => 'การคืนสินค้า การคืนบางส่วน และกำหนดเวลาคืนสินค้า',
+        'panel_description' => 'ดูและอัปเดตการตั้งค่าการคืนสินค้า',
         'form' => [
             'is_enabled_order_return' => 'เปิดใช้งานการคืนคำสั่งซื้อ',
             'allow_partial_return' => 'อนุญาตการคืนบางส่วน',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'ใบแจ้งหนี้',
-        'description' => 'รายละเอียดบริษัทบนใบแจ้งหนี้ การกำหนดเลขใบแจ้งหนี้ ฟอนต์ PDF และการตั้งค่าตราประทับ',
+        'description' => 'ดูและอัปเดตการตั้งค่าใบแจ้งหนี้ของคุณ',
         'company_settings' => 'การตั้งค่าบริษัท',
         'company_settings_description' => 'ตั้งค่าข้อมูลบริษัทสำหรับการออกใบแจ้งหนี้',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'อัตราภาษีเริ่มต้น',
             'default_tax_rate_description' => 'สำคัญ: จะถูกใช้หากไม่ได้เลือกภาษีในสินค้า',
             'select_tax' => '-- เลือก --',
-            'display_product_price_including_taxes' => 'เพิ่มภาษีในราคาที่แสดง',
-            'display_product_price_including_taxes_helper' => 'เพิ่มภาษีโดยอัตโนมัติในราคาสินค้าที่แสดงในร้านค้า เช่น สินค้า $100 กับภาษี 10% จะแสดงเป็น $110 ไม่จำเป็นถ้า "ราคารวมภาษี" เปิดใช้งานแล้วในสินค้าแต่ละรายการ',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'แสดงราคาสินค้ารวมภาษี',
         ],
     ],
     'customer' => [
         'name' => 'ลูกค้า',
-        'description' => 'การลงทะเบียน การยืนยันอีเมล ตัวเลือกการเข้าสู่ระบบ การลบบัญชี และฟิลด์โปรไฟล์',
+        'description' => 'ดูและอัปเดตการตั้งค่าลูกค้าของคุณ',
         'customer_setting' => 'การตั้งค่าลูกค้า',
         'customer_setting_description' => 'กำหนดค่าการตั้งค่าลูกค้า',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'การจัดส่ง',
-        'description' => 'กฎการจัดส่ง พฤติกรรมจัดส่งฟรี และลำดับการแสดงตัวเลือกการจัดส่ง',
+        'description' => 'ดูและอัปเดตการตั้งค่าการจัดส่ง',
         'shipping_rule' => 'กฎการจัดส่ง',
         'shipping_rule_description' => 'กำหนดค่ากฎเพื่อคำนวณค่าจัดส่ง',
         'shipping_setting' => 'การตั้งค่าการจัดส่ง',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'บันทึกสถานที่',
             'add_new' => 'เพิ่มใหม่',
         ],
-            'info' => [
-            'title' => 'วิธีการทำงานของตัวค้นหาร้านค้า',
-            'primary_store' => 'ที่อยู่ร้านค้าหลักจะปรากฏในใบแจ้งหนี้และใช้เป็นที่อยู่ส่งคืนเริ่มต้นสำหรับป้ายจัดส่ง',
-            'shipping_location' => 'ร้านค้าที่ทำเครื่องหมายเป็น "สถานที่จัดส่ง" สามารถเลือกเป็นคลังสินค้าต้นทางเมื่อสร้างการจัดส่ง',
-            'shipment_selection' => 'เมื่อประมวลผลคำสั่งซื้อ คุณสามารถเลือกคลังสินค้าที่จะส่งตามสินค้าคงคลังและสถานที่ของลูกค้า',
-        ],
     ],
     'tracking' => [
         'name' => 'การติดตาม',
-        'description' => 'Facebook Pixel เหตุการณ์ Google Tag Manager และการติดตาม Conversion ของ Google Ads',
+        'description' => 'ดูและอัปเดตการตั้งค่าการติดตาม',
         'manage_tracking' => 'จัดการการติดตาม',
         'manage_tracking_description' => 'จัดการการติดตาม: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -440,11 +427,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'ตลาดกลาง',
-        'description' => 'การตั้งค่าหลายผู้ขาย ค่าคอมมิชชั่น การลงทะเบียนผู้ขาย และการกำหนดค่าการจ่ายเงิน',
+        'description' => 'ดูและอัปเดตการตั้งค่าตลาดกลาง',
     ],
     'standard_and_format' => [
         'name' => 'มาตรฐานและรูปแบบ',
-        'panel_description' => 'รูปแบบรหัสคำสั่งซื้อ หน่วยน้ำหนัก (กก./ปอนด์) และหน่วยมิติ (ซม./นิ้ว)',
+        'panel_description' => 'ดูและอัปเดตการตั้งค่ามาตรฐานและรูปแบบ',
         'description' => 'มาตรฐานและรูปแบบใช้เพื่อคำนวณสิ่งต่างๆ เช่น ราคาสินค้า น้ำหนักการจัดส่ง และเวลาสั่งซื้อ',
         'form' => [
             'change_order_format' => 'แก้ไขรูปแบบรหัสคำสั่งซื้อ (ไม่บังคับ)',
@@ -476,63 +463,7 @@ return [
         'show_sale_count_left_description' => 'แสดงแถบความคืบหน้าพร้อม "X ขายหมดจาก Y" เพื่อสร้างความเร่งด่วนและส่งเสริมการซื้ออย่างรวดเร็วระหว่างการขายแฟลช',
     ],
     'payment_method_cod_minimum_amount' => 'จำนวนเงินคำสั่งซื้อขั้นต่ำ - :currency (ไม่บังคับ)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'จำนวนเงินคำสั่งซื้อขั้นต่ำ - :currency (ไม่บังคับ)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'แสดงข้อมูลธนาคารในหน้าชำระเงินสำเร็จ?',
     'invoice_templates' => 'เทมเพลตใบแจ้งหนี้',
-
-    'abandoned_cart' => [
-        'name' => 'ตะกร้าที่ถูกละทิ้ง',
-        'description' => 'กู้คืนยอดขายที่สูญเสียโดยส่งการแจ้งเตือนอัตโนมัติให้ลูกค้าที่ทิ้งสินค้าในตะกร้า',
-        'panel_description' => 'ตั้งค่าการแจ้งเตือนอัตโนมัติสำหรับลูกค้าที่ละทิ้งตะกร้า',
-        'how_it_works' => [
-            'title' => 'วิธีการทำงาน',
-            'step1_title' => 'ลูกค้าเพิ่มสินค้า',
-            'step1_description' => 'ลูกค้าเพิ่มสินค้าลงในตะกร้าและให้ที่อยู่อีเมล',
-            'step2_title' => 'ตะกร้าถูกละทิ้ง',
-            'step2_description' => 'หากไม่มีการซื้อภายในเวลาที่กำหนด ตะกร้าจะถูกทำเครื่องหมายว่าถูกละทิ้ง',
-            'step3_title' => 'ส่งอีเมลแจ้งเตือน',
-            'step3_description' => 'ส่งอีเมลแจ้งเตือนอัตโนมัติเพื่อกระตุ้นให้ลูกค้าดำเนินการซื้อ',
-            'step4_title' => 'กู้คืนยอดขาย',
-            'step4_description' => 'ลูกค้ากลับมาทำคำสั่งซื้อให้เสร็จสิ้น และตะกร้าถูกทำเครื่องหมายว่ากู้คืนแล้ว',
-        ],
-        'form' => [
-            'enable' => 'เปิดใช้การติดตามตะกร้าที่ถูกละทิ้ง',
-            'enable_helper' => 'เมื่อเปิดใช้งาน ระบบจะติดตามตะกร้าที่ถูกละทิ้งและอนุญาตให้คุณส่งอีเมลกู้คืนให้ลูกค้า',
-            'timing_section' => 'การตั้งค่าเวลา',
-            'email_section' => 'การตั้งค่าอีเมลแจ้งเตือน',
-            'cleanup_section' => 'การล้างข้อมูล',
-            'time_threshold' => 'เกณฑ์เวลา (ชั่วโมง)',
-            'time_threshold_helper' => 'ตะกร้าถือว่าถูกละทิ้งหลังจากจำนวนชั่วโมงที่ไม่มีกิจกรรมนี้ แนะนำ: 1-24 ชั่วโมง',
-            'send_email' => 'ส่งอีเมลกู้คืน',
-            'send_email_helper' => 'ส่งอีเมลกู้คืนอัตโนมัติให้ลูกค้าที่มีตะกร้าถูกละทิ้ง',
-            'max_reminders' => 'จำนวนอีเมลแจ้งเตือน',
-            'max_reminders_helper' => 'จำนวนอีเมลแจ้งเตือนที่จะส่งต่อตะกร้าที่ถูกละทิ้ง แต่ละอีเมลสามารถปรับแต่งได้ในเทมเพลตอีเมล',
-            'email_delay' => 'ส่งหลังจาก (ชั่วโมง)',
-            'email_discount' => 'ส่วนลด (%)',
-            'email_1_title' => 'อีเมล #1 - การแจ้งเตือนที่เป็นมิตร',
-            'email_1_description' => 'การแจ้งเตือนเบาๆ ครั้งแรกเพื่อกระตุ้นให้ลูกค้ากลับมา',
-            'email_1_delay_helper' => 'ชั่วโมงหลังจากละทิ้งตะกร้าเพื่อส่งอีเมลแรก แนะนำ: 1-2 ชั่วโมง',
-            'email_2_title' => 'อีเมล #2 - พร้อมสิ่งจูงใจ',
-            'email_2_description' => 'การแจ้งเตือนครั้งที่สองพร้อมข้อเสนอส่วนลดเพื่อกระตุ้นการซื้อ',
-            'email_2_delay_helper' => 'ชั่วโมงหลังจากละทิ้งตะกร้าเพื่อส่งอีเมลที่สอง แนะนำ: 24 ชั่วโมง',
-            'email_2_discount_helper' => 'เปอร์เซ็นต์ส่วนลดที่จะเสนอในอีเมลนี้ ตั้งเป็น 0 สำหรับไม่มีส่วนลด',
-            'email_3_title' => 'อีเมล #3 - โอกาสสุดท้าย',
-            'email_3_description' => 'การแจ้งเตือนครั้งสุดท้ายพร้อมความเร่งด่วนและข้อเสนอที่ดีที่สุดเพื่อปิดการขาย',
-            'email_3_delay_helper' => 'ชั่วโมงหลังจากละทิ้งตะกร้าเพื่อส่งอีเมลสุดท้าย แนะนำ: 72 ชั่วโมง',
-            'email_3_discount_helper' => 'ข้อเสนอส่วนลดสุดท้าย โดยปกติสูงกว่าอีเมล #2',
-            'cleanup_days' => 'ล้างหลังจาก (วัน)',
-            'cleanup_days_helper' => 'ลบบันทึกตะกร้าที่ถูกละทิ้งที่เก่ากว่าจำนวนวันนี้โดยอัตโนมัติ',
-            'cronjob_not_setup' => '<strong>ไม่ได้กำหนดค่า Cronjob!</strong> การแจ้งเตือนตะกร้าที่ถูกละทิ้งต้องการ cronjob ที่กำหนดค่าอย่างถูกต้อง <a href=":url">ตั้งค่า cronjob ตอนนี้</a>',
-            'cronjob_not_running' => '<strong>Cronjob ไม่ทำงาน!</strong> cronjob ดูเหมือนหยุดทำงาน โปรดตรวจสอบการกำหนดค่าเซิร์ฟเวอร์ของคุณ <a href=":url">ดูสถานะ cronjob</a>',
-            'cronjob_working' => '<strong>Cronjob ทำงานอย่างถูกต้อง!</strong> กิจกรรมล่าสุด: :time การแจ้งเตือนตะกร้าที่ถูกละทิ้งของคุณจะถูกประมวลผลโดยอัตโนมัติ',
-            'email_setup_warning' => '<strong>สำคัญ:</strong> ตรวจสอบให้แน่ใจว่าการตั้งค่าอีเมลของคุณถูกกำหนดค่าอย่างถูกต้องใน <a href=":url">การตั้งค่า → อีเมล</a> ส่งอีเมลทดสอบเพื่อยืนยันว่าทุกอย่างทำงานก่อนเปิดใช้งานคุณสมบัตินี้',
-        ],
-    ],
 ];

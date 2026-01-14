@@ -19,7 +19,7 @@ class PaystackPaymentMethodForm extends PaymentMethodForm
         $this
             ->paymentId(PAYSTACK_PAYMENT_METHOD_NAME)
             ->paymentName('Paystack')
-            ->paymentDescription(trans('plugins/paystack::paystack.payment_description', ['name' => 'Paystack']))
+            ->paymentDescription(__('Customer can buy product and pay directly using Visa, Credit card via :name', ['name' => 'Paystack']))
             ->paymentLogo(url('vendor/core/plugins/paystack/images/paystack.png'))
             ->paymentFeeField(PAYSTACK_PAYMENT_METHOD_NAME)
             ->paymentUrl('https://paystack.com')
@@ -28,14 +28,14 @@ class PaystackPaymentMethodForm extends PaymentMethodForm
                 sprintf('payment_%s_public', PAYSTACK_PAYMENT_METHOD_NAME),
                 TextField::class,
                 TextFieldOption::make()
-                    ->label(trans('plugins/paystack::paystack.public_key'))
+                    ->label(__('Public Key'))
                     ->value(BaseHelper::hasDemoModeEnabled() ? '*******************************' : get_payment_setting('public', PAYSTACK_PAYMENT_METHOD_NAME))
             )
             ->add(
                 sprintf('payment_%s_secret', PAYSTACK_PAYMENT_METHOD_NAME),
                 'password',
                 TextFieldOption::make()
-                    ->label(trans('plugins/paystack::paystack.secret_key'))
+                    ->label(__('Secret Key'))
                     ->value(BaseHelper::hasDemoModeEnabled() ? '*******************************' : get_payment_setting('secret', PAYSTACK_PAYMENT_METHOD_NAME))
             )
             ->addAvailableCountriesField(PAYSTACK_PAYMENT_METHOD_NAME);

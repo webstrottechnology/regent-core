@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'Ecommerce',
     'general' => [
         'name' => '一般',
-        'description' => '店舗名、会社情報、連絡先、管理者通知メール',
+        'description' => '一般設定を表示・更新します',
     ],
     'currency' => [
         'name' => '通貨',
-        'description' => '通貨形式、為替レート、自動検出、小数点/桁区切り',
+        'description' => '通貨設定を表示・更新します',
         'currency_setting_description' => 'ウェブサイトで使用される通貨を表示・更新します',
         'form' => [
             'enable_auto_detect_visitor_currency' => '訪問者通貨の自動検出を有効にする',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => '商品',
-        'description' => '在庫表示、SKU生成、バリエーション画像、関連商品、仕様',
+        'description' => '商品設定を表示・更新します',
         'product_settings' => '商品設定',
         'product_settings_description' => '商品のルールを設定',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => '商品検索',
-        'description' => '検索動作、カテゴリ/ブランド/タグ/属性フィルター、価格帯フィルタリング',
+        'description' => '商品検索設定を表示・更新します',
         'product_search_settings' => '商品検索',
         'product_search_settings_description' => '商品検索のルールを設定',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'デジタル商品',
-        'description' => 'ダウンロード製品、ライセンスコード、デジタル商品のゲストチェックアウト、自動完了',
+        'description' => 'デジタル商品設定を表示・更新します',
         'digital_products_settings' => 'デジタル商品',
         'digital_products_settings_description' => 'デジタル商品のルールを設定',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => '商品レビュー',
-        'description' => '顧客レビュー、評価表示、画像アップロード、承認要件',
+        'description' => '商品レビュー設定を表示・更新します',
         'form' => [
             'enable_review' => '商品レビューを有効にする',
             'enable_review_help' => '顧客が商品にレビューと評価を残すことを許可します。無効にした場合、すべてのレビュー機能がショップから非表示になります。',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'ショッピング',
-        'description' => 'カート、ウィッシュリスト、比較、注文追跡、クイック購入ボタン、支払い証明のアップロード',
+        'description' => 'ショッピング設定を表示・更新します',
         'general_setting' => '一般設定',
         'return_settings' => '返品設定',
         'return_settings_description' => '返品設定のルールを設定',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => '顧客がログアウトした時にカートが破棄されます。',
             'hide_product_price' => '商品価格を非表示',
             'hide_product_price_helper' => 'このオプションはショッピングカートを無効にしてサイトをカタログ専用表示にした場合にのみ機能します。有効にした場合、商品価格が非表示になります。価格を非表示にして顧客に価格について問い合わせを求めたい場合に便利です。',
-            'hide_product_price_when_zero' => '価格が0の場合に商品価格を非表示',
-            'hide_product_price_when_zero_helper' => '有効にすると、価格が0の商品はストアフロントで価格が表示されません。',
             'enable_payment_proof' => '支払い証明アップロードを有効にする',
             'enable_payment_proof_helper' => '顧客が注文の支払い証明をアップロードできるようにします。手動支払い方法に便利です。',
             'enable_guest_payment_proof' => 'ゲスト顧客の支払い証明アップロードを許可',
             'enable_guest_payment_proof_helper' => '有効にした場合、ゲスト顧客はログインせずに注文トークンを使用して支払い証明をアップロードできます。注文確認メールでアップロードリンクを受け取ります。',
-            'payment_proof_payment_methods' => '支払い証明が必要な支払い方法',
-            'payment_proof_payment_methods_helper' => '顧客が支払い証明をアップロードできる支払い方法を選択します。通常、代金引換や銀行振込などの手動支払い方法に使用されます。',
         ],
     ],
     'checkout' => [
         'name' => 'チェックアウト',
-        'panel_description' => 'ゲストチェックアウト、必須フィールド、注文制限、規約同意、国の制限',
+        'panel_description' => 'チェックアウト設定を表示・更新します',
         'description' => 'チェックアウト設定のルールを設定',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'チェックアウト成功ページで銀行情報を表示',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => '返品',
         'description' => '返品設定のルールを設定',
-        'panel_description' => '注文返品、部分返品、返品期限',
+        'panel_description' => '返品設定を表示・更新します',
         'form' => [
             'is_enabled_order_return' => '注文返品を有効にする',
             'allow_partial_return' => '部分返品を許可',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => '請求書',
-        'description' => '請求書の会社詳細、請求書番号、PDFフォント、印鑑設定',
+        'description' => '請求書設定を表示・更新します',
         'company_settings' => '会社設定',
         'company_settings_description' => '請求書作成のための会社情報設定',
         'form' => [
@@ -327,15 +323,12 @@ return [
             'default_tax_rate' => 'デフォルト税率',
             'default_tax_rate_description' => '重要: 商品で税金が選択されていない場合に適用されます。',
             'select_tax' => '-- 選択 --',
-            'display_product_price_including_taxes' => '表示価格に税金を加算',
-            'display_product_price_including_taxes_helper' => '店舗で表示される商品価格に自動的に税金を加算します。例：$100の商品に10%の税金で$110と表示されます。個々の商品で「価格に税金を含む」が既に有効な場合は不要です。',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => '商品価格を税込みで表示',
         ],
     ],
     'customer' => [
         'name' => '顧客',
-        'description' => '登録、メール確認、ログインオプション、アカウント削除、プロフィールフィールド',
+        'description' => '顧客設定を表示・更新します',
         'customer_setting' => '顧客設定',
         'customer_setting_description' => '顧客設定を構成',
         'form' => [
@@ -366,7 +359,7 @@ return [
     ],
     'shipping' => [
         'name' => '配送',
-        'description' => '配送ルール、送料無料の動作、配送オプションの表示順序',
+        'description' => '配送設定を表示・更新します',
         'shipping_rule' => '配送ルール',
         'shipping_rule_description' => '配送料計算のルールを設定',
         'shipping_setting' => '配送設定',
@@ -434,16 +427,10 @@ return [
             'save_location' => '場所を保存',
             'add_new' => '新規追加',
         ],
-            'info' => [
-            'title' => 'ストアロケーターの仕組み',
-            'primary_store' => '主要店舗の住所は請求書に表示され、配送ラベルのデフォルトの返送先住所として使用されます。',
-            'shipping_location' => '「配送場所」としてマークされた店舗は、出荷を作成する際に出荷元倉庫として選択できます。',
-            'shipment_selection' => '注文を処理する際、在庫と顧客の場所に基づいて、どの倉庫から出荷するかを選択できます。',
-        ],
     ],
     'tracking' => [
         'name' => 'トラッキング',
-        'description' => 'Facebook Pixel、Google Tag Managerイベント、Google Ads コンバージョン トラッキング',
+        'description' => 'トラッキング設定を表示・更新します',
         'manage_tracking' => 'トラッキング管理',
         'manage_tracking_description' => 'トラッキング管理: UTM、Facebook、Google Tag Manager...',
         'form' => [
@@ -462,11 +449,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'マーケットプレイス',
-        'description' => 'マルチベンダー設定、手数料、ベンダー登録、支払い設定',
+        'description' => 'マーケットプレイス設定を表示・更新します',
     ],
     'standard_and_format' => [
         'name' => '標準とフォーマット',
-        'panel_description' => '注文コード形式、重量単位（kg/lb）、寸法単位（cm/inch）',
+        'panel_description' => '標準とフォーマット設定を表示・更新します',
         'description' => '標準とフォーマットは商品価格、配送重量、注文時間などの計算に使用されます。',
         'form' => [
             'change_order_format' => '注文コードフォーマットを編集（任意）',
@@ -498,63 +485,7 @@ return [
         'show_sale_count_left_description' => 'フラッシュセール中に緊急性を演出し迅速な購入を促すために「Y個中X個売り切れ」のプログレスバーを表示します。',
     ],
     'payment_method_cod_minimum_amount' => '最小注文金額 - :currency（任意）',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => '最小注文金額 - :currency（任意）',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'チェックアウト成功ページで銀行情報を表示しますか？',
     'invoice_templates' => '請求書テンプレート',
-
-    'abandoned_cart' => [
-        'name' => 'カート放棄',
-        'description' => 'カートに商品を残したままの顧客に自動リマインダーを送信して売上を回復',
-        'panel_description' => 'カートを放棄した顧客への自動リマインダーを設定',
-        'how_it_works' => [
-            'title' => '仕組み',
-            'step1_title' => '顧客が商品を追加',
-            'step1_description' => '顧客がカートに商品を追加し、メールアドレスを提供します。',
-            'step2_title' => 'カートが放棄される',
-            'step2_description' => '設定した時間内に購入がなければ、カートは放棄としてマークされます。',
-            'step3_title' => 'リマインダーメール送信',
-            'step3_description' => '顧客に購入完了を促す自動リマインダーメールが送信されます。',
-            'step4_title' => '売上回復',
-            'step4_description' => '顧客が戻って注文を完了し、カートは回復としてマークされます。',
-        ],
-        'form' => [
-            'enable' => 'カート放棄追跡を有効にする',
-            'enable_helper' => '有効にすると、システムは放棄されたカートを追跡し、顧客に回復メールを送信できます。',
-            'timing_section' => '時間設定',
-            'email_section' => 'リマインダーメール設定',
-            'cleanup_section' => 'データクリーンアップ',
-            'time_threshold' => '時間しきい値（時間）',
-            'time_threshold_helper' => 'カートはこの時間数の非アクティブ後に放棄とみなされます。推奨：1-24時間。',
-            'send_email' => '回復メールを送信',
-            'send_email_helper' => '放棄されたカートを持つ顧客に自動的に回復メールを送信。',
-            'max_reminders' => 'リマインダーメール数',
-            'max_reminders_helper' => '放棄されたカートごとに送信するリマインダーメールの数。各メールはメールテンプレートでカスタマイズできます。',
-            'email_delay' => '送信後（時間）',
-            'email_discount' => '割引（%）',
-            'email_1_title' => 'メール #1 - 親切なリマインダー',
-            'email_1_description' => '顧客の戻りを促す最初の優しいリマインダー。',
-            'email_1_delay_helper' => '最初のメールを送信するカート放棄後の時間。推奨：1-2時間。',
-            'email_2_title' => 'メール #2 - インセンティブ付き',
-            'email_2_description' => '購入を促す割引オファー付きの2回目のリマインダー。',
-            'email_2_delay_helper' => '2回目のメールを送信するカート放棄後の時間。推奨：24時間。',
-            'email_2_discount_helper' => 'このメールで提供する割引率。割引なしの場合は0。',
-            'email_3_title' => 'メール #3 - ラストチャンス',
-            'email_3_description' => '販売を成立させるための緊急性と最高のオファー付きの最終リマインダー。',
-            'email_3_delay_helper' => '最後のメールを送信するカート放棄後の時間。推奨：72時間。',
-            'email_3_discount_helper' => '最終割引オファー。通常メール#2より高い。',
-            'cleanup_days' => 'クリーンアップ後（日）',
-            'cleanup_days_helper' => 'この日数より古い放棄カートレコードを自動的に削除。',
-            'cronjob_not_setup' => '<strong>Cronjobが設定されていません！</strong>カート放棄リマインダーには正しく設定されたcronjobが必要です。<a href=":url">今すぐcronjobを設定</a>。',
-            'cronjob_not_running' => '<strong>Cronjobが実行されていません！</strong>cronjobが停止しているようです。サーバー設定を確認してください。<a href=":url">cronjobステータスを表示</a>。',
-            'cronjob_working' => '<strong>Cronjobは正常に動作しています！</strong>最終アクティビティ：:time。カート放棄リマインダーは自動的に処理されます。',
-            'email_setup_warning' => '<strong>重要：</strong><a href=":url">設定→メール</a>でメール設定が正しく構成されていることを確認してください。この機能を有効にする前にテストメールを送信して動作を確認してください。',
-        ],
-    ],
 ];

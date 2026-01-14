@@ -2,7 +2,6 @@
 
 namespace Botble\Ecommerce\Forms;
 
-use Botble\Base\Facades\Assets;
 use Botble\Base\Forms\FieldOptions\ColorFieldOption;
 use Botble\Base\Forms\FieldOptions\NameFieldOption;
 use Botble\Base\Forms\FieldOptions\StatusFieldOption;
@@ -17,9 +16,6 @@ class ProductLabelForm extends FormAbstract
 {
     public function setup(): void
     {
-        Assets::addScriptsDirectly('vendor/core/plugins/ecommerce/js/product-label.js')
-            ->addStylesDirectly('vendor/core/plugins/ecommerce/css/ecommerce.css');
-
         $this
             ->model(ProductLabel::class)
             ->setValidatorClass(ProductLabelRequest::class)
@@ -40,18 +36,5 @@ class ProductLabelForm extends FormAbstract
             )
             ->add('status', SelectField::class, StatusFieldOption::make())
             ->setBreakFieldPoint('status');
-
-        if ($this->getModel()->id) {
-            $this->addMetaBoxes([
-                'products' => [
-                    'title' => trans('plugins/ecommerce::products.name'),
-                    'content' => view('plugins/ecommerce::product-labels.products', [
-                        'productLabel' => $this->getModel(),
-                        'products' => $this->getModel()->products,
-                    ]),
-                    'priority' => 0,
-                ],
-            ]);
-        }
     }
 }

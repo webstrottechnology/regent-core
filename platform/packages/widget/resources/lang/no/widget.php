@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Widgetområder',
     'manage_widgets' => 'Administrer widgets',
 
-    'click_to_add' => 'Klikk for å legge til widget',
-    'select_sidebar' => 'Legg til widget',
-    'select_sidebar_description' => 'Velg hvor du vil legge til denne widgeten',
-    'adding_to' => 'Legger til i',
-    'add_widget' => 'Legg til widget',
-    'widget_not_found' => 'Widget ikke funnet',
-
     'cache_suggestion' => [
         'title' => 'Ytelsesforslag',
         'description' => 'Du kan forbedre nettstedets ytelse ved å aktivere widget-hurtigbufring.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => 'Opphavsrettstekst i bunnteksten.',
     'widget_site_copyright_helper' => 'Gå til :link for å endre opphavsrettsteksten.',
     'theme_options' => 'Temainnstillinger',
-
-    'form' => [
-        'enable_caching' => 'Aktiver hurtigbufring',
-        'yes' => 'Ja',
-        'no' => 'Nei',
-        'cache_helper' => 'Når aktivert, vil denne widgetens innhold bli hurtigbufret for å forbedre ytelsen. Deaktiver for dynamisk innhold som endres ofte.',
-        'cache_warning' => 'På grunn av UI-problemer er hurtigbufring for denne widgeten deaktivert via kode. Denne widgeten vil ikke bli hurtigbufret selv om hurtigbufring er aktivert.',
-    ],
-
-    'drag_or_click' => 'Dra til sidefeltet eller klikk + for å legge til',
-    'drop_widgets_here' => 'Slipp widgets i sidefeltsområdene dine',
-    'search_widgets' => 'Søk widgets...',
-    'no_widgets' => 'Ingen tilgjengelige widgets',
-    'no_search_results' => 'Ingen widgets funnet',
-    'or_click_add' => 'Eller klikk på + knappen på en widget for å legge til',
-    'toggle_widget' => 'Bytt widgetinnstillinger',
-    'loading_form' => 'Laster widgetskjema...',
 ];

@@ -81,8 +81,6 @@ class RegisterController extends BaseController
         ) {
             $this->registered($request, $customer);
 
-            session()->flash('ecommerce_customer_registered', true);
-
             $message = __('We have sent you an email to verify your email. Please check and confirm your email address!');
 
             return $this
@@ -96,8 +94,6 @@ class RegisterController extends BaseController
         $customer->save();
 
         $this->guard()->login($customer);
-
-        session()->flash('ecommerce_customer_registered', true);
 
         return $this
             ->httpResponse()

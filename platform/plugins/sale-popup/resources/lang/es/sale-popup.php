@@ -39,7 +39,4 @@ return [
         'product_listing' => 'Lista de productos',
         'cart' => 'Carrito',
     ],
-    'purchased' => 'compró',
-    'verified' => 'Verificado',
-    'quick_view' => 'Vista rápida',
 ];

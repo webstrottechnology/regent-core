@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'Ηλεκτρονικό Εμπόριο',
     'general' => [
         'name' => 'Γενικά',
-        'description' => 'Όνομα καταστήματος, στοιχεία εταιρείας, επικοινωνία και emails ειδοποιήσεων διαχειριστή',
+        'description' => 'Προβολή και ενημέρωση των γενικών ρυθμίσεών σας',
     ],
     'currency' => [
         'name' => 'Νομίσματα',
-        'description' => 'Μορφές νομίσματος, συναλλαγματικές ισοτιμίες, αυτόματη ανίχνευση και διαχωριστές δεκαδικών/χιλιάδων',
+        'description' => 'Προβολή και ενημέρωση ρυθμίσεων νομίσματος',
         'currency_setting_description' => 'Προβολή και ενημέρωση νομισμάτων που χρησιμοποιούνται στον ιστότοπο',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Ενεργοποίηση αυτόματης ανίχνευσης νομίσματος επισκέπτη',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Προϊόντα',
-        'description' => 'Εμφάνιση αποθέματος, δημιουργία SKU, εικόνες παραλλαγών, σχετικά προϊόντα και προδιαγραφές',
+        'description' => 'Προβολή και ενημέρωση των ρυθμίσεων των προϊόντων σας',
         'product_settings' => 'Ρυθμίσεις προϊόντων',
         'product_settings_description' => 'Διαμόρφωση κανόνων για προϊόντα',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Αναζήτηση Προϊόντων',
-        'description' => 'Συμπεριφορά αναζήτησης, φίλτρα κατηγορίας/μάρκας/ετικέτας/χαρακτηριστικών και φιλτράρισμα εύρους τιμών',
+        'description' => 'Προβολή και ενημέρωση ρυθμίσεων αναζήτησης προϊόντων',
         'product_search_settings' => 'Αναζήτηση προϊόντων',
         'product_search_settings_description' => 'Διαμόρφωση κανόνων για αναζήτηση προϊόντων',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Ψηφιακά Προϊόντα',
-        'description' => 'Λήψιμα προϊόντα, κωδικοί αδειών, checkout επισκέπτη για ψηφιακά είδη και αυτόματη ολοκλήρωση',
+        'description' => 'Προβολή και ενημέρωση ρυθμίσεων ψηφιακών προϊόντων',
         'digital_products_settings' => 'Ψηφιακά προϊόντα',
         'digital_products_settings_description' => 'Διαμόρφωση κανόνων για ψηφιακά προϊόντα',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Κριτικές Προϊόντων',
-        'description' => 'Κριτικές πελατών, εμφάνιση βαθμολογιών, μεταφόρτωση εικόνων και απαιτήσεις έγκρισης',
+        'description' => 'Προβολή και ενημέρωση των ρυθμίσεων κριτικών προϊόντων σας',
         'form' => [
             'enable_review' => 'Ενεργοποίηση κριτικών προϊόντων',
             'enable_review_help' => 'Να επιτρέπεται στους πελάτες να αφήνουν κριτικές και αξιολογήσεις στα προϊόντα. Όταν είναι απενεργοποιημένο, όλες οι δυνατότητες κριτικών θα είναι κρυμμένες από το κατάστημα.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Αγορές',
-        'description' => 'Καλάθι, λίστα επιθυμιών, σύγκριση, παρακολούθηση παραγγελιών, κουμπί γρήγορης αγοράς και μεταφόρτωση αποδείξεων πληρωμής',
+        'description' => 'Προβολή και ενημέρωση των ρυθμίσεων αγορών σας',
         'general_setting' => 'Γενικές ρυθμίσεις',
         'return_settings' => 'Ρυθμίσεις επιστροφών',
         'return_settings_description' => 'Διαμόρφωση κανόνων για ρυθμίσεις επιστροφών',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Το καλάθι θα καταστραφεί όταν ο πελάτης αποσυνδεθεί.',
             'hide_product_price' => 'Απόκρυψη τιμής προϊόντος',
             'hide_product_price_helper' => 'Αυτή η επιλογή λειτουργεί μόνο εάν απενεργοποιήσετε το καλάθι αγορών, μετατρέποντας τον ιστότοπό σας σε εμφάνιση μόνο καταλόγου. Εάν είναι ενεργοποιημένο, η τιμή του προϊόντος θα είναι κρυμμένη. Είναι χρήσιμο όταν θέλετε να κρύψετε την τιμή και να απαιτήσετε από τους πελάτες να επικοινωνήσουν μαζί σας για την τιμή.',
-            'hide_product_price_when_zero' => 'Απόκρυψη τιμής προϊόντος όταν είναι μηδέν',
-            'hide_product_price_when_zero_helper' => 'Αν ενεργοποιηθεί, τα προϊόντα με τιμή 0 δεν θα εμφανίζουν τιμή στο κατάστημα.',
             'enable_payment_proof' => 'Ενεργοποίηση ανεβάσματος αποδεικτικού πληρωμής',
             'enable_payment_proof_helper' => 'Να επιτρέπεται στους πελάτες να ανεβάζουν αποδεικτικά πληρωμής για τις παραγγελίες τους. Αυτό είναι χρήσιμο για χειροκίνητες μεθόδους πληρωμής.',
             'enable_guest_payment_proof' => 'Να επιτρέπεται σε επισκέπτες πελάτες να ανεβάζουν αποδεικτικό πληρωμής',
             'enable_guest_payment_proof_helper' => 'Όταν είναι ενεργοποιημένο, οι επισκέπτες πελάτες μπορούν να ανεβάσουν αποδεικτικό πληρωμής χρησιμοποιώντας το διακριτικό παραγγελίας τους χωρίς σύνδεση. Θα λάβουν τον σύνδεσμο ανεβάσματος στο email επιβεβαίωσης παραγγελίας τους.',
-            'payment_proof_payment_methods' => 'Μέθοδοι πληρωμής που απαιτούν απόδειξη πληρωμής',
-            'payment_proof_payment_methods_helper' => 'Επιλέξτε ποιες μέθοδοι πληρωμής θα επιτρέπουν στους πελάτες να ανεβάζουν απόδειξη πληρωμής. Χρησιμοποιείται συνήθως για χειροκίνητες μεθόδους πληρωμής όπως αντικαταβολή και τραπεζική μεταφορά.',
         ],
     ],
     'checkout' => [
         'name' => 'Ολοκλήρωση Αγοράς',
-        'panel_description' => 'Checkout επισκέπτη, υποχρεωτικά πεδία, όρια παραγγελιών, αποδοχή όρων και περιορισμοί χωρών',
+        'panel_description' => 'Προβολή και ενημέρωση ρυθμίσεων ολοκλήρωσης αγοράς',
         'description' => 'Διαμόρφωση κανόνων για ρυθμίσεις ολοκλήρωσης αγοράς',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Εμφάνιση τραπεζικών πληροφοριών στη σελίδα επιτυχίας ολοκλήρωσης αγοράς',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Επιστροφή',
         'description' => 'Διαμόρφωση κανόνων για ρυθμίσεις επιστροφών',
-        'panel_description' => 'Επιστροφές παραγγελιών, μερικές επιστροφές και χρονικά όρια επιστροφών',
+        'panel_description' => 'Προβολή και ενημέρωση ρυθμίσεων επιστροφών',
         'form' => [
             'is_enabled_order_return' => 'Είναι ενεργοποιημένη η επιστροφή παραγγελίας',
             'allow_partial_return' => 'Να επιτρέπεται μερική επιστροφή',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Τιμολόγια',
-        'description' => 'Στοιχεία εταιρείας σε τιμολόγια, αρίθμηση τιμολογίων, γραμματοσειρές PDF και ρυθμίσεις σφραγίδας',
+        'description' => 'Προβολή και ενημέρωση των ρυθμίσεων τιμολογίων σας',
         'company_settings' => 'Ρυθμίσεις εταιρείας',
         'company_settings_description' => 'Ρυθμίσεις πληροφοριών εταιρείας για τιμολόγηση',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Προεπιλεγμένος συντελεστής φόρου',
             'default_tax_rate_description' => 'Σημαντικό: θα εφαρμοστεί εάν δεν έχει επιλεγεί φόρος στο προϊόν.',
             'select_tax' => '-- Επιλογή --',
-            'display_product_price_including_taxes' => 'Προσθήκη φόρου στις εμφανιζόμενες τιμές',
-            'display_product_price_including_taxes_helper' => 'Προσθέτει αυτόματα φόρο στις τιμές προϊόντων του καταστήματος. Π.χ. ένα προϊόν $100 με 10% φόρο εμφανίζεται ως $110. Δεν απαιτείται εάν η "Τιμή περιλαμβάνει φόρο" είναι ήδη ενεργοποιημένη σε μεμονωμένα προϊόντα.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Εμφάνιση τιμής προϊόντος συμπεριλαμβανομένων φόρων',
         ],
     ],
     'customer' => [
         'name' => 'Πελάτες',
-        'description' => 'Εγγραφή, επαλήθευση email, επιλογές σύνδεσης, διαγραφή λογαριασμού και πεδία προφίλ',
+        'description' => 'Προβολή και ενημέρωση των ρυθμίσεων πελατών σας',
         'customer_setting' => 'Ρυθμίσεις πελατών',
         'customer_setting_description' => 'Διαμόρφωση ρυθμίσεων πελατών',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Αποστολή',
-        'description' => 'Κανόνες αποστολής, συμπεριφορά δωρεάν αποστολής και σειρά εμφάνισης επιλογών αποστολής',
+        'description' => 'Προβολή και ενημέρωση ρυθμίσεων αποστολής',
         'shipping_rule' => 'Κανόνες αποστολής',
         'shipping_rule_description' => 'Διαμόρφωση κανόνων για υπολογισμό κόστους αποστολής',
         'shipping_setting' => 'Ρυθμίσεις αποστολής',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Αποθήκευση τοποθεσίας',
             'add_new' => 'Προσθήκη νέου',
         ],
-        'info' => [
-            'title' => 'Πώς λειτουργούν οι εντοπιστές καταστημάτων',
-            'primary_store' => 'Η διεύθυνση του κύριου καταστήματος εμφανίζεται στα τιμολόγια και χρησιμοποιείται ως προεπιλεγμένη διεύθυνση επιστροφής για τις ετικέτες αποστολής.',
-            'shipping_location' => 'Τα καταστήματα που έχουν επισημανθεί ως "τοποθεσία αποστολής" μπορούν να επιλεγούν ως αποθήκη προέλευσης κατά τη δημιουργία αποστολών.',
-            'shipment_selection' => 'Κατά την επεξεργασία παραγγελιών, μπορείτε να επιλέξετε από ποια αποθήκη θα γίνει η αποστολή με βάση το απόθεμα και την τοποθεσία του πελάτη.',
-        ],
     ],
     'tracking' => [
         'name' => 'Παρακολούθηση',
-        'description' => 'Facebook Pixel, συμβάντα Google Tag Manager και παρακολούθηση μετατροπών Google Ads',
+        'description' => 'Προβολή και ενημέρωση ρυθμίσεων παρακολούθησης',
         'manage_tracking' => 'Διαχείριση παρακολούθησης',
         'manage_tracking_description' => 'Διαχείριση παρακολούθησης: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Αγορά',
-        'description' => 'Ρυθμίσεις πολλαπλών πωλητών, προμήθειες, εγγραφή πωλητών και διαμόρφωση πληρωμών',
+        'description' => 'Προβολή και ενημέρωση ρυθμίσεων αγοράς',
     ],
     'standard_and_format' => [
         'name' => 'Πρότυπο & Μορφή',
-        'panel_description' => 'Μορφή κωδικού παραγγελίας, μονάδες βάρους (κιλά/λίβρες) και μονάδες διαστάσεων (εκ./ίντσες)',
+        'panel_description' => 'Προβολή και ενημέρωση ρυθμίσεων προτύπου & μορφής',
         'description' => 'Τα πρότυπα και οι μορφές χρησιμοποιούνται για τον υπολογισμό πραγμάτων όπως τις τιμές προϊόντων, τα βάρη αποστολής και τους χρόνους παραγγελιών.',
         'form' => [
             'change_order_format' => 'Επεξεργασία μορφής κωδικού παραγγελίας (προαιρετικό)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Εμφάνιση μιας γραμμής προόδου με "X πουλήθηκαν από Y" για δημιουργία επείγοντος και ενθάρρυνση γρήγορων αγορών κατά τη διάρκεια flash προσφορών.',
     ],
     'payment_method_cod_minimum_amount' => 'Ελάχιστο ποσό παραγγελίας - :currency (Προαιρετικό)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Ελάχιστο ποσό παραγγελίας - :currency (Προαιρετικό)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Εμφάνιση τραπεζικών πληροφοριών στη σελίδα επιτυχίας ολοκλήρωσης αγοράς;',
     'invoice_templates' => 'Πρότυπα τιμολογίου',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

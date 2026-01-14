@@ -191,9 +191,6 @@ return [
         'sender' => 'Avsender',
         'order_date' => 'Bestillingsdato',
         'scan_qr_code' => 'Skann QR-kode for å spore forsendelsen din',
-        'total_amount' => 'Totalbeløp',
-        'cod_amount_to_collect' => 'COD-beløp å kreve inn',
     ],
     'customer_confirmed_delivery_at' => 'Kunde bekreftet levering',
-    'no_shipping_methods_available' => 'Ingen leveringsmetoder tilgjengelige!',
 ];

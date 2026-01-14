@@ -43,5 +43,4 @@ return [
     'copied' => 'Disalin',
     'copy' => 'Salin',
     'clear' => 'Hapus',
-    'something_went_wrong' => 'Terjadi kesalahan.',
 ];

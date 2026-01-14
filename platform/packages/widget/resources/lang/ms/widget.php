@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Kawasan Widget',
     'manage_widgets' => 'Urus Widget',
 
-    'click_to_add' => 'Klik untuk menambah widget',
-    'select_sidebar' => 'Tambah Widget',
-    'select_sidebar_description' => 'Pilih tempat untuk menambah widget ini',
-    'adding_to' => 'Menambah ke',
-    'add_widget' => 'Tambah Widget',
-    'widget_not_found' => 'Widget tidak dijumpai',
-
     'cache_suggestion' => [
         'title' => 'Cadangan Prestasi',
         'description' => 'Anda boleh meningkatkan prestasi laman web dengan mengaktifkan caching widget.',
@@ -52,22 +45,4 @@ return [
     'widget_site_copyright_description' => 'Teks hak cipta di footer bawah.',
     'widget_site_copyright_helper' => 'Pergi ke :link untuk menukar teks hak cipta.',
     'theme_options' => 'Pilihan tema',
-
-    'form' => [
-        'enable_caching' => 'Dayakan cache',
-        'yes' => 'Ya',
-        'no' => 'Tidak',
-        'cache_helper' => 'Apabila didayakan, kandungan widget ini akan dicache untuk meningkatkan prestasi.',
-        'cache_warning' => 'Disebabkan isu UI, cache untuk widget ini dinyahdayakan melalui kod.',
-    ],
-
-    'drag_or_click' => 'Seret ke bar sisi atau klik + untuk menambah',
-    'drop_widgets_here' => 'Lepaskan widget di kawasan bar sisi anda',
-    'search_widgets' => 'Cari widget...',
-    'no_widgets' => 'Tiada widget tersedia',
-    'no_search_results' => 'Widget tidak ditemui',
-    'or_click_add' => 'Atau klik butang + pada widget untuk menambah',
-    'toggle_widget' => 'Togol tetapan widget',
-    'loading_form' => 'Memuatkan borang widget...',
-
 ];

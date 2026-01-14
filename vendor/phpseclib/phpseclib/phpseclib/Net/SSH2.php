@@ -679,7 +679,7 @@ class SSH2
      * @see self::send_channel_packet()
      * @var array
      */
-    protected $packet_size_client_to_server = [];
+    private $packet_size_client_to_server = [];
 
     /**
      * Message Number Log
@@ -2941,9 +2941,6 @@ class SSH2
             $this->channel_id_last_interactive = self::CHANNEL_EXEC;
             return true;
         }
-        if ($callback === false) {
-            return true;
-        }
 
         $output = '';
         while (true) {
@@ -4000,11 +3997,9 @@ class SSH2
                     break;
                 case NET_SSH2_MSG_GLOBAL_REQUEST: // see http://tools.ietf.org/html/rfc4254#section-4
                     Strings::shift($payload, 1);
-                    list($request_name, $want_reply) = Strings::unpackSSH2('sb', $payload);
+                    list($request_name) = Strings::unpackSSH2('s', $payload);
                     $this->errors[] = "SSH_MSG_GLOBAL_REQUEST: $request_name";
-                    if ($want_reply) {
-                        $this->send_binary_packet(pack('C', NET_SSH2_MSG_REQUEST_FAILURE));
-                    }
+                    $this->send_binary_packet(pack('C', NET_SSH2_MSG_REQUEST_FAILURE));
                     $payload = $this->get_binary_packet();
                     break;
                 case NET_SSH2_MSG_CHANNEL_OPEN: // see http://tools.ietf.org/html/rfc4254#section-5.1
@@ -4241,6 +4236,7 @@ class SSH2
                                 if (strlen($error_message)) {
                                     $this->errors[count($this->errors) - 1] .= "\r\n$error_message";
                                 }
+
                                 if (isset($this->channel_status[$channel]) && $this->channel_status[$channel] != NET_SSH2_MSG_CHANNEL_CLOSE) {
                                     if ($this->channel_status[$channel] != NET_SSH2_MSG_CHANNEL_EOF) {
                                         $this->send_binary_packet(pack('CN', NET_SSH2_MSG_CHANNEL_EOF, $this->server_channels[$channel]));
@@ -4249,6 +4245,7 @@ class SSH2
 
                                     $this->channel_status[$channel] = NET_SSH2_MSG_CHANNEL_CLOSE;
                                 }
+
                                 continue 3;
                             case 'exit-status':
                                 list(, $this->exit_status) = Strings::unpackSSH2('CN', $response);
@@ -4258,13 +4255,8 @@ class SSH2
 
                                 continue 3;
                             default:
-                                list($want_reply) = Strings::unpackSSH2('b', $response);
-                                if ($want_reply) {
-                                    // "If the request is not recognized or is not supported for the channel,
-                                    //  SSH_MSG_CHANNEL_FAILURE is returned."
-                                    // -- https://datatracker.ietf.org/doc/html/rfc4254#page-10
-                                    $this->send_binary_packet(pack('CN', NET_SSH2_MSG_CHANNEL_FAILURE, $this->server_channels[$channel]));
-                                }
+                                // "Some systems may not implement signals, in which case they SHOULD ignore this message."
+                                //  -- http://tools.ietf.org/html/rfc4254#section-6.9
                                 continue 3;
                         }
                 }
@@ -4722,7 +4714,7 @@ class SSH2
      * @param bool $want_reply
      * @return void
      */
-    protected function close_channel($client_channel)
+    private function close_channel($client_channel)
     {
         // see http://tools.ietf.org/html/rfc4254#section-5.3
 

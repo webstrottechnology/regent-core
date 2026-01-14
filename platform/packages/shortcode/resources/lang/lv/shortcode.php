@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI bloki',
     'search' => 'Meklēt...',
     'no_shortcode_found' => 'Īskods nav atrasts.',
-    'shortcode_not_available' => 'Īskods ":name" nav pieejams vai ir noņemts.',
 
     'cache_suggestion' => [
         'title' => 'Veiktspējas ieteikums',

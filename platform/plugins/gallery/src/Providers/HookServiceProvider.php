@@ -53,21 +53,21 @@ class HookServiceProvider extends ServiceProvider
                 return ShortcodeForm::createFromArray($attributes)
                     ->withLazyLoading()
                     ->add('title', TextField::class, [
-                        'label' => trans('plugins/gallery::gallery.title'),
+                        'label' => __('Title'),
                     ])
                     ->add(
                         'limit',
                         NumberField::class,
                         NumberFieldOption::make()
-                            ->label(trans('plugins/gallery::gallery.limit'))
-                            ->helperText(trans('plugins/gallery::gallery.limit_helper'))
+                            ->label(__('Limit'))
+                            ->helperText(__('Number of galleries to show. Set to 0 or leave it empty to show all. It will be overridden if you select galleries below.'))
                             ->defaultValue(5)
                     )
                     ->add(
                         'gallery_ids',
                         SelectField::class,
                         SelectFieldOption::make()
-                            ->label(trans('plugins/gallery::gallery.galleries'))
+                            ->label(__('Galleries'))
                             ->choices($galleries)
                             ->selected($galleryIds)
                             ->searchable()

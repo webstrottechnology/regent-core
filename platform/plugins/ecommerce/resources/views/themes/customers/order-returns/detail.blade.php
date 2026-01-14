@@ -1,10 +1,10 @@
 @extends(EcommerceHelper::viewPath('customers.master'))
 
-@section('title', trans('plugins/ecommerce::customer-dashboard.return_products'))
+@section('title', __('Return Product(s)'))
 
 @section('content')
     @php
-        Theme::set('pageName', trans('plugins/ecommerce::customer-dashboard.return_products'));
+        Theme::set('pageName', __('Return Product(s)'));
     @endphp
 
     @include(EcommerceHelper::viewPath('includes.order-return-detail'))

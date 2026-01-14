@@ -22,6 +22,7 @@ return [
     'edit_this_post' => 'Edit this post',
     'no_new_post_now' => 'There is no new post now!',
     'menu_name' => 'Posts',
+    'widget_posts_recent' => 'Recent Posts',
     'categories' => 'Categories',
     'category' => 'Category',
     'author' => 'Author',
@@ -64,5 +65,4 @@ return [
     'widget_tags_description' => 'Popular tags',
     'widget_categories' => 'Blog Categories',
     'widget_categories_description' => 'Widget display blog categories',
-    'views' => 'Views',
 ];

@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Ubegrenset rabattkode?',
     'enter_number' => 'Skriv inn nummer',
     'coupon_type' => 'Rabatttype',
-    'discount_type' => 'Rabattype',
     'percentage_discount' => 'Prosentrabatt (%)',
     'free_shipping' => 'Gratis frakt',
     'same_price' => 'Samme pris',
     'apply_for' => 'gjelder for',
-    'apply_to' => 'Bruk på',
     'all_orders' => 'Alle bestillinger',
     'order_amount_from' => 'Bestillingsbeløp fra',
     'product_collection' => 'Produktsamling',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Denne rabattkoden kan ikke brukes fordi handlekurven din inneholder flash-salgsvarer (:product_name). Flash-salgspriser kan ikke kombineres med rabattkoder.',
     'coupon_applied_successfully' => 'Flott! Rabattkoden ":code" er brukt. Du sparte penger på denne bestillingen!',
     'coupon_removed_successfully' => 'Rabattkoden er fjernet fra bestillingen.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Rabattkoder (:count)',
-    'left_quantity' => 'Gjenstår :left',
-    'apply' => 'Bruk',
-    'remove' => 'Fjern',
-    'select_coupon' => 'Velg kupong',
-    'you_have_coupon_code' => 'Har du en rabattkode?',
-    'close' => 'Lukk',
-    'coupon_code_label' => 'Rabattkode: :code',
-    'enter_coupon_code_placeholder' => 'Skriv inn rabattkode...',
 ];

@@ -34,8 +34,6 @@
         :root {
             --primary-color: {{ $primaryColor = theme_option('primary_color', '#58b3f0') }};
             --primary-color-rgb: {{ implode(',', BaseHelper::hexToRgb($primaryColor)) }};
-            --checkout-primary-color: {{ $checkoutPrimaryColor = theme_option('checkout_primary_color', '#197bbd') }};
-            --checkout-primary-color-rgb: {{ implode(',', BaseHelper::hexToRgb($checkoutPrimaryColor)) }};
         }
     </style>
 

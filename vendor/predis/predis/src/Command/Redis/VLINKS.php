@@ -57,13 +57,9 @@ class VLINKS extends RedisCommand
         if (!is_null($data)) {
             if ($this->withScores) {
                 foreach ($data as $key => $value) {
-                    if ($value === array_values($value)) {
-                        $data[$key] = CommandUtility::arrayToDictionary($value, function ($key, $value) {
-                            return [$key, (float) $value];
-                        });
-                    } else {
-                        $data[$key] = $value;
-                    }
+                    $data[$key] = CommandUtility::arrayToDictionary($value, function ($key, $value) {
+                        return [$key, (float) $value];
+                    });
                 }
             }
         }

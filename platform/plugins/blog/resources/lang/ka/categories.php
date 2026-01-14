@@ -3,16 +3,13 @@
 return [
     'menu' => 'კატეგორიები',
     'menu_name' => 'კატეგორიები',
-    'none' => 'არცერთი',
+    'none' => 'მინიშნება',
     'total_posts' => 'სულ :total პოსტი',
     'edit_this_category' => 'კატეგორიის რედაქტირება',
     'create' => 'კატეგორიის შექმნა',
-    'table_view_info' => 'კატეგორიების უფრო მარტივი ჯგუფური მართვისთვის, თქვენ ასევე შეგიძლიათ',
-    'manage_as_table' => 'მართოთ კატეგორიები ცხრილის სახით',
-    'parent' => 'მშობელი კატეგორია',
-    'order' => 'რიგითობა',
-    'is_default' => 'ნაგულისხმევი',
-    'intro' => [
-        'description' => 'დაალაგეთ თქვენი ბლოგის პოსტები კატეგორიებად უკეთესი კონტენტის მართვისთვის.',
-    ],
+    'table_view_info' => 'For easier bulk management of categories, you can also',
+    'manage_as_table' => 'manage categories as a table',
+    'parent' => 'Parent Category',
+    'order' => 'Order',
+    'is_default' => 'Is Default',
 ];

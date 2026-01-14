@@ -47,6 +47,16 @@ return [
         'title' => 'Kullanıcı profili',
         'first_name' => 'İlk adı',
         'last_name' => 'Soy isim',
+        'email' => 'E-Posta',
+        'second_email' => 'İkincil E-Posta',
+        'address' => 'Adres',
+        'second_address' => 'İkincil Adres',
+        'birth_day' => 'Doğum Tarihi',
+        'job' => 'İş Pozisyonu',
+        'mobile_number' => 'Telefon Numarası',
+        'second_mobile_number' => 'İkincil Telefon',
+        'interes' => 'İlgi Alanları',
+        'about' => 'Hakkında',
     ],
     'total_users' => 'Toplam kullanıcı sayısı',
     'statuses' => [
@@ -72,5 +82,9 @@ return [
     'no_role_assigned' => 'Hiçbir rol atanmadı',
     'view_user_profile' => 'Kullanıcının profilini görüntüle',
     'update_preferences_success' => 'Tercihler başarıyla güncellendi!',
-    'gender' => [],
+    'gender' => [
+        'title' => 'Cinsiyet',
+        'male' => 'Erkek',
+        'female' => 'Kadın',
+    ],
 ];

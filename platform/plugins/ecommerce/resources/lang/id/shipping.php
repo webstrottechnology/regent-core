@@ -101,7 +101,6 @@ return [
     'update_shipping_status_success' => 'Berhasil memperbarui status pengiriman!',
     'update_cod_status_success' => 'Berhasil memperbarui status COD pengiriman!',
     'updated_cod_status_by' => 'Memperbarui status COD ke :status . Diperbarui oleh: %user_name%',
-    'saved_shipping_settings_success' => 'Berhasil menyimpan pengaturan pengiriman!',
     'all' => 'Semua',
     'all_countries' => 'Semua negara',
     'error_when_adding_new_region' => 'Terjadi error saat menambahkan wilayah baru!',
@@ -127,9 +126,6 @@ return [
     'add_note' => 'Tambah catatan...',
     'view_order' => 'Lihat Pesanan :order_id',
     'rule' => [
-        'types' => [
-            'unavailable' => 'Tidak tersedia',
-        ],
         'enum_types' => [
             'based_on_weight' => 'Berdasarkan total berat pesanan (:unit)',
             'based_on_price' => 'Berdasarkan total jumlah pesanan',
@@ -195,9 +191,6 @@ return [
         'sender' => 'Pengirim',
         'order_date' => 'Tanggal pesanan',
         'scan_qr_code' => 'Pindai kode QR untuk melacak pengiriman Anda',
-        'total_amount' => 'Jumlah Total',
-        'cod_amount_to_collect' => 'Jumlah COD yang Harus Dikumpulkan',
     ],
     'customer_confirmed_delivery_at' => 'Pelanggan mengkonfirmasi pengiriman pada',
-    'no_shipping_methods_available' => 'Tidak ada metode pengiriman yang tersedia!',
 ];

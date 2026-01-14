@@ -44,8 +44,6 @@ return [
     'alt_text' => 'Testo alternativo',
 
     'folder_created' => 'Cartella creata con successo!',
-    'folder_exists' => 'La cartella :folder esiste già!',
-    'directory_must_empty' => 'La directory deve essere vuota per essere eliminata!',
     'gallery' => 'Galleria multimediale',
 
     'trash_error' => 'Errore durante l\'eliminazione degli elementi selezionati',

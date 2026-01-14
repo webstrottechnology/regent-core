@@ -31,7 +31,7 @@ return [
     'deactivate' => 'إلغاء التنشيط',
     'excel' => 'اكسل',
     'export' => 'يصدّر',
-    'csv' => 'ملف CSV',
+    'csv' => 'CSV',
     'pdf' => 'بي دي إف',
     'print' => 'مطبعة',
     'reset' => 'إعادة ضبط',

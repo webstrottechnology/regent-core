@@ -38,10 +38,10 @@ class OrderReturnTable extends TableAbstract
         $data = $this->table
             ->eloquent($this->query())
             ->editColumn('order_id', function (OrderReturn $item) {
-                return BaseHelper::clean($item->order?->code);
+                return BaseHelper::clean($item->order->code);
             })
             ->editColumn('user_id', function (OrderReturn $item) {
-                if (! $item->customer?->name) {
+                if (! $item->customer->name) {
                     return '&mdash;';
                 }
 

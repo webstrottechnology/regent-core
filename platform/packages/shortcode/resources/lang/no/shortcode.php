@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI-blokker',
     'search' => 'Søk...',
     'no_shortcode_found' => 'Ingen shortcode funnet.',
-    'shortcode_not_available' => 'Shortcode ":name" er ikke tilgjengelig eller har blitt fjernet.',
 
     'cache_suggestion' => [
         'title' => 'Ytelsesforslag',

@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'Blocuri UI',
     'search' => 'Căutare...',
     'no_shortcode_found' => 'Nu a fost găsit niciun shortcode.',
-    'shortcode_not_available' => 'Shortcode-ul ":name" nu este disponibil sau a fost eliminat.',
 
     'cache_suggestion' => [
         'title' => 'Sugestie de performanță',

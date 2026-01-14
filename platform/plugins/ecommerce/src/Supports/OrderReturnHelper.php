@@ -6,7 +6,6 @@ use Botble\Base\Facades\EmailHandler;
 use Botble\Ecommerce\Enums\OrderReturnHistoryActionEnum;
 use Botble\Ecommerce\Enums\OrderReturnStatusEnum;
 use Botble\Ecommerce\Events\OrderReturnedEvent;
-use Botble\Ecommerce\Facades\EcommerceHelper;
 use Botble\Ecommerce\Facades\OrderHelper as OrderHelperFacade;
 use Botble\Ecommerce\Models\Order;
 use Botble\Ecommerce\Models\OrderProduct;
@@ -43,8 +42,6 @@ class OrderReturnHelper
 
             $orderProductIds = [];
 
-            $now = Carbon::now();
-
             foreach ($data['items'] as $returnItem) {
                 $orderProduct = OrderProduct::query()->find($returnItem['order_item_id']);
                 if (! $orderProduct) {
@@ -61,8 +58,7 @@ class OrderReturnHelper
                     'qty' => $returnItem['qty'],
                     'reason' => $returnItem['reason'] ?? null,
                     'refund_amount' => $returnItem['refund_amount'] ?? null,
-                    'created_at' => $now,
-                    'updated_at' => $now,
+                    'created_at' => Carbon::now(),
                 ];
 
                 $orderProductIds[] = $orderProduct->product_id;
@@ -75,7 +71,7 @@ class OrderReturnHelper
              */
             $orderReturn->histories()->create([
                 'action' => OrderReturnHistoryActionEnum::CREATED,
-                'description' => __('Request return order with reason: :reason', ['reason' => $orderReturn->reason?->label() ?? '']),
+                'description' => __('Request return order with reason: :reason', ['reason' => $orderReturn->reason->label()]),
             ]);
 
             event(new OrderReturnedEvent($orderReturn));
@@ -97,10 +93,10 @@ class OrderReturnHelper
                         'products' => $orderProducts,
                     ])
                         ->render(),
-                    'return_reason' => $orderReturn->reason?->label() ?? '',
+                    'return_reason' => $orderReturn->reason->label(),
                 ]);
 
-                $mailer->sendUsingTemplate('order-return-request', EcommerceHelper::getAdminNotificationEmails());
+                $mailer->sendUsingTemplate('order-return-request', get_admin_email()->toArray());
             }
 
             DB::commit();
@@ -185,16 +181,14 @@ class OrderReturnHelper
 
             $customer = $orderReturn->customer;
 
-            if ($customer?->email) {
-                EmailHandler::setModule(ECOMMERCE_MODULE_SCREEN_NAME)
-                    ->setVariableValues([
-                        'customer_name' => $customer->name ?? 'Guest',
-                        'order_id' => $orderReturn->order?->code ?? '',
-                        'description' => $data['description'] ?? null,
-                        'status' => $orderReturn->return_status->label(),
-                    ])
-                    ->sendUsingTemplate('order-return-status-updated', $customer->email);
-            }
+            EmailHandler::setModule(ECOMMERCE_MODULE_SCREEN_NAME)
+                ->setVariableValues([
+                    'customer_name' => $customer->name,
+                    'order_id' => $orderReturn->order->code,
+                    'description' => $data['description'] ?? null,
+                    'status' => $orderReturn->return_status->label(),
+                ])
+                ->sendUsingTemplate('order-return-status-updated', $customer->email);
 
             DB::commit();
 

@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-ticaret',
     'general' => [
         'name' => 'Genel',
-        'description' => 'Mağaza adı, şirket bilgisi, iletişim ve yönetici bildirim e-postaları',
+        'description' => 'Genel ayarlarınızı görüntüleyin ve güncelleyin',
     ],
     'currency' => [
         'name' => 'Para Birimleri',
-        'description' => 'Para birimi formatları, döviz kurları, otomatik algılama ve ondalık/binlik ayırıcılar',
+        'description' => 'Para birimi ayarlarını görüntüleyin ve güncelleyin',
         'currency_setting_description' => 'Web sitesinde kullanılan para birimlerini görüntüleyin ve güncelleyin',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Ziyaretçi para birimini otomatik algılamayı etkinleştir',
@@ -44,7 +44,7 @@ return [
     ],
     'product' => [
         'name' => 'Ürünler',
-        'description' => 'Stok gösterimi, SKU oluşturma, varyant görselleri, ilgili ürünler ve özellikler',
+        'description' => 'Ürün ayarlarınızı görüntüleyin ve güncelleyin',
         'product_settings' => 'Ürün ayarları',
         'product_settings_description' => 'Ürün için kuralları yapılandırın',
         'form' => [
@@ -87,7 +87,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Ürün Arama',
-        'description' => 'Arama davranışı, kategori/marka/etiket/özellik filtreleri ve fiyat aralığı filtreleme',
+        'description' => 'Ürün arama ayarlarını görüntüleyin ve güncelleyin',
         'product_search_settings' => 'Ürün arama',
         'product_search_settings_description' => 'Ürün arama için kuralları yapılandırın',
         'form' => [
@@ -108,7 +108,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Dijital Ürünler',
-        'description' => 'İndirilebilir ürünler, lisans kodları, dijital ürünler için misafir ödeme ve otomatik tamamlama',
+        'description' => 'Dijital ürün ayarlarını görüntüleyin ve güncelleyin',
         'digital_products_settings' => 'Dijital ürünler',
         'digital_products_settings_description' => 'Dijital ürünler için kuralları yapılandırın',
         'form' => [
@@ -128,7 +128,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Ürün Yorumları',
-        'description' => 'Müşteri yorumları, puan gösterimi, resim yükleme ve onay gereksinimleri',
+        'description' => 'Ürün yorumu ayarlarınızı görüntüleyin ve güncelleyin',
         'form' => [
             'enable_review' => 'Ürün yorumlarını etkinleştir',
             'enable_review_help' => 'Müşterilerin ürünlerde yorum ve değerlendirme bırakmasına izin ver. Devre dışı bırakıldığında, tüm yorum özellikleri mağazadan gizlenecektir.',
@@ -150,7 +150,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Alışveriş',
-        'description' => 'Sepet, istek listesi, karşılaştırma, sipariş takibi, hızlı satın alma butonu ve ödeme kanıtı yükleme',
+        'description' => 'Alışveriş ayarlarınızı görüntüleyin ve güncelleyin',
         'general_setting' => 'Genel ayarlar',
         'return_settings' => 'İade ayarları',
         'return_settings_description' => 'İade ayarları için kuralları yapılandırın',
@@ -181,19 +181,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Müşteri çıkış yaptığında sepet yok edilecektir.',
             'hide_product_price' => 'Ürün fiyatını gizle',
             'hide_product_price_helper' => 'Bu seçenek sadece alışveriş sepetini devre dışı bıraktığınızda çalışır ve sitenizi sadece katalog görünümüne dönüştürür. Etkinleştirilirse, ürün fiyatı gizlenecektir. Fiyatı gizlemek ve müşterilerin fiyat için sizinle iletişime geçmesini gerektirmek istediğinizde kullanışlıdır.',
-            'hide_product_price_when_zero' => 'Ürün fiyatını sıfır olduğunda gizle',
-            'hide_product_price_when_zero_helper' => 'Etkinse, fiyatı 0 olan ürünler vitrinde fiyat göstermeyecek.',
             'enable_payment_proof' => 'Ödeme kanıtı yüklemeyi etkinleştir',
             'enable_payment_proof_helper' => 'Müşterilerin siparişleri için ödeme kanıtı yüklemesine izin ver. Bu, manuel ödeme yöntemleri için kullanışlıdır.',
             'enable_guest_payment_proof' => 'Misafir müşterilerin ödeme kanıtı yüklemesine izin ver',
             'enable_guest_payment_proof_helper' => 'Etkinleştirildiğinde, misafir müşteriler giriş yapmadan sipariş belirteci kullanarak ödeme kanıtı yükleyebilir. Sipariş onay e-postalarında yükleme bağlantısını alacaklardır.',
-            'payment_proof_payment_methods' => 'Ödeme kanıtı gerektiren ödeme yöntemleri',
-            'payment_proof_payment_methods_helper' => 'Müşterilerin ödeme kanıtı yüklemesine izin verilmesi gereken ödeme yöntemlerini seçin. Genellikle kapıda ödeme ve banka havalesi gibi manuel ödeme yöntemleri için kullanılır.',
         ],
     ],
     'checkout' => [
         'name' => 'Ödeme',
-        'panel_description' => 'Misafir ödeme, zorunlu alanlar, sipariş limitleri, şartların kabulü ve ülke kısıtlamaları',
+        'panel_description' => 'Ödeme ayarlarını görüntüleyin ve güncelleyin',
         'description' => 'Ödeme ayarları için kuralları yapılandırın',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Ödeme başarı sayfasında banka bilgilerini görüntüle',
@@ -246,7 +242,7 @@ return [
     'return' => [
         'name' => 'İade',
         'description' => 'İade ayarları için kuralları yapılandırın',
-        'panel_description' => 'Sipariş iadeleri, kısmi iadeler ve iade süre sınırları',
+        'panel_description' => 'İade ayarlarını görüntüleyin ve güncelleyin',
         'form' => [
             'is_enabled_order_return' => 'Sipariş iadesi etkinleştirilsin mi',
             'allow_partial_return' => 'Kısmi iadeye izin ver',
@@ -257,7 +253,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Faturalar',
-        'description' => 'Faturalarda şirket bilgileri, fatura numaralandırma, PDF yazı tipleri ve damga ayarları',
+        'description' => 'Fatura ayarlarınızı görüntüleyin ve güncelleyin',
         'company_settings' => 'Şirket ayarları',
         'company_settings_description' => 'Faturalandırma için Şirket bilgilerini ayarlayın',
         'form' => [
@@ -304,21 +300,18 @@ return [
             'default_tax_rate' => 'Varsayılan vergi oranı',
             'default_tax_rate_description' => 'Önemli: üründe vergi seçilmemişse uygulanacaktır.',
             'select_tax' => '-- Seç --',
-            'display_product_price_including_taxes' => 'Görüntülenen fiyatlara vergi ekle',
-            'display_product_price_including_taxes_helper' => 'Mağazada görüntülenen ürün fiyatlarına otomatik olarak vergi ekler. Örn. %10 vergili $100\'lık bir ürün $110 olarak gösterilir. Bireysel ürünlerde "Fiyat vergi dahil" zaten etkinse gerekli değildir.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Ürün fiyatını vergiler dahil göster',
         ],
     ],
     'customer' => [
         'name' => 'Müşteriler',
-        'description' => 'Kayıt, e-posta doğrulama, giriş seçenekleri, hesap silme ve profil alanları',
+        'description' => 'Müşteri ayarlarınızı görüntüleyin ve güncelleyin',
         'customer_setting' => 'Müşteri ayarları',
         'customer_setting_description' => 'Müşteri ayarlarını yapılandırın',
         'form' => [
             'enable_customer_registration' => 'Müşteri kaydını etkinleştir',
             'enable_customer_registration_helper' => 'Devre dışı bırakılırsa, müşteriler yeni hesap kaydettiremeyecek. Mevcut müşteriler hala giriş yapabilir.',
-            'verify_customer_email' => 'Müşterinin e-postasını doğrula',
+            'verify_customer_email' => "Müşterinin e-postasını doğrula",
             'verify_customer_email_helper' => "Etkinleştirildiğinde, müşterinin e-postasına bir doğrulama bağlantısı gönderilecek, müşterilerin giriş yapabilmeleri için bu bağlantıya tıklayarak e-postalarını doğrulamaları gerekecek. E-posta doğrulaması göndermek için Yönetici -> Ayarlar -> E-posta'da e-posta yapılandırması gerekir.",
             'verification_expire_minutes' => 'Doğrulama bağlantısı geçerlilik süresi',
             'verification_expire_minutes_helper' => 'E-posta doğrulama bağlantısının geçerli olacağı dakika cinsinden süre. Varsayılan 60 dakikadır (1 saat). Maksimum 10080 dakikadır (7 gün).',
@@ -343,7 +336,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Kargo',
-        'description' => 'Kargo kuralları, ücretsiz kargo davranışı ve kargo seçeneği görüntüleme sırası',
+        'description' => 'Kargo ayarlarını görüntüleyin ve güncelleyin',
         'shipping_rule' => 'Kargo kuralları',
         'shipping_rule_description' => 'Kargo ücretini hesaplamak için kuralları yapılandırın',
         'shipping_setting' => 'Kargo ayarları',
@@ -411,16 +404,10 @@ return [
             'save_location' => 'Konumu kaydet',
             'add_new' => 'Yeni ekle',
         ],
-            'info' => [
-            'title' => 'Mağaza bulucu nasıl çalışır',
-            'primary_store' => 'Birincil mağaza adresi faturalarda görünür ve kargo etiketleri için varsayılan iade adresi olarak kullanılır.',
-            'shipping_location' => '"Gönderim konumu" olarak işaretlenen mağazalar, gönderiler oluşturulurken kaynak depo olarak seçilebilir.',
-            'shipment_selection' => 'Siparişleri işlerken, envanter ve müşteri konumuna göre hangi depodan gönderileceğini seçebilirsiniz.',
-        ],
     ],
     'tracking' => [
         'name' => 'Takip',
-        'description' => 'Facebook Pixel, Google Tag Manager etkinlikleri ve Google Ads dönüşüm takibi',
+        'description' => 'Takip ayarlarını görüntüleyin ve güncelleyin',
         'manage_tracking' => 'Takibi yönet',
         'manage_tracking_description' => 'Takibi yönet: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -439,11 +426,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Pazar Yeri',
-        'description' => 'Çoklu satıcı ayarları, komisyonlar, satıcı kaydı ve ödeme yapılandırması',
+        'description' => 'Pazar yeri ayarlarını görüntüleyin ve güncelleyin',
     ],
     'standard_and_format' => [
         'name' => 'Standart ve Format',
-        'panel_description' => 'Sipariş kodu formatı, ağırlık birimleri (kg/lb) ve boyut birimleri (cm/inç)',
+        'panel_description' => 'Standart ve format ayarlarını görüntüleyin ve güncelleyin',
         'description' => 'Standartlar ve formatlar ürün fiyatları, kargo ağırlıkları ve sipariş zamanları gibi şeyleri hesaplamak için kullanılır.',
         'form' => [
             'change_order_format' => 'Sipariş kod formatını düzenle (isteğe bağlı)',
@@ -475,63 +462,7 @@ return [
         'show_sale_count_left_description' => 'Flaş satışlar sırasında aciliyet yaratmak ve hızlı satın alımları teşvik etmek için "Y\'den X satıldı" şeklinde bir ilerleme çubuğu göster.',
     ],
     'payment_method_cod_minimum_amount' => 'Minimum sipariş tutarı - :currency (İsteğe bağlı)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minimum sipariş tutarı - :currency (İsteğe bağlı)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Ödeme başarı sayfasında banka bilgilerini görüntüle?',
     'invoice_templates' => 'Fatura şablonları',
-
-    'abandoned_cart' => [
-        'name' => 'Terk Edilmiş Sepetler',
-        'description' => 'Sepetlerinde ürün bırakan müşterilere otomatik hatırlatmalar göndererek kayıp satışları kurtarın',
-        'panel_description' => 'Sepetlerini terk eden müşteriler için otomatik hatırlatmalar ayarlayın',
-        'how_it_works' => [
-            'title' => 'Nasıl Çalışır',
-            'step1_title' => 'Müşteri ürün ekler',
-            'step1_description' => 'Müşteri sepete ürün ekler ve e-posta adresini sağlar.',
-            'step2_title' => 'Sepet terk edilir',
-            'step2_description' => 'Belirlenen süre içinde satın alma yapılmazsa sepet terk edilmiş olarak işaretlenir.',
-            'step3_title' => 'Hatırlatma e-postası gönderilir',
-            'step3_description' => 'Müşteriyi satın almayı tamamlamaya teşvik etmek için otomatik hatırlatma e-postaları gönderilir.',
-            'step4_title' => 'Satış kurtarıldı',
-            'step4_description' => 'Müşteri siparişi tamamlamak için geri döner ve sepet kurtarılmış olarak işaretlenir.',
-        ],
-        'form' => [
-            'enable' => 'Terk edilmiş sepet takibini etkinleştir',
-            'enable_helper' => 'Etkinleştirildiğinde, sistem terk edilmiş sepetleri takip edecek ve müşterilere kurtarma e-postaları göndermenize izin verecektir.',
-            'timing_section' => 'Zamanlama Ayarları',
-            'email_section' => 'Hatırlatma E-postası Ayarları',
-            'cleanup_section' => 'Veri Temizliği',
-            'time_threshold' => 'Zaman eşiği (saat)',
-            'time_threshold_helper' => 'Bu kadar saat hareketsizlik sonrasında sepet terk edilmiş sayılır. Önerilen: 1-24 saat.',
-            'send_email' => 'Kurtarma e-postaları gönder',
-            'send_email_helper' => 'Terk edilmiş sepeti olan müşterilere otomatik olarak kurtarma e-postaları gönder.',
-            'max_reminders' => 'Hatırlatma e-postası sayısı',
-            'max_reminders_helper' => 'Terk edilmiş sepet başına kaç hatırlatma e-postası gönderilecek. Her e-posta E-posta Şablonlarında özelleştirilebilir.',
-            'email_delay' => 'Sonra gönder (saat)',
-            'email_discount' => 'İndirim (%)',
-            'email_1_title' => 'E-posta #1 - Dostça Hatırlatma',
-            'email_1_description' => 'Müşteriyi geri dönmeye teşvik eden ilk nazik hatırlatma.',
-            'email_1_delay_helper' => 'İlk e-postayı göndermek için sepet terkinden sonraki saat. Önerilen: 1-2 saat.',
-            'email_2_title' => 'E-posta #2 - Teşvikli',
-            'email_2_description' => 'Satın almayı motive etmek için indirim teklifi içeren ikinci hatırlatma.',
-            'email_2_delay_helper' => 'İkinci e-postayı göndermek için sepet terkinden sonraki saat. Önerilen: 24 saat.',
-            'email_2_discount_helper' => 'Bu e-postada sunulacak indirim yüzdesi. İndirim yoksa 0 olarak ayarlayın.',
-            'email_3_title' => 'E-posta #3 - Son Şans',
-            'email_3_description' => 'Satışı kapatmak için aciliyet ve en iyi teklif içeren son hatırlatma.',
-            'email_3_delay_helper' => 'Son e-postayı göndermek için sepet terkinden sonraki saat. Önerilen: 72 saat.',
-            'email_3_discount_helper' => 'Son indirim teklifi. Genellikle e-posta #2\'den yüksek.',
-            'cleanup_days' => 'Sonra temizle (gün)',
-            'cleanup_days_helper' => 'Bu gün sayısından eski terk edilmiş sepet kayıtlarını otomatik olarak sil.',
-            'cronjob_not_setup' => '<strong>Cronjob yapılandırılmadı!</strong> Terk edilmiş sepet hatırlatmaları düzgün yapılandırılmış bir cronjob gerektirir. <a href=":url">Cronjob\'u şimdi ayarla</a>.',
-            'cronjob_not_running' => '<strong>Cronjob çalışmıyor!</strong> Cronjob durmuş görünüyor. Sunucu yapılandırmanızı kontrol edin. <a href=":url">Cronjob durumunu görüntüle</a>.',
-            'cronjob_working' => '<strong>Cronjob düzgün çalışıyor!</strong> Son aktivite: :time. Terk edilmiş sepet hatırlatmalarınız otomatik olarak işlenecek.',
-            'email_setup_warning' => '<strong>Önemli:</strong> E-posta ayarlarınızın <a href=":url">Ayarlar → E-posta</a> bölümünde doğru yapılandırıldığından emin olun. Bu özelliği etkinleştirmeden önce her şeyin çalıştığını doğrulamak için bir test e-postası gönderin.',
-        ],
-    ],
 ];

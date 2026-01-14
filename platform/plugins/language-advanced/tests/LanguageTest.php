@@ -48,10 +48,8 @@ class LanguageTest extends TestCase
             'name' => $vietnameseTitle,
         ]);
 
-        $url = route('pages.edit', $pageId) . '?' . LanguageFacade::refLangKey() . '=' . $testingLanguageCode;
-
         $this
-            ->get($url)
+            ->call('GET', route('pages.edit', $pageId), [LanguageFacade::refLangKey() => $testingLanguageCode])
             ->assertSee($vietnameseTitle);
 
         DB::table('pages_translations')->where([
@@ -60,7 +58,7 @@ class LanguageTest extends TestCase
         ])->delete();
 
         $this
-            ->get($url)
+            ->call('GET', route('pages.edit', $pageId), [LanguageFacade::refLangKey() => $testingLanguageCode])
             ->assertSee($englishTitle);
 
         $page->delete();

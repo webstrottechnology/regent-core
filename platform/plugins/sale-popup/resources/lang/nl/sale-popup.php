@@ -39,7 +39,4 @@ return [
         'product_listing' => 'Productlijst',
         'cart' => 'Winkelwagen',
     ],
-    'purchased' => 'gekocht',
-    'verified' => 'Geverifieerd',
-    'quick_view' => 'Snelle weergave',
 ];

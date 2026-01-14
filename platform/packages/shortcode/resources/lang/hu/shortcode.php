@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI blokkok',
     'search' => 'Keresés...',
     'no_shortcode_found' => 'Nem található shortcode.',
-    'shortcode_not_available' => 'A ":name" shortcode nem érhető el vagy eltávolították.',
 
     'cache_suggestion' => [
         'title' => 'Teljesítmény javaslat',

@@ -535,14 +535,12 @@ class Repository
     }
 
     /**
-     * @template TReturn of mixed
-     *
      * Run the callback function with the given context values and restore the original context state when complete.
      *
-     * @param  (callable(): TReturn)  $callback
+     * @param  callable  $callback
      * @param  array<string, mixed>  $data
      * @param  array<string, mixed>  $hidden
-     * @return TReturn
+     * @return mixed
      *
      * @throws \Throwable
      */

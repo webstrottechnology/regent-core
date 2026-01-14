@@ -191,9 +191,6 @@ return [
         'sender' => 'Saatja',
         'order_date' => 'Tellimuse kuupäev',
         'scan_qr_code' => 'Skannige QR-koodi, et jälgida oma saadetist',
-        'total_amount' => 'Kogusumma',
-        'cod_amount_to_collect' => 'Kogutav COD summa',
     ],
     'customer_confirmed_delivery_at' => 'Klient kinnitas tarne',
-    'no_shipping_methods_available' => 'Tarnemeetodeid pole saadaval!',
 ];

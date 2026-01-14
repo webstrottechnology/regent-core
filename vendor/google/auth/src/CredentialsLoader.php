@@ -174,7 +174,8 @@ abstract class CredentialsLoader implements
         }
 
         if ($jsonKey['type'] == 'impersonated_service_account') {
-            return new ImpersonatedServiceAccountCredentials($scope, $jsonKey, null, $defaultScope);
+            $anyScope = $scope ?: $defaultScope;
+            return new ImpersonatedServiceAccountCredentials($anyScope, $jsonKey);
         }
 
         if ($jsonKey['type'] == 'external_account') {

@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-handel',
     'general' => [
         'name' => 'Allmänt',
-        'description' => 'Butiksnamn, företagsinfo, kontaktuppgifter och admin-notifieringsmail',
+        'description' => 'Visa och uppdatera dina allmänna inställningar',
     ],
     'currency' => [
         'name' => 'Valutor',
-        'description' => 'Valutaformat, växelkurser, auto-detektering och decimal-/tusenseparatorer',
+        'description' => 'Visa och uppdatera valutainställningar',
         'currency_setting_description' => 'Visa och uppdatera valutor som används på webbplatsen',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Aktivera automatisk detektering av besökarvaluta',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produkter',
-        'description' => 'Lagervisning, SKU-generering, variantbilder, relaterade produkter och specifikationer',
+        'description' => 'Visa och uppdatera dina produktinställningar',
         'product_settings' => 'Produktinställningar',
         'product_settings_description' => 'Konfigurera regler för produkt',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Produktsökning',
-        'description' => 'Sökbeteende, filter efter kategori/varumärke/tagg/attribut och prisintervallfiltrering',
+        'description' => 'Visa och uppdatera produktsökningsinställningar',
         'product_search_settings' => 'Produktsökning',
         'product_search_settings_description' => 'Konfigurera regler för produktsökning',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Digitala produkter',
-        'description' => 'Nedladdningsbara produkter, licenskoder, gästkassa för digitala varor och automatisk komplettering',
+        'description' => 'Visa och uppdatera inställningar för digitala produkter',
         'digital_products_settings' => 'Digitala produkter',
         'digital_products_settings_description' => 'Konfigurera regler för digitala produkter',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Produktrecensioner',
-        'description' => 'Kundrecensioner, betygsvisning, bilduppladdning och godkännandekrav',
+        'description' => 'Visa och uppdatera dina produktrecensionsinställningar',
         'form' => [
             'enable_review' => 'Aktivera produktrecensioner',
             'enable_review_help' => 'Tillåt kunder att lämna recensioner och betyg på produkter. När inaktiverad kommer alla recensionsfunktioner att döljas från butiken.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Shopping',
-        'description' => 'Kundvagn, önskelista, jämför, orderspårning, snabbköp-knapp och uppladdning av betalningsbevis',
+        'description' => 'Visa och uppdatera dina shoppinginställningar',
         'general_setting' => 'Allmänna inställningar',
         'return_settings' => 'Returinställningar',
         'return_settings_description' => 'Konfigurera regler för returinställningar',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Varukorgen kommer att förstöras när kunden loggar ut.',
             'hide_product_price' => 'Dölj produktpris',
             'hide_product_price_helper' => 'Detta alternativ fungerar bara om du inaktiverar varukorgen, vilket gör din webbplats till endast katalogvisning. Om aktiverat kommer produktpriset att döljas. Det är användbart när du vill dölja priset och kräva att kunder kontaktar dig för priset.',
-            'hide_product_price_when_zero' => 'Dölj produktpris när det är noll',
-            'hide_product_price_when_zero_helper' => 'Om aktiverat visas inget pris i butiken för produkter med pris 0.',
             'enable_payment_proof' => 'Aktivera uppladdning av betalningsbevis',
             'enable_payment_proof_helper' => 'Tillåt kunder att ladda upp betalningsbevis för sina beställningar. Detta är användbart för manuella betalningsmetoder.',
             'enable_guest_payment_proof' => 'Tillåt gästkunder att ladda upp betalningsbevis',
             'enable_guest_payment_proof_helper' => 'När aktiverat kan gästkunder ladda upp betalningsbevis med sin beställningstoken utan att logga in. De kommer att få uppladdningslänken i sitt orderbekräftelsemeddelande.',
-            'payment_proof_payment_methods' => 'Betalningsmetoder som kräver betalningsbevis',
-            'payment_proof_payment_methods_helper' => 'Välj vilka betalningsmetoder som ska tillåta kunder att ladda upp betalningsbevis. Används vanligtvis för manuella betalningsmetoder som postförskott och banköverföring.',
         ],
     ],
     'checkout' => [
         'name' => 'Kassa',
-        'panel_description' => 'Gästkassa, obligatoriska fält, ordergränser, villkorsacceptans och landsrestriktioner',
+        'panel_description' => 'Visa och uppdatera kassainställningar',
         'description' => 'Konfigurera regler för kassainställningar',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Visa bankinformation på kassans framgångssida',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Retur',
         'description' => 'Konfigurera regler för returinställningar',
-        'panel_description' => 'Orderreturer, delvisa returer och returtidsgränser',
+        'panel_description' => 'Visa och uppdatera returinställningar',
         'form' => [
             'is_enabled_order_return' => 'Är orderretur aktiverat',
             'allow_partial_return' => 'Tillåt partiell retur',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Fakturor',
-        'description' => 'Företagsuppgifter på fakturor, fakturanumrering, PDF-teckensnitt och stämpelinställningar',
+        'description' => 'Visa och uppdatera dina fakturainställningar',
         'company_settings' => 'Företagsinställningar',
         'company_settings_description' => 'Inställningar företagsinformation för fakturering',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'Standard skattesats',
             'default_tax_rate_description' => 'Viktigt: det kommer att tillämpas om ingen skatt är vald i produkten.',
             'select_tax' => '-- Välj --',
-            'display_product_price_including_taxes' => 'Lägg till skatt till visade priser',
-            'display_product_price_including_taxes_helper' => 'Lägger automatiskt till skatt till produktpriser i butiken. T.ex. en $100 produkt med 10% skatt visas som $110. Behövs inte om "Priset inkluderar skatt" redan är aktiverat på enskilda produkter.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Visa produktpris inklusive skatter',
         ],
     ],
     'customer' => [
         'name' => 'Kunder',
-        'description' => 'Registrering, e-postverifiering, inloggningsalternativ, kontoborttagning och profilfält',
+        'description' => 'Visa och uppdatera dina kundinställningar',
         'customer_setting' => 'Kundinställningar',
         'customer_setting_description' => 'Konfigurera kundinställningar',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Frakt',
-        'description' => 'Fraktregler, gratis fraktbeteende och visningsordning för fraktalternativ',
+        'description' => 'Visa och uppdatera fraktinställningar',
         'shipping_rule' => 'Fraktregler',
         'shipping_rule_description' => 'Konfigurera regler för att beräkna fraktavgift',
         'shipping_setting' => 'Fraktinställningar',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Spara plats',
             'add_new' => 'Lägg till ny',
         ],
-            'info' => [
-            'title' => 'Hur butikslokaliserare fungerar',
-            'primary_store' => 'Huvudbutikens adress visas på fakturor och används som standardreturadress för fraktetiketter.',
-            'shipping_location' => 'Butiker markerade som "fraktplats" kan väljas som ursprungslager när du skapar försändelser.',
-            'shipment_selection' => 'När du bearbetar beställningar kan du välja vilket lager du ska skicka från baserat på lager och kundplats.',
-        ],
     ],
     'tracking' => [
         'name' => 'Spårning',
-        'description' => 'Facebook Pixel, Google Tag Manager händelser och Google Ads konverteringsspårning',
+        'description' => 'Visa och uppdatera spårningsinställningar',
         'manage_tracking' => 'Hantera spårning',
         'manage_tracking_description' => 'Hantera spårning: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -440,11 +427,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Marknadsplats',
-        'description' => 'Multi-vendor inställningar, provisioner, säljarregistrering och utbetalningskonfiguration',
+        'description' => 'Visa och uppdatera marknadsplatsinställningar',
     ],
     'standard_and_format' => [
         'name' => 'Standard & Format',
-        'panel_description' => 'Orderkodformat, viktenehter (kg/lb) och dimensionsenheter (cm/tum)',
+        'panel_description' => 'Visa och uppdatera standard- och formatinställningar',
         'description' => 'Standarder och format används för att beräkna saker som produktpriser, fraktvikter och ordertider.',
         'form' => [
             'change_order_format' => 'Redigera orderkodformat (valfritt)',
@@ -476,63 +463,7 @@ return [
         'show_sale_count_left_description' => 'Visa en förloppsstapel med "X sålt av Y" för att skapa brådska och uppmuntra snabba köp under blixtreor.',
     ],
     'payment_method_cod_minimum_amount' => 'Minsta orderbelopp - :currency (Valfritt)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Minsta orderbelopp - :currency (Valfritt)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Visa bankinformation på kassans framgångssida?',
     'invoice_templates' => 'Fakturamallar',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

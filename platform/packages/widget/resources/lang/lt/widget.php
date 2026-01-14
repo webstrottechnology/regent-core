@@ -33,13 +33,6 @@ return [
     'widget_areas' => 'Valdiklių sritys',
     'manage_widgets' => 'Tvarkyti valdiklius',
 
-    'click_to_add' => 'Spustelėkite, kad pridėtumėte valdiklį',
-    'select_sidebar' => 'Pridėti valdiklį',
-    'select_sidebar_description' => 'Pasirinkite, kur pridėti šį valdiklį',
-    'adding_to' => 'Pridedama prie',
-    'add_widget' => 'Pridėti valdiklį',
-    'widget_not_found' => 'Valdiklis nerastas',
-
     'cache_suggestion' => [
         'title' => 'Našumo pasiūlymas',
         'description' => 'Galite pagerinti savo svetainės našumą įjungdami valdiklių talpinimą į talpyklą.',
@@ -52,22 +45,4 @@ return [
     'widget_site_copyright_description' => 'Autorių teisių tekstas apatinėje poraštėje.',
     'widget_site_copyright_helper' => 'Eikite į :link, kad pakeistumėte autorių teisių tekstą.',
     'theme_options' => 'Temos parinktys',
-
-    'form' => [
-        'enable_caching' => 'Įjungti talpyklą',
-        'yes' => 'Taip',
-        'no' => 'Ne',
-        'cache_helper' => 'Įjungus, šio valdiklio turinys bus talpykloje našumui pagerinti.',
-        'cache_warning' => 'Dėl UI problemų šio valdiklio talpykla yra išjungta kodu.',
-    ],
-
-    'drag_or_click' => 'Vilkite į šoninę juostą arba spustelėkite + norėdami pridėti',
-    'drop_widgets_here' => 'Numeskite valdiklius į šoninės juostos sritis',
-    'search_widgets' => 'Ieškoti valdiklių...',
-    'no_widgets' => 'Nėra galimų valdiklių',
-    'no_search_results' => 'Valdiklių nerasta',
-    'or_click_add' => 'Arba spustelėkite valdiklio + mygtuką norėdami pridėti',
-    'toggle_widget' => 'Perjungti valdiklio nustatymus',
-    'loading_form' => 'Įkeliama valdiklio forma...',
-
 ];

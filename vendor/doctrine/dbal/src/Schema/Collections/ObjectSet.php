@@ -7,7 +7,6 @@ namespace Doctrine\DBAL\Schema\Collections;
 use Doctrine\DBAL\Schema\Collections\Exception\ObjectAlreadyExists;
 use Doctrine\DBAL\Schema\Collections\Exception\ObjectDoesNotExist;
 use Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use IteratorAggregate;
 
 /**
  * A set of objects where each object is uniquely identified by its {@link UnqualifiedName}.
@@ -15,9 +14,8 @@ use IteratorAggregate;
  * @internal
  *
  * @template E of object
- * @template-extends IteratorAggregate<int, E>
  */
-interface ObjectSet extends IteratorAggregate
+interface ObjectSet
 {
     /**
      * Checks if the set is empty.

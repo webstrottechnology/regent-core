@@ -191,9 +191,6 @@ return [
         'sender' => 'Подател',
         'order_date' => 'Дата на поръчката',
         'scan_qr_code' => 'Сканирайте QR кода, за да проследите пратката си',
-        'total_amount' => 'Обща сума',
-        'cod_amount_to_collect' => 'Сума за събиране при доставка',
     ],
     'customer_confirmed_delivery_at' => 'Клиентът потвърди доставката на',
-    'no_shipping_methods_available' => 'Няма налични методи за доставка!',
 ];

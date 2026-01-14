@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Ang lungsod ng customer',
         'customer_zipcode' => 'Ang zipcode ng customer',
     ],
-    'custom_css' => 'Custom CSS',
-    'custom_css_helper' => 'Magdagdag ng custom na CSS styles upang i-customize ang hitsura ng invoice. Ang mga istilo na ito ay idadagdag sa default na mga istilo ng invoice.',
     'reset_success' => 'Matagumpay na na-reset pabalik sa default',
     'confirm_reset' => 'Kumpirmahin ang pag-reset ng template ng invoice?',
     'confirm_message' => 'Talaga bang gusto mong i-reset ang template ng invoice na ito sa default?',

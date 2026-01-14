@@ -3,11 +3,7 @@
         <x-core::card.header>
             <div class="btn-list">
                 <div class="table-search-input">
-                    <label><input
-                            type="search"
-                            class="form-control input-sm"
-                            placeholder="{{ trans('core/table::table.search') }}"
-                        ></label>
+                    <label><input type="search" class="form-control input-sm" placeholder="{{ trans('core/table::table.search') }}"></label>
                 </div>
             </div>
         </x-core::card.header>

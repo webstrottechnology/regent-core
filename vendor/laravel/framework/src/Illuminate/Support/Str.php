@@ -261,7 +261,7 @@ class Str
     {
         foreach ((array) $needle as $n) {
             if (str_starts_with($subject, $n)) {
-                return mb_substr($subject, mb_strlen($n));
+                return substr($subject, strlen($n));
             }
         }
 
@@ -279,7 +279,7 @@ class Str
     {
         foreach ((array) $needle as $n) {
             if (str_ends_with($subject, $n)) {
-                return mb_substr($subject, 0, -mb_strlen($n));
+                return substr($subject, 0, -strlen($n));
             }
         }
 
@@ -996,10 +996,6 @@ class Str
      */
     public static function plural($value, $count = 2, $prependCount = false)
     {
-        if (is_countable($count)) {
-            $count = count($count);
-        }
-
         return ($prependCount ? Number::format($count).' ' : '').Pluralizer::plural($value, $count);
     }
 
@@ -1228,7 +1224,7 @@ class Str
      * @param  string|iterable<string>  $replace
      * @param  string|iterable<string>  $subject
      * @param  bool  $caseSensitive
-     * @return ($subject is string ? string : string[])
+     * @return string|string[]
      */
     public static function replace($search, $replace, $subject, $caseSensitive = true)
     {
@@ -1748,12 +1744,10 @@ class Str
     public static function substrReplace($string, $replace, $offset = 0, $length = null)
     {
         if ($length === null) {
-            $length = static::length($string);
+            $length = strlen($string);
         }
 
-        return mb_substr($string, 0, $offset)
-            .$replace
-            .mb_substr($string, $offset + $length);
+        return substr_replace($string, $replace, $offset, $length);
     }
 
     /**
@@ -1827,22 +1821,6 @@ class Str
     public static function ucfirst($string)
     {
         return static::upper(static::substr($string, 0, 1)).static::substr($string, 1);
-    }
-
-    /**
-     * Capitalize the first character of each word in a string.
-     *
-     * @param  string  $string
-     * @param  string  $separators
-     * @return string
-     */
-    public static function ucwords($string, $separators = " \t\r\n\f\v")
-    {
-        $pattern = '/(^|['.preg_quote($separators, '/').'])(\p{Ll})/u';
-
-        return preg_replace_callback($pattern, function ($matches) {
-            return $matches[1].mb_strtoupper($matches[2]);
-        }, $string);
     }
 
     /**

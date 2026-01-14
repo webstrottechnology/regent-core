@@ -47,17 +47,6 @@ class ProductRequest extends Request
 
     public function rules(): array
     {
-        $productId = $this->route('product.id');
-
-        if (! $productId) {
-            $routeProduct = $this->route('product');
-            $productId = $routeProduct instanceof Product ? $routeProduct->getKey() : $routeProduct;
-        }
-
-        if (! $productId) {
-            $productId = $this->route('id');
-        }
-
         $rules = [
             'name' => ['required', 'string', 'max:250'],
             'description' => ['nullable', 'string', 'max:300000'],
@@ -72,23 +61,7 @@ class ProductRequest extends Request
             ],
             'sale_price' => ['numeric', 'nullable', 'min:0'],
             'start_date' => ['date', 'nullable', 'required_if:sale_type,1'],
-            'end_date' => [
-                'date',
-                'nullable',
-                function ($attribute, $value, $fail) {
-                    if (! $value || ! $this->input('start_date')) {
-                        return;
-                    }
-
-                    $timezone = config('app.timezone');
-                    $startDate = Carbon::parse($this->input('start_date'), $timezone);
-                    $endDate = Carbon::parse($value, $timezone);
-
-                    if ($endDate->lte($startDate)) {
-                        $fail(trans('plugins/ecommerce::products.product_create_validate_end_date_after'));
-                    }
-                },
-            ],
+            'end_date' => 'date|nullable|after:' . ($this->input('start_date') ?? Carbon::now()->toDateTimeString()),
             'wide' => ['numeric', 'nullable', 'min:0', 'max:100000000'],
             'height' => ['numeric', 'nullable', 'min:0', 'max:100000000'],
             'weight' => ['numeric', 'nullable', 'min:0', 'max:100000000'],
@@ -114,7 +87,7 @@ class ProductRequest extends Request
                 'string',
                 'max:150',
                 Rule::unique((new Product())->getTable())
-                    ->ignore($productId),
+                    ->ignore($this->route('product.id')),
             ],
             'sku' => [
                 'nullable',
@@ -138,7 +111,6 @@ class ProductRequest extends Request
             'specification_attributes' => ['nullable', 'array'],
             'specification_attributes.*.hidden' => ['nullable', 'boolean'],
             'specification_attributes.*.order' => ['required', 'numeric', 'min:0'],
-            'is_new_until' => ['nullable', 'date'],
         ];
 
         if (EcommerceHelper::isEnabledProductOptions()) {

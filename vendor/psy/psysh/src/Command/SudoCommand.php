@@ -58,7 +58,7 @@ class SudoCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('sudo')

@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'Vlastné CSS',
-    'custom_css_helper' => 'Pridajte vlastné CSS štýly na prispôsobenie vzhľadu prepravného štítku. Tieto štýly budú pridané k predvoleným štýlom prepravného štítku.',
     'reset_success' => 'Úspešne obnovené na predvolené nastavenia',
     'confirm_reset' => 'Potvrdiť obnovu šablóny prepravného štítku?',
     'confirm_message' => 'Naozaj chcete obnoviť túto šablónu prepravného štítku na predvolené nastavenia?',

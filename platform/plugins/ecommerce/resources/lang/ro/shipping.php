@@ -191,9 +191,6 @@ return [
         'sender' => 'Expeditor',
         'order_date' => 'Data comenzii',
         'scan_qr_code' => 'Scanați codul QR pentru a urmări expediția',
-        'total_amount' => 'Suma totală',
-        'cod_amount_to_collect' => 'Suma COD de încasat',
     ],
     'customer_confirmed_delivery_at' => 'Clientul a confirmat livrarea la',
-    'no_shipping_methods_available' => 'Nicio metodă de livrare disponibilă!',
 ];

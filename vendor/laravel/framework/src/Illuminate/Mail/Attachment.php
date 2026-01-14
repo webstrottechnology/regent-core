@@ -21,7 +21,7 @@ class Attachment
     public $as;
 
     /**
-     * The attached file's MIME type.
+     * The attached file's mime type.
      *
      * @var string|null
      */
@@ -144,7 +144,7 @@ class Attachment
     }
 
     /**
-     * Set the attached file's MIME type.
+     * Set the attached file's mime type.
      *
      * @param  string  $mime
      * @return $this

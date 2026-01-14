@@ -335,27 +335,22 @@ class Cart
         }, 0);
     }
 
-    public function rawTaxByItems($content, float $discountAmount = 0): float
+    public function rawTaxByItems($content): float
     {
         if (! EcommerceHelper::isTaxEnabled()) {
             return 0;
         }
-
-        $rawTotal = $this->rawTotalByItems($content);
-        $discountRatio = $rawTotal > 0 ? max(0, $rawTotal - $discountAmount) / $rawTotal : 0;
 
         $totalTax = 0;
         foreach ($content as $cartItem) {
             $taxRate = $cartItem->taxRate;
             if ($taxRate > 0) {
                 $priceIncludesTax = $cartItem->options->get('price_includes_tax', false);
-                $itemPrice = $cartItem->qty * $cartItem->price;
-                $effectiveItemPrice = $itemPrice * $discountRatio;
 
                 if ($priceIncludesTax) {
-                    $totalTax += EcommerceHelper::roundPrice($effectiveItemPrice - ($effectiveItemPrice / (1 + $taxRate / 100)));
+                    $totalTax += EcommerceHelper::roundPrice($cartItem->qty * ($cartItem->price - ($cartItem->price / (1 + $taxRate / 100))));
                 } else {
-                    $totalTax += EcommerceHelper::roundPrice($effectiveItemPrice * ($taxRate / 100));
+                    $totalTax += EcommerceHelper::roundPrice($cartItem->price * $cartItem->qty * ($taxRate / 100));
                 }
             }
         }
@@ -370,7 +365,7 @@ class Cart
         $subTotal = $content->reduce(function ($subTotal, CartItem $cartItem) {
             $priceIncludesTax = $cartItem->options->get('price_includes_tax', false);
 
-            if (EcommerceHelper::isTaxEnabled() && $priceIncludesTax && $cartItem->taxRate > 0) {
+            if ($priceIncludesTax && $cartItem->taxRate > 0) {
                 $basePrice = $cartItem->price / (1 + $cartItem->taxRate / 100);
 
                 return $subTotal + EcommerceHelper::roundPrice($cartItem->qty * $basePrice);
@@ -387,7 +382,7 @@ class Cart
         return $content->reduce(function ($subTotal, CartItem $cartItem) {
             $priceIncludesTax = $cartItem->options->get('price_includes_tax', false);
 
-            if (EcommerceHelper::isTaxEnabled() && $priceIncludesTax && $cartItem->taxRate > 0) {
+            if ($priceIncludesTax && $cartItem->taxRate > 0) {
                 $basePrice = $cartItem->price / (1 + $cartItem->taxRate / 100);
 
                 return $subTotal + EcommerceHelper::roundPrice($cartItem->qty * $basePrice);
@@ -481,32 +476,9 @@ class Cart
         return static::withoutEvents(fn () => $this->store($identifier));
     }
 
-    public function updateOrStore(string $identifier): void
-    {
-        $this->getConnection()->table($this->getTableName())->updateOrInsert(
-            [
-                'identifier' => $identifier,
-                'instance' => $this->currentInstance(),
-            ],
-            [
-                'content' => serialize($this->getContent()),
-            ]
-        );
-
-        static::dispatchEvent('cart.stored');
-    }
-
-    public function updateOrStoreQuietly(string $identifier): void
-    {
-        static::withoutEvents(fn () => $this->updateOrStore($identifier));
-    }
-
     protected function storedCartWithIdentifierExists(string $identifier): bool
     {
-        return $this->getConnection()->table($this->getTableName())
-            ->where('identifier', $identifier)
-            ->where('instance', $this->currentInstance())
-            ->exists();
+        return $this->getConnection()->table($this->getTableName())->where('identifier', $identifier)->exists();
     }
 
     protected function getConnection(): Connection
@@ -619,28 +591,24 @@ class Cart
         return format_price($this->rawTax());
     }
 
-    public function rawTax(float $discountAmount = 0): float
+    public function rawTax(): float
     {
         if (! EcommerceHelper::isTaxEnabled()) {
             return 0;
         }
 
         $content = $this->getContent();
-        $rawTotal = $this->rawTotal();
-        $discountRatio = $rawTotal > 0 ? max(0, $rawTotal - $discountAmount) / $rawTotal : 0;
 
         $totalTax = 0;
         foreach ($content as $cartItem) {
             $taxRate = $cartItem->taxRate;
             if ($taxRate > 0) {
                 $priceIncludesTax = $cartItem->options->get('price_includes_tax', false);
-                $itemPrice = $cartItem->qty * $cartItem->price;
-                $effectiveItemPrice = $itemPrice * $discountRatio;
 
                 if ($priceIncludesTax) {
-                    $totalTax += EcommerceHelper::roundPrice($effectiveItemPrice - ($effectiveItemPrice / (1 + $taxRate / 100)));
+                    $totalTax += EcommerceHelper::roundPrice($cartItem->qty * ($cartItem->price - ($cartItem->price / (1 + $taxRate / 100))));
                 } else {
-                    $totalTax += EcommerceHelper::roundPrice($effectiveItemPrice * ($taxRate / 100));
+                    $totalTax += EcommerceHelper::roundPrice($cartItem->price * $cartItem->qty * ($taxRate / 100));
                 }
             }
         }

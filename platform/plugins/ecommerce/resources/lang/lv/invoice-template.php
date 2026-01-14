@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Klienta pilsēta',
         'customer_zipcode' => 'Klienta pasta indekss',
     ],
-    'custom_css' => 'Pielāgots CSS',
-    'custom_css_helper' => 'Pievienojiet pielāgotus CSS stilus, lai pielāgotu rēķina izskatu. Šie stili tiks pievienoti noklusējuma rēķina stiliem.',
     'reset_success' => 'Veiksmīgi atiestatīts uz noklusējumu',
     'confirm_reset' => 'Apstiprināt rēķina veidnes atiestatīšanu?',
     'confirm_message' => 'Vai tiešām vēlaties atiestatīt šo rēķina veidni uz noklusējumu?',

@@ -12,7 +12,4 @@ return [
     'parent' => 'Parent na Kategorya',
     'order' => 'Pagkakasunud-sunod',
     'is_default' => 'Default',
-    'intro' => [
-        'description' => 'Ayusin ang iyong mga blog post sa mga kategorya para sa mas mahusay na pamamahala ng nilalaman.',
-    ],
 ];

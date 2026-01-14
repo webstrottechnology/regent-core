@@ -66,7 +66,6 @@ return [
     'languages' => 'Limbi',
     'reset_password' => 'Resetează parola',
     'deactivated_message' => 'Contul dvs. a fost dezactivat. Vă rugăm să contactați administratorul.',
-    'password_changed_message' => 'Parola dumneavoastră a fost schimbată. Vă rugăm să vă autentificați din nou cu noua parolă.',
     'settings' => [
         'email' => [
             'title' => 'ACL',

@@ -27,7 +27,7 @@ class SslCommerzPaymentController extends BaseController
             return $response
                 ->setError()
                 ->setNextUrl(PaymentHelper::getCancelURL($checkoutToken))
-                ->setMessage(trans('plugins/sslcommerz::sslcommerz.payment_failed'));
+                ->setMessage(__('Payment failed!'));
         }
 
         $orderIds = explode(';', $request->input('value_a'));
@@ -46,7 +46,7 @@ class SslCommerzPaymentController extends BaseController
 
         return $response
             ->setNextUrl(PaymentHelper::getRedirectURL($checkoutToken))
-            ->setMessage(trans('plugins/sslcommerz::sslcommerz.checkout_successfully'));
+            ->setMessage(__('Checkout successfully!'));
     }
 
     public function fail(PaymentRequest $request, BaseHttpResponse $response)
@@ -56,7 +56,7 @@ class SslCommerzPaymentController extends BaseController
         return $response
             ->setError()
             ->setNextUrl(PaymentHelper::getCancelURL($checkoutToken))
-            ->setMessage(trans('plugins/sslcommerz::sslcommerz.payment_failed'));
+            ->setMessage(__('Payment failed!'));
     }
 
     public function cancel(PaymentRequest $request, BaseHttpResponse $response)
@@ -66,7 +66,7 @@ class SslCommerzPaymentController extends BaseController
         return $response
             ->setError()
             ->setNextUrl(PaymentHelper::getCancelURL($checkoutToken))
-            ->setMessage(trans('plugins/sslcommerz::sslcommerz.payment_failed'));
+            ->setMessage(__('Payment failed!'));
     }
 
     public function ipn(PaymentRequest $request, BaseHttpResponse $response)
@@ -76,7 +76,7 @@ class SslCommerzPaymentController extends BaseController
         if (! $request->input('tran_id')) {
             return $response
                 ->setError()
-                ->setMessage(trans('plugins/sslcommerz::sslcommerz.invalid_data'));
+                ->setMessage(__('Invalid Data!'));
         }
 
         $transactionId = $request->input('tran_id');
@@ -88,7 +88,7 @@ class SslCommerzPaymentController extends BaseController
         if (! $transaction) {
             return $response
                 ->setError()
-                ->setMessage(trans('plugins/sslcommerz::sslcommerz.invalid_transaction'));
+                ->setMessage(__('Invalid Transaction!'));
         }
 
         if ($transaction->status == PaymentStatusEnum::PENDING) {
@@ -112,7 +112,7 @@ class SslCommerzPaymentController extends BaseController
 
                 return $response
                     ->setError()
-                    ->setMessage(trans('plugins/sslcommerz::sslcommerz.transaction_completed'));
+                    ->setMessage(__('Transaction is successfully completed!'));
             }
             /*
                That means IPN worked, but Transaction validation failed.
@@ -124,12 +124,12 @@ class SslCommerzPaymentController extends BaseController
 
             return $response
                 ->setError()
-                ->setMessage(trans('plugins/sslcommerz::sslcommerz.validation_fail'));
+                ->setMessage(__('Validation Fail!'));
         }
 
         // That means Order status already updated. No need to update database.
         return $response
             ->setError()
-            ->setMessage(trans('plugins/sslcommerz::sslcommerz.transaction_already_completed'));
+            ->setMessage(__('Transaction is already successfully completed!'));
     }
 }

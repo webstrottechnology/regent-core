@@ -45,6 +45,4 @@ return [
     'admin' => 'מנהל',
     'register_an_account' => 'חשבון',
     'activity_has_been_deleted' => 'הפעילות נמחקה',
-    'no_results_found' => 'No results found',
-    'no_activities_here' => 'It looks as through there are no activities here.',
 ];

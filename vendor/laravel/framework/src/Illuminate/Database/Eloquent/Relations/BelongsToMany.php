@@ -1510,23 +1510,18 @@ class BelongsToMany extends Relation
     /**
      * Specify that the pivot table has creation and update timestamps.
      *
-     * @param  string|null|false  $createdAt
-     * @param  string|null|false  $updatedAt
+     * @param  mixed  $createdAt
+     * @param  mixed  $updatedAt
      * @return $this
      */
     public function withTimestamps($createdAt = null, $updatedAt = null)
     {
-        $this->pivotCreatedAt = $createdAt !== false ? $createdAt : null;
-        $this->pivotUpdatedAt = $updatedAt !== false ? $updatedAt : null;
+        $this->withTimestamps = true;
 
-        $pivots = array_filter([
-            $createdAt !== false ? $this->createdAt() : null,
-            $updatedAt !== false ? $this->updatedAt() : null,
-        ]);
+        $this->pivotCreatedAt = $createdAt;
+        $this->pivotUpdatedAt = $updatedAt;
 
-        $this->withTimestamps = ! empty($pivots);
-
-        return $this->withTimestamps ? $this->withPivot($pivots) : $this;
+        return $this->withPivot($this->createdAt(), $this->updatedAt());
     }
 
     /**

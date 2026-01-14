@@ -49,12 +49,6 @@ class ContactServiceProvider extends ServiceProvider
             ->loadMigrations()
             ->publishAssets();
 
-        if (class_exists('ApiHelper')) {
-            $this->loadRoutes(['api']);
-        }
-
-        $this->app->register(EventServiceProvider::class);
-
         DashboardMenu::default()->beforeRetrieving(function (): void {
             DashboardMenu::make()
                 ->registerItem(

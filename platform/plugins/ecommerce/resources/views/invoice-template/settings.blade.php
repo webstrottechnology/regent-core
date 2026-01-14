@@ -35,20 +35,6 @@
                 >
                 </x-core::twig-editor>
             </x-core::form-group>
-
-            <x-core::form-group>
-                <x-core::form.label for="invoice_template_custom_css">
-                    {{ trans('plugins/ecommerce::invoice-template.custom_css') }}
-                </x-core::form.label>
-                <x-core::form.code-editor
-                    name="invoice_template_custom_css"
-                    mode="css"
-                    :value="setting('invoice_template_custom_css')"
-                />
-                <x-core::form.helper-text>
-                    {{ trans('plugins/ecommerce::invoice-template.custom_css_helper') }}
-                </x-core::form.helper-text>
-            </x-core::form-group>
         </x-core-setting::section>
 
         <x-core-setting::section.action>

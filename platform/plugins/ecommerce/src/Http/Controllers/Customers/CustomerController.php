@@ -5,7 +5,6 @@ namespace Botble\Ecommerce\Http\Controllers\Customers;
 use Botble\Base\Events\CreatedContentEvent;
 use Botble\Base\Events\UpdatedContentEvent;
 use Botble\Base\Facades\Assets;
-use Botble\Base\Facades\BaseHelper;
 use Botble\Base\Http\Actions\DeleteResourceAction;
 use Botble\Base\Supports\Breadcrumb;
 use Botble\Ecommerce\Facades\EcommerceHelper;
@@ -55,11 +54,7 @@ class CustomerController extends BaseController
         $customer->fill($request->input());
         $customer->confirmed_at = Carbon::now();
         $customer->password = Hash::make($request->input('password'));
-
-        if ($dob = $request->input('dob')) {
-            $customer->dob = BaseHelper::parseDate($dob);
-        }
-
+        $customer->dob = Carbon::parse($request->input('dob'));
         $customer->save();
 
         event(new CreatedContentEvent(CUSTOMER_MODULE_SCREEN_NAME, $request, $customer));
@@ -79,7 +74,7 @@ class CustomerController extends BaseController
 
         $customer->password = null;
 
-        return CustomerForm::createFromModel($customer)->setValidatorClass(CustomerEditRequest::class)->renderForm();
+        return CustomerForm::createFromModel($customer)->renderForm();
     }
 
     public function update(Customer $customer, CustomerEditRequest $request)
@@ -90,9 +85,7 @@ class CustomerController extends BaseController
             $customer->password = Hash::make($request->input('password'));
         }
 
-        if ($dob = $request->input('dob')) {
-            $customer->dob = BaseHelper::parseDate($dob);
-        }
+        $customer->dob = Carbon::parse($request->input('dob'));
 
         $customer->save();
 
@@ -252,7 +245,7 @@ class CustomerController extends BaseController
         Assets::addScriptsDirectly('vendor/core/plugins/ecommerce/js/customer.js');
 
         $totalSpent = $customer->completedOrders()->sum('amount');
-        $totalOrders = $customer->finishedOrders()->count();
+        $totalOrders = $customer->orders()->count();
         $completedOrders = $customer->completedOrders()->count();
         $totalProducts = $customer->completedOrders()
             ->withCount('products')

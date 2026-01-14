@@ -23,6 +23,7 @@ return [
         'activated' => 'Aktyvuotas',
         'locked' => 'Užblokuotas',
     ],
+    'email_verified' => 'El. paštas patvirtintas?',
     'verify_email' => [
         'confirm_heading' => 'Patvirtinti el. paštą',
         'confirm_description' => 'Ar tikrai norite patvirtinti šio kliento el. paštą?',
@@ -30,6 +31,7 @@ return [
         'approve_here' => 'spustelėkite čia',
         'confirm_button' => 'Patvirtinti',
     ],
+    'email_already_verified' => 'El. paštas jau patvirtintas.',
     'verification_email_sent' => 'Patvirtinimo el. laiškas išsiųstas sėkmingai!',
     'resend_verification_email' => 'Pakartotinai siųsti patvirtinimo el. laišką',
     'resend_verification_email_confirmation' => 'Ar tikrai norite pakartotinai siųsti patvirtinimo el. laišką šiam klientui?',

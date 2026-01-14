@@ -64,20 +64,21 @@ class TopSellingProductsTable extends TableAbstract
 
         if (is_plugin_active('payment')) {
             $query = $query
-                ->leftJoin('payments', 'payments.order_id', '=', 'ec_orders.id')
-                ->where(function ($q): void {
-                    $q->where('payments.status', PaymentStatusEnum::COMPLETED)
-                        ->orWhereNull('ec_orders.payment_id');
-                });
+                ->join('payments', 'payments.order_id', '=', 'ec_orders.id')
+                ->where('payments.status', PaymentStatusEnum::COMPLETED);
         }
 
         $query = $query
             ->whereDate('ec_orders.created_at', '>=', $startDate)
             ->whereDate('ec_orders.created_at', '<=', $endDate)
             ->where('ec_orders.is_finished', true)
-            ->selectRaw('ec_products.id as id, ec_products.is_variation as is_variation, ec_products.name as name, SUM(ec_order_product.qty) as qty')
-            ->groupBy('ec_products.id', 'ec_products.is_variation', 'ec_products.name')
-            ->orderByDesc('qty')
+            ->select([
+                'ec_products.id as id',
+                'ec_products.is_variation as is_variation',
+                'ec_products.name as name',
+                'ec_order_product.qty as qty',
+            ])
+            ->latest('ec_order_product.qty')
             ->limit(10);
 
         return $this->applyScopes($query);

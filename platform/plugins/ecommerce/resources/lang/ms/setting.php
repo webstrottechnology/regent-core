@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'E-dagang',
     'general' => [
         'name' => 'Umum',
-        'description' => 'Nama kedai, maklumat syarikat, butiran hubungan dan e-mel pemberitahuan admin',
+        'description' => 'Lihat dan kemaskini tetapan umum anda',
     ],
     'currency' => [
         'name' => 'Mata Wang',
-        'description' => 'Format mata wang, kadar pertukaran, pengesanan automatik dan pemisah perpuluhan/ribuan',
+        'description' => 'Lihat dan kemaskini tetapan mata wang',
         'currency_setting_description' => 'Lihat dan kemaskini mata wang yang digunakan di laman web',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'Aktifkan pengesanan automatik mata wang pelawat',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'Produk',
-        'description' => 'Paparan stok, penjanaan SKU, imej variasi, produk berkaitan dan spesifikasi',
+        'description' => 'Lihat dan kemaskini tetapan produk anda',
         'product_settings' => 'Tetapan produk',
         'product_settings_description' => 'Konfigurasikan peraturan untuk produk',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'Carian Produk',
-        'description' => 'Tingkah laku carian, penapis mengikut kategori/jenama/tag/atribut dan penapisan julat harga',
+        'description' => 'Lihat dan kemaskini tetapan carian produk',
         'product_search_settings' => 'Carian produk',
         'product_search_settings_description' => 'Konfigurasikan peraturan untuk carian produk',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'Produk Digital',
-        'description' => 'Produk boleh muat turun, kod lesen, checkout tetamu untuk item digital dan penyelesaian automatik',
+        'description' => 'Lihat dan kemaskini tetapan produk digital',
         'digital_products_settings' => 'Produk digital',
         'digital_products_settings_description' => 'Konfigurasikan peraturan untuk produk digital',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'Ulasan Produk',
-        'description' => 'Ulasan pelanggan, paparan penilaian, muat naik imej dan keperluan kelulusan',
+        'description' => 'Lihat dan kemaskini tetapan ulasan produk anda',
         'form' => [
             'enable_review' => 'Aktifkan ulasan produk',
             'enable_review_help' => 'Benarkan pelanggan meninggalkan ulasan dan penilaian pada produk. Apabila dilumpuhkan, semua ciri ulasan akan disembunyikan dari kedai.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'Membeli-belah',
-        'description' => 'Troli, senarai hajat, bandingkan, penjejakan pesanan, butang beli pantas dan muat naik bukti pembayaran',
+        'description' => 'Lihat dan kemaskini tetapan membeli-belah anda',
         'general_setting' => 'Tetapan umum',
         'return_settings' => 'Tetapan pulangan',
         'return_settings_description' => 'Konfigurasikan peraturan untuk tetapan pulangan',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'Troli akan dimusnahkan apabila pelanggan log keluar.',
             'hide_product_price' => 'Sembunyikan harga produk',
             'hide_product_price_helper' => 'Pilihan ini hanya berfungsi jika anda melumpuhkan troli beli-belah, menukar laman anda kepada paparan katalog sahaja. Jika diaktifkan, harga produk akan disembunyikan. Ia berguna apabila anda ingin menyembunyikan harga dan memerlukan pelanggan menghubungi anda untuk harga.',
-            'hide_product_price_when_zero' => 'Sembunyikan harga produk apabila harganya sifar',
-            'hide_product_price_when_zero_helper' => 'Jika diaktifkan, produk berharga 0 tidak akan memaparkan harga di laman kedai.',
             'enable_payment_proof' => 'Aktifkan muat naik bukti pembayaran',
             'enable_payment_proof_helper' => 'Benarkan pelanggan memuat naik bukti pembayaran untuk pesanan mereka. Ini berguna untuk kaedah pembayaran manual.',
             'enable_guest_payment_proof' => 'Benarkan pelanggan tetamu memuat naik bukti pembayaran',
             'enable_guest_payment_proof_helper' => 'Apabila diaktifkan, pelanggan tetamu boleh memuat naik bukti pembayaran menggunakan token pesanan mereka tanpa log masuk. Mereka akan menerima pautan muat naik dalam e-mel pengesahan pesanan mereka.',
-            'payment_proof_payment_methods' => 'Kaedah pembayaran yang memerlukan bukti pembayaran',
-            'payment_proof_payment_methods_helper' => 'Pilih kaedah pembayaran yang harus membenarkan pelanggan memuat naik bukti pembayaran. Biasanya digunakan untuk kaedah pembayaran manual seperti COD dan pemindahan bank.',
         ],
     ],
     'checkout' => [
         'name' => 'Checkout',
-        'panel_description' => 'Checkout tetamu, medan wajib, had pesanan, penerimaan terma dan sekatan negara',
+        'panel_description' => 'Lihat dan kemaskini tetapan checkout',
         'description' => 'Konfigurasikan peraturan untuk tetapan checkout',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'Paparkan maklumat bank di halaman kejayaan checkout',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'Pulangan',
         'description' => 'Konfigurasikan peraturan untuk tetapan pulangan',
-        'panel_description' => 'Pemulangan pesanan, pemulangan separa dan had masa pemulangan',
+        'panel_description' => 'Lihat dan kemaskini tetapan pulangan',
         'form' => [
             'is_enabled_order_return' => 'Adakah diaktifkan pulangan pesanan',
             'allow_partial_return' => 'Benarkan pulangan separa',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'Invois',
-        'description' => 'Butiran syarikat pada invois, penomboran invois, fon PDF dan tetapan cap',
+        'description' => 'Lihat dan kemaskini tetapan invois anda',
         'company_settings' => 'Tetapan syarikat',
         'company_settings_description' => 'Tetapan maklumat Syarikat untuk penginvoisan',
         'form' => [
@@ -305,22 +301,19 @@ return [
             'default_tax_rate' => 'Kadar cukai piawai',
             'default_tax_rate_description' => 'Penting: ia akan digunakan jika tiada cukai dipilih dalam produk.',
             'select_tax' => '-- Pilih --',
-            'display_product_price_including_taxes' => 'Tambah cukai ke harga yang dipaparkan',
-            'display_product_price_including_taxes_helper' => 'Secara automatik menambah cukai ke harga produk yang dipaparkan di kedai. Contoh: produk $100 dengan cukai 10% dipaparkan sebagai $110. Tidak diperlukan jika "Harga termasuk cukai" sudah diaktifkan pada produk individu.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'Paparkan harga produk termasuk cukai',
         ],
     ],
     'customer' => [
         'name' => 'Pelanggan',
-        'description' => 'Pendaftaran, pengesahan e-mel, pilihan log masuk, pemadaman akaun dan medan profil',
+        'description' => 'Lihat dan kemaskini tetapan pelanggan anda',
         'customer_setting' => 'Tetapan pelanggan',
         'customer_setting_description' => 'Konfigurasikan tetapan pelanggan',
         'form' => [
             'enable_customer_registration' => 'Aktifkan pendaftaran pelanggan',
             'enable_customer_registration_helper' => 'Jika dilumpuhkan, pelanggan tidak akan dapat mendaftar akaun baharu. Pelanggan sedia ada masih boleh log masuk.',
-            'verify_customer_email' => 'Sahkan e-mel pelanggan',
-            'verify_customer_email_helper' => 'Apabila ia diaktifkan, pautan pengesahan akan dihantar ke e-mel pelanggan, pelanggan perlu klik pada pautan ini untuk mengesahkan e-mel mereka sebelum mereka boleh log masuk. Perlu konfigurasikan e-mel dalam Pentadbir -> Tetapan -> E-mel untuk menghantar pengesahan e-mel.',
+            'verify_customer_email' => "Sahkan e-mel pelanggan",
+            'verify_customer_email_helper' => "Apabila ia diaktifkan, pautan pengesahan akan dihantar ke e-mel pelanggan, pelanggan perlu klik pada pautan ini untuk mengesahkan e-mel mereka sebelum mereka boleh log masuk. Perlu konfigurasikan e-mel dalam Pentadbir -> Tetapan -> E-mel untuk menghantar pengesahan e-mel.",
             'verification_expire_minutes' => 'Masa tamat tempoh pautan pengesahan',
             'verification_expire_minutes_helper' => 'Masa dalam minit bahawa pautan pengesahan e-mel akan sah. Piawai adalah 60 minit (1 jam). Maksimum adalah 10080 minit (7 hari).',
             'login_using_phone' => 'Log masuk dengan nombor telefon bukannya e-mel',
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'Penghantaran',
-        'description' => 'Peraturan penghantaran, tingkah laku penghantaran percuma dan susunan paparan pilihan penghantaran',
+        'description' => 'Lihat dan kemaskini tetapan penghantaran',
         'shipping_rule' => 'Peraturan penghantaran',
         'shipping_rule_description' => 'Konfigurasikan peraturan untuk mengira bayaran penghantaran',
         'shipping_setting' => 'Tetapan penghantaran',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'Simpan lokasi',
             'add_new' => 'Tambah baharu',
         ],
-            'info' => [
-            'title' => 'Cara penjejak kedai berfungsi',
-            'primary_store' => 'Alamat kedai utama muncul pada invois dan digunakan sebagai alamat pemulangan lalai untuk label penghantaran.',
-            'shipping_location' => 'Kedai yang ditandakan sebagai "lokasi penghantaran" boleh dipilih sebagai gudang asal semasa membuat penghantaran.',
-            'shipment_selection' => 'Semasa memproses pesanan, anda boleh memilih gudang mana untuk menghantar berdasarkan inventori dan lokasi pelanggan.',
-        ],
     ],
     'tracking' => [
         'name' => 'Penjejakan',
-        'description' => 'Facebook Pixel, acara Google Tag Manager dan penjejakan penukaran Google Ads',
+        'description' => 'Lihat dan kemaskini tetapan penjejakan',
         'manage_tracking' => 'Urus penjejakan',
         'manage_tracking_description' => 'Urus penjejakan: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'Pasaran',
-        'description' => 'Tetapan berbilang vendor, komisen, pendaftaran vendor dan konfigurasi pembayaran',
+        'description' => 'Lihat dan kemaskini tetapan pasaran',
     ],
     'standard_and_format' => [
         'name' => 'Standard & Format',
-        'panel_description' => 'Format kod pesanan, unit berat (kg/lb) dan unit dimensi (cm/inci)',
+        'panel_description' => 'Lihat dan kemaskini tetapan standard & format',
         'description' => 'Standard dan format digunakan untuk mengira perkara seperti harga produk, berat penghantaran, dan masa pesanan.',
         'form' => [
             'change_order_format' => 'Sunting format kod pesanan (pilihan)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'Tunjukkan bar kemajuan dengan "X dijual daripada Y" untuk cipta keperluan mendesak dan galakkan pembelian pantas semasa jualan kilat.',
     ],
     'payment_method_cod_minimum_amount' => 'Jumlah pesanan minimum - :currency (Pilihan)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'Jumlah pesanan minimum - :currency (Pilihan)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'Paparkan maklumat bank di halaman kejayaan checkout?',
     'invoice_templates' => 'Templat invois',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

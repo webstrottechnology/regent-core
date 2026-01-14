@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Mesto stranke',
         'customer_zipcode' => 'Poštna številka stranke',
     ],
-    'custom_css' => 'CSS po meri',
-    'custom_css_helper' => 'Dodajte sloge CSS po meri za prilagoditev videza računa. Ti slogi bodo dodani privzetim slogom računa.',
     'reset_success' => 'Uspešno ponastavljeno na privzeto',
     'confirm_reset' => 'Potrdite ponastavitev predloge računa?',
     'confirm_message' => 'Ali res želite ponastaviti to predlogo računa na privzeto?',

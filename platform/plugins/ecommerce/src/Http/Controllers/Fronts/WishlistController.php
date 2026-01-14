@@ -74,7 +74,7 @@ class WishlistController extends BaseController
             return $this
                 ->httpResponse()
                 ->setError()
-                ->setMessage(trans('plugins/ecommerce::products.wishlist.product_not_available'));
+                ->setMessage(__('This product is not available.'));
         }
 
         /**
@@ -88,8 +88,8 @@ class WishlistController extends BaseController
             ->httpResponse()
             ->setMessage(
                 $isAdded
-                ? trans('plugins/ecommerce::products.wishlist.added_success', ['product' => $product->name])
-                : trans('plugins/ecommerce::products.wishlist.removed_success', ['product' => $product->name])
+                ? __('Added product :product successfully!', ['product' => $product->name])
+                : __('Removed product :product from wishlist successfully!', ['product' => $product->name])
             )
             ->setData([
                 'count' => $this->wishlistCount(),
@@ -109,7 +109,7 @@ class WishlistController extends BaseController
 
         return $this
             ->httpResponse()
-            ->setMessage(trans('plugins/ecommerce::products.wishlist.removed_success', ['product' => $product->name]))
+            ->setMessage(__('Removed product :product from wishlist successfully!', ['product' => $product->name]))
             ->setData([
                 'count' => $this->wishlistCount(),
                 'extra_data' => app(GoogleTagManager::class)->formatProductTrackingData($product->original_product),

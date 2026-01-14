@@ -26,15 +26,8 @@ class CommandServiceProvider extends ServiceProvider
         $this->app->afterResolving(Schedule::class, function (Schedule $schedule): void {
             $schedule->command(SendAbandonedCartsEmailCommand::class)->weekly();
             $schedule->command(CancelExpiredDeletionRequests::class)->daily();
-
-            $schedule->command(CheckAbandonedCartsCommand::class)
-                ->hourly()
-                ->when(fn () => get_ecommerce_setting('abandoned_cart_enabled', false));
-
-            $schedule->command(CheckAbandonedCartsCommand::class, ['--cleanup' => true])
-                ->daily()
-                ->when(fn () => get_ecommerce_setting('abandoned_cart_enabled', false));
-
+            $schedule->command(CheckAbandonedCartsCommand::class)->hourly();
+            $schedule->command(CheckAbandonedCartsCommand::class, ['--cleanup' => true])->daily();
             $schedule->command('model:prune', [
                 '--model' => [SharedWishlist::class],
             ])->daily();

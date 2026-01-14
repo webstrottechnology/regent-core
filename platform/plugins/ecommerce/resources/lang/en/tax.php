@@ -2,7 +2,7 @@
 
 return [
     'name' => 'Taxes',
-    'description' => 'Manage tax rules by country, state, city with different rates and priorities',
+    'description' => 'View and update your products settings',
     'create' => 'Create a tax',
     'edit' => 'Edit tax :title',
     'title' => 'Title',

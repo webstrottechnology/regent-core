@@ -191,9 +191,6 @@ return [
         'sender' => '寄件人',
         'order_date' => '訂單日期',
         'scan_qr_code' => '掃描 QR 碼追蹤您的出貨',
-        'total_amount' => '總金額',
-        'cod_amount_to_collect' => '需收取的貨到付款金額',
     ],
     'customer_confirmed_delivery_at' => '顧客確認送達時間',
-    'no_shipping_methods_available' => '沒有可用的配送方式！',
 ];

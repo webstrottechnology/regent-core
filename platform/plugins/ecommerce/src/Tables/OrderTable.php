@@ -23,6 +23,7 @@ use Botble\Table\Columns\CreatedAtColumn;
 use Botble\Table\Columns\FormattedColumn;
 use Botble\Table\Columns\IdColumn;
 use Botble\Table\Columns\StatusColumn;
+use Botble\Theme\Facades\Theme;
 use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -32,23 +33,19 @@ use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Response;
 
 class OrderTable extends TableAbstract
 {
     public function setup(): void
     {
-        $actions = [
-            EditAction::make()->route('orders.edit'),
-        ];
-
-        if (EcommerceHelper::isOrderDeletionEnabled()) {
-            $actions[] = DeleteAction::make()->route('orders.destroy');
-        }
-
         $this
             ->model(Order::class)
-            ->addActions($actions);
+            ->addActions([
+                EditAction::make()->route('orders.edit'),
+                DeleteAction::make()->route('orders.destroy'),
+            ]);
     }
 
     public function ajax(): JsonResponse
@@ -69,7 +66,7 @@ class OrderTable extends TableAbstract
                     return '&mdash;';
                 }
 
-                return BaseHelper::clean($item->payment->payment_channel->displayName() ?: '&mdash;');
+                return BaseHelper::clean($item->payment->payment_channel->label() ?: '&mdash;');
             })
             ->formatColumn('amount', PriceFormatter::class)
             ->editColumn('shipping_amount', function (Order $item) {
@@ -176,10 +173,6 @@ class OrderTable extends TableAbstract
 
     public function bulkActions(): array
     {
-        if (! EcommerceHelper::isOrderDeletionEnabled()) {
-            return [];
-        }
-
         return [
             DeleteBulkAction::make()->permission('orders.destroy'),
         ];
@@ -218,14 +211,6 @@ class OrderTable extends TableAbstract
                 'title' => trans('plugins/ecommerce::ecommerce.customer_phone'),
                 'type' => 'text',
             ],
-            'product_sku' => [
-                'title' => trans('plugins/ecommerce::products.sku'),
-                'type' => 'text',
-            ],
-            'product_name' => [
-                'title' => trans('plugins/ecommerce::products.product_name'),
-                'type' => 'text',
-            ],
             'amount' => [
                 'title' => trans('plugins/ecommerce::order.amount'),
                 'type' => 'number',
@@ -252,7 +237,15 @@ class OrderTable extends TableAbstract
             ]);
         }
 
-        return apply_filters('ecommerce_order_table_filters', $filters, $this);
+        if (is_plugin_active('marketplace')) {
+            $filters['store_id'] = [
+                'title' => trans('plugins/marketplace::store.forms.store'),
+                'type' => 'select-search',
+                'choices' => [-1 => Theme::getSiteTitle()] + DB::table('mp_stores')->pluck('name', 'id')->all(),
+            ];
+        }
+
+        return $filters;
     }
 
     public function renderTable($data = [], $mergeData = []): View|Factory|Response
@@ -325,18 +318,6 @@ class OrderTable extends TableAbstract
                 }
 
                 return $this->filterByCustomer($query, 'phone', $operator, $value);
-            case 'product_sku':
-                if (! $value) {
-                    break;
-                }
-
-                return $this->filterByProductSku($query, $operator, $value);
-            case 'product_name':
-                if (! $value) {
-                    break;
-                }
-
-                return $this->filterByProductName($query, $operator, $value);
             case 'status':
                 if (! OrderStatusEnum::isValid($value)) {
                     return $query;
@@ -409,42 +390,31 @@ class OrderTable extends TableAbstract
             });
     }
 
-    protected function filterByProductSku(
-        Builder|QueryBuilder|Relation $query,
-        string $operator,
-        ?string $value
-    ): Builder|QueryBuilder|Relation {
-        if ($operator === 'like') {
-            $value = '%' . $value . '%';
-        } elseif ($operator !== '=') {
-            $operator = '=';
-        }
-
-        return $query->whereHas('products.product', function ($subQuery) use ($operator, $value): void {
-            $subQuery->where('sku', $operator, $value);
-        });
-    }
-
-    protected function filterByProductName(
-        Builder|QueryBuilder|Relation $query,
-        string $operator,
-        ?string $value
-    ): Builder|QueryBuilder|Relation {
-        if ($operator === 'like') {
-            $value = '%' . $value . '%';
-        } elseif ($operator !== '=') {
-            $operator = '=';
-        }
-
-        return $query->whereHas('products.product', function ($subQuery) use ($operator, $value): void {
-            $subQuery->where('name', $operator, $value);
-        });
-    }
-
     protected function filterOrders($query, bool $finished = true): Builder|QueryBuilder|Relation
     {
-        return $query
-            ->searchByKeyword($this->request->input('search.value'))
-            ->where('is_finished', $finished);
+        if ($keyword = $this->request->input('search.value')) {
+            $keyword = '%' . $keyword . '%';
+
+            return $query
+                ->where(function ($query) use ($keyword): void {
+                    $query
+                        ->whereHas('address', function ($subQuery) use ($keyword) {
+                            return $subQuery
+                                ->where('name', 'LIKE', $keyword)
+                                ->orWhere('email', 'LIKE', $keyword)
+                                ->orWhere('phone', 'LIKE', $keyword);
+                        })
+                        ->orWhereHas('user', function ($subQuery) use ($keyword) {
+                            return $subQuery
+                                ->where('name', 'LIKE', $keyword)
+                                ->orWhere('email', 'LIKE', $keyword)
+                                ->orWhere('phone', 'LIKE', $keyword);
+                        })
+                        ->orWhere('code', 'LIKE', $keyword);
+                })
+                ->where('is_finished', $finished);
+        }
+
+        return $query;
     }
 }

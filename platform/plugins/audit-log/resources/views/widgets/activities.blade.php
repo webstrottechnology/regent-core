@@ -20,7 +20,7 @@
     @endif
 @else
     <x-core::empty-state
-        :title="trans('plugins/audit-log::history.no_results_found')"
-        :subtitle="trans('plugins/audit-log::history.no_activities_here')"
+        :title="__('No results found')"
+        :subtitle="__('It looks as through there are no activities here.')"
     />
 @endif

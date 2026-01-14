@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Kundens by',
         'customer_zipcode' => 'Kundens postnummer',
     ],
-    'custom_css' => 'Brugerdefineret CSS',
-    'custom_css_helper' => 'Tilføj brugerdefinerede CSS-stilarter for at tilpasse fakturaens udseende. Disse stilarter vil blive tilføjet til standardfakturastilene.',
     'reset_success' => 'Nulstillet til standard succesfuldt',
     'confirm_reset' => 'Bekræft nulstilling af fakturaskabelon?',
     'confirm_message' => 'Vil du virkelig nulstille denne fakturaskabelon til standard?',

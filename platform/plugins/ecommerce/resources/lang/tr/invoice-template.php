@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Müşteri şehri',
         'customer_zipcode' => 'Müşteri posta kodu',
     ],
-    'custom_css' => 'Özel CSS',
-    'custom_css_helper' => 'Fatura görünümünü özelleştirmek için özel CSS stilleri ekleyin. Bu stiller varsayılan fatura stillerine eklenecektir.',
     'reset_success' => 'Varsayılana sıfırlama başarılı',
     'confirm_reset' => 'Fatura şablonunu sıfırlamayı onaylıyor musunuz?',
     'confirm_message' => 'Bu fatura şablonunu gerçekten varsayılana sıfırlamak istiyor musunuz?',

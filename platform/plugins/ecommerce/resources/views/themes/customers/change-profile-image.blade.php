@@ -1,6 +1,6 @@
 @extends(EcommerceHelper::viewPath('customers.master'))
 
-@section('title', trans('plugins/ecommerce::customer-dashboard.change_avatar'))
+@section('title', __('Change avatar'))
 
 @section('content')
     <div class="panel panel-default">
@@ -9,7 +9,7 @@
             {!! Form::open(['route' => 'customer.change-avatar', 'files' => true]) !!}
 
             <label class="btn-bs-file btn btn-lg btn-primary">
-                {{ trans('plugins/ecommerce::customer-dashboard.select_file') }}
+                {{ __('Select file') }}
                 <input
                     id="avatar"
                     name="avatar"
@@ -24,7 +24,7 @@
                     class="btn btn-primary btn-sm"
                     id="change-avatar-btn"
                     type="submit"
-                >{{ trans('plugins/ecommerce::customer-dashboard.update') }}</button>
+                >{{ __('Update') }}</button>
             </div>
             {!! Form::close() !!}
         </div>

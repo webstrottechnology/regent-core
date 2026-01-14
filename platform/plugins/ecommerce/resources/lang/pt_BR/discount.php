@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => 'Cupom ilimitado?',
     'enter_number' => 'Digite o número',
     'coupon_type' => 'Tipo de cupom',
-    'discount_type' => 'Tipo de desconto',
     'percentage_discount' => 'Desconto percentual (%)',
     'free_shipping' => 'Frete grátis',
     'same_price' => 'Mesmo preço',
     'apply_for' => 'aplicar para',
-    'apply_to' => 'Aplicar a',
     'all_orders' => 'Todos os pedidos',
     'order_amount_from' => 'Valor do pedido a partir de',
     'product_collection' => 'Coleção de produtos',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => 'Este cupom não pode ser aplicado porque seu carrinho contém itens em oferta relâmpago (:product_name). Preços de oferta relâmpago não podem ser combinados com descontos de cupom.',
     'coupon_applied_successfully' => 'Ótimo! O código de cupom ":code" foi aplicado. Você economizou dinheiro neste pedido!',
     'coupon_removed_successfully' => 'O código do cupom foi removido do seu pedido.',
-
-    // Frontend coupon display
-    'coupon_codes_count' => 'Códigos de cupom (:count)',
-    'left_quantity' => 'Restam :left',
-    'apply' => 'Aplicar',
-    'remove' => 'Remover',
-    'select_coupon' => 'Selecionar cupom',
-    'you_have_coupon_code' => 'Você tem um código de cupom?',
-    'close' => 'Fechar',
-    'coupon_code_label' => 'Código de cupom: :code',
-    'enter_coupon_code_placeholder' => 'Digite o código do cupom...',
 ];

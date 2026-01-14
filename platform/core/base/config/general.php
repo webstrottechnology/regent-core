@@ -10,7 +10,6 @@ return [
             'js' => [
                 '/vendor/core/core/base/libraries/ckeditor/ckeditor.js',
             ],
-            'font_families' => env('CKEDITOR_FONT_FAMILIES', ''),
         ],
         'tinymce' => [
             'js' => [

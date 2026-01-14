@@ -58,12 +58,10 @@ return [
     'unlimited_coupon' => '无限制优惠券？',
     'enter_number' => '输入数字',
     'coupon_type' => '优惠券类型',
-    'discount_type' => '折扣类型',
     'percentage_discount' => '百分比折扣（%）',
     'free_shipping' => '免费配送',
     'same_price' => '同一价格',
     'apply_for' => '适用于',
-    'apply_to' => '适用于',
     'all_orders' => '所有订单',
     'order_amount_from' => '订单金额从',
     'product_collection' => '产品集合',
@@ -105,15 +103,4 @@ return [
     'cannot_use_same_time_with_flash_sale' => '此优惠券无法应用，因为您的购物车包含闪购商品（:product_name）。闪购价格无法与优惠券折扣组合使用。',
     'coupon_applied_successfully' => '太好了！优惠券代码":code"已应用。您在此订单上节省了金钱！',
     'coupon_removed_successfully' => '优惠券代码已从您的订单中移除。',
-
-    // Frontend coupon display
-    'coupon_codes_count' => '优惠券代码 (:count)',
-    'left_quantity' => '剩余 :left',
-    'apply' => '应用',
-    'remove' => '移除',
-    'select_coupon' => '选择优惠券',
-    'you_have_coupon_code' => '您有优惠券代码吗？',
-    'close' => '关闭',
-    'coupon_code_label' => '优惠券代码：:code',
-    'enter_coupon_code_placeholder' => '输入优惠券代码...',
 ];

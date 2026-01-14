@@ -23,6 +23,7 @@ return [
     'edit_this_post' => 'Επεξεργασία αυτής της δημοσίευσης',
     'no_new_post_now' => 'Δεν υπάρχει νέα δημοσίευση αυτή τη στιγμή!',
     'menu_name' => 'Δημοσιεύσεις',
+    'widget_posts_recent' => 'Πρόσφατες Δημοσιεύσεις',
     'categories' => 'Κατηγορίες',
     'category' => 'Κατηγορία',
     'author' => 'Συγγραφέας',
@@ -68,5 +69,4 @@ return [
     'widget_tags_description' => 'Δημοφιλείς ετικέτες',
     'widget_categories' => 'Κατηγορίες Ιστολογίου',
     'widget_categories_description' => 'Εμφάνιση κατηγοριών ιστολογίου',
-    'views' => 'Προβολές',
 ];

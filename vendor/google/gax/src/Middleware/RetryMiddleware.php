@@ -39,8 +39,6 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * Middleware that adds retry functionality.
- *
- * @internal
  */
 class RetryMiddleware implements MiddlewareInterface
 {

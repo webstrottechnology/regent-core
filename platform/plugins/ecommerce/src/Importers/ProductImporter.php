@@ -1368,13 +1368,6 @@ class ProductImporter extends Importer implements WithMapping
                 $value = is_numeric($value) ? $value : null;
 
                 break;
-
-            case 'string':
-                if ($value !== null) {
-                    $value = (string) $value;
-                }
-
-                break;
         }
 
         Arr::set($row, $key, $value);

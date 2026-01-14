@@ -23,6 +23,7 @@ return [
     'edit_this_post' => 'इस पोस्ट को संपादित करें',
     'no_new_post_now' => 'अभी कोई नई पोस्ट नहीं है!',
     'menu_name' => 'पोस्ट',
+    'widget_posts_recent' => 'हाल की पोस्ट',
     'categories' => 'श्रेणियाँ',
     'category' => 'श्रेणी',
     'author' => 'लेखक',
@@ -68,5 +69,4 @@ return [
     'widget_tags_description' => 'लोकप्रिय टैग',
     'widget_categories' => 'ब्लॉग श्रेणियां',
     'widget_categories_description' => 'ब्लॉग श्रेणियां प्रदर्शित करें',
-    'views' => 'दृश्य',
 ];

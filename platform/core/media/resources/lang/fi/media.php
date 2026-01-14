@@ -44,8 +44,6 @@ return [
     'alt_text' => 'Vaihtoehtoinen teksti',
 
     'folder_created' => 'Kansio luotu onnistuneesti!',
-    'folder_exists' => 'Kansio :folder on jo olemassa!',
-    'directory_must_empty' => 'Hakemiston on oltava tyhjä, jotta se voidaan poistaa!',
     'gallery' => 'Mediagalleria',
 
     'trash_error' => 'Virhe valittujen kohteiden poistamisessa',

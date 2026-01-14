@@ -15,7 +15,7 @@
 
     @php
         $faviconUrl = AdminHelper::getAdminFaviconUrl();
-        $faviconType = rescue(fn() => RvMedia::getMimeType(AdminHelper::getAdminFavicon()), 'image/x-icon', false);
+        $faviconType = rescue(fn () => RvMedia::getMimeType(AdminHelper::getAdminFavicon()), 'image/x-icon', false);
     @endphp
     <link
         href="{{ $faviconUrl }}"
@@ -288,7 +288,6 @@
                 </div>
                 <div class="iframe-container">
                     <iframe
-                        id="preview-iframe"
                         src="{{ $iframeUrl . ($inputData ? '?' . http_build_query($inputData) : '') }}"
                         width="100%"
                         height="100%"
@@ -301,10 +300,7 @@
                 <h2>{{ trans('core/setting::setting.preview') }}</h2>
                 <p>{{ trans('core/setting::setting.enter_sample_value') }}</p>
             </div>
-            <form
-                method="POST"
-                id="preview-form"
-            >
+            <form method="POST">
                 @csrf
                 @foreach ($variables as $key => $variable)
                     <div class="form-group">
@@ -313,7 +309,7 @@
                             for="txt-{{ $key }}"
                         >{{ trans($variable) }}</label>
                         <input
-                            class="form-control preview-input"
+                            class="form-control"
                             id="txt-{{ $key }}"
                             name="{{ $key }}"
                             type="text"
@@ -334,53 +330,6 @@
             </form>
         </div>
     </div>
-
-    <script>
-        (function() {
-            const iframe = document.getElementById('preview-iframe');
-            const form = document.getElementById('preview-form');
-            const inputs = document.querySelectorAll('.preview-input');
-            const baseIframeUrl = '{{ $iframeUrl }}';
-            let reloadTimeout = null;
-
-            function reloadPreview() {
-                if (reloadTimeout) {
-                    clearTimeout(reloadTimeout);
-                }
-
-                reloadTimeout = setTimeout(function() {
-                    const formData = new FormData(form);
-                    const params = new URLSearchParams();
-
-                    for (const [key, value] of formData.entries()) {
-                        if (key !== '_token' && value.trim() !== '') {
-                            params.append(key, value);
-                        }
-                    }
-
-                    const queryString = params.toString();
-                    const newUrl = queryString ? baseIframeUrl + '?' + queryString : baseIframeUrl;
-
-                    iframe.src = newUrl;
-                }, 300);
-            }
-
-            inputs.forEach(function(input) {
-                input.addEventListener('blur', reloadPreview);
-                input.addEventListener('keyup', function(e) {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        reloadPreview();
-                    }
-                });
-            });
-
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                reloadPreview();
-            });
-        })();
-    </script>
 </body>
 
 </html>

@@ -22,6 +22,7 @@ return [
     'edit_this_post' => 'I-edit ang post na ito',
     'no_new_post_now' => 'Walang bagong post ngayon!',
     'menu_name' => 'Mga Post',
+    'widget_posts_recent' => 'Kamakailang Mga Post',
     'categories' => 'Mga Kategorya',
     'category' => 'Kategorya',
     'author' => 'May-akda',
@@ -64,5 +65,4 @@ return [
     'widget_tags_description' => 'Mga popular na tag',
     'widget_categories' => 'Mga Kategorya ng Blog',
     'widget_categories_description' => 'Ipakita ang mga kategorya ng blog',
-    'views' => 'Mga View',
 ];

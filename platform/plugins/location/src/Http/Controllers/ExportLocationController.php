@@ -25,15 +25,15 @@ class ExportLocationController extends ExportController
             $exporter->setStatus(request()->input('status'));
         }
 
-        if (request()->has('chunk_size')) {
+        if (request()->has('chunk_size') && method_exists($exporter, 'setChunkSize')) {
             $exporter->setChunkSize((int) request()->input('chunk_size'));
         }
 
-        if (request()->has('use_chunked_export')) {
+        if (request()->has('use_chunked_export') && method_exists($exporter, 'useChunkedExport')) {
             $exporter->useChunkedExport(request()->boolean('use_chunked_export'));
         }
 
-        if (request()->has('optimize_queries')) {
+        if (request()->has('optimize_queries') && method_exists($exporter, 'setOptimizeQueries')) {
             $exporter->setOptimizeQueries(request()->boolean('optimize_queries', true));
         }
 

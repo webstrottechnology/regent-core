@@ -47,5 +47,4 @@ return [
         'completed' => 'Завършена',
         'canceled' => 'Отказана',
     ],
-    'back_to_invoices' => 'Обратно към фактурите',
 ];

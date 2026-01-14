@@ -66,7 +66,6 @@ return [
     'languages' => 'Nyelvek',
     'reset_password' => 'Jelszó visszaállítása',
     'deactivated_message' => 'A fiókod deaktiválva lett. Kérlek lépj kapcsolatba az adminisztrátorral.',
-    'password_changed_message' => 'A jelszava megváltozott. Kérjük, jelentkezzen be újra az új jelszavával.',
     'settings' => [
         'email' => [
             'title' => 'ACL',

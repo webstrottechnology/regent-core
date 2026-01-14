@@ -6,10 +6,10 @@ use Botble\ACL\Models\User;
 use Botble\Base\Events\UpdatedContentEvent;
 use Botble\Base\Facades\Assets;
 use Botble\Base\Facades\BaseHelper;
+use Botble\Base\Facades\EmailHandler;
 use Botble\Base\Http\Actions\DeleteResourceAction;
 use Botble\Base\Supports\Breadcrumb;
 use Botble\Ecommerce\Cart\CartItem;
-use Botble\Ecommerce\Enums\OrderCancellationReasonEnum;
 use Botble\Ecommerce\Enums\OrderHistoryActionEnum;
 use Botble\Ecommerce\Enums\OrderStatusEnum;
 use Botble\Ecommerce\Enums\ShippingCodStatusEnum;
@@ -24,7 +24,6 @@ use Botble\Ecommerce\Facades\InvoiceHelper;
 use Botble\Ecommerce\Facades\OrderHelper;
 use Botble\Ecommerce\Http\Requests\AddressRequest;
 use Botble\Ecommerce\Http\Requests\ApplyCouponRequest;
-use Botble\Ecommerce\Http\Requests\CancelOrderRequest;
 use Botble\Ecommerce\Http\Requests\CreateOrderRequest;
 use Botble\Ecommerce\Http\Requests\CreateShipmentRequest;
 use Botble\Ecommerce\Http\Requests\MarkOrderAsCompletedRequest;
@@ -314,8 +313,6 @@ class OrderController extends BaseController
 
     public function destroy(Order $order)
     {
-        abort_unless(EcommerceHelper::isOrderDeletionEnabled(), 403);
-
         return DeleteResourceAction::make($order);
     }
 
@@ -519,32 +516,15 @@ class OrderController extends BaseController
             ->setMessage(trans('plugins/ecommerce::order.tax_info.update_success'));
     }
 
-    public function postCancelOrder(CancelOrderRequest $request, Order $order)
+    public function postCancelOrder(Order $order)
     {
         abort_unless($order->canBeCanceledByAdmin(), 403);
 
-        $reason = $request->input('cancellation_reason');
-        $reasonDescription = $request->input('cancellation_reason_description');
-
-        OrderHelper::cancelOrder($order, $reason, $reasonDescription);
-
-        $adminName = Auth::user()?->name ?? trans('plugins/ecommerce::order.admin');
-
-        $description = match (true) {
-            $reason && $reason !== OrderCancellationReasonEnum::OTHER => trans('plugins/ecommerce::order.order_was_canceled_by_with_reason', [
-                'admin' => $adminName,
-                'reason' => OrderCancellationReasonEnum::getLabel($reason),
-            ]),
-            $reason === OrderCancellationReasonEnum::OTHER && $reasonDescription => trans('plugins/ecommerce::order.order_was_canceled_by_with_reason', [
-                'admin' => $adminName,
-                'reason' => $reasonDescription,
-            ]),
-            default => trans('plugins/ecommerce::order.order_was_canceled_by'),
-        };
+        OrderHelper::cancelOrder($order);
 
         OrderHistory::query()->create([
             'action' => OrderHistoryActionEnum::CANCEL_ORDER,
-            'description' => $description,
+            'description' => trans('plugins/ecommerce::order.order_was_canceled_by'),
             'order_id' => $order->id,
             'user_id' => Auth::id(),
         ]);
@@ -664,16 +644,11 @@ class OrderController extends BaseController
             Arr::set($metadata, 'refunds', $refunds);
 
             $payment->metadata = $metadata;
-
-            if (isset($refundData['refunded_amount_in_currency'])) {
-                $refundAmount = $refundData['refunded_amount_in_currency'];
-            }
         }
 
         $payment->refunded_amount += $refundAmount;
 
-        $tolerance = max(0.01, $payment->amount * 0.01);
-        if (abs($payment->refunded_amount - $payment->amount) <= $tolerance) {
+        if ($payment->refunded_amount == $payment->amount) {
             $payment->status = PaymentStatusEnum::REFUNDED;
         }
 
@@ -711,7 +686,6 @@ class OrderController extends BaseController
                 'extras' => json_encode([
                     'amount' => $refundAmount,
                     'method' => $payment->payment_channel ?? PaymentMethodEnum::COD,
-                    'refund_note' => $request->input('refund_note'),
                 ]),
             ]);
         }
@@ -952,9 +926,12 @@ class OrderController extends BaseController
         }
 
         try {
-            $order->dont_show_order_info_in_product_list = true;
+            $mailer = EmailHandler::setModule(ECOMMERCE_MODULE_SCREEN_NAME);
 
-            OrderHelper::sendOrderEmail($order, 'order_recover', $email);
+            $order->dont_show_order_info_in_product_list = true;
+            OrderHelper::setEmailVariables($order);
+
+            $mailer->sendUsingTemplate('order_recover', $email);
 
             return $this
                 ->httpResponse()->setMessage(trans('plugins/ecommerce::order.sent_email_incomplete_order_success'));
@@ -989,8 +966,9 @@ class OrderController extends BaseController
             'variationInfo.configurableProduct',
             'variationProductAttributes',
         ];
-
-        $with = apply_filters('ecommerce_order_product_relations', $with);
+        if (is_plugin_active('marketplace')) {
+            $with = array_merge($with, ['store', 'variationInfo.configurableProduct.store']);
+        }
 
         $inputProducts = collect($request->input('products'));
         if ($productIds = $inputProducts->pluck('id')->all()) {
@@ -1088,7 +1066,13 @@ class OrderController extends BaseController
                 }
             }
 
-            $productName = apply_filters('ecommerce_order_product_name', $productName, $product, $stores);
+            if (is_plugin_active('marketplace')) {
+                $store = $product->original_product->store;
+                if ($store->id) {
+                    $productName .= ' (' . $store->name . ')';
+                }
+                $stores[] = $store;
+            }
 
             $parentProduct = $product->original_product;
 
@@ -1133,10 +1117,11 @@ class OrderController extends BaseController
             }
         }
 
-        $validationResult = apply_filters('ecommerce_order_validate_products', ['isError' => false, 'message' => null], $stores);
-        if ($validationResult['isError']) {
-            $isError = true;
-            $message[] = $validationResult['message'];
+        if (is_plugin_active('marketplace')) {
+            if (count(array_unique(array_filter($stores->pluck('id')->all()))) > 1) {
+                $isError = true;
+                $message[] = trans('plugins/marketplace::order.products_are_from_different_vendors');
+            }
         }
 
         $subAmount = Cart::rawSubTotalByItems($cartItems);
@@ -1159,7 +1144,14 @@ class OrderController extends BaseController
         if ($isAvailableShipping) {
             $origin = EcommerceHelper::getOriginAddress();
 
-            $origin = apply_filters('ecommerce_order_shipping_origin_address', $origin, $stores, $addressKeys);
+            if (is_plugin_active('marketplace')) {
+                if ($stores->count() && ($store = $stores->first()) && $store->id) {
+                    $origin = Arr::only($store->toArray(), $addressKeys);
+                    if (! EcommerceHelper::isUsingInMultipleCountries()) {
+                        $origin['country'] = EcommerceHelper::getFirstCountryId();
+                    }
+                }
+            }
 
             $items = [];
             foreach ($productItems as $product) {

@@ -2,7 +2,6 @@
 
 namespace Botble\Ecommerce\Http\Requests;
 
-use Botble\Base\Http\Requests\Concerns\HasPhoneFieldValidation;
 use Botble\Base\Rules\EmailRule;
 use Botble\Ecommerce\Enums\ShippingMethodEnum;
 use Botble\Ecommerce\Facades\Cart;
@@ -16,37 +15,6 @@ use Illuminate\Validation\Rule;
 
 class CheckoutRequest extends Request
 {
-    use HasPhoneFieldValidation;
-
-    protected function prepareForValidation(): void
-    {
-        $this->preparePhoneFieldForCheckout('address');
-
-        if ($this->has('billing_address')) {
-            $this->preparePhoneFieldForCheckout('billing_address');
-        }
-    }
-
-    protected function preparePhoneFieldForCheckout(string $prefix): void
-    {
-        $data = $this->input($prefix, []);
-
-        if ((! isset($data['phone']) || ! $data['phone']) && isset($data['phone_display']) && $data['phone_display']) {
-            $data['phone'] = $data['phone_display'];
-        }
-
-        if (isset($data['phone']) && $data['phone']) {
-            $cleanedPhone = preg_replace('/[^\d+]/', '', $data['phone']);
-            if ($cleanedPhone) {
-                $data['phone'] = $cleanedPhone;
-            }
-        }
-
-        $this->merge([
-            $prefix => $data,
-        ]);
-    }
-
     public function rules(): array
     {
         $rules = [
@@ -187,8 +155,8 @@ class CheckoutRequest extends Request
     public function messages(): array
     {
         return apply_filters(PROCESS_CHECKOUT_MESSAGES_REQUEST_ECOMMERCE, [
-            'agree_terms_and_policy.required' => trans('plugins/ecommerce::ecommerce.agree_terms_and_policy_error'),
-            'agree_terms_and_policy.accepted' => trans('plugins/ecommerce::ecommerce.agree_terms_and_policy_error'),
+            'agree_terms_and_policy.required' => __('You must agree to the terms and conditions and privacy policy.'),
+            'agree_terms_and_policy.accepted' => __('You must agree to the terms and conditions and privacy policy.'),
         ]);
     }
 

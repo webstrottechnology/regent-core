@@ -44,8 +44,6 @@ return [
     'alt_text' => 'Alt-tekst',
 
     'folder_created' => 'Mappe oprettet succesfuldt!',
-    'folder_exists' => 'Mappen :folder findes allerede!',
-    'directory_must_empty' => 'Mappen skal være tom for at blive slettet!',
     'gallery' => 'Mediegaleri',
 
     'trash_error' => 'Fejl ved sletning af valgte element(er)',

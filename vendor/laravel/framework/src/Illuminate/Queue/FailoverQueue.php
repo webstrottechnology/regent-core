@@ -5,7 +5,6 @@ namespace Illuminate\Queue;
 use Illuminate\Contracts\Events\Dispatcher as EventDispatcher;
 use Illuminate\Contracts\Queue\Queue as QueueContract;
 use Illuminate\Queue\Events\QueueFailedOver;
-use RuntimeException;
 use Throwable;
 
 class FailoverQueue extends Queue implements QueueContract
@@ -94,12 +93,11 @@ class FailoverQueue extends Queue implements QueueContract
                 return $this->manager->connection($connection)->push($job, $data, $queue);
             } catch (Throwable $e) {
                 $lastException = $e;
-
-                $this->events->dispatch(new QueueFailedOver($connection, $job, $e));
+                $this->events->dispatch(new QueueFailedOver($connection, $job));
             }
         }
 
-        throw $lastException ?? new RuntimeException('All failover queue connections failed.');
+        throw $lastException ?? new \RuntimeException('No available connections to push the job.');
     }
 
     /**
@@ -121,7 +119,7 @@ class FailoverQueue extends Queue implements QueueContract
             }
         }
 
-        throw $lastException ?? new RuntimeException('All failover queue connections failed.');
+        throw $lastException ?? new \RuntimeException('No available connections to push the raw payload.');
     }
 
     /**
@@ -142,12 +140,11 @@ class FailoverQueue extends Queue implements QueueContract
                 return $this->manager->connection($connection)->later($delay, $job, $data, $queue);
             } catch (Throwable $e) {
                 $lastException = $e;
-
-                $this->events->dispatch(new QueueFailedOver($connection, $job, $e));
+                $this->events->dispatch(new QueueFailedOver($connection, $job));
             }
         }
 
-        throw $lastException ?? new RuntimeException('All failover queue connections failed.');
+        throw $lastException ?? new \RuntimeException('No available connections to schedule the job.');
     }
 
     /**

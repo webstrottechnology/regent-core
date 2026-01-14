@@ -1,18 +1,16 @@
 @extends('packages/theme::errors.master')
 
-@section('title', trans('packages/theme::theme.errors.500_internal_server_error'))
+@section('title', __('500 Internal Server Error'))
 
 @section('content')
     <div class="empty">
         <div class="empty-header">500</div>
-        <p class="empty-title">{{ trans('packages/theme::theme.errors.internal_server_error') }}</p>
+        <p class="empty-title">{{ __('Internal Server Error') }}</p>
         <p class="empty-subtitle text-secondary">
-            {{ trans('packages/theme::theme.errors.internal_server_error_description') }}
+            {{ __('Something is broken. Please let us know what you were doing when this error occurred. We will fix it as soon as possible. Sorry for any inconvenience caused.') }}
         </p>
 
-        <p class="empty-subtitle text-secondary">{!! BaseHelper::clean(
-            trans('packages/theme::theme.errors.page_not_found_back_home', ['link' => BaseHelper::getHomepageUrl()]),
-        ) !!}</p>
+        <p class="empty-subtitle text-secondary">{!! BaseHelper::clean(__('Please try again in a few minutes, or alternatively return to the homepage by <a href=":link">clicking here</a>.', ['link' => BaseHelper::getHomepageUrl()])) !!}</p>
 
         <div class="empty-action">
             <x-core::button
@@ -21,7 +19,7 @@
                 color="primary"
                 icon="ti ti-arrow-left"
             >
-                {{ trans('packages/theme::theme.common.take_me_home') }}
+                {{ __('Take me home') }}
             </x-core::button>
         </div>
     </div>

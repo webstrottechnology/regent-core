@@ -47,5 +47,4 @@ return [
         'completed' => 'Valmis',
         'canceled' => 'Peruutettu',
     ],
-    'back_to_invoices' => 'Takaisin laskuihin',
 ];

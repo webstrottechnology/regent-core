@@ -33,13 +33,6 @@ return [
     'widget_areas' => '위젯 영역',
     'manage_widgets' => '위젯 관리',
 
-    'click_to_add' => '위젯을 추가하려면 클릭하세요',
-    'select_sidebar' => '위젯 추가',
-    'select_sidebar_description' => '이 위젯을 추가할 위치를 선택하세요',
-    'adding_to' => '추가 대상',
-    'add_widget' => '위젯 추가',
-    'widget_not_found' => '위젯을 찾을 수 없습니다',
-
     'cache_suggestion' => [
         'title' => '성능 제안',
         'description' => '위젯 캐싱을 활성화하여 사이트 성능을 향상시킬 수 있습니다.',
@@ -52,21 +45,4 @@ return [
     'widget_site_copyright_description' => '하단 바닥글의 저작권 텍스트입니다.',
     'widget_site_copyright_helper' => '저작권 텍스트를 변경하려면 :link로 이동하세요.',
     'theme_options' => '테마 옵션',
-
-    'form' => [
-        'enable_caching' => '캐싱 활성화',
-        'yes' => '예',
-        'no' => '아니오',
-        'cache_helper' => '활성화하면 이 위젯의 콘텐츠가 캐시되어 성능이 향상됩니다. 자주 변경되는 동적 콘텐츠의 경우 비활성화하세요.',
-        'cache_warning' => 'UI 문제로 인해 이 위젯의 캐시가 코드로 비활성화되었습니다. 캐싱이 활성화되어 있어도 이 위젯은 캐시되지 않습니다.',
-    ],
-
-    'drag_or_click' => '사이드바로 드래그하거나 + 클릭하여 추가',
-    'drop_widgets_here' => '사이드바 영역에 위젯을 놓으세요',
-    'search_widgets' => '위젯 검색...',
-    'no_widgets' => '사용 가능한 위젯 없음',
-    'no_search_results' => '위젯을 찾을 수 없음',
-    'or_click_add' => '또는 위젯의 + 버튼을 클릭하여 추가',
-    'toggle_widget' => '위젯 설정 전환',
-    'loading_form' => '위젯 양식 로딩 중...',
 ];

@@ -1,5 +1,5 @@
 @php
-    PageTitle::setTitle(trans('core/base::errors.404_page_not_found'));
+    PageTitle::setTitle(__('404 Page Not Found'));
 @endphp
 
 @extends('core/base::errors.master')
@@ -7,9 +7,9 @@
 @section('content')
     <div class="empty">
         <div class="empty-header">404</div>
-        <p class="empty-title">{{ trans('core/base::errors.404_page_not_found_description') }}</p>
+        <p class="empty-title">{{ __('Page could not be found') }}</p>
         <p class="empty-subtitle text-secondary">
-            {{ trans('core/base::errors.404_description') }}
+            {{ __('The page you are looking for could not be found.') }}
         </p>
         <div class="empty-action">
             <x-core::button
@@ -18,7 +18,7 @@
                 color="primary"
                 icon="ti ti-arrow-left"
             >
-                {{ trans('core/base::errors.take_me_home') }}
+                {{ __('Take me home') }}
             </x-core::button>
         </div>
     </div>

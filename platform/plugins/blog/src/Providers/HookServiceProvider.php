@@ -111,15 +111,14 @@ class HookServiceProvider extends ServiceProvider
                                 'category_ids[]',
                                 SelectField::class,
                                 SelectFieldOption::make()
-                                    ->label(trans('plugins/blog::base.select_categories'))
+                                    ->label(__('Select categories'))
                                     ->choices($categories)
                                     ->when(Arr::get($attributes, 'category_ids'), function (SelectFieldOption $option, $categoriesIds): void {
-                                        $selected = is_array($categoriesIds) ? $categoriesIds : explode(',', $categoriesIds);
-                                        $option->selected($selected);
+                                        $option->selected(explode(',', $categoriesIds));
                                     })
                                     ->multiple()
                                     ->searchable()
-                                    ->helperText(trans('plugins/blog::base.leave_categories_empty'))
+                                    ->helperText(__('Leave categories empty if you want to show posts from all categories.'))
                             );
                     }
                 );

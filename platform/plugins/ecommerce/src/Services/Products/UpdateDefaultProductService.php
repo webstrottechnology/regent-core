@@ -22,7 +22,6 @@ class UpdateDefaultProductService
         'allow_checkout_when_out_of_stock',
         'with_storehouse_management',
         'stock_status',
-        'price_includes_tax',
     ];
 
     public function execute(Product $product)

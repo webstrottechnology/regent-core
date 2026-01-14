@@ -448,37 +448,6 @@ abstract class Factory
     }
 
     /**
-     * Insert the model records in bulk. No model events are emitted.
-     *
-     * @param  array<string, mixed>  $attributes
-     * @param  Model|null  $parent
-     * @return void
-     */
-    public function insert(array $attributes = [], ?Model $parent = null): void
-    {
-        $made = $this->make($attributes, $parent);
-
-        $madeCollection = $made instanceof Collection
-            ? $made
-            : $this->newModel()->newCollection([$made]);
-
-        $model = $madeCollection->first();
-
-        if (isset($this->connection)) {
-            $model->setConnection($this->connection);
-        }
-
-        $query = $model->newQueryWithoutScopes();
-
-        $query->fillAndInsert(
-            $madeCollection->withoutAppends()
-                ->setHidden([])
-                ->map(static fn (Model $model) => $model->attributesToArray())
-                ->all()
-        );
-    }
-
-    /**
      * Make an instance of the model with the given attributes.
      *
      * @param  \Illuminate\Database\Eloquent\Model|null  $parent
@@ -842,10 +811,10 @@ abstract class Factory
     /**
      * Specify the database connection that should be used to generate models.
      *
-     * @param  \UnitEnum|string|null  $connection
+     * @param  \UnitEnum|string  $connection
      * @return static
      */
-    public function connection(UnitEnum|string|null $connection)
+    public function connection(UnitEnum|string $connection)
     {
         return $this->newInstance(['connection' => $connection]);
     }

@@ -33,13 +33,6 @@ return [
     'widget_areas' => '小工具區域',
     'manage_widgets' => '管理小工具',
 
-    'click_to_add' => '點擊添加小工具',
-    'select_sidebar' => '添加小工具',
-    'select_sidebar_description' => '選擇要添加此小工具的位置',
-    'adding_to' => '添加到',
-    'add_widget' => '添加小工具',
-    'widget_not_found' => '找不到小工具',
-
     'cache_suggestion' => [
         'title' => '效能建議',
         'description' => '您可以透過啟用小工具快取來提升網站效能。',
@@ -52,22 +45,4 @@ return [
     'widget_site_copyright_description' => '頁尾底部的版權文字。',
     'widget_site_copyright_helper' => '前往 :link 修改版權文字。',
     'theme_options' => '主題選項',
-
-    'form' => [
-        'enable_caching' => '啟用快取',
-        'yes' => '是',
-        'no' => '否',
-        'cache_helper' => '啟用後，此小工具的內容將被快取以提升效能。',
-        'cache_warning' => '由於介面問題，此小工具的快取已透過程式碼停用。',
-    ],
-
-    'drag_or_click' => '拖曳到側邊欄或點擊 + 添加',
-    'drop_widgets_here' => '將小工具放到側邊欄區域',
-    'search_widgets' => '搜尋小工具...',
-    'no_widgets' => '沒有可用的小工具',
-    'no_search_results' => '找不到小工具',
-    'or_click_add' => '或點擊小工具上的 + 按鈕添加',
-    'toggle_widget' => '切換小工具設定',
-    'loading_form' => '正在載入小工具表單...',
-
 ];

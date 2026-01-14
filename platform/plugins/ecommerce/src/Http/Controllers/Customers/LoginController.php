@@ -10,12 +10,9 @@ use Botble\Ecommerce\Enums\CustomerStatusEnum;
 use Botble\Ecommerce\Facades\EcommerceHelper;
 use Botble\Ecommerce\Forms\Fronts\Auth\LoginForm;
 use Botble\Ecommerce\Http\Requests\LoginRequest;
-use Botble\Ecommerce\Models\Customer;
 use Botble\SeoHelper\Facades\SeoHelper;
 use Botble\Theme\Facades\Theme;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class LoginController extends BaseController
@@ -80,27 +77,6 @@ class LoginController extends BaseController
         $this->sendFailedLoginResponse();
     }
 
-    protected function sendLoginResponse(Request $request)
-    {
-        $request->session()->regenerate();
-
-        $this->clearLoginAttempts($request);
-
-        $email = $request->input($this->username());
-        Cookie::queue('customer_remember_email', $email, 525600);
-
-        $customer = $this->guard()->user();
-
-        $response = apply_filters('customer_login_response', null, $customer, $request);
-
-        if ($response) {
-            return $response;
-        }
-
-        return $this->authenticated($request, $customer)
-            ?: redirect()->intended($this->redirectPath());
-    }
-
     public function logout(Request $request)
     {
         $this->guard()->logout();
@@ -112,67 +88,34 @@ class LoginController extends BaseController
 
     protected function attemptLogin(LoginRequest $request)
     {
-        $credentials = $this->credentials($request);
-
-        if ($this->guard()->validate($credentials)) {
+        if ($this->guard()->validate($this->credentials($request))) {
             $customer = $this->guard()->getLastAttempted();
-        } else {
-            $customer = $this->findCustomerByPhoneWithoutCountryCode($credentials);
+
+            if (EcommerceHelper::isEnableEmailVerification() && empty($customer->confirmed_at)) {
+                throw ValidationException::withMessages([
+                    'confirmation' => [
+                        __(
+                            'The given email address has not been confirmed. <a href=":resend_link">Resend confirmation link.</a>',
+                            [
+                                'resend_link' => route('customer.resend_confirmation', ['email' => $customer->email]),
+                            ]
+                        ),
+                    ],
+                ]);
+            }
+
+            if ($customer->status->getValue() !== CustomerStatusEnum::ACTIVATED) {
+                throw ValidationException::withMessages([
+                    'email' => [
+                        __('Your account has been locked, please contact the administrator.'),
+                    ],
+                ]);
+            }
+
+            return $this->baseAttemptLogin($request);
         }
 
-        if (! $customer) {
-            return false;
-        }
-
-        if (EcommerceHelper::isEnableEmailVerification() && empty($customer->confirmed_at)) {
-            throw ValidationException::withMessages([
-                'confirmation' => [
-                    __(
-                        'The given email address has not been confirmed. <a href=":resend_link">Resend confirmation link.</a>',
-                        [
-                            'resend_link' => route('customer.resend_confirmation', ['email' => $customer->email]),
-                        ]
-                    ),
-                ],
-            ]);
-        }
-
-        if ($customer->status->getValue() !== CustomerStatusEnum::ACTIVATED) {
-            throw ValidationException::withMessages([
-                'email' => [
-                    __('Your account has been locked, please contact the administrator.'),
-                ],
-            ]);
-        }
-
-        return $this->guard()->login($customer, $request->filled('remember'));
-    }
-
-    protected function findCustomerByPhoneWithoutCountryCode(array $credentials): ?Customer
-    {
-        $loginOption = EcommerceHelper::getLoginOption();
-
-        if (! in_array($loginOption, ['phone', 'email_or_phone'])) {
-            return null;
-        }
-
-        $phone = $credentials['phone'] ?? null;
-
-        if (! $phone) {
-            return null;
-        }
-
-        $password = $credentials['password'] ?? null;
-
-        $customer = Customer::query()
-            ->wherePhone($phone)
-            ->first();
-
-        if ($customer && Hash::check($password, $customer->password)) {
-            return $customer;
-        }
-
-        return null;
+        return false;
     }
 
     public function credentials(LoginRequest $request): array

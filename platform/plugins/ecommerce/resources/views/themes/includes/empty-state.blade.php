@@ -1,8 +1,8 @@
 @php
-    $title = $title ?? trans('plugins/ecommerce::ecommerce.your_cart_is_empty');
-    $description = $description ?? trans('plugins/ecommerce::review.explore_and_add_items_to_get_started');
+    $title = $title ?? __('Your cart is empty');
+    $description = $description ?? __('Explore and add items to get started');
     $route = $route ?? route('public.products');
-    $label = $label ?? trans('plugins/ecommerce::review.start_shopping');
+    $label = $label ?? __('Start Shopping');
 @endphp
 
 <div class="text-center pt-50 bb-empty-state">

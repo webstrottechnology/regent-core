@@ -36,8 +36,6 @@ return [
         'customer_city' => 'Kundens by',
         'customer_zipcode' => 'Kundens postnummer',
     ],
-    'custom_css' => 'Egendefinert CSS',
-    'custom_css_helper' => 'Legg til egendefinerte CSS-stiler for å tilpasse fakturaens utseende. Disse stilene vil bli lagt til standardfakturastilene.',
     'reset_success' => 'Tilbakestilt til standard vellykket',
     'confirm_reset' => 'Bekreft tilbakestilling av fakturamal?',
     'confirm_message' => 'Vil du virkelig tilbakestille denne fakturamalen til standard?',

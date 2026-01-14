@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'บล็อก UI',
     'search' => 'ค้นหา...',
     'no_shortcode_found' => 'ไม่พบ shortcode',
-    'shortcode_not_available' => 'ชอร์ตโค้ด ":name" ไม่พร้อมใช้งานหรือถูกลบไปแล้ว',
 
     'cache_suggestion' => [
         'title' => 'คำแนะนำด้านประสิทธิภาพ',

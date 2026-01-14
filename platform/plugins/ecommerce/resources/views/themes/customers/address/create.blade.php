@@ -1,6 +1,6 @@
 @extends(EcommerceHelper::viewPath('customers.master'))
 
-@section('title', trans('plugins/ecommerce::customer-dashboard.add_new_address'))
+@section('title', __('Add a new address'))
 
 @section('content')
     {!! Form::open(['route' => 'customer.address.create']) !!}

@@ -10,8 +10,6 @@ return [
     'variables' => [
 
     ],
-    'custom_css' => 'Brugerdefineret CSS',
-    'custom_css_helper' => 'Tilføj brugerdefinerede CSS-stilarter for at tilpasse forsendelseslabelens udseende. Disse stilarter vil blive tilføjet til standardforsendelseslabelstilene.',
     'reset_success' => 'Nulstillet til standard succesfuldt',
     'confirm_reset' => 'Bekræft nulstilling af fragtetiketskabelon?',
     'confirm_message' => 'Vil du virkelig nulstille denne fragtetiketskabelon til standard?',

@@ -15,7 +15,7 @@ class PublicController extends BaseController
     {
         $query = BaseHelper::stringify($request->input('q'));
 
-        $title = trans('plugins/blog::base.search_result_for', compact('query'));
+        $title = __('Search result for: ":query"', compact('query'));
 
         SeoHelper::setTitle($title)
             ->setDescription($title);

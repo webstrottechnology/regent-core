@@ -5,11 +5,11 @@ return [
     'ecommerce' => 'סחר אלקטרוני',
     'general' => [
         'name' => 'כללי',
-        'description' => 'שם החנות, פרטי החברה, פרטי קשר ומיילי התראות למנהל',
+        'description' => 'צפה ועדכן את ההגדרות הכלליות שלך',
     ],
     'currency' => [
         'name' => 'מטבעות',
-        'description' => 'פורמטי מטבע, שערי חליפין, זיהוי אוטומטי ומפרידי עשרוניות/אלפים',
+        'description' => 'צפה ועדכן הגדרות מטבע',
         'currency_setting_description' => 'צפה ועדכן מטבעות בשימוש באתר',
         'form' => [
             'enable_auto_detect_visitor_currency' => 'הפעל זיהוי אוטומטי של מטבע המבקר',
@@ -45,7 +45,7 @@ return [
     ],
     'product' => [
         'name' => 'מוצרים',
-        'description' => 'תצוגת מלאי, יצירת SKU, תמונות וריאציות, מוצרים קשורים ומפרטים',
+        'description' => 'צפה ועדכן את הגדרות המוצרים שלך',
         'product_settings' => 'הגדרות מוצר',
         'product_settings_description' => 'הגדר כללים למוצר',
         'form' => [
@@ -88,7 +88,7 @@ return [
     ],
     'product_search' => [
         'name' => 'חיפוש מוצרים',
-        'description' => 'התנהגות חיפוש, מסננים לפי קטגוריה/מותג/תג/מאפיינים וסינון טווח מחירים',
+        'description' => 'צפה ועדכן הגדרות חיפוש מוצרים',
         'product_search_settings' => 'חיפוש מוצרים',
         'product_search_settings_description' => 'הגדר כללים לחיפוש מוצרים',
         'form' => [
@@ -109,7 +109,7 @@ return [
     ],
     'digital_product' => [
         'name' => 'מוצרים דיגיטליים',
-        'description' => 'מוצרים להורדה, קודי רישיון, תשלום אורח למוצרים דיגיטליים והשלמה אוטומטית',
+        'description' => 'צפה ועדכן הגדרות מוצרים דיגיטליים',
         'digital_products_settings' => 'מוצרים דיגיטליים',
         'digital_products_settings_description' => 'הגדר כללים למוצרים דיגיטליים',
         'form' => [
@@ -129,7 +129,7 @@ return [
     ],
     'product_review' => [
         'name' => 'ביקורות מוצרים',
-        'description' => 'ביקורות לקוחות, תצוגת דירוגים, העלאת תמונות ודרישות אישור',
+        'description' => 'צפה ועדכן את הגדרות ביקורות המוצרים שלך',
         'form' => [
             'enable_review' => 'הפעל ביקורות מוצרים',
             'enable_review_help' => 'אפשר ללקוחות להשאיר ביקורות ודירוגים על מוצרים. כאשר מושבת, כל תכונות הביקורת יוסתרו מהחנות.',
@@ -151,7 +151,7 @@ return [
     ],
     'shopping' => [
         'name' => 'קניות',
-        'description' => 'עגלה, רשימת משאלות, השוואה, מעקב הזמנות, כפתור קנייה מהירה והעלאת הוכחת תשלום',
+        'description' => 'צפה ועדכן את הגדרות הקניות שלך',
         'general_setting' => 'הגדרות כלליות',
         'return_settings' => 'הגדרות החזרה',
         'return_settings_description' => 'הגדר כללים להגדרות החזרה',
@@ -182,19 +182,15 @@ return [
             'cart_destroy_on_logout_helper' => 'העגלה תושמד כאשר הלקוח מתנתק.',
             'hide_product_price' => 'הסתר מחיר מוצר',
             'hide_product_price_helper' => 'אפשרות זו עובדת רק אם אתה משבית את עגלת הקניות, והופך את האתר שלך לתצוגת קטלוג בלבד. אם מופעל, מחיר המוצר יוסתר. זה שימושי כאשר אתה רוצה להסתיר את המחיר ולדרוש מהלקוחות ליצור איתך קשר למחיר.',
-            'hide_product_price_when_zero' => 'הסתר מחיר מוצר כאשר הוא אפס',
-            'hide_product_price_when_zero_helper' => 'אם מופעל, מוצרים שמחירם 0 לא יציגו מחיר בחנות.',
             'enable_payment_proof' => 'הפעל העלאת אישור תשלום',
             'enable_payment_proof_helper' => 'אפשר ללקוחות להעלות אישור תשלום עבור ההזמנות שלהם. זה שימושי לשיטות תשלום ידניות.',
             'enable_guest_payment_proof' => 'אפשר ללקוחות אורחים להעלות אישור תשלום',
             'enable_guest_payment_proof_helper' => 'כאשר מופעל, לקוחות אורחים יכולים להעלות אישור תשלום באמצעות אסימון ההזמנה שלהם מבלי להתחבר. הם יקבלו את קישור ההעלאה במייל אישור ההזמנה שלהם.',
-            'payment_proof_payment_methods' => 'שיטות תשלום הדורשות הוכחת תשלום',
-            'payment_proof_payment_methods_helper' => 'בחר אילו שיטות תשלום צריכות לאפשר ללקוחות להעלות הוכחת תשלום. משמש בדרך כלל לשיטות תשלום ידניות כמו תשלום במזומן בעת המסירה והעברה בנקאית.',
         ],
     ],
     'checkout' => [
         'name' => 'תשלום',
-        'panel_description' => 'תשלום אורח, שדות חובה, מגבלות הזמנה, קבלת תנאים והגבלות מדינה',
+        'panel_description' => 'צפה ועדכן הגדרות תשלום',
         'description' => 'הגדר כללים להגדרות תשלום',
         'form' => [
             'display_bank_info_at_the_checkout_success_page' => 'הצג מידע בנקאי בדף הצלחת התשלום',
@@ -247,7 +243,7 @@ return [
     'return' => [
         'name' => 'החזרה',
         'description' => 'הגדר כללים להגדרות החזרה',
-        'panel_description' => 'החזרות הזמנות, החזרות חלקיות ומגבלות זמן להחזרה',
+        'panel_description' => 'צפה ועدכן הגדרות החזרה',
         'form' => [
             'is_enabled_order_return' => 'האם להפעיל החזרת הזمנה',
             'allow_partial_return' => 'אפשר החזרה חלקית',
@@ -258,7 +254,7 @@ return [
     ],
     'invoice' => [
         'name' => 'חשבוניות',
-        'description' => 'פרטי חברה על חשבוניות, מספור חשבוניות, גופני PDF והגדרות חותמת',
+        'description' => 'צפה ועדכן את הגדרות החשבוניות שלך',
         'company_settings' => 'הגדרות חברה',
         'company_settings_description' => 'הגדרות מידע חברה לחשבוניות',
         'form' => [
@@ -305,15 +301,12 @@ return [
             'default_tax_rate' => 'שיעור מע"מ ברירת מחדל',
             'default_tax_rate_description' => 'חשוב: זה יוחל אם לא נבחר מע"מ במוצר.',
             'select_tax' => '-- בחר --',
-            'display_product_price_including_taxes' => 'הוסף מס למחירים המוצגים',
-            'display_product_price_including_taxes_helper' => 'מוסיף אוטומטית מס למחירי המוצרים בחנות. למשל: מוצר ב-$100 עם 10% מס יוצג כ-$110. לא נדרש אם "המחיר כולל מס" כבר מופעל במוצרים בודדים.',
-            'display_checkout_tax_information' => 'Display tax information under each item at checkout',
-            'display_checkout_tax_information_helper' => 'Show the tax breakdown text (e.g., "VAT 10%") next to each item on the checkout page.',
+            'display_product_price_including_taxes' => 'הצג מחיר מוצר כולל מיסים',
         ],
     ],
     'customer' => [
         'name' => 'לקוחות',
-        'description' => 'הרשמה, אימות אימייל, אפשרויות התחברות, מחיקת חשבון ושדות פרופיל',
+        'description' => 'צפה ועדכן את הגדרות הלקוחות שלך',
         'customer_setting' => 'הגדרות לקוח',
         'customer_setting_description' => 'הגדר הגדרות לקוח',
         'form' => [
@@ -344,7 +337,7 @@ return [
     ],
     'shipping' => [
         'name' => 'משלוח',
-        'description' => 'כללי משלוח, התנהגות משלוח חינם וסדר הצגת אפשרויות משלוח',
+        'description' => 'צפה ועדכן הגדרות משלוח',
         'shipping_rule' => 'כללי משלוח',
         'shipping_rule_description' => 'הגדר כללים לחישוב עלות משלוח',
         'shipping_setting' => 'הגדרות משלוח',
@@ -412,16 +405,10 @@ return [
             'save_location' => 'שמור מיקום',
             'add_new' => 'הוסף חדש',
         ],
-            'info' => [
-            'title' => 'כיצד פועלים מאתרי חנויות',
-            'primary_store' => 'כתובת החנות הראשית מופיעה בחשבוניות ומשמשת ככתובת החזרה ברירת מחדל עבור תוויות משלוח.',
-            'shipping_location' => 'חנויות המסומנות כ"מיקום משלוח" ניתנות לבחירה כמחסן מקור בעת יצירת משלוחים.',
-            'shipment_selection' => 'בעת עיבוד הזמנות, ניתן לבחור מאיזה מחסן לשלוח בהתבסס על מלאי ומיקום הלקוח.',
-        ],
     ],
     'tracking' => [
         'name' => 'מעקב',
-        'description' => 'Facebook Pixel, אירועי Google Tag Manager ומעקב המרות Google Ads',
+        'description' => 'צפה ועדכן הגדרות מעקב',
         'manage_tracking' => 'נהל מעקב',
         'manage_tracking_description' => 'נהל מעקב: UTM, Facebook, Google Tag Manager...',
         'form' => [
@@ -442,11 +429,11 @@ return [
     ],
     'marketplace' => [
         'name' => 'שוק',
-        'description' => 'הגדרות רב-ספקים, עמלות, רישום ספקים והגדרת תשלומים',
+        'description' => 'צפה ועדכן הגדרות שوק',
     ],
     'standard_and_format' => [
         'name' => 'תקן ופורמט',
-        'panel_description' => 'פורמט קוד הזמנה, יחידות משקל (ק"ג/ליברה) ויחידות מידה (ס"מ/אינץ\')',
+        'panel_description' => 'צפה ועدכן هגדרות תקן ופורמט',
         'description' => 'תקנים ופורמטים משמשים לחישוב דברים כמו מחירי מוצרים, משקלי משלוח וזמני הזמנה.',
         'form' => [
             'change_order_format' => 'ערוך פורמט קוד הזמنה (אופציונלי)',
@@ -478,63 +465,7 @@ return [
         'show_sale_count_left_description' => 'הצג شريط התקדמות עם "X נמכרו מתוך Y" כדי ליצור דחיפות ולעודד רכישות מהירות במהلך מבצעי חטף.',
     ],
     'payment_method_cod_minimum_amount' => 'סכום הזמנה מינימלי - :currency (אופציונלי)',
-    'payment_method_cod_minimum_amount_helper' => 'Set the minimum order amount required to use COD payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_cod_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_cod_maximum_amount_helper' => 'Set the maximum order amount allowed for COD payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
     'payment_method_minimum_amount' => 'סכום הזמנה מינימלי - :currency (אופציونלי)',
-    'payment_method_minimum_amount_helper' => 'Set the minimum order amount required to use this payment method. Leave it as 0 or empty if you don\'t want to set a minimum.',
-    'payment_method_maximum_amount' => 'Maximum order amount - :currency (Optional)',
-    'payment_method_maximum_amount_helper' => 'Set the maximum order amount allowed for this payment method. Leave it as 0 or empty if you don\'t want to set a maximum.',
-    'payment_method_maximum_amount_error' => 'Maximum order amount to use :payment_method payment method is :amount, you need to remove :more to place an order!',
     'display_bank_info_at_the_checkout_success_page' => 'הצג מידע בנقאי בדף הצלחת التشلום?',
     'invoice_templates' => 'תבניות חשבונית',
-
-    'abandoned_cart' => [
-        'name' => 'Giỏ hàng bị bỏ rơi',
-        'description' => 'Khôi phục doanh số bị mất bằng cách gửi lời nhắc tự động cho khách hàng để lại sản phẩm trong giỏ',
-        'panel_description' => 'Thiết lập lời nhắc tự động cho khách hàng bỏ rơi giỏ hàng',
-        'how_it_works' => [
-            'title' => 'Cách hoạt động',
-            'step1_title' => 'Khách hàng thêm sản phẩm',
-            'step1_description' => 'Khách hàng thêm sản phẩm vào giỏ hàng và cung cấp địa chỉ email.',
-            'step2_title' => 'Giỏ hàng bị bỏ rơi',
-            'step2_description' => 'Nếu không có giao dịch mua trong ngưỡng thời gian đã đặt, giỏ hàng được đánh dấu là bị bỏ rơi.',
-            'step3_title' => 'Gửi email nhắc nhở',
-            'step3_description' => 'Email nhắc nhở tự động được gửi để khuyến khích khách hàng hoàn tất việc mua hàng.',
-            'step4_title' => 'Khôi phục doanh số',
-            'step4_description' => 'Khách hàng quay lại hoàn tất đơn hàng và giỏ hàng được đánh dấu là đã khôi phục.',
-        ],
-        'form' => [
-            'enable' => 'Bật theo dõi giỏ hàng bị bỏ rơi',
-            'enable_helper' => 'Khi được bật, hệ thống sẽ theo dõi giỏ hàng bị bỏ rơi và cho phép bạn gửi email khôi phục cho khách hàng.',
-            'timing_section' => 'Cài đặt thời gian',
-            'email_section' => 'Cài đặt email nhắc nhở',
-            'cleanup_section' => 'Dọn dẹp dữ liệu',
-            'time_threshold' => 'Ngưỡng thời gian (giờ)',
-            'time_threshold_helper' => 'Giỏ hàng được coi là bị bỏ rơi sau số giờ không hoạt động này. Khuyến nghị: 1-24 giờ.',
-            'send_email' => 'Gửi email khôi phục',
-            'send_email_helper' => 'Tự động gửi email khôi phục cho khách hàng có giỏ hàng bị bỏ rơi.',
-            'max_reminders' => 'Số lượng email nhắc nhở',
-            'max_reminders_helper' => 'Số lượng email nhắc nhở gửi cho mỗi giỏ hàng bị bỏ rơi. Mỗi email có thể được tùy chỉnh trong Mẫu Email.',
-            'email_delay' => 'Gửi sau (giờ)',
-            'email_discount' => 'Giảm giá (%)',
-            'email_1_title' => 'Email #1 - Nhắc nhở thân thiện',
-            'email_1_description' => 'Lời nhắc nhẹ nhàng đầu tiên để khuyến khích khách hàng quay lại.',
-            'email_1_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email đầu tiên. Khuyến nghị: 1-2 giờ.',
-            'email_2_title' => 'Email #2 - Kèm ưu đãi',
-            'email_2_description' => 'Lời nhắc thứ hai với ưu đãi giảm giá để thúc đẩy mua hàng.',
-            'email_2_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email thứ hai. Khuyến nghị: 24 giờ.',
-            'email_2_discount_helper' => 'Phần trăm giảm giá để cung cấp trong email này. Đặt 0 nếu không giảm giá.',
-            'email_3_title' => 'Email #3 - Cơ hội cuối',
-            'email_3_description' => 'Lời nhắc cuối cùng với tính cấp bách và ưu đãi tốt nhất để chốt đơn.',
-            'email_3_delay_helper' => 'Số giờ sau khi giỏ hàng bị bỏ rơi để gửi email cuối cùng. Khuyến nghị: 72 giờ.',
-            'email_3_discount_helper' => 'Phần trăm giảm giá cuối cùng. Thường cao hơn email #2.',
-            'cleanup_days' => 'Dọn dẹp sau (ngày)',
-            'cleanup_days_helper' => 'Tự động xóa bản ghi giỏ hàng bị bỏ rơi cũ hơn số ngày này.',
-            'cronjob_not_setup' => '<strong>Cronjob chưa được cấu hình!</strong> Nhắc nhở giỏ hàng bị bỏ rơi yêu cầu cronjob được cấu hình đúng để hoạt động. <a href=":url">Thiết lập cronjob ngay</a>.',
-            'cronjob_not_running' => '<strong>Cronjob không chạy!</strong> Cronjob dường như đã dừng. Vui lòng kiểm tra cấu hình máy chủ của bạn. <a href=":url">Xem trạng thái cronjob</a>.',
-            'cronjob_working' => '<strong>Cronjob đang chạy đúng!</strong> Hoạt động cuối: :time. Nhắc nhở giỏ hàng bị bỏ rơi của bạn sẽ được xử lý tự động.',
-            'email_setup_warning' => '<strong>Quan trọng:</strong> Đảm bảo cài đặt email của bạn được cấu hình đúng trong <a href=":url">Cài đặt → Email</a>. Gửi email test để xác minh mọi thứ hoạt động trước khi bật tính năng này.',
-        ],
-    ],
 ];

@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'UI blokai',
     'search' => 'Ieškoti...',
     'no_shortcode_found' => 'Trumpasis kodas nerastas.',
-    'shortcode_not_available' => 'Trumpasis kodas ":name" nepasiekiamas arba pašalintas.',
 
     'cache_suggestion' => [
         'title' => 'Našumo pasiūlymas',

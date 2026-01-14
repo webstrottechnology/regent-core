@@ -3,8 +3,6 @@
 namespace Botble\Ecommerce\Http\Controllers\Fronts;
 
 use Botble\Base\Enums\BaseStatusEnum;
-use Botble\Base\Events\CreatedContentEvent;
-use Botble\Base\Events\DeletedContentEvent;
 use Botble\Base\Http\Controllers\BaseController;
 use Botble\Ecommerce\Facades\EcommerceHelper;
 use Botble\Ecommerce\Http\Requests\Fronts\ReviewRequest;
@@ -52,29 +50,25 @@ class ReviewController extends BaseController
             }
         }
 
-        $review = Review::query()->create([
+        Review::query()->create([
             ...$request->validated(),
             'customer_id' => auth('customer')->id(),
             'images' => $results ? collect($results)->pluck('data.url')->values()->all() : null,
             'status' => get_ecommerce_setting('review_need_to_be_approved', false) ? BaseStatusEnum::PENDING : BaseStatusEnum::PUBLISHED,
         ]);
 
-        event(new CreatedContentEvent('review', $request, $review));
-
         return $this
             ->httpResponse()
             ->setMessage(__('Added review successfully!'));
     }
 
-    public function destroy(int|string $id, Request $request)
+    public function destroy(int|string $id)
     {
         abort_unless(EcommerceHelper::isReviewEnabled(), 404);
 
         $review = Review::query()->findOrFail($id);
 
         if (auth()->check() || (auth('customer')->check() && auth('customer')->id() == $review->customer_id)) {
-            event(new DeletedContentEvent('review', $request, $review));
-
             $review->delete();
 
             return $this

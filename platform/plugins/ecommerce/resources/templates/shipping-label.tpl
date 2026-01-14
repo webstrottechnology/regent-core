@@ -16,7 +16,7 @@
             }
 
             body {
-                font-size: 12px;
+                font-size: 13px;
                 font-family: '{{ settings.font_family }}', Arial, sans-serif !important;
             }
 
@@ -43,23 +43,23 @@
             }
 
             .sender-table .logo-cell {
-                width: 80px;
-                max-width: 80px;
+                width: 100px;
+                max-width: 100px;
                 text-align: center;
-                padding-left: 8px;
+                padding-left: 10px;
             }
 
             .container {
-                min-height: auto;
+                min-height: 80%;
                 border: 3px solid black;
-                margin: 10px;
+                margin: 30px 15px 15px 15px;
                 border-radius: 4px;
                 page-break-inside: avoid;
                 position: relative;
             }
 
             .section {
-                padding: 8px 12px;
+                padding: 15px 20px;
                 border-bottom: 1px solid black;
                 position: relative;
             }
@@ -69,56 +69,56 @@
             }
 
             .sender-info h4 {
-                margin: 0 0 2px 0;
-                font-size: 13px;
+                margin: 0 0 5px 0;
+                font-size: 14px;
                 font-weight: bold;
             }
 
             .sender-info p {
-                margin: 0 0 1px 0;
-                font-size: 11px;
+                margin: 0 0 3px 0;
+                font-size: 12px;
             }
 
             .receiver-info h2 {
-                margin: 0 0 4px 0;
-                font-size: 16px;
+                margin: 0 0 10px 0;
+                font-size: 18px;
                 font-weight: bold;
             }
 
             .receiver-info h4 {
-                margin: 0 0 2px 0;
-                font-size: 12px;
+                margin: 0 0 6px 0;
+                font-size: 14px;
                 font-weight: normal;
             }
 
             .details-table td {
-                padding-bottom: 6px;
+                padding-bottom: 14px;
                 width: 33.33%;
             }
 
             .details-table td span {
-                font-size: 11px;
+                font-size: 12px;
                 color: #666;
             }
 
             .details-table td h3 {
-                margin: 1px 0 0 0;
-                font-size: 12px;
+                margin: 2px 0 0 0;
+                font-size: 14px;
                 font-weight: bold;
             }
 
             .notes-section {
-                padding: 8px 12px;
+                padding: 15px 20px;
             }
 
             .note-item {
-                margin-bottom: 3px;
+                margin-bottom: 6px;
                 overflow-wrap: break-word;
                 word-wrap: break-word;
             }
 
             .note-item span {
-                font-size: 11px;
+                font-size: 12px;
                 color: #666;
             }
 
@@ -127,30 +127,30 @@
             }
 
             .qr-section {
-                margin-top: 8px;
+                margin-top: 20px;
             }
 
             .qr-section td:first-child {
-                width: 100px;
+                width: 160px;
                 text-align: center;
             }
 
             .qr-section td:last-child {
-                font-size: 11px;
-                padding-left: 10px;
+                font-size: 12px;
+                padding-left: 15px;
                 vertical-align: middle;
             }
 
             .qr-code {
-                max-height: 100px;
+                max-height: 160px;
                 width: auto;
                 height: auto;
                 display: block;
             }
 
             .logo {
-                max-width: 80px;
-                max-height: 60px;
+                max-width: 100px;
+                max-height: 80px;
                 width: auto;
                 height: auto;
                 display: block;
@@ -163,6 +163,7 @@
         {{ settings.header_html }}
     </head>
     <body {{ body_attributes }}>
+        <div style="height: 1px;"></div>
         <div class="container">
             <div class="section">
                 <table class="sender-table">
@@ -220,18 +221,6 @@
                         <td>
                             <span>{{ 'plugins/ecommerce::shipping.shipping_fee'|trans }}:</span>
                             <h3>{{ shipment.shipping_fee }}</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <span>{{ 'plugins/ecommerce::shipping.shipping_label.total_amount'|trans }}:</span>
-                            <h3>{{ shipment.total_collectable_amount }}</h3>
-                            {% if shipment.is_cod %}
-                            <div style="margin-top: 4px;">
-                                <span>{{ 'plugins/ecommerce::shipping.shipping_label.cod_amount_to_collect'|trans }}:</span>
-                                <h2 style="margin: 1px 0 0 0; font-size: 16px; font-weight: bold;">{{ shipment.cod_amount }}</h2>
-                            </div>
-                            {% endif %}
                         </td>
                     </tr>
                 </table>

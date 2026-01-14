@@ -121,8 +121,6 @@ class RouteRegistrar
         }
 
         if ($key === 'middleware') {
-            $value = array_filter(Arr::wrap($value));
-
             foreach ($value as $index => $middleware) {
                 $value[$index] = (string) $middleware;
             }

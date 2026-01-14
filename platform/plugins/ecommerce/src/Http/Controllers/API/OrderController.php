@@ -330,7 +330,7 @@ class OrderController extends BaseApiController
 
         EmailHandler::setModule(ECOMMERCE_MODULE_SCREEN_NAME)
             ->setVariableValues($emailVariables)
-            ->sendUsingTemplate('payment-proof-upload-notification', EcommerceHelper::getAdminNotificationEmails(), [
+            ->sendUsingTemplate('payment-proof-upload-notification', get_admin_email()->all(), [
                 'attachments' => [
                     [
                         'file' => $storage->path($proofFilePath),

@@ -6,7 +6,6 @@ return [
     'ui-blocks' => 'בלוקי UI',
     'search' => 'חיפוש...',
     'no_shortcode_found' => 'לא נמצא קוד קצר.',
-    'shortcode_not_available' => 'הקיצור ":name" אינו זמין או הוסר.',
 
     'cache_suggestion' => [
         'title' => 'הצעה לביצועים',

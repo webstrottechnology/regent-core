@@ -47,5 +47,4 @@ return [
         'completed' => '已完成',
         'canceled' => '已取消',
     ],
-    'back_to_invoices' => '返回发票列表',
 ];

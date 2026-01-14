@@ -18,8 +18,4 @@ return [
     'limit_display' => 'Had bilangan paparan',
     'edit_this_gallery' => 'Edit galeri ini',
     'galleries_page' => 'Halaman galeri',
-    'by_name' => 'Oleh tempat letak0',
-    'title' => 'Tajuk',
-    'limit' => 'Had',
-    'limit_helper' => 'Bilangan galeri untuk ditunjukkan. ',
 ];

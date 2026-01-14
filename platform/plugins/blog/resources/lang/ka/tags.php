@@ -4,19 +4,19 @@ return [
     'menu' => 'ტეგები',
     'menu_name' => 'ტეგები',
     'form' => [
-        'name' => 'სახელი',
-        'name_placeholder' => 'ტეგის სახელი (მაქსიმუმ 120 სიმბოლო)',
-        'description' => 'აღწერა',
-        'description_placeholder' => 'ტეგის მოკლე აღწერა (მაქსიმუმ 400 სიმბოლო)',
-        'categories' => 'კატეგორიები',
+        'name' => 'Name',
+        'name_placeholder' => 'Tag\'s name (maximum 120 characters)',
+        'description' => 'Description',
+        'description_placeholder' => 'Short description for tag (maximum 400 characters)',
+        'categories' => 'Categories',
 
     ],
     'notices' => [
-        'no_select' => 'გთხოვთ, აირჩიოთ მინიმუმ ერთი ტეგი გასაგრძელებლად',
+        'no_select' => 'Please select at least one tag to proceed',
 
     ],
-    'create' => 'შექმენით ახალი ტეგი',
-    'cannot_delete' => 'ტეგის წაშლა ვერ მოხერხდა',
-    'deleted' => 'ტეგი წაშლილია',
-    'edit_this_tag' => 'ამ ტეგის რედაქტირება',
+    'create' => 'Create a new tag',
+    'cannot_delete' => 'Tag could not be deleted',
+    'deleted' => 'Tag deleted',
+    'edit_this_tag' => 'Edit this tag',
 ];

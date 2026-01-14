@@ -21,10 +21,6 @@ class HookServiceProvider extends ServiceProvider
                 return $html;
             }
 
-            if (! Auth::user()->hasPermission('settings.cache')) {
-                return $html;
-            }
-
             if (setting('widget_cache_enabled', false)) {
                 return $html;
             }

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    // Customer New Order Email
     'customer_new_order_title' => 'Bestellung erfolgreich!',
     'customer_new_order_greeting' => 'Liebe/r :customer_name,',
     'customer_new_order_message' => 'Vielen Dank für den Kauf unserer Produkte, wir werden Sie über Telefon <strong>:customer_phone</strong> kontaktieren, um die Bestellung zu bestätigen!',
@@ -14,6 +15,8 @@ return [
     'customer_new_order_shipping_method' => 'Versandmethode',
     'customer_new_order_order_number' => 'Bestellnummer',
     'customer_new_order_payment_method' => 'Zahlungsmethode',
+
+    // Admin New Order Email
     'admin_new_order_title' => 'Sie haben eine neue Bestellung von :site_title erhalten',
     'admin_new_order_greeting' => 'Hallo Admin,',
     'admin_new_order_message' => 'Eine neue Bestellung wurde erfolgreich von :customer_name aufgegeben',
@@ -33,6 +36,8 @@ return [
     'admin_new_order_shipping_method' => 'Versandmethode',
     'admin_new_order_payment_method' => 'Zahlungsmethode',
     'admin_new_order_view_order' => 'Bestelldetails anzeigen',
+
+    // Order Confirmation Email
     'order_confirm_title' => 'Bestellung bestätigt!',
     'order_confirm_greeting' => 'Hallo :customer_name,',
     'order_confirm_message' => 'Ihre Bestellung wurde bestätigt. Vielen Dank für den Kauf unserer Produkte!',
@@ -47,6 +52,8 @@ return [
     'order_confirm_note' => 'Notiz',
     'order_confirm_shipping_method' => 'Versandmethode',
     'order_confirm_payment_method' => 'Zahlungsmethode',
+
+    // Order Cancel (Customer) Email
     'customer_cancel_order_title' => 'Ihre Bestellung wurde storniert',
     'customer_cancel_order_greeting' => 'Liebe/r :customer_name,',
     'customer_cancel_order_message' => 'Ihre Bestellung <strong>:order_id</strong> wurde auf Ihren Wunsch wegen des Grundes :cancellation_reason storniert und Ihre Zahlung wurde ebenfalls storniert.',
@@ -60,9 +67,11 @@ return [
     'customer_cancel_order_address' => 'Adresse',
     'customer_cancel_order_products' => 'Das haben Sie bestellt:',
     'customer_cancel_order_note' => 'Notiz',
+
+    // Order Cancel (Admin) Email
     'admin_cancel_order_title' => 'Bestellung storniert',
     'admin_cancel_order_greeting' => 'Hallo :customer_name,',
-    'admin_cancel_order_message' => 'Ihre Bestellung :order_id wurde von unserem Personal storniert.',
+    'admin_cancel_order_message' => 'Ihre Bestellung #:order_id wurde von unserem Personal storniert.',
     'admin_cancel_order_order_cancelled' => 'Bestellung wurde storniert!',
     'admin_cancel_order_reason' => 'Grund für die Stornierung: :cancellation_reason',
     'admin_cancel_order_customer_info' => 'Kundeninformationen',
@@ -73,9 +82,11 @@ return [
     'admin_cancel_order_products' => 'Bestelldetails:',
     'admin_cancel_order_note' => 'Notiz',
     'admin_cancel_order_order_summary' => 'Bestellübersicht',
-    'order_cancellation_to_admin_title' => 'Bestellung :order_id vom Kunden storniert',
+
+    // Order Cancellation to Admin Email
+    'order_cancellation_to_admin_title' => 'Bestellung #:order_id vom Kunden storniert',
     'order_cancellation_to_admin_greeting' => 'Hallo Admin,',
-    'order_cancellation_to_admin_message' => ':customer_name hat die Bestellung <strong>:order_id</strong> storniert. Grund: <strong>:cancellation_reason</strong>',
+    'order_cancellation_to_admin_message' => ':customer_name hat die Bestellung <strong>#:order_id</strong> storniert. Grund: <strong>:cancellation_reason</strong>',
     'order_cancellation_to_admin_customer_info' => 'Kundeninformationen',
     'order_cancellation_to_admin_name' => 'Name',
     'order_cancellation_to_admin_phone' => 'Telefon',
@@ -85,6 +96,8 @@ return [
     'order_cancellation_to_admin_note' => 'Notiz',
     'order_cancellation_to_admin_view_order' => 'Bestelldetails anzeigen',
     'order_cancellation_to_admin_order_summary' => 'Bestellübersicht',
+
+    // Order Delivery Email
     'customer_delivery_order_title' => 'Ihre Bestellung ist unterwegs',
     'customer_delivery_order_greeting' => 'Hallo :customer_name,',
     'customer_delivery_order_message' => 'Ihre Bestellung ist unterwegs. Vielen Dank für den Kauf unserer Produkte!',
@@ -104,6 +117,8 @@ return [
     'customer_delivery_order_tracking_id' => 'Sendungsverfolgungsnummer',
     'customer_delivery_order_tracking_link' => 'Sendungsverfolgungslink',
     'customer_delivery_order_track_shipment' => 'Sendung verfolgen',
+
+    // Order Delivered Email
     'customer_order_delivered_title' => 'Ihre Bestellung wurde zugestellt',
     'customer_order_delivered_greeting' => 'Hallo :customer_name,',
     'customer_order_delivered_message' => 'Ihre Bestellung wurde zugestellt. Vielen Dank für den Kauf unserer Produkte!',
@@ -122,7 +137,9 @@ return [
     'customer_order_delivered_tracking_id' => 'Sendungsverfolgungsnummer',
     'customer_order_delivered_tracking_link' => 'Sendungsverfolgungslink',
     'customer_order_delivered_track_shipment' => 'Sendungsdetails anzeigen',
-    'order_confirm_payment_title' => 'Zahlung bestätigt für Bestellung :order_id',
+
+    // Payment Confirmation Email
+    'order_confirm_payment_title' => 'Zahlung bestätigt für Bestellung #:order_id',
     'order_confirm_payment_greeting' => 'Hallo :customer_name,',
     'order_confirm_payment_message' => 'Ihre Zahlung wurde bestätigt. Vielen Dank für den Kauf unserer Produkte!',
     'order_confirm_payment_order_number' => 'Bestellnummer',
@@ -137,6 +154,8 @@ return [
     'order_confirm_payment_thanks' => 'Vielen Dank für Ihre Zahlung. Ihre Bestellung wird bald bearbeitet.',
     'order_confirm_payment_order_summary' => 'Bestellübersicht',
     'order_confirm_payment_shipping_method' => 'Versandmethode',
+
+    // Order Recovery Email
     'order_recover_title' => 'Sie haben eine unvollständige Bestellung',
     'order_recover_greeting' => 'Hallo :customer_name,',
     'order_recover_message' => 'Wir haben bemerkt, dass Sie eine unvollständige Bestellung haben. Möchten Sie Ihren Kauf abschließen?',
@@ -146,17 +165,23 @@ return [
     'order_recover_button' => 'Bestellung abschließen',
     'order_recover_order_summary' => 'Bestellübersicht',
     'order_recover_note' => 'Notiz',
+
+    // Welcome Email
     'welcome_greeting' => 'Wir freuen uns, Sie hier zu haben, :customer_name!',
     'welcome_message' => 'Willkommen bei :site_title!',
     'welcome_register_success' => 'Sie haben erfolgreich ein Konto bei <strong>:site_title</strong> registriert.',
     'welcome_explore' => 'Wenn Sie Hilfe benötigen, antworten Sie gerne auf diese E-Mail!',
     'welcome_visit_shop' => 'Jetzt einkaufen!',
+
+    // Confirm Email
     'confirm_email_title' => 'E-Mail verifizieren',
     'confirm_email_greeting' => 'Wir freuen uns, Sie hier zu haben, :customer_name!',
     'confirm_email_message' => 'Bitte bestätigen Sie Ihre E-Mail-Adresse, indem Sie auf die Schaltfläche unten klicken.',
     'confirm_email_instruction' => 'Bitte verifizieren Sie Ihre E-Mail-Adresse, um auf diese Website zugreifen zu können. Klicken Sie auf die Schaltfläche unten, um Ihre E-Mail zu verifizieren.',
     'confirm_email_button' => 'E-Mail-Adresse bestätigen',
     'confirm_email_trouble' => 'Wenn Sie Probleme beim Klicken auf die Schaltfläche "E-Mail-Adresse bestätigen" haben, kopieren Sie die untenstehende URL und fügen Sie sie in Ihren Webbrowser ein: <a href=":verify_link">:verify_link</a>',
+
+    // Password Reminder Email
     'password_reminder_title' => 'Passwort zurücksetzen',
     'password_reminder_greeting' => 'Hallo :customer_name,',
     'password_reminder_message' => 'Sie haben das Zurücksetzen Ihres Passworts angefordert.',
@@ -164,9 +189,11 @@ return [
     'password_reminder_button' => 'Passwort zurücksetzen',
     'password_reminder_ignore' => 'Wenn Sie keine Passwort-Zurücksetzung angefordert haben, ignorieren Sie diese E-Mail bitte.',
     'password_reminder_trouble_clicking' => 'Wenn Sie Probleme beim Klicken auf die Schaltfläche "Passwort zurücksetzen" haben, kopieren Sie die untenstehende URL und fügen Sie sie in Ihren Webbrowser ein: <a href=":reset_link">:reset_link</a>',
+
+    // Order Return Request Email
     'order_return_request_title' => 'Rückgabeanfrage erhalten',
     'order_return_request_greeting' => 'Hallo :customer_name,',
-    'order_return_request_message' => 'Wir haben Ihre Rückgabeanfrage für Bestellung :order_id erhalten.',
+    'order_return_request_message' => 'Wir haben Ihre Rückgabeanfrage für Bestellung #:order_id erhalten.',
     'order_return_request_reason' => 'Grund für die Rückgabe',
     'order_return_request_items' => 'Zurückzusendende Artikel',
     'order_return_request_process' => 'Wir werden Ihre Anfrage bearbeiten und Sie bald kontaktieren.',
@@ -178,6 +205,8 @@ return [
     'order_return_request_return_reason' => 'Rückgabegrund',
     'order_return_request_order_summary' => 'Bestellübersicht',
     'order_return_request_note' => 'Notiz',
+
+    // Order Return Status Updated Email
     'order_return_status_updated_title' => 'Bestellrückgabe-Status-Update',
     'order_return_status_updated_greeting' => 'Liebe/r :customer_name,',
     'order_return_status_updated_message' => 'Wir möchten Sie darüber informieren, dass der Status Ihrer Rückgabeanfrage für Bestellung :order_id aktualisiert wurde.',
@@ -185,13 +214,17 @@ return [
     'order_return_status_updated_description' => 'Moderator-Notiz: " :description ".',
     'order_return_status_updated_questions' => 'Wenn Sie Fragen oder Bedenken zu diesem Update haben, zögern Sie bitte nicht, unser Kundenservice-Team zu kontaktieren.',
     'order_return_status_updated_view_details' => 'Rückgabedetails anzeigen',
+
+    // Review Products Email
     'review_products_title' => 'Bewerten Sie Ihren kürzlichen Kauf',
     'review_products_greeting' => 'Hallo :customer_name,',
-    'review_products_message' => 'Ihre Bestellung :order_id wurde abgeschlossen. Wir würden gerne Ihr Feedback hören!',
+    'review_products_message' => 'Ihre Bestellung #:order_id wurde abgeschlossen. Wir würden gerne Ihr Feedback hören!',
     'review_products_instruction' => 'Bitte nehmen Sie sich einen Moment Zeit, um die von Ihnen gekauften Produkte zu bewerten:',
     'review_products_button' => 'Produkte bewerten',
     'review_products_thank_you' => 'Vielen Dank für Ihren Kauf!',
     'review_products_products' => 'Zu bewertende Produkte',
+
+    // Digital Products Download Email
     'download_digital_products_title' => 'Ihre digitalen Produkte sind bereit',
     'download_digital_products_greeting' => 'Hallo :customer_name,',
     'download_digital_products_message' => 'Vielen Dank für Ihren Kauf! Ihre digitalen Produkte sind zum Download bereit.',
@@ -203,10 +236,13 @@ return [
     'download_digital_products_all_files' => 'Alle Dateien herunterladen',
     'download_digital_products_external_link_downloads' => 'Externe Dateien herunterladen',
     'download_digital_products_payment_method' => 'Zahlungsmethode',
+
+    // Digital Product License Codes Email
     'digital_product_license_codes_title' => 'Ihre Lizenzcodes',
     'digital_product_license_codes_greeting' => 'Liebe/r :customer_name,',
     'digital_product_license_codes_message' => 'Vielen Dank für Ihren Kauf! Hier sind Ihre Lizenzcodes:',
     'digital_product_license_codes_thanks' => 'Vielen Dank für den Kauf unserer digitalen Produkte.',
+    'digital_product_license_codes_below' => 'Unten finden Sie Ihre Lizenzcodes für die von Ihnen gekauften Produkte:',
     'digital_product_license_codes_product' => 'Produkt',
     'digital_product_license_codes_license' => 'Lizenzcode',
     'digital_product_license_codes_order_summary' => 'Das haben Sie bestellt:',
@@ -219,6 +255,8 @@ return [
     'digital_product_license_codes_note_2' => 'Jeder Lizenzcode ist einzigartig und kann nur einmal verwendet werden',
     'digital_product_license_codes_note_3' => 'Teilen Sie Ihre Lizenzcodes nicht mit anderen',
     'digital_product_license_codes_note_4' => 'Wenn Sie Probleme mit Ihren Lizenzcodes haben, kontaktieren Sie bitte unser Support-Team',
+
+    // Product File Updated Email
     'product_file_updated_title' => 'Produktdateien aktualisiert',
     'product_file_updated_greeting' => 'Hallo, :customer_name!',
     'product_file_updated_message' => 'Die Dateien für das Produkt <a href=":product_link"><strong>:product_name</strong></a> wurden aktualisiert.',
@@ -230,6 +268,8 @@ return [
     'product_file_updated_instruction' => 'Sie können die aktualisierten Dateien aus Ihrem Konto herunterladen.',
     'product_file_updated_order_number' => 'Bestellnummer',
     'product_file_updated_download' => 'Aktualisierte Dateien herunterladen',
+
+    // Invoice Payment Created Email
     'invoice_payment_created_title' => 'Zahlung erhalten',
     'invoice_payment_created_greeting' => 'Hallo :customer_name,',
     'invoice_payment_created_message' => 'Wir haben Ihre Zahlung für :site_title erfolgreich erhalten. Vielen Dank!',
@@ -241,15 +281,21 @@ return [
     'invoice_payment_created_invoice_link_message' => 'Sie können Ihre Rechnung online unter <a href=":invoice_link">:invoice_link</a> mit Rechnungscode #:invoice_code anzeigen',
     'invoice_payment_created_invoice_message' => 'Ihr Rechnungscode ist #:invoice_code',
     'invoice_payment_created_view_online' => 'Rechnung online anzeigen',
+
+    // Customer Deletion Request Confirmation Email
     'customer_deletion_request_confirmation_greeting' => 'Hallo :customer_name,',
     'customer_deletion_request_confirmation_message' => 'Wir haben Ihre Anfrage zur Löschung Ihres Kontos erhalten.',
     'customer_deletion_request_confirmation_warning' => 'Bitte beachten Sie, dass diese Aktion nicht rückgängig gemacht werden kann. Alle Ihre Daten werden dauerhaft gelöscht.',
     'customer_deletion_request_confirmation_button' => 'Löschung bestätigen',
     'customer_deletion_request_confirmation_cancel' => 'Wenn Sie dies nicht angefordert haben, ignorieren Sie diese E-Mail bitte.',
+
+    // Customer Deletion Request Completed Email
     'customer_deletion_request_completed_greeting' => 'Hallo :customer_name,',
     'customer_deletion_request_completed_message' => 'Ihr Konto wurde wie angefordert erfolgreich gelöscht.',
     'customer_deletion_request_completed_thank_you' => 'Vielen Dank, dass Sie bei uns waren.',
     'customer_deletion_request_completed_goodbye' => 'Wir hoffen, Sie in Zukunft wieder zu sehen.',
+
+    // Payment Proof Upload Notification Email
     'payment_proof_upload_notification_greeting' => 'Hallo Admin,',
     'payment_proof_upload_notification_message' => 'Der Kunde :customer_name (E-Mail: <a href="mailto::customer_email">:customer_email</a>) hat einen Zahlungsnachweis für seine Bestellung mit ID :order_id hochgeladen.',
     'payment_proof_upload_notification_view_details' => 'Sie können die Zahlungsdetails <a href=":payment_link">hier</a> und die Bestelldetails <a href=":order_link">hier</a> anzeigen.',
@@ -261,27 +307,4 @@ return [
     'payment_proof_upload_notification_total' => 'Gesamtbetrag',
     'payment_proof_upload_notification_view_order' => 'Bestellung anzeigen',
     'payment_proof_upload_notification_view_proof' => 'Zahlungsnachweis anzeigen',
-    'abandoned_cart_reminder_title' => 'Sie haben Artikel in Ihrem Warenkorb gelassen!',
-    'abandoned_cart_greeting' => 'Hallo :customer_name,',
-    'abandoned_cart_message' => 'Wir haben bemerkt, dass Sie einige Artikel in Ihrem Warenkorb gelassen haben. Möchten Sie Ihren Einkauf abschließen? Ihr Warenkorb wartet auf Sie!',
-    'abandoned_cart_button' => 'Zurück zum Warenkorb',
-    'abandoned_cart_items_title' => 'Artikel in Ihrem Warenkorb',
-    'abandoned_cart_total' => 'Gesamt',
-    'abandoned_cart_unsubscribe' => 'Diese E-Mails nicht mehr erhalten? <a href=":unsubscribe_url">Abmelden</a>',
-    'abandoned_cart_discount_offer' => 'Sonderangebot nur für Sie!',
-    'abandoned_cart_discount_off' => 'RABATT',
-    'abandoned_cart_discount_code' => 'Code verwenden',
-    'abandoned_cart_claim_discount' => 'Ihren Rabatt einlösen',
-    'abandoned_cart_final_offer' => 'Letztes Angebot - Nicht verpassen!',
-    'abandoned_cart_expires_soon' => 'Dieses Angebot läuft bald ab!',
-    'abandoned_cart_complete_now' => 'Jetzt Bestellung abschließen',
-    'abandoned_cart_reminder_1_title' => 'Haben Sie etwas vergessen?',
-    'abandoned_cart_reminder_1_greeting' => 'Hallo :customer_name,',
-    'abandoned_cart_reminder_1_message' => 'Wir haben bemerkt, dass Sie einige Artikel in Ihrem Warenkorb gelassen haben. Keine Sorge - wir haben sie für Sie aufbewahrt! Bereit, Ihren Einkauf abzuschließen?',
-    'abandoned_cart_reminder_2_title' => 'Noch am Überlegen?',
-    'abandoned_cart_reminder_2_greeting' => 'Hallo :customer_name,',
-    'abandoned_cart_reminder_2_message' => 'Ihr Warenkorb vermisst Sie! Wir haben Ihre Artikel gespeichert und wollten uns melden. Vielleicht hilft Ihnen dieses Sonderangebot bei der Entscheidung?',
-    'abandoned_cart_reminder_3_title' => 'Letzte Chance, Ihren Warenkorb zu retten!',
-    'abandoned_cart_reminder_3_greeting' => 'Hallo :customer_name,',
-    'abandoned_cart_reminder_3_message' => 'Dies ist Ihre letzte Erinnerung - Ihr Warenkorb läuft bald ab! Wir möchten nicht, dass Sie diese Artikel verpassen.',
 ];

@@ -60,7 +60,8 @@
             break;
     }
 
-    Assets::addStylesDirectly($css)->addScriptsDirectly($js);
+    Assets::addStylesDirectly($css)
+        ->addScriptsDirectly($js);
 @endphp
 
 <x-core::form-group>
@@ -83,14 +84,11 @@
 </x-core::form-group>
 
 @if (request()->ajax())
-    @foreach ($css as $cssItem)
-        <link
-            rel="stylesheet"
-            href="{{ asset($cssItem) }}"
-        >
+    @foreach($css as $cssItem)
+        <link rel="stylesheet" href="{{ asset($cssItem) }}">
     @endforeach
 
-    @foreach ($js as $jsItem)
+    @foreach($js as $jsItem)
         <script src="{{ asset($jsItem) }}"></script>
     @endforeach
 @endif

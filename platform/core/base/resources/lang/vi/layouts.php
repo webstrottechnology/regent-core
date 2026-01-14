@@ -21,4 +21,5 @@ return [
     'page_loaded_in_time' => 'Trang được tải trong :time giây',
     'view_website' => 'Xem trang ngoài',
     'tools' => 'Công cụ',
+    'page_loaded_time' => 'Trang tải xong trong',
 ];

@@ -47,5 +47,4 @@ return [
         'completed' => 'Ολοκληρώθηκε',
         'canceled' => 'Ακυρώθηκε',
     ],
-    'back_to_invoices' => 'Επιστροφή στα τιμολόγια',
 ];

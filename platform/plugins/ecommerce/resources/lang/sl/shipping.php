@@ -191,9 +191,6 @@ return [
         'sender' => 'Pošiljatelj',
         'order_date' => 'Datum naročila',
         'scan_qr_code' => 'Skeniraj QR kodo za sledenje vaši pošiljki',
-        'total_amount' => 'Skupni znesek',
-        'cod_amount_to_collect' => 'Znesek COD za pobiranje',
     ],
     'customer_confirmed_delivery_at' => 'Stranka je potrdila dostavo ob',
-    'no_shipping_methods_available' => 'Na voljo ni nobenih načinov dostave!',
 ];

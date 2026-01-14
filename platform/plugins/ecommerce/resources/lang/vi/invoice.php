@@ -47,5 +47,4 @@ return [
         'completed' => 'Hoàn thành',
         'canceled' => 'Đã hủy',
     ],
-    'back_to_invoices' => 'Quay lại danh sách hóa đơn',
 ];

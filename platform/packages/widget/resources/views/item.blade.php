@@ -1,6 +1,6 @@
 @if (count($widgetAreas))
     @foreach ($widgetAreas as $item)
-        @continue(!class_exists($item->widget_id))
+        @continue(! class_exists($item->widget_id))
 
         @php
             $widget = new $item->widget_id();
@@ -9,30 +9,32 @@
         <li
             data-id="{{ $widget->getId() }}"
             data-position="{{ $item->position }}"
-            class="widget-item list-unstyled"
+            class="mb-3 widget-item list-unstyled"
         >
-            <div class="widget-item-card">
-                <div class="widget-item-header widget-draggable-handler">
-                    <div class="widget-item-drag">
-                        <x-core::icon name="ti ti-grip-vertical" size="sm" />
+            <div class="card border">
+                <div class="card-header bg-body py-2 px-3 widget-draggable-handler">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <div class="d-flex align-items-center flex-grow-1">
+                            <span class="me-2 text-secondary">
+                                <x-core::icon
+                                    size="sm"
+                                    name="ti ti-grip-vertical"
+                                />
+                            </span>
+                            <h5 class="mb-0 fw-semibold">{{ $widget->getName() }}</h5>
+                        </div>
+                        <div class="ms-auto">
+                            <button class="btn btn-sm btn-ghost-secondary p-1" type="button">
+                                <x-core::icon
+                                    size="sm"
+                                    name="ti ti-chevron-down"
+                                />
+                            </button>
+                        </div>
                     </div>
-                    <div class="widget-item-icon">
-                        <x-core::icon name="ti ti-box" size="sm" />
-                    </div>
-                    <div class="widget-item-title">
-                        <h5 class="mb-0">{{ $widget->getName() }}</h5>
-                    </div>
-                    <button
-                        class="widget-item-toggle"
-                        type="button"
-                        aria-expanded="false"
-                        aria-label="{{ trans('packages/widget::widget.toggle_widget') }}"
-                    >
-                        <x-core::icon name="ti ti-chevron-down" size="sm" />
-                    </button>
                 </div>
-                <div class="widget-item-content widget-content">
-                    <div class="widget-item-body">
+                <div class="widget-content border-top-0" style="display: none;">
+                    <div class="card-body">
                         <form method="post">
                             <input
                                 name="id"
@@ -40,7 +42,7 @@
                                 value="{{ $widget->getId() }}"
                             >
                             {!! $widget->form($item->sidebar_id, $item->position) !!}
-                            <div class="widget-item-actions">
+                            <div class="widget-control-actions mt-3 d-flex justify-content-between gap-2">
                                 <x-core::button
                                     type="button"
                                     :outlined="true"
@@ -48,11 +50,7 @@
                                     size="sm"
                                     class="widget-control-delete"
                                 >
-                                    <x-core::icon
-                                        name="ti ti-trash"
-                                        size="sm"
-                                        class="me-1"
-                                    />
+                                    <x-core::icon name="ti ti-trash" size="sm" class="me-1" />
                                     {{ trans('packages/widget::widget.delete') }}
                                 </x-core::button>
 
@@ -62,11 +60,7 @@
                                     size="sm"
                                     class="widget-save"
                                 >
-                                    <x-core::icon
-                                        name="ti ti-device-floppy"
-                                        size="sm"
-                                        class="me-1"
-                                    />
+                                    <x-core::icon name="ti ti-device-floppy" size="sm" class="me-1" />
                                     {{ trans('core/base::forms.save_and_continue') }}
                                 </x-core::button>
                             </div>
@@ -77,13 +71,14 @@
         </li>
     @endforeach
 @else
-    <li class="widget-dropzone list-unstyled">
-        <div class="widget-dropzone-inner">
-            <div class="widget-dropzone-icon">
-                <x-core::icon name="ti ti-drag-drop-2" />
+    <li class="dropzone list-unstyled">
+        <div class="card border-2 border-dashed bg-light">
+            <div class="card-body text-center py-4">
+                <div class="mb-2">
+                    <x-core::icon name="ti ti-drag-drop-2" size="lg" class="text-muted" />
+                </div>
+                <p class="text-muted mb-0">{{ trans('packages/widget::widget.drag_widget_to_sidebar') }}</p>
             </div>
-            <p class="widget-dropzone-text">{{ trans('packages/widget::widget.drag_widget_to_sidebar') }}</p>
-            <span class="widget-dropzone-hint">{{ trans('packages/widget::widget.or_click_add') }}</span>
         </div>
     </li>
 @endif

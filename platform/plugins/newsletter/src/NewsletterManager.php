@@ -50,52 +50,45 @@ class NewsletterManager extends Manager implements Factory
         app('events')->listen(RenderingThemeOptionSettings::class, function (): void {
             ThemeOption::setSection(
                 ThemeOptionSection::make('opt-text-subsection-newsletter-popup')
-                    ->title(trans('plugins/newsletter::newsletter.newsletter_popup'))
+                    ->title(__('Newsletter Popup'))
                     ->icon('ti ti-mail-opened')
                     ->fields([
                         ToggleField::make()
                             ->name('newsletter_popup_enable')
-                            ->label(trans('plugins/newsletter::newsletter.enable_newsletter_popup')),
+                            ->label(__('Enable Newsletter Popup')),
                         MediaImageField::make()
                             ->name('newsletter_popup_image')
-                            ->label(trans('plugins/newsletter::newsletter.popup_image'))
-                            ->helperText(trans('plugins/newsletter::newsletter.popup_image_helper')),
-                        MediaImageField::make()
-                            ->name('newsletter_popup_tablet_image')
-                            ->label(trans('plugins/newsletter::newsletter.popup_tablet_image'))
-                            ->helperText(trans('plugins/newsletter::newsletter.popup_tablet_image_helper')),
-                        MediaImageField::make()
-                            ->name('newsletter_popup_mobile_image')
-                            ->label(trans('plugins/newsletter::newsletter.popup_mobile_image'))
-                            ->helperText(trans('plugins/newsletter::newsletter.popup_mobile_image_helper')),
+                            ->label(__('Popup Image')),
                         TextField::make()
                             ->name('newsletter_popup_title')
-                            ->label(trans('plugins/newsletter::newsletter.popup_title')),
+                            ->label(__('Popup Title')),
                         TextField::make()
                             ->name('newsletter_popup_subtitle')
-                            ->label(trans('plugins/newsletter::newsletter.popup_subtitle')),
+                            ->label(__('Popup Subtitle')),
                         TextareaField::make()
                             ->name('newsletter_popup_description')
-                            ->label(trans('plugins/newsletter::newsletter.popup_description')),
+                            ->label(__('Popup Description')),
                         NumberField::make()
                             ->name('newsletter_popup_delay')
-                            ->label(trans('plugins/newsletter::newsletter.popup_delay_seconds'))
+                            ->label(__('Popup Delay (seconds)'))
                             ->defaultValue(5)
                             ->helperText(
-                                trans('plugins/newsletter::newsletter.popup_delay_helper')
+                                __(
+                                    'Set the delay time to show the popup after the page is loaded. Set 0 to show the popup immediately.'
+                                )
                             )
                             ->attributes([
                                 'min' => 0,
                             ]),
                         MultiCheckListField::make()
                             ->name('newsletter_popup_display_pages')
-                            ->label(trans('plugins/newsletter::newsletter.display_on_pages'))
+                            ->label(__('Display on pages'))
                             ->inline()
                             ->defaultValue(['public.index'])
                             ->options(
                                 apply_filters('newsletter_popup_display_pages', [
-                                    'public.index' => trans('plugins/newsletter::newsletter.homepage'),
-                                    'all' => trans('plugins/newsletter::newsletter.all_pages'),
+                                    'public.index' => __('Homepage'),
+                                    'all' => __('All Pages'),
                                 ])
                             ),
                     ])
@@ -117,22 +110,13 @@ class NewsletterManager extends Manager implements Factory
                 );
 
             add_filter('theme_front_meta', function (?string $html): string {
-                $images = array_filter([
-                    theme_option('newsletter_popup_image'),
-                    theme_option('newsletter_popup_tablet_image'),
-                    theme_option('newsletter_popup_mobile_image'),
-                ]);
+                $image = theme_option('newsletter_popup_image');
 
-                if (empty($images)) {
+                if (! $image) {
                     return $html;
                 }
 
-                $preloadLinks = '';
-                foreach ($images as $image) {
-                    $preloadLinks .= '<link rel="preload" as="image" href="' . RvMedia::getImageUrl($image) . '" />';
-                }
-
-                return $html . $preloadLinks;
+                return $html . '<link rel="preload" as="image" href="' . RvMedia::getImageUrl($image) . '" />';
             });
 
             add_filter(THEME_FRONT_BODY, function (?string $html): string {

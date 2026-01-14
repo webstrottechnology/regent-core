@@ -23,6 +23,7 @@ return [
         'activated' => 'Aktiveeritud',
         'locked' => 'Lukustatud',
     ],
+    'email_verified' => 'E-post kinnitatud?',
     'verify_email' => [
         'confirm_heading' => 'E-posti kinnitamise kinnitamine',
         'confirm_description' => 'Kas olete kindel, et soovite selle kliendi e-posti kinnitada?',
@@ -30,6 +31,7 @@ return [
         'approve_here' => 'klõpsake siia',
         'confirm_button' => 'Kinnita',
     ],
+    'email_already_verified' => 'E-post on juba kinnitatud.',
     'verification_email_sent' => 'Kinnituskiri on edukalt saadetud!',
     'resend_verification_email' => 'Saada kinnituskiri uuesti',
     'resend_verification_email_confirmation' => 'Kas olete kindel, et soovite sellele kliendile kinnituskirja uuesti saata?',

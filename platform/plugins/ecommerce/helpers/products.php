@@ -46,7 +46,7 @@ if (! function_exists('get_products')) {
             'select' => [
                 'ec_products.*',
             ],
-            'with' => EcommerceHelper::withProductEagerLoadingRelations(),
+            'with' => ['slugable'],
             'withCount' => [],
             'withAvg' => [],
             ...$params,
@@ -75,7 +75,7 @@ if (! function_exists('get_products_on_sale')) {
             'select' => [
                 'ec_products.*',
             ],
-            'with' => EcommerceHelper::withProductEagerLoadingRelations(),
+            'with' => [],
             'withCount' => [],
         ], $params);
 
@@ -97,7 +97,7 @@ if (! function_exists('get_featured_products')) {
                 'ec_products.created_at' => 'DESC',
             ],
             'select' => ['ec_products.*'],
-            'with' => EcommerceHelper::withProductEagerLoadingRelations(),
+            'with' => [],
         ], $params);
 
         return app(ProductInterface::class)->getProducts($params);
@@ -112,8 +112,6 @@ if (! function_exists('get_top_rated_products')) {
         }
 
         $topProductIds = get_top_rated_product_ids($limit);
-
-        $with = empty($with) ? EcommerceHelper::withProductEagerLoadingRelations() : $with;
 
         return get_products([
                 'condition' => [
@@ -197,7 +195,7 @@ if (! function_exists('get_trending_products')) {
                         'ec_products.views' => 'DESC',
                     ],
                     'select' => ['ec_products.*'],
-                    'with' => EcommerceHelper::withProductEagerLoadingRelations(),
+                    'with' => [],
                 ], $params);
 
                 return app(ProductInterface::class)->getProducts($params);
@@ -210,7 +208,7 @@ if (! function_exists('get_trending_products')) {
                 ],
                 'take' => null,
                 'select' => ['ec_products.*'],
-                'with' => EcommerceHelper::withProductEagerLoadingRelations(),
+                'with' => [],
             ], $params);
 
             $products = app(ProductInterface::class)->getProducts($params);

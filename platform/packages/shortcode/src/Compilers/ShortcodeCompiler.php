@@ -152,13 +152,10 @@ class ShortcodeCompiler
 
             $loadingView = static::getLoadingStateView($name);
 
-            $shortcodeId = $compiled->get('data-vb-id');
-
             return view($placeholderView, [
                 'name' => $name,
                 'attributes' => Arr::except($compiled->toArray(), 'enable_lazy_loading'),
                 'loadingView' => $loadingView,
-                'shortcodeId' => $shortcodeId,
             ]);
         }
 
@@ -182,7 +179,6 @@ class ShortcodeCompiler
         if (
             setting('shortcode_cache_enabled', false)
             && ! request()->expectsJson()
-            && ! request()->input('visual_builder')
             && ! $this->shouldIgnoreCache($name)
             && $compiled->enable_caching !== 'no'
             && empty(request()->getQueryString())

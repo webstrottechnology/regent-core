@@ -1,7 +1,7 @@
 <?php
 
 namespace Botble\Ecommerce\Repositories\Eloquent;
-
+use Illuminate\Support\Facades\Auth;
 use Botble\Base\Enums\BaseStatusEnum;
 use Botble\Base\Models\BaseModel;
 use Botble\Base\Models\BaseQueryBuilder;
@@ -334,8 +334,6 @@ class ProductRepository extends RepositoriesAbstract implements ProductInterface
             'collections' => [],
             'collection' => null,
             'discounted_only' => false,
-            'recent_days' => null,
-            'new_products_only' => false,
         ], $filters);
 
         $isUsingDefaultCurrency = get_application_currency_id() == cms_currency()->getDefaultCurrency()->getKey();
@@ -451,6 +449,12 @@ class ProductRepository extends RepositoriesAbstract implements ProductInterface
             '), function ($join) {
                 return $join->on('products_with_final_price.id', '=', 'ec_products.id');
             });
+            
+                    // PMD PRODUCT FILTER
+        if (!Auth::guard('customer')->check() || Auth::guard('customer')->user()->is_pmd != 1) {
+            $this->model = $this->model->where('ec_products.is_pmd_product', 0);
+        }    
+                    
 
         // Add custom order for out-of-stock products
         $this->model = $this->model->orderByRaw('
@@ -760,21 +764,6 @@ class ProductRepository extends RepositoriesAbstract implements ProductInterface
             });
         }
 
-        // Filter products by recent days (created within X days)
-        if ($filters['recent_days']) {
-            $recentDate = Carbon::now()->subDays((int) $filters['recent_days'])->startOfDay();
-            $this->model = $this->model->where('ec_products.created_at', '>=', $recentDate);
-        }
-
-        // Filter products marked as "new" based on is_new_until date
-        if ($filters['new_products_only']) {
-            $today = Carbon::today();
-            $this->model = $this->model->where(function (EloquentBuilder $query) use ($today): void {
-                $query->whereNotNull('ec_products.is_new_until')
-                    ->where('ec_products.is_new_until', '>=', $today);
-            });
-        }
-
         $this->model = apply_filters('ecommerce_products_filter', $this->model, $filters, $params);
 
         return $this->advancedGet($params);
@@ -848,7 +837,7 @@ class ProductRepository extends RepositoriesAbstract implements ProductInterface
                 'current_paged' => 1,
             ],
             'with' => EcommerceHelper::withProductEagerLoadingRelations(),
-            'order_by' => ['ec_customer_recently_viewed_products.product_id' => 'desc'],
+            'order_by' => ['ec_customer_recently_viewed_products.id' => 'desc'],
             'select' => ['ec_products.*'],
         ], $params);
 

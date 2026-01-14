@@ -12,35 +12,9 @@ class FacebookPixel
     protected array $events = [];
     protected FacebookPixelEnhanced $enhanced;
 
-    protected const NO_OFFSET_CURRENCIES = [
-        'BIF', 'CLP', 'DJF', 'GNF', 'JPY', 'KMF', 'KRW',
-        'MGA', 'PYG', 'RWF', 'UGX', 'VND', 'VUV', 'XAF',
-        'XOF', 'XPF',
-    ];
-
     public function __construct()
     {
         $this->enhanced = new FacebookPixelEnhanced();
-    }
-
-    public static function formatValue(?float $value, ?string $currency = null): float
-    {
-        if ($value === null) {
-            return 0.0;
-        }
-
-        $currencyCode = $currency ?: get_application_currency()->title;
-
-        if (in_array(strtoupper($currencyCode), self::NO_OFFSET_CURRENCIES)) {
-            return round($value, 0);
-        }
-
-        return round($value, 2);
-    }
-
-    protected function formatValueForFacebook(?float $value, ?string $currency = null): float
-    {
-        return static::formatValue($value, $currency);
     }
 
     public function view(Product $product): static
@@ -50,8 +24,6 @@ class FacebookPixel
 
             return $this;
         }
-
-        $currency = get_application_currency()->title;
 
         $this->pushEvent('ViewContent', [$product], [
             'content_category' => $product->categories()->first()->name ?? '',
@@ -63,8 +35,8 @@ class FacebookPixel
                     'quantity' => 1,
                 ],
             ],
-            'currency' => $currency,
-            'value' => $this->formatValueForFacebook($product->price, $currency),
+            'currency' => get_application_currency()->title,
+            'value' => $product->price,
         ]);
 
         return $this;
@@ -78,17 +50,15 @@ class FacebookPixel
             return $this;
         }
 
-        $currency = get_application_currency()->title;
-
         $this->pushEvent('InitiateCheckout', $items, [
             'content_name' => 'Checkout',
             'contents' => array_map(fn ($item) => [
                 'id' => $item->id,
                 'quantity' => $item->cartItem->qty,
             ], $items),
-            'currency' => $currency,
+            'currency' => get_application_currency()->title,
             'num_items' => count($items),
-            'value' => $this->formatValueForFacebook($value, $currency),
+            'value' => $value,
         ]);
 
         return $this;
@@ -103,7 +73,6 @@ class FacebookPixel
         }
 
         $products = $order->getOrderProducts()->all();
-        $currency = get_application_currency()->title;
 
         $this->pushEvent('Purchase', $products, [
             'content_name' => 'Purchase',
@@ -112,8 +81,8 @@ class FacebookPixel
                 'id' => $item->product_id,
                 'quantity' => $item->qty,
             ])->values()->all(),
-            'currency' => $currency,
-            'value' => $this->formatValueForFacebook($order->sub_total, $currency),
+            'currency' => get_application_currency()->title,
+            'value' => $order->sub_total,
         ]);
 
         return $this;
@@ -127,8 +96,6 @@ class FacebookPixel
             return $this;
         }
 
-        $currency = get_application_currency()->title;
-
         $this->pushEvent('AddToCart', [$product], [
             'content_name' => 'Add to Cart',
             'content_type' => 'product',
@@ -138,8 +105,8 @@ class FacebookPixel
                     'quantity' => $quantity,
                 ],
             ],
-            'currency' => $currency,
-            'value' => $this->formatValueForFacebook($value, $currency),
+            'currency' => get_application_currency()->title,
+            'value' => $value,
         ]);
 
         return $this;

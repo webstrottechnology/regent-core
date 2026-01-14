@@ -191,9 +191,6 @@ return [
         'sender' => 'Remetente',
         'order_date' => 'Data do pedido',
         'scan_qr_code' => 'Escaneie o código QR para rastrear seu envio',
-        'total_amount' => 'Valor total',
-        'cod_amount_to_collect' => 'Valor COD a cobrar',
     ],
     'customer_confirmed_delivery_at' => 'Cliente confirmou a entrega em',
-    'no_shipping_methods_available' => 'Nenhum método de envio disponível!',
 ];

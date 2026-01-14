@@ -43,5 +43,4 @@ return [
     'copied' => 'Copied',
     'copy' => 'Copy',
     'clear' => 'Clear',
-    'something_went_wrong' => 'Something went wrong.',
 ];

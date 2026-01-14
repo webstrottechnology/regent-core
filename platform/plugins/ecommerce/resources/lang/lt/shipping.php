@@ -191,9 +191,6 @@ return [
         'sender' => 'Siuntėjas',
         'order_date' => 'Užsakymo data',
         'scan_qr_code' => 'Nuskaitykite QR kodą, kad sektumėte savo siuntą',
-        'total_amount' => 'Bendra suma',
-        'cod_amount_to_collect' => 'COD suma surinkimui',
     ],
     'customer_confirmed_delivery_at' => 'Klientas patvirtino pristatymą ties',
-    'no_shipping_methods_available' => 'Nėra prieinamų pristatymo būdų!',
 ];
